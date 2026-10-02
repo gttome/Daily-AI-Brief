@@ -1,0 +1,7 @@
+{
+  "task_id": "01",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-01T19:52:35Z",
+  "reason": "Bind fresh Run 4 execution identity, original cutoff and hardened main baseline after Task 00 PASS."
+}

@@ -4,7 +4,77 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-10-01T07:05:23Z</updated>
+  <updated>2026-10-02T03:13:59.409Z</updated>
+  <entry>
+    <title>Governed multi-environment access for Claude Platform on AWS</title>
+    <id>dab-story-2026-10-01-m03</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-01/governed-multi-environment-access-for-claude-platform-on-aws/" />
+    <updated>2026-10-01T18:00:00Z</updated>
+    <summary>AWS describes a governed design for reaching Claude Platform on AWS from multiple operating environments while keeping identity and environment boundaries explicit.</summary>
+  </entry>
+  <entry>
+    <title>Gemini 4 Argon for long-horizon professional workflows</title>
+    <id>dab-story-2026-10-01-m01</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-01/gemini-4-argon-for-long-horizon-professional-workflows/" />
+    <updated>2026-10-01T18:00:00Z</updated>
+    <summary>Google introduced Gemini 4 Argon for long-horizon software engineering, enterprise knowledge work and defensive cybersecurity, with access staged while safeguards are tested.</summary>
+  </entry>
+  <entry>
+    <title>Personalization tied to decision and measurement loops</title>
+    <id>dab-story-2026-10-01-m04</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-01/personalization-tied-to-decision-and-measurement-loops/" />
+    <updated>2026-10-01T18:00:00Z</updated>
+    <summary>AWS presents a workflow combining generated content variants with contextual-bandit personalization and measurement across the acquisition funnel.</summary>
+  </entry>
+  <entry>
+    <title>Adapting production AI to organization-specific moderation policy</title>
+    <id>dab-story-2026-10-01-m05</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-01/adapting-production-ai-to-organization-specific-moderation-policy/" />
+    <updated>2026-10-01T18:00:00Z</updated>
+    <summary>AWS describes how uniopen adapted Amazon Nova to its own retail moderation policy and evaluated the result before production deployment.</summary>
+  </entry>
+  <entry>
+    <title>Perplexity business Skills package recurring work into reusable procedures</title>
+    <id>dab-story-2026-10-01-m08</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-01/perplexity-business-skills-package-recurring-work-into-reusable-procedures/" />
+    <updated>2026-10-01T18:00:00Z</updated>
+    <summary>Perplexity and American Express introduced pre-built business Skills covering recurring finance, marketing, operations and hiring work; Skills package reusable instructions around required inputs and expected outputs.</summary>
+  </entry>
+  <entry>
+    <title>OpenAI Dots assign persistent responsibilities to always-on agents</title>
+    <id>dab-story-2026-10-01-m07</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-01/openai-dots-assign-persistent-responsibilities-to-always-on-agents/" />
+    <updated>2026-10-01T18:00:00Z</updated>
+    <summary>OpenAI introduced Dots as always-on agents with their own cloud computer, connected apps and feedback-driven personalization for continuing responsibilities.</summary>
+  </entry>
+  <entry>
+    <title>Google launches Gemini 4 Argon, its first AI frontier model release in months</title>
+    <id>dab-video-2026-10-01-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-10-01/general/" />
+    <updated>2026-10-01T18:00:00Z</updated>
+    <summary>A concise current-news explanation of the staged Gemini 4 Argon release and why access is initially limited.</summary>
+  </entry>
+  <entry>
+    <title>Introducing dots, always-on agents built to handle everything.</title>
+    <id>dab-video-2026-10-01-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-10-01/agent-skills/" />
+    <updated>2026-10-01T18:00:00Z</updated>
+    <summary>A short first-party introduction to always-on agents, cloud-computer execution and user control.</summary>
+  </entry>
+  <entry>
+    <title>#244: How Alibaba.com Is Building the Future of Agent-to-Agent Commerce</title>
+    <id>dab-podcast-2026-10-01-ai-show-244</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-01/ai-show-244/" />
+    <updated>2026-10-01T18:00:00Z</updated>
+    <summary>A discussion of Alibaba.com’s Accio agent platform and agent-to-agent commerce.</summary>
+  </entry>
+  <entry>
+    <title>Gemini 4 Argon Puts Controlled Agent Rollouts to the Test</title>
+    <id>dab-podcast-2026-10-01-jesse-owen-argon</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-01/jesse-owen-argon/" />
+    <updated>2026-10-01T18:00:00Z</updated>
+    <summary>A concise daily briefing on Gemini 4 Argon’s controlled access and staged deployment.</summary>
+  </entry>
   <entry>
     <title>OpenShell puts enforceable permissions outside the agent</title>
     <id>dab-story-2026-09-30-77eb0ae9</id>
@@ -1495,47 +1565,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-02/gilbert-tobin-shows-governed-ai-adoption-as-an-operating-model-not-a-tool-rollou/" />
     <updated>2026-09-02T18:00:00Z</updated>
     <summary>OpenAI published a case study describing how Gilbert + Tobin combines leadership commitment, governance and human accountability around ChatGPT Enterprise and Codex, reporting 87% active usage among enabled ChatGPT users.</summary>
-  </entry>
-  <entry>
-    <title>Codex 0.152 puts limits and durable evidence around agent tool use</title>
-    <id>dab-story-2026-09-01-4df260d4</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-01/codex-0-152-puts-limits-and-durable-evidence-around-agent-tool-use/" />
-    <updated>2026-09-01T18:00:00Z</updated>
-    <summary>OpenAI released Codex CLI 0.152 with per-tool `output_token_limit` settings for MCP tools, configurable shell-command timeouts, package-style MCP server names, and fixes that preserve user instructions, answers and valid authorizations across approval-history compaction. The release also keeps MCP tools available through cache and plugin changes, restores saved working directories on resumed threads, and rejects untrusted cloud-task backend URLs and redirects.</summary>
-  </entry>
-  <entry>
-    <title>ContextPilot teaches agents when to plan, remember and offload context</title>
-    <id>dab-story-2026-09-01-09eff21b</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-01/contextpilot-teaches-agents-when-to-plan-remember-and-offload-context/" />
-    <updated>2026-09-01T18:00:00Z</updated>
-    <summary>Tencent researchers introduced ContextPilot, a proactive context-management framework that extends an agent’s tools beyond search, deletion and summarization to include planning, structured long-term memory and “soft” context offloading. Its training method samples branches around high-impact context edits and assigns credit to intermediate context decisions rather than applying only the final trajectory reward. The authors report stronger results with more compact working context across long-context QA and deep-search tasks.</summary>
-  </entry>
-  <entry>
-    <title>Google Meet gives the room a visible pause switch for AI notes</title>
-    <id>dab-story-2026-09-01-5005fc67</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-01/google-meet-gives-the-room-a-visible-pause-switch-for-ai-notes/" />
-    <updated>2026-09-01T18:00:00Z</updated>
-    <summary>Google began rolling out direct controls for “Take notes for me” on Google Meet hardware touch controllers. In eligible meetings, in-room participants can see whether Gemini note-taking is active, stop it for an off-the-record discussion and resume it without joining from a laptop in Companion mode. Early Preview devices began receiving the feature August 31; broader rollout is scheduled to begin September 8.</summary>
-  </entry>
-  <entry>
-    <title>Gemini labels Drive files at scale while owners retain review authority</title>
-    <id>dab-story-2026-09-01-f20296c3</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-01/gemini-labels-drive-files-at-scale-while-owners-retain-review-authority/" />
-    <updated>2026-09-01T18:00:00Z</updated>
-    <summary>Google opened Gemini-based data classification in Drive to beta. Administrators choose a label, write instructions and define the file audience; Gemini evaluates files and applies labels without a manually labeled training set. Eligible owners and editors can accept or modify the proposed label, and audit logs record both automated labeling and human changes. Labels can support DLP, retention and investigations.</summary>
-  </entry>
-  <entry>
-    <title>ChatGPT Work can discover tools provided directly by a website</title>
-    <id>dab-story-2026-09-01-2881d03e</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-01/chatgpt-work-can-discover-tools-provided-directly-by-a-website/" />
-    <updated>2026-09-01T18:00:00Z</updated>
-    <summary>ChatGPT Work and Codex can now discover and use actions that supported websites expose through WebMCP in the desktop app’s built-in browser. A user can inspect available site tools from the address bar and ask the agent to use them without configuring a separate connector. OpenAI’s documentation gives actions such as finding a document section or adding a comment as examples. Existing website-access and sensitive-action confirmations still apply.</summary>
-  </entry>
-  <entry>
-    <title>Workspace Studio’s no-code agents gain least privilege, approvals and audit context</title>
-    <id>dab-story-2026-09-01-c324f577</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/" />
-    <updated>2026-09-01T18:00:00Z</updated>
-    <summary>Google began the Scheduled Release rollout of new Workspace Studio controls today. Newly created flows can run with least-privileged agent identities and unique auditable identifiers. Administrators can revoke individual OAuth scopes, inspect flow context in audit events, disable step types or webhooks, require confirmation before externally sharing data, and use DLP conditions to block execution or force review.</summary>
   </entry>
 </feed>

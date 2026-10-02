@@ -1,0 +1,56 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "edition_id": "dab-edition-2026-10-01",
+  "execution_id": "reliable-edition-20261001-run4",
+  "candidate_id": "m07",
+  "attempt": 5,
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "fallback_used": false,
+  "observed_at": "2026-10-02T02:25:18Z",
+  "generation": {
+    "executor": "chatgpt_local_deterministic_editorial_renderer",
+    "isolation": "sealed_single_story_spec_only",
+    "source_spec": "_records/editorial-handoff/image-specs-2026-10-01-run4.json#m07",
+    "final_sha256": "1f08333345fc9fc08b969fe6b902997f71a4e225d524cd66dda47ebdfb16c71c",
+    "final_bytes": 9656,
+    "final_dimensions": "1200x630",
+    "final_palette_colors": 4
+  },
+  "candidate": {
+    "delivered_sha256": "1f08333345fc9fc08b969fe6b902997f71a4e225d524cd66dda47ebdfb16c71c",
+    "delivered_bytes": 9656,
+    "delivered_dimensions": "1200x630",
+    "method": "bounded same-visual professional PNG transport optimization",
+    "visual_precheck": "PASS",
+    "lineage": "sealed OpenAI Dots responsibility-loop mechanism rendered without orchestration/dashboard context; final palette optimization preserved composition, allowed labels and non-human artifacts"
+  },
+  "persistence": {
+    "status": "persisted",
+    "path": "briefs/images/2026-10-01/dab-edition-2026-10-01-m07-postrepair-1.png",
+    "git_blob_sha": "05d7d126cdc8eab08e2c41842f263f3fddb1fe46",
+    "commit_sha": null,
+    "content_address_verified": true,
+    "read_back_verified": true,
+    "verification_method": "local SHA-256 and locally computed Git blob SHA matched GitHub create_blob identity; branch tree binding and contents read-back must retain the same Git blob SHA"
+  },
+  "review": {
+    "subject_match": "PASS",
+    "structural_quality": "PASS",
+    "editorial_quality": "PASS",
+    "allowed_visible_text": "PASS",
+    "factual_scope": "PASS",
+    "people_humanoids": "NONE",
+    "avatars": "NONE",
+    "chat_bubbles": "NONE",
+    "orchestration_dashboard_context": "NONE",
+    "product_ui": "NONE",
+    "low_quality_fallback": false,
+    "saved_asset_reviewed": true
+  },
+  "review_status": "accepted_locked",
+  "status": "accepted_locked",
+  "recovery_action": null,
+  "accepted_at": "2026-10-02T02:25:18Z"
+}

@@ -1,0 +1,10 @@
+{
+  "task_id": "23",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-02T03:25:42Z",
+  "proof": {
+    "publication_pr": 335,
+    "protected_ci_required": true
+  }
+}

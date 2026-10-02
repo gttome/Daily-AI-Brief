@@ -1,0 +1,8 @@
+{
+  "task_id": "11",
+  "from": "Active",
+  "to": "Blocked",
+  "at": "2026-10-01T20:43:19Z",
+  "reason_code": "ORIGINAL_GENERATED_BYTES_NOT_VISIBLE_IN_CURRENT_EXECUTION_SURFACE",
+  "recovery_action": "Create m03 attempt 2 with production-image-execution-v2 and immediately persist the new PNG bytes through the standard GitHub small-PNG transport."
+}

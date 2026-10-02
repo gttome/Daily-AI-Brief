@@ -1,0 +1,7 @@
+{
+  "task_id": "11",
+  "state": "Blocked",
+  "at": "2026-10-01T21:19:53Z",
+  "reason_code": "BINARY_PAYLOAD_DELIVERY_UNAVAILABLE_IN_CURRENT_EXECUTION_SURFACE",
+  "recovery_action": "Keep the preserved m03 candidate. Retry only with a supported file-capable GitHub write path that can persist the existing PNG bytes and verify read-back identity. Do not request owner upload and do not regenerate while the preserved candidate remains recoverable."
+}

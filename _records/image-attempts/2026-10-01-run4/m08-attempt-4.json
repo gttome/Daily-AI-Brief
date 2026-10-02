@@ -1,0 +1,45 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "edition_id": "dab-edition-2026-10-01",
+  "execution_id": "reliable-edition-20261001-run4",
+  "candidate_id": "m08",
+  "attempt": 4,
+  "fallback_used": false,
+  "worker_authority": {
+    "writer_generation": 1,
+    "request_key": "04273d8ca53be8b5112bac7152ed906bf28f96e97c25cf3770552165d72235fb"
+  },
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "gen_id": "3ff28c77-c115-44fa-87b7-60ec2d266047",
+    "native_sha256": "4c08bd0e6a630b8831ef8e49693339be53a96aed2d723823daba849bf38e1a76",
+    "native_git_blob_sha_expected": "c8122196adb33e3fc84776b0ccf2cd3dfa87899b",
+    "native_bytes": 1282969,
+    "native_dimensions": "1536x1024",
+    "generated_at": "2026-10-01T23:08:13.035Z"
+  },
+  "persistence": {
+    "status": "not_persisted",
+    "content_address_verified": false,
+    "read_back_verified": false,
+    "reason_code": "EXACT_NATIVE_PNG_TRANSPORT_UNAVAILABLE",
+    "detail": "The exact generated PNG was captured and hashed, but the available GitHub write path could not consume the generated local PNG as an exact binary file without using a derivative transport. No derivative was written."
+  },
+  "review": {
+    "phase": "generated_asset_precheck",
+    "subject_match": "PASS",
+    "structural_quality": "REJECT",
+    "editorial_quality": "PASS",
+    "allowed_visible_text": "PASS",
+    "factual_scope": "PASS",
+    "people_humanoids": "FAIL",
+    "rejection_code": "HUMAN_AVATAR_ICON_PRESENT",
+    "rejection_reason": "The Hiring lane contains a purple roundel with three stylized human bust silhouettes, violating the sealed restriction against people, avatars, humanoid icons, and person icons.",
+    "saved_git_asset_reviewed": false
+  },
+  "review_status": "rejected",
+  "status": "rejected",
+  "rejected_at": "2026-10-01T23:11:12.709Z",
+  "recovery_action": "Do not create attempt 5. Do not substitute SVG, basic, low-quality, or transformed derivative imagery. Task 15 remains blocked at the bounded recovery limit."
+}

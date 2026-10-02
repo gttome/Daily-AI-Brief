@@ -1,0 +1,9 @@
+{
+  "task_id": "19",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-02T03:18:53Z",
+  "proof": {
+    "manifest": "_records/editorial-handoff/publication-manifest.json"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "1c56337f91291774fc55bb17b3829dc2c773c50517013e826538d8a306d88cdb",
+  "execution_id": "reliable-edition-20261001-run4",
+  "edition_id": "dab-edition-2026-10-01",
+  "branch": "reliable-edition/dab-edition-2026-10-01-run4",
+  "task_id": "15",
+  "writer_generation": 5,
+  "candidate_id": "m08",
+  "attempt": 5,
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "status": "accepted_locked",
+  "completed_at": "2026-10-02T01:39:11Z",
+  "generation": {
+    "executor": "chatgpt_local_deterministic_editorial_renderer",
+    "isolation": "sealed_single_story_spec_only",
+    "sha256": "cb59546b673a312fa65ab971b56e0439505b282d65df73bcc030eddab61029bc",
+    "bytes": 24641,
+    "dimensions": "1200x630"
+  },
+  "review": {
+    "subject_match": "PASS",
+    "structural_quality": "PASS",
+    "editorial_quality": "PASS",
+    "status": "ACCEPT",
+    "people_humanoids": "NONE",
+    "dashboard_context": "NONE",
+    "low_quality_fallback": false
+  },
+  "persistence": {
+    "status": "persisted_verified",
+    "path": "briefs/images/2026-10-01/dab-edition-2026-10-01-m08-postrepair-1.png",
+    "git_blob_sha": "d52222324bce6a65972957f560fd10b7bb468a01",
+    "commit_sha": "268b657b292a5a78110fa91809b7c3256b273aa8",
+    "content_address_verified": true,
+    "read_back_verified": true
+  },
+  "immutable_attempt_record": "_records/image-attempts/2026-10-01-run4/m08-attempt-5.json",
+  "task_outcome": "Done",
+  "accepted_images_total": 5,
+  "preserved_tasks": "00-14",
+  "accepted_images_unchanged": true
+}

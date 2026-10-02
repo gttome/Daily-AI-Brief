@@ -1,0 +1,10 @@
+{
+  "task_id": "20",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-02T03:18:53Z",
+  "proof": {
+    "qualification": "_records/qualification/2026-10-01-run4/result.json",
+    "result": "PASS"
+  }
+}

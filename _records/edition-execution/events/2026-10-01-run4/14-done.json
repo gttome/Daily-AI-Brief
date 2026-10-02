@@ -1,0 +1,12 @@
+{
+  "task_id": "14",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T22:04:24Z",
+  "proof": {
+    "candidate_id": "m05",
+    "attempt": 1,
+    "path": "briefs/images/2026-10-01/dab-edition-2026-10-01-m05-1.png",
+    "accepted_locked": true
+  }
+}

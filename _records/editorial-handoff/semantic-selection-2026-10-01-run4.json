@@ -1,0 +1,15 @@
+{
+"run_number":4,
+"edition_id":"dab-edition-2026-10-01",
+"allocation":"2/2/2",
+"agent_skills_count":1,
+"selected":[
+{"ordinal":1,"candidate_id":"m03","focus":"technical_ai_engineering","headline":"Governed multi-environment access for Claude Platform on AWS","source_url":"https://aws.amazon.com/blogs/machine-learning/implementing-multi-environment-access-for-claude-platform-on-aws/","agent_skill":false},
+{"ordinal":2,"candidate_id":"m01","focus":"technical_ai_engineering","headline":"Gemini 4 Argon for long-horizon professional workflows","source_url":"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/","agent_skill":false},
+{"ordinal":3,"candidate_id":"m04","focus":"applied_genai_knowledge_workers","headline":"Personalization tied to decision and measurement loops","source_url":"https://aws.amazon.com/blogs/machine-learning/uplifting-conversion-across-the-acquisition-funnel-with-personalization-using-contextual-bandits-on-aws/","agent_skill":false},
+{"ordinal":4,"candidate_id":"m05","focus":"applied_genai_knowledge_workers","headline":"Adapting production AI to organization-specific moderation policy","source_url":"https://aws.amazon.com/blogs/machine-learning/how-uniopen-customized-amazon-nova-to-their-retail-moderation-policies-for-production-deployment/","agent_skill":false},
+{"ordinal":5,"candidate_id":"m08","focus":"agents_non_technical_people","headline":"Perplexity business Skills package recurring work into reusable procedures","source_url":"https://www.perplexity.ai/en-GB/hub/blog/perplexity-and-american-express-make-ai-easier-for-growing-businesses","agent_skill":true},
+{"ordinal":6,"candidate_id":"m07","focus":"agents_non_technical_people","headline":"OpenAI Dots assign persistent responsibilities to always-on agents","source_url":"https://openai.com/index/introducing-dots/","agent_skill":false}
+],
+"previous_edition_story_reuse":0
+}
