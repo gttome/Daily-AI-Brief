@@ -1,0 +1,16 @@
+{
+  "task_id": "08",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-02T13:30:26Z",
+  "reason": "Completed 14 independent emerging-signal checks across seven domains, including an explicit Jev/ai_decide update, five existing-topic updates and two newly added emerging topics.",
+  "proof": {
+    "watchlist_path": "_records/editorial/2026-10-02-run5/watchlist-refresh.json",
+    "domain_count": 7,
+    "checks_completed": 14,
+    "new_topics": 2,
+    "updated_topics": 5,
+    "result": "PASS",
+    "writer_generation": 2
+  }
+}
