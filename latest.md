@@ -19,7 +19,7 @@
 
 **Date:** September 30, 2026
 
-**Topics:** m07, agents non technical people
+**Topics:** agents non technical people
 
 <span class="story-data" data-story-id="dab-story-2026-10-02-m07" data-story-url="/stories/2026-10-02/gemini-skills-reusable-work-modules/" hidden></span>
 
@@ -59,7 +59,7 @@
 
 **Date:** September 29, 2026
 
-**Topics:** m08, agents non technical people
+**Topics:** agents non technical people
 
 <span class="story-data" data-story-id="dab-story-2026-10-02-m08" data-story-url="/stories/2026-10-02/meta-muse-small-business-skills-connectors-approval/" hidden></span>
 
@@ -99,7 +99,7 @@
 
 **Date:** September 30, 2026
 
-**Topics:** m04, applied genai knowledge workers
+**Topics:** applied genai knowledge workers
 
 <span class="story-data" data-story-id="dab-story-2026-10-02-m04" data-story-url="/stories/2026-10-02/stack-internal-trusted-enterprise-context-for-ai/" hidden></span>
 
@@ -139,7 +139,7 @@
 
 **Date:** September 30, 2026
 
-**Topics:** m05, applied genai knowledge workers
+**Topics:** applied genai knowledge workers
 
 <span class="story-data" data-story-id="dab-story-2026-10-02-m05" data-story-url="/stories/2026-10-02/slack-mcp-server-lists-records-agent-workflows/" hidden></span>
 
@@ -179,7 +179,7 @@
 
 **Date:** September 30, 2026
 
-**Topics:** m01, technical ai engineering
+**Topics:** technical ai engineering
 
 <span class="story-data" data-story-id="dab-story-2026-10-02-m01" data-story-url="/stories/2026-10-02/cohere-embed-5-shared-space-pro-fast-retrieval/" hidden></span>
 
@@ -219,7 +219,7 @@
 
 **Date:** October 1, 2026
 
-**Topics:** m02, technical ai engineering
+**Topics:** technical ai engineering
 
 <span class="story-data" data-story-id="dab-story-2026-10-02-m02" data-story-url="/stories/2026-10-02/dogwood-temporal-governance-for-agent-actions/" hidden></span>
 
