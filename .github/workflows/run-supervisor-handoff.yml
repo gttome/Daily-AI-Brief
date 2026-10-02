@@ -86,6 +86,7 @@ jobs:
           fi
 
           gh workflow run run-supervisor.yml \
+            -R "$GITHUB_REPOSITORY" \
             --ref main \
             -f run_branch="$run_branch" \
             -f execution_key="$execution_key" \
