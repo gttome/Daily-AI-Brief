@@ -7,11 +7,16 @@ import {
   assertWriterFence,
   classifyRunHealth,
   applyImmediateImageRecovery,
+  normalizeTaskEvent,
+  recoverableBlockerEvidence,
+  refreshScheduledWorkerFence,
+  buildTaskWriterHandoffRelease,
   validateTaskRecoveryContracts,
   taskRecoveryDecision,
   buildWorkerRequest,
   buildEngineeringRepairRequest,
   projectKanbanFromEvents,
+  validateKanbanContract,
   kanbanProjectionFresh
 } from '../lib/run-supervisor.mjs';
 
@@ -206,18 +211,95 @@ test('worker request is idempotent for the same durable recovery request',()=>{
   assert.equal(buildWorkerRequest(args).request_key,buildWorkerRequest(args).request_key);
 });
 
-test('Kanban drift is detected and corrected from authoritative events',()=>{
-  const tasks={ '00':{title:'Readiness'}, '01':{title:'Bind'} };
+test('recoverable blocker schema drift is normalized into one actionable machine contract',()=>{
+  const drift={
+    task_id:'11',state:'Blocked',at:'2026-10-02T14:03:56Z',
+    recoverable:true,external_blocker:false,
+    targeted_next_action:'Generate the bounded targeted retry from the sealed story spec.'
+  };
+  const normalized=normalizeTaskEvent(drift);
+  assert.equal(normalized.to,'Blocked');
+  assert.equal(normalized.recovery_action,drift.targeted_next_action);
+  const evidence=recoverableBlockerEvidence(drift);
+  assert.equal(evidence.actionable,true);
+  assert.equal(evidence.normalized.to,'Blocked');
+  assert.equal(evidence.normalized.recovery_action,drift.targeted_next_action);
+  assert.equal(recoverableBlockerEvidence({...drift,recoverable:false}).actionable,false);
+});
+
+test('scheduled worker refreshes current fence at invocation and stale embedded generation cannot mutate',()=>{
+  const supervisor=acquireWriterLease(null,{
+    execution_id:'run5',owner_id:'run-supervisor:37017573659',
+    now:'2026-10-02T14:06:59Z',ttl_ms:21600000
+  }).lease;
+  supervisor.generation=6;
+  const request=buildWorkerRequest({
+    execution_id:'run5',edition_id:'dab-edition-2026-10-02',branch:'b',task_id:'11',
+    capability:'native_chatgpt',instruction:'same task',writer_generation:5,
+    created_at:'2026-10-02T14:10:44Z'
+  });
+  const refreshed=refreshScheduledWorkerFence(supervisor,{
+    request,owner_id:'scheduled-image:task11',now:'2026-10-02T14:10:45Z',ttl_ms:1800000
+  });
+  assert.equal(refreshed.acquired,true);
+  assert.equal(refreshed.stale_scheduling_generation,true);
+  assert.equal(refreshed.request_generation_is_provenance,true);
+  assert.ok(refreshed.authority_generation>6);
+  assert.throws(()=>assertWriterFence(refreshed.lease,{
+    execution_id:'run5',owner_id:'scheduled-image:task11',generation:5,now:'2026-10-02T14:10:46Z'
+  }),/STALE_WRITER_FENCE/);
+  assert.equal(assertWriterFence(refreshed.lease,{
+    execution_id:'run5',owner_id:'scheduled-image:task11',generation:refreshed.authority_generation,now:'2026-10-02T14:10:46Z'
+  }),true);
+});
+
+test('task-specific worker release is explicit and event-driven Supervisor handoff compatible',()=>{
+  const lease=acquireWriterLease(null,{
+    execution_id:'run5',owner_id:'scheduled-image:task16',now:'2026-10-02T15:18:00Z',ttl_ms:1800000
+  }).lease;
+  const released=buildTaskWriterHandoffRelease(lease,{
+    execution_id:'run5',owner_id:'scheduled-image:task16',generation:lease.generation,
+    task_id:'16',boundary:'Done',now:'2026-10-02T15:20:58Z'
+  });
+  assert.equal(released.released,true);
+  assert.equal(released.released_at,'2026-10-02T15:20:58Z');
+  assert.equal(released.release_reason,'TASK_16_DONE_HANDOFF_TO_SUPERVISOR');
+  assert.equal(released.expires_at,released.released_at);
+});
+
+test('Kanban contract is exactly Backlog to WIP to Done with all 30 task durations and total elapsed',()=>{
+  const tasks=Object.fromEntries(Array.from({length:30},(_,i)=>[String(i).padStart(2,'0'),{title:'Task '+String(i).padStart(2,'0')}]));
   const events=[
     {task_id:'00',from:'Backlog',to:'Active',at:'2026-10-01T20:00:00Z'},
     {task_id:'00',from:'Active',to:'Done',at:'2026-10-01T20:01:00Z'},
     {task_id:'01',from:'Backlog',to:'Active',at:'2026-10-01T20:01:01Z'}
   ];
   const k=projectKanbanFromEvents({tasks,events,execution_id:'run4',edition_id:'dab-edition-2026-10-01',observed_at:'2026-10-01T20:02:00Z'});
-  assert.equal(k.tasks['00'].state,'Done');
-  assert.equal(k.tasks['01'].state,'Active');
+  assert.deepEqual(k.columns,['Backlog','WIP','Done']);
+  assert.equal(Object.keys(k.tasks).length,30);
+  assert.equal(k.tasks['00'].column,'Done');
+  assert.equal(k.tasks['01'].column,'WIP');
+  assert.equal(k.tasks['02'].column,'Backlog');
+  assert.equal(k.tasks['00'].duration,'60s');
+  assert.equal(k.tasks['01'].duration,'59s');
+  assert.equal(k.tasks['02'].duration,'unavailable');
+  assert.equal(k.total_brief_elapsed,'120s');
+  assert.deepEqual(validateKanbanContract({kanban:k,events,require_all_tasks:true}),[]);
   assert.equal(kanbanProjectionFresh({events,kanban:k}).fresh,true);
+});
+
+test('Kanban fails closed on wrong order, Current column, missing task duration, missing total elapsed and stale projection',()=>{
+  const tasks=Object.fromEntries(Array.from({length:30},(_,i)=>[String(i).padStart(2,'0'),{title:'Task '+i}]));
+  const events=[{task_id:'00',from:'Backlog',to:'Active',at:'2026-10-01T20:00:00Z'}];
+  const k=projectKanbanFromEvents({tasks,events,execution_id:'run4',edition_id:'dab-edition-2026-10-01',observed_at:'2026-10-01T20:02:00Z'});
+  assert.ok(validateKanbanContract({kanban:{...k,columns:['Done','WIP','Backlog']},events}).includes('kanban_column_order_required'));
+  assert.ok(validateKanbanContract({kanban:{...k,columns:['Backlog','Current','WIP','Done']},events}).includes('kanban_current_column_prohibited'));
+  const missingDuration=structuredClone(k); delete missingDuration.tasks['00'].duration;
+  assert.ok(validateKanbanContract({kanban:missingDuration,events}).includes('kanban_task_duration_missing:00'));
+  const missingTotal={...k}; delete missingTotal.total_brief_elapsed;
+  assert.ok(validateKanbanContract({kanban:missingTotal,events}).includes('kanban_total_elapsed_missing'));
   const stale={...k,source_event_digest:'sha256:'+'0'.repeat(64)};
+  assert.ok(validateKanbanContract({kanban:stale,events}).includes('kanban_projection_stale'));
   assert.equal(kanbanProjectionFresh({events,kanban:stale}).fresh,false);
 });
 
@@ -266,6 +348,8 @@ test('explicit worker release can hand the same run back to the Supervisor',()=>
   const y=fs.readFileSync('.github/workflows/run-supervisor-handoff.yml','utf8');
   assert.match(y,/writer-leases/);
   assert.match(y,/HANDOFF_TO_SUPERVISOR/);
+  assert.match(y,/released_at/);
+  assert.match(y,/release_reason/);
   assert.match(y,/active-production-run\.json/);
   assert.match(y,/gh workflow run run-supervisor\.yml/);
   assert.match(y,/takeover_dead_owner=true/);
