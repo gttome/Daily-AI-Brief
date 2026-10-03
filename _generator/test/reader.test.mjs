@@ -110,8 +110,8 @@ test('podcast reader pages omit internal Evidence sections', () => {
   for (const name of ['podcasts/2026-10-03/run7-1.md','podcasts/2026-10-03/run7-2.md']) {
     const page=files.get(name);
     assert.ok(page);
-    assert.doesNotMatch(page, /\\*\\*Evidence:\\*\\*/);
-    assert.match(page, /\\*\\*Listen \\/ watch:\\*\\*/);
+    assert.ok(!page.includes('**Evidence:**'));
+    assert.ok(page.includes('**Listen / watch:**'));
   }
 });
 
