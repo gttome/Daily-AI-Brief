@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
   "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
-  "observed_at": "2026-10-03T01:58:43.388Z",
+  "observed_at": "2026-10-03T02:03:48.383Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:40b20c2b6639fbcf54b639923d7d2b32d089c27e073550ceb7e03fcb0f94ce84",
+  "source_event_digest": "sha256:c5201a7397dec3dd894c8dd6dc636db9846ae6927dc9514691a923e65a4e3246",
   "run_started_at": "2026-10-02T23:00:34.043Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 10689.345,
-  "total_brief_elapsed": "10689.345s",
+  "total_brief_elapsed_seconds": 10994.34,
+  "total_brief_elapsed": "10994.34s",
   "tasks": {
     "10": {
       "id": "10",
@@ -141,17 +141,17 @@
     "18": {
       "id": "18",
       "title": "Assemble canonical Brief and permanent pages",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Active",
+      "column": "WIP",
+      "entered_backlog_at": "2026-10-03T02:02:42Z",
+      "active_started_at": "2026-10-03T02:02:42Z",
       "review_started_at": null,
       "blocked_started_at": null,
       "done_at": null,
       "cycle_seconds": null,
       "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "duration_seconds": 66.383,
+      "duration": "66.383s"
     },
     "19": {
       "id": "19",
