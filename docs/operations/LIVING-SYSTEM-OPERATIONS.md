@@ -1415,7 +1415,7 @@ This section is the current operating contract before the next production alloca
 ### Recoverable blockers and writer handoff
 
 - Recoverable blocker evidence is actionable only when task identity, valid timestamp, Blocked state, `recoverable=true`, non-external status and a non-empty recovery action are machine-readable.
-- Safe compatibility aliases are normalized: `state=Blocked` may become `to=Blocked`, and `targeted_next_action` may become `recovery_action`. Normalization never invents recoverability or overrides an external blocker.
+- Safe compatibility aliases are normalized without overriding canonical values: `from_state` may become `from`, `to_state` or `state` may become `to`, and `targeted_next_action` may become `recovery_action`. This allows append-only worker receipts written with legacy state-field names to remain authoritative while new writers must use canonical `from`/`to`. Normalization never invents recoverability or overrides an external blocker.
 - A scheduled Task 11-16 worker releases authority only at a durable Done or Blocked boundary with `released=true`, `released_at`, `expires_at == released_at`, and an exact `TASK_11..16_{DONE|BLOCKED}_HANDOFF_TO_SUPERVISOR` reason.
 - The event-driven writer-handoff workflow resumes only the same active execution, refuses ambiguous release records, and refuses duplicate dispatch while a Supervisor is already queued/running. Completed tasks are never redone as part of the handoff.
 - A legitimate writer-fence transfer discovered inside the persistent Supervisor loop is a clean handoff boundary, not a production failure. The Supervisor asserts its current fence before renewal; ownership loss or a renewal-time transfer race causes a successful yield without exit-code failure.
