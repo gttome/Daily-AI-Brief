@@ -465,7 +465,7 @@ test('Supervisor explicitly dispatches queued Task 17 repository work despite GI
 
 
 test('repository recovery contracts enforce the 60-second substantive-progress liveness boundary',()=>{
-  const c=contract();
+  const c=JSON.parse(fs.readFileSync('docs/operations/task-recovery-contracts.json','utf8'));
   for(const id of ['17','18','19','20','21','22','24','27','28','29'])
     assert.equal(c.tasks[id].stale_after_seconds,60,id);
   assert.equal(c.repository_liveness_policy.max_idle_seconds,60);
