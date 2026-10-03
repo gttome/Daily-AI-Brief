@@ -14,7 +14,7 @@ reader_release: true
 # One Agent Skills package, many Copilot workflows
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Extended recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Extended recency fallback</span><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 6 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 <span class="story-data" data-story-id="dab-story-2026-10-03-m07" hidden></span>
