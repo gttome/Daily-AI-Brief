@@ -1,9 +1,12 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261003-run7",
-  "owner_id": "github-actions-37105683221-1",
-  "generation": 15,
-  "acquired_at": "2026-10-03T07:14:40.215Z",
-  "last_heartbeat_at": "2026-10-03T07:14:40.215Z",
-  "expires_at": "2026-10-03T13:14:40.215Z"
+  "owner_id": "scheduled-consumer:6abeb9a2b8a88191949dc420d5e10feb:reliable-edition-20261003-run7:task-12:generation-16:invocation-20261003T074515Z",
+  "generation": 16,
+  "acquired_at": "2026-10-03T07:45:15.367Z",
+  "last_heartbeat_at": "2026-10-03T07:45:15.367Z",
+  "expires_at": "2026-10-03T08:15:15.368Z",
+  "released": false,
+  "supersedes_stale_generation": 15,
+  "stale_generation_last_heartbeat_at": "2026-10-03T07:14:40.215Z"
 }
