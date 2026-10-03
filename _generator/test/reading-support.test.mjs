@@ -27,6 +27,33 @@ test('September 30 recovery has estimates on every brief and permanent article p
  reviewedWithoutEstimate.stories[0].source.reading_evidence.full_source_read=false;
  assert.throws(()=>validateReadingSupport(reviewedWithoutEstimate,missing),/verified full-source reading evidence required/);
 });
+test('October 3 overview and permanent pages show article reading times and podcast runtimes',async()=>{
+ const {renderBody}=await import('../lib/render.mjs');
+ const current=JSON.parse(fs.readFileSync('_data/editions/2026-10-03.json'));
+ const body=renderBody(current),files=readerFoundationFiles(current,process.cwd());
+ const overview=body.match(/<section class="edition-overview"[\s\S]*?<\/section>/)[0];
+ for(const story of current.stories){
+  const minutes=sourceReadingMinutes(story);
+  assert.ok(minutes>0,story.story_id);
+  assert.ok(overview.includes(`Article · about ${minutes} min source read`),story.story_id);
+  assert.ok(body.includes(`Source article · about ${minutes} min read`),story.story_id);
+  assert.ok(files.get(`stories/2026-10-03/${story.slug}.md`).includes(`Source article · about ${minutes} min read`),story.story_id);
+ }
+ assert.match(overview,/Podcast · 1:28:30/);
+ assert.match(overview,/Podcast · 56:16/);
+ assert.match(files.get('podcasts/2026-10-03/run7-1.md'),/\*\*Duration:\*\* 1:28:30/);
+});
+
+test('October 4 and later require a verified reading-time estimate for every article',()=>{
+ const future=JSON.parse(fs.readFileSync('_data/editions/2026-10-03.json'));
+ future.brief_date='2026-10-04';
+ for(const story of future.stories)story.source.reading_evidence={...story.source.reading_evidence,status:'verified',reading_minutes:5,word_count:null,verified_at:'2026-10-03T18:30:00Z',method:'verified estimate',full_source_read:true};
+ const data={editions:{},source_reading:{}};
+ assert.doesNotThrow(()=>validateReadingSupport(future,data));
+ delete future.stories[0].source.reading_evidence.reading_minutes;
+ assert.throws(()=>validateReadingSupport(future,data),/verified source reading time required/);
+});
+
 test('source estimates match the brief and all permanent shared article pages',()=>{
  const current=JSON.parse(fs.readFileSync('_data/editions/2026-09-13.json'));
  const files=readerFoundationFiles(current,process.cwd());
@@ -40,6 +67,7 @@ test('approved article and podcast context is safe and preserves uncertainty',()
 });
 test('duration and estimated reading time have explicit boundaries',()=>{
  assert.equal(readingMinutes({summary:'word '.repeat(201)}),null);
+ assert.equal(readingMinutes({status:'verified',reading_minutes:5,word_count:null,source_url:'https://example.com/article',verified_at:'2026-10-03',method:'publisher display'}),5);
  assert.equal(readingMinutes({status:'verified',word_count:201,source_url:'https://example.com/article',verified_at:'2026-09-13',method:'main text'}),2);
  assert.match(renderReadingSupport({summary:'word '.repeat(1000)},'unknown','2026-09-13'),/Source reading time unavailable/);
  assert.equal(renderReadingSupport({runtime_seconds:429},'new','2026-09-13','Video'),'');
