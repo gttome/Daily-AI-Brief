@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
   "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
-  "observed_at": "2026-10-03T01:56:40.675Z",
+  "observed_at": "2026-10-03T01:58:43.388Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:0e64e3d811c772ff98facc68195c748b040de260e2ec8d7cace9baa04cc4cda0",
+  "source_event_digest": "sha256:40b20c2b6639fbcf54b639923d7d2b32d089c27e073550ceb7e03fcb0f94ce84",
   "run_started_at": "2026-10-02T23:00:34.043Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 10566.632,
-  "total_brief_elapsed": "10566.632s",
+  "total_brief_elapsed_seconds": 10689.345,
+  "total_brief_elapsed": "10689.345s",
   "tasks": {
     "10": {
       "id": "10",
@@ -126,17 +126,17 @@
     "17": {
       "id": "17",
       "title": "Review six-image set, differentiation and accessibility",
-      "state": "Active",
-      "column": "WIP",
+      "state": "Done",
+      "column": "Done",
       "entered_backlog_at": "2026-10-03T01:56:08Z",
       "active_started_at": "2026-10-03T01:56:08Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": 32.675,
-      "duration": "32.675s"
+      "done_at": "2026-10-03T01:56:36Z",
+      "cycle_seconds": 28,
+      "active_seconds": 28,
+      "duration_seconds": 28,
+      "duration": "28s"
     },
     "18": {
       "id": "18",
