@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
   "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
-  "observed_at": "2026-10-03T02:25:08.617Z",
+  "observed_at": "2026-10-03T02:26:10.676Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:03a67012a381527aba832c1a4242bd5282b5b65485c88e14d888cdfcd540e8b9",
+  "source_event_digest": "sha256:1e11b654925f24e5e2a905f6c0aa8a201f1b533ec9cb4572e1c4a384885bb14f",
   "run_started_at": "2026-10-02T23:00:34.043Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 12274.574,
-  "total_brief_elapsed": "12274.574s",
+  "total_brief_elapsed_seconds": 12336.633,
+  "total_brief_elapsed": "12336.633s",
   "tasks": {
     "10": {
       "id": "10",
@@ -186,17 +186,17 @@
     "21": {
       "id": "21",
       "title": "Perform focused repair only if qualification identifies a defect",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Active",
+      "column": "WIP",
+      "entered_backlog_at": "2026-10-03T02:25:19Z",
+      "active_started_at": "2026-10-03T02:25:19Z",
       "review_started_at": null,
       "blocked_started_at": null,
       "done_at": null,
       "cycle_seconds": null,
       "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "duration_seconds": 51.676,
+      "duration": "51.676s"
     },
     "22": {
       "id": "22",
