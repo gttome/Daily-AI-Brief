@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
   "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
-  "observed_at": "2026-10-03T00:22:12.157Z",
+  "observed_at": "2026-10-03T00:45:31.155Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:e09c0473c8943b4f0ae3640e5fa80766f84b9e431c2dc0dabfbb81d95dd0e058",
+  "source_event_digest": "sha256:33fd8aec9f90a3fe09dc85e2bae23cadc4bdc00951959207c075a2c1f5b98db9",
   "run_started_at": "2026-10-02T23:00:34.043Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 4898.114,
-  "total_brief_elapsed": "4898.114s",
+  "total_brief_elapsed_seconds": 6297.112,
+  "total_brief_elapsed": "6297.112s",
   "tasks": {
     "10": {
       "id": "10",
@@ -411,17 +411,17 @@
     "06": {
       "id": "06",
       "title": "Select and verify two videos",
-      "state": "Active",
-      "column": "WIP",
+      "state": "Done",
+      "column": "Done",
       "entered_backlog_at": "2026-10-03T00:20:09Z",
       "active_started_at": "2026-10-03T00:20:09Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": 123.157,
-      "duration": "123.157s"
+      "done_at": "2026-10-03T00:44:03Z",
+      "cycle_seconds": 1434,
+      "active_seconds": 1434,
+      "duration_seconds": 1434,
+      "duration": "1434s"
     },
     "07": {
       "id": "07",
