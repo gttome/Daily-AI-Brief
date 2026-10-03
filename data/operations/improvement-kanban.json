@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-03T19:37:15Z",
+  "observed_at": "2026-10-03T19:56:40.000Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -220,11 +220,11 @@
     },
     {
       "id": "DAB-KB-012",
-      "lane": "wip",
+      "lane": "done",
       "priority": "P0",
       "category": "Liveness",
       "title": "Implement 10-minute ChatGPT Watchdog Ring",
-      "summary": "Replace the single hourly :48 outer backstop with six coordinated ordinary ChatGPT hourly schedules staggered ten minutes apart. Preserve the GitHub inner Supervisor/watchdog, add a separate recovery coordination lease, and require verified forward progress before recovery is declared successful.",
+      "summary": "Implemented and protected: six ordinary hourly ChatGPT Watchdog schedules staggered at 03/13/23/33/43/53, with an execution-scoped recovery coordination lease, minimum-action recovery, exact-request idempotency, and verified substantive-progress success criteria. Core PR #415 merged after full CI and live scheduled GitHub permission verification.",
       "acceptance": [
         "Six enabled exact-hourly Watchdog schedules at minutes 03,13,23,33,43,53.",
         "Combined nominal outer check cadence is 10 minutes.",
@@ -241,7 +241,12 @@
         "docs/operations/CHATGPT-WATCHDOG-RING.md",
         "_generator/lib/chatgpt-watchdog-ring.mjs",
         "_records/hardening/chatgpt-watchdog-ring-2026-10-03/schedule-observation.json",
-        "Run Supervisor / GitHub watchdog architecture"
+        "Run Supervisor / GitHub watchdog architecture",
+        "PR #415",
+        "CI run 37149575554",
+        "DAB-OPS-20261003-007",
+        "docs/operations/CHATGPT-WATCHDOG-RING-IMPLEMENTATION-REPORT-2026-10-03.md",
+        "_records/hardening/chatgpt-watchdog-ring-2026-10-03/final-verification.json"
       ]
     },
     {
