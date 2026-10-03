@@ -1,0 +1,31 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "e80815f1a5b96ef085e7fe7966a0520762184a096ec2ed8d96349d23177d4d53",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "16",
+  "capability": "native_chatgpt",
+  "instruction": "Generate from the sealed story specification with the proven professional native-image path; capture exact PNG bytes immediately; persist via an approved small-PNG route; verify read-back identity; review the saved Git asset; accept_locked or reject only this image.",
+  "writer_generation": 17,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-03T01:42:59.378Z",
+  "writer_generation_is_provenance": true,
+  "authority_refresh_required_at_invocation": true,
+  "status": "queued_for_scheduled_consumer",
+  "dispatch": {
+    "schema_version": "scheduled-image-dispatch-v2",
+    "status": "QUEUED_FOR_SCHEDULED_CONSUMER",
+    "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
+    "consumer_id": "6abeb9a2b8a88191949dc420d5e10feb",
+    "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+    "task_id": "16",
+    "generation_started": false,
+    "accepted_locked": false,
+    "writer_generation_is_provenance": true,
+    "authority_refresh_required_at_invocation": true,
+    "next_action": "Enabled admitted scheduled consumer refreshes current fenced authority at invocation and consumes this exact request."
+  }
+}
