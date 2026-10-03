@@ -24,7 +24,7 @@ reader_release: true
 
 **Summary:** First-party visual summary of the streaming transcription and voice models behind the selected low-latency voice-agent story.
 
-**Why it matters:** First-party visual summary of the streaming transcription and voice models behind the selected low-latency voice-agent story.
+**Why it matters:** The short visual makes the interaction between streaming transcription and speech generation concrete. For practitioners, it shows where latency is gained before an agent has a complete utterance, helping translate the article’s timing claims into interface-design decisions.
 
 
 
