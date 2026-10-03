@@ -37,7 +37,8 @@
       "terminal_run_immutability_regression",
       "kanban_observability_only",
       "metrics_observability_only",
-      "projection_defects_nonblocking"
+      "projection_defects_nonblocking",
+      "improvement_board_learning_reconciliation"
     ],
     "deferred_route_gates": {
       "unattended_image_host": {
@@ -140,7 +141,14 @@
       "next_run_validation",
       "run_evidence_when_available"
     ],
-    "learning_completion_rule": "A material production issue is not considered learned merely because the run advanced. Record it in the canonical JSONL and human projection during the run; when behavior changes, synchronize the living operations/readiness contract; record permanent implementation, regression protection and next-run validation or explicitly mark them pending."
+    "learning_completion_rule": "A material production issue is not considered learned merely because the run advanced. Record it in the canonical JSONL and human projection during the run; when behavior changes, synchronize the living operations/readiness contract; record permanent implementation, regression protection and next-run validation or explicitly mark them pending.",
+    "improvement_board": {
+      "canonical": "data/operations/improvement-kanban.json",
+      "reconciler": "_generator/lib/improvement-kanban.mjs",
+      "task00": "Reconcile the board against the canonical learning ledger; surface every unresolved ledger problem that is not represented on the board.",
+      "task29": "Reconcile the completed execution learning delta into the canonical ledger and improvement board before certifying next-edition readiness.",
+      "lane_policy": "Automated reconciliation annotates evidence and missing problems but never silently moves cards between lanes."
+    }
   },
   "liveness": {
     "stale_active_threshold_minutes_max": 15,
