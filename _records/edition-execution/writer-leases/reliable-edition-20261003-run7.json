@@ -1,17 +1,17 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261003-run7",
-  "owner_id": "ordinary-chatgpt-repository-worker-task19",
+  "owner_id": "automation-run7-task19-recovery-generation30",
   "generation": 30,
   "task_id": "19",
   "operation_key": "72dfe65cd0d16ff9efd86d2c62fbc4b716765e73d5cb81293d43726713cedbae",
   "capability": "repository",
-  "acquired_at": "2026-10-03T13:12:53.095Z",
-  "last_heartbeat_at": "2026-10-03T13:12:53.095Z",
-  "expires_at": "2026-10-03T13:42:53.095Z",
+  "acquired_at": "2026-10-03T13:13:54.527848Z",
+  "last_heartbeat_at": "2026-10-03T13:13:54.527848Z",
+  "expires_at": "2026-10-03T13:28:54.527848Z",
   "supersedes": {
     "owner_id": "github-actions-37123040519-2",
     "generation": 29
   },
-  "authority_note": "Fresh task-specific authority acquired for exact queued Task 19; embedded request generation is provenance only."
+  "authority_note": "Fresh task-specific authority acquired for the exact queued Task 19 repository request; embedded request generation 29 is scheduling provenance only."
 }
