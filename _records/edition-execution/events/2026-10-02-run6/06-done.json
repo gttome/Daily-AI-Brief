@@ -1,0 +1,17 @@
+{
+  "task_id": "06",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-03T00:44:03Z",
+  "reason_code": "TWO_CURRENT_VIDEOS_VERIFIED",
+  "operation": "select_verify_two_videos",
+  "proof": {
+    "videos_path": "_records/editorial/2026-10-02-run6/videos.json",
+    "video_count": 2,
+    "target_runtime_under_10_minutes": true,
+    "fallback_runtime_used": false,
+    "request_key": "2a8c552f1e565208ddd3ab4d00887b600fd339070e1371d50ef9171a66e8c2bd",
+    "original_request_key": "17a398f9dc01bb3d29a9c5de823729e97e06b977d80500e52658a971e5f004a5",
+    "result": "PASS"
+  }
+}

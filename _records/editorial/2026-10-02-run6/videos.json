@@ -1,0 +1,40 @@
+{
+  "schema_version": "rehearsal-video-selection-v1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "execution_key": "2026-10-02-run6",
+  "verified_at": "2026-10-03T00:44:03Z",
+  "result": "PASS",
+  "videos": [
+    {
+      "ordinal": 1,
+      "title": "How to build an agentic C-Suite with Google Cloud ADK and Cloud Run",
+      "channel": "Google Cloud Tech",
+      "publication_date": "2026-10-01",
+      "runtime_seconds": 386,
+      "url": "https://www.youtube.com/watch?v=6nofrnjOCNI",
+      "freshness_tier": "current_72h",
+      "connection": "A concise first-party technical walkthrough of orchestrating specialized agents with Google Cloud ADK and deploying the system on Cloud Run.",
+      "verification": "Google Cloud Tech listing dated October 1, 2026; independent indexed channel mirror reports a 6:26 runtime."
+    },
+    {
+      "ordinal": 2,
+      "title": "I Tested Codex's $500/mo Ultrafast. What You Need to Know.",
+      "channel": "Nate Herk | AI Automation",
+      "publication_date": "2026-10-01",
+      "runtime_seconds": 543,
+      "url": "https://www.youtube.com/watch?v=pY5_Ux_YJjo",
+      "freshness_tier": "current_72h",
+      "connection": "A practical side-by-side test of Codex Ultrafast versus Standard on real work, including time, output-quality and usage tradeoffs.",
+      "verification": "Creator/community post and indexed YouTube listing date it October 1, 2026 and report a 9:03 runtime."
+    }
+  ],
+  "checks": {
+    "count": 2,
+    "target_runtime_under_10_minutes": true,
+    "fallback_runtime_used": false,
+    "source_diverse": true,
+    "publication_before_verification": true,
+    "prior_run5_exact_video_repeat": false
+  }
+}

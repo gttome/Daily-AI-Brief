@@ -1,0 +1,20 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "2a8c552f1e565208ddd3ab4d00887b600fd339070e1371d50ef9171a66e8c2bd",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "06",
+  "request_writer_generation": 4,
+  "status": "passed",
+  "completed_at": "2026-10-03T00:44:03Z",
+  "task_outcome": "Done",
+  "recovered_from_request_key": "17a398f9dc01bb3d29a9c5de823729e97e06b977d80500e52658a971e5f004a5",
+  "evidence": {
+    "videos_path": "_records/editorial/2026-10-02-run6/videos.json",
+    "video_count": 2,
+    "target_runtime_under_10_minutes": true,
+    "fallback_runtime_used": false,
+    "result": "PASS"
+  }
+}
