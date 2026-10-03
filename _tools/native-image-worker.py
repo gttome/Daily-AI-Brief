@@ -26,20 +26,38 @@ def main():
     registration=Path(a.host_registration)
     host=json.loads(registration.read_text()) if registration.exists() else {}
     consumer=host.get('reusable_consumer') or {}
-    consumer_id=str(consumer.get('automation_id',''))
     qualified=host.get('status')=='READY' and str(host.get('host_id','')).startswith('chatgpt-automation:') and host.get('qualification_receipt_path')
+    expected={'A':3,'B':13,'C':23,'D':33,'E':43,'F':53}
+    slots=consumer.get('slots') if isinstance(consumer.get('slots'),list) else []
+    slot_map={str(x.get('slot','')):x for x in slots if isinstance(x,dict)}
+    ring_slots_ready=all(
+        s in slot_map and
+        len(str(slot_map[s].get('automation_id','')))==32 and
+        slot_map[s].get('enabled') is True and
+        slot_map[s].get('native_image_eligible') is True and
+        int(slot_map[s].get('minute',-1))==minute
+        for s,minute in expected.items()
+    )
     admitted_consumer=(
-        qualified and consumer.get('scheduler_kind')=='chatgpt_automation' and
-        len(consumer_id)==32 and consumer.get('enabled') is True and
-        consumer.get('role')=='scheduled_native_image_request_consumer'
+        qualified and consumer.get('scheduler_kind')=='chatgpt_watchdog_ring' and
+        consumer.get('enabled') is True and
+        consumer.get('role')=='scheduled_native_image_request_consumer_ring' and
+        consumer.get('eligible_slots')==list(expected.keys()) and
+        consumer.get('special_slot') is None and
+        consumer.get('functional_equivalence_required') is True and
+        consumer.get('single_slot_binding') is False and
+        consumer.get('consume_queued_request_without_stale_wait') is True and
+        len(slots)==6 and ring_slots_ready
     )
     if admitted_consumer:
-        result={'schema_version':'scheduled-image-dispatch-v2','status':'QUEUED_FOR_SCHEDULED_CONSUMER',
-            'qualification_host_id':host['host_id'],'consumer_id':consumer_id,
+        result={'schema_version':'scheduled-image-dispatch-v3','status':'QUEUED_FOR_SCHEDULED_CONSUMER',
+            'qualification_host_id':host['host_id'],'consumer_kind':'chatgpt_watchdog_ring',
+            'eligible_consumer_slots':list(expected.keys()),'special_consumer_slot':None,
             'execution_id':a.execution_id,'task_id':task,
             'generation_started':False,'accepted_locked':False,
             'writer_generation_is_provenance':True,'authority_refresh_required_at_invocation':True,
-            'next_action':'Enabled admitted scheduled consumer refreshes current fenced authority at invocation and consumes this exact request.'}
+            'single_operation_owner_required':True,
+            'next_action':'The next eligible Watchdog Ring slot acquires the shared recovery/consumer lease, refreshes current fenced authority, and consumes this exact request without waiting for staleness.'}
         if req.get('status')!='queued_for_scheduled_consumer':
             req.update(status='queued_for_scheduled_consumer',dispatch=result)
             request.write_text(json.dumps(req,indent=2)+'\n')
@@ -49,7 +67,7 @@ def main():
         result={'schema_version':'image-capability-blocker-v1','status':'CAPABILITY_BLOCKED',
             'reason':'NO_ENABLED_REUSABLE_SCHEDULED_IMAGE_CONSUMER','execution_id':a.execution_id,
             'task_id':task,'at':now,'generation_started':False,'accepted_locked':False,
-            'next_action':'Bind an enabled reusable scheduled ChatGPT consumer in protected host registration; do not create a duplicate production run.'}
+            'next_action':'Bind all six equivalent Watchdog Ring slots as the enabled reusable scheduled image consumer; do not create a duplicate production run.'}
         req.update(status='capability_blocked',blocker=result)
         request.write_text(json.dumps(req,indent=2)+'\n')
         print(json.dumps(result)); return
