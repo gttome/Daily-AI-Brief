@@ -241,3 +241,12 @@ The new Supervisor must attach to:
 It reconstructs completed work from existing durable events and accepted image evidence. Tasks 00-14 remain complete unless their own immutable evidence is proven invalid. Existing accepted images remain immutable. At adoption, recovery begins from current Task 15 and its latest durable m08 attempt evidence.
 
 Run 4 becomes the first production run closed under Supervisor v2 and cumulative Task 29 learning reconciliation.
+
+
+## Ring-wide image-consumer invariant
+
+The ChatGPT Watchdog Ring is the reusable scheduled native-image consumer for Tasks 11–16. Slots A–F are functionally equivalent; no slot-specific image authority is permitted.
+
+When the Supervisor queues an exact unclaimed `native_chatgpt` request for Task 11–16, the next eligible Watchdog may consume it immediately. It does not wait for a stale threshold and does not wait for Slot F. Exactly one slot owns the operation through the shared Watchdog recovery/consumer lease and current production writer fence.
+
+This gives the image stage six scheduled consumer opportunities per hour, nominally ten minutes apart, instead of one dedicated hourly F opportunity. The cadence is not a hard real-time guarantee. Accepted_locked images remain immutable, and every image still uses the sealed single-story specification, professional native generation, exact-byte persistence, saved-Git review and explicit Supervisor handoff.
