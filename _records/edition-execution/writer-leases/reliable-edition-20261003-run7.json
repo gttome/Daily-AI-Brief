@@ -1,9 +1,13 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261003-run7",
-  "owner_id": "github-actions-37101901207-1",
-  "generation": 2,
-  "acquired_at": "2026-10-03T06:05:38.481Z",
-  "last_heartbeat_at": "2026-10-03T06:05:38.481Z",
-  "expires_at": "2026-10-03T12:05:38.481Z"
+  "owner_id": "scheduled-chatgpt-controller-6abeba31fe28819184544abf70874a80-task01",
+  "generation": 3,
+  "acquired_at": "2026-10-03T06:08:49.915Z",
+  "last_heartbeat_at": "2026-10-03T06:08:49.915Z",
+  "expires_at": "2026-10-03T08:08:49.915Z",
+  "prior_owner_id": "github-actions-37101901207-1",
+  "prior_generation": 2,
+  "acquisition_reason": "TASK_01_SUBSTANTIVE_WORK_CONTROLLER_TAKEOVER",
+  "note": "Supervisor bookkeeping did not advance Task 01; the primary scheduled controller acquired current task-specific authority for the same execution."
 }
