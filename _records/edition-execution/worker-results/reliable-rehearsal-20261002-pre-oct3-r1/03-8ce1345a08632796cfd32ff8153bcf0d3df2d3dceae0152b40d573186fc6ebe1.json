@@ -1,0 +1,22 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "8ce1345a08632796cfd32ff8153bcf0d3df2d3dceae0152b40d573186fc6ebe1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "03",
+  "request_writer_generation": 4,
+  "status": "passed",
+  "completed_at": "2026-10-03T00:10:51Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "candidate_path": "_records/discovery/2026-10-02-run6/candidates.json",
+    "candidate_count": 9,
+    "balanced": "3/3/3",
+    "prior_run5_locked_stories_excluded": true,
+    "full_source_review_deferred_to_task04": true,
+    "liveness_takeover": true,
+    "stale_active_detected": true,
+    "supervisor_only_reconciliation_not_counted_as_worker_progress": true
+  }
+}
