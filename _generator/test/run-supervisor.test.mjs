@@ -373,12 +373,14 @@ test('Supervisor workflow contains the one-minute loop, single concurrency lane 
 });
 
 
-test('Supervisor does not steal an unfinished Tasks 11-16 scheduled-image delegation',()=>{
+test('Supervisor delegates only when the newest unfinished Tasks 11-16 request is queued for the scheduled image consumer',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
   assert.match(y,/Yield while a scheduled image consumer owns the next operation/);
-  assert.match(y,/queued_for_scheduled_consumer/);
-  assert.match(y,/\^1\[1-6\]\$/);
-  assert.match(y,/events,t\+"-done\.json"/);
+  assert.match(y,/const latest=new Map\(\)/);
+  assert.match(y,/Date\.parse\(x\.created_at\|\|0\)/);
+  assert.match(y,/ts>pts\|\|\(ts===pts&&n>prior\.n\)/);
+  assert.match(y,/eventNames\.some\(n=>n\.startsWith\(t\+"-done"\)&&n\.endsWith\("\.json"\)\)/);
+  assert.match(y,/x\.capability==="native_chatgpt"&&String\(x\.status\|\|""\)==="queued_for_scheduled_consumer"/);
   assert.match(y,/Supervisor will not acquire or take over the writer fence/);
   const configure=y.indexOf('- name: Configure run-branch writer');
   const delegation=y.indexOf('- name: Yield while a scheduled image consumer owns the next operation');
