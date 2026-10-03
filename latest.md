@@ -4,7 +4,7 @@
 **Coverage period:** September 30–October 3, 2026
 
 <!-- reader-release:start -->
-<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-10-03-m07">One Agent Skills package, many Copilot workflows</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-10-03-m08">California tests the legal boundary for rogue agents</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-10-03-m04">Anthropic turns enterprise AI delivery into a profession</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-10-03-m05">Customer service prepares for agents on both sides</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-10-03-m01">Voice agents get a 100-millisecond head start</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-10-03-m02">Federated learning gets a public privacy proof</a><span>Article · Source reading time unavailable</span></li><li><a href="#general">Introducing MAI-Transcribe-2-Streaming, MAI-Voice-2.1 and MAI-Voice-2.1-Flash</a><span>Video · 3:00</span></li><li><a href="#agents-for-non-technical-people">Flight Intelligence: The Power of Work IQ | Discover how Work IQ is your business&#39;s secret sauce</a><span>Video · 14:34</span></li><li><a href="#podcast-dab-podcast-2026-10-03-1">Dots get up in Muse’s business</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-10-03-2">An Argument Against AI Doom</a><span>Podcast</span></li></ol></section>
+<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-10-03-m07">One Agent Skills package, many Copilot workflows</a><span>Article · about 6 min source read</span></li><li><a href="#reading-dab-story-2026-10-03-m08">California tests the legal boundary for rogue agents</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-10-03-m04">Anthropic turns enterprise AI delivery into a profession</a><span>Article · about 6 min source read</span></li><li><a href="#reading-dab-story-2026-10-03-m05">Customer service prepares for agents on both sides</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-10-03-m01">Voice agents get a 100-millisecond head start</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-10-03-m02">Federated learning gets a public privacy proof</a><span>Article · about 7 min source read</span></li><li><a href="#general">Introducing MAI-Transcribe-2-Streaming, MAI-Voice-2.1 and MAI-Voice-2.1-Flash</a><span>Video · 3:00</span></li><li><a href="#agents-for-non-technical-people">Flight Intelligence: The Power of Work IQ | Discover how Work IQ is your business&#39;s secret sauce</a><span>Video · 14:34</span></li><li><a href="#podcast-dab-podcast-2026-10-03-1">Dots get up in Muse’s business</a><span>Podcast · 1:28:30</span></li><li><a href="#podcast-dab-podcast-2026-10-03-2">An Argument Against AI Doom</a><span>Podcast · 56:16</span></li></ol></section>
 <!-- reader-release:end -->
 
 <span id="reading-dab-story-2026-10-03-m07"></span>
@@ -12,7 +12,7 @@
 ## 1. One Agent Skills package, many Copilot workflows
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Extended recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Extended recency fallback</span><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 6 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Everyone**
@@ -52,7 +52,7 @@
 ## 2. California tests the legal boundary for rogue agents
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 3 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Everyone**
@@ -92,7 +92,7 @@
 ## 3. Anthropic turns enterprise AI delivery into a profession
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 02 Oct 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 6 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 02 Oct 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
@@ -132,7 +132,7 @@
 ## 4. Customer service prepares for agents on both sides
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 5 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
@@ -172,7 +172,7 @@
 ## 5. Voice agents get a 100-millisecond head start
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 5 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
@@ -212,7 +212,7 @@
 ## 6. Federated learning gets a public privacy proof
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 02 Oct 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 7 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 02 Oct 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
@@ -315,7 +315,7 @@
 **Host / guest:** The Vergecast team  
 **Focus:** Agents for Everyone  
 **Date:** October 2, 2026  
-**Duration:** Not independently verified  
+**Duration:** 1:28:30  
 **Topics:** business agents, trust and agentic assistants
 
 **Summary:** Independent technology-news discussion of business agents, trust and the current agentic-assistant market.
