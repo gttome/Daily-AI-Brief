@@ -333,38 +333,34 @@ gantt
     dateFormat HH:mm
     axisFormat %H:%M
 
-    section Prior Evening
-    Nightly readiness + owner notification :done, ready, 21:30, 30m
+    section Prior Evening Production Start
+    Daily Brief Controller               :active, controller, 19:00, 5h
 
-    section Zero-Model Prework
-    Metadata preflight                   :active, meta, 03:00, 15m
-    Evidence preflight                   :evidence, 03:15, 30m
+    section Inner GitHub Liveness
+    Run Supervisor (~1-minute loop)      :active, supervisor, 19:00, 13h30m
+    Supervisor watchdog (every 5 min)    :crit, ghwatch, 19:00, 13h30m
 
-    section Production
-    Primary Production Orchestrator      :prod, 04:00, 4h
-    Hourly Recovery Watchdog             :crit, recover, 04:30, 6h
+    section Outer ChatGPT Recovery
+    Watchdog Ring (:03/:13/:23/:33/:43/:53) :crit, ring, 19:03, 13h27m
 
-    section Independent Supervisors
-    Live Validation + Secondary Recovery :validate, 08:30, 90m
-    Closure Audit                        :close, 10:30, 60m
+    section Independent Validation
+    Live Validation + Reader Repair      :validate, 08:30, 90m
 ```
 
 ### Schedule table
 
 | Time — America/Chicago | Control | Responsibility | If prior work did not run |
 |---|---|---|---|
-| **21:30 prior evening** | 📣 GitHub-native Nightly Readiness | Verify next-run structural readiness and notify owner | Record attention state |
-| **~03:00** | ⚙️ Metadata Preflight | Fresh zero-model source discovery and bounded metadata shortlist | Later supervisor may trigger missing prework |
-| **~03:15** | ⚙️ Evidence Preflight | Build bounded nine-candidate evidence package | Later supervisor repairs only missing evidence stage |
-| **04:00** | 🟣 Production Orchestrator | Primary run from current durable state through `PUBLIC CLOSED` | 04:30 watchdog takes over |
-| **04:30 + hourly** | 🟠 Publication Recovery Supervisor | Detect missed starts/stalls and continue from last valid checkpoint | **Immediately becomes executor** |
-| **08:30** | 🧪 Live Validation & Secondary Recovery | Independently verify progress/live state; take over if primary path stalled | Becomes recovery executor |
-| **10:30** | 📌 Closure Audit | Final lifecycle, Command Center and documentation reconciliation | Repairs remaining safe gaps |
-| **After closure** | 🔵 Command Center reconciliation | Reflect final production SHA and final edition state | May be degraded independently without reopening public edition |
+| **19:00 prior evening** | 🟣 Daily Brief Controller | Resume the active nonterminal execution or allocate exactly one next-day edition, then drive dependency-safe work | Same execution is recovered; no duplicate allocation |
+| **~1-minute loop while active** | ⚙️ Run Supervisor | Normal orchestration, task ordering, writer fencing, worker-request routing and deterministic continuation | GitHub watchdog checks for a missing Supervisor |
+| **Every 5 minutes** | 🟠 GitHub Supervisor watchdog | Restart the same active Supervisor execution when no legitimate Supervisor is queued/running | Re-dispatch same execution only |
+| **:03 / :13 / :23 / :33 / :43 / :53 each hour** | 🟠 ChatGPT Watchdog Ring | Independently detect unresolved real stalls, acquire the recovery coordination lease, take the minimum authorized repair and verify real forward progress | Another slot safely takes over after lease expiry; healthy checks do nothing |
+| **08:30** | 🧪 Live Validation & Reader/Publication Repair | Independently verify the published/live reader result and repair only the smallest invalidated publication stage | Does not compete with a Watchdog recovery that already has a valid lease and real progress |
+| **After terminal closure** | 🔵 Terminal cleanup / reconciliation | Preserve immutable terminal execution, release execution-specific authority, reconcile derived state and learning records | Never reopens the closed production execution |
 
 > [!WARNING]
-> A schedule being **enabled** is not evidence that it **ran**.  
-> A scheduled start that produces no current-day durable progress is classified as `scheduled_start_missed` and triggers takeover.
+> A schedule being **enabled** is not evidence that it **ran**, and a dispatch is not proof of recovery.  
+> Production liveness is established only by authoritative task/worker/protected-executor progress.
 
 ---
 
@@ -402,10 +398,11 @@ flowchart TB
     end
 
     subgraph SUP["🟠 Supervisory / Recovery Layer"]
-      R1["04:00 primary orchestrator"]
-      R2["04:30 + hourly watchdog"]
-      R3["08:30 secondary recovery"]
-      R4["10:30 closure audit"]
+      R1["19:00 prior-evening Controller"]
+      R2["Run Supervisor ~1-minute loop"]
+      R3["GitHub watchdog every 5 minutes"]
+      R4["ChatGPT Watchdog Ring nominal 10 minutes"]
+      R5["08:30 independent live validation"]
     end
 
     G1 --> G2 --> G3 --> G4 --> S1
@@ -413,13 +410,17 @@ flowchart TB
     I1 --> I2 --> I3 --> I4 --> G5
     G5 --> G6 --> G7 --> G8 --> G9
 
-    R1 -. supervises .-> G1
-    R2 -. resumes .-> G1
-    R2 -. resumes .-> S1
-    R2 -. resumes .-> G5
-    R2 -. resumes .-> G7
-    R3 -. validates / takes over .-> G8
-    R4 -. closes / reconciles .-> G9
+    R1 -. starts / resumes .-> G1
+    R2 -. orchestrates .-> G1
+    R2 -. orchestrates .-> S1
+    R2 -. orchestrates .-> G5
+    R2 -. orchestrates .-> G7
+    R3 -. restarts missing Supervisor .-> R2
+    R4 -. minimum autonomous recovery .-> R2
+    R4 -. exact-request recovery .-> S1
+    R4 -. protected-route recovery .-> G7
+    R5 -. validates / targeted repair .-> G8
+    R5 -. verifies terminal result .-> G9
 
     classDef gh fill:#ddf4ff,color:#0550ae,stroke:#54aeff,stroke-width:2px;
     classDef sem fill:#fbefff,color:#8250df,stroke:#a475f9,stroke-width:2px;
@@ -429,7 +430,7 @@ flowchart TB
     class G1,G2,G3,G4,G5,G6,G7,G8,G9 gh;
     class S1,S2,S3,S4,S5 sem;
     class I1,I2,I3,I4 img;
-    class R1,R2,R3,R4 sup;
+    class R1,R2,R3,R4,R5 sup;
 ```
 
 ## Lifecycle state machine
