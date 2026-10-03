@@ -31,6 +31,23 @@ If the first corrective action does not restore that condition, the Watchdog mus
 
 The phrase **minimum corrective action** means *minimum sufficient corrective action*: choose the smallest safe action that restores proven progress. It never means "make one small attempt and stop."
 
+### Persistence rule — quitting is not an option for an actionable stall
+
+For a genuine actionable stall, **one failed repair attempt can never end recovery**. The current Watchdog must continue through every remaining applicable safe authorized option in the Fix-to-Progress ladder while it retains valid recovery authority.
+
+If the current invocation reaches a safe execution boundary before progress is restored, that boundary is a **handoff**, not a recovery result. Persist the unresolved incident, the exact attempted action keys, the current blocker, and the next authorized action; release cleanly; and leave the incident marked recovery-required so the next Watchdog slot resumes it.
+
+`BLOCKED_EXTERNAL` is permitted only when current evidence proves the blocker is genuinely external and non-actionable under the authorized system boundaries. **Exhausting local repair attempts does not by itself make a blocker external.** Re-read and re-diagnose from fresh authoritative state first.
+
+Therefore the only normal outcomes of an actionable Watchdog recovery are:
+
+- **ACTIVE + PROGRESSING** — real executor plus substantive durable progress are proven; or
+- **CONTINUATION HANDOFF** — the issue remains actionable and the next Watchdog must continue; or
+- **VERIFIED EXTERNAL BLOCK** — no safe authorized internal repair exists at present; or
+- **TERMINAL EXECUTION** — production work is already finished/closed and immutable.
+
+There is no "tried once and gave up" outcome.
+
 ## Architecture
 
 The Daily AI Brief uses four liveness roles:
@@ -128,7 +145,7 @@ A repair whose purpose is to get a task active must therefore verify the entire 
 problem diagnosed → cause fixed → task/process active → real executor confirmed → durable progress confirmed
 ```
 
-If that chain is incomplete, the Watchdog must continue recovery using the next-smallest authorized action while it can do so safely.
+If that chain is incomplete, the Watchdog must continue recovery using the next-smallest authorized action. It must exhaust the applicable safe authorized options before yielding. A required safe-boundary yield is an unresolved continuation handoff to the next slot, not recovery success.
 
 ## Incident evidence
 

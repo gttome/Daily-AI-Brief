@@ -50,6 +50,7 @@ Programmatic SVGs or simple diagrams may be used as drafting/source aids, but th
 Refresh both current diagrams in the same protected documentation change whenever any of these materially changes:
 
 - Daily Brief Controller, Run Supervisor, watchdog, writer-fence or handoff responsibilities;
+- Watchdog Fix-to-Progress semantics, including continued escalation after a failed repair, ACTIVE+PROGRESSING success, and unresolved safe-boundary handoff;
 - Task 00 readiness or Task 29 closure contracts;
 - Task 00–29 recovery semantics;
 - image qualification, reusable image consumer, exact-byte persistence or saved-Git review;
@@ -65,6 +66,7 @@ Before a living architecture infographic is accepted:
 
 - [ ] no run-specific or date-specific operational status is present;
 - [ ] every statement describes a durable system contract or role;
+- [ ] Watchdog visuals do not imply one retry is enough; they show continued safe escalation until ACTIVE+PROGRESSING, verified external block, terminal state, or explicit continuation handoff;
 - [ ] final output is a professional high-resolution PNG;
 - [ ] visual quality is at least as strong as the established reference infographics;
 - [ ] all visible text has been checked for correctness and legibility;

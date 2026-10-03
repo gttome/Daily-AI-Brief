@@ -354,7 +354,7 @@ gantt
 | **19:00 prior evening** | 🟣 Daily Brief Controller | Resume the active nonterminal execution or allocate exactly one next-day edition, then drive dependency-safe work | Same execution is recovered; no duplicate allocation |
 | **~1-minute loop while active** | ⚙️ Run Supervisor | Normal orchestration, task ordering, writer fencing, worker-request routing and deterministic continuation | GitHub watchdog checks for a missing Supervisor |
 | **Every 5 minutes** | 🟠 GitHub Supervisor watchdog | Restart the same active Supervisor execution when no legitimate Supervisor is queued/running | Re-dispatch same execution only |
-| **:03 / :13 / :23 / :33 / :43 / :53 each hour** | 🟠 ChatGPT Watchdog Ring | Independently detect unresolved real stalls, acquire the recovery coordination lease, take the minimum authorized repair and verify real forward progress | Another slot safely takes over after lease expiry; healthy checks do nothing |
+| **:03 / :13 / :23 / :33 / :43 / :53 each hour** | 🟠 ChatGPT Watchdog Ring | Independently detect unresolved real stalls and continue the Fix-to-Progress ladder until a real executor is active and durable progress is proven | One failed repair never ends recovery; unresolved safe-boundary yield is handed to the next slot; healthy checks do nothing |
 | **08:30** | 🧪 Live Validation & Reader/Publication Repair | Independently verify the published/live reader result and repair only the smallest invalidated publication stage | Does not compete with a Watchdog recovery that already has a valid lease and real progress |
 | **After terminal closure** | 🔵 Terminal cleanup / reconciliation | Preserve immutable terminal execution, release execution-specific authority, reconcile derived state and learning records | Never reopens the closed production execution |
 
@@ -416,7 +416,7 @@ flowchart TB
     R2 -. orchestrates .-> G5
     R2 -. orchestrates .-> G7
     R3 -. restarts missing Supervisor .-> R2
-    R4 -. minimum autonomous recovery .-> R2
+    R4 -. persistent fix-to-progress recovery .-> R2
     R4 -. exact-request recovery .-> S1
     R4 -. protected-route recovery .-> G7
     R5 -. validates / targeted repair .-> G8
@@ -1474,6 +1474,6 @@ The current liveness hierarchy is Run Supervisor (approximately one-minute loop)
 
 A separate execution-scoped recovery coordination lease at `_records/edition-execution/watchdog-leases/<execution-id>.json` prevents overlapping scheduled ChatGPT repairs. That lease never grants production write authority; the existing writer fence remains mandatory. Healthy checks and checks that encounter another active recovery owner are silent and non-mutating. Actual stall/recovery events are append-only under `_records/edition-execution/watchdog-events/<execution-id>/`.
 
-Recovery success means verified durable forward progress, not merely dispatching a workflow, changing a lease, refreshing a queue/Kanban, or writing a status. The ring escalates through the smallest authorized action and never reopens terminal executions, redoes completed tasks, regenerates accepted_locked images, steals a live writer, or bypasses protected CI/deploy/verification.
+Recovery success requires **both a real active executor and verified durable forward progress**, not merely dispatching a workflow, changing a lease, refreshing a queue/Kanban, writing a status, or trying one repair. For an actionable incident, the ring must keep escalating through the remaining safe authorized Fix-to-Progress actions until that condition is proven. If an invocation reaches a safe boundary first, it persists an unresolved continuation handoff so the next slot resumes the same incident. Exhausted internal attempts do not automatically become `BLOCKED_EXTERNAL`; that classification requires current verified external evidence. The ring never reopens terminal executions, redoes completed tasks, regenerates accepted_locked images, steals a live writer, or bypasses protected CI/deploy/verification.
 
 The former hourly Daily Brief Recovery schedule was repurposed in place as Watchdog Slot F at minute :53 and remains the durable bound scheduled native-image consumer. Slots A–E run at :03/:13/:23/:33/:43 with the same generic state machine. There is no separate standalone :48 Recovery task after cutover. See `docs/operations/CHATGPT-WATCHDOG-RING.md` for the executable contract.

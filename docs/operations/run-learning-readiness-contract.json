@@ -116,7 +116,8 @@
       43,
       53
     ],
-    "chatgpt_watchdog_recovery_lease": "_records/edition-execution/watchdog-leases/<execution-id>.json"
+    "chatgpt_watchdog_recovery_lease": "_records/edition-execution/watchdog-leases/<execution-id>.json",
+    "chatgpt_watchdog_fix_to_progress_rule": "For an actionable stall, the outer Watchdog Ring must diagnose, fix, restore active execution, confirm a real executor, and verify durable progress. One failed attempt is never completion. Continue through safe authorized options; a safe boundary is an unresolved handoff, not success."
   },
   "task_recovery_contracts": {
     "path": "docs/operations/task-recovery-contracts.json",
@@ -204,7 +205,13 @@
     "chatgpt_watchdog_ring_remains_enabled_during_blocked_external": true,
     "chatgpt_watchdog_ring_healthy_checks_are_non_mutating": true,
     "chatgpt_watchdog_repair_requires_verified_forward_progress": true,
-    "chatgpt_watchdog_recovery_lease_is_not_writer_authority": true
+    "chatgpt_watchdog_recovery_lease_is_not_writer_authority": true,
+    "chatgpt_watchdog_recovery_requires_active_executor": true,
+    "chatgpt_watchdog_one_failed_attempt_may_end_recovery": false,
+    "chatgpt_watchdog_exhaust_safe_authorized_options": true,
+    "chatgpt_watchdog_safe_boundary_is_continuation_handoff": true,
+    "chatgpt_watchdog_blocked_external_requires_verified_external_condition": true,
+    "chatgpt_watchdog_unresolved_actionable_incident_must_resume_next_slot": true
   },
   "image_path": {
     "required": "production-image-execution-v2:generate-transfer-verify-review-accept",

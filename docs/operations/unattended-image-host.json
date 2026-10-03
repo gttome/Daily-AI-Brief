@@ -62,7 +62,8 @@
     "The pre-next-run rehearsal receipt is PASS. Authorization becomes live only when this registration and the matching receipt pass protected CI and merge to main.",
     "Run 5 remains terminal and was not reopened, regenerated or modified.",
     "The former standalone minute-48 Recovery schedule was repurposed in place as Watchdog Slot F at minute :53; no separate :48 recovery remains.",
-    "All six Watchdog members use the same generic recovery state machine; Slot F remains the durable registered reusable image-consumer binding."
+    "All six Watchdog members use the same generic recovery state machine; Slot F remains the durable registered reusable image-consumer binding.",
+    "Current Watchdog prompts use the Fix-to-Progress directive: one failed repair attempt never ends actionable recovery; unresolved safe-boundary yield is a continuation handoff, not success."
   ],
   "watchdog_ring": {
     "schema_version": "chatgpt-watchdog-ring-binding-v1",
@@ -80,6 +81,11 @@
     "recovery_lease_path_pattern": "_records/edition-execution/watchdog-leases/<execution-id>.json",
     "separate_writer_fence_required": true,
     "schedule_observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/schedule-observation.json",
-    "schedule_observation_sha256": "31082e37b948c56155c55406d132243a2b433658305598bfea8c4d2e824ae7c9"
+    "schedule_observation_sha256": "31082e37b948c56155c55406d132243a2b433658305598bfea8c4d2e824ae7c9",
+    "fix_to_progress": true,
+    "one_failed_attempt_may_end_recovery": false,
+    "active_and_progressing_required_for_recovery_success": true,
+    "safe_boundary_is_continuation_handoff": true,
+    "blocked_external_requires_verified_external_condition": true
   }
 }

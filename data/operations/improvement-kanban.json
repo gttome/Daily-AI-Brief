@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-03T19:56:40.000Z",
+  "observed_at": "2026-10-03T20:44:35.362413Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -224,7 +224,7 @@
       "priority": "P0",
       "category": "Liveness",
       "title": "Implement 10-minute ChatGPT Watchdog Ring",
-      "summary": "Implemented and protected: six ordinary hourly ChatGPT Watchdog schedules staggered at 03/13/23/33/43/53, with an execution-scoped recovery coordination lease, minimum-action recovery, exact-request idempotency, and verified substantive-progress success criteria. Core PR #415 merged after full CI and live scheduled GitHub permission verification.",
+      "summary": "Implemented and protected: six ordinary hourly ChatGPT Watchdog schedules staggered at 03/13/23/33/43/53, with execution-scoped recovery coordination, exact-request idempotency, and Fix-to-Progress semantics. One failed repair attempt never ends actionable recovery; the Ring continues through remaining safe authorized options until a real executor is active and durable progress is proven, or persists an unresolved handoff for the next slot.",
       "acceptance": [
         "Six enabled exact-hourly Watchdog schedules at minutes 03,13,23,33,43,53.",
         "Combined nominal outer check cadence is 10 minutes.",
@@ -235,7 +235,11 @@
         "No Work, Codex, paid API/service, event-triggered Work, browser automation, overage or new credential route is added.",
         "Former standalone :48 Recovery schedule is repurposed as Slot F at :53 and no independent :48 recovery remains.",
         "Live validator coordinates with an active Watchdog lease without becoming a competing routine liveness worker.",
-        "Protected regression suite and final live schedule-definition verification pass."
+        "Protected regression suite and final live schedule-definition verification pass.",
+        "A failed first corrective action cannot end actionable recovery; remaining applicable safe authorized options are attempted in order.",
+        "Recovery success requires both a real active executor and substantive durable forward progress after repair.",
+        "SAFE_BOUNDARY_REACHED is an unresolved continuation handoff to the next Watchdog slot, never recovery success.",
+        "BLOCKED_EXTERNAL requires verified external/non-actionable evidence; exhausted internal attempts alone are insufficient."
       ],
       "sources": [
         "docs/operations/CHATGPT-WATCHDOG-RING.md",
@@ -246,7 +250,8 @@
         "CI run 37149575554",
         "DAB-OPS-20261003-007",
         "docs/operations/CHATGPT-WATCHDOG-RING-IMPLEMENTATION-REPORT-2026-10-03.md",
-        "_records/hardening/chatgpt-watchdog-ring-2026-10-03/final-verification.json"
+        "_records/hardening/chatgpt-watchdog-ring-2026-10-03/final-verification.json",
+        "_records/hardening/chatgpt-watchdog-ring-2026-10-03/fix-to-progress-schedule-observation.json"
       ]
     },
     {

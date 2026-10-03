@@ -1,0 +1,83 @@
+{
+  "schema_version": "chatgpt-watchdog-fix-to-progress-observation-v1",
+  "observed_at": "2026-10-03T20:44:35.362413Z",
+  "timezone": "America/Chicago",
+  "source": "automations.peek",
+  "result": "PASS",
+  "ring": [
+    {
+      "slot": "A",
+      "title": "Daily Brief Watchdog A",
+      "minute": 3,
+      "enabled": true,
+      "timing_mode": "exact_schedule",
+      "updated_at": "2026-10-03T20:43:19.060588Z"
+    },
+    {
+      "slot": "B",
+      "title": "Daily Brief Watchdog B",
+      "minute": 13,
+      "enabled": true,
+      "timing_mode": "exact_schedule",
+      "updated_at": "2026-10-03T20:43:35.370654Z"
+    },
+    {
+      "slot": "C",
+      "title": "Daily Brief Watchdog C",
+      "minute": 23,
+      "enabled": true,
+      "timing_mode": "exact_schedule",
+      "updated_at": "2026-10-03T20:43:50.069130Z"
+    },
+    {
+      "slot": "D",
+      "title": "Daily Brief Watchdog D",
+      "minute": 33,
+      "enabled": true,
+      "timing_mode": "exact_schedule",
+      "updated_at": "2026-10-03T20:44:04.648249Z"
+    },
+    {
+      "slot": "E",
+      "title": "Daily Brief Watchdog E",
+      "minute": 43,
+      "enabled": true,
+      "timing_mode": "exact_schedule",
+      "updated_at": "2026-10-03T20:44:22.196183Z"
+    },
+    {
+      "slot": "F",
+      "title": "Daily Brief Watchdog F",
+      "minute": 53,
+      "enabled": true,
+      "timing_mode": "exact_schedule",
+      "updated_at": "2026-10-03T20:44:35.362413Z",
+      "durable_native_image_consumer": true
+    }
+  ],
+  "directive": {
+    "fix_to_progress": true,
+    "one_failed_attempt_may_end_recovery": false,
+    "continue_through_remaining_safe_authorized_options": true,
+    "active_executor_required_for_success": true,
+    "durable_progress_required_for_success": true,
+    "blocked_external_requires_verified_external_condition": true,
+    "safe_boundary_is_unresolved_continuation_handoff": true,
+    "safe_boundary_is_recovery_success": false,
+    "unresolved_actionable_incident_resumes_next_slot": true
+  },
+  "unchanged": {
+    "slot_minutes": [
+      3,
+      13,
+      23,
+      33,
+      43,
+      53
+    ],
+    "standalone_minute_48_recovery_present": false,
+    "controller_schedule_changed": false,
+    "github_supervisor_watchdog_changed": false,
+    "cost_boundary_changed": false
+  }
+}

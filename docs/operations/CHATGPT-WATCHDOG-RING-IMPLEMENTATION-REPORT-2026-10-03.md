@@ -217,7 +217,22 @@ Rollback must never weaken terminal-run immutability, writer fencing, accepted-i
 - No live production stall was deliberately injected. Recovery behavior is proven by deterministic unit/synthetic integration coverage plus the safe Scheduled-task GitHub read/write probe.
 - Genuine external blocks such as protected CI/deployment/tool availability remain external. The Ring records them and does not bypass them.
 
-## 13. Final evidence
+## 13. Post-implementation recovery-persistence hardening
+
+After initial installation, the recovery success semantics were deliberately strengthened. The Ring is now explicitly a **fix-to-progress** system rather than a one-attempt recovery mechanism.
+
+Permanent rule:
+
+1. diagnose the actual cause;
+2. apply the smallest safe authorized repair that can actually fix it;
+3. if progress is not restored, continue to the next-smallest applicable authorized action rather than stopping;
+4. require the affected task/process to have a **real active executor**;
+5. require **substantive durable progress after the repair**;
+6. if an invocation reaches a safe boundary while still actionable, persist a continuation handoff for the next slot — never call that recovery success;
+7. classify `BLOCKED_EXTERNAL` only from verified external/non-actionable evidence, never merely because internal repair attempts failed.
+
+In short: **one repair attempt is not recovery; actionable recovery continues until active progress is restored or the still-unresolved incident is safely handed forward after exhausting the applicable options for the current invocation.**
+## 14. Final evidence
 
 - Core protected PR: #415
 - Core merge SHA: `715c34cd07ebaf534be5307fd03eeb7f2ef8b5e0`
