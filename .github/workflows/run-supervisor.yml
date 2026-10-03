@@ -182,7 +182,7 @@ jobs:
             node control/_tools/dispatch-frozen-publication.mjs
           fi
 
-      - name: Yield while a scheduled image consumer owns the next operation
+      - name: Yield while a Watchdog Ring image consumer owns the next operation
         if: steps.boundary.outputs.write_allowed == 'true'
         id: image_delegation
         run: |
@@ -195,7 +195,7 @@ jobs:
           fi
           if [ -n "$delegated_task" ]; then
             delegated=true
-            echo "Task ${delegated_task} is already queued for the scheduled image consumer; Supervisor will not acquire or take over the writer fence."
+            echo "Task ${delegated_task} is already queued for the Watchdog Ring image consumer; Supervisor will not acquire or take over the writer fence."
           fi
           echo "delegated=$delegated" >> "$GITHUB_OUTPUT"
 
