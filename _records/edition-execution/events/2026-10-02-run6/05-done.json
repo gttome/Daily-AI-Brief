@@ -1,0 +1,27 @@
+{
+  "task_id": "05",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-03T00:18:59Z",
+  "reason_code": "EXACT_2_2_2_EDITORIAL_SELECTION_LOCKED",
+  "operation": "lock_six_stories",
+  "proof": {
+    "selection_path": "_records/editorial/2026-10-02-run6/story-selection.json",
+    "selected_ids": [
+      "m01",
+      "m02",
+      "m04",
+      "m05",
+      "m07",
+      "m09"
+    ],
+    "allocation": "2/2/2",
+    "agent_skills_candidate_id": "m01",
+    "agent_skills_count": 1,
+    "extended_168h": [
+      "m09"
+    ],
+    "result": "PASS",
+    "request_key": "89d5f3841cb667f22318a7ccd4249cd8225e90a236fdbf3f800128f149d5a070"
+  }
+}
