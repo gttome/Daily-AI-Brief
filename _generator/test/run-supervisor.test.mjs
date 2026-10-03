@@ -41,6 +41,15 @@ function contract(){
   return {schema_version:'task-recovery-contracts-v1',tasks};
 }
 
+test('task event normalization accepts safe from_state/to_state aliases without overriding canonical fields',()=>{
+  const aliased=normalizeTaskEvent({task_id:'11',from_state:'Active',to_state:'Done',at:'2026-10-03T07:04:53.132Z'});
+  assert.equal(aliased.from,'Active');
+  assert.equal(aliased.to,'Done');
+  const canonical=normalizeTaskEvent({task_id:'11',from:'Blocked',to:'Done',from_state:'Active',to_state:'Blocked',at:'2026-10-03T07:04:53.132Z'});
+  assert.equal(canonical.from,'Blocked');
+  assert.equal(canonical.to,'Done');
+});
+
 test('duplicate run is rejected while same identity resumes',()=>{
   const active={execution_id:'run4',edition_id:'dab-edition-2026-10-01',branch:'b',terminal:false};
   assert.equal(activeRunDecision({activeRun:active,request:{...active}}).action,'resume');
