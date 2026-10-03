@@ -80,7 +80,42 @@
           "independent_safe_non_image_work"
         ]
       }
-    }
+    },
+    "required_before_run": [
+      "operational_learning_ledger_digest",
+      "all_permanent_fixes_present",
+      "unresolved_risks_loaded",
+      "one_writer",
+      "run_supervisor_enabled_and_bound",
+      "supervisor_heartbeat_90s_or_less",
+      "outer_watchdog_enabled",
+      "writer_fencing_enabled",
+      "stale_active_recovery_fault_test",
+      "actionable_blocked_recovery_fault_test",
+      "duplicate_run_rejection_fault_test",
+      "proven_production_image_path",
+      "svg_fallback_disabled",
+      "low_quality_fallback_disabled",
+      "exact_byte_capture",
+      "small_png_persistence_route_available",
+      "small_png_readback_identity_verified",
+      "append_only_transition_ledger",
+      "kanban_digest_bound_projection",
+      "executor_state_visible",
+      "cost_boundary",
+      "protected_ci",
+      "exact_sha_deploy",
+      "independent_live_verification",
+      "previous_run_cleanup_pass",
+      "generic_terminal_run_reopen_guard",
+      "terminal_run_immutability_regression",
+      "kanban_observability_only",
+      "metrics_observability_only",
+      "projection_defects_nonblocking",
+      "improvement_board_learning_reconciliation",
+      "chatgpt_watchdog_ring_enabled",
+      "watchdog_recovery_coordination_lease_enabled"
+    ]
   },
   "supervisor": {
     "version": "run-supervisor-v2",
@@ -117,7 +152,9 @@
       53
     ],
     "chatgpt_watchdog_recovery_lease": "_records/edition-execution/watchdog-leases/<execution-id>.json",
-    "chatgpt_watchdog_fix_to_progress_rule": "For an actionable stall, the outer Watchdog Ring must diagnose, fix, restore active execution, confirm a real executor, and verify durable progress. One failed attempt is never completion. Continue through safe authorized options; a safe boundary is an unresolved handoff, not success."
+    "chatgpt_watchdog_fix_to_progress_rule": "For an actionable stall, the outer Watchdog Ring must diagnose, fix, restore active execution, confirm a real executor, and verify durable progress. One failed attempt is never completion. Continue through safe authorized options; a safe boundary is an unresolved handoff, not success.",
+    "chatgpt_watchdog_ring_image_consumer": "All six slots A-F are functionally equivalent eligible native-image consumers for Tasks 11-16; the next eligible slot consumes an exact queued unclaimed request without waiting for a stale threshold.",
+    "chatgpt_watchdog_ring_special_image_slot": null
   },
   "task_recovery_contracts": {
     "path": "docs/operations/task-recovery-contracts.json",
@@ -211,7 +248,13 @@
     "chatgpt_watchdog_exhaust_safe_authorized_options": true,
     "chatgpt_watchdog_safe_boundary_is_continuation_handoff": true,
     "chatgpt_watchdog_blocked_external_requires_verified_external_condition": true,
-    "chatgpt_watchdog_unresolved_actionable_incident_must_resume_next_slot": true
+    "chatgpt_watchdog_unresolved_actionable_incident_must_resume_next_slot": true,
+    "chatgpt_watchdog_ring_all_slots_native_image_eligible": true,
+    "chatgpt_watchdog_native_image_wait_for_stale_prohibited": true,
+    "chatgpt_watchdog_native_image_single_slot_dependency_prohibited": true,
+    "chatgpt_watchdog_native_image_single_owner_required": true,
+    "chatgpt_watchdog_native_image_takeover_requires_dead_released_or_expired_owner": true,
+    "chatgpt_watchdog_native_image_nominal_opportunity_minutes": 10
   },
   "image_path": {
     "required": "production-image-execution-v2:generate-transfer-verify-review-accept",
@@ -245,13 +288,17 @@
       "ready_requires": [
         "registration.status == READY",
         "qualification receipt verifies PASS against immutable committed evidence",
-        "reusable_consumer.scheduler_kind == chatgpt_automation",
         "reusable_consumer.enabled == true",
-        "reusable_consumer.role == scheduled_native_image_request_consumer",
-        "reusable consumer observation digest and exact automation identity/schedule verify",
         "current_fence_refresh_required == true",
         "explicit_supervisor_handoff_required == true",
-        "no Work, Codex, paid API, overage, new credential, owner upload or fallback violation"
+        "no Work, Codex, paid API, overage, new credential, owner upload or fallback violation",
+        "reusable_consumer.scheduler_kind == chatgpt_watchdog_ring",
+        "reusable_consumer.role == scheduled_native_image_request_consumer_ring",
+        "reusable_consumer.eligible_slots == [A,B,C,D,E,F]",
+        "all six reusable_consumer.slots are enabled and native_image_eligible with exact minutes 03/13/23/33/43/53",
+        "reusable_consumer.special_slot == null and single_slot_binding == false",
+        "consume_queued_request_without_stale_wait == true",
+        "one shared Watchdog recovery/consumer lease plus current production writer fence prevents duplicate image work"
       ],
       "registration_path": "docs/operations/unattended-image-host.json",
       "qualification_and_consumption_are_separate_bindings": true,
@@ -262,10 +309,25 @@
       "request_writer_generation_semantics": "scheduling_provenance_only",
       "production_mutation_authority": "refreshed fenced lease acquired by scheduled consumer at invocation",
       "next_production_run_gate": "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json must PASS before allocation",
-      "reusable_consumer_stable_schedule": "exact hourly Watchdog Ring slot; durable bound reusable image consumer is Slot F at minute :53",
+      "reusable_consumer_stable_schedule": "six equivalent exact-hourly Watchdog Ring slots at minutes :03/:13/:23/:33/:43/:53; every slot is eligible for Tasks 11-16",
       "nonproduction_handoff_rehearsal_path": ".github/workflows/run-supervisor-handoff.yml rehearsal/** branch-local pointer guarded by mode=NON_PRODUCTION, production_allocation=false, image_generation_allowed=false and synthetic execution identity",
       "watchdog_ring_schedule_observation": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/schedule-observation.json",
-      "watchdog_ring_nominal_check_minutes": 10
+      "watchdog_ring_nominal_check_minutes": 10,
+      "reusable_consumer_model": "chatgpt_watchdog_ring",
+      "special_native_image_consumer_slot": null,
+      "native_image_eligible_slots": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "consume_queued_request_without_stale_wait": true,
+      "single_operation_owner_required": true,
+      "image_consumer_scheduled_opportunity_multiplier_vs_prior_single_slot": 6,
+      "prior_nominal_max_image_wait_minutes_lt": 60,
+      "current_nominal_max_image_wait_minutes_lt": 10
     },
     "visible_text_guard": {
       "phase": "pretransport_review",
