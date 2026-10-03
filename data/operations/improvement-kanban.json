@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-03T20:49:46Z",
+  "observed_at": "2026-10-03T21:34:00Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -541,6 +541,29 @@
         "PR #411",
         "_generator/lib/reading-support.mjs",
         "_generator/lib/podcasts.mjs"
+      ]
+    },
+    {
+      "id": "DAB-KB-031",
+      "lane": "wip",
+      "priority": "P0",
+      "category": "Image Reliability",
+      "title": "Make all Watchdog slots equivalent native-image consumers",
+      "summary": "Remove the historical F-only image-consumer binding. Make A-F equally eligible to consume exact queued Tasks 11-16 at the next nominal ten-minute Watchdog opportunity while preserving one-owner leases, writer fencing, accepted_locked immutability and professional image quality.",
+      "acceptance": [
+        "All six live Watchdog prompts are functionally identical except slot letter/minute.",
+        "Protected unattended-image-host registration binds image consumption to the Ring, not Slot F.",
+        "Queued unclaimed Task 11-16 can be consumed by any next eligible slot without waiting for stale timeout.",
+        "Executable tests prove A-F eligibility and duplicate prevention.",
+        "Run readiness requires six enabled image-eligible slots.",
+        "Living docs and Watchdog infographic show no special F image role.",
+        "Protected CI passes before card moves to Done."
+      ],
+      "sources": [
+        "DAB-OPS-20261003-008",
+        "docs/operations/CHATGPT-WATCHDOG-RING.md",
+        "docs/operations/unattended-image-host.json",
+        "_generator/lib/chatgpt-watchdog-ring.mjs"
       ]
     }
   ],
