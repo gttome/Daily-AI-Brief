@@ -7,11 +7,14 @@
   "operation_key": "69f1e353ba00b9fe93471a1868a72ccf1414c92d369b3de19761f9523d78b2ff",
   "capability": "repository",
   "acquired_at": "2026-10-03T12:53:10.367Z",
-  "last_heartbeat_at": "2026-10-03T12:53:10.367Z",
-  "expires_at": "2026-10-03T13:23:10.367Z",
+  "last_heartbeat_at": "2026-10-03T12:56:36.381Z",
+  "expires_at": "2026-10-03T12:56:36.381Z",
   "supersedes": {
     "owner_id": "github-actions-37123040519-1",
     "generation": 27
   },
-  "authority_note": "Fresh task-specific authority acquired by the enabled recovery consumer for the exact queued Task 18 repository request; embedded request generation 27 is scheduling provenance only."
+  "authority_note": "Fresh task-specific authority acquired by the enabled recovery consumer for the exact queued Task 18 repository request; embedded request generation 27 is scheduling provenance only.",
+  "released": true,
+  "released_at": "2026-10-03T12:56:36.381Z",
+  "release_reason": "TASK_18_DONE_HANDOFF_TO_SUPERVISOR"
 }
