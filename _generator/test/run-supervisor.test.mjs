@@ -17,7 +17,8 @@ import {
   buildEngineeringRepairRequest,
   projectKanbanFromEvents,
   validateKanbanContract,
-  kanbanProjectionFresh
+  kanbanProjectionFresh,
+  latestRecoverableImage
 } from '../lib/run-supervisor.mjs';
 
 function contract(){
@@ -104,6 +105,36 @@ test('rejected Active image attempt becomes immediately actionable without waiti
   assert.equal(classification.state,'BLOCKED_ACTIONABLE');
   const decision=taskRecoveryDecision({classification,taskContract:c.tasks['15'],recoveryAttempts:override.recovery_attempts});
   assert.equal(decision.action,'alternate_recovery');
+});
+
+test('subject/context mismatch bypasses same-context retries and enters engineering repair immediately',()=>{
+  const c=contract();
+  c.tasks['15'].retry_limit=4;
+  c.tasks['15'].engineering_repair={
+    enabled:true,max_epochs:1,capability:'repository',
+    instruction:'Repair execution-context binding before another native image attempt.',
+    required_proofs:['fresh_single_story_worker_isolation'],
+    post_repair_attempt_limit:1,
+    post_repair_operation:'Execute one fresh-context attempt using only the sealed single-story specification.'
+  };
+  const record={
+    task_id:'15',candidate_id:'m08',status:'rejected',attempt:1,
+    targeted_next_action:'Retry the same sealed single-story specification in fresh isolated image context.',
+    observed_at:'2026-10-03T06:54:19Z',
+    review:{rejection_code:'WRONG_SUBJECT_AND_CONTEXT_CONTAMINATION',rejection_reason:'Unrelated orchestration subject displaced the sealed prompt.'}
+  };
+  const latest=latestRecoverableImage([record],{task_id:'15',candidate_id:'m08'});
+  assert.equal(latest.recovery_action,record.targeted_next_action);
+  const override=applyImmediateImageRecovery({task_id:'15',task_state:'Active',image_recovery:latest});
+  assert.equal(override.force_engineering_repair,true);
+  assert.equal(override.recovery_attempts,1);
+  const classification=classifyRunHealth({task_state:override.task_state,blocked_recoverable:override.blocked_recoverable});
+  const decision=taskRecoveryDecision({
+    classification,taskContract:c.tasks['15'],recoveryAttempts:override.recovery_attempts,
+    forceEngineeringRepair:override.force_engineering_repair
+  });
+  assert.equal(decision.action,'engineering_repair');
+  assert.equal(decision.repair_epoch,1);
 });
 
 test('Blocked image task inherits rejected attempt count for repair-epoch decision',()=>{
