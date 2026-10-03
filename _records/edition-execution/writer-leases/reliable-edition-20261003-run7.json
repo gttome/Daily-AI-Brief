@@ -1,9 +1,17 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261003-run7",
-  "owner_id": "github-actions-37123040519-1",
-  "generation": 27,
-  "acquired_at": "2026-10-03T12:29:53.705Z",
-  "last_heartbeat_at": "2026-10-03T12:29:53.705Z",
-  "expires_at": "2026-10-03T18:29:53.705Z"
+  "owner_id": "scheduled-recovery-consumer-6abeb9a2b8a88191949dc420d5e10feb-task18-generation28",
+  "generation": 28,
+  "task_id": "18",
+  "operation_key": "69f1e353ba00b9fe93471a1868a72ccf1414c92d369b3de19761f9523d78b2ff",
+  "capability": "repository",
+  "acquired_at": "2026-10-03T12:53:10.367Z",
+  "last_heartbeat_at": "2026-10-03T12:53:10.367Z",
+  "expires_at": "2026-10-03T13:23:10.367Z",
+  "supersedes": {
+    "owner_id": "github-actions-37123040519-1",
+    "generation": 27
+  },
+  "authority_note": "Fresh task-specific authority acquired by the enabled recovery consumer for the exact queued Task 18 repository request; embedded request generation 27 is scheduling provenance only."
 }
