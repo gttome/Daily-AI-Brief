@@ -1,0 +1,89 @@
+{
+  "schema_version": "run7-watchlist-refresh-v1",
+  "edition_id": "dab-edition-2026-10-03",
+  "execution_id": "reliable-edition-20261003-run7",
+  "research_cutoff": "2026-10-03T06:02:00.001Z",
+  "observed_at": "2026-10-03T06:29:22.781Z",
+  "discovery_checks": [
+    {
+      "domain": "frontier_models",
+      "queries": [
+        "new frontier AI model October 1 2026 official",
+        "decision model alternative to LLM October 2 2026"
+      ]
+    },
+    {
+      "domain": "agents_and_harnesses",
+      "queries": [
+        "new AI agent harness October 2 2026 official",
+        "agent monitoring security October 2 2026"
+      ]
+    },
+    {
+      "domain": "developer_tooling",
+      "queries": [
+        "new AI developer tooling October 2 2026",
+        "agent skills developer tools October 2 2026"
+      ]
+    },
+    {
+      "domain": "multimodal_and_interfaces",
+      "queries": [
+        "real-time video AI model October 1 2026",
+        "human interaction model Griffin October 1 2026"
+      ]
+    },
+    {
+      "domain": "knowledge_worker_workflows",
+      "queries": [
+        "enterprise AI workflow October 2 2026",
+        "AI professional academy enterprise October 1 2026"
+      ]
+    },
+    {
+      "domain": "safety_and_governance",
+      "queries": [
+        "AI agent accountability cybersecurity October 2 2026",
+        "AI regulator subpoena agent logs October 2026"
+      ]
+    },
+    {
+      "domain": "open_source_and_community",
+      "queries": [
+        "open source personal AI agent hardware October 2 2026",
+        "open source agent gadget ESP32 Raspberry Pi October 2026"
+      ]
+    }
+  ],
+  "checks_completed": 14,
+  "updates": [
+    {
+      "topic_id": "dab-topic-system-one-decision-models",
+      "label": "Updated today",
+      "title": "Decision models emerge as a separate AI systems layer",
+      "what_changed": "Independent reporting says TypeSafe AI's Jev is prompting copycat structured-decision products, reinforcing that calibrated classifiers may become a distinct automation layer beside generative models.",
+      "source": "https://www.wsj.com/tech/ai/startup-typesafe-ais-jev-model-sparks-copycats-talk-of-llm-alternatives-e39ff57d"
+    }
+  ],
+  "new_topics": [
+    {
+      "topic_id": "dab-topic-human-interaction-models",
+      "label": "New today",
+      "title": "Full-duplex human interaction models",
+      "status": "research_preview",
+      "why_watch": "Tavus introduced Griffin-Lite as a unified real-time video-to-video system that listens, watches and responds concurrently, shifting multimodal interfaces from turn-taking pipelines toward continuous interaction while explicitly retaining release-safety limits.",
+      "source": "https://www.tavus.io/griffin"
+    },
+    {
+      "topic_id": "dab-topic-open-agent-hardware",
+      "label": "New today",
+      "title": "Open agent hardware moves from demos to kits",
+      "status": "early_signal",
+      "why_watch": "Meta's newly open-sourced Muse gadget code targets ESP32 and Raspberry Pi builds, suggesting personal agents may become a community hardware layer rather than remain confined to phones and desktops.",
+      "source": "https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link"
+    }
+  ],
+  "selected_story_exact_duplication": false,
+  "carried_forward_count": "not_measured",
+  "result": "PASS"
+}
