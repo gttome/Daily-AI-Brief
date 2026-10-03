@@ -354,6 +354,22 @@ jobs:
                 cat /tmp/native-image-result.json
               fi
 
+              if [ "$request_capability" = "repository" ] && [ "$request_task" = "17" ] && [ "$request_kind" != "engineering_repair" ]; then
+                request_key="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_key))")"
+                request_rel="_records/edition-execution/worker-requests/${EXECUTION_ID}/${request_task}-${request_key}.json"
+                request_status="$(node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync('run/'+process.argv[1],'utf8'));process.stdout.write(String(x.status||''))" "$request_rel")"
+                if [ "$request_status" = "queued" ]; then
+                  active_repository_consumers="$(gh api --method GET "repos/${GITHUB_REPOSITORY}/actions/workflows/repository-task-consumer.yml/runs" \
+                    -f branch="$RUN_BRANCH" -f per_page=20 \
+                    --jq '[.workflow_runs[] | select(.status=="queued" or .status=="in_progress")] | length')"
+                  if [ "$active_repository_consumers" = "0" ]; then
+                    echo "Dispatching Task 17 repository consumer explicitly via workflow_dispatch; pushes created by GITHUB_TOKEN do not recursively trigger workflows."
+                    gh workflow run repository-task-consumer.yml --ref "$RUN_BRANCH"
+                  else
+                    echo "Task 17 repository consumer already queued/in progress; no duplicate dispatch."
+                  fi
+                fi
+              fi
               if [ "$request_kind" = "engineering_repair" ] && [ "$request_capability" = "repository" ]; then
                 export GH_TOKEN="${{ github.token }}"
                 control_sha="$(git -C control rev-parse HEAD)"
