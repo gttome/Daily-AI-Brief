@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "An Argument Against AI Doom"
-description: "The Atlantic’s Galaxy Brain presents an argument against AI-doom assumptions and explores how to reason about risk without treating one forecast as inevitable."
+description: "Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story."
 image: ""
 permalink: /podcasts/2026-10-03/run7-2/
 brief_date: 2026-10-03
@@ -13,22 +13,32 @@ reader_release: true
 
 # An Argument Against AI Doom
 
+### 10. An Argument Against AI Doom
+
 <span class="podcast-data" data-podcast-id="dab-podcast-2026-10-03-2" data-podcast-title="An Argument Against AI Doom" data-podcast-url="/podcasts/2026-10-03/run7-2/" hidden></span>
 
+<a href="{{ '/podcasts/2026-10-03/run7-2/' | relative_url }}" data-item-id="dab-podcast-2026-10-03-2" data-edition-date="2026-10-03" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+
 **Show:** Galaxy Brain  
-**Host / publisher:** The Atlantic  
+**Host / guest:** Charlie Warzel  
+**Focus:** Technical AI Engineering  
 **Date:** October 2, 2026  
 **Duration:** 56:16  
-**Evidence:** Publisher Authored  
-**Availability:** Available
+**Topics:** agent accountability, cybersecurity and AI policy
 
-**Summary:** The Atlantic’s Galaxy Brain presents an argument against AI-doom assumptions and explores how to reason about risk without treating one forecast as inevitable.
+**Summary:** Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.
 
-**Why it matters:** It offers a distinct editorial perspective for weighing the brief’s privacy, accountability and agent-risk stories without collapsing uncertainty into either panic or complacency.
+**Why it matters:** Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.
+
+**Connection to the brief:** Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.
+
+
 
 **Coverage:** Locked October 3 Run 7 media selection.
 
-**Listen:** <a href="https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/" data-item-id="dab-podcast-2026-10-03-2" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Galaxy Brain</a>
+**Evidence:** Practitioner analysis. The Atlantic episode page identifies the host, publication at 2026-10-02 13:00 ET, complete audio controls and an exact 56:16 runtime.
+
+**Listen / watch:** <a href="https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/" data-item-id="dab-podcast-2026-10-03-2" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Galaxy Brain</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-03" data-feedback-story-id="dab-podcast-2026-10-03-2">
   <span class="feedback-prompt">How useful was this?</span>

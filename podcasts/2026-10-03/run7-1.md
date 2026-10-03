@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dots get up in Muse’s business"
-description: "The Vergecast examines OpenAI’s Dots and Meta’s Muse, placing agentic products and emerging hardware in a consumer-technology frame."
+description: "Independent technology-news discussion of business agents, trust and the current agentic-assistant market."
 image: ""
 permalink: /podcasts/2026-10-03/run7-1/
 brief_date: 2026-10-03
@@ -13,22 +13,32 @@ reader_release: true
 
 # Dots get up in Muse’s business
 
+### 9. Dots get up in Muse’s business
+
 <span class="podcast-data" data-podcast-id="dab-podcast-2026-10-03-1" data-podcast-title="Dots get up in Muse’s business" data-podcast-url="/podcasts/2026-10-03/run7-1/" hidden></span>
 
+<a href="{{ '/podcasts/2026-10-03/run7-1/' | relative_url }}" data-item-id="dab-podcast-2026-10-03-1" data-edition-date="2026-10-03" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+
 **Show:** The Vergecast  
-**Host / publisher:** The Verge  
+**Host / guest:** The Vergecast team  
+**Focus:** Agents for Everyone  
 **Date:** October 2, 2026  
-**Duration:** unavailable  
-**Evidence:** Publisher Authored  
-**Availability:** Available
+**Duration:** Not independently verified  
+**Topics:** business agents, trust and agentic assistants
 
-**Summary:** The Vergecast examines OpenAI’s Dots and Meta’s Muse, placing agentic products and emerging hardware in a consumer-technology frame.
+**Summary:** Independent technology-news discussion of business agents, trust and the current agentic-assistant market.
 
-**Why it matters:** It connects the brief’s agent-software stories to the products and interfaces that may bring those systems into everyday use.
+**Why it matters:** Independent technology-news discussion of business agents, trust and the current agentic-assistant market.
+
+**Connection to the brief:** Independent technology-news discussion of business agents, trust and the current agentic-assistant market.
+
+
 
 **Coverage:** Locked October 3 Run 7 media selection.
 
-**Listen:** <a href="https://www.theverge.com/podcast/1004059/openai-dots-kindle-homepad-cybercab-vergecast" data-item-id="dab-podcast-2026-10-03-1" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">The Vergecast</a>
+**Evidence:** Practitioner analysis. The Verge episode page identifies title, show context and publication at 2026-10-02 15:47 UTC; direct Watch and Listen routes are present. Runtime was not exposed in the reviewed page and remains unknown.
+
+**Listen / watch:** <a href="https://www.theverge.com/podcast/1004059/openai-dots-kindle-homepad-cybercab-vergecast" data-item-id="dab-podcast-2026-10-03-1" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">The Vergecast</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-03" data-feedback-story-id="dab-podcast-2026-10-03-1">
   <span class="feedback-prompt">How useful was this?</span>

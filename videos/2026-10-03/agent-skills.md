@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Flight Intelligence: The Power of Work IQ"
-description: "A developer-focused walkthrough of how Work IQ brings organizational context into a Copilot workflow."
+title: "Flight Intelligence: The Power of Work IQ | Discover how Work IQ is your business's secret sauce"
+description: "Developer demonstration of Work IQ context and workflow grounding, directly supporting the selected reusable Agent Skills packaging story."
 image: ""
 permalink: /videos/2026-10-03/agent-skills/
 brief_date: 2026-10-03
@@ -11,19 +11,22 @@ reader_release: true
 
 [← Daily Brief for October 3, 2026]({{ '/briefs/2026-10-03/' | relative_url }})
 
-# Flight Intelligence: The Power of Work IQ
+# Flight Intelligence: The Power of Work IQ | Discover how Work IQ is your business's secret sauce
 
 <span class="story-data" data-story-id="dab-video-2026-10-03-agent-skills" hidden></span>
 
-**Focus:** Agent Skills Video  
+**Focus:** Agents for Everyone  
 **Date:** October 3, 2026  
 **Duration:** 14:34  
-**Evidence:** Publisher Authored  
-**Availability:** Available
+**Topics:**   
+**Evidence:** Practitioner Analysis  
+**Availability:** Not Applicable
 
-**Summary:** A developer-focused walkthrough of how Work IQ brings organizational context into a Copilot workflow.
+**Summary:** Developer demonstration of Work IQ context and workflow grounding, directly supporting the selected reusable Agent Skills packaging story.
 
-**Why it matters:** It shows the context layer that reusable skills and agents need in order to act on real business work rather than isolated prompts.
+**Why it matters:** Developer demonstration of Work IQ context and workflow grounding, directly supporting the selected reusable Agent Skills packaging story.
+
+
 
 **Source:** <a href="https://www.youtube.com/watch?v=VpSCu7s4wD4" data-item-id="dab-video-2026-10-03-agent-skills" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Microsoft Developer</a>
 

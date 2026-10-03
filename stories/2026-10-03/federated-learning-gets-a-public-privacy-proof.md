@@ -14,26 +14,25 @@ reader_release: true
 # Federated learning gets a public privacy proof
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Fresh coverage</span><span title="A reliable source-text estimate was not verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> October 2, 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 02 Oct 2026</p></aside>
 <!-- reader-release:end -->
 
 <span class="story-data" data-story-id="dab-story-2026-10-03-m02" hidden></span>
 
-**Focus:** Technical Breakthroughs  
+**Focus:** Technical AI Engineering  
 **Date:** October 2, 2026  
+**Topics:** technical ai engineering  
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Architecture diagram showing federated learning updates entering a trusted execution environment, checked against a public transparency log and approved policy before model aggregation.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m02-attempt-3.png?v=oct3-m02-1b674a86a07c)
+![Textbook mechanism diagram showing separate local-data silos sending encrypted updates into a TEE-secured aggregation chamber with remote attestation and approved code, returning only a privacy-preserving global model.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m02-attempt-3.png?v=oct3-m02-1b674a86a07c)
 
 **Summary:** Google Research described a federated-learning design that couples trusted execution environments with a public transparency log. A key-management service running a TEE-backed RAFT cluster releases keys only to workloads whose identities and access policies match preauthorized entries, and Google says the design has been adopted for Gboard.
 
 **Why it matters:** Federated learning usually asks outsiders to trust claims about which code handled private updates. A public policy log and hardware-attested execution make those claims more inspectable, shifting privacy from a promise toward evidence that can be independently checked.
 
-**What to watch:** TEEs reduce some operator-trust risks but do not eliminate vulnerabilities in hardware, workload code, policy design or the surrounding data pipeline.
-
 <!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 5 — Data Privacy and Compliance in Context Engineering</p><p>Use this chapter’s privacy framework to map every context boundary—device update, enclave, key service and audit log—then identify which guarantees are cryptographic, which depend on hardware and which remain organizational controls.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 5 — Data Privacy and Compliance in Context Engineering</p><p>Map every context boundary to distinguish cryptographic guarantees, hardware trust and organizational controls in the federated-learning design.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
 **Source:** <a href="https://research.google/blog/toward-provably-private-learning-from-federated-data/" data-item-id="dab-story-2026-10-03-m02" data-edition-date="2026-10-03" data-action="source_clicks">Toward provably private learning from federated data</a>

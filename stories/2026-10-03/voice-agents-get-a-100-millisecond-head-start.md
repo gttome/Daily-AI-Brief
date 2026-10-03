@@ -14,26 +14,25 @@ reader_release: true
 # Voice agents get a 100-millisecond head start
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Fresh coverage</span><span title="A reliable source-text estimate was not verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> October 1, 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
 <!-- reader-release:end -->
 
 <span class="story-data" data-story-id="dab-story-2026-10-03-m01" hidden></span>
 
-**Focus:** Technical Breakthroughs  
+**Focus:** Technical AI Engineering  
 **Date:** October 1, 2026  
+**Topics:** technical ai engineering  
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Mechanism diagram of a streaming speech transcription pipeline sending partial hypotheses to a voice agent in just over 100 milliseconds, with audio chunks flowing into a live transcript and response loop.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m01-repair-epoch-1-attempt-1.png?v=oct3-m01-8077ced2c944)
+![Textbook mechanism diagram showing live audio entering MAI-Transcribe-2-Streaming, progressive partial transcript tokens, a 100 ms latency clock, and a return loop from a voice agent response.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m01-repair-epoch-1-attempt-1.png?v=oct3-m01-8077ced2c944)
 
 **Summary:** Microsoft introduced MAI-Voice-2.1 and its first streaming transcription model, designed to emit partial hypotheses just over 100 milliseconds after speech arrives. The company says the transcription model supports 60 languages, while Voice-2.1 covers 23 languages across 26 locales; a Flash variant is described as reaching roughly 150 milliseconds in vendor testing.
 
 **Why it matters:** In a spoken interface, the useful breakthrough is not merely accurate transcription but early, stable partial text. That gives an agent time to retrieve context, plan a response and interrupt naturally before a full utterance has finished.
 
-**What to watch:** The latency and quality figures are Microsoft’s own measurements and will vary with language, network conditions, hardware and conversational noise.
-
 <!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the verification gate to turn a compelling latency claim into a repeatable test: measure first-token delay, transcript stability and end-to-end conversational response under the conditions your users will actually face.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the verification gate to test latency, transcript stability and end-to-end conversational response under real operating conditions.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
 **Source:** <a href="https://microsoft.ai/news/our-first-streaming-transcription-model/" data-item-id="dab-story-2026-10-03-m01" data-edition-date="2026-10-03" data-action="source_clicks">Our first streaming transcription model</a>

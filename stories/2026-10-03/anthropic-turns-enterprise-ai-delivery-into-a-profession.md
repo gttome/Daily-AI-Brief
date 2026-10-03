@@ -14,29 +14,28 @@ reader_release: true
 # Anthropic turns enterprise AI delivery into a profession
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Fresh coverage</span><span title="A reliable source-text estimate was not verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> October 2, 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 02 Oct 2026</p></aside>
 <!-- reader-release:end -->
 
 <span class="story-data" data-story-id="dab-story-2026-10-03-m04" hidden></span>
 
-**Focus:** Applied AI and Enterprise  
+**Focus:** Applied Generative AI for Knowledge Workers  
 **Date:** October 2, 2026  
+**Topics:** applied genai knowledge workers  
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Professional enterprise AI delivery blueprint with an engineer moving from a multi-day simulation through a 12-week residency into a deployed customer workflow, with review checkpoints along the path.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m04-attempt-1.png?v=oct3-m04-f5303e8ffead)
+![Textbook delivery blueprint showing business goal, model capability, risk, evaluation, and change management converging through delivery practice toward a governed launch gate associated with Frontier Academy.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m04-attempt-1.png?v=oct3-m04-f5303e8ffead)
 
 **Summary:** Anthropic announced Claude Frontier Academy, a training and deployment program centered on Frontier Deployed Engineers. The company says it is committing $100 million and aims to prepare 10,000 such engineers by the end of 2027 through a multi-day simulation followed by a 12-week residency.
 
 **Why it matters:** Enterprise AI value often fails at the handoff between a capable model and a messy operating environment. Treating deployment as a professional discipline—part product discovery, integration, evaluation and change management—may be as important as another benchmark gain.
 
-**What to watch:** The investment, staffing target and outcomes are forward-looking company statements; the program’s scale and effectiveness still need independent evidence.
-
 <!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Generative AI Prompt Engineering Learning Ecosystem</h3><p class="chapter">Introduction, sample PDF p. 4 — Introduction</p><p>The learning-ecosystem introduction is a useful lens for building practice, feedback and peer support around deployed AI work, so expertise grows through real projects instead of ending with one course or certification.</p><p><a class="book-cta" href="https://leanpub.com/GenAILearn" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Generative AI Prompt Engineering Learning Ecosystem</h3><p class="chapter">Introduction, sample PDF p. 4 — Introduction</p><p>Build practice, feedback and peer support around deployed AI work so professional expertise grows through real projects.</p><p><a class="book-cta" href="https://leanpub.com/GenAILearn" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
-**Source:** <a href="https://www.anthropic.com/news/claude-frontier-academy" data-item-id="dab-story-2026-10-03-m04" data-edition-date="2026-10-03" data-action="source_clicks">Claude Frontier Academy</a>
+**Source:** <a href="https://www.anthropic.com/news/claude-frontier-academy" data-item-id="dab-story-2026-10-03-m04" data-edition-date="2026-10-03" data-action="source_clicks">Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-03" data-feedback-story-id="dab-story-2026-10-03-m04">
   <span class="feedback-prompt">How useful was this?</span>

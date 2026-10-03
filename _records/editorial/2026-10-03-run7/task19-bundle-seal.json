@@ -10,7 +10,7 @@
   "shards": [
     {
       "path": "_records/editorial/2026-10-03-run7/task19-digests-reader.json",
-      "git_blob_sha1": "06f495f70b6d0f96212894918186eac496ef2c56"
+      "git_blob_sha1": "ceb51dfdaf94412f06239a024ade82b8cc15d87f"
     },
     {
       "path": "_records/editorial/2026-10-03-run7/task19-digests-images.json",
@@ -57,6 +57,18 @@
     "story_selection_changed": false,
     "media_selection_changed": false,
     "source_word_counts_invented": false
+  },
+  "integrated_ci_focused_reseal": {
+    "at": "2026-10-03T14:59:34.258Z",
+    "reason": "Complete the deterministic current-edition projection after protected integrated validation detected pre-projection permanent reader files.",
+    "changed_shards": [
+      "reader-pages"
+    ],
+    "accepted_image_shard_unchanged": true,
+    "story_selection_changed": false,
+    "media_selection_changed": false,
+    "book_review_changed": false,
+    "watchlist_decisions_changed": false
   },
   "result": "PASS"
 }

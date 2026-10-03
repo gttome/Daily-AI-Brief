@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Introducing MAI-Transcribe-2-Streaming, MAI-Voice-2.1 and MAI-Voice-2.1-Flash"
-description: "A short first-party demonstration of Microsoft’s new streaming transcription and voice models."
+description: "First-party visual summary of the streaming transcription and voice models behind the selected low-latency voice-agent story."
 image: ""
 permalink: /videos/2026-10-03/general/
 brief_date: 2026-10-03
@@ -18,12 +18,15 @@ reader_release: true
 **Focus:** General Video  
 **Date:** October 2, 2026  
 **Duration:** 3:00  
-**Evidence:** Publisher Authored  
-**Availability:** Available
+**Topics:**   
+**Evidence:** Practitioner Analysis  
+**Availability:** Not Applicable
 
-**Summary:** A short first-party demonstration of Microsoft’s new streaming transcription and voice models.
+**Summary:** First-party visual summary of the streaming transcription and voice models behind the selected low-latency voice-agent story.
 
-**Why it matters:** It gives a quick visual and audible companion to today’s lead story about latency-sensitive voice agents.
+**Why it matters:** First-party visual summary of the streaming transcription and voice models behind the selected low-latency voice-agent story.
+
+
 
 **Source:** <a href="https://www.youtube.com/shorts/UJeR--ao1MA" data-item-id="dab-video-2026-10-03-general" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Microsoft AI</a>
 
