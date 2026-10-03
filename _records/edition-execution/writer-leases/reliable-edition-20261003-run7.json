@@ -1,20 +1,16 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261003-run7",
-  "owner_id": "recovery-task19-release-generation33",
+  "owner_id": "automation-run7-task20-qualification-generation33",
   "generation": 33,
-  "task_id": "19",
-  "operation_key": "72dfe65cd0d16ff9efd86d2c62fbc4b716765e73d5cb81293d43726713cedbae",
+  "task_id": "20",
   "capability": "repository",
-  "acquired_at": "2026-10-03T13:27:28.498Z",
-  "last_heartbeat_at": "2026-10-03T13:27:28.498Z",
-  "expires_at": "2026-10-03T13:27:28.498Z",
+  "acquired_at": "2026-10-03T13:28:09.203876Z",
+  "last_heartbeat_at": "2026-10-03T13:28:09.203876Z",
+  "expires_at": "2026-10-03T13:43:09.203876Z",
   "supersedes": {
-    "owner_id": "automation-run7-task19-recovery-generation32",
-    "generation": 32
+    "owner_id": "recovery-task19-release-generation33",
+    "generation": 33
   },
-  "authority_note": "60-second liveness recovery: Task 19 already has canonical Done/result evidence; this boundary only releases the stale writer fence to the Supervisor without redoing Task 19.",
-  "released": true,
-  "released_at": "2026-10-03T13:27:28.498Z",
-  "release_reason": "TASK_19_DONE_HANDOFF_TO_SUPERVISOR"
+  "authority_note": "Emergency same-run continuation after Task 19 Done because the protected writer-handoff workflow does not resume production Tasks 17-29. No completed upstream work is repeated."
 }
