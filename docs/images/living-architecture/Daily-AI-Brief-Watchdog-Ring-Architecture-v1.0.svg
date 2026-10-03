@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1125" viewBox="0 0 1800 1125" role="img" aria-labelledby="title desc">
+<title id="title">Daily AI Brief — ChatGPT Watchdog Ring</title>
+<desc id="desc">Detailed architecture infographic showing six equivalent Watchdog slots, their GitHub coordination, native-image Tasks 11 through 16 coverage, Fix-to-Progress recovery, one-owner safeguards, and interaction with the Brief Run Supervisor.</desc>
+<defs>
+  <linearGradient id="header" x1="0" x2="1"><stop offset="0" stop-color="#062b5a"/><stop offset="1" stop-color="#0b4d7c"/></linearGradient>
+  <linearGradient id="blue" x1="0" x2="1"><stop offset="0" stop-color="#eef7ff"/><stop offset="1" stop-color="#dceeff"/></linearGradient>
+  <linearGradient id="green" x1="0" x2="1"><stop offset="0" stop-color="#effcf5"/><stop offset="1" stop-color="#daf5e6"/></linearGradient>
+  <linearGradient id="amber" x1="0" x2="1"><stop offset="0" stop-color="#fff9e8"/><stop offset="1" stop-color="#ffefbd"/></linearGradient>
+  <linearGradient id="red" x1="0" x2="1"><stop offset="0" stop-color="#fff1f1"/><stop offset="1" stop-color="#ffdede"/></linearGradient>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#16324f" flood-opacity=".15"/></filter>
+  <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#124a7b"/></marker>
+  <style>
+    .t{font-family:Arial,Helvetica,sans-serif; fill:#0c2742}
+    .h1{font-size:48px;font-weight:700;fill:#fff}
+    .sub{font-size:23px;font-weight:600;fill:#dcecff}
+    .section{font-size:26px;font-weight:700;fill:#073d73}
+    .cardtitle{font-size:23px;font-weight:700;fill:#0c2742}
+    .body{font-size:18px;fill:#183a59}
+    .small{font-size:16px;fill:#23445f}
+    .tiny{font-size:14px;fill:#23445f}
+    .strong{font-weight:700}
+    .white{fill:#fff}
+    .center{text-anchor:middle}
+    .right{text-anchor:end}
+  </style>
+</defs>
+
+<rect width="1800" height="1125" fill="#f7fbff"/>
+<rect x="18" y="18" width="1764" height="112" rx="18" fill="url(#header)" filter="url(#shadow)"/>
+<text x="52" y="76" class="t h1">Daily AI Brief — ChatGPT Watchdog Ring</text>
+<text x="52" y="112" class="t sub">Six equivalent Watchdogs • Fix-to-Progress recovery • six-slot native-image coverage • one exact request → one writer → one generation</text>
+
+<!-- Purpose -->
+<rect x="28" y="150" width="520" height="270" rx="18" fill="url(#blue)" stroke="#9bc5ec" stroke-width="2" filter="url(#shadow)"/>
+<text x="48" y="188" class="t section">1. Purpose</text>
+<text x="48" y="222" class="t body strong">A REPAIR + EXECUTION-ASSIST SYSTEM</text>
+<text x="48" y="254" class="t body">The Ring does not merely monitor or alert.</text>
+<text x="48" y="282" class="t body">For actionable stalls it must diagnose, fix,</text>
+<text x="48" y="310" class="t body">restore ACTIVE execution, confirm a real worker,</text>
+<text x="48" y="338" class="t body">and prove substantive durable progress.</text>
+<rect x="48" y="358" width="480" height="48" rx="10" fill="#e5fff0" stroke="#6fce96"/>
+<text x="288" y="388" class="t body strong center">Recovery success = ACTIVE + demonstrably PROGRESSING</text>
+
+<!-- Six slots -->
+<rect x="570" y="150" width="590" height="270" rx="18" fill="#fff" stroke="#b7cee4" stroke-width="2" filter="url(#shadow)"/>
+<text x="590" y="188" class="t section">2. The Ring — A–F are operationally identical</text>
+<g transform="translate(600,220)">
+  <g><circle cx="60" cy="48" r="44" fill="#eaf5ff" stroke="#2f7fba" stroke-width="3"/><text x="60" y="43" class="t cardtitle center">A</text><text x="60" y="70" class="t small center">:03</text></g>
+  <g><circle cx="150" cy="48" r="44" fill="#edf9f1" stroke="#37a567" stroke-width="3"/><text x="150" y="43" class="t cardtitle center">B</text><text x="150" y="70" class="t small center">:13</text></g>
+  <g><circle cx="240" cy="48" r="44" fill="#fff7dd" stroke="#d89b20" stroke-width="3"/><text x="240" y="43" class="t cardtitle center">C</text><text x="240" y="70" class="t small center">:23</text></g>
+  <g><circle cx="330" cy="48" r="44" fill="#fff0e8" stroke="#e57638" stroke-width="3"/><text x="330" y="43" class="t cardtitle center">D</text><text x="330" y="70" class="t small center">:33</text></g>
+  <g><circle cx="420" cy="48" r="44" fill="#f4efff" stroke="#8664c7" stroke-width="3"/><text x="420" y="43" class="t cardtitle center">E</text><text x="420" y="70" class="t small center">:43</text></g>
+  <g><circle cx="510" cy="48" r="44" fill="#ffeef3" stroke="#d85979" stroke-width="3"/><text x="510" y="43" class="t cardtitle center">F</text><text x="510" y="70" class="t small center">:53</text></g>
+</g>
+<text x="590" y="350" class="t body">Every slot can: recover • consume native-image Tasks 11–16 • read GitHub • acquire current authority • hand back to Supervisor.</text>
+<text x="590" y="380" class="t body strong">Only slot letter and minute differ. F has no special production capability.</text>
+
+<!-- Architecture -->
+<rect x="1182" y="150" width="590" height="270" rx="18" fill="url(#green)" stroke="#9bd7b2" stroke-width="2" filter="url(#shadow)"/>
+<text x="1202" y="188" class="t section">3. Interaction with GitHub + Brief orchestration</text>
+<rect x="1210" y="222" width="155" height="155" rx="14" fill="#fff" stroke="#7bb7e6" stroke-width="2"/>
+<text x="1288" y="252" class="t cardtitle center">Watchdog Ring</text>
+<text x="1288" y="283" class="t small center">reads state</text><text x="1288" y="307" class="t small center">claims exact work</text><text x="1288" y="331" class="t small center">repairs stalls</text>
+<rect x="1400" y="222" width="155" height="155" rx="14" fill="#fff" stroke="#7bb7e6" stroke-width="2"/>
+<text x="1478" y="252" class="t cardtitle center">GitHub</text>
+<text x="1478" y="283" class="t small center">durable authority</text><text x="1478" y="307" class="t small center">events + requests</text><text x="1478" y="331" class="t small center">leases + fences</text>
+<rect x="1590" y="222" width="155" height="155" rx="14" fill="#fff" stroke="#7bb7e6" stroke-width="2"/>
+<text x="1668" y="252" class="t cardtitle center">Run Supervisor</text>
+<text x="1668" y="283" class="t small center">queues tasks</text><text x="1668" y="307" class="t small center">enforces writer</text><text x="1668" y="331" class="t small center">advances 00–29</text>
+<line x1="1365" y1="300" x2="1395" y2="300" stroke="#124a7b" stroke-width="4" marker-end="url(#arrow)"/>
+<line x1="1555" y1="300" x2="1585" y2="300" stroke="#124a7b" stroke-width="4" marker-end="url(#arrow)"/>
+
+<!-- Image coverage -->
+<rect x="28" y="445" width="850" height="285" rx="18" fill="#fff" stroke="#b7cee4" stroke-width="2" filter="url(#shadow)"/>
+<text x="48" y="483" class="t section">4. Native-image Tasks 11–16 — materially better coverage</text>
+<rect x="50" y="515" width="365" height="174" rx="14" fill="url(#red)" stroke="#e9a7a7"/>
+<text x="232" y="548" class="t cardtitle center">BEFORE</text>
+<text x="72" y="585" class="t body">• one designated scheduled consumer: F</text>
+<text x="72" y="617" class="t body">• 1 scheduled consumer opportunity/hour</text>
+<text x="72" y="649" class="t body">• nominal next opportunity: up to ~60 min</text>
+<rect x="445" y="515" width="405" height="174" rx="14" fill="url(#green)" stroke="#8ad1a3"/>
+<text x="648" y="548" class="t cardtitle center">CURRENT</text>
+<text x="468" y="585" class="t body">• A–F all eligible normal image consumers</text>
+<text x="468" y="617" class="t body">• 6 staggered opportunities/hour</text>
+<text x="468" y="649" class="t body">• nominal next opportunity: up to ~10 min</text>
+<text x="50" y="713" class="t small strong">Important: 10 minutes is schedule spacing, not a hard real-time guarantee. Scheduled ChatGPT can start late.</text>
+
+<!-- One owner -->
+<rect x="905" y="445" width="867" height="285" rx="18" fill="url(#blue)" stroke="#9bc5ec" stroke-width="2" filter="url(#shadow)"/>
+<text x="925" y="483" class="t section">5. One-owner safety — better coverage without duplicate image generation</text>
+<text x="938" y="525" class="t body">1. Read exact newest queued native-image request.</text>
+<text x="938" y="557" class="t body">2. Verify no real image worker/current task writer already owns it.</text>
+<text x="938" y="589" class="t body">3. Acquire current task-specific fenced writer authority.</text>
+<text x="938" y="621" class="t body">4. Generate from the sealed single-story professional specification.</text>
+<text x="938" y="653" class="t body">5. Persist exact returned bytes → verify identity → review saved-Git image.</text>
+<text x="938" y="685" class="t body">6. Record accepted_locked or bounded rejection → HANDOFF_TO_SUPERVISOR.</text>
+<rect x="1375" y="527" width="365" height="148" rx="14" fill="#fff" stroke="#6fa9d7" stroke-width="2"/>
+<text x="1558" y="560" class="t cardtitle center">Invariant</text>
+<text x="1558" y="598" class="t body strong center">one exact request</text>
+<text x="1558" y="627" class="t body strong center">→ one current writer</text>
+<text x="1558" y="656" class="t body strong center">→ one image generation</text>
+
+<!-- Fix to progress -->
+<rect x="28" y="755" width="1110" height="325" rx="18" fill="url(#amber)" stroke="#e0bd61" stroke-width="2" filter="url(#shadow)"/>
+<text x="48" y="793" class="t section">6. Fix-to-Progress recovery — quitting after one try is not an option</text>
+<g>
+  <circle cx="72" cy="840" r="22" fill="#246fa7"/><text x="72" y="848" class="t body white strong center">1</text><text x="112" y="848" class="t body"><tspan class="strong">Diagnose</tspan> — identify the actual cause from current authoritative evidence.</text>
+  <circle cx="72" cy="884" r="22" fill="#2d8b59"/><text x="72" y="892" class="t body white strong center">2</text><text x="112" y="892" class="t body"><tspan class="strong">Fix</tspan> — smallest safe correction that actually addresses the mechanism.</text>
+  <circle cx="72" cy="928" r="22" fill="#d2911a"/><text x="72" y="936" class="t body white strong center">3</text><text x="112" y="936" class="t body"><tspan class="strong">Activate</tspan> — restore a real eligible executor, not merely an Active label.</text>
+  <circle cx="72" cy="972" r="22" fill="#d56b31"/><text x="72" y="980" class="t body white strong center">4</text><text x="112" y="980" class="t body"><tspan class="strong">Verify progress</tspan> — durable movement after the repair.</text>
+  <circle cx="72" cy="1016" r="22" fill="#7c5ab8"/><text x="72" y="1024" class="t body white strong center">5</text><text x="112" y="1024" class="t body"><tspan class="strong">Continue / handoff</tspan> — if unresolved, try next safe option or persist continuation for the next slot.</text>
+</g>
+
+<!-- Outcomes -->
+<rect x="1160" y="755" width="612" height="325" rx="18" fill="#fff" stroke="#b7cee4" stroke-width="2" filter="url(#shadow)"/>
+<text x="1180" y="793" class="t section">7. Valid recovery outcomes</text>
+<rect x="1185" y="820" width="562" height="54" rx="10" fill="#e8faef" stroke="#8bd0a3"/><text x="1202" y="854" class="t body strong">ACTIVE + PROGRESSING</text>
+<rect x="1185" y="886" width="562" height="54" rx="10" fill="#eef6ff" stroke="#9bc5ec"/><text x="1202" y="920" class="t body strong">CONTINUATION HANDOFF — next Watchdog resumes the same incident</text>
+<rect x="1185" y="952" width="562" height="54" rx="10" fill="#fff4d8" stroke="#dfbf68"/><text x="1202" y="986" class="t body strong">VERIFIED EXTERNAL BLOCK — truly external/non-actionable evidence</text>
+<rect x="1185" y="1018" width="562" height="42" rx="10" fill="#f2f2f2" stroke="#aaa"/><text x="1202" y="1046" class="t body strong">TERMINAL — already finished/closed and immutable</text>
+
+<text x="900" y="1105" class="t small center">Protected invariants: same execution • terminal runs immutable • Done tasks not redone • accepted_locked images immutable • protected CI/deploy gates • no Work/Codex/paid API</text>
+</svg>
