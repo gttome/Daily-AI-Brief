@@ -13,7 +13,9 @@ function publicationDateLabel(value){
  return months[Number(month)-1]?`${day} ${months[Number(month)-1]} ${year}`:'';
 }
 export function readingMinutes(evidence){
- if(evidence?.status!=='verified'||!Number.isInteger(evidence.word_count)||evidence.word_count<1||!evidence.source_url||!evidence.verified_at||!evidence.method)return null;
+ if(evidence?.status!=='verified'||!evidence.source_url||!evidence.verified_at||!evidence.method)return null;
+ if(Number.isInteger(evidence.reading_minutes)&&evidence.reading_minutes>0)return evidence.reading_minutes;
+ if(!Number.isInteger(evidence.word_count)||evidence.word_count<1)return null;
  return Math.max(1,Math.ceil(evidence.word_count/200));
 }
 export function sourceReadingMinutes(item,id=item.story_id,data=catalog){
@@ -36,6 +38,9 @@ export function validateReadingSupport(edition,data=catalog){
  // A short editorial evidence capsule is never an article-length estimate.
  if(edition.brief_date>='2026-09-30')for(const story of stories.values()){
   if(!verifiedFullSourceEvidence(story,story.story_id,data))throw Error(`${story.story_id}: verified full-source reading evidence required`);
+ }
+ if(edition.brief_date>='2026-10-04')for(const story of stories.values()){
+  if(!sourceReadingMinutes(story,story.story_id,data))throw Error(`${story.story_id}: verified source reading time required`);
  }
  const ids=new Set(stories.keys());
  for(const [key,suffix] of [['general','general'],['agents_non_technical_people','agent-skills']])if(edition.worth_watching?.[key]?.status==='included')ids.add(`dab-video-${edition.brief_date}-${suffix}`);
@@ -71,5 +76,5 @@ export function renderReadingSupport(item,id,date,kind='Article'){
  const coverageLabel=fallback?articleFallbackLabel(fallback):x?.coverage_label;
  const published=publicationDateLabel(item.source?.publication_date||item.freshness?.source_published_at);
  const disclosure=published?`<p class="recency-disclosure"><strong>Originally published:</strong> ${published}</p>`:'';
- return readerAddition(`<aside class="reading-context" aria-label="Reading context"><div class="reading-meta">${coverageLabel?`<span class="coverage-label">${esc(coverageLabel)}</span>`:''}<span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">${esc(duration)}</span></div>${disclosure}${contextBlock}${relatedBlock}</aside>`);
+ return readerAddition(`<aside class="reading-context" aria-label="Reading context"><div class="reading-meta">${coverageLabel?`<span class="coverage-label">${esc(coverageLabel)}</span>`:''}<span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">${esc(duration)}</span></div>${disclosure}${contextBlock}${relatedBlock}</aside>`);
 }
