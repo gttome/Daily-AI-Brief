@@ -1,0 +1,22 @@
+{
+  "task_id": "04",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-03T00:16:52Z",
+  "reason_code": "FULL_SOURCE_EVIDENCE_VERIFIED",
+  "operation": "verify_evidence_and_freshness_fallback",
+  "proof": {
+    "evidence_path": "_records/discovery/2026-10-02-run6/evidence.json",
+    "candidate_count": 9,
+    "full_source_reviews": 9,
+    "extended_168h": [
+      "m08",
+      "m09"
+    ],
+    "freshness_excluded": [
+      "m06"
+    ],
+    "result": "PASS",
+    "request_key": "bb691660ed0cd9d007ef97a1b17f3bb34048547684455534cac83bdc392b069c"
+  }
+}
