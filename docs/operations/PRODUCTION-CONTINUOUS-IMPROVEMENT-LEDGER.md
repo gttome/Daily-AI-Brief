@@ -926,3 +926,18 @@ Problems: 49 · Events: 82
 - **Future validation:** On the next genuine stall, confirm exactly one slot owns recovery and the same execution resumes substantive durable progress; healthy checks must remain silent. The nominal ten-minute schedule is not a real-time guarantee.
 - **October 3 persistence hardening:** The Watchdog contract is being strengthened so one failed repair attempt can never terminate an actionable recovery. The Ring must continue through remaining safe authorized options, require a real active executor plus durable progress for success, treat a safe-boundary release as unresolved continuation for the next slot, and require verified external evidence before `BLOCKED_EXTERNAL`. Event `DAB-OPS-E-000087` records the protected hardening attempt; permanent outcome remains contingent on protected CI/merge.
 - **Protected outcome:** PR #420 merged as `480a4c559ac2b900dd29b746eec4e279a365e73f` after CI run 37152873713 passed 890/890 generator tests, 24/24 contract tests, repository/lifecycle/append-only validation and Jekyll build. Event `DAB-OPS-E-000088` closes the hardening as permanently fixed.
+
+## DAB-OPS-20261003-008 — Slot F remained a special image-consumer binding after recovery became a six-slot ring.
+
+- **Status:** mitigated; protected implementation in progress
+- **Task(s):** 11–16 native-image production
+- **Symptom:** A–F were equivalent for outer recovery, but the protected image-host registration still bound reusable native-image consumption specifically to F.
+- **Root cause:** F's special role was retained as a migration bridge from the old hourly Recovery automation. That compatibility choice outlived its architectural need.
+- **Operational impact:** The image stage—the most problematic stage in recent production—did not receive the full liveness benefit of the staggered ring.
+- **Coverage before:** one designated recurring scheduled image-consumer opportunity per hour.
+- **Target coverage:** six equivalent eligible slots staggered at :03/:13/:23/:33/:43/:53; nominal next consumer opportunity about 10 minutes.
+- **Important limitation:** Scheduled ChatGPT delivery is not real-time; the 10-minute value is schedule spacing, not a hard latency guarantee.
+- **Attempted fix:** Make the Watchdog Ring itself the reusable native-image consumer pool. Every slot may consume the exact next queued unclaimed Tasks 11–16 request without waiting for stale/block classification. Exact request identity and current task-specific writer fencing ensure one request produces one generation.
+- **Preserved protections:** accepted_locked image immutability, sealed single-story prompt, visible-text/subject controls, exact-byte persistence/read-back, saved-Git review, Supervisor handoff, one-writer fencing and zero-Work/Codex/paid-API boundary.
+- **Evidence:** `_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json`
+- **Permanent outcome:** pending protected CI and merge.
