@@ -960,7 +960,7 @@
       "17": "Immediate deterministic GitHub Actions consumer plus ordinary-ChatGPT Watchdog Ring recovery fallback.",
       "18-22,24,27-29": "Ordinary-ChatGPT same-invocation consumer; the ChatGPT Watchdog Ring is the outer fallback when that invocation has ended."
     },
-    "unsupported_event_wake": "No event-triggered Work task is authorized. The outer recovery contract uses six ordinary exact-hourly ChatGPT schedules staggered to a nominal ten-minute cadence.",
+    "unsupported_event_wake": "The automation service does not currently admit event-triggered Work wakeups for this route, and no event-triggered Work task is authorized. The outer recovery contract instead uses six ordinary exact-hourly ChatGPT schedules staggered to a nominal ten-minute cadence.",
     "forbidden_terminal_claim": "AWAITING_SCHEDULED_EXECUTOR is never a healthy or terminal repository-task outcome."
   },
   "chatgpt_watchdog_ring": {
