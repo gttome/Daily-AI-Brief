@@ -1,57 +1,75 @@
 # Daily AI Brief — Living Architecture Infographics
 
-**Status:** living documentation projection  
-**Version:** v3.1  
-**Observed:** 2026-10-02 23:25 America/Chicago  
-**Protected-main baseline reviewed:** `caeb7563241fac1c1450b8545baac9faea38f325`
+**Status:** evergreen living documentation projection  
+**Version:** v3.1
 
 > [!IMPORTANT]
-> These diagrams are human-readable projections of the current operating architecture. Durable machine evidence remains authoritative: protected run pointers, append-only task events, immutable worker/image results, writer leases, readiness receipts, host registration, publication evidence, and the canonical production continuous-improvement ledger.
+> These diagrams explain the durable Daily AI Brief system architecture. They are **not run-status dashboards**. Machine evidence remains authoritative for live state.
 
 ## Current diagrams
 
 ### Persistent Run Supervisor architecture
 
-![Daily AI Brief Persistent Run Supervisor Architecture v3.1](../images/living-architecture/Daily-AI-Brief-Persistent-Run-Supervisor-Architecture-v3.1-2026-10-02.svg)
+![Daily AI Brief Persistent Run Supervisor Architecture v3.1](../images/living-architecture/Daily-AI-Brief-Persistent-Run-Supervisor-Architecture-v3.1.png)
 
 ### Current operating contract and living architecture
 
-![Daily AI Brief Current Operating Contract and Living Architecture v3.1](../images/living-architecture/Daily-AI-Brief-Operating-Contract-Living-Architecture-v3.1-2026-10-02.svg)
+![Daily AI Brief Current Operating Contract and Living Architecture v3.1](../images/living-architecture/Daily-AI-Brief-Operating-Contract-Living-Architecture-v3.1.png)
 
-## What changed from the v2 infographics
+## Permanent scope rule
 
-The v2 diagrams described the approved target architecture while Run 4 was still being completed. The current implementation is materially different and more mature:
+The current architecture infographics must contain only durable system-level concepts: control-plane roles, state authorities, writer fencing and handoff, task/recovery contracts, image execution, publication gates, learning architecture, derived projections, and system invariants.
 
-- Run 5 is terminal `PUBLIC_CLOSED` / Task 29 Done and is immutable.
-- Production allocation is owned by the enabled **Daily Brief Controller** at 01:00 America/Chicago; a start trigger is not the liveness mechanism.
-- The GitHub **Run Supervisor** now runs an approximately 60-second persistent loop and the outer watchdog checks every five minutes, always resuming the same execution.
-- Writer authority is fenced. Scheduled workers refresh current authority at invocation and explicitly release with `*_HANDOFF_TO_SUPERVISOR`.
-- Native image qualification and native image consumption are separate contracts. Protected `docs/operations/unattended-image-host.json` is the mutable readiness source; the enabled hourly **Daily Brief Recovery** automation at :48 is the reusable Tasks 11–16 native-image consumer.
-- Task 17 has a deterministic repository consumer for six-image set review.
-- Route-specific blockers must not globally stop unrelated work.
-- Production Kanban is exactly **Backlog → WIP → Done**, with every Task 00–29 showing a duration or `unavailable`, plus total Brief elapsed time and an event-ledger freshness digest.
-- The cumulative production learning ledger is a Task 00 admission dependency and Task 29 closure dependency.
-- A separate persistent **Improvement Kanban** is being introduced for system improvements, technical debt, validation follow-ups, and UX work; it is not the per-edition production Kanban.
-- The pre-Oct-3 public rehearsal is isolated non-production evidence and must never consume the October 3 production identity.
+They must **not** contain:
+
+- run numbers or execution IDs;
+- edition dates or observation dates;
+- a particular run's success/failure/closure state;
+- one-off rehearsal names or outcomes;
+- temporary start windows, current-day readiness windows, or transitional run-specific guards;
+- any other status that becomes false merely because the next run starts.
+
+Those facts belong in event-derived Kanban/status dashboards, append-only run evidence, or historical documentation.
+
+## Professional visual-quality contract
+
+Final living architecture assets must:
+
+1. be **high-resolution, detailed, professional textbook-grade PNG infographics**;
+2. meet or exceed the quality and information density of the established architecture reference PNGs;
+3. use clear visual hierarchy, balanced panel density, disciplined spacing and professional iconography;
+4. remain legible at full size and normal desktop viewing scale;
+5. have no clipped/overlapping text, spelling errors, malformed labels, or low-information filler;
+6. avoid sparse/basic box-and-arrow substitutes;
+7. receive a final visible-text and visual-quality review before acceptance.
+
+Programmatic SVGs or simple diagrams may be used as drafting/source aids, but they are **not acceptable final living architecture assets** unless their rendered result independently meets the same professional quality bar.
 
 ## Living-document maintenance rule
 
-Refresh these diagrams in the same protected documentation change whenever any of the following materially changes:
+Refresh both current diagrams in the same protected documentation change whenever any of these materially changes:
 
-1. controller, Supervisor, watchdog, writer-fence, handoff, or worker responsibilities;
-2. Task 00 readiness or Task 29 closure contracts;
-3. Task 00–29 recovery semantics;
-4. image qualification, image consumer, exact-byte persistence, or review path;
-5. publication authorization, CI, exact-SHA deployment, or live-verification gates;
-6. operational-learning ledger or invariant requirements;
-7. production Kanban projection rules; or
-8. the relationship between production execution and the persistent Improvement Kanban.
+- Daily Brief Controller, Run Supervisor, watchdog, writer-fence or handoff responsibilities;
+- Task 00 readiness or Task 29 closure contracts;
+- Task 00–29 recovery semantics;
+- image qualification, reusable image consumer, exact-byte persistence or saved-Git review;
+- publication authorization, protected CI, exact-SHA deployment or independent live verification;
+- operational-learning ledger or invariant requirements;
+- production Kanban architecture or its relationship to the persistent Improvement Kanban.
 
-Preserve older infographic versions as historical evidence. Never silently rewrite an old version to make it appear contemporaneous.
+Preserve prior versions as historical evidence. Never silently overwrite an old version to make it appear contemporaneous.
 
-## Current Oct 3 safety boundary
+## Acceptance gate
 
-At this observation point, the protected production system is intentionally left unchanged before the October 3 start window. Run 5 remains terminal. The normal Controller remains scheduled for 01:00 America/Chicago. The hourly reusable image consumer remains enabled. Long-term changes such as replacing the transitional Run 5-specific recovery guard with a generic immutable-terminal-run rule belong in the Improvement Kanban and should be implemented only after the October 3 production transition is stable.
+Before a living architecture infographic is accepted:
+
+- [ ] no run-specific or date-specific operational status is present;
+- [ ] every statement describes a durable system contract or role;
+- [ ] final output is a professional high-resolution PNG;
+- [ ] visual quality is at least as strong as the established reference infographics;
+- [ ] all visible text has been checked for correctness and legibility;
+- [ ] no clipping, overlap, malformed labels or unintended carryover appears;
+- [ ] the companion learning/operations documents are synchronized.
 
 ## Primary living sources
 
@@ -64,8 +82,6 @@ At this observation point, the protected production system is intentionally left
 - `docs/operations/PRODUCTION-CONTINUOUS-IMPROVEMENT-LEDGER.md`
 - `data/operations/production-continuous-improvement-ledger.jsonl`
 - `docs/operations/unattended-image-host.json`
-- `data/operations/active-production-run.json`
-- `data/operations/publication-status.json`
 - `.github/workflows/run-supervisor.yml`
 - `.github/workflows/run-supervisor-watchdog.yml`
 - `.github/workflows/run-supervisor-handoff.yml`

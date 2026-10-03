@@ -1448,3 +1448,16 @@ The five-change hardening acceptance gate is now satisfied by durable NON-PRODUC
 
 This hardening process does **not** manually start the next production Brief. Once the PASS receipt is protected, the existing Daily Brief Controller remains responsible for normal scheduled allocation. The hourly Recovery automation remains the reusable Task 11–16 image consumer and recovery keeper.
 
+## Living architecture infographic contract
+
+The architecture infographics are **evergreen system documents**, not run-status boards.
+
+1. Final graphics must be **high-resolution, detailed, professional textbook-grade PNG infographics** that meet or exceed the visual quality of the established architecture references.
+2. Do **not** include run numbers, edition dates, individual run outcomes, one-off rehearsals, temporary start/readiness windows, or other execution-specific status.
+3. Put ephemeral execution information in the production Kanban/status dashboard and append-only evidence instead.
+4. A basic/sparse programmatic SVG is not an acceptable final infographic. Programmatic/vector material may be a working source only.
+5. Inspect final visible text for correctness, legibility, clipping, overlap and alignment before acceptance.
+6. Keep old versions as historical evidence; never silently rewrite an old version to imply that it represented the current architecture.
+7. Refresh the current infographic whenever the durable control plane, task/recovery contracts, image path, publication gates, learning invariants or Kanban architecture materially changes.
+
+See `docs/operations/LIVING-ARCHITECTURE-INFOGRAPHICS.md` and operational-learning problem `DAB-OPS-20261002-024`.
