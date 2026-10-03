@@ -824,3 +824,15 @@ The authoritative gate is `_records/hardening/pre-next-run-five-change-2026-10-0
 - **Preservation:** Run 7 remains published at `50cbe6f0719ff67088e65340f4322e64f582ee9e`; reader content and all six accepted_locked images are unchanged.
 - **Regression:** `_generator/test/publication-validated-bridge.test.mjs`; full 835-test and 24-contract suites pass locally.
 - **Next validation:** Protected CI must pass, then the same Run 7 must reach `PUBLIC_CLOSED` / Task 29 Done while retaining the original production SHA.
+
+## Run 7 Task 29 learning-completeness addendum — October 3, 2026
+
+Append-only events `DAB-OPS-E-000078` through `DAB-OPS-E-000082` fill the exact learning fields that deterministic Task 29 certification found missing; they do not change any problem outcome or production artifact.
+
+- **DAB-OPS-20261003-001:** records that lease renewal lacked an ownership assertion, so a valid fence transfer appeared to be a hard failure.
+- **DAB-OPS-20261003-002:** records the missing delegation root cause and the bounded released-lease/request guard attempt that was refined when the pre-fix Supervisor had already replaced the release marker.
+- **DAB-OPS-20261003-003:** records the preserve-history/newest-request-per-task attempted fix.
+- **DAB-OPS-20261003-004:** records the immutable-history compatibility-normalizer attempted fix and canonical-field requirement for new events.
+- **DAB-OPS-20261003-005:** records the exact-evidence closure attempt using PR 400, CI 37132672587, Pages 37132735290 and production SHA `50cbe6f0719ff67088e65340f4322e64f582ee9e`.
+
+The addendum preserves all Run 7 content, exact image bytes, publication identity, and existing statuses. Its only purpose is to make the cumulative ledger complete enough for deterministic Task 29 certification.
