@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {WATCHDOG_SLOTS,WATCHDOG_MINIMUM_ACTION_LADDER,buildWatchdogIncidentId,buildWatchdogActionKey,acquireWatchdogRecoveryLease,releaseWatchdogRecoveryLease,watchdogLeaseActive,watchdogLeaseWritePlan,selectAuthoritativeRequest,watchdogDecision,nextWatchdogCorrectiveAction,verifyWatchdogRecoveryProgress,watchdogRecoveryContinuation,buildWatchdogEvent,validateWatchdogRingContract} from '../lib/chatgpt-watchdog-ring.mjs';
+import {WATCHDOG_SLOTS,WATCHDOG_NATIVE_IMAGE_TASKS,WATCHDOG_MINIMUM_ACTION_LADDER,buildWatchdogIncidentId,buildWatchdogActionKey,acquireWatchdogRecoveryLease,releaseWatchdogRecoveryLease,watchdogLeaseActive,watchdogLeaseWritePlan,selectAuthoritativeRequest,watchdogNativeImageRequestEligible,watchdogDecision,nextWatchdogCorrectiveAction,verifyWatchdogRecoveryProgress,watchdogRecoveryContinuation,buildWatchdogEvent,validateWatchdogRingContract} from '../lib/chatgpt-watchdog-ring.mjs';
 import {classifyRunHealth} from '../lib/run-supervisor.mjs';
 
 const active={active:true,terminal:false,execution_id:'synthetic-watchdog-execution',edition_id:'dab-edition-2099-01-01',branch:'synthetic/watchdog'};
@@ -10,6 +10,32 @@ const incident=buildWatchdogIncidentId(incArgs);
 const action=buildWatchdogActionKey({incident_id:incident,action_type:'CONSUME_EXACT_QUEUED_REQUEST',target:'req-current',attempt_generation:1});
 
 test('ring slots are exactly 03 13 23 33 43 53',()=>assert.deepEqual(WATCHDOG_SLOTS,{A:3,B:13,C:23,D:33,E:43,F:53}));
+
+test('native image tasks are exactly 11 through 16',()=>assert.deepEqual(WATCHDOG_NATIVE_IMAGE_TASKS,['11','12','13','14','15','16']));
+test('all six slots are equally eligible to consume an unclaimed queued native-image request without waiting for stale classification',()=>{
+  const req={execution_id:active.execution_id,task_id:'11',request_key:'img-11',capability:'native_chatgpt',status:'QUEUED_FOR_SCHEDULED_CONSUMER'};
+  assert.equal(watchdogNativeImageRequestEligible(req,{execution_id:active.execution_id}),true);
+  for(const slot of Object.keys(WATCHDOG_SLOTS)){
+    const d=watchdogDecision({active_pointer:active,classification:{state:'READY_IDLE'},owner_slot:slot,authoritative_request:req,now:'2026-10-03T19:01:00Z'});
+    assert.equal(d.action,'CONSUME_NATIVE_IMAGE_REQUEST');
+    assert.equal(d.owner_slot,slot);
+    assert.equal(d.request_key,'img-11');
+  }
+});
+test('native-image consumer eligibility is exact-execution and Tasks 11-16 only',()=>{
+  assert.equal(watchdogNativeImageRequestEligible({execution_id:active.execution_id,task_id:'16',capability:'native_chatgpt',status:'queued'},{execution_id:active.execution_id}),true);
+  assert.equal(watchdogNativeImageRequestEligible({execution_id:active.execution_id,task_id:'17',capability:'native_chatgpt',status:'queued'},{execution_id:active.execution_id}),false);
+  assert.equal(watchdogNativeImageRequestEligible({execution_id:'other',task_id:'11',capability:'native_chatgpt',status:'queued'},{execution_id:active.execution_id}),false);
+  assert.equal(watchdogNativeImageRequestEligible({execution_id:active.execution_id,task_id:'11',capability:'repository',status:'queued'},{execution_id:active.execution_id}),false);
+});
+test('existing recovery ownership prevents a second slot from consuming the same queued native image',()=>{
+  const lease=acquireWatchdogRecoveryLease(null,{execution_id:active.execution_id,incident_id:incident,owner_slot:'A',action_key:action,now:'2026-10-03T19:00:00Z'}).lease;
+  const req={execution_id:active.execution_id,task_id:'11',request_key:'img-11',capability:'native_chatgpt',status:'queued'};
+  const d=watchdogDecision({active_pointer:active,classification:{state:'READY_IDLE'},recovery_lease:lease,owner_slot:'B',authoritative_request:req,now:'2026-10-03T19:01:00Z'});
+  assert.equal(d.action,'NO_ACTION');
+  assert.equal(d.reason,'another_watchdog_recovery_owner_active');
+});
+
 test('incident and action keys are deterministic',()=>{
   assert.equal(buildWatchdogIncidentId(incArgs),incident);
   assert.equal(buildWatchdogActionKey({incident_id:incident,action_type:'CONSUME_EXACT_QUEUED_REQUEST',target:'req-current',attempt_generation:1}),action);
