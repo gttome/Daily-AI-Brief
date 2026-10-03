@@ -1,0 +1,169 @@
+{
+  "schema_version": "chatgpt-watchdog-ring-final-verification-v1",
+  "observed_at": "2026-10-03T19:56:40.000Z",
+  "timezone": "America/Chicago",
+  "result": "PASS",
+  "core_implementation": {
+    "pull_request": 415,
+    "merge_sha": "715c34cd07ebaf534be5307fd03eeb7f2ef8b5e0",
+    "final_pr_head_sha": "0faddf1f80c5175e9caed34c38e47eb3668dbbf6",
+    "protected_ci_run_id": 37149575554,
+    "protected_ci_conclusion": "success",
+    "targeted_tests": {
+      "passed": 117,
+      "failed": 0
+    },
+    "full_contract_and_generator_tests": {
+      "passed": 885,
+      "failed": 0
+    },
+    "repository_state_validation": "PASS",
+    "lifecycle_validation": "PASS",
+    "append_only_ledger_validation": "PASS",
+    "jekyll_build": "PASS"
+  },
+  "schedules": {
+    "active_task_count": 10,
+    "task_capacity_result": "SUFFICIENT",
+    "capacity_claim": "The service admitted and retained all five additional active Watchdog schedules; observed active capacity is at least 10 tasks. No exact account ceiling is asserted.",
+    "ring": [
+      {
+        "slot": "A",
+        "title": "Daily Brief Watchdog A",
+        "enabled": true,
+        "timing_mode": "exact_schedule",
+        "minute": 3,
+        "schedule": "BEGIN:VEVENT\nDTSTART:20261003T193609Z\nRRULE:FREQ=HOURLY;BYMINUTE=3;BYSECOND=0\nEND:VEVENT"
+      },
+      {
+        "slot": "B",
+        "title": "Daily Brief Watchdog B",
+        "enabled": true,
+        "timing_mode": "exact_schedule",
+        "minute": 13,
+        "schedule": "BEGIN:VEVENT\nDTSTART:20261003T193620Z\nRRULE:FREQ=HOURLY;BYMINUTE=13;BYSECOND=0\nEND:VEVENT"
+      },
+      {
+        "slot": "C",
+        "title": "Daily Brief Watchdog C",
+        "enabled": true,
+        "timing_mode": "exact_schedule",
+        "minute": 23,
+        "schedule": "BEGIN:VEVENT\nDTSTART:20261003T193634Z\nRRULE:FREQ=HOURLY;BYMINUTE=23;BYSECOND=0\nEND:VEVENT"
+      },
+      {
+        "slot": "D",
+        "title": "Daily Brief Watchdog D",
+        "enabled": true,
+        "timing_mode": "exact_schedule",
+        "minute": 33,
+        "schedule": "BEGIN:VEVENT\nDTSTART:20261003T193646Z\nRRULE:FREQ=HOURLY;BYMINUTE=33;BYSECOND=0\nEND:VEVENT"
+      },
+      {
+        "slot": "E",
+        "title": "Daily Brief Watchdog E",
+        "enabled": true,
+        "timing_mode": "exact_schedule",
+        "minute": 43,
+        "schedule": "BEGIN:VEVENT\nDTSTART:20261003T193700Z\nRRULE:FREQ=HOURLY;BYMINUTE=43;BYSECOND=0\nEND:VEVENT"
+      },
+      {
+        "slot": "F",
+        "title": "Daily Brief Watchdog F",
+        "enabled": true,
+        "timing_mode": "exact_schedule",
+        "minute": 53,
+        "schedule": "BEGIN:VEVENT\nDTSTART:20261003T193557Z\nRRULE:FREQ=HOURLY;BYMINUTE=53;BYSECOND=0\nEND:VEVENT"
+      }
+    ],
+    "nominal_check_minutes": 10,
+    "all_prompts_generic": true,
+    "only_intentional_prompt_difference": "WATCHDOG_SLOT",
+    "standalone_minute_48_recovery_present": false,
+    "controller": {
+      "title": "Daily Brief Controller",
+      "enabled": true,
+      "hour": 19,
+      "minute": 0,
+      "timezone": "America/Chicago",
+      "next_local_day_semantics": true
+    },
+    "live_validator": {
+      "title": "Daily Brief Live Validation & Repair",
+      "enabled": true,
+      "hour": 8,
+      "minute": 30,
+      "timezone": "America/Chicago",
+      "watchdog_lease_coordination": true
+    }
+  },
+  "github_inner_liveness": {
+    "run_supervisor": "preserved",
+    "supervisor_watchdog_workflow": ".github/workflows/run-supervisor-watchdog.yml",
+    "supervisor_watchdog_cadence_minutes": 5,
+    "supervisor_watchdog_preserved": true
+  },
+  "recovery_contract": {
+    "lease_path": "_records/edition-execution/watchdog-leases/<execution-id>.json",
+    "lease_schema": "chatgpt-watchdog-recovery-lease-v1",
+    "lease_ttl_minutes": 15,
+    "optimistic_concurrency": true,
+    "lease_is_writer_authority": false,
+    "incident_path": "_records/edition-execution/watchdog-events/<execution-id>/",
+    "healthy_checks_write_events": false,
+    "health_states": [
+      "HEALTHY_ACTIVE",
+      "READY_IDLE",
+      "STALE_ACTIVE",
+      "BLOCKED_ACTIONABLE",
+      "BLOCKED_EXTERNAL",
+      "TERMINAL"
+    ],
+    "minimum_action_ladder": [
+      "RECONCILE_AUTHORITATIVE_STATE",
+      "REDISPATCH_SAME_EXECUTOR",
+      "RESTORE_SAME_EXECUTION_AUTHORITY",
+      "CONSUME_EXACT_QUEUED_REQUEST",
+      "MINIMAL_PROTECTED_REPAIR"
+    ],
+    "verified_forward_progress_required": true,
+    "dispatch_only_success": false
+  },
+  "scheduled_github_permission_probe": {
+    "result": "PASS",
+    "evidence_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/scheduled-permission-probe.json",
+    "github_read_succeeded": true,
+    "github_write_succeeded": true,
+    "interactive_approval_required": false,
+    "production_mutation": false
+  },
+  "production_safety": {
+    "active_nonterminal_execution_at_implementation": false,
+    "terminal_execution_preserved": true,
+    "completed_task_rework": false,
+    "accepted_locked_asset_regeneration": false,
+    "production_pointer_mutation": false,
+    "one_writer_rule_preserved": true
+  },
+  "cost_boundary": {
+    "chatgpt_work": false,
+    "codex": false,
+    "paid_apis_or_services": false,
+    "billable_overage": false,
+    "event_triggered_work_tasks": false,
+    "alternate_accounts": false,
+    "new_credentials": false,
+    "browser_automation": false
+  },
+  "learning": {
+    "problem_id": "DAB-OPS-20261003-007",
+    "event_ids": [
+      "DAB-OPS-E-000083",
+      "DAB-OPS-E-000084",
+      "DAB-OPS-E-000085",
+      "DAB-OPS-E-000086"
+    ],
+    "kanban_card": "DAB-KB-012",
+    "kanban_lane": "done"
+  }
+}
