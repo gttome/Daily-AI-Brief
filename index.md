@@ -335,7 +335,6 @@ reader_release: true
 
 **Coverage:** Locked October 3 Run 7 media selection.
 
-**Evidence:** Practitioner analysis. The Verge episode page identifies title, show context and publication at 2026-10-02 15:47 UTC; direct Watch and Listen routes are present. Runtime was not exposed in the reviewed page and remains unknown.
 
 **Listen / watch:** <a href="https://www.theverge.com/podcast/1004059/openai-dots-kindle-homepad-cybercab-vergecast" data-item-id="dab-podcast-2026-10-03-1" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">The Vergecast</a>
 
@@ -369,7 +368,6 @@ reader_release: true
 
 **Coverage:** Locked October 3 Run 7 media selection.
 
-**Evidence:** Practitioner analysis. The Atlantic episode page identifies the host, publication at 2026-10-02 13:00 ET, complete audio controls and an exact 56:16 runtime.
 
 **Listen / watch:** <a href="https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/" data-item-id="dab-podcast-2026-10-03-2" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Galaxy Brain</a>
 
@@ -383,7 +381,7 @@ reader_release: true
 <!-- reader-release:start -->
 
 
-<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><div class="watchlist-daily-summary" aria-label="Changed today:"><p class="watchlist-daily-counts" aria-label="2 New today · 1 Updated today · 17 Carried forward · 0 Archived / dropped recently"><strong>2 new today · 1 updated · 17 carried forward.</strong></p><p><strong>New today:</strong> </p><ul class="watchlist-daily-items"><li>Full-duplex human interaction models</li><li>Open agent hardware moves from demos to kits</li></ul><p><strong>Updated today:</strong> </p><ul class="watchlist-daily-items"><li>Decision models emerge as a separate AI systems layer</li></ul><p><strong>Carried forward:</strong> </p><ul class="watchlist-daily-items"><li>Collaborative vibe coding</li><li>Repairable AI-generated 3D designs</li><li>Restoring images after repeated AI edits</li><li>Agent safeguards tailored to the task</li><li>Language models that also predict concepts</li><li>Turning agent memory into compact plans</li><li>Building 3D worlds through recursive code</li><li>Smaller model memory through selective precision</li><li>Reusable agent skills become observable</li><li>Agents that persist across sessions</li><li>AI adoption measured at the feature level</li><li>AI harness engineering becomes a first-class layer</li><li>Agentic workloads move toward measured edge inference</li><li>Model lifecycle governance for AI products</li><li>Agents that overclaim task completion</li><li>Trusted enterprise context becomes machine-readable for agents</li><li>Sovereign open AI becomes an organized infrastructure layer</li></ul><p><strong>Archived / dropped recently:</strong> None</p></div><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
+<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><div class="watchlist-daily-summary" aria-label="Changed today:"><p class="watchlist-daily-counts" aria-label="2 New today · 1 Updated today · 17 Carried forward · 0 Archived / dropped recently"><strong>2 new today · 1 updated · 17 carried forward.</strong></p><p><strong>New today:</strong> </p><ul class="watchlist-daily-items"><li>Full-duplex human interaction models</li><li>Open agent hardware moves from demos to kits</li></ul><p><strong>Updated today:</strong> </p><ul class="watchlist-daily-items"><li>Decision models emerge as a separate AI systems layer</li></ul><p><strong>Carried forward:</strong> 17</p><p><strong>Archived / dropped recently:</strong> None</p></div><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
 
 
 <!-- reader-release:end -->
