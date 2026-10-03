@@ -1,0 +1,12 @@
+{
+  "schema_version": "watchdog-scheduled-permission-probe-v1",
+  "protected_main_sha_observed": "860ebf7884464fb9730a8278361472bafcae6509",
+  "active_production_pointer": {
+    "active": false,
+    "terminal": true
+  },
+  "github_read_succeeded": true,
+  "github_write_succeeded": true,
+  "branch": "test/watchdog-scheduled-permission-probe-2026-10-03",
+  "executed_at": "2026-10-03T19:51:08.836Z"
+}
