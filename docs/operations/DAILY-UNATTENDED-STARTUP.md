@@ -1,20 +1,46 @@
 # Daily unattended startup
 
-**Current protected state, October 2:** Run 5 (`reliable-edition-20261002-run5`) is independently `PUBLIC_CLOSED` with Task 29 Done. Do not reopen Tasks 00-29, regenerate any accepted image, or reuse Run 5 as the next production execution. The historical one-time scheduled qualification remains immutable proof of the image path, but it is no longer the production consumer. The reusable production consumer is the enabled hourly **Daily Brief Recovery** automation `6abeb9a2b8a88191949dc420d5e10feb`, bound in `docs/operations/unattended-image-host.json` with a committed `automations.peek` observation. Protected host registration is the only mutable source of truth for current image-host readiness; policy documents must not duplicate a separate READY/BLOCKED status.
+This file is the current production startup instruction. It is intentionally **generic**: do not put a specific production run name, run number, historical execution ID, or one-off recovery identity into this instruction. Historical records remain evidence only.
 
-**Pre-next-run gate:** the bounded NON-PRODUCTION rehearsal is complete and PASS. The authoritative receipt is `_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json`; authorization becomes effective only when that receipt and the matching host registration are on protected `main` after deterministic CI. The hardening process itself must not manually allocate or start the next production Brief. Normal allocation remains owned by the enabled Daily Brief Controller at its scheduled invocation. Historical blocked rehearsal attempt 1, pre-qualification blockers and qualification receipts remain preserved as evidence rather than current operating state.
+## Daily schedule and edition date
 
-Owner authorization: start the next Brief now and every day at **01:00 America/Chicago**, without owner interaction, uploads, approvals, an open chat or status requests. Reuse the existing ordinary scheduled ChatGPT path and GitHub Actions. Do not activate Work, Codex, paid APIs, overage, alternate accounts or new credentials. Actual account billing remains unobserved unless measured; a prompt is not a cost receipt.
+The Daily Brief production controller starts at **19:00 America/Chicago on the evening before the edition date**.
+
+- At a normal 19:00 invocation, the target edition date is the **next America/Chicago calendar day**.
+- Resume an existing active nonterminal production execution before allocating anything new.
+- If the target edition is already independently `PUBLIC_CLOSED`, do not repeat it.
+- If no active nonterminal production execution exists, allocate exactly one new execution for the target edition from current protected `main`.
+- Never relabel historical content as a new edition.
+- Never reopen a prior terminal execution.
+
+This schedule creates a larger overnight recovery window while preserving the publication-quality and protected-publication contracts.
+
+## Generic terminal-run protection
+
+Every prior terminal production execution is immutable.
+
+Before any allocation, resume, recovery, worker dispatch, or publication action:
+
+1. Read `data/operations/active-production-run.json` and the terminal production records.
+2. Apply the generic terminal-run guard from `_generator/lib/run-readiness.mjs`.
+3. Recovery may resume only the **exact active nonterminal execution**.
+4. If there is no active nonterminal execution, a new target edition may be allocated.
+5. A stale pointer, Kanban projection, cached checkpoint, old worker request, timing record, historical prompt, or status document can never reactivate a terminal execution.
+
+No instruction may depend on a named historical production run.
 
 ## Required bootstrap
 
-Resolve live main. Read these current files and record their paths, content digests and main SHA in the run bootstrap receipt. Read the ENTIRE cumulative ledger. Follow each referenced current stage standard.
+Resolve live protected `main`. Read and bind the current versions/digests of:
 
 - `docs/operations/START-HERE.md`
 - `docs/operations/DAILY-UNATTENDED-STARTUP.md`
 - `data/operations/production-continuous-improvement-ledger.jsonl`
 - `docs/operations/PRODUCTION-CONTINUOUS-IMPROVEMENT-LEDGER.md`
 - `docs/operations/LIVING-SYSTEM-OPERATIONS.md`
+- `docs/operations/KANBAN-GOLD-STANDARD.md`
+- `docs/operations/IMPROVEMENT-KANBAN.md`
+- `data/operations/improvement-kanban.json`
 - `docs/operations/task-recovery-contracts.json`
 - `docs/operations/run-learning-readiness-contract.json`
 - `docs/operations/reliable-edition-execution.md`
@@ -30,42 +56,105 @@ Resolve live main. Read these current files and record their paths, content dige
 - `data/operations/publication-status.json`
 - `docs/operations/unattended-image-host.json`
 
-Also read the active binding, readiness, events, writer lease, immutable results, requests and completion evidence. Daily authorization supersedes the completed two-Brief mission. Run 4, accepted images and history remain immutable. Run 4 production SHA remains `ce3dac9d75949f381821dfd34163048bf08c65d6`.
+Also read the current active binding, readiness receipt, append-only task events, writer lease/fence, immutable results, worker requests/results, blockers, publication evidence and latest terminal cleanup.
+
+## Task 00 production readiness
+
+Task 00 must fail closed on missing authoritative evidence, but **measurement outputs are never control authority**.
+
+Required control invariants include:
+
+- one production execution identity;
+- one fenced writer;
+- persistent Supervisor and watchdog;
+- generic terminal-run reopen guard enabled and regression-tested;
+- all prior terminal executions immutable;
+- full cumulative operational-learning ledger inherited;
+- no unexplained regression from the latest successful production baseline;
+- Kanban derived only from append-only events;
+- Kanban, timing, durations and performance metrics are observability only;
+- stale/missing/contradictory projections are telemetry defects, not production blockers;
+- protected CI and exact-SHA deployment;
+- independent live verification before `PUBLIC_CLOSED`;
+- zero incremental-cost boundary: no ChatGPT Work, no Codex, no paid model API/service, no billable overage, no new credentials.
+
+A Kanban or timing defect may be repaired separately while production continues from authoritative task events. It may never change task state, authorize a retry, consume retry budget, create a worker, block publication, or reopen an execution.
 
 ## Image-host admission and reusable consumption
 
-The completed Run 5 qualification evidence remains immutable. Do not regenerate its six images or rewrite its historical receipts. Current readiness is derived only from `docs/operations/unattended-image-host.json`: Task 00 verifies the registered qualification receipt, then verifies the bound reusable-consumer observation and exact enabled automation identity. A policy narrative cannot override the registration.
+Current image-route readiness comes only from `docs/operations/unattended-image-host.json` and its bound evidence.
 
-Qualification and consumption are separate contracts. The completed one-time qualification automation proves the historical scheduled/native path; the enabled hourly Daily Brief Recovery automation is the reusable production consumer. A READY qualification with no enabled bound reusable consumer is **not** production-ready. The GitHub dispatcher must return `QUEUED_FOR_SCHEDULED_CONSUMER` with the exact consumer ID; the old consumerless `AWAITING_SCHEDULED_EXECUTOR` terminal wait is prohibited.
+Qualification and reusable consumption are separate gates. A READY qualification with no enabled bound reusable consumer is not image-production-ready.
 
-Every scheduled native-image invocation refreshes durable branch and writer-lease state at invocation. Any `writer_generation` embedded in a queued request is scheduling provenance only. The consumer acquires current task-specific fenced authority for the same execution, rejects stale/foreign authority for mutation, preserves completed tasks, and never creates a duplicate run. At a durable Task 11-16 Done or Blocked boundary it writes `released=true`, `released_at`, an immediate expiry, and a task-specific `release_reason` ending in `HANDOFF_TO_SUPERVISOR`. The event-driven Supervisor handoff resumes the **same** execution automatically.
+The reusable scheduled native-image consumer must:
 
-For production images, preserve all existing quality and cost controls: sealed single-story specification, professional native generation, pretransport visible-text enforcement, exact-byte persistence/read-back, saved-Git visual review, bounded targeted retry, no Work/Codex/paid services/new credentials/owner upload, and no SVG/basic/low-quality fallback. The completed pre-next-run synthetic rehearsal used `rehearsal_no_generation=true` to prove real scheduler consumption, fence refresh, stale-generation rejection and automatic same-execution Supervisor handoff with zero image generation, image editing, publication mutation or Run 5 mutation. Its PASS receipt is the durable authorization gate.
+- refresh current durable state and fenced writer authority at invocation;
+- treat an embedded writer generation as scheduling provenance only;
+- preserve all completed tasks and accepted/locked images;
+- use the sealed single-story specification;
+- use professional native generation only;
+- enforce visible-text/subject controls before persistence;
+- persist exact bytes and verify Git read-back identity;
+- review the saved Git asset before acceptance;
+- use only the bounded same-story recovery contract;
+- release authority at a durable Done or Blocked boundary with an explicit handoff to the Supervisor.
+
+No SVG/basic/low-quality fallback, owner upload, alternate account, Work, Codex, paid service or new credential is authorized.
 
 ## Daily execution and recovery
 
-Resolve today's America/Chicago date. Resume an active nonterminal run first. If today's edition is already independently PUBLIC CLOSED, do not repeat it. Otherwise allocate one dated execution from current main and the next unused run number. The initial target is October 2 / Run 5 unless live state already contains it. Never relabel old content.
+Drain all dependency-safe work in the same invocation whenever possible.
 
-Validate Task 00 with the full ledger and actual evidence. Task 00 may PASS with `start_scope=non_image_production` when and only when the sole deferred blocker is the unattended image host; in that state `image_tasks_authorized=false` and `publication_authorized=false`. Persist all 30 task definitions and readiness before production. Continue Tasks 01-10 and any other dependency-safe non-image work. Keep one fenced writer and the existing Supervisor/watchdog. Polling and Kanban refreshes are not substantive content/image progress; a queue without a consumer is not progress. Before working or committing, verify execution, task, operation key and current writer generation. Never race an active worker or bypass a stale fence.
+Preserve:
 
-Drain safe dependent work in the same invocation. Preserve the cutoff, selections, media, accepted images and receipts across continuation. Enforce six stories in 2/2/2 order, one reusable Agent Skills story, two verified videos, two source-diverse podcasts, Watchlist discovery, all-four-book relevance review, full-source reading evidence and six professional high-detail images. Retain article-24-72-168-v1 and unchanged media policy. No sparse/basic, self-approved or low-quality image fallback.
+- six stories in exact 2/2/2 allocation;
+- exactly one reusable Agent Skills story;
+- two verified videos;
+- two source-diverse verified podcasts with verified runtimes;
+- verified source reading time for every article;
+- independent Watchlist discovery;
+- all-four-book relevance review with reader-facing value;
+- six professional story-specific images;
+- protected CI;
+- exact-SHA Pages deployment;
+- independent live verification;
+- terminal cleanup and learning reconciliation.
 
-Append each actual transition immediately with UTC timestamp, from/to, reason, operation and proof. Record Blocked explicitly. Record generation/capture/review/transfer/recovery/waiting separately. Derive Kanban and timing from events; unknown times remain unknown. Preserve records for PNGs, reports and replay.
+Append every actual task transition immediately with exact UTC `from`, `to`, `at`, reason and proof. Unknown timing stays unknown.
 
-Freeze the candidate before Task 23. Require protected CI, exact-SHA merge and Pages, independent live verification, PUBLIC CLOSED and generic Task 29. Append new problems, attempts, fixes and actual outcomes to the learning ledger; reconcile at closure. Keep daily and hourly schedules enabled after each edition **and while any route is Blocked**. Only run-specific writers stop. A route-specific blocker must never disable the controller, keeper, validator, or unrelated work.
+A route-specific blocker never becomes a global stop. Continue every dependency-safe operation and preserve the exact blocker for the unavailable route.
 
-The daily controller starts work; the hourly keeper resumes missed starts or stalls independently of the owner and yields to observed substantive progress. An unchanged real capability block must not cause repeated prohibited generation or invented progress, but every recovery cycle must re-read durable state, perform newly available safe work, and preserve liveness. Status requests only refresh evidence and render a fresh event-derived Kanban PNG with changes since the prior status; they never activate production.
+## Repository-task liveness
 
-## Reused automation identities
+Queued repository work must receive explicit consumer dispatch. A repository request without substantive durable worker progress for approximately 60 seconds is a route-scoped `repository_consumer_unclaimed` liveness fault.
 
-- Daily controller: `6abeba31fe28819184544abf70874a80`, formerly Run 4 Primary Controller.
-- Hourly keeper: `6abeb9a2b8a88191949dc420d5e10feb`, formerly Run 4 Production Keeper.
-- Existing live validation: `6aadf3587b1c8191846a078f49102633`.
+Supervisor lease acquisition, renewal, heartbeat, Kanban reprojection and queue bookkeeping do not count as substantive worker progress.
 
-Archive old prompts before changing their Run 4 scope. Configuration and a run request are not proof that execution or publication completed.
+Recovery consumes only the exact queued request for the same execution. It never allocates another execution, skips a task, repeats completed work or regenerates accepted images.
 
-## GitHub image request routing
+## Publication and closure
 
-Once protected host registration is READY with verified qualification evidence **and** an enabled reusable consumer binding, the existing GitHub image entry point marks the exact request `queued_for_scheduled_consumer` and records the admitted consumer ID. The routing script performs no generation, visual review, acceptance or Done transition. A READY qualification with a missing/disabled consumer becomes `CAPABILITY_BLOCKED` with `NO_ENABLED_REUSABLE_SCHEDULED_IMAGE_CONSUMER`; it must never stop indefinitely at `AWAITING_SCHEDULED_EXECUTOR`. Queueing alone is not proof of execution: the scheduled consumer must refresh current fenced authority at invocation and write durable result/handoff evidence.
+Freeze candidate writes before protected publication.
 
-Primary PNG persistence is direct Git Data `create_blob` with complete Base64. If that complete call is rejected before reaching GitHub, the sole approved fallback is the executable bounded chunk bridge in `_tools/image-chunk-bridge.mjs`. The fenced scheduled worker writes canonical Base64 chunks plus one manifest bound to execution, branch, task, run-scoped target, source writer generation, byte count, SHA-256 and Git blob identity. After fenced takeover, the Run Supervisor reconstructs the exact PNG, validates its header and dimensions, writes only the approved path, verifies read-back, records the result and removes temporary chunks. This transport never accepts or visually certifies an image; saved-Git-asset review remains mandatory.
+Publication requires:
+
+1. exact candidate identity;
+2. protected deterministic CI on that exact head;
+3. current protected-main authorization for the exact active execution;
+4. exact-SHA merge/deployment;
+5. independent live verification;
+6. durable validated-publication evidence;
+7. `PUBLIC_CLOSED`;
+8. Task 29 cleanup, learning reconciliation and next-edition readiness.
+
+Closeout repairs preserve accepted reader content unless a separate explicit reader correction is authorized.
+
+## Persistent automation identities
+
+- Daily production controller: `6abeba31fe28819184544abf70874a80`
+- Hourly recovery / scheduled native-image consumer: `6abeb9a2b8a88191949dc420d5e10feb`
+- Daily live validation and secondary recovery: `6aadf3587b1c8191846a078f49102633`
+
+These identities are reusable service bindings. Their instructions must remain generic and must never name a particular production run.
+
+Configuration is not completion evidence. Only durable task/publication evidence establishes progress or closure.
