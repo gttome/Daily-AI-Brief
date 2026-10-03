@@ -88,21 +88,53 @@ try{
         hostProofErrors.push(...proof.errors);
         qualificationVerified=proof.result==='PASS'&&proof.errors.length===0;
 
-        const consumer=registration.reusable_consumer||{};
-        if(consumer.scheduler_kind!=='chatgpt_automation'||!/^[a-f0-9]{32}$/.test(consumer.automation_id||'')||
-            consumer.enabled!==true||consumer.role!=='scheduled_native_image_request_consumer'||
-            consumer.current_fence_refresh_required!==true||consumer.explicit_supervisor_handoff_required!==true)
-          throw Error('enabled_reusable_scheduled_consumer_required');
-        if(!/^_records\/[\w/.-]+\.json$/.test(consumer.observation_path||'')||consumer.observation_path.includes('..'))
-          throw Error('reusable_consumer_observation_required');
-        const observationBytes=fs.readFileSync(consumer.observation_path);
-        if(createHash('sha256').update(observationBytes).digest('hex')!==consumer.observation_sha256)
-          throw Error('reusable_consumer_observation_digest_mismatch');
-        const observation=JSON.parse(observationBytes),task=observation.automations?.find(x=>x.id===consumer.automation_id);
-        if(observation.source!=='automations.peek'||!task||task.is_enabled!==true||task.id!==consumer.automation_id||
-            task.title!==consumer.title||task.schedule!==consumer.schedule||!/RRULE:FREQ=HOURLY/.test(task.schedule||''))
-          throw Error('reusable_consumer_live_binding_invalid');
-        consumerObservationVerified=true;
+        const pool=registration.reusable_consumer_pool||{};
+        const legacy=registration.reusable_consumer||{};
+        if(pool.scheduler_kind==='chatgpt_watchdog_ring'){
+          if(pool.enabled!==true||pool.role!=='scheduled_native_image_request_consumer_pool'||
+              pool.all_slots_equivalent!==true||pool.normal_queued_native_request_consumption!==true||
+              pool.nominal_pickup_minutes!==10||pool.current_fence_refresh_required!==true||
+              pool.explicit_supervisor_handoff_required!==true||
+              JSON.stringify(pool.slot_ids)!==JSON.stringify(['A','B','C','D','E','F'])||
+              !Array.isArray(pool.automation_ids)||pool.automation_ids.length!==6||
+              !pool.automation_ids.every(x=>/^[a-f0-9]{32}$/.test(x)))
+            throw Error('enabled_reusable_watchdog_consumer_pool_required');
+          if(!/^_records\/[\w/.-]+\.json$/.test(pool.observation_path||'')||pool.observation_path.includes('..'))
+            throw Error('reusable_consumer_pool_observation_required');
+          const observationBytes=fs.readFileSync(pool.observation_path);
+          if(createHash('sha256').update(observationBytes).digest('hex')!==pool.observation_sha256)
+            throw Error('reusable_consumer_pool_observation_digest_mismatch');
+          const observation=JSON.parse(observationBytes);
+          if(observation.schema_version!=='watchdog-ring-image-consumer-pool-observation-v1'||
+              observation.all_slots_equivalent!==true||
+              observation.normal_queued_native_request_consumption!==true||
+              observation.nominal_pickup_minutes!==10||
+              !Array.isArray(observation.slots)||observation.slots.length!==6)
+            throw Error('reusable_consumer_pool_observation_invalid');
+          const bySlot=new Map(observation.slots.map(x=>[x.slot,x]));
+          for(const [index,slot] of ['A','B','C','D','E','F'].entries()){
+            const task=bySlot.get(slot);
+            if(!task||task.enabled!==true||task.native_image_consumer!==true||
+                task.automation_id!==pool.automation_ids[index])
+              throw Error('reusable_consumer_pool_live_binding_invalid:'+slot);
+          }
+          consumerObservationVerified=true;
+        } else {
+          if(legacy.scheduler_kind!=='chatgpt_automation'||!/^[a-f0-9]{32}$/.test(legacy.automation_id||'')||
+              legacy.enabled!==true||legacy.role!=='scheduled_native_image_request_consumer'||
+              legacy.current_fence_refresh_required!==true||legacy.explicit_supervisor_handoff_required!==true)
+            throw Error('enabled_reusable_scheduled_consumer_required');
+          if(!/^_records\/[\w/.-]+\.json$/.test(legacy.observation_path||'')||legacy.observation_path.includes('..'))
+            throw Error('reusable_consumer_observation_required');
+          const observationBytes=fs.readFileSync(legacy.observation_path);
+          if(createHash('sha256').update(observationBytes).digest('hex')!==legacy.observation_sha256)
+            throw Error('reusable_consumer_observation_digest_mismatch');
+          const observation=JSON.parse(observationBytes),task=observation.automations?.find(x=>x.id===legacy.automation_id);
+          if(observation.source!=='automations.peek'||!task||task.is_enabled!==true||task.id!==legacy.automation_id||
+              task.title!==legacy.title||task.schedule!==legacy.schedule||!/RRULE:FREQ=HOURLY/.test(task.schedule||''))
+            throw Error('reusable_consumer_live_binding_invalid');
+          consumerObservationVerified=true;
+        }
         value.image_pipeline={...(value.image_pipeline||{}),host_admission:deriveImageHostAdmission({
           registration,qualification_verified:qualificationVerified,consumer_observation_verified:consumerObservationVerified
         })};
