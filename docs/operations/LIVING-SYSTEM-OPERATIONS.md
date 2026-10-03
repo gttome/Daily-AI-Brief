@@ -1,6 +1,9 @@
 # Daily Generative AI Brief
 
 > [!IMPORTANT]
+> **Current instruction boundary.** Current production startup is defined by `DAILY-UNATTENDED-STARTUP.md` and the executable readiness contracts. Production instructions are generic and must not depend on a named historical run. Dated sections below are retained as historical learning evidence only; they are not a second controller and may not override current startup, terminal-run protection, cost, schedule, or observability rules. The production controller starts at 19:00 America/Chicago on the evening before the edition date and targets the next local calendar day. Kanban/timing/metrics are observability only and never production control authority.
+
+> [!IMPORTANT]
 > **September 30, 2026 — controller simplification and self-healing.** Scheduled controller
 > time starts work; it does not pace stages. A run drains all currently safe dependent work.
 > Recoverable blockers are cleared in-run using the smallest authorized action: derive stale
