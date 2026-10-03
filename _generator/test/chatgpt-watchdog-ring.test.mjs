@@ -1,0 +1,121 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {WATCHDOG_SLOTS,WATCHDOG_MINIMUM_ACTION_LADDER,buildWatchdogIncidentId,buildWatchdogActionKey,acquireWatchdogRecoveryLease,releaseWatchdogRecoveryLease,watchdogLeaseActive,watchdogLeaseWritePlan,selectAuthoritativeRequest,watchdogDecision,nextWatchdogCorrectiveAction,verifyWatchdogRecoveryProgress,buildWatchdogEvent,validateWatchdogRingContract} from '../lib/chatgpt-watchdog-ring.mjs';
+import {classifyRunHealth} from '../lib/run-supervisor.mjs';
+
+const active={active:true,terminal:false,execution_id:'synthetic-watchdog-execution',edition_id:'dab-edition-2099-01-01',branch:'synthetic/watchdog'};
+const incArgs={execution_id:active.execution_id,task_id:'18',latest_authoritative_state:'Active',reason_code:'repository_consumer_unclaimed',request_key:'req-current'};
+const incident=buildWatchdogIncidentId(incArgs);
+const action=buildWatchdogActionKey({incident_id:incident,action_type:'CONSUME_EXACT_QUEUED_REQUEST',target:'req-current',attempt_generation:1});
+
+test('ring slots are exactly 03 13 23 33 43 53',()=>assert.deepEqual(WATCHDOG_SLOTS,{A:3,B:13,C:23,D:33,E:43,F:53}));
+test('incident and action keys are deterministic',()=>{
+  assert.equal(buildWatchdogIncidentId(incArgs),incident);
+  assert.equal(buildWatchdogActionKey({incident_id:incident,action_type:'CONSUME_EXACT_QUEUED_REQUEST',target:'req-current',attempt_generation:1}),action);
+});
+test('healthy active is silent no-op',()=>{
+  const health=classifyRunHealth({task_state:'Active',executor_state:'Running',last_progress_at:'2026-10-03T19:00:00Z',now:'2026-10-03T19:01:00Z'});
+  assert.equal(watchdogDecision({active_pointer:active,classification:health,owner_slot:'A',substantive_worker_active:true,now:'2026-10-03T19:01:00Z'}).action,'NO_ACTION');
+});
+test('no active production is no-op',()=>assert.equal(watchdogDecision({active_pointer:{active:false,terminal:true},classification:{state:'TERMINAL'},owner_slot:'A',now:'2026-10-03T19:01:00Z'}).action,'NO_ACTION'));
+test('terminal stale pointer never reopens production',()=>{
+  assert.equal(watchdogDecision({active_pointer:active,classification:{state:'TERMINAL'},owner_slot:'A',now:'2026-10-03T19:01:00Z'}).action,'NO_ACTION');
+  assert.equal(watchdogDecision({active_pointer:active,classification:{state:'TERMINAL'},owner_slot:'A',terminal_pointer_cleanup_authorized:true,now:'2026-10-03T19:01:00Z'}).action,'RECONCILE_TERMINAL_POINTER_ONLY');
+});
+test('valid recovery owner blocks another watchdog',()=>{
+  const one=acquireWatchdogRecoveryLease(null,{execution_id:active.execution_id,incident_id:incident,owner_slot:'A',action_key:action,now:'2026-10-03T19:00:00Z'});
+  const two=acquireWatchdogRecoveryLease(one.lease,{execution_id:active.execution_id,incident_id:incident,owner_slot:'B',action_key:action,now:'2026-10-03T19:10:00Z'});
+  assert.equal(two.acquired,false); assert.equal(two.reason,'recovery_lease_owned_by_other_watchdog');
+  assert.equal(watchdogDecision({active_pointer:active,classification:{state:'STALE_ACTIVE'},recovery_lease:one.lease,owner_slot:'B',now:'2026-10-03T19:10:00Z'}).action,'NO_ACTION');
+});
+test('expired recovery owner is taken over with incremented generation',()=>{
+  const one=acquireWatchdogRecoveryLease(null,{execution_id:active.execution_id,incident_id:incident,owner_slot:'A',action_key:action,now:'2026-10-03T19:00:00Z',ttl_ms:12*60*1000});
+  const two=acquireWatchdogRecoveryLease(one.lease,{execution_id:active.execution_id,incident_id:incident,owner_slot:'B',action_key:action,now:'2026-10-03T19:13:00Z'});
+  assert.equal(two.acquired,true); assert.equal(two.lease.generation,2); assert.equal(two.lease.owner_slot,'B');
+});
+test('lease release is explicit and non-active',()=>{
+  const one=acquireWatchdogRecoveryLease(null,{execution_id:active.execution_id,incident_id:incident,owner_slot:'A',action_key:action,now:'2026-10-03T19:00:00Z'});
+  const r=releaseWatchdogRecoveryLease(one.lease,{owner_slot:'A',generation:1,reason:'RECOVERY_VERIFIED_PROGRESSING',now:'2026-10-03T19:05:00Z'});
+  assert.equal(r.state,'RELEASED'); assert.equal(r.expires_at,r.released_at); assert.equal(watchdogLeaseActive(r,{now:'2026-10-03T19:05:01Z'}),false);
+});
+test('simultaneous contenders share exact optimistic SHA precondition',()=>{
+  const lease=acquireWatchdogRecoveryLease(null,{execution_id:active.execution_id,incident_id:incident,owner_slot:'A',action_key:action,now:'2026-10-03T19:00:00Z'}).lease;
+  const sha='a'.repeat(40);
+  const a=watchdogLeaseWritePlan({current:lease,current_sha:sha,desired_lease:lease});
+  const b=watchdogLeaseWritePlan({current:lease,current_sha:sha,desired_lease:{...lease,owner_slot:'B'}});
+  assert.equal(a.expected_sha,sha); assert.equal(b.expected_sha,sha); assert.equal(a.optimistic_concurrency,true);
+});
+test('post-acquisition race re-read exits if run becomes healthy',()=>{
+  const lease=acquireWatchdogRecoveryLease(null,{execution_id:active.execution_id,incident_id:incident,owner_slot:'A',action_key:action,now:'2026-10-03T19:00:00Z'}).lease;
+  const health=classifyRunHealth({task_state:'Active',executor_state:'Running',last_progress_at:'2026-10-03T19:00:30Z',now:'2026-10-03T19:01:00Z'});
+  assert.equal(watchdogDecision({active_pointer:active,classification:health,recovery_lease:lease,owner_slot:'A',substantive_worker_active:true,now:'2026-10-03T19:01:00Z'}).action,'NO_ACTION');
+});
+test('missing Supervisor redispatches same executor before broader repair',()=>assert.equal(nextWatchdogCorrectiveAction({classification:'STALE_ACTIVE',same_executor_missing:true,authoritative_request:{request_key:'r'}}).action,'REDISPATCH_SAME_EXECUTOR'));
+test('unclaimed repository request consumes exact request',()=>{
+  const r={execution_id:active.execution_id,task_id:'18',request_key:'repo-current'};
+  const x=nextWatchdogCorrectiveAction({classification:'STALE_ACTIVE',authoritative_request:r});
+  assert.equal(x.action,'CONSUME_EXACT_QUEUED_REQUEST'); assert.equal(x.target,'repo-current');
+});
+test('newest exact native request wins over historical contamination',()=>{
+  const rs=[
+    {execution_id:active.execution_id,task_id:'11',request_key:'old',created_at:'2026-10-03T19:00:00Z'},
+    {execution_id:active.execution_id,task_id:'11',request_key:'current',created_at:'2026-10-03T19:01:00Z'},
+    {execution_id:'history',task_id:'11',request_key:'wrong',created_at:'2026-10-03T19:02:00Z'}
+  ];
+  assert.equal(selectAuthoritativeRequest(rs,{execution_id:active.execution_id,task_id:'11'}).request_key,'current');
+});
+test('actionable blocker selects smallest repair',()=>assert.equal(nextWatchdogCorrectiveAction({classification:'BLOCKED_ACTIONABLE',stale_derived_state:true,same_executor_missing:true}).action,'RECONCILE_AUTHORITATIVE_STATE'));
+test('external blocker is not bypassed',()=>assert.equal(watchdogDecision({active_pointer:active,classification:{state:'BLOCKED_EXTERNAL'},owner_slot:'C',now:'2026-10-03T19:01:00Z'}).action,'WAIT_EXTERNAL'));
+test('stale Kanban cannot override authoritative real progress',()=>assert.equal(watchdogDecision({active_pointer:active,classification:{state:'HEALTHY_ACTIVE'},owner_slot:'D',substantive_worker_active:true,now:'2026-10-03T19:01:00Z'}).action,'NO_ACTION'));
+test('fresh status cannot hide real stall',()=>assert.equal(watchdogDecision({active_pointer:active,classification:{state:'STALE_ACTIVE'},owner_slot:'D',now:'2026-10-03T19:01:00Z'}).action,'RECOVER'));
+test('Done tasks and accepted assets are protected',()=>{
+  assert.equal(nextWatchdogCorrectiveAction({classification:'STALE_ACTIVE',task_done:true,same_executor_missing:true}).reason,'completed_task_protected');
+  assert.equal(nextWatchdogCorrectiveAction({classification:'BLOCKED_ACTIONABLE',accepted_locked:true,authoritative_request:{request_key:'x'}}).reason,'accepted_asset_protected');
+});
+test('terminalization mid-repair stops production',()=>assert.equal(watchdogDecision({active_pointer:active,classification:{state:'TERMINAL'},owner_slot:'E',now:'2026-10-03T19:01:00Z'}).action,'NO_ACTION'));
+test('dispatch only is not recovery success',()=>{
+  const v=verifyWatchdogRecoveryProgress({before:{task_state:'Active'},after:{task_state:'Active',dispatch_recorded:true}});
+  assert.equal(v.verified,false); assert.equal(v.dispatch_only,true);
+});
+test('real active executor plus durable progress verifies recovery',()=>{
+  const v=verifyWatchdogRecoveryProgress({before:{task_state:'Blocked',worker_claimed:false},after:{task_state:'Active',worker_claimed:true,worker_state:'Running',substantive_progress_at:'2026-10-03T19:01:00Z'},require_active_executor:true});
+  assert.equal(v.verified,true); assert.equal(v.executor_active,true);
+});
+test('failed minimum action escalates rather than blind retry',()=>assert.equal(nextWatchdogCorrectiveAction({classification:'STALE_ACTIVE',same_executor_missing:true,authoritative_request:{request_key:'r'},failed_action_types:['REDISPATCH_SAME_EXECUTOR']}).action,'CONSUME_EXACT_QUEUED_REQUEST'));
+test('watchdog event shape is append-only incident evidence',()=>{
+  const e=buildWatchdogEvent({execution_id:active.execution_id,edition_id:active.edition_id,task_id:'18',incident_id:incident,slot_id:'A',classification:'STALE_ACTIVE',lease_generation:1,action_key:action,action_taken:'CONSUME_EXACT_QUEUED_REQUEST',verification_evidence:{worker_claimed:true},final_outcome:'RECOVERY_VERIFIED_PROGRESSING',occurred_at:'2026-10-03T19:02:00Z'});
+  assert.equal(e.schema_version,'chatgpt-watchdog-event-v1'); assert.equal(e.task_id,'18');
+});
+test('synthetic ACTIVE + HEALTHY is no-op',()=>assert.equal(watchdogDecision({active_pointer:active,classification:{state:'HEALTHY_ACTIVE'},owner_slot:'A',substantive_worker_active:true,now:'2026-10-03T19:01:00Z'}).action,'NO_ACTION'));
+test('synthetic ACTIVE + STALLED acquires, repairs, verifies and releases',()=>{
+  assert.equal(watchdogDecision({active_pointer:active,classification:{state:'STALE_ACTIVE'},owner_slot:'A',now:'2026-10-03T19:00:00Z'}).action,'RECOVER');
+  const l=acquireWatchdogRecoveryLease(null,{execution_id:active.execution_id,incident_id:incident,owner_slot:'A',action_key:action,now:'2026-10-03T19:00:00Z'});
+  assert.equal(l.acquired,true);
+  assert.equal(nextWatchdogCorrectiveAction({classification:'STALE_ACTIVE',authoritative_request:{request_key:'req-current'}}).action,'CONSUME_EXACT_QUEUED_REQUEST');
+  assert.equal(verifyWatchdogRecoveryProgress({before:{task_state:'Active'},after:{task_state:'Done',worker_result_key:'result'}}).verified,true);
+  assert.equal(releaseWatchdogRecoveryLease(l.lease,{owner_slot:'A',generation:1,reason:'RECOVERY_VERIFIED_PROGRESSING',now:'2026-10-03T19:02:00Z'}).state,'RELEASED');
+});
+test('synthetic ACTIVE + RECOVERY ALREADY RUNNING prevents duplicate action',()=>{
+  const l=acquireWatchdogRecoveryLease(null,{execution_id:active.execution_id,incident_id:incident,owner_slot:'A',action_key:action,now:'2026-10-03T19:00:00Z'}).lease;
+  assert.equal(watchdogDecision({active_pointer:active,classification:{state:'STALE_ACTIVE'},recovery_lease:l,owner_slot:'B',now:'2026-10-03T19:05:00Z'}).action,'NO_ACTION');
+});
+test('synthetic DEAD RECOVERY OWNER takes over same execution',()=>{
+  const l=acquireWatchdogRecoveryLease(null,{execution_id:active.execution_id,incident_id:incident,owner_slot:'A',action_key:action,now:'2026-10-03T19:00:00Z',ttl_ms:12*60*1000}).lease;
+  const t=acquireWatchdogRecoveryLease(l,{execution_id:active.execution_id,incident_id:incident,owner_slot:'B',action_key:action,now:'2026-10-03T19:13:00Z'});
+  assert.equal(t.acquired,true); assert.equal(t.lease.generation,2); assert.equal(t.lease.execution_id,active.execution_id);
+});
+test('synthetic TERMINAL does no production work',()=>assert.equal(watchdogDecision({active_pointer:{...active,active:false,terminal:true},classification:{state:'TERMINAL'},owner_slot:'F',now:'2026-10-03T19:01:00Z'}).action,'NO_ACTION'));
+test('repository ring contract is exact',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/task-recovery-contracts.json','utf8')).chatgpt_watchdog_ring;
+  assert.deepEqual(validateWatchdogRingContract(c),[]); assert.deepEqual(c.recovery.minimum_action_ladder,WATCHDOG_MINIMUM_ACTION_LADDER);
+});
+test('startup and host bind ring and remove standalone minute 48',()=>{
+  const s=fs.readFileSync('docs/operations/DAILY-UNATTENDED-STARTUP.md','utf8');
+  assert.match(s,/03, 13, 23, 33, 43 and 53/); assert.match(s,/watchdog-leases/); assert.doesNotMatch(s,/Hourly recovery \/ scheduled native-image consumer/);
+  const h=JSON.parse(fs.readFileSync('docs/operations/unattended-image-host.json','utf8'));
+  assert.equal(h.reusable_consumer.title,'Daily Brief Watchdog F'); assert.match(h.reusable_consumer.schedule,/BYMINUTE=53;BYSECOND=0/); assert.equal(h.watchdog_ring.nominal_check_minutes,10);
+});
+test('GitHub inner watchdog remains every five minutes',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8'); assert.match(y,/cron: '\*\/5 \* \* \* \*'/);
+});
