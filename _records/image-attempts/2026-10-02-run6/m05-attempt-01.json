@@ -1,0 +1,56 @@
+{
+  "schema_version": "native-image-attempt-v1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "14",
+  "candidate_id": "m05",
+  "attempt": 1,
+  "writer_generation": 14,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "generation_kind": "native_initial",
+  "generated_at_observed": "2026-10-03T01:34:06.366Z",
+  "generation_wait_seconds": 41.4,
+  "native_capture": {
+    "path": "_records/image-originals/2026-10-02-run6/dab-rehearsal-2026-10-02-m05-1-native.png",
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1502285,
+    "sha256": "faf1ef0294638d4d680c19c4454865062ea8d570650934a6fed0a22eb17f8efc",
+    "git_blob_sha": "d462903e1e668f5bfd4cec9fbf64c89808c0cfaa",
+    "captured_immediately": true
+  },
+  "normalization": {
+    "method": "deterministic resize and metadata strip",
+    "completed_at": "2026-10-03T01:34:20.590Z",
+    "output_path": "rehearsals/pre-oct3-20261002-r1/images/dab-rehearsal-2026-10-02-m05-1.png",
+    "width": 1200,
+    "height": 630,
+    "bytes": 816271,
+    "sha256": "e9f297a33dcee546941b3b926d4ac7a9d187f8b75aebf4ba1baa368ef1720bc6",
+    "git_blob_sha": "e6c464bbda806a44163e065ee8257c1a0fbced28"
+  },
+  "pretransport_review": {
+    "composition": "PASS",
+    "story_specificity": "PASS",
+    "professional_quality": "PASS",
+    "exact_allowed_labels": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_text": [
+      "Knowledge base",
+      "RAG assistant",
+      "Search",
+      "Email intake",
+      "Classify",
+      "Enrich",
+      "Route",
+      "Governance",
+      "Human oversight"
+    ],
+    "additional_visible_language": false,
+    "transport_authorized": true
+  },
+  "disposition": "PERSISTED_PENDING_SAVED_GIT_REVIEW",
+  "accepted_locked": false
+}
