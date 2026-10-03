@@ -1,0 +1,104 @@
+{
+  "schema_version": "rehearsal-watchlist-refresh-v1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "execution_key": "2026-10-02-run6",
+  "observed_at": "2026-10-03T00:49:18Z",
+  "baseline_path": "_data/watchlist.json",
+  "baseline_updated_at": "2026-10-02T13:29:44Z",
+  "discovery_checks": [
+    {
+      "domain": "frontier_models",
+      "queries": [
+        "Gemini 4 Argon long-horizon workflows October 1 2026",
+        "frontier model phased release agentic knowledge work October 2026"
+      ]
+    },
+    {
+      "domain": "agents_and_harnesses",
+      "queries": [
+        "agent worm shared package cache sandbox October 1 2026",
+        "agent post-training new tool behavior Sharpening Tax October 2026"
+      ]
+    },
+    {
+      "domain": "developer_tooling",
+      "queries": [
+        "Supabase Turso databases for agents October 2 2026",
+        "agent-native database infrastructure October 2 2026"
+      ]
+    },
+    {
+      "domain": "multimodal_and_interfaces",
+      "queries": [
+        "multimodal AI interface October 2 2026",
+        "AI image editing localized preservation October 2026"
+      ]
+    },
+    {
+      "domain": "knowledge_worker_workflows",
+      "queries": [
+        "knowledge work AI long-horizon agents October 2 2026",
+        "cited scientific report model AstaBrief October 2 2026"
+      ]
+    },
+    {
+      "domain": "safety_and_governance",
+      "queries": [
+        "agent sandbox shared semantic surface prompt injection October 2026",
+        "post-training agent capability governance October 2026"
+      ]
+    },
+    {
+      "domain": "open_source_and_community",
+      "queries": [
+        "open source agent infrastructure October 2 2026",
+        "open scientific reporting AI model October 2 2026"
+      ]
+    }
+  ],
+  "checks_completed": 14,
+  "new_topics": [
+    {
+      "topic_id": "dab-topic-agent-native-database-infrastructure",
+      "label": "New today",
+      "title": "Agent-native database infrastructure becomes a separate systems layer",
+      "status": "early_signal",
+      "why_watch": "Supabase says agents are already creating more than one million databases per week and is acquiring Turso to build infrastructure designed for large numbers of agent-created, short-lived databases.",
+      "source": "https://supabase.com/blog/supabase-is-acquiring-turso"
+    }
+  ],
+  "updates": [
+    {
+      "topic_id": "dab-topic-adaptive-agent-safeguards",
+      "label": "Updated today",
+      "title": "Agent safeguards tailored to the task",
+      "what_changed": "New evidence shows separately sandboxed agents can still pass behavior-changing instructions through a shared package cache, demonstrating that process isolation alone does not close shared semantic channels.",
+      "source": "https://simonwillison.net/2026/Oct/1/matthew-green/"
+    },
+    {
+      "topic_id": "dab-topic-model-lifecycle-governance",
+      "label": "Updated today",
+      "title": "Model lifecycle governance for AI products",
+      "what_changed": "Sharpening Tax reports that agentic post-training can create genuinely new tool-use behavior rather than merely sharpen existing behavior, strengthening the case for fresh trajectory-level evaluation after post-training.",
+      "source": "https://huggingface.co/papers/2610.01509"
+    },
+    {
+      "topic_id": "dab-topic-long-horizon-agents",
+      "label": "Updated today",
+      "title": "Agents that persist across sessions",
+      "what_changed": "Google's Gemini 4 Argon announcement explicitly targets complex long-horizon software, enterprise knowledge-work and cybersecurity workflows, adding another first-party signal that long-duration agentic work is becoming a frontier-model design target.",
+      "source": "https://blog.google/intl/en-mena/company-news/technology/gemini-4-argon-our-next-era-of-frontier-intelligence/"
+    }
+  ],
+  "carried_forward_count": 15,
+  "archived_count": 1,
+  "transparency": {
+    "new_today": 1,
+    "updated_today": 3,
+    "carried_forward": 15,
+    "archived": 1,
+    "resulting_topic_count": 20
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "08",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-03T00:49:18Z",
+  "reason_code": "WATCHLIST_REFRESH_COMPLETE",
+  "operation": "refresh_emerging_ai_watchlist",
+  "proof": {
+    "watchlist_refresh_path": "_records/editorial/2026-10-02-run6/watchlist-refresh.json",
+    "checks_completed": 14,
+    "new_today": 1,
+    "updated_today": 3,
+    "carried_forward": 15,
+    "archived": 1,
+    "request_key": "76f6de48e5e38ba3dd45b980d76428eef40525c2e79e18b70dab0348f0b9e2d0",
+    "result": "PASS"
+  }
+}
