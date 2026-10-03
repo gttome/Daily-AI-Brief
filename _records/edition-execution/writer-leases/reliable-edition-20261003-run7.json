@@ -12,7 +12,9 @@
   "supersedes_owner_id": "github-actions-37118095745-1",
   "supersedes_generation": 23,
   "acquired_at": "2026-10-03T11:48:25.330Z",
-  "last_heartbeat_at": "2026-10-03T11:48:25.330Z",
-  "expires_at": "2026-10-03T12:18:25.330Z",
-  "released": false
+  "last_heartbeat_at": "2026-10-03T11:52:58.721Z",
+  "expires_at": "2026-10-03T11:52:58.721Z",
+  "released": true,
+  "released_at": "2026-10-03T11:52:58.721Z",
+  "release_reason": "TASK_16_DONE_HANDOFF_TO_SUPERVISOR"
 }
