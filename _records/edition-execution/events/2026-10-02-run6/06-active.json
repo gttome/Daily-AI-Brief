@@ -1,0 +1,14 @@
+{
+  "task_id": "06",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T00:20:09Z",
+  "reason_code": "BEGIN_VIDEO_SELECTION_AND_VERIFICATION",
+  "operation": "select_verify_two_videos",
+  "proof": {
+    "required_count": 2,
+    "target_runtime_minutes": 10,
+    "fallback_runtime_minutes": 20,
+    "request_key": "17a398f9dc01bb3d29a9c5de823729e97e06b977d80500e52658a971e5f004a5"
+  }
+}
