@@ -15,6 +15,10 @@ Asana Client Management uses shared work context to support specialized AI roles
 
 **Why it matters:** Shared project context helps specialized assistants coordinate around visible work state.
 
+## Read deeper
+
+**Reliable Generative AI — Handoffs and Structured Contracts.** Use this section to design clear boundaries between AI teammates, human owners, and the next stage of client work.
+
 [Authoritative source](https://asana.com/inside-asana/asana-client-management)
 
 [← Back to rehearsal Brief]({{ '/rehearsals/pre-oct3-20261002-r1/' | relative_url }})
