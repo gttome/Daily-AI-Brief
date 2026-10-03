@@ -285,3 +285,13 @@ The current Watchdog Ring architecture infographic is maintained at:
 - final equivalent-consumer verification: `_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-final-verification.json`
 
 The diagram must show A–F as operationally equivalent, six-slot native-image coverage, GitHub as durable authority, one-owner duplicate-generation protection, the Run Supervisor handoff, and Fix-to-Progress continuation semantics.
+
+## Professional implementation infographic
+
+The detailed implementation-reference infographic for the Watchdog Ring is:
+
+![Daily AI Brief 10-Minute Watchdog Ring Implementation Handoff v1.0](../images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Implementation-Handoff-v1.0.png)
+
+This PNG is the professional, color, detailed implementation-reference view of the ring: six identical staggered Watchdogs, GitHub durable state, recovery lease coordination, Fix-to-Progress flow, escalation ladder, testing, reporting and deployment checklist.
+
+Because the graphic is explicitly a dated **Implementation Handoff**, it is supporting implementation documentation rather than the evergreen architecture authority. The evergreen system contract remains the generic architecture diagram and this document's current production rules.
