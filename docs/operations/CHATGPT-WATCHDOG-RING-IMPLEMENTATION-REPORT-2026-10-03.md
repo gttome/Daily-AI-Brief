@@ -232,6 +232,8 @@ Permanent rule:
 7. classify `BLOCKED_EXTERNAL` only from verified external/non-actionable evidence, never merely because internal repair attempts failed.
 
 In short: **one repair attempt is not recovery; actionable recovery continues until active progress is restored or the still-unresolved incident is safely handed forward after exhausting the applicable options for the current invocation.**
+
+Protected hardening evidence: PR #420 merged as `480a4c559ac2b900dd29b746eec4e279a365e73f`; protected CI run 37152873713 passed 890/890 generator tests and 24/24 contract tests plus repository/lifecycle/append-only/Jekyll validation. Final hardening receipt: `_records/hardening/chatgpt-watchdog-ring-2026-10-03/fix-to-progress-final-verification.json`.
 ## 14. Final evidence
 
 - Core protected PR: #415
