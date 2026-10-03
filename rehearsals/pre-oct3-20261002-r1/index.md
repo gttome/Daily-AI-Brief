@@ -29,13 +29,13 @@ This preview is isolated from the canonical Daily AI Brief and does not replace 
 
 ## Videos
 
-- Google Cloud multi-agent deployment walkthrough — **Duration:** 6:26
-- Coding-agent performance comparison — **Duration:** 9:03
+- [Google Cloud multi-agent deployment walkthrough]({{ '/rehearsals/pre-oct3-20261002-r1/media/video-1/' | relative_url }}) — **Duration:** 6:26
+- [Coding-agent performance comparison]({{ '/rehearsals/pre-oct3-20261002-r1/media/video-2/' | relative_url }}) — **Duration:** 9:03
 
 ## Podcasts
 
-- DX Today AI Daily Brief — **Duration:** 11:00
-- AI Signal Daily security-boundaries briefing — **Duration:** 13:05
+- [DX Today AI Daily Brief]({{ '/rehearsals/pre-oct3-20261002-r1/media/podcast-dx-today/' | relative_url }}) — **Duration:** 11:00
+- [AI Signal Daily security-boundaries briefing]({{ '/rehearsals/pre-oct3-20261002-r1/media/podcast-ai-signal-daily/' | relative_url }}) — **Duration:** 13:05
 
 ## Emerging AI Watchlist
 
