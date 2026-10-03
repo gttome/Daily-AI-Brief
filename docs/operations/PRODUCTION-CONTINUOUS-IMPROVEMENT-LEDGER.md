@@ -812,3 +812,15 @@ The authoritative gate is `_records/hardening/pre-next-run-five-change-2026-10-0
 - **Fix:** Make both dispatches repository-explicit and add a focused regression test for each workflow.
 - **Preservation:** The same exact frozen Run 7 candidate remains authoritative. Tasks 00–22 and all six `accepted_locked` images are unchanged; publication is not bypassed.
 - **Next validation:** Protected CI must pass, the repair must merge to `main`, and the same Run 7 Supervisor must dispatch the protected publication executor successfully.
+
+## DAB-OPS-20261003-005 — alternate protected promotion omitted the validated-event bridge
+
+- **Status:** permanently fixed in code; protected merge and same-run closure verification pending
+- **Observed:** 2026-10-03T15:19:18.000Z
+- **Run / task:** `reliable-edition-20261003-run7` / Task 27
+- **Symptom:** PR 400 and exact-SHA Pages deployment succeeded, but delta validation could not construct completion evidence because the merged candidate had no durable validated-publication event.
+- **Root cause:** The post-editorial promotion routes did not require the validated-event bridge enforced by the frozen publication workflow, and closure treated its triggering control-plane CI SHA as the production identity.
+- **Fix:** Require a matching critical-PASS validated event on both promotion routes. For the already-published edition, reconstruct only from the exact manifest, merged PR, candidate CI, Task 19 seal and original merge SHA; allow later non-reader control changes without changing the original production identity.
+- **Preservation:** Run 7 remains published at `50cbe6f0719ff67088e65340f4322e64f582ee9e`; reader content and all six accepted_locked images are unchanged.
+- **Regression:** `_generator/test/publication-validated-bridge.test.mjs`; full 835-test and 24-contract suites pass locally.
+- **Next validation:** Protected CI must pass, then the same Run 7 must reach `PUBLIC_CLOSED` / Task 29 Done while retaining the original production SHA.

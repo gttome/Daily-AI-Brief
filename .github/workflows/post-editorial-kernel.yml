@@ -406,6 +406,11 @@ jobs:
             const fs=require('fs');
             const handoff=JSON.parse(fs.readFileSync('_records/editorial-handoff/handoff.json','utf8'));
             const manifest=JSON.parse(fs.readFileSync(handoff.publication_manifest_path,'utf8'));
+            const publicationDir=`_records/publication/${manifest.edition_date}`;
+            const validated=fs.existsSync(publicationDir)?fs.readdirSync(publicationDir).filter(x=>x.endsWith('.validated.json')).map(x=>JSON.parse(fs.readFileSync(`${publicationDir}/${x}`,'utf8'))):[];
+            if(!validated.some(x=>x.phase==='validated'&&x.edition_id===manifest.edition_id&&x.baseline_main_sha===manifest.baseline_sha&&Array.isArray(x.checks)&&x.checks.length&&x.checks.every(c=>c.severity!=='critical'||c.result==='pass'))){
+              throw new Error('Durable validated-publication event is required on the exact candidate before protected promotion.');
+            }
             // Merge-time publication authorization gate.
             const readMainJson=async path=>{
               const response=await github.rest.repos.getContent({...context.repo,path,ref:'main'});
@@ -534,6 +539,16 @@ jobs:
               return JSON.parse(Buffer.from(response.data.content,'base64').toString('utf8'));
             };
             const manifest=await readJson('_records/editorial-handoff/publication-manifest.json',run.head_sha);
+            const publicationDir=await github.rest.repos.getContent({...context.repo,path:`_records/publication/${manifest.edition_date}`,ref:run.head_sha}).then(x=>x.data).catch(()=>[]);
+            const validated=[];
+            for(const item of Array.isArray(publicationDir)?publicationDir:[]){
+              if(!item.name.endsWith('.validated.json'))continue;
+              const record=await readJson(item.path,run.head_sha);validated.push(record);
+            }
+            if(!validated.some(x=>x.phase==='validated'&&x.edition_id===manifest.edition_id&&x.baseline_main_sha===manifest.baseline_sha&&Array.isArray(x.checks)&&x.checks.length&&x.checks.every(c=>c.severity!=='critical'||c.result==='pass'))){
+              core.setFailed('Durable validated-publication event is required on the exact candidate before protected promotion.');
+              return;
+            }
             const pointer=await readJson('data/operations/active-production-run.json','main');
             const host=await readJson('docs/operations/unattended-image-host.json','main');
             if(!pointer.active||pointer.terminal||pointer.edition_id!==manifest.edition_id||pointer.branch!==manifest.staging_ref||pointer.image_tasks_authorized!==true||pointer.publication_authorized!==true){
