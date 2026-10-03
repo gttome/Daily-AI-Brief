@@ -49,9 +49,10 @@
           "status": "verified",
           "word_count": null,
           "verified_at": "2026-10-03T06:21:26.732Z",
-          "method": "full indexed source-body review",
+          "method": "publisher_displayed_reading_time",
           "full_source_read": true,
-          "measurement_note": "Source-body word count was not measured; reading time remains unavailable."
+          "measurement_note": "Microsoft AI displays “5 min read” for the source article.",
+          "reading_minutes": 5
         }
       },
       "freshness": {
@@ -102,9 +103,10 @@
           "status": "verified",
           "word_count": null,
           "verified_at": "2026-10-03T06:21:26.732Z",
-          "method": "full indexed source-body review",
+          "method": "indexed_source_body_estimate_200wpm",
           "full_source_read": true,
-          "measurement_note": "Source-body word count was not measured; reading time remains unavailable."
+          "measurement_note": "Estimated from the reviewed Google Research main article body at 200 words per minute; navigation and unrelated page chrome excluded.",
+          "reading_minutes": 7
         }
       },
       "freshness": {
@@ -155,9 +157,10 @@
           "status": "verified",
           "word_count": null,
           "verified_at": "2026-10-03T06:21:26.732Z",
-          "method": "full indexed source-body review",
+          "method": "indexed_source_body_estimate_200wpm",
           "full_source_read": true,
-          "measurement_note": "Source-body word count was not measured; reading time remains unavailable."
+          "measurement_note": "Estimated from the reviewed Anthropic main announcement body at 200 words per minute; navigation and related-content chrome excluded.",
+          "reading_minutes": 6
         }
       },
       "freshness": {
@@ -208,9 +211,10 @@
           "status": "verified",
           "word_count": null,
           "verified_at": "2026-10-03T06:21:26.732Z",
-          "method": "full indexed source-body review",
+          "method": "indexed_source_body_estimate_200wpm",
           "full_source_read": true,
-          "measurement_note": "Source-body word count was not measured; reading time remains unavailable."
+          "measurement_note": "Estimated from the reviewed Decagon main article body at 200 words per minute; navigation, newsletter form, testimonial and hiring chrome excluded.",
+          "reading_minutes": 5
         }
       },
       "freshness": {
@@ -261,9 +265,10 @@
           "status": "verified",
           "word_count": null,
           "verified_at": "2026-10-03T06:21:26.732Z",
-          "method": "full indexed source-body review",
+          "method": "indexed_source_body_estimate_200wpm",
           "full_source_read": true,
-          "measurement_note": "Source-body word count was not measured; reading time remains unavailable."
+          "measurement_note": "Estimated from the reviewed Microsoft 365 Developer Blog main article body at 200 words per minute; navigation, author bios and related chrome excluded.",
+          "reading_minutes": 6
         }
       },
       "freshness": {
@@ -314,9 +319,10 @@
           "status": "verified",
           "word_count": null,
           "verified_at": "2026-10-03T06:21:26.732Z",
-          "method": "full official release review",
+          "method": "indexed_source_body_estimate_200wpm",
           "full_source_read": true,
-          "measurement_note": "Source-body word count was not measured; reading time remains unavailable."
+          "measurement_note": "Estimated from the reviewed California DOJ press-release body at 200 words per minute; site navigation and footer excluded.",
+          "reading_minutes": 3
         }
       },
       "freshness": {
@@ -369,7 +375,7 @@
       "show": "The Vergecast",
       "host": "The Vergecast team",
       "publication_date": "2026-10-02",
-      "runtime_seconds": null,
+      "runtime_seconds": 5310,
       "focus": "agents_non_technical_people",
       "topics": [
         "business agents",
@@ -382,7 +388,7 @@
       "freshness_tier": "primary_48h",
       "connection": "Use it alongside the customer-service and reusable-skills articles to compare product announcements with broader questions about agent identity, delegation and user trust.",
       "permanent_url": "/podcasts/2026-10-03/run7-1/",
-      "verification_note": "The Verge episode page identifies title, show context and publication at 2026-10-02 15:47 UTC; direct Watch and Listen routes are present. Runtime was not exposed in the reviewed page and remains unknown.",
+      "verification_note": "The Verge episode page verifies title, show context and publication at 2026-10-02 15:47 UTC. Podcast-feed directories independently report the episode runtime as 1:28:30 (88 minutes 30 seconds).",
       "platforms": [
         {
           "name": "The Vergecast",

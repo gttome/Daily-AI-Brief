@@ -21,6 +21,11 @@ const focusLabelFor=(focus,date)=>focus==='agents_non_technical_people'&&date>='
 const yamlString = value => JSON.stringify(String(value || ''));
 const xml = value => String(value || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 const publicTopics=topics=>(topics||[]).filter(topic=>!/^m\d{2}$/i.test(String(topic).trim()));
+const runtimeLabel=value=>{
+  if(!Number.isInteger(value)||value<1)return null;
+  const hours=Math.floor(value/3600),minutes=Math.floor((value%3600)/60),seconds=String(value%60).padStart(2,'0');
+  return hours?`${hours}:${String(minutes).padStart(2,'0')}:${seconds}`:`${minutes}:${seconds}`;
+};
 
 export function renderInlineFeedback(story, compact = true) {
   if (story.brief_date >= '2026-09-10') return renderStarFeedback(story);
@@ -361,7 +366,7 @@ ${trackedLink(slot.permanent_url,'Open the permanent podcast page',slot.item_id,
 **Host / guest:** ${slot.host}  
 **Focus:** ${focusLabelFor(slot.focus,briefDate)}  
 **Date:** ${formatDate(slot.publication_date)}  
-**Duration:** ${slot.runtime_seconds === null ? 'Not independently verified' : `${Math.floor(slot.runtime_seconds / 60)}:${String(slot.runtime_seconds % 60).padStart(2,'0')}`}  
+**Duration:** ${runtimeLabel(slot.runtime_seconds)||'Not independently verified'}  
 **Topics:** ${slot.topics.join(', ')}
 
 **Summary:** ${slot.summary}

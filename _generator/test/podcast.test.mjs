@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {validateEdition} from '../lib/validate.mjs';
 import {generatedFiles} from '../lib/render.mjs';
 import {aggregateAnalytics,refreshFeedbackAnalytics} from '../lib/analytics.mjs';
+import {validatePodcastDiversity} from '../lib/podcasts.mjs';
 const root = fileURLToPath(new URL('../../',import.meta.url));
 const edition = JSON.parse(fs.readFileSync(root+'_data/editions/2026-09-09.json'));
 test('podcast permits long episodes while video limits stay enforced',()=>{
@@ -12,6 +13,14 @@ test('podcast permits long episodes while video limits stay enforced',()=>{
  e.worth_watching.general.runtime_seconds=1201;assert.ok(validateEdition(e).some(x=>x.includes('1-1200')));
  e.worth_watching.general.runtime_seconds=300;e.podcast.url=e.stories[0].source.url;assert.ok(validateEdition(e).some(x=>x.includes('duplicates')));
 });
+test('October 4 and later require verified podcast runtimes',()=>{
+ const current=JSON.parse(fs.readFileSync(root+'_data/editions/2026-10-03.json'));
+ current.brief_date='2026-10-04';
+ assert.deepEqual(validatePodcastDiversity(current),[]);
+ current.podcasts[0].runtime_seconds=null;
+ assert.ok(validatePodcastDiversity(current).includes('published podcasts require verified positive runtime_seconds'));
+});
+
 test('podcast identity survives all reader surfaces and feeds with exactly four rating choices',()=>{
  const files=generatedFiles(edition,root);const p=edition.podcast;
  for(const name of ['index.md','latest.md','briefs/2026-09-09.md',p.permanent_url.slice(1,-1)+'.md']) {

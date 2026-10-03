@@ -8,6 +8,11 @@ const SERIES_SEPARATION_DATE='2026-09-16';
 const MULTI_PODCAST_DATE='2026-09-18';
 export const readerRelease = date => date >= '2026-09-12';
 export const readerAddition = content => content ? `<!-- reader-release:start -->\n${content}\n<!-- reader-release:end -->` : '';
+const runtimeLabel=value=>{
+ if(!Number.isInteger(value)||value<1)return null;
+ const hours=Math.floor(value/3600),minutes=Math.floor((value%3600)/60),seconds=String(value%60).padStart(2,'0');
+ return hours?`${hours}:${String(minutes).padStart(2,'0')}:${seconds}`:`${minutes}:${seconds}`;
+};
 export function bookMappingIdentity(rows=[]){
  return [...rows].map(({item_id,reference_id,label})=>({item_id,reference_id,label})).sort((a,b)=>a.item_id.localeCompare(b.item_id));
 }
@@ -54,7 +59,7 @@ export function renderEditionOverview(edition){
   const short=['Copilot: verification inside code review','GitHub: measure agent activity separately','Gemini: AI beside your desktop work','Workplace AI: find missing context','Mastra: shared skills and permissions','No-code agents: test the whole workflow'];
   const items=edition.stories.map((s,i)=>({anchor:`reading-${s.story_id}`,title:edition.brief_date==='2026-09-12'?short[i]:s.headline,kind:sourceReadingMinutes(s)?`Article · about ${sourceReadingMinutes(s)} min source read`:'Article · Source reading time unavailable'}));
   for(const [key,anchor,name] of [['general','general','General video'],['agents_non_technical_people','agents-for-non-technical-people','Agent Skills video']]){
-    const slot=edition.worth_watching[key];const duration=slot.status==='included'?`${Math.floor(slot.runtime_seconds/60)}:${String(slot.runtime_seconds%60).padStart(2,'0')}`:'No qualifying selection';
+    const slot=edition.worth_watching[key];const duration=slot.status==='included'?(runtimeLabel(slot.runtime_seconds)||'Duration unavailable'):'No qualifying selection';
     items.push({anchor,title:slot.status==='included'?(edition.brief_date==='2026-09-12'?(key==='general'?'5 Minute AI News':'Agent Skills: structure and progressive disclosure'):slot.title):name,kind:`Video · ${duration}`});
   }
   if(edition.brief_date<MULTI_PODCAST_DATE){
@@ -64,7 +69,7 @@ export function renderEditionOverview(edition){
     return readerAddition(`<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · ${edition.stories.length} ARTICLES / ${videos} VIDEOS / ${podcasts} PODCAST</p><h2>Choose what matters to your work</h2><ol>${items.map(x=>`<li><a href="#${html(x.anchor)}">${html(x.title)}</a><span>${html(x.kind)}</span></li>`).join('')}</ol></section>`);
   }
   const podcasts=editionPodcasts(edition);
-  if(podcasts.length)podcasts.forEach(podcast=>items.push({anchor:`podcast-${podcast.item_id}`,title:podcast.title,kind:'Podcast'}));
+  if(podcasts.length)podcasts.forEach(podcast=>items.push({anchor:`podcast-${podcast.item_id}`,title:podcast.title,kind:`Podcast · ${runtimeLabel(podcast.runtime_seconds)||'Duration unavailable'}`}));
   else items.push({anchor:'worth-listening--podcast',title:'Podcast',kind:'Podcast · No qualifying selection'});
   const videos=Object.values(edition.worth_watching).filter(x=>x.status==='included').length;
   return readerAddition(`<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · ${edition.stories.length} ARTICLES / ${videos} VIDEOS / ${podcasts.length} PODCAST${podcasts.length===1?'':'S'}</p><h2>Choose what matters to your work</h2><ol>${items.map(x=>`<li><a href="#${html(x.anchor)}">${html(x.title)}</a><span>${html(x.kind)}</span></li>`).join('')}</ol></section>`);
