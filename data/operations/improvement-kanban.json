@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-03T18:45:00Z",
+  "observed_at": "2026-10-03T19:10:00Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -49,7 +49,8 @@
       ],
       "sources": [
         "Daily Brief Recovery prompt (2026-10-02)",
-        "docs/operations/DAILY-UNATTENDED-STARTUP.md"
+        "docs/operations/DAILY-UNATTENDED-STARTUP.md",
+        "DAB-OPS-20261002-001"
       ]
     },
     {
@@ -98,7 +99,8 @@
       ],
       "sources": [
         "DAB-OPS-20261002-016",
-        "data/operations/production-continuous-improvement-ledger.jsonl"
+        "data/operations/production-continuous-improvement-ledger.jsonl",
+        "DAB-OPS-20261003-002"
       ]
     },
     {
@@ -131,7 +133,8 @@
       ],
       "sources": [
         "DAB-OPS-20261002-018",
-        "publication identity binding tests"
+        "publication identity binding tests",
+        "DAB-OPS-20261002-003"
       ]
     },
     {
@@ -384,7 +387,8 @@
       ],
       "sources": [
         ".github/workflows/repository-task-consumer.yml",
-        "the prior production baseline Task 17"
+        "the prior production baseline Task 17",
+        "DAB-OPS-20261002-009"
       ]
     },
     {
@@ -469,7 +473,9 @@
         "next_production_run_authorized=true on protected main."
       ],
       "sources": [
-        "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json"
+        "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json",
+        "DAB-OPS-20261002-006",
+        "DAB-OPS-20261002-017"
       ]
     },
     {
@@ -511,6 +517,10 @@
   "reconciliation_contract": {
     "implementation": "_generator/lib/improvement-kanban.mjs",
     "ledger": "data/operations/production-continuous-improvement-ledger.jsonl",
-    "rule": "Annotate cards from latest learning status and surface every unresolved ledger problem not represented on the board. Never silently move lanes."
+    "rule": "Annotate cards from latest learning status and surface every unresolved ledger problem not represented on the board. Never silently move lanes.",
+    "resolved_statuses": [
+      "permanently_fixed",
+      "superseded"
+    ]
   }
 }
