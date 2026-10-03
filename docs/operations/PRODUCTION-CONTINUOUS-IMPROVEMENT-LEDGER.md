@@ -926,3 +926,18 @@ Problems: 49 · Events: 82
 - **Future validation:** On the next genuine stall, confirm exactly one slot owns recovery and the same execution resumes substantive durable progress; healthy checks must remain silent. The nominal ten-minute schedule is not a real-time guarantee.
 - **October 3 persistence hardening:** The Watchdog contract is being strengthened so one failed repair attempt can never terminate an actionable recovery. The Ring must continue through remaining safe authorized options, require a real active executor plus durable progress for success, treat a safe-boundary release as unresolved continuation for the next slot, and require verified external evidence before `BLOCKED_EXTERNAL`. Event `DAB-OPS-E-000087` records the protected hardening attempt; permanent outcome remains contingent on protected CI/merge.
 - **Protected outcome:** PR #420 merged as `480a4c559ac2b900dd29b746eec4e279a365e73f` after CI run 37152873713 passed 890/890 generator tests, 24/24 contract tests, repository/lifecycle/append-only validation and Jekyll build. Event `DAB-OPS-E-000088` closes the hardening as permanently fixed.
+
+## DAB-OPS-20261003-008 — Slot F remained a historical single-consumer dependency for the most failure-prone image tasks.
+
+- **Status:** mitigated; protected merge pending
+- **Scope:** Tasks 11–16 / Watchdog Ring image-consumer architecture
+- **Symptom:** Recovery scheduling was already six-slot, but the protected unattended-image-host registration still named Slot F as the durable reusable native-image consumer.
+- **Root cause:** The F-only binding was retained during the initial Watchdog Ring migration to preserve the already-qualified hourly Recovery image route. It was a safe migration shortcut, not a permanent architecture requirement.
+- **Operational impact:** The image stage could conceptually depend on one hourly F opportunity even though all six Watchdogs otherwise had equivalent recovery capability.
+- **Coverage improvement being implemented:** A–F become functionally equivalent eligible image consumers. This increases scheduled image-consumer opportunities from 1/hour to 6/hour, nominally changes the next eligible pickup opportunity from <60 minutes to <10 minutes, and removes the F single-slot dependency.
+- **Hard-SLA caveat:** The ten-minute interval is nominal. Scheduled ChatGPT delivery can be late and active image generation can exceed ten minutes.
+- **Duplicate prevention:** exact authoritative request identity; one shared Watchdog recovery/consumer lease; current production writer fence; immutable accepted_locked images; explicit Supervisor handoff.
+- **Attempted fix:** Update all six live schedules, executable Watchdog decision logic, run-readiness validation, image-host registration, machine contracts, regression tests and living documentation so a newly queued unclaimed native-image Task 11–16 is executable by the next Watchdog without waiting for staleness or a special slot.
+- **Production invariants:** watchdog_slots_are_functionally_equivalent, watchdog_ring_is_native_image_consumer, no_special_image_slot, queued_native_image_does_not_wait_for_stale, exactly_one_image_owner, accepted_locked_never_regenerates, no_Work_Codex_paid_API_or_quality_fallback.
+- **Future validation:** On the next production image task, confirm the next eligible A–F slot can claim the exact request, other slots yield, and a dead/released/expired owner can be safely replaced without duplicate generation.
+
