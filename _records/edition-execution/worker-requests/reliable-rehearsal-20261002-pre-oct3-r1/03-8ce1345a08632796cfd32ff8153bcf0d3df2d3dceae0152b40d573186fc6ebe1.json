@@ -14,5 +14,9 @@
   "created_at": "2026-10-02T23:25:19.250Z",
   "writer_generation_is_provenance": false,
   "authority_refresh_required_at_invocation": false,
-  "status": "queued"
+  "status": "in_progress",
+  "authority_refreshed_at": "2026-10-03T00:10:51Z",
+  "consumed_at": "2026-10-03T00:10:51Z",
+  "takeover_reason": "STALE_ACTIVE_NO_SUBSTANTIVE_WORKER_RESULT",
+  "takeover_baseline": "Run 5 Task 03 completed in normal bounded duration; rehearsal exceeded liveness threshold with only Supervisor reconciliation."
 }
