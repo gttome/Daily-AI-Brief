@@ -133,7 +133,7 @@ export function validateWatchdogRingContract(contract={}){
   const e=[];
   if(contract.schema_version!=='chatgpt-watchdog-ring-contract-v1')e.push('watchdog_ring_schema_version');
   if(contract.enabled!==true)e.push('watchdog_ring_enabled');
-  if(contract.role!=='outer_autonomous_recovery')e.push('watchdog_ring_role');
+  if(contract.role!=='outer_autonomous_recovery_and_native_image_consumer_pool')e.push('watchdog_ring_role');
   const slots=contract.schedule?.slots||{};
   for(const [s,m] of Object.entries(WATCHDOG_SLOTS))if(Number(slots[s])!==m)e.push('watchdog_ring_slot:'+s);
   if(contract.schedule?.timing_mode!=='exact_schedule')e.push('watchdog_ring_exact_schedule');
