@@ -1,0 +1,19 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "execution_key": "2026-10-03-run7",
+  "task_id": "22",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T14:12:00.000Z",
+  "reason_code": "ACTIVATE_FIRST_INCOMPLETE_AFTER_RECONCILIATION",
+  "operation": "open_publication_pr",
+  "proof": {
+    "task11_done": "_records/edition-execution/events/2026-10-03-run7/11-done.json",
+    "task21_done": "_records/edition-execution/events/2026-10-03-run7/21-done.json",
+    "publication_manifest": "_records/editorial-handoff/publication-manifest.json",
+    "pointer_reconciliation_commit": "c6ef0d3cfea916525403a4bb3d7ada30d24bece2"
+  },
+  "note": "Task 11 stale blocked projection corrected by authoritative Done event; Tasks 12-21 preserved; Task 22 is first incomplete task."
+}
