@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
   "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
-  "observed_at": "2026-10-03T00:51:42.042Z",
+  "observed_at": "2026-10-03T00:52:43.842Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:17769b65457b74c7cdb904649e26fcf02edfca4ea74995416c937b8ca7134540",
+  "source_event_digest": "sha256:2f359a9e2cf394cbaa1a7fc23fc2ea42a491cacc1e41ccaae0b82aba94d73e8b",
   "run_started_at": "2026-10-02T23:00:34.043Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 6667.999,
-  "total_brief_elapsed": "6667.999s",
+  "total_brief_elapsed_seconds": 6729.799,
+  "total_brief_elapsed": "6729.799s",
   "tasks": {
     "10": {
       "id": "10",
@@ -456,17 +456,17 @@
     "09": {
       "id": "09",
       "title": "Review all four Professional Series books",
-      "state": "Active",
-      "column": "WIP",
+      "state": "Done",
+      "column": "Done",
       "entered_backlog_at": "2026-10-03T00:51:18Z",
       "active_started_at": "2026-10-03T00:51:18Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": 24.042,
-      "duration": "24.042s"
+      "done_at": "2026-10-03T00:51:47Z",
+      "cycle_seconds": 29,
+      "active_seconds": 29,
+      "duration_seconds": 29,
+      "duration": "29s"
     }
   }
 }
