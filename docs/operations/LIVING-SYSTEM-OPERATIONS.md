@@ -401,7 +401,7 @@ flowchart TB
       R1["19:00 prior-evening Controller"]
       R2["Run Supervisor ~1-minute loop"]
       R3["GitHub watchdog every 5 minutes"]
-      R4["ChatGPT Watchdog Ring nominal 10 minutes"]
+      R4["ChatGPT Watchdog Ring\n6 equivalent recovery + image-consumer slots\nnominal 10-minute opportunities"]
       R5["08:30 independent live validation"]
     end
 
@@ -1470,10 +1470,17 @@ This hardening process does **not** manually start the next production Brief. On
 
 ## October 3, 2026 — ChatGPT Watchdog Ring is the current outer recovery layer
 
+### Equivalent six-slot image consumer pool
+
+The most failure-prone production stage—Tasks 11–16 native-image generation—now has the same six-slot coverage as Watchdog recovery. A–F are operationally equivalent; none is a preferred or special image consumer. A newly queued unclaimed native-image request can be picked up by the next scheduled slot rather than waiting for one designated hourly consumer or for stale classification. This changes the nominal scheduled-consumer opportunity from once per hour to six times per hour, reducing the nominal maximum wait from about 60 minutes to about 10 minutes. Scheduled ChatGPT delivery can still be late, so this is improved coverage rather than a hard latency guarantee.
+
+Single-owner protection is unchanged and stronger in architecture: exact current request + current task-specific writer fence must be acquired before generation; overlapping slots yield; accepted_locked images remain immutable; request-embedded writer generation is provenance only; saved-Git visual review and Supervisor handoff remain mandatory.
+
+
 The current liveness hierarchy is Run Supervisor (approximately one-minute loop) → GitHub Supervisor watchdog (five minutes) → six-member ordinary ChatGPT Watchdog Ring (hourly slots staggered at minutes 03/13/23/33/43/53, nominal ten-minute outer check) → independent daily live validation. The ring does not replace the inner GitHub liveness mechanisms.
 
 A separate execution-scoped recovery coordination lease at `_records/edition-execution/watchdog-leases/<execution-id>.json` prevents overlapping scheduled ChatGPT repairs. That lease never grants production write authority; the existing writer fence remains mandatory. Healthy checks and checks that encounter another active recovery owner are silent and non-mutating. Actual stall/recovery events are append-only under `_records/edition-execution/watchdog-events/<execution-id>/`.
 
 Recovery success requires **both a real active executor and verified durable forward progress**, not merely dispatching a workflow, changing a lease, refreshing a queue/Kanban, writing a status, or trying one repair. For an actionable incident, the ring must keep escalating through the remaining safe authorized Fix-to-Progress actions until that condition is proven. If an invocation reaches a safe boundary first, it persists an unresolved continuation handoff so the next slot resumes the same incident. Exhausted internal attempts do not automatically become `BLOCKED_EXTERNAL`; that classification requires current verified external evidence. The ring never reopens terminal executions, redoes completed tasks, regenerates accepted_locked images, steals a live writer, or bypasses protected CI/deploy/verification.
 
-The former hourly Daily Brief Recovery schedule was repurposed in place as Watchdog Slot F at minute :53 and remains the durable bound scheduled native-image consumer. Slots A–E run at :03/:13/:23/:33/:43 with the same generic state machine. There is no separate standalone :48 Recovery task after cutover. See `docs/operations/CHATGPT-WATCHDOG-RING.md` for the executable contract.
+The former hourly Daily Brief Recovery automation remains as Watchdog Slot F at minute :53 only as historical identity continuity. It no longer has a unique production role. Slots A–F are equivalent and collectively form the reusable scheduled native-image consumer pool. Any slot may consume the exact next queued unclaimed Tasks 11–16 request without waiting for a stall; exact-request selection plus the current writer fence prevents duplicate generation. There is no standalone :48 Recovery task after cutover. See `docs/operations/CHATGPT-WATCHDOG-RING.md` for the executable contract.
