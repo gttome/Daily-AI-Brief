@@ -182,14 +182,51 @@ jobs:
             node control/_tools/dispatch-frozen-publication.mjs
           fi
 
-      - name: Configure run-branch writer
+      - name: Yield while a scheduled image consumer owns the next operation
         if: steps.boundary.outputs.write_allowed == 'true'
+        id: image_delegation
+        run: |
+          set -euo pipefail
+          delegated=false
+          lease="run/_records/edition-execution/writer-leases/\${EXECUTION_ID}.json"
+          if [ -f "$lease" ]; then
+            release_reason="$(node -e "const x=require('./$lease');process.stdout.write(String(x.release_reason||''))")"
+            released="$(node -e "const x=require('./$lease');process.stdout.write(String(x.released===true))")"
+            if [ "$released" = "true" ] && [[ "$release_reason" =~ ^TASK_(1[1-6])_QUEUED_HANDOFF_TO_SCHEDULED_IMAGE_CONSUMER$ ]]; then
+              task="\${BASH_REMATCH[1]}"
+              done_event="run/_records/edition-execution/events/\${EXECUTION_KEY}/\${task}-done.json"
+              request_dir="run/_records/edition-execution/worker-requests/\${EXECUTION_ID}"
+              if [ ! -f "$done_event" ] && [ -d "$request_dir" ]; then
+                queued="$(node - "$request_dir" "$task" <<'NODE'
+const fs=require('fs'), path=require('path');
+const [dir,task]=process.argv.slice(2);
+let ok=false;
+for (const name of fs.readdirSync(dir)) {
+  if (!name.startsWith(task+'-') || !name.endsWith('.json')) continue;
+  const x=JSON.parse(fs.readFileSync(path.join(dir,name),'utf8'));
+  if (String(x.task_id)===task && x.capability==='native_chatgpt' &&
+      ['queued','queued_for_scheduled_consumer'].includes(String(x.status||''))) { ok=true; break; }
+}
+process.stdout.write(String(ok));
+NODE
+)"
+                if [ "$queued" = "true" ]; then
+                  delegated=true
+                  echo "Task \${task} is already delegated to the scheduled image consumer; Supervisor will not reacquire the writer fence."
+                fi
+              fi
+            fi
+          fi
+          echo "delegated=$delegated" >> "$GITHUB_OUTPUT"
+
+      - name: Configure run-branch writer
+        if: steps.boundary.outputs.write_allowed == 'true' && steps.image_delegation.outputs.delegated != 'true'
         run: |
           git -C run config user.name "github-actions[bot]"
           git -C run config user.email "4189826+github-actions[bot]@users.noreply.github.com"
 
       - name: Acquire fenced writer authority for this exact execution
-        if: steps.boundary.outputs.write_allowed == 'true'
+        if: steps.boundary.outputs.write_allowed == 'true' && steps.image_delegation.outputs.delegated != 'true'
         id: fence
         run: |
           set -euo pipefail
@@ -215,7 +252,7 @@ jobs:
           fi
 
       - name: Persistent approximately one-minute supervision loop
-        if: steps.boundary.outputs.write_allowed == 'true'
+        if: steps.boundary.outputs.write_allowed == 'true' && steps.image_delegation.outputs.delegated != 'true'
         env:
           WRITER_GENERATION: ${{ steps.fence.outputs.generation }}
           GH_TOKEN: ${{ github.token }}
