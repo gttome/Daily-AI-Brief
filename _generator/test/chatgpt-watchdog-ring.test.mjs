@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {WATCHDOG_SLOTS,WATCHDOG_MINIMUM_ACTION_LADDER,buildWatchdogIncidentId,buildWatchdogActionKey,acquireWatchdogRecoveryLease,releaseWatchdogRecoveryLease,watchdogLeaseActive,watchdogLeaseWritePlan,selectAuthoritativeRequest,watchdogDecision,nextWatchdogCorrectiveAction,verifyWatchdogRecoveryProgress,buildWatchdogEvent,validateWatchdogRingContract} from '../lib/chatgpt-watchdog-ring.mjs';
+import {WATCHDOG_SLOTS,WATCHDOG_MINIMUM_ACTION_LADDER,buildWatchdogIncidentId,buildWatchdogActionKey,acquireWatchdogRecoveryLease,releaseWatchdogRecoveryLease,watchdogLeaseActive,watchdogLeaseWritePlan,selectAuthoritativeRequest,watchdogDecision,nextWatchdogCorrectiveAction,verifyWatchdogRecoveryProgress,watchdogRecoveryContinuation,buildWatchdogEvent,validateWatchdogRingContract} from '../lib/chatgpt-watchdog-ring.mjs';
 import {classifyRunHealth} from '../lib/run-supervisor.mjs';
 
 const active={active:true,terminal:false,execution_id:'synthetic-watchdog-execution',edition_id:'dab-edition-2099-01-01',branch:'synthetic/watchdog'};
@@ -83,6 +83,26 @@ test('real active executor plus durable progress verifies recovery',()=>{
   assert.equal(v.verified,true); assert.equal(v.executor_active,true);
 });
 test('failed minimum action escalates rather than blind retry',()=>assert.equal(nextWatchdogCorrectiveAction({classification:'STALE_ACTIVE',same_executor_missing:true,authoritative_request:{request_key:'r'},failed_action_types:['REDISPATCH_SAME_EXECUTOR']}).action,'CONSUME_EXACT_QUEUED_REQUEST'));
+test('durable movement without an active executor is not recovery success',()=>{
+  const v=verifyWatchdogRecoveryProgress({before:{task_state:'Blocked'},after:{task_state:'Active',worker_result_key:'result'}});
+  assert.equal(v.durable_progress,true); assert.equal(v.executor_active,false); assert.equal(v.verified,false);
+});
+test('one failed repair cannot end recovery while authorized actions remain',()=>{
+  const x=watchdogRecoveryContinuation({verification:{verified:false,executor_active:false,durable_progress:false},remaining_authorized_actions:3});
+  assert.equal(x.outcome,'CONTINUE_RECOVERY'); assert.equal(x.recovery_required,true); assert.equal(x.recovery_complete,false);
+});
+test('exhausted local actions re-diagnose instead of inventing an external blocker',()=>{
+  const x=nextWatchdogCorrectiveAction({classification:'STALE_ACTIVE',failed_action_types:[...WATCHDOG_MINIMUM_ACTION_LADDER]});
+  assert.equal(x.action,'REDIAGNOSE_AND_CONTINUE');
+});
+test('BLOCKED_EXTERNAL requires a verified external condition',()=>{
+  const x=nextWatchdogCorrectiveAction({classification:'STALE_ACTIVE',failed_action_types:[...WATCHDOG_MINIMUM_ACTION_LADDER],verified_external_blocker:true});
+  assert.equal(x.action,'BLOCKED_EXTERNAL');
+});
+test('safe boundary is an unresolved handoff, never recovery success',()=>{
+  const x=watchdogRecoveryContinuation({verification:{verified:false,executor_active:false,durable_progress:false},remaining_authorized_actions:0,safe_boundary_required:true});
+  assert.equal(x.outcome,'SAFE_BOUNDARY_HANDOFF'); assert.equal(x.recovery_required,true); assert.equal(x.recovery_complete,false);
+});
 test('watchdog event shape is append-only incident evidence',()=>{
   const e=buildWatchdogEvent({execution_id:active.execution_id,edition_id:active.edition_id,task_id:'18',incident_id:incident,slot_id:'A',classification:'STALE_ACTIVE',lease_generation:1,action_key:action,action_taken:'CONSUME_EXACT_QUEUED_REQUEST',verification_evidence:{worker_claimed:true},final_outcome:'RECOVERY_VERIFIED_PROGRESSING',occurred_at:'2026-10-03T19:02:00Z'});
   assert.equal(e.schema_version,'chatgpt-watchdog-event-v1'); assert.equal(e.task_id,'18');
@@ -93,7 +113,7 @@ test('synthetic ACTIVE + STALLED acquires, repairs, verifies and releases',()=>{
   const l=acquireWatchdogRecoveryLease(null,{execution_id:active.execution_id,incident_id:incident,owner_slot:'A',action_key:action,now:'2026-10-03T19:00:00Z'});
   assert.equal(l.acquired,true);
   assert.equal(nextWatchdogCorrectiveAction({classification:'STALE_ACTIVE',authoritative_request:{request_key:'req-current'}}).action,'CONSUME_EXACT_QUEUED_REQUEST');
-  assert.equal(verifyWatchdogRecoveryProgress({before:{task_state:'Active'},after:{task_state:'Done',worker_result_key:'result'}}).verified,true);
+  assert.equal(verifyWatchdogRecoveryProgress({before:{task_state:'Blocked',worker_claimed:false},after:{task_state:'Active',worker_claimed:true,worker_state:'Running',worker_result_key:'result',substantive_progress_at:'2026-10-03T19:01:30Z'}}).verified,true);
   assert.equal(releaseWatchdogRecoveryLease(l.lease,{owner_slot:'A',generation:1,reason:'RECOVERY_VERIFIED_PROGRESSING',now:'2026-10-03T19:02:00Z'}).state,'RELEASED');
 });
 test('synthetic ACTIVE + RECOVERY ALREADY RUNNING prevents duplicate action',()=>{
