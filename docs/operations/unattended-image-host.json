@@ -19,10 +19,10 @@
     "title": "Daily Brief Watchdog F",
     "enabled": true,
     "role": "scheduled_native_image_request_consumer",
-    "schedule": "BEGIN:VEVENT\nRRULE:FREQ=HOURLY;BYMINUTE=53;BYSECOND=0\nEND:VEVENT",
+    "schedule": "BEGIN:VEVENT\nDTSTART:20261003T193557Z\nRRULE:FREQ=HOURLY;BYMINUTE=53;BYSECOND=0\nEND:VEVENT",
     "timing_mode": "exact_schedule",
     "observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/schedule-observation.json",
-    "observation_sha256": "880bb4bacc1529843ba0b3d0ef31cacd72930c3eae41c0ba16e0bded5938baf8",
+    "observation_sha256": "31082e37b948c56155c55406d132243a2b433658305598bfea8c4d2e824ae7c9",
     "observed_at": "2026-10-02T21:55:00.000Z",
     "current_fence_refresh_required": true,
     "request_generation_semantics": "scheduling_provenance_only",
@@ -80,6 +80,6 @@
     "recovery_lease_path_pattern": "_records/edition-execution/watchdog-leases/<execution-id>.json",
     "separate_writer_fence_required": true,
     "schedule_observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/schedule-observation.json",
-    "schedule_observation_sha256": "880bb4bacc1529843ba0b3d0ef31cacd72930c3eae41c0ba16e0bded5938baf8"
+    "schedule_observation_sha256": "31082e37b948c56155c55406d132243a2b433658305598bfea8c4d2e824ae7c9"
   }
 }
