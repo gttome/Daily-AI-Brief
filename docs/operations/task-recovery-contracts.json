@@ -1028,7 +1028,8 @@
         "status_only_commit",
         "orchestration_only_commit",
         "dispatch_without_executor_activation"
-      ]
+      ],
+      "active_executor_required_for_recovery_success": true
     },
     "recovery": {
       "minimum_action_ladder": [
@@ -1040,7 +1041,20 @@
       ],
       "verification_required": true,
       "dispatch_only_is_success": false,
-      "retry_same_failed_action_forever": false
+      "retry_same_failed_action_forever": false,
+      "continue_until_active_and_progressing": true,
+      "exhaust_safe_authorized_options_before_handoff": true,
+      "one_failed_attempt_may_end_recovery": false,
+      "safe_boundary_is_handoff_not_success": true,
+      "blocked_external_requires_verified_external_condition": true,
+      "exhaustion_behavior": "After all currently applicable safe actions fail, re-read and re-diagnose from fresh authoritative state. If still actionable and an invocation boundary is reached, persist unresolved continuation evidence and hand off; the next Watchdog must resume. Never convert exhaustion alone into BLOCKED_EXTERNAL.",
+      "success_chain": [
+        "problem_diagnosed",
+        "cause_fixed",
+        "task_or_process_active",
+        "real_executor_confirmed",
+        "durable_progress_confirmed"
+      ]
     },
     "protections": {
       "terminal_reopen_allowed": false,
