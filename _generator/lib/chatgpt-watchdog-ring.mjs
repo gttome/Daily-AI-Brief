@@ -73,12 +73,13 @@ export function watchdogNativeImageRequestEligible(request,{execution_id}={}){
     ['queued','pending','queued_for_scheduled_consumer'].includes(state)
   );
 }
-export function watchdogDecision({active_pointer=null,classification=null,recovery_lease=null,owner_slot,now=new Date().toISOString(),substantive_worker_active=false,protected_executor_active=false,pending_actionable_request=false,authoritative_request=null,terminal_pointer_cleanup_authorized=false}={}){
+export function watchdogDecision({active_pointer=null,classification=null,recovery_lease=null,owner_slot,now=new Date().toISOString(),substantive_worker_active=false,protected_executor_active=false,task_writer_active=false,pending_actionable_request=false,authoritative_request=null,terminal_pointer_cleanup_authorized=false}={}){
   if(!validSlot(owner_slot)||!stamp(now))throw Error('watchdog_decision_context_required');
   if(!active_pointer?.active||active_pointer?.terminal===true)return {action:'NO_ACTION',reason:'no_active_nonterminal_production'};
   if(classification?.state==='TERMINAL')return terminal_pointer_cleanup_authorized?{action:'RECONCILE_TERMINAL_POINTER_ONLY',reason:'terminal_cleanup_explicitly_authorized'}:{action:'NO_ACTION',reason:'terminal_execution_production_immutable'};
   if(watchdogLeaseActive(recovery_lease,{execution_id:active_pointer.execution_id,now})&&recovery_lease.owner_slot!==owner_slot)return {action:'NO_ACTION',reason:'another_watchdog_recovery_owner_active'};
   if(substantive_worker_active||protected_executor_active)return {action:'NO_ACTION',reason:'real_executor_progressing'};
+  if(task_writer_active)return {action:'NO_ACTION',reason:'current_task_writer_owns_request'};
   if(watchdogNativeImageRequestEligible(authoritative_request,{execution_id:active_pointer.execution_id}))return {action:'CONSUME_NATIVE_IMAGE_REQUEST',reason:'unclaimed_native_image_request_ring_consumer',request_key:authoritative_request.request_key||null,task_id:tid(authoritative_request.task_id),owner_slot};
   if(classification?.state==='HEALTHY_ACTIVE')return {action:'NO_ACTION',reason:'healthy_active'};
   if(classification?.state==='READY_IDLE'&&!pending_actionable_request)return {action:'NO_ACTION',reason:'legitimate_ready_idle'};
@@ -157,6 +158,8 @@ export function validateWatchdogRingContract(contract={}){
   if(JSON.stringify(contract.native_image_consumer?.eligible_slots)!==JSON.stringify(Object.keys(WATCHDOG_SLOTS)))e.push('watchdog_ring_image_eligible_slots');
   if(contract.native_image_consumer?.normal_queued_request_consumption!==true)e.push('watchdog_ring_image_normal_consumption');
   if(contract.native_image_consumer?.single_owner_required!==true||contract.native_image_consumer?.writer_fence_required!==true)e.push('watchdog_ring_image_single_owner_fence');
+  if(contract.native_image_consumer?.duplicate_generation_prohibited!==true)e.push('watchdog_ring_image_duplicate_generation');
+  if(contract.native_image_consumer?.legacy_slot_f_special_role!==false)e.push('watchdog_ring_no_special_f_role');
   if(contract.native_image_consumer?.nominal_pickup_minutes!==10)e.push('watchdog_ring_image_pickup_cadence');
   if(JSON.stringify(contract.recovery?.minimum_action_ladder)!==JSON.stringify(WATCHDOG_MINIMUM_ACTION_LADDER))e.push('watchdog_ring_action_ladder');
   if(contract.protections?.terminal_reopen_allowed!==false||contract.protections?.completed_task_rework_allowed!==false||contract.protections?.accepted_asset_regeneration_allowed!==false)e.push('watchdog_ring_protection_contract');
