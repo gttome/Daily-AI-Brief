@@ -10,7 +10,7 @@ if(merged) {
   const p=JSON.parse(Buffer.from(JSON.parse(gh(['api',`repos/${repo}/contents/data/operations/active-production-run.json?ref=main`])).content,'base64').toString());
   if(p.active && !p.terminal && p.branch===branch) {
     const active=JSON.parse(gh(['api',`repos/${repo}/actions/workflows/daily-delta-validation.yml/runs?per_page=30`])).workflow_runs.some(r=>['queued','in_progress','waiting','requested','pending'].includes(r.status));
-    if(!active) gh(['workflow','run','daily-delta-validation.yml','--ref','main','-f',`date=${p.edition_id.replace('dab-edition-','')}`,'-f',`expected_sha=${merged.merge_commit_sha}`]);
+    if(!active) gh(['workflow','run','daily-delta-validation.yml','-R',repo,'--ref','main','-f',`date=${p.edition_id.replace('dab-edition-','')}`,'-f',`expected_sha=${merged.merge_commit_sha}`]);
     console.log(JSON.stringify({status:'EXISTING_MERGE_CLOSURE_OWNED_BY_DELTA_VALIDATION',production_sha:merged.merge_commit_sha}));
   }
   process.exit(0);
@@ -23,6 +23,6 @@ if(runs.some(r=>r.display_title===title && ['queued','in_progress','waiting','re
 } else if(runs.filter(r=>r.display_title===title && r.status==='completed' && r.conclusion!=='success').length>=3) {
   console.log(JSON.stringify({status:'PUBLICATION_HANDOFF_RETRY_BUDGET_EXHAUSTED',branch,run_branch_written:false}));
 } else {
-  gh(['workflow','run','publish-candidate.yml','--ref','main','-f',`staging_ref=${branch}`,'-f','dry_run=false','-f','autonomous_run=true','-f',`expected_sha=${candidateSha}`]);
+  gh(['workflow','run','publish-candidate.yml','-R',repo,'--ref','main','-f',`staging_ref=${branch}`,'-f','dry_run=false','-f','autonomous_run=true','-f',`expected_sha=${candidateSha}`]);
   console.log(JSON.stringify({status:'PUBLICATION_HANDOFF_DISPATCHED',branch,run_branch_written:false}));
 }
