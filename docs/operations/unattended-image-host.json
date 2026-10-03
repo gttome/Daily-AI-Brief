@@ -2,7 +2,7 @@
   "schema_version": "unattended-image-host-registration-v2",
   "status": "READY",
   "authorization_scope": "image_route_capability",
-  "reason": "Protected historical qualification evidence remains READY. Watchdog Ring Slot F retains the durable reusable production image-consumer identity at minute :53, while the six-slot ring adds coordinated outer recovery without changing the native-image quality or writer-fence contracts.",
+  "reason": "Protected historical qualification evidence remains READY. The six-slot ChatGPT Watchdog Ring is now the durable reusable production native-image consumer pool: A-F are operationally equivalent, any slot may immediately claim the exact next queued Tasks 11-16 request, and one-owner writer fencing prevents duplicate generation.",
   "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
   "host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
   "qualification_receipt_path": "_records/image-trials/2026-10-02-scheduled/recovered-six-image/qualification-receipt-complete-1.json",
@@ -13,35 +13,6 @@
   "qualified_at": "2026-10-02T18:30:45.015Z",
   "saved_bytes_recovered": true,
   "zero_production_cost_verified": true,
-  "reusable_consumer": {
-    "scheduler_kind": "chatgpt_automation",
-    "automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
-    "title": "Daily Brief Watchdog F",
-    "enabled": true,
-    "role": "scheduled_native_image_request_consumer",
-    "schedule": "BEGIN:VEVENT\nDTSTART:20261003T193557Z\nRRULE:FREQ=HOURLY;BYMINUTE=53;BYSECOND=0\nEND:VEVENT",
-    "timing_mode": "exact_schedule",
-    "observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/schedule-observation.json",
-    "observation_sha256": "31082e37b948c56155c55406d132243a2b433658305598bfea8c4d2e824ae7c9",
-    "observed_at": "2026-10-02T21:55:00.000Z",
-    "current_fence_refresh_required": true,
-    "request_generation_semantics": "scheduling_provenance_only",
-    "stale_generation_mutation_rejected": true,
-    "explicit_supervisor_handoff_required": true,
-    "handoff_reason_suffix": "HANDOFF_TO_SUPERVISOR",
-    "production_task_scope": [
-      "11",
-      "12",
-      "13",
-      "14",
-      "15",
-      "16"
-    ],
-    "synthetic_rehearsal_no_generation_supported": true,
-    "synthetic_rehearsal_consumed": true,
-    "synthetic_rehearsal_result_path": "_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-consumer-result.json",
-    "synthetic_rehearsal_release_path": "_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-writer-release.json"
-  },
   "capability_authorization": {
     "image_route_ready": true,
     "low_quality_fallback_enabled": false,
@@ -57,13 +28,15 @@
   "notes": [
     "Protected registration plus bound evidence is the sole mutable source of truth for image-host capability state.",
     "The historical one-time qualification automation remains immutable evidence and is not the reusable production consumer.",
-    "The reusable hourly consumer completed the bounded synthetic Task 11 consumption with zero image, publication, Run 5, or production-content mutation.",
     "The explicit Task 11 release automatically dispatched the same synthetic Supervisor execution; the terminal boundary caused publication, writer acquisition and persistent supervision to be skipped.",
     "The pre-next-run rehearsal receipt is PASS. Authorization becomes live only when this registration and the matching receipt pass protected CI and merge to main.",
     "Run 5 remains terminal and was not reopened, regenerated or modified.",
-    "The former standalone minute-48 Recovery schedule was repurposed in place as Watchdog Slot F at minute :53; no separate :48 recovery remains.",
-    "All six Watchdog members use the same generic recovery state machine; Slot F remains the durable registered reusable image-consumer binding.",
-    "Current Watchdog prompts use the Fix-to-Progress directive: one failed repair attempt never ends actionable recovery; unresolved safe-boundary yield is a continuation handoff, not success."
+    "Current Watchdog prompts use the Fix-to-Progress directive: one failed repair attempt never ends actionable recovery; unresolved safe-boundary yield is a continuation handoff, not success.",
+    "A-F are now operationally equivalent scheduled native-image consumers; no slot has a unique production capability.",
+    "A legitimately queued unclaimed Tasks 11-16 native request may be consumed by the next eligible Watchdog slot without waiting for stale/block classification.",
+    "Nominal scheduled image-consumer coverage improves from one designated hourly consumer opportunity to six staggered opportunities per hour; schedule delivery remains non-real-time.",
+    "Exact queued request identity plus current task-specific writer fencing prevents duplicate image generation when slots overlap.",
+    "The prior F-specific binding is retained only as historical compatibility evidence."
   ],
   "watchdog_ring": {
     "schema_version": "chatgpt-watchdog-ring-binding-v1",
@@ -77,7 +50,7 @@
       53
     ],
     "nominal_check_minutes": 10,
-    "bound_reusable_consumer_slot": "F",
+    "bound_reusable_consumer_slot": null,
     "recovery_lease_path_pattern": "_records/edition-execution/watchdog-leases/<execution-id>.json",
     "separate_writer_fence_required": true,
     "schedule_observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/schedule-observation.json",
@@ -86,6 +59,81 @@
     "one_failed_attempt_may_end_recovery": false,
     "active_and_progressing_required_for_recovery_success": true,
     "safe_boundary_is_continuation_handoff": true,
-    "blocked_external_requires_verified_external_condition": true
+    "blocked_external_requires_verified_external_condition": true,
+    "all_slots_equivalent": true,
+    "native_image_consumer_pool": true,
+    "eligible_native_image_slots": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "normal_queued_native_request_consumption": true,
+    "normal_consumption_waits_for_stale": false,
+    "nominal_image_pickup_minutes": 10,
+    "duplicate_generation_prohibited": true,
+    "image_consumer_observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json",
+    "image_consumer_observation_sha256": "dad03a3513793e26e5ecfde31012d37046d607b8fe319b39654a4962874447fa"
+  },
+  "legacy_single_consumer_binding": {
+    "automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+    "former_title": "Daily Brief Recovery / later Watchdog F",
+    "status": "historical_compatibility_only",
+    "note": "This identity remains historical proof of the previously registered single consumer. It no longer has a unique production capability."
+  },
+  "reusable_consumer_pool": {
+    "scheduler_kind": "chatgpt_watchdog_ring",
+    "enabled": true,
+    "role": "scheduled_native_image_request_consumer_pool",
+    "all_slots_equivalent": true,
+    "slot_ids": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "automation_ids": [
+      "6ac15929a81c8191956080955da7eaad",
+      "6ac15934c8c88191a33c94b91941d60d",
+      "6ac1594249d081918df3145cca65dd91",
+      "6ac1594e974881919639e0c40a2d9da8",
+      "6ac1595c12fc8191b9a25b42d465692d",
+      "6abeb9a2b8a88191949dc420d5e10feb"
+    ],
+    "slot_minutes": [
+      3,
+      13,
+      23,
+      33,
+      43,
+      53
+    ],
+    "nominal_pickup_minutes": 10,
+    "normal_queued_native_request_consumption": true,
+    "normal_consumption_waits_for_stale": false,
+    "single_owner_required": true,
+    "duplicate_generation_prohibited": true,
+    "current_fence_refresh_required": true,
+    "request_generation_semantics": "scheduling_provenance_only",
+    "stale_generation_mutation_rejected": true,
+    "explicit_supervisor_handoff_required": true,
+    "handoff_reason_suffix": "HANDOFF_TO_SUPERVISOR",
+    "observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json",
+    "observation_sha256": "dad03a3513793e26e5ecfde31012d37046d607b8fe319b39654a4962874447fa",
+    "observed_at": "2026-10-03T22:49:01.104330Z",
+    "production_task_scope": [
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "image_quality_contract_unchanged": true,
+    "synthetic_rehearsal_no_generation_supported": true
   }
 }
