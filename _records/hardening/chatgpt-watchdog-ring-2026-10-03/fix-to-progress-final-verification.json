@@ -1,0 +1,66 @@
+{
+  "schema_version": "chatgpt-watchdog-fix-to-progress-final-verification-v1",
+  "observed_at": "2026-10-03T20:49:46Z",
+  "result": "PASS",
+  "protected_change": {
+    "pr": 420,
+    "head_sha": "a54304c103cc001adc7b50401bd9041bf9f1354e",
+    "merge_sha": "480a4c559ac2b900dd29b746eec4e279a365e73f",
+    "ci_run_id": 37152873713,
+    "ci_conclusion": "success"
+  },
+  "live_schedules": {
+    "observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/fix-to-progress-schedule-observation.json",
+    "slots": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "minutes": [
+      3,
+      13,
+      23,
+      33,
+      43,
+      53
+    ],
+    "all_enabled": true,
+    "fix_to_progress_directive_present": true,
+    "one_failed_attempt_may_end_recovery": false
+  },
+  "executable_contract": {
+    "active_executor_required_for_success": true,
+    "durable_progress_required_for_success": true,
+    "continue_while_authorized_options_remain": true,
+    "exhausted_options_without_external_evidence": "REDIAGNOSE_AND_CONTINUE",
+    "safe_boundary": "SAFE_BOUNDARY_HANDOFF",
+    "safe_boundary_is_success": false,
+    "blocked_external_requires_verified_external_condition": true
+  },
+  "tests": {
+    "generator": {
+      "passed": 890,
+      "failed": 0
+    },
+    "contracts": {
+      "passed": 24,
+      "failed": 0
+    },
+    "targeted": "PASS",
+    "repository_state": "PASS",
+    "lifecycle": "PASS",
+    "append_only_ledger": "PASS",
+    "jekyll_build": "PASS"
+  },
+  "protections": {
+    "terminal_reopen_allowed": false,
+    "completed_task_rework_allowed": false,
+    "accepted_locked_regeneration_allowed": false,
+    "writer_fence_bypass_allowed": false,
+    "protected_ci_bypass_allowed": false,
+    "work_codex_paid_api_allowed": false
+  }
+}
