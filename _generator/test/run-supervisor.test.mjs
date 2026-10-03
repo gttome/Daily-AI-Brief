@@ -341,6 +341,21 @@ test('Supervisor workflow contains the one-minute loop, single concurrency lane 
   assert.doesNotMatch(y,/schedule:/);
 });
 
+
+test('Supervisor does not steal a released Tasks 11-16 scheduled-image delegation',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.match(y,/Yield while a scheduled image consumer owns the next operation/);
+  assert.match(y,/TASK_\(1\[1-6\]\)_QUEUED_HANDOFF_TO_SCHEDULED_IMAGE_CONSUMER/);
+  assert.match(y,/queued_for_scheduled_consumer/);
+  assert.match(y,/Supervisor will not reacquire the writer fence/);
+  const configure=y.indexOf('- name: Configure run-branch writer');
+  const delegation=y.indexOf('- name: Yield while a scheduled image consumer owns the next operation');
+  assert.ok(delegation>=0 && configure>delegation);
+  assert.match(y,/Configure run-branch writer\n        if: steps\.boundary\.outputs\.write_allowed == 'true' && steps\.image_delegation\.outputs\.delegated != 'true'/);
+  assert.match(y,/Acquire fenced writer authority for this exact execution\n        if: steps\.boundary\.outputs\.write_allowed == 'true' && steps\.image_delegation\.outputs\.delegated != 'true'/);
+  assert.match(y,/Persistent approximately one-minute supervision loop\n        if: steps\.boundary\.outputs\.write_allowed == 'true' && steps\.image_delegation\.outputs\.delegated != 'true'/);
+});
+
 test('watchdog runs every five minutes and can only restart the active pointer identity',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
   assert.match(y,/cron: '\*\/5 \* \* \* \*'/);
