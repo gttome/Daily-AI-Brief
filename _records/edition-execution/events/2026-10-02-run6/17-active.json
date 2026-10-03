@@ -1,0 +1,25 @@
+{
+  "task_id": "17",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T01:56:08Z",
+  "reason_code": "BEGIN_SIX_IMAGE_SET_REVIEW",
+  "operation": "review_six_image_set_differentiation_accessibility",
+  "proof": {
+    "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+    "branch": "rehearsal/dab-edition-2026-10-02-run6",
+    "request_key": "c3ed134cd0959cbdab3cf1228d11b3f402c43e504a6c6c6ce47f72bd77f72786",
+    "writer_generation": 19,
+    "completed_image_tasks": [
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "accepted_locked_count": 6,
+    "upstream_saved_git_reviews": "PASS",
+    "image_set_mutation_authorized": false
+  }
+}
