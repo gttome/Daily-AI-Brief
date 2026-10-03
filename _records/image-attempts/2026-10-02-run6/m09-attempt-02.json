@@ -1,0 +1,58 @@
+{
+  "schema_version": "native-image-attempt-v1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "16",
+  "candidate_id": "m09",
+  "writer_generation": 18,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "attempt": 2,
+  "source_attempt": 1,
+  "generation_kind": "bounded_targeted_edit",
+  "generated_at_observed": "2026-10-03T01:45:57.743Z",
+  "generation_wait_seconds": 42,
+  "native_capture": {
+    "path": "_records/image-originals/2026-10-02-run6/dab-rehearsal-2026-10-02-m09-2-native.png",
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1837918,
+    "sha256": "b9570861c898c344914d64123a61236a98a6c3e7b9c667e29e300e20b199bf16",
+    "git_blob_sha": "918959495a134116a8d2de969e8d6b1baf8a9d1c",
+    "captured_immediately": true
+  },
+  "normalization": {
+    "method": "deterministic resize and metadata strip",
+    "completed_at": "2026-10-03T01:46:12.147Z",
+    "output_path": "rehearsals/pre-oct3-20261002-r1/images/dab-rehearsal-2026-10-02-m09-2.png",
+    "width": 1200,
+    "height": 630,
+    "bytes": 948748,
+    "sha256": "ac30d31bb0550dac3658c0cc6bcdd241f81800d71ba7b4862d49055c03f7b9af",
+    "git_blob_sha": "71acefa50b2e76c30270357361aead75635225e7"
+  },
+  "pretransport_review": {
+    "composition": "PASS",
+    "story_specificity": "PASS",
+    "professional_quality": "PASS",
+    "exact_allowed_labels": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_text": [
+      "Shared Work Graph",
+      "Creative Producer",
+      "Account Advisor",
+      "Operations Coordinator",
+      "Executive Advisor",
+      "Draft work",
+      "Handoffs",
+      "Risk",
+      "Portfolio signals"
+    ],
+    "additional_visible_language": false,
+    "product_screen_imitation": false,
+    "transport_authorized": true
+  },
+  "disposition": "PERSISTED_PENDING_SAVED_GIT_REVIEW",
+  "accepted_locked": false
+}
