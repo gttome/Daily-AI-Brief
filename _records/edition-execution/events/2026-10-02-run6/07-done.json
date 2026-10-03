@@ -1,0 +1,18 @@
+{
+  "task_id": "07",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-03T00:46:40Z",
+  "reason_code": "TWO_SOURCE_DIVERSE_PODCASTS_VERIFIED",
+  "operation": "select_verify_two_source_diverse_podcasts",
+  "proof": {
+    "podcasts_path": "_records/editorial/2026-10-02-run6/podcasts.json",
+    "podcast_count": 2,
+    "source_diverse": true,
+    "primary_freshness_hours": 48,
+    "max_runtime_minutes": 20,
+    "request_key": "d69e8f7910807417ea35bbd3ce2f5b18377903cac6f9f48965090cdd473650bf",
+    "coalesced_request_key": "fd18dbffad060701211e089fe36192f14cc4b8e6b79424a820bd3b10c6ac8b6e",
+    "result": "PASS"
+  }
+}

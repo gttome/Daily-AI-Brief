@@ -1,0 +1,21 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "d69e8f7910807417ea35bbd3ce2f5b18377903cac6f9f48965090cdd473650bf",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "07",
+  "request_writer_generation": 4,
+  "status": "passed",
+  "completed_at": "2026-10-03T00:46:40Z",
+  "task_outcome": "Done",
+  "coalesced_request_key": "fd18dbffad060701211e089fe36192f14cc4b8e6b79424a820bd3b10c6ac8b6e",
+  "evidence": {
+    "podcasts_path": "_records/editorial/2026-10-02-run6/podcasts.json",
+    "podcast_count": 2,
+    "source_diverse": true,
+    "primary_freshness_hours": 48,
+    "max_runtime_minutes": 20,
+    "result": "PASS"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "rehearsal-podcast-selection-v1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "execution_key": "2026-10-02-run6",
+  "verified_at": "2026-10-03T00:46:40Z",
+  "result": "PASS",
+  "podcasts": [
+    {
+      "ordinal": 1,
+      "title": "DX Today AI Daily Brief - Friday, October 2, 2026",
+      "show": "DX Today | No-Hype Podcast & News About AI & DX",
+      "host": "Rick Spair",
+      "publication_date": "2026-10-02",
+      "runtime_minutes": 11,
+      "url": "https://music.amazon.com.au/podcasts/f5242196-cd6c-4f5b-ae7a-b6b841a4fb03/episodes/d9746187-1623-4f5c-9c97-6b7eb4e9ed39/dx-today-no-hype-podcast-news-about-ai-dx-dx-today-ai-daily-brief---friday-october-2-2026",
+      "freshness_tier": "primary_48h",
+      "connection": "A compact daily-news pass spanning AI infrastructure, enterprise deployments and the Barclays Claude expansion that complements the selected stories.",
+      "verification": "Amazon Music indexes the October 2, 2026 episode at 11 minutes."
+    },
+    {
+      "ordinal": 2,
+      "title": "Agent Worms, Claude, Griffin and Ataraxos Test the Boundaries",
+      "show": "AI Signal Daily",
+      "host": "Alexei Lebedev / Vadim Solovey",
+      "publication_date": "2026-10-01",
+      "runtime_seconds": 785,
+      "url": "https://www.buzzsprout.com/2614078/episodes/19898201",
+      "freshness_tier": "primary_48h",
+      "connection": "A source-diverse practitioner briefing on agent boundary failures, prompt injection, data exfiltration, post-training tool behavior and explicit operational guardrails.",
+      "verification": "The first-party episode host lists October 1, 2026 and an exact 13:05 runtime; DoiT's podcast index surfaces it as the newest briefing."
+    }
+  ],
+  "checks": {
+    "count": 2,
+    "source_diverse": true,
+    "shows": [
+      "DX Today",
+      "AI Signal Daily"
+    ],
+    "primary_freshness_hours": 48,
+    "max_runtime_minutes": 20,
+    "within_duration_rule": true,
+    "publication_before_verification": true,
+    "prior_run5_exact_episode_repeat": false
+  }
+}
