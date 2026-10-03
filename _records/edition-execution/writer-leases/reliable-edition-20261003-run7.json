@@ -1,9 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261003-run7",
-  "owner_id": "github-actions-37105281415-1",
-  "generation": 11,
-  "acquired_at": "2026-10-03T07:07:25.223Z",
-  "last_heartbeat_at": "2026-10-03T07:07:25.223Z",
-  "expires_at": "2026-10-03T13:07:25.223Z"
+  "owner_id": "github-actions-37105362019-1",
+  "generation": 12,
+  "acquired_at": "2026-10-03T07:08:52.062Z",
+  "last_heartbeat_at": "2026-10-03T07:08:52.062Z",
+  "expires_at": "2026-10-03T13:08:52.062Z"
 }
