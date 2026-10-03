@@ -72,7 +72,7 @@ The ring supplements rather than replaces the GitHub control plane.
 
 Each member recurs once per hour. Platform delivery can be late; safe overlap comes from the recovery lease and idempotency.
 
-Slot F is the repurposed former hourly Recovery schedule and remains the durable bound reusable native-image consumer. The other five slots use the same generic state machine.
+All six slots are operationally equivalent. The Ring itself is the durable reusable native-image consumer pool. Any slot may consume the exact next queued native-image request for Tasks 11–16; the only intended differences between slots are the slot letter and scheduled minute.
 
 ## Healthy fast path
 
@@ -124,9 +124,37 @@ If either answer is **no**, recovery is not complete. Continue to the next-small
 
 Never allocate another execution, reopen a terminal execution, redo a Done task, regenerate an `accepted_locked` image, steal a live writer, or bypass protected CI/deploy/verification.
 
-## Native image consumption
+## Native image consumption — six-slot consumer pool
 
-Tasks 11–16 preserve the registered native-image contract: exact newest request, current fenced authority refreshed at invocation, sealed single-story specification, professional native generation only, accepted images immutable, verified byte persistence, saved-Git visual review, and explicit Supervisor handoff. Slot F remains the durable registered consumer; other slots can take over only under the same recovery and writer-fence rules.
+The Watchdog Ring itself is the registered reusable native-image consumer. **A, B, C, D, E and F have identical image capability.** There is no F-specific production role.
+
+For Tasks 11–16, a legitimately queued, unclaimed `native_chatgpt` request does **not** need to become stale or blocked before a Watchdog may act. The next eligible slot may immediately consume the exact authoritative request.
+
+Normal image-consumer flow:
+
+1. Read the exact first-incomplete Task 11–16 and its newest authoritative queued request.
+2. Verify no real image worker/current writer already owns or is progressing that exact request.
+3. Acquire current task-specific fenced writer authority. Request-embedded generation is provenance only.
+4. Generate from the sealed single-story professional specification.
+5. Persist the exact returned bytes through the approved Git route and verify content identity/read-back.
+6. Review the saved Git image and either record `accepted_locked` or exact bounded rejection/recovery evidence.
+7. Release at the durable task boundary and hand back to the Supervisor.
+
+The writer fence makes overlapping slot wakes safe: **one exact request → one current writer → one image generation**. A later slot yields when another slot owns the request and can take over only after the existing authority is proven released/dead under the recovery contracts.
+
+### Image-task coverage improvement
+
+Before this change, one designated hourly consumer (F) represented the reusable scheduled image-consumer binding. After this change, all six staggered Watchdog slots are eligible consumers.
+
+| Image-consumer coverage | Before | Current |
+|---|---:|---:|
+| Eligible recurring scheduled consumers | 1 | 6 |
+| Scheduled consumer opportunities per hour | 1 | 6 |
+| Nominal maximum wait to next scheduled consumer | up to ~60 min | up to ~10 min |
+| Requires task to become stale before normal pickup | No, but only designated consumer could pick it up | **No; next eligible slot may pick it up** |
+| Duplicate generation protection | writer/fence | **writer/fence + exact request + equivalent-slot contract** |
+
+This is **materially better coverage for the image tasks**, which are the most operationally fragile part of the Brief. The ten-minute value is a nominal schedule spacing, not a real-time delivery guarantee.
 
 ## Recovery verification — active **and** progressing
 
@@ -175,12 +203,12 @@ The permanent ChatGPT Watchdog Ring consists of **exactly six enabled recurring 
 
 | Scheduled task | Slot | Minute each hour | Expected status | Permanent role |
 |---|---:|---:|---|---|
-| Daily Brief Watchdog A | A | :03 | Enabled | Outer recovery member |
-| Daily Brief Watchdog B | B | :13 | Enabled | Outer recovery member |
-| Daily Brief Watchdog C | C | :23 | Enabled | Outer recovery member |
-| Daily Brief Watchdog D | D | :33 | Enabled | Outer recovery member |
-| Daily Brief Watchdog E | E | :43 | Enabled | Outer recovery member |
-| Daily Brief Watchdog F | F | :53 | Enabled | Outer recovery member **and** durable registered native-image consumer |
+| Daily Brief Watchdog A | A | :03 | Enabled | Recovery + native-image consumer |
+| Daily Brief Watchdog B | B | :13 | Enabled | Recovery + native-image consumer |
+| Daily Brief Watchdog C | C | :23 | Enabled | Recovery + native-image consumer |
+| Daily Brief Watchdog D | D | :33 | Enabled | Recovery + native-image consumer |
+| Daily Brief Watchdog E | E | :43 | Enabled | Recovery + native-image consumer |
+| Daily Brief Watchdog F | F | :53 | Enabled | Recovery + native-image consumer |
 
 The effective nominal sequence is therefore:
 
@@ -190,13 +218,13 @@ The effective nominal sequence is therefore:
 
 The cadence is nominal rather than real-time guaranteed; Scheduled task delivery can start late. Recovery-lease coordination and idempotent action keys make late or overlapping invocations safe.
 
-### Why Slot F is different
+### No slot is special
 
-Slot F is not an extra seventh service. It is the former hourly **Daily Brief Recovery** Scheduled task repurposed in place as **Daily Brief Watchdog F** and moved from the old :48 cadence to :53.
+Slot F retains its historical automation identity because the former hourly Recovery task was repurposed rather than deleted. **That identity no longer grants F any unique production capability.**
 
-Slot F retains the durable scheduled native-image-consumer responsibility for Tasks 11–16. That means its Watchdog behavior and its image-consumer behavior share the same generic one-writer, exact-request, current-fence, accepted-asset-protection and Supervisor-handoff rules.
+A–F use the same state machine, image-consumer rules, recovery ladder, cost boundary, writer-fence rules and success criteria. Slot identity is scheduling metadata only.
 
-The old standalone :48 recovery behavior must not remain enabled after cutover.
+The old standalone :48 recovery behavior remains retired.
 
 ### If Slot F is not visible in the ChatGPT Scheduled Tasks UI
 
@@ -232,7 +260,8 @@ When checking the Watchdog Ring before a production run, verify all of the follo
 
 - exactly six recurring Watchdog members are enabled;
 - the recurring minutes are exactly **03, 13, 23, 33, 43 and 53**;
-- Slot F is present and enabled at :53;
+- all six slots A–F are present and enabled;
+- all six are eligible native-image consumers under the same contract;
 - no standalone :48 Daily Brief Recovery schedule remains enabled;
 - every Watchdog prompt is generic and contains no historical production identity;
 - the daily production Controller remains separate from the ring;
