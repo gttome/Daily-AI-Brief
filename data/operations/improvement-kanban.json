@@ -545,11 +545,11 @@
     },
     {
       "id": "DAB-KB-031",
-      "lane": "wip",
+      "lane": "done",
       "priority": "P0",
       "category": "Image Liveness",
       "title": "Make all Watchdog slots native-image consumers",
-      "summary": "Remove F's special image-consumer role. Make A-F operationally equivalent so the next eligible staggered slot can consume an exact queued Tasks 11-16 native-image request immediately while one-writer fencing prevents duplicate generation.",
+      "summary": "Implemented and protected: A-F are operationally equivalent Watchdog slots and one six-slot native-image consumer pool. The next eligible slot can consume the exact queued unclaimed Tasks 11-16 request without waiting for stale classification; exact-request identity and current writer fencing prevent duplicate generation. Protected CI and Pages deployment passed.",
       "acceptance": [
         "A-F have identical image-consumer capability; only slot letter/minute differ.",
         "Normal queued native-image pickup does not wait for stale/block classification.",
@@ -558,7 +558,8 @@
         "Readiness validation accepts the six-slot pool and retains historical single-F evidence only for compatibility.",
         "Regression tests prove every slot is eligible and overlapping ownership cannot duplicate consumption.",
         "Living operations, startup, implementation report, learning ledger and infographic architecture are synchronized.",
-        "Protected CI passes before card moves to Done."
+        "Protected CI passes before card moves to Done.",
+        "Image-consumer coverage increases from one designated hourly opportunity to six staggered opportunities per hour; nominal next opportunity improves from up to ~60 minutes to up to ~10 minutes, without claiming a real-time guarantee."
       ],
       "sources": [
         "DAB-OPS-20261003-008",
@@ -566,7 +567,13 @@
         "docs/operations/unattended-image-host.json",
         "_generator/lib/chatgpt-watchdog-ring.mjs",
         "_generator/lib/run-readiness.mjs",
-        "_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json"
+        "_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json",
+        "PR #423",
+        "CI run 37160416973",
+        "merge 6938496b84d23243692a752946846494d3440c43",
+        "Pages run 37160487714",
+        "DAB-OPS-E-000091",
+        "docs/images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Architecture-v1.0.svg"
       ]
     }
   ],
