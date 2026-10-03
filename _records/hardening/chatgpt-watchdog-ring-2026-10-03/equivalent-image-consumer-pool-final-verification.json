@@ -74,10 +74,11 @@
   },
   "learning": {
     "problem_id": "DAB-OPS-20261003-008",
-    "final_event_id": "DAB-OPS-E-000091",
+    "final_event_id": "DAB-OPS-E-000092",
     "status": "permanently_fixed",
     "improvement_kanban_card": "DAB-KB-031",
-    "kanban_lane": "done"
+    "kanban_lane": "done",
+    "permanent_fix_event_id": "DAB-OPS-E-000091"
   },
   "coverage_conclusion": "YES — image tasks have materially better scheduled consumer coverage: six eligible staggered Watchdog slots instead of one designated hourly slot. Nominal next scheduled opportunity improves from up to about 60 minutes to up to about 10 minutes, while writer fencing and exact-request identity preserve single-generation safety."
 }
