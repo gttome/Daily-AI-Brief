@@ -106,3 +106,82 @@ Ordinary Scheduled ChatGPT plus connected GitHub only. No ChatGPT Work, Codex, p
 ## Regression suite
 
 `_generator/test/chatgpt-watchdog-ring.test.mjs` covers healthy/no-active/terminal cases, recovery ownership and expiry, optimistic concurrency preconditions, post-acquisition races, exact request selection, minimum action and escalation, external blocks, projection authority, completed-task/accepted-asset protection, verification, and five bounded synthetic integration cases.
+
+## Operator schedule reference
+
+The permanent ChatGPT Watchdog Ring consists of **exactly six enabled recurring Scheduled tasks**. All six use the same generic recovery state machine; only the slot identifier and minute offset differ.
+
+| Scheduled task | Slot | Minute each hour | Expected status | Permanent role |
+|---|---:|---:|---|---|
+| Daily Brief Watchdog A | A | :03 | Enabled | Outer recovery member |
+| Daily Brief Watchdog B | B | :13 | Enabled | Outer recovery member |
+| Daily Brief Watchdog C | C | :23 | Enabled | Outer recovery member |
+| Daily Brief Watchdog D | D | :33 | Enabled | Outer recovery member |
+| Daily Brief Watchdog E | E | :43 | Enabled | Outer recovery member |
+| Daily Brief Watchdog F | F | :53 | Enabled | Outer recovery member **and** durable registered native-image consumer |
+
+The effective nominal sequence is therefore:
+
+```text
+:03 A → :13 B → :23 C → :33 D → :43 E → :53 F → next hour :03 A
+```
+
+The cadence is nominal rather than real-time guaranteed; Scheduled task delivery can start late. Recovery-lease coordination and idempotent action keys make late or overlapping invocations safe.
+
+### Why Slot F is different
+
+Slot F is not an extra seventh service. It is the former hourly **Daily Brief Recovery** Scheduled task repurposed in place as **Daily Brief Watchdog F** and moved from the old :48 cadence to :53.
+
+Slot F retains the durable scheduled native-image-consumer responsibility for Tasks 11–16. That means its Watchdog behavior and its image-consumer behavior share the same generic one-writer, exact-request, current-fence, accepted-asset-protection and Supervisor-handoff rules.
+
+The old standalone :48 recovery behavior must not remain enabled after cutover.
+
+### If Slot F is not visible in the ChatGPT Scheduled Tasks UI
+
+The intended live configuration is six enabled Watchdog tasks A–F. If the Scheduled Tasks screen visibly shows A–E but not F:
+
+1. refresh or reopen the Scheduled Tasks view;
+2. look specifically for **Daily Brief Watchdog F** rather than the former **Daily Brief Recovery** title;
+3. confirm its recurrence is hourly at minute **:53**;
+4. if it remains absent after refresh, treat that as a schedule-configuration defect and compare the live Scheduled-task definitions against this contract before the next production run.
+
+Do not create a replacement F blindly. First verify whether the repurposed task already exists so the system does not accidentally create two image consumers or two recovery owners.
+
+## Watchdog Permission Probe
+
+The **Watchdog Permission Probe** is **not a member of the Watchdog Ring**.
+
+It was a bounded, one-time, non-production implementation test whose only purpose was to prove that an ordinary ChatGPT Scheduled task could use the connected GitHub capability unattended. The probe was constrained to an isolated test branch and was not allowed to modify protected `main`, any production execution branch, production pointers, writer leases, accepted assets or publication state.
+
+The probe verified the ability to:
+
+1. run unattended as a normal Scheduled task;
+2. read protected repository state through the connected GitHub capability;
+3. write one harmless verification record to an isolated non-production branch without interactive approval;
+4. preserve production state completely.
+
+After the test completed, the probe was disabled. It must remain disabled and must **not** be counted when verifying the six permanent ring members.
+
+A UI may continue to show the disabled/completed probe as historical Scheduled-task evidence. Its presence does not mean there are seven Watchdog slots.
+
+## Schedule verification checklist
+
+When checking the Watchdog Ring before a production run, verify all of the following:
+
+- exactly six recurring Watchdog members are enabled;
+- the recurring minutes are exactly **03, 13, 23, 33, 43 and 53**;
+- Slot F is present and enabled at :53;
+- no standalone :48 Daily Brief Recovery schedule remains enabled;
+- every Watchdog prompt is generic and contains no historical production identity;
+- the daily production Controller remains separate from the ring;
+- the daily live validator remains separate from the ring;
+- the GitHub five-minute Supervisor watchdog remains enabled and unchanged;
+- the one-time Watchdog Permission Probe is disabled and is not counted as a ring member;
+- no event-triggered Work task, Work/Codex route, paid API/service, alternate account, new credential or browser automation has been introduced.
+
+## Source-of-truth rule
+
+The **live ChatGPT Scheduled-task definitions** determine whether a schedule is actually enabled and when it will run. This living document records the required architecture and expected configuration; it is not itself the scheduler.
+
+Whenever a permanent Watchdog schedule, role, minute offset, recovery-lease rule or image-consumer binding changes, update this document in the same protected change set so the living operations documentation and the live system do not drift.
+
