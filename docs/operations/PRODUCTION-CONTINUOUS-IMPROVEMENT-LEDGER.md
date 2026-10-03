@@ -802,3 +802,13 @@ Canonical events `DAB-OPS-E-000067` through `DAB-OPS-E-000069` close the live ve
 
 The authoritative gate is `_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json`. It authorizes the next production run only after the closeout change passes protected deterministic CI and is merged to `main`. Run 5 remains immutable and independently `PUBLIC_CLOSED`.
 
+## DAB-OPS-20261002-016 recurrence — frozen-publication dispatch lost repository-explicit routing
+
+- **Status:** mitigated; protected merge and same-run live validation pending
+- **Observed:** 2026-10-03T15:06:56.000Z
+- **Run / task:** `reliable-edition-20261003-run7` / Task 23
+- **Symptom:** Supervisor run `37132062299` reached the frozen candidate handoff, then `gh workflow run publish-candidate.yml` failed with `fatal: not a git repository` from the Actions workspace root.
+- **Root cause:** The earlier repair protected the writer-handoff dispatch, but the separate frozen-publication dispatcher had no direct repository-context regression test. Both its publication and existing-merge delta-validation workflow dispatches omitted `-R repo`.
+- **Fix:** Make both dispatches repository-explicit and add a focused regression test for each workflow.
+- **Preservation:** The same exact frozen Run 7 candidate remains authoritative. Tasks 00–22 and all six `accepted_locked` images are unchanged; publication is not bypassed.
+- **Next validation:** Protected CI must pass, the repair must merge to `main`, and the same Run 7 Supervisor must dispatch the protected publication executor successfully.
