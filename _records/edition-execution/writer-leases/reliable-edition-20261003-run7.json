@@ -8,10 +8,13 @@
   "capability": "repository",
   "acquired_at": "2026-10-03T13:47:55.000Z",
   "last_heartbeat_at": "2026-10-03T13:47:55.000Z",
-  "expires_at": "2026-10-03T14:17:55.000Z",
+  "expires_at": "2026-10-03T14:05:30.000Z",
   "supersedes": {
     "owner_id": "ordinary-chatgpt-task21-publication-projection-repair",
     "generation": 35
   },
-  "authority_note": "Fresh task-specific recovery authority for the exact active Task 21 request after no substantive repair artifact or worker result appeared; preserve Tasks 00-20 and all six accepted_locked images."
+  "authority_note": "Fresh task-specific recovery authority for the exact active Task 21 request after no substantive repair artifact or worker result appeared; preserve Tasks 00-20 and all six accepted_locked images.",
+  "released": true,
+  "released_at": "2026-10-03T14:05:30.000Z",
+  "release_reason": "TASK_21_DONE_HANDOFF_TO_SUPERVISOR"
 }
