@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
   "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
-  "observed_at": "2026-10-03T00:45:31.155Z",
+  "observed_at": "2026-10-03T00:46:33.181Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:33fd8aec9f90a3fe09dc85e2bae23cadc4bdc00951959207c075a2c1f5b98db9",
+  "source_event_digest": "sha256:8dd891c4f7f910afa973e29856191b533f7c1a11c6dfe76dfd6ec244c7f92cdd",
   "run_started_at": "2026-10-02T23:00:34.043Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 6297.112,
-  "total_brief_elapsed": "6297.112s",
+  "total_brief_elapsed_seconds": 6359.138,
+  "total_brief_elapsed": "6359.138s",
   "tasks": {
     "10": {
       "id": "10",
@@ -426,17 +426,17 @@
     "07": {
       "id": "07",
       "title": "Select and verify two source-diverse podcasts",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Active",
+      "column": "WIP",
+      "entered_backlog_at": "2026-10-03T00:45:55Z",
+      "active_started_at": "2026-10-03T00:45:55Z",
       "review_started_at": null,
       "blocked_started_at": null,
       "done_at": null,
       "cycle_seconds": null,
       "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "duration_seconds": 38.181,
+      "duration": "38.181s"
     },
     "08": {
       "id": "08",
