@@ -1,0 +1,24 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "execution_key": "2026-10-03-run7",
+  "task_id": "22",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-03T14:25:03.000Z",
+  "writer_generation": 38,
+  "owner_id": "scheduled-recovery-consumer-6abeb9a2b8a88191949dc420d5e10feb-task22-generation38",
+  "reason_code": "EXISTING_MATCHING_PUBLICATION_PR_REUSED",
+  "operation": "open_publication_pr",
+  "proof": {
+    "publication_pr": 400,
+    "url": "https://github.com/gttome/Daily-AI-Brief/pull/400",
+    "base": "main",
+    "head_branch": "reliable-edition/dab-edition-2026-10-03-run7",
+    "observed_head_sha": "bb783c032c22c612071bc6193c2f02883b2f81c8",
+    "task21_repair_receipt": "_records/qualification/2026-10-03-run7/task21-focused-repair.json",
+    "duplicate_pr_created": false,
+    "protected_ci_required_next": true
+  }
+}

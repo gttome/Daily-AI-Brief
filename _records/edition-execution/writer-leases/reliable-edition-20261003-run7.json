@@ -5,5 +5,8 @@
   "generation": 38,
   "acquired_at": "2026-10-03T14:24:20.387Z",
   "last_heartbeat_at": "2026-10-03T14:24:20.387Z",
-  "expires_at": "2026-10-03T14:39:20.387Z"
+  "expires_at": "2026-10-03T14:25:03.000Z",
+  "released": true,
+  "released_at": "2026-10-03T14:25:03.000Z",
+  "release_reason": "TASK_22_DONE_HANDOFF_TO_SUPERVISOR"
 }
