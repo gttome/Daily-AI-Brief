@@ -232,17 +232,9 @@ jobs:
             git -C run fetch --no-tags origin "$RUN_BRANCH"
             git -C run reset --hard "origin/$RUN_BRANCH"
 
-            # Renew locally before asserting the fence. This keeps a healthy
-            # long-running Supervisor alive even if a same-owner recovery
-            # heartbeat persisted a shorter TTL on the run branch.
-            node control/_tools/run-supervisor.mjs writer-lease \
-              --execution-id "$EXECUTION_ID" \
-              --owner-id "$SUPERVISOR_OWNER" \
-              --ttl-ms 21600000 \
-              --current "run/$lease_rel" \
-              --output /tmp/writer-lease.json > /tmp/writer-renewal.json
-            cp /tmp/writer-lease.json "run/$lease_rel"
-
+            # A legitimate one-writer transfer may happen between loops.
+            # Check ownership before renewal so a transferred lease is a clean
+            # yield, never a red production failure.
             if ! node control/_tools/run-supervisor.mjs assert-fence \
               --lease "run/$lease_rel" \
               --execution-id "$EXECUTION_ID" \
@@ -252,6 +244,20 @@ jobs:
               cat /tmp/fence-check.err || true
               break
             fi
+
+            # Renew locally after ownership is confirmed. A transfer can still
+            # race this check, so renewal failure is also a clean yield.
+            if ! node control/_tools/run-supervisor.mjs writer-lease \
+              --execution-id "$EXECUTION_ID" \
+              --owner-id "$SUPERVISOR_OWNER" \
+              --ttl-ms 21600000 \
+              --current "run/$lease_rel" \
+              --output /tmp/writer-lease.json > /tmp/writer-renewal.json 2>/tmp/writer-renewal.err; then
+              echo "Writer fence changed during renewal; Supervisor yields without treating the handoff as a production failure."
+              cat /tmp/writer-renewal.err || true
+              break
+            fi
+            cp /tmp/writer-lease.json "run/$lease_rel"
 
             # Consume only complete, hash-bound PNG chunk requests left by a
             # prior fenced scheduled image worker. Malformed requests fail
