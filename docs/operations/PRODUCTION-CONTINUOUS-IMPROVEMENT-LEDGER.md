@@ -943,7 +943,7 @@ Problems: 49 · Events: 82
 - **Protected CI:** run 37160416973 — success; 896/896 generator tests, 24/24 contract tests, targeted tests PASS, repository/lifecycle/append-only validation PASS, Jekyll build PASS.
 - **Pages verification:** run 37160487714 — success.
 - **Durable schedule/consumer evidence:** `_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json`.
-- **Permanent learning event:** `DAB-OPS-E-000091`.
+- **Permanent learning events:** `DAB-OPS-E-000091` (permanent fix) and `DAB-OPS-E-000092` (verified outcome).
 - **Improvement Kanban:** DAB-KB-031 = Done.
 - **Infographic:** `docs/images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Architecture-v1.0.svg`.
 - **Future validation:** On the next real Tasks 11–16 request, record which A–F slot acquires the exact request, verify overlapping slots yield without duplicate generation, and measure actual queued-to-consumer-start latency against the prior single-consumer baseline.
