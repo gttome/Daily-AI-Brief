@@ -929,15 +929,22 @@ Problems: 49 · Events: 82
 
 ## DAB-OPS-20261003-008 — Slot F remained a special image-consumer binding after recovery became a six-slot ring.
 
-- **Status:** mitigated; protected implementation in progress
+- **Status:** permanently_fixed
 - **Task(s):** 11–16 native-image production
 - **Symptom:** A–F were equivalent for outer recovery, but the protected image-host registration still bound reusable native-image consumption specifically to F.
 - **Root cause:** F's special role was retained as a migration bridge from the old hourly Recovery automation. That compatibility choice outlived its architectural need.
 - **Operational impact:** The image stage—the most problematic stage in recent production—did not receive the full liveness benefit of the staggered ring.
 - **Coverage before:** one designated recurring scheduled image-consumer opportunity per hour.
-- **Target coverage:** six equivalent eligible slots staggered at :03/:13/:23/:33/:43/:53; nominal next consumer opportunity about 10 minutes.
-- **Important limitation:** Scheduled ChatGPT delivery is not real-time; the 10-minute value is schedule spacing, not a hard latency guarantee.
-- **Attempted fix:** Make the Watchdog Ring itself the reusable native-image consumer pool. Every slot may consume the exact next queued unclaimed Tasks 11–16 request without waiting for stale/block classification. Exact request identity and current task-specific writer fencing ensure one request produces one generation.
+- **Coverage now:** six equivalent eligible slots staggered at :03/:13/:23/:33/:43/:53. Any slot may consume the exact next queued unclaimed Tasks 11–16 native request without waiting for stale/block classification.
+- **Coverage effect:** eligible recurring consumers 1 → 6; scheduled opportunities/hour 1 → 6; nominal maximum wait to the next scheduled consumer about 60 → 10 minutes. This is schedule spacing, not a real-time execution guarantee.
+- **Actual fix:** Make the Watchdog Ring itself the reusable native-image consumer pool. A–F use the same production capabilities. Exact request identity plus current task-specific writer fencing ensures one request → one writer → one image generation.
 - **Preserved protections:** accepted_locked image immutability, sealed single-story prompt, visible-text/subject controls, exact-byte persistence/read-back, saved-Git review, Supervisor handoff, one-writer fencing and zero-Work/Codex/paid-API boundary.
-- **Evidence:** `_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json`
-- **Permanent outcome:** pending protected CI and merge.
+- **Protected implementation:** PR #423, head `c5b51d30f7386e781dfdf4b6896456b09bba8f1e`, merge `6938496b84d23243692a752946846494d3440c43`.
+- **Protected CI:** run 37160416973 — success; 896/896 generator tests, 24/24 contract tests, targeted tests PASS, repository/lifecycle/append-only validation PASS, Jekyll build PASS.
+- **Pages verification:** run 37160487714 — success.
+- **Durable schedule/consumer evidence:** `_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json`.
+- **Permanent learning event:** `DAB-OPS-E-000091`.
+- **Improvement Kanban:** DAB-KB-031 = Done.
+- **Infographic:** `docs/images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Architecture-v1.0.svg`.
+- **Future validation:** On the next real Tasks 11–16 request, record which A–F slot acquires the exact request, verify overlapping slots yield without duplicate generation, and measure actual queued-to-consumer-start latency against the prior single-consumer baseline.
+
