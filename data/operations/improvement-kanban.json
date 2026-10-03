@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-03T19:10:00Z",
+  "observed_at": "2026-10-03T19:21:00Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -334,12 +334,11 @@
       "priority": "P0",
       "category": "Operations UX",
       "title": "Create canonical Improvement Kanban system",
-      "summary": "Create the machine-readable board, capture/update rules, HTML5 visual interface and reproducible PNG view.",
+      "summary": "The canonical machine-readable Improvement Kanban, capture rules, learning-ledger reconciliation and future UI boundary are established.",
       "acceptance": [
-        "Canonical JSON exists.",
-        "HTML5 add/edit/drag/drop/import/export works.",
-        "PNG generated from the same canonical data.",
-        "Repository PR opened without changing production behavior."
+        "Canonical JSON exists on protected main.",
+        "Capture/update and deterministic reconciliation rules exist.",
+        "Future browser or ChatGPT Site editing remains separate from production control authority."
       ],
       "sources": [
         "Current owner request"
@@ -367,9 +366,11 @@
       "priority": "P0",
       "category": "Automation",
       "title": "Remove expired rehearsal overlay from Recovery",
-      "summary": "Daily Brief Recovery now contains production-only image-consumer instructions; hourly :48 schedule and 01:00 Controller were preserved.",
+      "summary": "The persistent Recovery service contains generic production-only recovery/image-consumer instructions; the hourly :48 backstop remains enabled and the production controller now starts at 19:00 America/Chicago on the prior evening.",
       "acceptance": [
-        "Verified automation state after update."
+        "Generic recovery instruction verified.",
+        "Hourly recovery remains enabled.",
+        "Production controller uses the prior-evening 19:00 schedule."
       ],
       "sources": [
         "Daily Brief Recovery automation"
@@ -467,13 +468,17 @@
       "lane": "done",
       "priority": "P0",
       "category": "Readiness",
-      "title": "Pre-next-run production authorization PASS",
-      "summary": "Protected receipt authorizes the next production run with image and publication authorization true while preserving the prior production baseline.",
+      "title": "Current next-edition Task 00 admission proof",
+      "summary": "A non-production admission proof validates the current protected-main readiness gates while explicitly prohibiting early production allocation; the scheduled controller owns allocation.",
       "acceptance": [
-        "next_production_run_authorized=true on protected main."
+        "Full Task 00 readiness validation returns PASS.",
+        "No active nonterminal execution exists before scheduled start.",
+        "No production execution is allocated by the admission proof.",
+        "Scheduled controller remains the sole normal allocation authority."
       ],
       "sources": [
-        "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json",
+        "_records/hardening/pre-next-edition-task00-admission-2026-10-03.json",
+        "docs/operations/DAILY-UNATTENDED-STARTUP.md",
         "DAB-OPS-20261002-006",
         "DAB-OPS-20261002-017"
       ]
