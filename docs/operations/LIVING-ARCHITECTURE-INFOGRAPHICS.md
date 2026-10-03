@@ -1,7 +1,7 @@
 # Daily AI Brief — Living Architecture Infographics
 
 **Status:** evergreen living documentation projection  
-**Version:** v3.2
+**Version:** v3.3
 
 > [!IMPORTANT]
 > These diagrams explain the durable Daily AI Brief system architecture. They are **not run-status dashboards**. Machine evidence remains authoritative for live state.
@@ -11,6 +11,13 @@
 **Watchdog Ring image-consumer pool:** all six slots A–F are operationally equivalent. Each is both an outer recovery worker and an eligible scheduled native-image consumer for Tasks 11–16. A normal queued unclaimed image request is consumed by the next eligible slot without waiting for stale classification. One exact request + one current writer fence prevents duplicate generation. The living diagrams must show this six-slot image coverage explicitly and must not depict F as special.
 
 ## Current diagrams
+
+### ChatGPT Watchdog Ring — equivalent image-consumer architecture
+
+![Daily AI Brief ChatGPT Watchdog Ring Architecture v1.0](../images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Architecture-v1.0.svg)
+
+This current diagram is the scalable architecture source for the six-slot Watchdog Ring. It shows A–F as equivalent recovery/image-consumer slots, the nominal 10-minute stagger, GitHub durable authority, Run Supervisor interaction, native-image coverage improvement, one-owner duplicate-generation protection, and the Fix-to-Progress recovery ladder.
+
 
 ### Persistent Run Supervisor architecture
 
