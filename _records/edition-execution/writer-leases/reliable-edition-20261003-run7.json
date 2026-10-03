@@ -1,9 +1,11 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261003-run7",
-  "owner_id": "github-actions-37121272803-1",
-  "generation": 25,
-  "acquired_at": "2026-10-03T11:57:25.909Z",
-  "last_heartbeat_at": "2026-10-03T11:57:25.909Z",
-  "expires_at": "2026-10-03T17:57:25.909Z"
+  "owner_id": "ordinary-chatgpt-repository-worker-task17",
+  "generation": 26,
+  "acquired_at": "2026-10-03T12:19:48.000Z",
+  "last_heartbeat_at": "2026-10-03T12:19:48.000Z",
+  "expires_at": "2026-10-03T12:49:48.000Z",
+  "task_id": "17",
+  "authority_scope": "repository_task_17"
 }
