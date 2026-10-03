@@ -7,6 +7,9 @@
   "operation_key": "repair_run7_reader_projection_and_legacy_test_compatibility_after_ci_failure_37130500865",
   "capability": "repository",
   "acquired_at": "2026-10-03T14:45:56.802Z",
-  "last_heartbeat_at": "2026-10-03T14:45:56.802Z",
-  "expires_at": "2026-10-03T15:00:56.802Z"
+  "last_heartbeat_at": "2026-10-03T14:54:29.570Z",
+  "expires_at": "2026-10-03T14:54:29.570Z",
+  "released": true,
+  "released_at": "2026-10-03T14:54:29.570Z",
+  "release_reason": "TASK_23_BLOCKED_HANDOFF_TO_SUPERVISOR"
 }

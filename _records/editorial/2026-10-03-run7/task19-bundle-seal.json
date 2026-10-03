@@ -10,7 +10,7 @@
   "shards": [
     {
       "path": "_records/editorial/2026-10-03-run7/task19-digests-reader.json",
-      "git_blob_sha1": "8b61616c65e06f4b241c383435b48ef62b22f36b"
+      "git_blob_sha1": "06f495f70b6d0f96212894918186eac496ef2c56"
     },
     {
       "path": "_records/editorial/2026-10-03-run7/task19-digests-images.json",
@@ -22,7 +22,7 @@
     },
     {
       "path": "_records/editorial/2026-10-03-run7/task19-digests-evidence-b.json",
-      "git_blob_sha1": "019a2817fc8e210e3f994b9204222c4f7e9e6202"
+      "git_blob_sha1": "248647a320cceb0beb3e42b9d183a0c8dbafb2e8"
     }
   ],
   "counts": {
@@ -35,6 +35,28 @@
   "preserved": {
     "completed_tasks": "00-18",
     "accepted_locked_images": 6
+  },
+  "focused_reseal": {
+    "at": "2026-10-03T14:46:30.000Z",
+    "reason": "Reconcile the already-dispositioned carried-forward Watchlist count onto the three current reader surfaces after protected CI detected drift.",
+    "changed_shards": [
+      "reader-pages",
+      "editorial-evidence-b"
+    ],
+    "accepted_image_shard_unchanged": true,
+    "story_selection_changed": false,
+    "media_selection_changed": false
+  },
+  "ci_focused_reseal": {
+    "at": "2026-10-03T14:53:27.438Z",
+    "reason": "Project the frozen October 3 edition through the canonical reader renderer after protected CI detected reader-surface drift; preserve unknown reading-time measurements while recognizing independently verified full-source review.",
+    "changed_shards": [
+      "reader-pages"
+    ],
+    "accepted_image_shard_unchanged": true,
+    "story_selection_changed": false,
+    "media_selection_changed": false,
+    "source_word_counts_invented": false
   },
   "result": "PASS"
 }

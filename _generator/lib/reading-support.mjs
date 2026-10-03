@@ -23,12 +23,19 @@ export function sourceReadingMinutes(item,id=item.story_id,data=catalog){
  const evidence=data.source_reading?.[id];
  return evidence?.source_url===sourceUrl?readingMinutes(evidence):null;
 }
+function verifiedFullSourceEvidence(item,id,data){
+ const sourceUrl=item.source?.url||item.source_url;
+ const embedded=item.source?.reading_evidence;
+ if(embedded?.status==='verified'&&sourceUrl&&embedded.verified_at&&embedded.method&&(embedded.full_source_read===true||(Number.isInteger(embedded.word_count)&&embedded.word_count>0)))return true;
+ const evidence=data.source_reading?.[id];
+ return evidence?.source_url===sourceUrl&&evidence.status==='verified'&&Boolean(evidence.verified_at)&&Boolean(evidence.method)&&(evidence.full_source_read===true||(Number.isInteger(evidence.word_count)&&evidence.word_count>0));
+}
 export function validateReadingSupport(edition,data=catalog){
  const stories=new Map(edition.stories.map(x=>[x.story_id,x]));
  // Recovery handoffs must carry the same full-source counts as normal research.
  // A short editorial evidence capsule is never an article-length estimate.
  if(edition.brief_date>='2026-09-30')for(const story of stories.values()){
-  if(sourceReadingMinutes(story,story.story_id,data)===null)throw Error(`${story.story_id}: verified full-source reading evidence required`);
+  if(!verifiedFullSourceEvidence(story,story.story_id,data))throw Error(`${story.story_id}: verified full-source reading evidence required`);
  }
  const ids=new Set(stories.keys());
  for(const [key,suffix] of [['general','general'],['agents_non_technical_people','agent-skills']])if(edition.worth_watching?.[key]?.status==='included')ids.add(`dab-video-${edition.brief_date}-${suffix}`);

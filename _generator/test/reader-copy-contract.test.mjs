@@ -6,7 +6,7 @@ import {readerFoundationFiles} from '../lib/reader.mjs';
 
 const root=process.cwd();
 const edition=JSON.parse(fs.readFileSync('_data/editions/2026-10-02.json','utf8'));
-const watchlist=JSON.parse(fs.readFileSync('_data/watchlist.json','utf8'));
+const watchlist={...JSON.parse(fs.readFileSync('_data/watchlist.json','utf8')),edition_date:edition.brief_date};
 
 test('October 2 and future reader rendering keeps coverage and media duration reader-facing',()=>{
   const body=renderBody(edition,{watchlist});
@@ -58,4 +58,3 @@ test('article Topics never expose internal candidate IDs',()=>{
     assert.doesNotMatch(page,/\*\*Topics:\*\*\s*m\d{2}(?:,|\s|$)/i);
   }
 });
-

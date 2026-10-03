@@ -41,9 +41,11 @@
   "watchlist_counts": {
     "new_today": 2,
     "updated_today": 1,
-    "carried_forward": "not_measured"
+    "carried_forward": 17
   },
   "all_four_books_reviewed": true,
+  "watchlist_count_reconciled_at": "2026-10-03T14:46:30.000Z",
+  "watchlist_count_reconciliation_basis": "Task 08 disposition ledger projected deterministically during Task 21; no Watchlist decision changed.",
   "reader_guards": {
     "internal_candidate_ids_in_visible_topics": false,
     "source_reading_time_unknown_remains_unavailable": true,
