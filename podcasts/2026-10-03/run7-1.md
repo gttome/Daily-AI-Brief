@@ -36,7 +36,6 @@ reader_release: true
 
 **Coverage:** Locked October 3 Run 7 media selection.
 
-**Evidence:** Practitioner analysis. The Verge episode page identifies title, show context and publication at 2026-10-02 15:47 UTC; direct Watch and Listen routes are present. Runtime was not exposed in the reviewed page and remains unknown.
 
 **Listen / watch:** <a href="https://www.theverge.com/podcast/1004059/openai-dots-kindle-homepad-cybercab-vergecast" data-item-id="dab-podcast-2026-10-03-1" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">The Vergecast</a>
 
