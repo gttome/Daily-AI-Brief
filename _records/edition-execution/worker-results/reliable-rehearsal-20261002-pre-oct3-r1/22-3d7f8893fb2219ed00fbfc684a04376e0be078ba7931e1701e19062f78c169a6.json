@@ -1,0 +1,19 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "3d7f8893fb2219ed00fbfc684a04376e0be078ba7931e1701e19062f78c169a6",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "22",
+  "status": "passed",
+  "completed_at": "2026-10-03T02:51:15Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "pr_number": 386,
+    "pr_url": "https://github.com/gttome/Daily-AI-Brief/pull/386",
+    "candidate_sha": "89dbab58750710cafcaefaab1d22ca65e519b603",
+    "base_sha": "f0d61eb7b4481d28755db549e53826fb7ccf4ade",
+    "diff_scope": "isolated_preview_and_rehearsal_closure_evidence_only",
+    "next_task": "23"
+  }
+}
