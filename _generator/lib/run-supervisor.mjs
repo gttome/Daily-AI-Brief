@@ -96,10 +96,21 @@ export function applyImmediateImageRecovery({
 } = {}) {
   const taskId = String(task_id || '').padStart(2,'0');
   const isImageTask = ['11','12','13','14','15','16'].includes(taskId);
+  const recoveryAction = image_recovery?.recovery_action || image_recovery?.targeted_next_action || '';
   const rejectedWithRecoveryEvidence = isImageTask &&
     image_recovery?.status === 'rejected' &&
-    typeof image_recovery?.recovery_action === 'string' &&
-    image_recovery.recovery_action.trim().length > 0;
+    typeof recoveryAction === 'string' &&
+    recoveryAction.trim().length > 0;
+  const rejectionCode = String(image_recovery?.review?.rejection_code || image_recovery?.rejection_code || '');
+  const rejectionReason = String(image_recovery?.review?.rejection_reason || image_recovery?.rejection_reason || '');
+  const recoveryText = [rejectionCode,rejectionReason,recoveryAction].join(' ').toLowerCase();
+  const forceEngineeringRepair = rejectedWithRecoveryEvidence && (
+    /context[_ -]?contamination/.test(recoveryText) ||
+    /wrong[_ -]?subject/.test(recoveryText) ||
+    /sealed[_ -]?prompt[_ -]?displaced/.test(recoveryText) ||
+    /execution[_ -]?context/.test(recoveryText) ||
+    /fresh[_ -]?(isolated|single[_ -]?story|context)/.test(recoveryText)
+  );
   const promoteActiveToBlocked = rejectedWithRecoveryEvidence && task_state === 'Active';
   const actionableBlocked = rejectedWithRecoveryEvidence && ['Active','Blocked'].includes(task_state);
   const attempt = rejectedWithRecoveryEvidence ? Number(image_recovery.attempt || 0) : 0;
@@ -111,12 +122,19 @@ export function applyImmediateImageRecovery({
       ? Math.max(baseRecoveries, attempt)
       : baseRecoveries,
     immediate_recovery: actionableBlocked,
-    recovery_reason: rejectedWithRecoveryEvidence ? 'rejected_image_attempt_with_explicit_recovery_action' : null
+    force_engineering_repair: actionableBlocked && forceEngineeringRepair,
+    recovery_reason: rejectedWithRecoveryEvidence
+      ? forceEngineeringRepair
+        ? 'image_subject_or_context_mismatch_requires_engineering_repair'
+        : 'rejected_image_attempt_with_explicit_recovery_action'
+      : null
   };
 }
 
 export function normalizeTaskEvent(event = {}) {
   const normalized = {...event};
+  if (!normalized.from && typeof normalized.from_state === 'string') normalized.from = normalized.from_state;
+  if (!normalized.to && typeof normalized.to_state === 'string') normalized.to = normalized.to_state;
   if (!normalized.to && typeof normalized.state === 'string') normalized.to = normalized.state;
   if (!normalized.at && typeof normalized.blocker?.at === 'string') normalized.at = normalized.blocker.at;
   if (normalized.recoverable === undefined && typeof normalized.blocker?.recoverable === 'boolean')
@@ -222,20 +240,39 @@ export function validateTaskRecoveryContracts(contract = {}) {
 
 export function taskRecoveryDecision({
   classification, taskContract, attempts = 0, recoveryAttempts = 0, repairEpochs = 0,
-  repairReady = false, postRepairAttempts = 0
+  repairReady = false, postRepairAttempts = 0, forceEngineeringRepair = false
 } = {}) {
   if (!classification?.state || !taskContract) throw Error('classification_and_task_contract_required');
   if (classification.state === 'HEALTHY_ACTIVE') return {action:'observe'};
   if (classification.state === 'READY_IDLE') return {action:'dispatch_normal', capability:taskContract.capability, instruction:taskContract.normal_operation};
   if (classification.state === 'BLOCKED_EXTERNAL') return {action:'recheck', instruction:'Preserve exact blocker evidence; do not request owner status to advance.'};
   if (classification.state === 'TERMINAL') return {action:'task29'};
+  const repair = taskContract.engineering_repair;
+  if (forceEngineeringRepair && repair?.enabled === true) {
+    if (repairReady === true && Number.isInteger(repair.post_repair_attempt_limit) &&
+        postRepairAttempts < repair.post_repair_attempt_limit)
+      return {
+        action:'post_repair_attempt',
+        capability:taskContract.capability,
+        instruction:repair.post_repair_operation || taskContract.normal_operation,
+        repair_epoch:Math.max(1,repairEpochs),
+        post_repair_attempt:postRepairAttempts + 1
+      };
+    if (Number.isInteger(repair.max_epochs) && repairEpochs < repair.max_epochs)
+      return {
+        action:'engineering_repair',
+        capability:repair.capability || 'repository',
+        instruction:repair.instruction,
+        repair_epoch:repairEpochs + 1,
+        required_proofs:[...(repair.required_proofs || [])]
+      };
+  }
   if (attempts >= taskContract.retry_limit && classification.state === 'STALE_ACTIVE')
     return {action:'alternate_recovery', capability:taskContract.capability, instruction:taskContract.alternate_recovery};
   if (recoveryAttempts === 0)
     return {action:'first_recovery', capability:taskContract.capability, instruction:taskContract.first_recovery};
   if (recoveryAttempts < taskContract.retry_limit)
     return {action:'alternate_recovery', capability:taskContract.capability, instruction:taskContract.alternate_recovery};
-  const repair = taskContract.engineering_repair;
   if (repair?.enabled === true && Number.isInteger(repair.max_epochs) && repairEpochs < repair.max_epochs)
     return {
       action:'engineering_repair',
@@ -315,10 +352,13 @@ export function publicationWriteBoundary(tasks = {}, events = []) {
 }
 
 export function latestRecoverableImage(records, {task_id,candidate_id} = {}) {
-  const relevant=records.filter(r=>r.task_id===task_id || (candidate_id && r.candidate_id===candidate_id));
+  const relevant=records.filter(r=>String(r.task_id||'').padStart(2,'0')===String(task_id||'').padStart(2,'0') || (candidate_id && r.candidate_id===candidate_id));
   if(relevant.some(r=>r.status==='accepted_locked')) return null;
-  return relevant.filter(r=>r.status==='rejected' && r.recovery_action)
-    .sort((a,b)=>Date.parse(a.rejected_at||0)-Date.parse(b.rejected_at||0)).at(-1)||null;
+  const latest = relevant.filter(r=>r.status==='rejected' && (r.recovery_action || r.targeted_next_action))
+    .sort((a,b)=>Date.parse(a.rejected_at||a.observed_at||a.reviewed_at||0)-Date.parse(b.rejected_at||b.observed_at||b.reviewed_at||0)).at(-1)||null;
+  return latest && !latest.recovery_action && latest.targeted_next_action
+    ? {...latest,recovery_action:latest.targeted_next_action}
+    : latest;
 }
 
 export const KANBAN_VISUAL_COLUMNS = Object.freeze(['Backlog','WIP','Done']);

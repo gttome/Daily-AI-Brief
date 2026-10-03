@@ -182,14 +182,31 @@ jobs:
             node control/_tools/dispatch-frozen-publication.mjs
           fi
 
-      - name: Configure run-branch writer
+      - name: Yield while a scheduled image consumer owns the next operation
         if: steps.boundary.outputs.write_allowed == 'true'
+        id: image_delegation
+        run: |
+          set -euo pipefail
+          delegated=false
+          delegated_task=""
+          request_dir="run/_records/edition-execution/worker-requests/${EXECUTION_ID}"
+          if [ -d "$request_dir" ]; then
+            delegated_task="$(node -e 'const fs=require("fs"),p=require("path");const d=process.argv[1],events=process.argv[2];const latest=new Map();for(const n of fs.readdirSync(d).sort()){if(!n.endsWith(".json"))continue;const x=JSON.parse(fs.readFileSync(p.join(d,n),"utf8"));const t=String(x.task_id||"").padStart(2,"0");if(!/^1[1-6]$/.test(t))continue;const prior=latest.get(t);const ts=Date.parse(x.created_at||0)||0;const pts=prior?(Date.parse(prior.x.created_at||0)||0):-1;if(!prior||ts>pts||(ts===pts&&n>prior.n))latest.set(t,{n,x})}const eventNames=fs.existsSync(events)?fs.readdirSync(events):[];let found="";for(const t of [...latest.keys()].sort()){if(eventNames.some(n=>n.startsWith(t+"-done")&&n.endsWith(".json")))continue;const x=latest.get(t).x;if(x.capability==="native_chatgpt"&&String(x.status||"")==="queued_for_scheduled_consumer"){found=t;break}}process.stdout.write(found)' "$request_dir" "run/_records/edition-execution/events/${EXECUTION_KEY}")"
+          fi
+          if [ -n "$delegated_task" ]; then
+            delegated=true
+            echo "Task ${delegated_task} is already queued for the scheduled image consumer; Supervisor will not acquire or take over the writer fence."
+          fi
+          echo "delegated=$delegated" >> "$GITHUB_OUTPUT"
+
+      - name: Configure run-branch writer
+        if: steps.boundary.outputs.write_allowed == 'true' && steps.image_delegation.outputs.delegated != 'true'
         run: |
           git -C run config user.name "github-actions[bot]"
           git -C run config user.email "4189826+github-actions[bot]@users.noreply.github.com"
 
       - name: Acquire fenced writer authority for this exact execution
-        if: steps.boundary.outputs.write_allowed == 'true'
+        if: steps.boundary.outputs.write_allowed == 'true' && steps.image_delegation.outputs.delegated != 'true'
         id: fence
         run: |
           set -euo pipefail
@@ -215,7 +232,7 @@ jobs:
           fi
 
       - name: Persistent approximately one-minute supervision loop
-        if: steps.boundary.outputs.write_allowed == 'true'
+        if: steps.boundary.outputs.write_allowed == 'true' && steps.image_delegation.outputs.delegated != 'true'
         env:
           WRITER_GENERATION: ${{ steps.fence.outputs.generation }}
           GH_TOKEN: ${{ github.token }}
@@ -232,17 +249,9 @@ jobs:
             git -C run fetch --no-tags origin "$RUN_BRANCH"
             git -C run reset --hard "origin/$RUN_BRANCH"
 
-            # Renew locally before asserting the fence. This keeps a healthy
-            # long-running Supervisor alive even if a same-owner recovery
-            # heartbeat persisted a shorter TTL on the run branch.
-            node control/_tools/run-supervisor.mjs writer-lease \
-              --execution-id "$EXECUTION_ID" \
-              --owner-id "$SUPERVISOR_OWNER" \
-              --ttl-ms 21600000 \
-              --current "run/$lease_rel" \
-              --output /tmp/writer-lease.json > /tmp/writer-renewal.json
-            cp /tmp/writer-lease.json "run/$lease_rel"
-
+            # A legitimate one-writer transfer may happen between loops.
+            # Check ownership before renewal so a transferred lease is a clean
+            # yield, never a red production failure.
             if ! node control/_tools/run-supervisor.mjs assert-fence \
               --lease "run/$lease_rel" \
               --execution-id "$EXECUTION_ID" \
@@ -252,6 +261,20 @@ jobs:
               cat /tmp/fence-check.err || true
               break
             fi
+
+            # Renew locally after ownership is confirmed. A transfer can still
+            # race this check, so renewal failure is also a clean yield.
+            if ! node control/_tools/run-supervisor.mjs writer-lease \
+              --execution-id "$EXECUTION_ID" \
+              --owner-id "$SUPERVISOR_OWNER" \
+              --ttl-ms 21600000 \
+              --current "run/$lease_rel" \
+              --output /tmp/writer-lease.json > /tmp/writer-renewal.json 2>/tmp/writer-renewal.err; then
+              echo "Writer fence changed during renewal; Supervisor yields without treating the handoff as a production failure."
+              cat /tmp/writer-renewal.err || true
+              break
+            fi
+            cp /tmp/writer-lease.json "run/$lease_rel"
 
             # Consume only complete, hash-bound PNG chunk requests left by a
             # prior fenced scheduled image worker. Malformed requests fail
@@ -331,6 +354,22 @@ jobs:
                 cat /tmp/native-image-result.json
               fi
 
+              if [ "$request_capability" = "repository" ] && [ "$request_task" = "17" ] && [ "$request_kind" != "engineering_repair" ]; then
+                request_key="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_key))")"
+                request_rel="_records/edition-execution/worker-requests/${EXECUTION_ID}/${request_task}-${request_key}.json"
+                request_status="$(node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync('run/'+process.argv[1],'utf8'));process.stdout.write(String(x.status||''))" "$request_rel")"
+                if [ "$request_status" = "queued" ]; then
+                  active_repository_consumers="$(gh api --method GET "repos/${GITHUB_REPOSITORY}/actions/workflows/repository-task-consumer.yml/runs" \
+                    -f branch="$RUN_BRANCH" -f per_page=20 \
+                    --jq '[.workflow_runs[] | select(.status=="queued" or .status=="in_progress")] | length')"
+                  if [ "$active_repository_consumers" = "0" ]; then
+                    echo "Dispatching Task 17 repository consumer explicitly via workflow_dispatch; pushes created by GITHUB_TOKEN do not recursively trigger workflows."
+                    gh workflow run repository-task-consumer.yml --ref "$RUN_BRANCH"
+                  else
+                    echo "Task 17 repository consumer already queued/in progress; no duplicate dispatch."
+                  fi
+                fi
+              fi
               if [ "$request_kind" = "engineering_repair" ] && [ "$request_capability" = "repository" ]; then
                 export GH_TOKEN="${{ github.token }}"
                 control_sha="$(git -C control rev-parse HEAD)"

@@ -224,7 +224,8 @@ try{
       classification,taskContract,
       attempts:Number(args.attempts||0),recoveryAttempts:imageOverride.recovery_attempts,
       repairEpochs:repairState.epochs_completed,repairReady:repairState.repair_ready,
-      postRepairAttempts:repairState.post_repair_attempts
+      postRepairAttempts:repairState.post_repair_attempts,
+      forceEngineeringRepair:imageOverride.force_engineering_repair === true
     });
     let request=null;
     if(decision.action==='engineering_repair'){

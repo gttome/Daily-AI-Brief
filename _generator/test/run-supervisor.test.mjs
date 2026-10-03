@@ -17,7 +17,8 @@ import {
   buildEngineeringRepairRequest,
   projectKanbanFromEvents,
   validateKanbanContract,
-  kanbanProjectionFresh
+  kanbanProjectionFresh,
+  latestRecoverableImage
 } from '../lib/run-supervisor.mjs';
 
 function contract(){
@@ -39,6 +40,15 @@ function contract(){
   }
   return {schema_version:'task-recovery-contracts-v1',tasks};
 }
+
+test('task event normalization accepts safe from_state/to_state aliases without overriding canonical fields',()=>{
+  const aliased=normalizeTaskEvent({task_id:'11',from_state:'Active',to_state:'Done',at:'2026-10-03T07:04:53.132Z'});
+  assert.equal(aliased.from,'Active');
+  assert.equal(aliased.to,'Done');
+  const canonical=normalizeTaskEvent({task_id:'11',from:'Blocked',to:'Done',from_state:'Active',to_state:'Blocked',at:'2026-10-03T07:04:53.132Z'});
+  assert.equal(canonical.from,'Blocked');
+  assert.equal(canonical.to,'Done');
+});
 
 test('duplicate run is rejected while same identity resumes',()=>{
   const active={execution_id:'run4',edition_id:'dab-edition-2026-10-01',branch:'b',terminal:false};
@@ -104,6 +114,36 @@ test('rejected Active image attempt becomes immediately actionable without waiti
   assert.equal(classification.state,'BLOCKED_ACTIONABLE');
   const decision=taskRecoveryDecision({classification,taskContract:c.tasks['15'],recoveryAttempts:override.recovery_attempts});
   assert.equal(decision.action,'alternate_recovery');
+});
+
+test('subject/context mismatch bypasses same-context retries and enters engineering repair immediately',()=>{
+  const c=contract();
+  c.tasks['15'].retry_limit=4;
+  c.tasks['15'].engineering_repair={
+    enabled:true,max_epochs:1,capability:'repository',
+    instruction:'Repair execution-context binding before another native image attempt.',
+    required_proofs:['fresh_single_story_worker_isolation'],
+    post_repair_attempt_limit:1,
+    post_repair_operation:'Execute one fresh-context attempt using only the sealed single-story specification.'
+  };
+  const record={
+    task_id:'15',candidate_id:'m08',status:'rejected',attempt:1,
+    targeted_next_action:'Retry the same sealed single-story specification in fresh isolated image context.',
+    observed_at:'2026-10-03T06:54:19Z',
+    review:{rejection_code:'WRONG_SUBJECT_AND_CONTEXT_CONTAMINATION',rejection_reason:'Unrelated orchestration subject displaced the sealed prompt.'}
+  };
+  const latest=latestRecoverableImage([record],{task_id:'15',candidate_id:'m08'});
+  assert.equal(latest.recovery_action,record.targeted_next_action);
+  const override=applyImmediateImageRecovery({task_id:'15',task_state:'Active',image_recovery:latest});
+  assert.equal(override.force_engineering_repair,true);
+  assert.equal(override.recovery_attempts,1);
+  const classification=classifyRunHealth({task_state:override.task_state,blocked_recoverable:override.blocked_recoverable});
+  const decision=taskRecoveryDecision({
+    classification,taskContract:c.tasks['15'],recoveryAttempts:override.recovery_attempts,
+    forceEngineeringRepair:override.force_engineering_repair
+  });
+  assert.equal(decision.action,'engineering_repair');
+  assert.equal(decision.repair_epoch,1);
 });
 
 test('Blocked image task inherits rejected attempt count for repair-epoch decision',()=>{
@@ -331,12 +371,32 @@ test('Supervisor workflow contains the one-minute loop, single concurrency lane 
   assert.match(y,/writer-lease/);
   assert.match(y,/assert-fence/);
   const loop=y.slice(y.indexOf('Persistent approximately one-minute supervision loop'));
-  assert.ok(loop.indexOf('writer-lease')<loop.indexOf('assert-fence'));
-  assert.ok(loop.indexOf('assert-fence')<loop.indexOf('image-chunk-bridge.mjs consume'));
+  const assertFence=loop.indexOf('run-supervisor.mjs assert-fence');
+  const renewLease=loop.indexOf('run-supervisor.mjs writer-lease');
+  assert.ok(assertFence>=0 && renewLease>=0 && assertFence<renewLease);
+  assert.ok(renewLease<loop.indexOf('image-chunk-bridge.mjs consume'));
   assert.match(loop,/image-transport-requests/);
   assert.match(loop,/image-transport-results/);
   assert.match(y,/timeout-minutes: 330/);
   assert.doesNotMatch(y,/schedule:/);
+});
+
+
+test('Supervisor delegates only when the newest unfinished Tasks 11-16 request is queued for the scheduled image consumer',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.match(y,/Yield while a scheduled image consumer owns the next operation/);
+  assert.match(y,/const latest=new Map\(\)/);
+  assert.match(y,/Date\.parse\(x\.created_at\|\|0\)/);
+  assert.match(y,/ts>pts\|\|\(ts===pts&&n>prior\.n\)/);
+  assert.match(y,/eventNames\.some\(n=>n\.startsWith\(t\+"-done"\)&&n\.endsWith\("\.json"\)\)/);
+  assert.match(y,/x\.capability==="native_chatgpt"&&String\(x\.status\|\|""\)==="queued_for_scheduled_consumer"/);
+  assert.match(y,/Supervisor will not acquire or take over the writer fence/);
+  const configure=y.indexOf('- name: Configure run-branch writer');
+  const delegation=y.indexOf('- name: Yield while a scheduled image consumer owns the next operation');
+  assert.ok(delegation>=0 && configure>delegation);
+  assert.match(y,/Configure run-branch writer\n        if: steps\.boundary\.outputs\.write_allowed == 'true' && steps\.image_delegation\.outputs\.delegated != 'true'/);
+  assert.match(y,/Acquire fenced writer authority for this exact execution\n        if: steps\.boundary\.outputs\.write_allowed == 'true' && steps\.image_delegation\.outputs\.delegated != 'true'/);
+  assert.match(y,/Persistent approximately one-minute supervision loop\n        if: steps\.boundary\.outputs\.write_allowed == 'true' && steps\.image_delegation\.outputs\.delegated != 'true'/);
 });
 
 test('watchdog runs every five minutes and can only restart the active pointer identity',()=>{
@@ -371,6 +431,8 @@ test('Supervisor yields cleanly when another fenced writer takes ownership',()=>
   assert.match(y,/if ! node control\/_tools\/run-supervisor\.mjs assert-fence/);
   assert.match(y,/Supervisor yields without treating the handoff as a production failure/);
   assert.match(y,/cat \/tmp\/fence-check\.err \|\| true/);
+  assert.match(y,/Writer fence changed during renewal; Supervisor yields without treating the handoff as a production failure/);
+  assert.match(y,/cat \/tmp\/writer-renewal\.err \|\| true/);
   assert.match(y,/break/);
 });
 
@@ -388,4 +450,36 @@ test('enqueue records the one permitted post-repair dispatch in the repair epoch
   assert.match(tool,/post_repair_attempts:Math\.max/);
   assert.match(tool,/last_post_repair_request_key/);
   assert.match(tool,/post_repair_dispatch_requires_passed_repair_epoch/);
+});
+
+
+test('Supervisor explicitly dispatches queued Task 17 repository work despite GITHUB_TOKEN push suppression',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.match(y,/request_capability\" = \"repository\"/);
+  assert.match(y,/request_task\" = \"17\"/);
+  assert.match(y,/repository-task-consumer\.yml\/runs/);
+  assert.match(y,/gh workflow run repository-task-consumer\.yml --ref \"\$RUN_BRANCH\"/);
+  assert.match(y,/pushes created by GITHUB_TOKEN do not recursively trigger workflows/);
+  assert.match(y,/active_repository_consumers/);
+});
+
+
+test('repository recovery contracts enforce the 60-second substantive-progress liveness boundary',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/task-recovery-contracts.json','utf8'));
+  for(const id of ['17','18','19','20','21','22','24','27','28','29'])
+    assert.equal(c.tasks[id].stale_after_seconds,60,id);
+  assert.equal(c.repository_liveness_policy.max_idle_seconds,60);
+  assert.match(c.repository_liveness_policy.rule,/substantive durable worker progress/i);
+  assert.match(c.repository_liveness_policy.rule,/lease\/heartbeat\/Kanban-only/i);
+  assert.match(c.repository_liveness_policy.primary_post_image_path,/same invocation/i);
+});
+
+
+test('production writer handoff resumes the same execution for any Task 00-29 durable boundary',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor-handoff.yml','utf8');
+  assert.match(y,/TASK_\[0-2\]\[0-9\]_DONE_HANDOFF_TO_SUPERVISOR/);
+  assert.match(y,/TASK_\[0-2\]\[0-9\]_BLOCKED_HANDOFF_TO_SUPERVISOR/);
+  assert.match(y,/run_branch.*GITHUB_REF_NAME/);
+  assert.match(y,/Supervisor already queued\/running/);
+  assert.match(y,/gh workflow run run-supervisor\.yml/);
 });
