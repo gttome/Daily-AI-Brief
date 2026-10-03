@@ -75,7 +75,7 @@ export function watchdogDecision({active_pointer=null,classification=null,recove
   if(['STALE_ACTIVE','BLOCKED_ACTIONABLE'].includes(classification?.state)||(classification?.state==='READY_IDLE'&&pending_actionable_request))return {action:'RECOVER',reason:'same_execution_recovery_required'};
   return {action:'WAIT_EXTERNAL',reason:'unknown_state_fails_closed'};
 }
-export function nextWatchdogCorrectiveAction({classification,task_done=false,accepted_locked=false,stale_derived_state=false,same_executor_missing=false,authority_broken=false,authoritative_request=null,deterministic_infrastructure_defect=false,failed_action_types=[]}={}){
+export function nextWatchdogCorrectiveAction({classification,task_done=false,accepted_locked=false,stale_derived_state=false,same_executor_missing=false,authority_broken=false,authoritative_request=null,deterministic_infrastructure_defect=false,failed_action_types=[],verified_external_blocker=false}={}){
   if(task_done)return {action:'NO_ACTION',reason:'completed_task_protected'};
   if(accepted_locked)return {action:'NO_ACTION',reason:'accepted_asset_protected'};
   if(!['STALE_ACTIVE','BLOCKED_ACTIONABLE','READY_IDLE'].includes(classification))return {action:'NO_ACTION',reason:'classification_not_recoverable'};
@@ -87,9 +87,12 @@ export function nextWatchdogCorrectiveAction({classification,task_done=false,acc
     authoritative_request&&{action:'CONSUME_EXACT_QUEUED_REQUEST',level:4,target:authoritative_request.request_key||authoritative_request.task_id},
     deterministic_infrastructure_defect&&{action:'MINIMAL_PROTECTED_REPAIR',level:5,target:'deterministic_infrastructure_defect'}
   ].filter(Boolean);
-  return candidates.find(x=>!failed.has(x.action))||{action:'BLOCKED_EXTERNAL',level:6,target:null,reason:'no_remaining_authorized_corrective_action'};
+  const next=candidates.find(x=>!failed.has(x.action));
+  if(next)return next;
+  if(verified_external_blocker)return {action:'BLOCKED_EXTERNAL',level:6,target:null,reason:'verified_external_condition_after_authorized_options'};
+  return {action:'REDIAGNOSE_AND_CONTINUE',level:6,target:'fresh_authoritative_state',reason:'authorized_options_exhausted_without_verified_external_blocker'};
 }
-export function verifyWatchdogRecoveryProgress({before={},after={},require_active_executor=false}={}){
+export function verifyWatchdogRecoveryProgress({before={},after={},require_active_executor=true}={}){
   const signals={
     task_transition:Boolean(after.task_state&&before.task_state&&after.task_state!==before.task_state),
     worker_claimed:after.worker_claimed===true&&before.worker_claimed!==true,
@@ -102,6 +105,14 @@ export function verifyWatchdogRecoveryProgress({before={},after={},require_activ
   const durable=Object.values(signals).some(Boolean);
   const executorActive=['running','claimed','recovering'].includes(String(after.worker_state||'').toLowerCase())||['queued','in_progress'].includes(String(after.protected_executor_state||'').toLowerCase())||signals.worker_claimed;
   return {verified:durable&&(!require_active_executor||executorActive),durable_progress:durable,executor_active:executorActive,dispatch_only:after.dispatch_recorded===true&&!durable,signals};
+}
+export function watchdogRecoveryContinuation({verification=null,terminal=false,verified_external_blocker=false,remaining_authorized_actions=0,safe_boundary_required=false}={}){
+  if(terminal)return {outcome:'TERMINAL_EXECUTION',recovery_complete:false,recovery_required:false,reason:'terminal_execution_immutable'};
+  if(verification?.verified===true&&verification?.executor_active===true&&verification?.durable_progress===true)return {outcome:'RECOVERY_VERIFIED_PROGRESSING',recovery_complete:true,recovery_required:false,reason:'active_executor_and_durable_progress_verified'};
+  if(verified_external_blocker)return {outcome:'BLOCKED_EXTERNAL',recovery_complete:false,recovery_required:false,reason:'verified_external_non_actionable_condition'};
+  if(Number(remaining_authorized_actions)>0)return {outcome:'CONTINUE_RECOVERY',recovery_complete:false,recovery_required:true,reason:'authorized_repair_options_remain'};
+  if(safe_boundary_required)return {outcome:'SAFE_BOUNDARY_HANDOFF',recovery_complete:false,recovery_required:true,reason:'unresolved_actionable_incident_must_resume_next_watchdog'};
+  return {outcome:'REDIAGNOSE_AND_CONTINUE',recovery_complete:false,recovery_required:true,reason:'no_verified_success_or_external_blocker'};
 }
 export function buildWatchdogEvent({execution_id,edition_id,task_id=null,incident_id,slot_id,classification,observed_substantive_progress_at=null,authoritative_request_key=null,blocker=null,lease_generation,action_key,action_taken,verification_evidence=null,final_outcome,occurred_at=new Date().toISOString()}={}){
   if(!execution_id||!edition_id||!incident_id||!validSlot(slot_id)||!classification||!Number.isInteger(lease_generation)||lease_generation<1||!action_key||!action_taken||!final_outcome||!stamp(occurred_at))throw Error('valid_watchdog_event_required');
@@ -125,6 +136,12 @@ export function validateWatchdogRingContract(contract={}){
   if(contract.events?.append_only!==true||contract.events?.healthy_noop_writes!==false)e.push('watchdog_ring_event_noise_policy');
   if(contract.no_op?.healthy_no_mutation!==true||contract.no_op?.other_recovery_owner_no_mutation!==true)e.push('watchdog_ring_noop_contract');
   if(contract.recovery?.verification_required!==true||contract.recovery?.dispatch_only_is_success!==false)e.push('watchdog_ring_verification_contract');
+  if(contract.progress?.active_executor_required_for_recovery_success!==true)e.push('watchdog_ring_active_executor_required');
+  if(contract.recovery?.continue_until_active_and_progressing!==true)e.push('watchdog_ring_continue_until_progress');
+  if(contract.recovery?.exhaust_safe_authorized_options_before_handoff!==true)e.push('watchdog_ring_exhaust_authorized_options');
+  if(contract.recovery?.one_failed_attempt_may_end_recovery!==false)e.push('watchdog_ring_one_attempt_not_terminal');
+  if(contract.recovery?.safe_boundary_is_handoff_not_success!==true)e.push('watchdog_ring_safe_boundary_handoff');
+  if(contract.recovery?.blocked_external_requires_verified_external_condition!==true)e.push('watchdog_ring_external_verification');
   if(JSON.stringify(contract.recovery?.minimum_action_ladder)!==JSON.stringify(WATCHDOG_MINIMUM_ACTION_LADDER))e.push('watchdog_ring_action_ladder');
   if(contract.protections?.terminal_reopen_allowed!==false||contract.protections?.completed_task_rework_allowed!==false||contract.protections?.accepted_asset_regeneration_allowed!==false)e.push('watchdog_ring_protection_contract');
   for(const k of ['chatgpt_work','codex','paid_apis','billable_overage','event_triggered_work_tasks','browser_automation','new_credentials'])if(contract.cost_boundary?.[k]!==false)e.push('watchdog_ring_cost_boundary:'+k);
