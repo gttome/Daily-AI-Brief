@@ -1,0 +1,22 @@
+{
+  "candidate_id": "m01",
+  "status": "verified",
+  "verified_at": "2026-10-03T06:21:26.732Z",
+  "source_body_word_count": "not_measured",
+  "publisher": "Microsoft AI",
+  "url": "https://microsoft.ai/news/our-first-streaming-transcription-model/",
+  "published_date": "2026-10-01",
+  "method": "full indexed source-body review",
+  "source_type": "first_party_announcement",
+  "full_source_read": true,
+  "claims_verified": [
+    "60-language streaming transcription with continuous language detection",
+    "first partial hypotheses just over 100 ms",
+    "MAI-Voice-2.1 supports 23 languages and 26 locales",
+    "Voice 2.1 Flash claims 150 ms end-to-end latency for 45 seconds of audio"
+  ],
+  "limitations": [
+    "Artificial Analysis ranking and comparative speed/cost claims are vendor-presented and require attribution",
+    "introductory pricing is time-limited"
+  ]
+}

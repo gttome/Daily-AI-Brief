@@ -1,0 +1,23 @@
+{
+  "candidate_id": "m07",
+  "status": "verified",
+  "verified_at": "2026-10-03T06:21:26.732Z",
+  "source_body_word_count": "not_measured",
+  "publisher": "Microsoft 365 Developer Blog",
+  "url": "https://devblogs.microsoft.com/microsoft365dev/bring-your-plugin-to-microsoft-copilot-with-wiqd/",
+  "published_date": "2026-09-30",
+  "method": "full indexed source-body review",
+  "source_type": "first_party_developer_guidance",
+  "full_source_read": true,
+  "claims_verified": [
+    "a plugin can package skills, MCP servers and agents",
+    "WIQD can import the Agent Plugins format",
+    "the workflow supports inspect, validate, package and share steps",
+    "the command surface is public preview"
+  ],
+  "limitations": [
+    "developer tooling is preview software",
+    "a shared package format does not imply identical runtime behavior across hosts"
+  ],
+  "reusable_agent_skills_story": true
+}

@@ -1,0 +1,13 @@
+{
+  "task_id": "05",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T06:21:26.732Z",
+  "reason": "Begin novelty, focus-balance and editorial selection scoring from the nine fully read candidates.",
+  "proof": {
+    "evidence_artifact": "_records/discovery/2026-10-03-run7/evidence.json",
+    "selection_target": 6,
+    "required_focus_order": "2/2/2",
+    "reusable_agent_skills_story_exactly_one": true
+  }
+}
