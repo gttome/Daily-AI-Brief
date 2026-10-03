@@ -43,7 +43,7 @@ export function staleActiveDecision({
 }
 
 export function deriveImageHostAdmission({registration = {}, qualification_verified = false, consumer_observation_verified = false} = {}) {
-  const consumer = registration.reusable_consumer || {};
+  const consumer = registration.reusable_consumer_pool || registration.reusable_consumer || {};
   return {
     source_of_truth:'protected_host_registration',
     registration_status:registration.status || null,
@@ -60,6 +60,11 @@ export function deriveImageHostAdmission({registration = {}, qualification_verif
     reusable_consumer:{
       scheduler_kind:consumer.scheduler_kind || null,
       automation_id:consumer.automation_id || null,
+      automation_ids:Array.isArray(consumer.automation_ids)?consumer.automation_ids:[],
+      slot_ids:Array.isArray(consumer.slot_ids)?consumer.slot_ids:[],
+      all_slots_equivalent:consumer.all_slots_equivalent === true,
+      normal_queued_native_request_consumption:consumer.normal_queued_native_request_consumption === true,
+      nominal_pickup_minutes:Number.isInteger(consumer.nominal_pickup_minutes)?consumer.nominal_pickup_minutes:null,
       enabled:consumer.enabled === true,
       role:consumer.role || null,
       observation_path:consumer.observation_path || null,
@@ -113,6 +118,20 @@ export function validateRunReadiness(input = {}) {
   const image = input.image_pipeline || {};
   const host = image.host_admission || {};
   const consumer = host.reusable_consumer || {};
+  const poolIds=Array.isArray(consumer.automation_ids)?consumer.automation_ids:[];
+  const poolSlots=Array.isArray(consumer.slot_ids)?consumer.slot_ids:[];
+  const legacyConsumerReady=
+    consumer.scheduler_kind === 'chatgpt_automation' &&
+    /^[a-f0-9]{32}$/.test(consumer.automation_id || '') &&
+    consumer.role === 'scheduled_native_image_request_consumer';
+  const ringConsumerReady=
+    consumer.scheduler_kind === 'chatgpt_watchdog_ring' &&
+    consumer.role === 'scheduled_native_image_request_consumer_pool' &&
+    poolIds.length === 6 && poolIds.every(x=>/^[a-f0-9]{32}$/.test(x)) &&
+    JSON.stringify(poolSlots) === JSON.stringify(['A','B','C','D','E','F']) &&
+    consumer.all_slots_equivalent === true &&
+    consumer.normal_queued_native_request_consumption === true &&
+    consumer.nominal_pickup_minutes === 10;
   const scheduledImageHostReady =
     host.source_of_truth === 'protected_host_registration' &&
     host.registration_status === 'READY' &&
@@ -122,10 +141,8 @@ export function validateRunReadiness(input = {}) {
     host.review_method === 'saved_image_visual_inspection' &&
     host.saved_bytes_recovered === true && host.zero_production_cost_verified === true &&
     typeof host.receipt_path === 'string' && host.receipt_path.startsWith('_records/') &&
-    consumer.scheduler_kind === 'chatgpt_automation' &&
-    /^[a-f0-9]{32}$/.test(consumer.automation_id || '') &&
+    (legacyConsumerReady || ringConsumerReady) &&
     consumer.enabled === true &&
-    consumer.role === 'scheduled_native_image_request_consumer' &&
     consumer.observation_verified === true &&
     consumer.current_fence_refresh_required === true &&
     consumer.explicit_supervisor_handoff_required === true;

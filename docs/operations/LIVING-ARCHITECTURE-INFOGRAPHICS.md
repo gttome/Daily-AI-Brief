@@ -1,10 +1,14 @@
 # Daily AI Brief — Living Architecture Infographics
 
 **Status:** evergreen living documentation projection  
-**Version:** v3.1
+**Version:** v3.2
 
 > [!IMPORTANT]
 > These diagrams explain the durable Daily AI Brief system architecture. They are **not run-status dashboards**. Machine evidence remains authoritative for live state.
+
+## Current architecture amendment
+
+**Watchdog Ring image-consumer pool:** all six slots A–F are operationally equivalent. Each is both an outer recovery worker and an eligible scheduled native-image consumer for Tasks 11–16. A normal queued unclaimed image request is consumed by the next eligible slot without waiting for stale classification. One exact request + one current writer fence prevents duplicate generation. The living diagrams must show this six-slot image coverage explicitly and must not depict F as special.
 
 ## Current diagrams
 
@@ -49,7 +53,7 @@ Programmatic SVGs or simple diagrams may be used as drafting/source aids, but th
 
 Refresh both current diagrams in the same protected documentation change whenever any of these materially changes:
 
-- Daily Brief Controller, Run Supervisor, watchdog, writer-fence or handoff responsibilities;
+- Daily Brief Controller, Run Supervisor, Watchdog Ring equivalent-slot/image-consumer responsibilities, writer-fence or handoff responsibilities;
 - Watchdog Fix-to-Progress semantics, including continued escalation after a failed repair, ACTIVE+PROGRESSING success, and unresolved safe-boundary handoff;
 - Task 00 readiness or Task 29 closure contracts;
 - Task 00–29 recovery semantics;

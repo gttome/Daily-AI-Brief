@@ -112,7 +112,7 @@ The recovery lease lasts approximately fifteen minutes, uses optimistic Git blob
 
 Recovery uses the Fix-to-Progress ladder: reconcile authoritative state, re-dispatch the same executor, restore same-execution authority only after a proven dead/released owner, consume the exact newest queued request, then perform a minimal protected repair when necessary. **One failed corrective action can never end an actionable recovery.** After every action, re-read durable state and continue through the next-smallest applicable safe authorized option until a real executor is active and substantive durable forward progress is proven. A dispatch, retry, lease/heartbeat, Kanban refresh, queue change or status update is never success by itself. `BLOCKED_EXTERNAL` requires verified external evidence; failed internal repair attempts alone do not qualify. If an invocation must yield at a safe boundary while the incident remains actionable, persist unresolved continuation evidence and hand it to the next Watchdog slot. That handoff is not recovery success.
 
-Slot F is the repurposed former Recovery schedule and remains the durable registered reusable native-image consumer. All six members can safely evaluate an exact queued native request, but any takeover still requires the recovery lease plus current writer authority, preserves every accepted_locked image, and follows the existing Supervisor handoff.
+The Watchdog Ring itself is the durable registered reusable native-image consumer pool. Slots A–F are operationally equivalent. For an exact queued, unclaimed Tasks 11–16 `native_chatgpt` request, the next eligible slot may consume it immediately without waiting for stale/block classification. Exact request identity plus current task-specific writer fencing ensures only one slot generates the image. All slots preserve every accepted_locked image and follow the existing Supervisor handoff.
 
 ## Daily execution and recovery
 
@@ -165,9 +165,9 @@ Closeout repairs preserve accepted reader content unless a separate explicit rea
 ## Persistent automation identities
 
 - Daily production controller: `6abeba31fe28819184544abf70874a80`
-- Watchdog Ring Slot F / durable scheduled native-image consumer: `6abeb9a2b8a88191949dc420d5e10feb` (hourly at minute 53)
+- Watchdog Ring native-image consumer pool: Slots A–F at minutes 03/13/23/33/43/53; all six are equivalent eligible consumers. The historical F automation identity remains part of the pool but has no unique production capability.
 - Daily live validation and secondary recovery: `6aadf3587b1c8191846a078f49102633`
 
-Watchdog Slots A–E are additional generic hourly members at minutes 03, 13, 23, 33 and 43. These identities are reusable service bindings. Their instructions must remain generic and must never name a particular production run.
+Watchdog Slots A–F are six equivalent generic hourly members at minutes 03, 13, 23, 33, 43 and 53. These identities form one reusable service pool. Their instructions must remain generic and must never name a particular production run.
 
 Configuration is not completion evidence. Only durable task/publication evidence establishes progress or closure.

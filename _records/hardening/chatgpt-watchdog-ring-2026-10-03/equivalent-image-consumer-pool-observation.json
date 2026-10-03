@@ -1,0 +1,37 @@
+{
+  "schema_version": "watchdog-ring-image-consumer-pool-observation-v1",
+  "observed_at": "2026-10-03T22:49:01.104330Z",
+  "repository": "gttome/Daily-AI-Brief",
+  "ring_role": "scheduled_native_image_request_consumer_pool",
+  "all_slots_equivalent": true,
+  "normal_queued_native_request_consumption": true,
+  "native_image_task_scope": ["11","12","13","14","15","16"],
+  "nominal_pickup_minutes": 10,
+  "single_owner_rule": "exact queued request + current task-specific writer fence; recovery lease additionally coordinates stalled recovery",
+  "slots": [
+    {"slot":"A","minute":3,"automation_id":"6ac15929a81c8191956080955da7eaad","title":"Daily Brief Watchdog A","enabled":true,"native_image_consumer":true},
+    {"slot":"B","minute":13,"automation_id":"6ac15934c8c88191a33c94b91941d60d","title":"Daily Brief Watchdog B","enabled":true,"native_image_consumer":true},
+    {"slot":"C","minute":23,"automation_id":"6ac1594249d081918df3145cca65dd91","title":"Daily Brief Watchdog C","enabled":true,"native_image_consumer":true},
+    {"slot":"D","minute":33,"automation_id":"6ac1594e974881919639e0c40a2d9da8","title":"Daily Brief Watchdog D","enabled":true,"native_image_consumer":true},
+    {"slot":"E","minute":43,"automation_id":"6ac1595c12fc8191b9a25b42d465692d","title":"Daily Brief Watchdog E","enabled":true,"native_image_consumer":true},
+    {"slot":"F","minute":53,"automation_id":"6abeb9a2b8a88191949dc420d5e10feb","title":"Daily Brief Watchdog F","enabled":true,"native_image_consumer":true}
+  ],
+  "coverage_change": {
+    "before": "One designated reusable scheduled native-image consumer (Slot F) recurring hourly.",
+    "after": "Six equivalent eligible scheduled native-image consumers staggered at 03/13/23/33/43/53.",
+    "scheduled_consumer_opportunities_per_hour_before": 1,
+    "scheduled_consumer_opportunities_per_hour_after": 6,
+    "nominal_max_wait_to_next_scheduled_consumer_minutes_before": 60,
+    "nominal_max_wait_to_next_scheduled_consumer_minutes_after": 10,
+    "real_time_guarantee": false
+  },
+  "protections": {
+    "duplicate_generation_prohibited": true,
+    "current_writer_fence_required": true,
+    "request_generation_is_provenance_only": true,
+    "accepted_locked_immutable": true,
+    "sealed_single_story_spec_required": true,
+    "saved_git_review_required": true,
+    "no_work_codex_paid_api": true
+  }
+}

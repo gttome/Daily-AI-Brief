@@ -47,11 +47,15 @@ test('current startup is generic and the observed controller starts the next edi
   assert.equal(receipt.authorization.early_allocation_prohibited,true);
 });
 
-test('historical admission proof retained a registered reusable image consumer',()=>{
+test('historical admission proof remains valid while current image consumer is the equivalent Watchdog pool',()=>{
   const host=JSON.parse(fs.readFileSync('docs/operations/unattended-image-host.json','utf8'));
   assert.equal(host.status,'READY');
-  assert.equal(host.reusable_consumer.enabled,true);
-  assert.equal(host.reusable_consumer.automation_id,receipt.scheduler_observation.recovery.automation_id);
+  assert.equal(host.reusable_consumer_pool.enabled,true);
+  assert.equal(host.reusable_consumer_pool.scheduler_kind,'chatgpt_watchdog_ring');
+  assert.equal(host.reusable_consumer_pool.all_slots_equivalent,true);
+  assert.deepEqual(host.reusable_consumer_pool.slot_ids,['A','B','C','D','E','F']);
+  assert.equal(host.reusable_consumer_pool.automation_ids.length,6);
+  assert.ok(host.reusable_consumer_pool.automation_ids.includes(receipt.scheduler_observation.recovery.automation_id));
   assert.equal(receipt.scheduler_observation.recovery.enabled,true);
   assert.equal(receipt.scheduler_observation.recovery.generic_instruction_verified,true);
 });

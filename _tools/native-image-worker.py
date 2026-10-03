@@ -25,21 +25,39 @@ def main():
     # actual scheduled consumer still owns generation, capture, review and receipt.
     registration=Path(a.host_registration)
     host=json.loads(registration.read_text()) if registration.exists() else {}
-    consumer=host.get('reusable_consumer') or {}
-    consumer_id=str(consumer.get('automation_id',''))
+    pool=host.get('reusable_consumer_pool') or {}
+    legacy=host.get('reusable_consumer') or {}
     qualified=host.get('status')=='READY' and str(host.get('host_id','')).startswith('chatgpt-automation:') and host.get('qualification_receipt_path')
-    admitted_consumer=(
-        qualified and consumer.get('scheduler_kind')=='chatgpt_automation' and
-        len(consumer_id)==32 and consumer.get('enabled') is True and
-        consumer.get('role')=='scheduled_native_image_request_consumer'
+    pool_ids=[str(x) for x in (pool.get('automation_ids') or [])]
+    pool_slots=[str(x) for x in (pool.get('slot_ids') or [])]
+    admitted_pool=(
+        qualified and pool.get('scheduler_kind')=='chatgpt_watchdog_ring' and
+        pool.get('enabled') is True and pool.get('role')=='scheduled_native_image_request_consumer_pool' and
+        pool.get('all_slots_equivalent') is True and
+        pool.get('normal_queued_native_request_consumption') is True and
+        int(pool.get('nominal_pickup_minutes',0))==10 and
+        pool_slots==['A','B','C','D','E','F'] and len(pool_ids)==6 and
+        all(len(x)==32 for x in pool_ids)
     )
-    if admitted_consumer:
-        result={'schema_version':'scheduled-image-dispatch-v2','status':'QUEUED_FOR_SCHEDULED_CONSUMER',
-            'qualification_host_id':host['host_id'],'consumer_id':consumer_id,
+    legacy_id=str(legacy.get('automation_id',''))
+    admitted_legacy=(
+        qualified and legacy.get('scheduler_kind')=='chatgpt_automation' and
+        len(legacy_id)==32 and legacy.get('enabled') is True and
+        legacy.get('role')=='scheduled_native_image_request_consumer'
+    )
+    if admitted_pool or admitted_legacy:
+        result={'schema_version':'scheduled-image-dispatch-v3','status':'QUEUED_FOR_SCHEDULED_CONSUMER',
+            'qualification_host_id':host['host_id'],
+            'consumer_kind':'chatgpt_watchdog_ring' if admitted_pool else 'chatgpt_automation',
+            'consumer_pool_ids':pool_ids if admitted_pool else [legacy_id],
+            'eligible_slots':pool_slots if admitted_pool else ['LEGACY'],
+            'all_slots_equivalent':bool(admitted_pool),
+            'nominal_pickup_minutes':int(pool.get('nominal_pickup_minutes',60)) if admitted_pool else 60,
+            'consumer_id':None if admitted_pool else legacy_id,
             'execution_id':a.execution_id,'task_id':task,
             'generation_started':False,'accepted_locked':False,
             'writer_generation_is_provenance':True,'authority_refresh_required_at_invocation':True,
-            'next_action':'Enabled admitted scheduled consumer refreshes current fenced authority at invocation and consumes this exact request.'}
+            'next_action':'Next eligible admitted scheduled consumer refreshes current fenced authority at invocation and consumes this exact request; overlapping consumers yield to the current task writer.'}
         if req.get('status')!='queued_for_scheduled_consumer':
             req.update(status='queued_for_scheduled_consumer',dispatch=result)
             request.write_text(json.dumps(req,indent=2)+'\n')
@@ -49,7 +67,7 @@ def main():
         result={'schema_version':'image-capability-blocker-v1','status':'CAPABILITY_BLOCKED',
             'reason':'NO_ENABLED_REUSABLE_SCHEDULED_IMAGE_CONSUMER','execution_id':a.execution_id,
             'task_id':task,'at':now,'generation_started':False,'accepted_locked':False,
-            'next_action':'Bind an enabled reusable scheduled ChatGPT consumer in protected host registration; do not create a duplicate production run.'}
+            'next_action':'Bind an enabled reusable scheduled ChatGPT Watchdog consumer pool (or historical compatible consumer) in protected host registration; do not create a duplicate production run.'}
         req.update(status='capability_blocked',blocker=result)
         request.write_text(json.dumps(req,indent=2)+'\n')
         print(json.dumps(result)); return

@@ -966,7 +966,7 @@
   "chatgpt_watchdog_ring": {
     "schema_version": "chatgpt-watchdog-ring-contract-v1",
     "enabled": true,
-    "role": "outer_autonomous_recovery",
+    "role": "outer_autonomous_recovery_and_native_image_consumer_pool",
     "schedule": {
       "timing_mode": "exact_schedule",
       "per_slot_recurrence": "hourly",
@@ -1029,7 +1029,14 @@
         "orchestration_only_commit",
         "dispatch_without_executor_activation"
       ],
-      "active_executor_required_for_recovery_success": true
+      "active_executor_required_for_recovery_success": true,
+      "active_and_progressing_chain": [
+        "problem_diagnosed",
+        "cause_fixed",
+        "task_or_process_active",
+        "real_executor_confirmed",
+        "durable_progress_confirmed"
+      ]
     },
     "recovery": {
       "minimum_action_ladder": [
@@ -1054,7 +1061,8 @@
         "task_or_process_active",
         "real_executor_confirmed",
         "durable_progress_confirmed"
-      ]
+      ],
+      "minimum_action_semantics": "minimum_sufficient_action_that_restores_active_and_progressing_state"
     },
     "protections": {
       "terminal_reopen_allowed": false,
@@ -1064,6 +1072,15 @@
       "production_allocation_allowed": false
     },
     "native_image_consumer": {
+      "all_slots_equivalent": true,
+      "eligible_slots": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
       "tasks": [
         "11",
         "12",
@@ -1072,11 +1089,19 @@
         "15",
         "16"
       ],
-      "durable_bound_slot": "F",
-      "current_fence_refresh_required": true,
-      "sealed_single_story_spec_required": true,
+      "normal_queued_request_consumption": true,
+      "waits_for_stale_before_normal_consumption": false,
+      "nominal_pickup_minutes": 10,
+      "single_owner_required": true,
+      "writer_fence_required": true,
+      "request_generation_is_provenance_only": true,
+      "exact_authoritative_request_required": true,
+      "duplicate_generation_prohibited": true,
       "accepted_locked_assets_immutable": true,
-      "explicit_supervisor_handoff_required": true
+      "sealed_single_story_spec_required": true,
+      "saved_git_review_required": true,
+      "supervisor_handoff_required": true,
+      "legacy_slot_f_special_role": false
     },
     "cost_boundary": {
       "chatgpt_work": false,

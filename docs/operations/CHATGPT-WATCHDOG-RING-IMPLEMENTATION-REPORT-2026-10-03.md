@@ -247,3 +247,13 @@ Protected hardening evidence: PR #420 merged as `480a4c559ac2b900dd29b746eec4e27
 - Learning problem: DAB-OPS-20261003-007
 - Learning events: DAB-OPS-E-000083 through DAB-OPS-E-000086
 - Kanban: DAB-KB-012 = Done
+
+## 14. Equivalent image-consumer pool hardening
+
+The initial Watchdog Ring migration preserved the former Recovery automation as a special Slot F image-consumer binding. That was a safe migration bridge but not the preferred steady-state architecture.
+
+The permanent model now makes **A–F operationally equivalent**. The Watchdog Ring itself is the registered reusable scheduled native-image consumer pool. Any slot may immediately consume the exact next queued, unclaimed Tasks 11–16 `native_chatgpt` request; normal image pickup does not wait for the task to become stale or blocked.
+
+Coverage therefore improves from one designated recurring image-consumer opportunity per hour to six staggered opportunities per hour. Nominal maximum wait to the next scheduled image consumer improves from about 60 minutes to about 10 minutes. This is a schedule-spacing improvement, not a real-time execution guarantee.
+
+Duplicate generation remains prohibited. Every slot must resolve the exact current request and acquire current task-specific writer authority before generation. If another slot owns the work, it yields. Accepted images remain immutable, sealed single-story prompts remain mandatory, exact-byte Git persistence/read-back and saved-Git review remain mandatory, and the Supervisor handoff remains unchanged.

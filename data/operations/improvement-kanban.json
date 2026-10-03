@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-03T20:49:46Z",
+  "observed_at": "2026-10-03T22:50:00Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -541,6 +541,32 @@
         "PR #411",
         "_generator/lib/reading-support.mjs",
         "_generator/lib/podcasts.mjs"
+      ]
+    },
+    {
+      "id": "DAB-KB-031",
+      "lane": "wip",
+      "priority": "P0",
+      "category": "Image Liveness",
+      "title": "Make all Watchdog slots native-image consumers",
+      "summary": "Remove F's special image-consumer role. Make A-F operationally equivalent so the next eligible staggered slot can consume an exact queued Tasks 11-16 native-image request immediately while one-writer fencing prevents duplicate generation.",
+      "acceptance": [
+        "A-F have identical image-consumer capability; only slot letter/minute differ.",
+        "Normal queued native-image pickup does not wait for stale/block classification.",
+        "Exactly one slot can own/generate an exact request under current task-specific writer fencing.",
+        "Protected image-host registration binds the six-slot pool, not F alone.",
+        "Readiness validation accepts the six-slot pool and retains historical single-F evidence only for compatibility.",
+        "Regression tests prove every slot is eligible and overlapping ownership cannot duplicate consumption.",
+        "Living operations, startup, implementation report, learning ledger and infographic architecture are synchronized.",
+        "Protected CI passes before card moves to Done."
+      ],
+      "sources": [
+        "DAB-OPS-20261003-008",
+        "docs/operations/CHATGPT-WATCHDOG-RING.md",
+        "docs/operations/unattended-image-host.json",
+        "_generator/lib/chatgpt-watchdog-ring.mjs",
+        "_generator/lib/run-readiness.mjs",
+        "_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json"
       ]
     }
   ],
