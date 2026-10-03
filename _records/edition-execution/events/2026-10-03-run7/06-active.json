@@ -1,0 +1,13 @@
+{
+  "task_id": "06",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T06:22:29.697Z",
+  "reason": "Begin verification of two fresh, directly playable videos.",
+  "proof": {
+    "required_count": 2,
+    "prefer_under_10_minutes": true,
+    "direct_playability_required": true,
+    "source_identity_required": true
+  }
+}
