@@ -1,0 +1,17 @@
+{
+  "task_id": "08",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T00:48:35Z",
+  "reason_code": "BEGIN_EMERGING_AI_WATCHLIST_REFRESH",
+  "operation": "refresh_emerging_ai_watchlist",
+  "proof": {
+    "baseline_path": "_data/watchlist.json",
+    "required_transparency": [
+      "New today",
+      "Updated today",
+      "Carried forward"
+    ],
+    "request_key": "76f6de48e5e38ba3dd45b980d76428eef40525c2e79e18b70dab0348f0b9e2d0"
+  }
+}
