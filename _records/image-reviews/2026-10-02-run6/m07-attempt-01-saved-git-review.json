@@ -1,0 +1,52 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "15",
+  "candidate_id": "m07",
+  "attempt": 1,
+  "writer_generation": 16,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "reviewed_at": "2026-10-03T01:41:11.033Z",
+  "source_commit": "85369b6fa679db8c6ae40c06e037abbe85b7d7ba",
+  "original": {
+    "path": "_records/image-originals/2026-10-02-run6/dab-rehearsal-2026-10-02-m07-1-native.png",
+    "sha256": "57dd52b7c1497327e76668543d817fd138d24f233a7f32637a629f60199f9073",
+    "git_blob_sha": "ede88f37c46ac7ff6a53de527852cfc1d36e0d44",
+    "bytes": 1317120,
+    "width": 1730,
+    "height": 909,
+    "exact_readback_verified": true
+  },
+  "final": {
+    "path": "rehearsals/pre-oct3-20261002-r1/images/dab-rehearsal-2026-10-02-m07-1.png",
+    "sha256": "d7c07121b551f3b85604842a016df6d6f9e86aad86dbe9fde4d617e5d6462b4e",
+    "git_blob_sha": "edc0f57b789803c908b82505b1d67af9ddd62799",
+    "bytes": 720754,
+    "width": 1200,
+    "height": 630,
+    "exact_readback_verified": true,
+    "reviewed_pixels_identical_to_persisted_blob": true
+  },
+  "checks": {
+    "composition": "PASS",
+    "story_specificity": "PASS",
+    "professional_quality": "PASS",
+    "exact_allowed_labels": "PASS",
+    "visible_text_guard": "PASS",
+    "saved_git_visual_review": "PASS",
+    "additional_visible_language": false
+  },
+  "allowed_text": [
+    "Customer context",
+    "Business context",
+    "Decision context",
+    "Intent",
+    "Guardrails",
+    "Approval",
+    "Next-best action",
+    "Outcome feedback"
+  ],
+  "result": "PASS"
+}

@@ -4,13 +4,16 @@
   "owner_id": "chatgpt-automation-6abeb9a2b8a88191949dc420d5e10feb-task15",
   "generation": 16,
   "acquired_at": "2026-10-03T01:38:15.773Z",
-  "last_heartbeat_at": "2026-10-03T01:38:15.773Z",
-  "expires_at": "2026-10-03T02:08:15.773Z",
+  "last_heartbeat_at": "2026-10-03T01:41:11.033Z",
+  "expires_at": "2026-10-03T01:41:11.033Z",
   "task_id": "15",
   "request_key": "a21765759e0efe27c63c91b3e25f325ebca16cf044ebc517903eda0d624841a2",
   "current_generation_before": 15,
   "request_writer_generation": 15,
   "stale_request_generation_rejected": true,
   "supervisor_only_generation_superseded": true,
-  "task_specific_authority": true
+  "task_specific_authority": true,
+  "released": true,
+  "released_at": "2026-10-03T01:41:11.033Z",
+  "release_reason": "TASK_15_DONE_HANDOFF_TO_SUPERVISOR"
 }
