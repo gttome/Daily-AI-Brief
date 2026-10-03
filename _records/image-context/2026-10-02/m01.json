@@ -1,8 +1,0 @@
-{
-  "mode": "single_story",
-  "story_ids": [
-    "dab-story-2026-10-02-m01"
-  ],
-  "includes_edition_context": false,
-  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white 1200x630 canvas. Subject: Cohere Embed 5 retrieval architecture. Mechanism: Show text and image inputs entering two differentiated Pro/Fast embedding paths that converge into one shared vector space; depict a long-context intake ribbon, multilingual streams, Matryoshka nested vector dimensions, and downstream retrieval neighborhoods without inventing benchmark scores.. No people or humanoid figures, no decorative filler, no unsupported metrics, no overlapping text, and only sealed visible labels."
-}

@@ -1,8 +1,0 @@
-{
-  "mode": "single_story",
-  "story_ids": [
-    "dab-story-2026-10-02-m05"
-  ],
-  "includes_edition_context": false,
-  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white 1200x630 canvas. Subject: Slack MCP Server operations on Lists and records. Mechanism: Show an AI workflow calling a governed MCP layer that performs create/read/update/delete operations against structured Lists and records; include CRM/admin workflow branches and a return path showing reduced context switching, without mimicking Slack UI.. No people or humanoid figures, no decorative filler, no unsupported metrics, no overlapping text, and only sealed visible labels."
-}

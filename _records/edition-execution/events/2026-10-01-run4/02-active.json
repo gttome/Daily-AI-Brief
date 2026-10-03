@@ -1,7 +1,0 @@
-{
-  "task_id": "02",
-  "from": "Backlog",
-  "to": "Active",
-  "at": "2026-10-01T19:52:52Z",
-  "reason": "Start primary Run 4 controller and confirm the already-bound persistent run-scoped keeper."
-}

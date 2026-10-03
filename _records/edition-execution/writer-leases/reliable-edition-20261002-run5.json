@@ -1,8 +1,0 @@
-{
-  "schema_version": "run-writer-lease-v1",
-  "execution_id": "reliable-edition-20261002-run5",
-  "owner_id": "released-task29",
-  "released": true,
-  "expires_at": "2026-10-02T19:03:40.890Z",
-  "publication_candidate_frozen": true
-}

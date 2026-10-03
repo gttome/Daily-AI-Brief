@@ -1,8 +1,0 @@
-{
-  "mode": "single_story",
-  "story_ids": [
-    "dab-story-2026-10-01-m05"
-  ],
-  "includes_edition_context": false,
-  "prompt": "Professional detailed textbook/editorial mechanism diagram. Subject: Adapting Amazon Nova to organization-specific retail moderation policy. Mechanism: Organization policy is translated into labeled examples and evaluation criteria, used to adapt the model, and then checked against a held-out evaluation set before production moderation with a review loop.. No people or humanoid figures. White background. 1200x630."
-}

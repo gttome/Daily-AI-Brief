@@ -1,8 +1,0 @@
-{
-  "task_id": "15",
-  "from": "Active",
-  "to": "Blocked",
-  "at": "2026-10-01T23:04:11.574Z",
-  "reason_code": "M08_ATTEMPT_3_SUBJECT_MISMATCH",
-  "recovery_action": "Generate m08 attempt 4 from the exact sealed Business Skill specification only: central Business Skill package with Required inputs, Instructions and Expected output; four recurring work lanes Finance, Marketing, Operations and Hiring; maintenance/version loop; no dashboard/status architecture content, no people/avatar/humanoid icons and no chat bubbles."
-}

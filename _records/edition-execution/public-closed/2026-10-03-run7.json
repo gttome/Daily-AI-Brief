@@ -1,9 +1,0 @@
-{
-  "schema_version": "public-closed-v1",
-  "state": "PUBLIC_CLOSED",
-  "edition_id": "dab-edition-2026-10-03",
-  "execution_id": "reliable-edition-20261003-run7",
-  "production_sha": "50cbe6f0719ff67088e65340f4322e64f582ee9e",
-  "observed_at": "2026-10-03T15:42:26.757Z",
-  "completion": "_records/publication/2026-10-03/completion.json"
-}

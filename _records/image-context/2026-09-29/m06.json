@@ -1,9 +1,0 @@
-{
-  "mode": "single_story",
-  "story_ids": [
-    "dab-story-2026-09-29-7eb33bf7"
-  ],
-  "includes_edition_context": false,
-  "candidate_id": "m06",
-  "prompt": "Create one professional white-background textbook/editorial diagram for: Microsoft frames Agent Builder adoption as a change-management program, not a feature rollout. Match the locked story mechanism and alt text exactly in subject, use only supported story-specific labels, avoid people, screenshots, decorative-only layouts, unrelated status artwork, and unsupported factual claims."
-}
