@@ -9,9 +9,9 @@ test('registered native worker queues all six image tasks without generating or 
  try{for(const task of ['11','12','13','14','15','16']){
  const req=path.join(root,'request.json');fs.writeFileSync(req,JSON.stringify({capability:'native_chatgpt',task_id:task,execution_id:'trial',writer_generation:1}));
  const args=['_tools/native-image-worker.py','--run-root',root,'--request',req,'--execution-key','trial','--execution-id','trial','--edition-id','trial','--writer-generation','1'];
- const result=JSON.parse(execFileSync('python3',args));assert.equal(result.status,'QUEUED_FOR_SCHEDULED_CONSUMER');assert.equal(result.generation_started,false);assert.equal(result.consumer_id,'6abeb9a2b8a88191949dc420d5e10feb');assert.equal(result.authority_refresh_required_at_invocation,true);
+ const result=JSON.parse(execFileSync('python3',args));assert.equal(result.status,'QUEUED_FOR_SCHEDULED_CONSUMER');assert.equal(result.generation_started,false);assert.equal(result.consumer_kind,'chatgpt_watchdog_ring');assert.deepEqual(result.eligible_consumer_slots,['A','B','C','D','E','F']);assert.equal(result.special_consumer_slot,null);assert.equal(result.single_operation_owner_required,true);assert.equal(result.authority_refresh_required_at_invocation,true);
  assert.equal(fs.existsSync(path.join(root,'_records/edition-execution/events/trial/'+task+'-blocked-image-capability.json')),false);
- const before=fs.readFileSync(req,'utf8');const replay=JSON.parse(execFileSync('python3',args));assert.equal(replay.status,'QUEUED_FOR_SCHEDULED_CONSUMER');assert.equal(replay.consumer_id,'6abeb9a2b8a88191949dc420d5e10feb');assert.equal(fs.readFileSync(req,'utf8'),before);
+ const before=fs.readFileSync(req,'utf8');const replay=JSON.parse(execFileSync('python3',args));assert.equal(replay.status,'QUEUED_FOR_SCHEDULED_CONSUMER');assert.equal(replay.consumer_kind,'chatgpt_watchdog_ring');assert.deepEqual(replay.eligible_consumer_slots,['A','B','C','D','E','F']);assert.equal(fs.readFileSync(req,'utf8'),before);
  assert.equal(fs.existsSync(path.join(root,'_records/edition-execution/events/trial/'+task+'-done.json')),false);
  }assert.equal(fs.existsSync(path.join(root,'briefs')),false);
  }finally{fs.rmSync(root,{recursive:true,force:true});}
