@@ -1,14 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
-  "owner_id": "chatgpt-automation-6abeb9a2b8a88191949dc420d5e10feb-task11",
-  "generation": 6,
-  "acquired_at": "2026-10-03T01:05:16.530Z",
-  "last_heartbeat_at": "2026-10-03T01:05:16.530Z",
-  "expires_at": "2026-10-03T01:35:16.530Z",
-  "task_id": "11",
-  "request_key": "c83f1e450cff65dfd71b582e532b453eeda980b977f839f06b44e5045b59fceb",
-  "request_writer_generation": 4,
-  "stale_request_generation_rejected": true,
-  "task_specific_authority": true
+  "owner_id": "github-actions-37084741141-1",
+  "generation": 7,
+  "acquired_at": "2026-10-03T01:05:55.111Z",
+  "last_heartbeat_at": "2026-10-03T01:05:55.111Z",
+  "expires_at": "2026-10-03T07:05:55.111Z"
 }
