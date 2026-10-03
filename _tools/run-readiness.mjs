@@ -89,19 +89,45 @@ try{
         qualificationVerified=proof.result==='PASS'&&proof.errors.length===0;
 
         const consumer=registration.reusable_consumer||{};
-        if(consumer.scheduler_kind!=='chatgpt_automation'||!/^[a-f0-9]{32}$/.test(consumer.automation_id||'')||
-            consumer.enabled!==true||consumer.role!=='scheduled_native_image_request_consumer'||
-            consumer.current_fence_refresh_required!==true||consumer.explicit_supervisor_handoff_required!==true)
-          throw Error('enabled_reusable_scheduled_consumer_required');
+        const expectedSlots={A:3,B:13,C:23,D:33,E:43,F:53};
+        const slots=Array.isArray(consumer.slots)?consumer.slots:[];
+        const slotMap=new Map(slots.map(x=>[x?.slot,x]));
+        const ringConsumerValid=
+          consumer.scheduler_kind==='chatgpt_watchdog_ring' &&
+          consumer.enabled===true &&
+          consumer.role==='scheduled_native_image_request_consumer_ring' &&
+          consumer.functional_equivalence_required===true &&
+          consumer.single_slot_binding===false &&
+          consumer.special_slot===null &&
+          JSON.stringify(consumer.eligible_slots)===JSON.stringify(Object.keys(expectedSlots)) &&
+          consumer.consume_queued_request_without_stale_wait===true &&
+          slots.length===6 &&
+          Object.entries(expectedSlots).every(([slot,minute])=>{
+            const x=slotMap.get(slot);
+            return x && /^[a-f0-9]{32}$/.test(x.automation_id||'') && x.enabled===true &&
+              x.native_image_eligible===true && Number(x.minute)===minute;
+          }) &&
+          consumer.current_fence_refresh_required===true &&
+          consumer.explicit_supervisor_handoff_required===true;
+        if(!ringConsumerValid) throw Error('enabled_reusable_watchdog_ring_consumer_required');
         if(!/^_records\/[\w/.-]+\.json$/.test(consumer.observation_path||'')||consumer.observation_path.includes('..'))
           throw Error('reusable_consumer_observation_required');
         const observationBytes=fs.readFileSync(consumer.observation_path);
         if(createHash('sha256').update(observationBytes).digest('hex')!==consumer.observation_sha256)
           throw Error('reusable_consumer_observation_digest_mismatch');
-        const observation=JSON.parse(observationBytes),task=observation.automations?.find(x=>x.id===consumer.automation_id);
-        if(observation.source!=='automations.peek'||!task||task.is_enabled!==true||task.id!==consumer.automation_id||
-            task.title!==consumer.title||task.schedule!==consumer.schedule||!/RRULE:FREQ=HOURLY/.test(task.schedule||''))
-          throw Error('reusable_consumer_live_binding_invalid');
+        const observation=JSON.parse(observationBytes);
+        const observed=new Map((observation.automations||[]).map(x=>[x?.slot,x]));
+        const observationValid=observation.source==='automations.peek' &&
+          observation.ring?.all_slots_functionally_equivalent===true &&
+          observation.ring?.all_slots_native_image_eligible===true &&
+          observation.ring?.special_native_image_slot===null &&
+          Object.entries(expectedSlots).every(([slot,minute])=>{
+            const expected=slotMap.get(slot),actual=observed.get(slot);
+            return expected&&actual&&actual.id===expected.automation_id&&actual.title===expected.title&&
+              Number(actual.minute)===minute&&actual.is_enabled===true&&actual.timing_mode==='exact_schedule'&&
+              actual.native_image_eligible===true;
+          });
+        if(!observationValid) throw Error('reusable_consumer_live_binding_invalid');
         consumerObservationVerified=true;
         value.image_pipeline={...(value.image_pipeline||{}),host_admission:deriveImageHostAdmission({
           registration,qualification_verified:qualificationVerified,consumer_observation_verified:consumerObservationVerified
