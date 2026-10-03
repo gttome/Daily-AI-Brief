@@ -120,7 +120,7 @@ function task00Input(){
       supervisor_scope:REHEARSAL_EXECUTION_ID,supervisor_until_terminal_cleanup:true,
       watchdog_enabled:true,writer_fencing_enabled:true,supervisor_interval_seconds:60,
       stale_active_threshold_ms:15*60*1000,no_competing_writer:true,
-      actionable_blocked_recovery_tested:true,stale_active_recovery_tested:true,duplicate_run_rejection_tested:true
+      actionable_blocked_recovery_tested:true,stale_active_recovery_tested:true,duplicate_run_rejection_tested:true,terminal_run_reopen_guard_enabled:true,terminal_run_immutability_tested:true
     },
     image_pipeline:{
       path:PROVEN_IMAGE_PATH,exact_byte_capture:true,saved_asset_review:true,
@@ -130,7 +130,7 @@ function task00Input(){
     },
     timing:{
       append_only_transition_ledger:true,kanban_derived_from_events:true,kanban_digest_bound:true,
-      executor_state_visible:true,missing_timestamps_never_inferred:true
+      executor_state_visible:true,missing_timestamps_never_inferred:true,kanban_observability_only:true,metrics_observability_only:true,projection_defects_nonblocking:true
     },
     content_contract:{
       story_count:6,allocation:'2/2/2',agent_skills_story_count:1,videos:2,podcasts:2,

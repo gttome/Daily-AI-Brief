@@ -1,5 +1,8 @@
 # Daily AI Brief — Living Run Learning, Supervision, Cleanup and Readiness Plan
 
+> [!IMPORTANT]
+> **Current instruction boundary:** this plan applies generically to every production execution. Named historical executions and dated adoption sections below are evidence only and never startup instructions. Current scheduling, terminal-run protection, cost boundaries and Task 00 requirements come from `DAILY-UNATTENDED-STARTUP.md` and `run-learning-readiness-contract.json`.
+
 **Policy:** This document is the protected production baseline for every Daily AI Brief run. It is revised only through protected CI. Every new run must inherit the complete operational-learning ledger and prove that prior permanent fixes still work before content production begins.
 
 ## Core operating rule

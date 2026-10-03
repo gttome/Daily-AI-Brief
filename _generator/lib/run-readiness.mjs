@@ -9,6 +9,21 @@ export const TERMINAL_RUN_STATES = Object.freeze(['PUBLIC_CLOSED','FAILED']);
 const stamp = value => typeof value === 'string' && Number.isFinite(Date.parse(value));
 const bool = value => value === true;
 
+
+export function terminalRunProtectionDecision({active_pointer=null,terminal_runs=[],requested_edition_id=null,requested_execution_id=null}={}) {
+  const terminal=(terminal_runs||[]).filter(x=>TERMINAL_RUN_STATES.includes(x?.terminal_state)||x?.terminal===true);
+  const closedEditionIds=new Set(terminal.map(x=>x.edition_id).filter(Boolean));
+  const closedExecutionIds=new Set(terminal.map(x=>x.execution_id).filter(Boolean));
+  const requestedClosed=(requested_edition_id&&closedEditionIds.has(requested_edition_id))||(requested_execution_id&&closedExecutionIds.has(requested_execution_id));
+  if(requestedClosed)return {action:'reject_terminal_reopen',resume_permitted:false,allocate_permitted:false,reason:'requested_identity_is_terminal'};
+  if(active_pointer?.active===true&&active_pointer?.terminal!==true){
+    const pointerClosed=closedEditionIds.has(active_pointer.edition_id)||closedExecutionIds.has(active_pointer.execution_id);
+    if(pointerClosed)return {action:'reject_terminal_reopen',resume_permitted:false,allocate_permitted:false,reason:'active_pointer_conflicts_with_terminal_history'};
+    return {action:'resume_active_nonterminal',resume_permitted:true,allocate_permitted:false,reason:'active_nonterminal_execution_exists'};
+  }
+  return {action:'allocate_new_edition',resume_permitted:false,allocate_permitted:true,reason:'no_active_nonterminal_execution'};
+}
+
 export function staleActiveDecision({
   task_state,
   executor_state,
@@ -92,6 +107,8 @@ export function validateRunReadiness(input = {}) {
   required(bool(control.actionable_blocked_recovery_tested), 'actionable_blocked_recovery_test_required');
   required(bool(control.stale_active_recovery_tested), 'stale_active_recovery_test_required');
   required(bool(control.duplicate_run_rejection_tested), 'duplicate_run_rejection_test_required');
+  required(bool(control.terminal_run_reopen_guard_enabled), 'terminal_run_reopen_guard_required');
+  required(bool(control.terminal_run_immutability_tested), 'terminal_run_immutability_test_required');
 
   const image = input.image_pipeline || {};
   const host = image.host_admission || {};
@@ -127,6 +144,9 @@ export function validateRunReadiness(input = {}) {
   required(bool(timing.kanban_digest_bound), 'kanban_digest_binding_required');
   required(bool(timing.executor_state_visible), 'executor_state_visibility_required');
   required(bool(timing.missing_timestamps_never_inferred), 'timestamp_integrity_required');
+  required(bool(timing.kanban_observability_only), 'kanban_observability_only_required');
+  required(bool(timing.metrics_observability_only), 'metrics_observability_only_required');
+  required(bool(timing.projection_defects_nonblocking), 'projection_defects_must_be_nonblocking');
 
   const content = input.content_contract || {};
   required(content.story_count === 6, 'six_stories_required');

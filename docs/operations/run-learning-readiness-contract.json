@@ -32,7 +32,13 @@
       "protected_ci",
       "exact_sha_deploy",
       "independent_live_verification",
-      "previous_run_cleanup_pass"
+      "previous_run_cleanup_pass",
+      "generic_terminal_run_reopen_guard",
+      "terminal_run_immutability_regression",
+      "kanban_observability_only",
+      "metrics_observability_only",
+      "projection_defects_nonblocking",
+      "improvement_board_learning_reconciliation"
     ],
     "deferred_route_gates": {
       "unattended_image_host": {
@@ -95,7 +101,9 @@
     "github_actions_job_rotation": "Supervisor may rotate before GitHub-hosted job timeout; successor resumes same execution identity under a new fence.",
     "advancement": "Immediately recheck after real task/image/result changes; sleep only on idle observation; elapsed-time job rotation.",
     "publication_boundary": "Freeze candidate writes before Task 23, including lease acquisition and projection writes. Existing protected candidate workflow owns promotion; protected delta-validation finalization owns Task29.",
-    "external_native_worker_handoff": "A scheduled/native task worker must refresh durable state at invocation, acquire the current fenced writer generation for the same execution before mutation, never rely on a generation embedded at scheduling time, and release/expire its task-specific lease at a durable Done or Blocked boundary so supervision can resume."
+    "external_native_worker_handoff": "A scheduled/native task worker must refresh durable state at invocation, acquire the current fenced writer generation for the same execution before mutation, never rely on a generation embedded at scheduling time, and release/expire its task-specific lease at a durable Done or Blocked boundary so supervision can resume.",
+    "terminal_run_policy": "All terminal production executions are immutable. Recovery may resume only the exact active nonterminal execution; otherwise allocation creates a new edition identity. Stale projections, pointers, worker requests, Kanban state, metrics or historical instructions can never reopen a terminal execution.",
+    "observability_boundary": "Kanban, timing targets, duration estimates and performance metrics are measurement only. They may trigger diagnosis but never block publication, change task state, authorize retries, create workers, consume retry budget, or reopen an execution."
   },
   "task_recovery_contracts": {
     "path": "docs/operations/task-recovery-contracts.json",
@@ -133,7 +141,14 @@
       "next_run_validation",
       "run_evidence_when_available"
     ],
-    "learning_completion_rule": "A material production issue is not considered learned merely because the run advanced. Record it in the canonical JSONL and human projection during the run; when behavior changes, synchronize the living operations/readiness contract; record permanent implementation, regression protection and next-run validation or explicitly mark them pending."
+    "learning_completion_rule": "A material production issue is not considered learned merely because the run advanced. Record it in the canonical JSONL and human projection during the run; when behavior changes, synchronize the living operations/readiness contract; record permanent implementation, regression protection and next-run validation or explicitly mark them pending.",
+    "improvement_board": {
+      "canonical": "data/operations/improvement-kanban.json",
+      "reconciler": "_generator/lib/improvement-kanban.mjs",
+      "task00": "Reconcile the board against the canonical learning ledger; surface every unresolved ledger problem that is not represented on the board.",
+      "task29": "Reconcile the completed execution learning delta into the canonical ledger and improvement board before certifying next-edition readiness.",
+      "lane_policy": "Automated reconciliation annotates evidence and missing problems but never silently moves cards between lanes."
+    }
   },
   "liveness": {
     "stale_active_threshold_minutes_max": 15,
