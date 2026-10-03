@@ -1,17 +1,17 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261003-run7",
-  "owner_id": "automation-run7-task19-recovery-generation31",
-  "generation": 31,
+  "owner_id": "automation-run7-task19-recovery-generation32",
+  "generation": 32,
   "task_id": "19",
   "operation_key": "72dfe65cd0d16ff9efd86d2c62fbc4b716765e73d5cb81293d43726713cedbae",
   "capability": "repository",
-  "acquired_at": "2026-10-03T13:16:34.287760Z",
-  "last_heartbeat_at": "2026-10-03T13:16:34.287760Z",
-  "expires_at": "2026-10-03T13:31:34.287760Z",
+  "acquired_at": "2026-10-03T13:22:28.507472Z",
+  "last_heartbeat_at": "2026-10-03T13:22:28.507472Z",
+  "expires_at": "2026-10-03T13:37:28.507472Z",
   "supersedes": {
     "owner_id": "automation-run7-task19-recovery-generation31",
     "generation": 31
   },
-  "authority_note": "Recovery continuation of the already-Active Task 19 after reconciling a concurrent lease refresh. No upstream work was repeated; request generation 29 remains provenance."
+  "authority_note": "Fresh fenced takeover to reconcile divergent Task 19 owner projections. Upstream Tasks 00-18 and all six accepted_locked images remain unchanged."
 }
