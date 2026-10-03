@@ -1,0 +1,11 @@
+{
+  "schema_version": "dot-chat-wakeup-incident-poc-v1",
+  "incident_id": "DOT-WAKEUP-POC-001",
+  "production": false,
+  "synthetic": true,
+  "run_id": "synthetic-dot-wakeup-poc",
+  "task_id": "17",
+  "classification": "SYNTHETIC_NO_PROGRESS",
+  "required_action": "READ_ONLY_ACKNOWLEDGEMENT_ONLY",
+  "message": "This is a synthetic wake-up proof. Read this record and acknowledge it. Do not modify GitHub."
+}
