@@ -1,0 +1,19 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "bb691660ed0cd9d007ef97a1b17f3bb34048547684455534cac83bdc392b069c",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "04",
+  "request_writer_generation": 4,
+  "status": "passed",
+  "completed_at": "2026-10-03T00:16:52Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "evidence_path": "_records/discovery/2026-10-02-run6/evidence.json",
+    "candidate_count": 9,
+    "full_source_reviews": 9,
+    "result": "PASS",
+    "selection_ready": true
+  }
+}
