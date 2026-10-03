@@ -6,6 +6,31 @@
 
 This document is intentionally generic. It must never depend on a historical run name, execution ID, branch, edition ID, or run number.
 
+## Purpose — fix the problem and restore proven progress
+
+> [!IMPORTANT]
+> **The Watchdog Ring is a repair system, not a monitoring, alerting, status-reporting or retry-only system.**
+>
+> When a genuine stall or actionable failure is detected, the Watchdog's job is **not complete** when it identifies the problem, records the problem, acquires a lease, retries a command, dispatches a worker, refreshes a queue, updates the Kanban, changes a status, or produces another orchestration heartbeat.
+>
+> Its required outcome is to **fix the problem and restore autonomous forward progress for the same execution**.
+
+For every genuine `STALE_ACTIVE` or `BLOCKED_ACTIONABLE` condition, the Watchdog must drive the affected task/process through this outcome sequence:
+
+1. **Diagnose** the actual cause of the stall from current authoritative evidence.
+2. **Fix** that cause using the smallest safe authorized correction that actually resolves it.
+3. **Activate** the affected task/process so it has a real eligible executor and is no longer merely queued, dispatched, nominally Active, or administratively updated.
+4. **Verify executor activity** — prove a real worker or protected executor has claimed or entered the operation.
+5. **Verify substantive forward progress** — prove durable movement beyond the recovery action itself.
+
+The governing rule is:
+
+> **Recovery is successful only when the affected task/process is active and demonstrably progressing again.**
+
+If the first corrective action does not restore that condition, the Watchdog must continue to the **next-smallest authorized corrective action** while its recovery authority remains valid. It must not stop merely because an attempted fix was issued.
+
+The phrase **minimum corrective action** means *minimum sufficient corrective action*: choose the smallest safe action that restores proven progress. It never means "make one small attempt and stop."
+
 ## Architecture
 
 The Daily AI Brief uses four liveness roles:
@@ -62,16 +87,23 @@ The recovery lease is **not** the production writer lease. Every production muta
 
 A deterministic incident ID binds execution, task, authoritative state, blocker/reason, and exact request. A deterministic action key binds incident, action type, target, and attempt generation. Successful or active action keys are not duplicated. Failed actions escalate instead of blind retry.
 
-## Minimum corrective action
+## Fix-to-Progress Recovery Ladder
 
-Use the smallest authorized action:
+The Watchdog must select the **smallest safe action that can actually restore active progress**, then verify the result. The ladder is ordered from least invasive to most invasive:
 
-1. `RECONCILE_AUTHORITATIVE_STATE`
-2. `REDISPATCH_SAME_EXECUTOR`
-3. `RESTORE_SAME_EXECUTION_AUTHORITY` only after a proven dead/released owner
-4. `CONSUME_EXACT_QUEUED_REQUEST`
-5. `MINIMAL_PROTECTED_REPAIR`
-6. otherwise persist the exact external block and stop safely
+1. `RECONCILE_AUTHORITATIVE_STATE` — repair stale derived state when authoritative evidence already proves the task can advance.
+2. `REDISPATCH_SAME_EXECUTOR` — restart or re-dispatch the same Supervisor, worker, or protected executor for the same execution/request.
+3. `RESTORE_SAME_EXECUTION_AUTHORITY` — restore writer/recovery authority only after the prior owner is proven dead or released.
+4. `CONSUME_EXACT_QUEUED_REQUEST` — execute the exact newest authoritative request without broadening scope.
+5. `MINIMAL_PROTECTED_REPAIR` — correct the smallest deterministic code/configuration defect through the protected path when existing primitives cannot restore progress.
+6. If the blocker is genuinely external and cannot safely be corrected, persist exact blocker evidence and stop at the safe boundary.
+
+After **every** action, the Watchdog must ask two separate questions:
+
+- **Is the affected task/process active under a real executor?**
+- **Is there substantive durable evidence that it is progressing?**
+
+If either answer is **no**, recovery is not complete. Continue to the next-smallest authorized action rather than declaring success or waiting for the owner.
 
 Never allocate another execution, reopen a terminal execution, redo a Done task, regenerate an `accepted_locked` image, steal a live writer, or bypass protected CI/deploy/verification.
 
@@ -79,11 +111,24 @@ Never allocate another execution, reopen a terminal execution, redo a Done task,
 
 Tasks 11–16 preserve the registered native-image contract: exact newest request, current fenced authority refreshed at invocation, sealed single-story specification, professional native generation only, accepted images immutable, verified byte persistence, saved-Git visual review, and explicit Supervisor handoff. Slot F remains the durable registered consumer; other slots can take over only under the same recovery and writer-fence rules.
 
-## Recovery verification
+## Recovery verification — active **and** progressing
 
-Recovery succeeds only on substantive durable movement such as task transition, worker claim/result, accepted asset, first-incomplete-task advance, bounded repair completion, meaningful protected CI/deploy/verification state advancement, or publication/verification evidence.
+A Watchdog may declare recovery only after it proves **both** of the following:
 
-Lease/heartbeat changes, Kanban refresh, metrics, queue rewrites, status-only commits, rereads, and dispatch without executor activation are not success.
+1. **Active:** the affected task/process has a real executor or protected external executor actually working on it; and
+2. **Progressing:** substantive durable evidence shows that work is moving forward after the repair.
+
+Qualifying progress includes a task transition, worker claim/result, accepted asset, first-incomplete-task advance, bounded repair completion, meaningful protected CI/deploy/verification state advancement, or publication/verification evidence.
+
+The following are explicitly **not** recovery success: lease acquisition/renewal, Supervisor or Watchdog heartbeat, Kanban refresh, metric/timing update, queue rewrite, status-only commit, rereading the same state, retry command, workflow dispatch, or any "Active" label without a real executor and subsequent durable movement.
+
+A repair whose purpose is to get a task active must therefore verify the entire chain:
+
+```text
+problem diagnosed → cause fixed → task/process active → real executor confirmed → durable progress confirmed
+```
+
+If that chain is incomplete, the Watchdog must continue recovery using the next-smallest authorized action while it can do so safely.
 
 ## Incident evidence
 
