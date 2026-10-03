@@ -36,7 +36,6 @@ reader_release: true
 
 **Coverage:** Locked October 3 Run 7 media selection.
 
-**Evidence:** Practitioner analysis. The Atlantic episode page identifies the host, publication at 2026-10-02 13:00 ET, complete audio controls and an exact 56:16 runtime.
 
 **Listen / watch:** <a href="https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/" data-item-id="dab-podcast-2026-10-03-2" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Galaxy Brain</a>
 

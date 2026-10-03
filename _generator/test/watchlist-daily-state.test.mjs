@@ -31,6 +31,20 @@ test('Watchlist page visibly explains rolling freshness and daily states',()=>{
  assert.match(js,/No newly verified or materially updated topic cleared the evidence gates today/);
 });
 
+test('Watchlist Brief summary lists new and updated names but carried-forward count only',async()=>{
+ const {renderDailyTopicGroups}=await import('../../assets/js/watchlist-daily.js');
+ const data={edition_date:'2026-10-03',topics:[
+  {topic_id:'new',name:'New topic',status:'early_signal',first_detected:'2026-10-03T01:00:00Z',updated_at:'2026-10-03T01:00:00Z'},
+  {topic_id:'updated',name:'Updated topic',status:'gaining_evidence',first_detected:'2026-10-01T01:00:00Z',updated_at:'2026-10-03T02:00:00Z'},
+  {topic_id:'carried',name:'Carried topic must stay hidden',status:'early_signal',first_detected:'2026-10-01T01:00:00Z',updated_at:'2026-10-02T02:00:00Z'}
+ ]};
+ const html=renderDailyTopicGroups(data);
+ assert.match(html,/New topic/);
+ assert.match(html,/Updated topic/);
+ assert.ok(html.includes('<strong>Carried forward:</strong> 1'));
+ assert.doesNotMatch(html,/Carried topic must stay hidden/);
+});
+
 test('Watchlist daily groups expose archived topics with the recorded reason',async()=>{
  const {dailyTopicGroups,renderDailyTopicGroups}=await import('../../assets/js/watchlist-daily.js');
  const data={edition_date:'2026-10-02',topics:[
