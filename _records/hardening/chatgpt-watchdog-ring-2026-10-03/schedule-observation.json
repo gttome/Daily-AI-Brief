@@ -1,92 +1,106 @@
 {
-  "schema_version": "chatgpt-watchdog-ring-schedule-observation-v2",
-  "observed_at": "2026-10-03T19:50:00Z",
+  "schema_version": "chatgpt-watchdog-ring-schedule-observation-v3",
+  "observed_at": "2026-10-03T21:33:36.027723Z",
   "timezone": "America/Chicago",
   "source": "automations.peek",
   "automations": [
     {
-      "id": "6abeb9a2b8a88191949dc420d5e10feb",
-      "title": "Daily Brief Watchdog F",
-      "schedule": "BEGIN:VEVENT\nDTSTART:20261003T193557Z\nRRULE:FREQ=HOURLY;BYMINUTE=53;BYSECOND=0\nEND:VEVENT",
+      "slot": "A",
+      "id": "6ac15929a81c8191956080955da7eaad",
+      "title": "Daily Brief Watchdog A",
+      "minute": 3,
       "is_enabled": true,
       "timing_mode": "exact_schedule",
-      "notifications_enabled": false,
-      "email_enabled": false,
-      "last_run_time": "2026-10-03T18:55:05.556337Z"
+      "native_image_eligible": true
+    },
+    {
+      "slot": "B",
+      "id": "6ac15934c8c88191a33c94b91941d60d",
+      "title": "Daily Brief Watchdog B",
+      "minute": 13,
+      "is_enabled": true,
+      "timing_mode": "exact_schedule",
+      "native_image_eligible": true
+    },
+    {
+      "slot": "C",
+      "id": "6ac1594249d081918df3145cca65dd91",
+      "title": "Daily Brief Watchdog C",
+      "minute": 23,
+      "is_enabled": true,
+      "timing_mode": "exact_schedule",
+      "native_image_eligible": true
+    },
+    {
+      "slot": "D",
+      "id": "6ac1594e974881919639e0c40a2d9da8",
+      "title": "Daily Brief Watchdog D",
+      "minute": 33,
+      "is_enabled": true,
+      "timing_mode": "exact_schedule",
+      "native_image_eligible": true
+    },
+    {
+      "slot": "E",
+      "id": "6ac1595c12fc8191b9a25b42d465692d",
+      "title": "Daily Brief Watchdog E",
+      "minute": 43,
+      "is_enabled": true,
+      "timing_mode": "exact_schedule",
+      "native_image_eligible": true
+    },
+    {
+      "slot": "F",
+      "id": "6abeb9a2b8a88191949dc420d5e10feb",
+      "title": "Daily Brief Watchdog F",
+      "minute": 53,
+      "is_enabled": true,
+      "timing_mode": "exact_schedule",
+      "native_image_eligible": true
     }
   ],
-  "capacity": {
-    "active_tasks_before": 5,
-    "additional_active_tasks_created": 5,
-    "active_tasks_after": 10,
-    "result": "SUFFICIENT",
-    "claim": "The service admitted all five additional active watchdog schedules; capacity is therefore at least 10 active tasks for this account at observation time."
-  },
   "ring": {
-    "timing_mode": "exact_schedule",
     "per_slot_recurrence": "hourly",
-    "nominal_check_minutes": 10,
-    "slots": [
-      {
-        "slot": "A",
-        "title": "Daily Brief Watchdog A",
-        "minute": 3,
-        "enabled": true
-      },
-      {
-        "slot": "B",
-        "title": "Daily Brief Watchdog B",
-        "minute": 13,
-        "enabled": true
-      },
-      {
-        "slot": "C",
-        "title": "Daily Brief Watchdog C",
-        "minute": 23,
-        "enabled": true
-      },
-      {
-        "slot": "D",
-        "title": "Daily Brief Watchdog D",
-        "minute": 33,
-        "enabled": true
-      },
-      {
-        "slot": "E",
-        "title": "Daily Brief Watchdog E",
-        "minute": 43,
-        "enabled": true
-      },
-      {
-        "slot": "F",
-        "title": "Daily Brief Watchdog F",
-        "minute": 53,
-        "enabled": true,
-        "bound_reusable_consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb"
-      }
+    "slot_minutes": [
+      3,
+      13,
+      23,
+      33,
+      43,
+      53
     ],
-    "old_standalone_minute_48_present": false,
-    "all_prompts_generic": true,
-    "historical_execution_identity_in_prompt": false
+    "nominal_check_minutes": 10,
+    "all_slots_functionally_equivalent": true,
+    "all_slots_native_image_eligible": true,
+    "special_native_image_slot": null,
+    "native_image_task_scope": [
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "consume_queued_native_image_without_stale_wait": true,
+    "single_operation_owner_required": true,
+    "shared_recovery_consumer_lease": true,
+    "production_writer_fence_still_required": true,
+    "old_standalone_minute_48_present": false
   },
-  "controller": {
-    "title": "Daily Brief Controller",
-    "enabled": true,
-    "local_hour": 19,
-    "local_minute": 0,
-    "targets_next_local_calendar_day": true
-  },
-  "live_validator": {
-    "title": "Daily Brief Live Validation & Repair",
-    "enabled": true,
-    "local_hour": 8,
-    "local_minute": 30,
-    "watchdog_lease_coordination_rule_updated": true
-  },
-  "github_inner_watchdog": {
-    "workflow": ".github/workflows/run-supervisor-watchdog.yml",
-    "cadence_minutes": 5,
-    "preserved": true
+  "native_image_coverage": {
+    "prior_architecture": "one durable registered consumer opportunity per hour through Slot F",
+    "current_architecture": "six equivalent eligible consumer opportunities per hour, nominally ten minutes apart",
+    "scheduled_opportunity_multiplier": 6,
+    "prior_nominal_max_wait_minutes_lt": 60,
+    "current_nominal_max_wait_minutes_lt": 10,
+    "cadence_is_real_time_guarantee": false,
+    "scheduler_delivery_may_be_late": true,
+    "duplicate_generation_prevented_by": [
+      "shared_watchdog_recovery_consumer_lease",
+      "exact_request_identity",
+      "current_production_writer_fence",
+      "accepted_locked_immutability"
+    ]
   },
   "cost_boundary": {
     "chatgpt_work": false,
@@ -96,12 +110,5 @@
     "event_triggered_work_tasks": false,
     "browser_automation": false,
     "new_credentials": false
-  },
-  "production_state_at_cutover": {
-    "active": false,
-    "terminal": true,
-    "current_task": "29",
-    "current_task_state": "Done",
-    "mutated": false
   }
 }
