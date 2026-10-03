@@ -1,0 +1,209 @@
+{
+  "schema_version": "pre-next-edition-task00-admission-v1",
+  "mode": "NON_PRODUCTION_ADMISSION_PROOF",
+  "evaluated_at": "2026-10-03T19:13:46.949645Z",
+  "target_edition_date": "2026-10-04",
+  "protected_main_sha": "fd221670526929f6988ed623862b1c06aa886099",
+  "production_allocation_performed": false,
+  "active_nonterminal_execution": false,
+  "prior_terminal_execution_immutable": true,
+  "repository_cleanup": {
+    "open_pr_count_before_admission_proof": 0
+  },
+  "hardening": {
+    "generic_instruction_ci_run_id": 37146764122,
+    "learning_reconciliation_ci_run_id": 37147039419,
+    "exact_head_ci_passed": true
+  },
+  "learning": {
+    "ledger_sha256": "8b46d898f0a8d1fc82823d1fe97920fc7d869fa78e1591fc15a1cddcb6584d48",
+    "event_count": 82,
+    "problem_count": 49,
+    "improvement_board_sha256": "0a00101b8b51ae6406333c1313900c2c64a94c5028ed4a0b42cf3968c52732a4",
+    "unrepresented_unresolved_problem_count": 0,
+    "unresolved_risks_loaded": [
+      "DAB-OPS-20261002-003",
+      "DAB-OPS-20261002-006",
+      "DAB-OPS-20261002-009",
+      "DAB-OPS-20261002-015",
+      "DAB-OPS-20261002-016",
+      "DAB-OPS-20261002-017",
+      "DAB-OPS-20261002-018",
+      "DAB-OPS-20261003-002"
+    ]
+  },
+  "scheduler_observation": {
+    "source": "chatgpt_automations_peek",
+    "controller": {
+      "automation_id": "6abeba31fe28819184544abf70874a80",
+      "enabled": true,
+      "timing_mode": "exact_schedule",
+      "schedule": "BEGIN:VEVENT\nDTSTART;TZID=America/Chicago:20261003T190000\nRRULE:FREQ=DAILY;BYHOUR=19;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+      "targets_next_local_calendar_day": true,
+      "generic_instruction_verified": true,
+      "observed_configuration_updated_at": "2026-10-03T19:03:10.096105Z"
+    },
+    "recovery": {
+      "automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+      "enabled": true,
+      "timing_mode": "exact_schedule",
+      "schedule": "BEGIN:VEVENT\nDTSTART;TZID=America/Chicago:20261002T174800\nRRULE:FREQ=HOURLY;BYMINUTE=48;BYSECOND=0\nEND:VEVENT",
+      "generic_instruction_verified": true,
+      "observed_configuration_updated_at": "2026-10-03T19:03:27.203477Z"
+    },
+    "live_validation": {
+      "automation_id": "6aadf3587b1c8191846a078f49102633",
+      "enabled": true,
+      "schedule": "BEGIN:VEVENT\nDTSTART;TZID=America/Chicago:20260926T083000\nRRULE:FREQ=DAILY;BYHOUR=8;BYMINUTE=30;BYSECOND=0\nEND:VEVENT"
+    }
+  },
+  "readiness_input": {
+    "schema_version": "run-learning-readiness-v2",
+    "run_number": 5,
+    "edition_date": "2026-10-04",
+    "edition_id": "dab-edition-2026-10-04",
+    "execution_id": "nonproduction-admission-probe",
+    "evaluated_at": "2026-10-03T19:13:46.949645Z",
+    "latest_successful_run": {
+      "terminal_state": "PUBLIC_CLOSED",
+      "closed_at": "2026-10-03T15:42:26.757Z"
+    },
+    "previous_run_cleanup": {
+      "result": "PASS"
+    },
+    "operational_learning": {
+      "result": "PASS",
+      "ledger_digest": "sha256:8b46d898f0a8d1fc82823d1fe97920fc7d869fa78e1591fc15a1cddcb6584d48",
+      "event_count": 82,
+      "problem_count": 49,
+      "required_invariants": [
+        "generic-terminal-run-immutability",
+        "run-supervisor-v2",
+        "single-writer-fence-v1",
+        "kanban-observability-only",
+        "metrics-observability-only",
+        "improvement-board-learning-reconciliation"
+      ],
+      "unresolved_risks": [
+        "DAB-OPS-20261002-003",
+        "DAB-OPS-20261002-006",
+        "DAB-OPS-20261002-009",
+        "DAB-OPS-20261002-015",
+        "DAB-OPS-20261002-016",
+        "DAB-OPS-20261002-017",
+        "DAB-OPS-20261002-018",
+        "DAB-OPS-20261003-002"
+      ]
+    },
+    "control_plane": {
+      "one_writer": true,
+      "controller_available": true,
+      "run_supervisor_enabled": true,
+      "supervisor_scope": "nonproduction-admission-probe",
+      "supervisor_until_terminal_cleanup": true,
+      "watchdog_enabled": true,
+      "writer_fencing_enabled": true,
+      "supervisor_interval_seconds": 60,
+      "stale_active_threshold_ms": 900000,
+      "no_competing_writer": true,
+      "actionable_blocked_recovery_tested": true,
+      "stale_active_recovery_tested": true,
+      "duplicate_run_rejection_tested": true,
+      "terminal_run_reopen_guard_enabled": true,
+      "terminal_run_immutability_tested": true
+    },
+    "image_pipeline": {
+      "path": "production-image-execution-v2:generate-transfer-verify-review-accept",
+      "exact_byte_capture": true,
+      "saved_asset_review": true,
+      "accepted_locked_required": true,
+      "svg_fallback_enabled": false,
+      "low_quality_fallback_enabled": false,
+      "small_png_persistence_route": "direct_git_data_create_blob_base64",
+      "small_png_readback_identity_verified": true,
+      "host_admission": {
+        "source_of_truth": "protected_host_registration",
+        "registration_status": "READY",
+        "qualification_verified": true,
+        "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
+        "receipt_path": "_records/image-trials/2026-10-02-scheduled/recovered-six-image/qualification-receipt-complete-1.json",
+        "evidence_type": "live",
+        "trigger": "scheduled",
+        "generation_executor": "native_chatgpt_image_generation",
+        "review_method": "saved_image_visual_inspection",
+        "saved_bytes_recovered": true,
+        "zero_production_cost_verified": true,
+        "reusable_consumer": {
+          "scheduler_kind": "chatgpt_automation",
+          "automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+          "enabled": true,
+          "role": "scheduled_native_image_request_consumer",
+          "observation_verified": true,
+          "current_fence_refresh_required": true,
+          "explicit_supervisor_handoff_required": true
+        }
+      }
+    },
+    "timing": {
+      "append_only_transition_ledger": true,
+      "kanban_derived_from_events": true,
+      "kanban_digest_bound": true,
+      "executor_state_visible": true,
+      "missing_timestamps_never_inferred": true,
+      "kanban_observability_only": true,
+      "metrics_observability_only": true,
+      "projection_defects_nonblocking": true
+    },
+    "content_contract": {
+      "story_count": 6,
+      "allocation": "2/2/2",
+      "agent_skills_story_count": 1,
+      "videos": 2,
+      "podcasts": 2,
+      "podcast_source_diversity": true,
+      "watchlist_refresh": true,
+      "professional_series_books_considered": 4,
+      "professional_story_images": 6,
+      "article_reading_times_required": true,
+      "podcast_runtimes_required": true
+    },
+    "publication": {
+      "protected_ci": true,
+      "exact_sha_deploy": true,
+      "independent_live_verification": true,
+      "success_state": "PUBLIC_CLOSED",
+      "cleanup_after_terminal": true,
+      "candidate_write_freeze": true,
+      "generic_task29_closeout": true
+    },
+    "cost_boundary": {
+      "chatgpt_work": false,
+      "codex": false,
+      "paid_apis": false,
+      "billable_overage": false,
+      "new_credentials": false
+    },
+    "inheritance": {
+      "controller_matches_latest_success": true,
+      "supervisor_matches_latest_success_or_current_baseline": true,
+      "image_path_matches_latest_success": true,
+      "publication_path_matches_latest_success": true,
+      "all_permanent_fixes_present": true,
+      "unexplained_regressions_absent": true
+    }
+  },
+  "expected_readiness_result": {
+    "result": "PASS",
+    "start_authorized": true,
+    "start_scope": "full_production",
+    "image_tasks_authorized": true,
+    "publication_authorized": true
+  },
+  "result": "PASS",
+  "authorization": {
+    "production_may_start_only_at_scheduled_controller_invocation": true,
+    "scheduled_start_local": "2026-10-03 19:00 America/Chicago",
+    "target_edition_date": "2026-10-04",
+    "early_allocation_prohibited": true
+  }
+}
