@@ -1,0 +1,11 @@
+{
+  "schema_version": "dot-chat-wakeup-poc-v1",
+  "test_id": "dot-chat-wakeup-poc-2026-10-03",
+  "production": false,
+  "brief_active": true,
+  "condition": "HEALTHY",
+  "stalled": false,
+  "incident_id": null,
+  "wake_chat": false,
+  "instruction": "HEALTHY means stop immediately. Do not open ChatGPT. Do not create Work or Codex tasks."
+}
