@@ -14,5 +14,7 @@
   "created_at": "2026-10-03T00:50:39.830Z",
   "writer_generation_is_provenance": false,
   "authority_refresh_required_at_invocation": false,
-  "status": "queued"
+  "status": "in_progress",
+  "consumed_at": "2026-10-03T00:51:18Z",
+  "authority_refreshed_at": "2026-10-03T00:51:18Z"
 }

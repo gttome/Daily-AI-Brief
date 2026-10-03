@@ -1,0 +1,15 @@
+{
+  "task_id": "09",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T00:51:18Z",
+  "reason_code": "BEGIN_ALL_FOUR_BOOK_RELEVANCE_REVIEW",
+  "operation": "review_all_four_professional_series_books",
+  "proof": {
+    "catalog_path": "_data/book-reading.json",
+    "books_required": 4,
+    "anchors_required": 32,
+    "request_key": "542fad192bc59f773d7589d80e92e26487b0dc4e3edaf49b4a045e337ea9ed1d",
+    "reader_copy_mode": "concise_reader_value"
+  }
+}
