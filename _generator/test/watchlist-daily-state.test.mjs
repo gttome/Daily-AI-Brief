@@ -41,7 +41,7 @@ test('Watchlist Brief summary lists new and updated names but carried-forward co
  const html=renderDailyTopicGroups(data);
  assert.match(html,/New topic/);
  assert.match(html,/Updated topic/);
- assert.match(html,/Carried forward:<\\/strong> 1/);
+ assert.ok(html.includes('<strong>Carried forward:</strong> 1'));
  assert.doesNotMatch(html,/Carried topic must stay hidden/);
 });
 
