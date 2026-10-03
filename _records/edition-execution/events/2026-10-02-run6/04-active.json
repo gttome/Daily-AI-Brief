@@ -1,0 +1,14 @@
+{
+  "task_id": "04",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T00:15:42Z",
+  "reason_code": "BEGIN_FULL_SOURCE_EVIDENCE_VERIFICATION",
+  "operation": "verify_evidence_and_freshness_fallback",
+  "proof": {
+    "candidate_path": "_records/discovery/2026-10-02-run6/candidates.json",
+    "candidate_count": 9,
+    "policy": "article-24-72-168-v1",
+    "request_key": "bb691660ed0cd9d007ef97a1b17f3bb34048547684455534cac83bdc392b069c"
+  }
+}
