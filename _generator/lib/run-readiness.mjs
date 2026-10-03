@@ -44,6 +44,14 @@ export function staleActiveDecision({
 
 export function deriveImageHostAdmission({registration = {}, qualification_verified = false, consumer_observation_verified = false} = {}) {
   const consumer = registration.reusable_consumer || {};
+  const slots = Array.isArray(consumer.slots) ? consumer.slots.map(x=>({
+    slot:x?.slot || null,
+    automation_id:x?.automation_id || null,
+    title:x?.title || null,
+    minute:Number.isInteger(x?.minute) ? x.minute : null,
+    enabled:x?.enabled === true,
+    native_image_eligible:x?.native_image_eligible === true
+  })) : [];
   return {
     source_of_truth:'protected_host_registration',
     registration_status:registration.status || null,
@@ -59,9 +67,14 @@ export function deriveImageHostAdmission({registration = {}, qualification_verif
     zero_production_cost_verified:registration.zero_production_cost_verified === true,
     reusable_consumer:{
       scheduler_kind:consumer.scheduler_kind || null,
-      automation_id:consumer.automation_id || null,
       enabled:consumer.enabled === true,
       role:consumer.role || null,
+      slots,
+      eligible_slots:Array.isArray(consumer.eligible_slots)?[...consumer.eligible_slots]:[],
+      special_slot:consumer.special_slot ?? null,
+      functional_equivalence_required:consumer.functional_equivalence_required === true,
+      single_slot_binding:consumer.single_slot_binding === true,
+      consume_queued_request_without_stale_wait:consumer.consume_queued_request_without_stale_wait === true,
       observation_path:consumer.observation_path || null,
       observation_sha256:consumer.observation_sha256 || null,
       observation_verified:consumer_observation_verified === true,
@@ -113,6 +126,17 @@ export function validateRunReadiness(input = {}) {
   const image = input.image_pipeline || {};
   const host = image.host_admission || {};
   const consumer = host.reusable_consumer || {};
+  const expectedSlots={A:3,B:13,C:23,D:33,E:43,F:53};
+  const ringSlots=Array.isArray(consumer.slots)?consumer.slots:[];
+  const slotMap=new Map(ringSlots.map(x=>[x?.slot,x]));
+  const allRingSlotsReady=Object.entries(expectedSlots).every(([slot,minute])=>{
+    const x=slotMap.get(slot);
+    return x &&
+      /^[a-f0-9]{32}$/.test(x.automation_id || '') &&
+      x.enabled === true &&
+      x.native_image_eligible === true &&
+      Number(x.minute) === minute;
+  });
   const scheduledImageHostReady =
     host.source_of_truth === 'protected_host_registration' &&
     host.registration_status === 'READY' &&
@@ -122,10 +146,15 @@ export function validateRunReadiness(input = {}) {
     host.review_method === 'saved_image_visual_inspection' &&
     host.saved_bytes_recovered === true && host.zero_production_cost_verified === true &&
     typeof host.receipt_path === 'string' && host.receipt_path.startsWith('_records/') &&
-    consumer.scheduler_kind === 'chatgpt_automation' &&
-    /^[a-f0-9]{32}$/.test(consumer.automation_id || '') &&
+    consumer.scheduler_kind === 'chatgpt_watchdog_ring' &&
     consumer.enabled === true &&
-    consumer.role === 'scheduled_native_image_request_consumer' &&
+    consumer.role === 'scheduled_native_image_request_consumer_ring' &&
+    consumer.functional_equivalence_required === true &&
+    consumer.single_slot_binding === false &&
+    consumer.special_slot === null &&
+    JSON.stringify(consumer.eligible_slots) === JSON.stringify(Object.keys(expectedSlots)) &&
+    ringSlots.length === 6 && allRingSlotsReady &&
+    consumer.consume_queued_request_without_stale_wait === true &&
     consumer.observation_verified === true &&
     consumer.current_fence_refresh_required === true &&
     consumer.explicit_supervisor_handoff_required === true;
