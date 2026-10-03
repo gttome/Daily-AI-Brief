@@ -1,0 +1,195 @@
+{
+  "schema_version": "rehearsal-image-specs-v1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "execution_key": "2026-10-02-run6",
+  "sealed_at": "2026-10-03T00:53:27Z",
+  "selected_ids": [
+    "m01",
+    "m02",
+    "m04",
+    "m05",
+    "m07",
+    "m09"
+  ],
+  "generation_authorized_in_this_worker": false,
+  "reusable_image_consumer_authorized": true,
+  "reusable_image_consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "publication_authorized": false,
+  "common": {
+    "canvas": "1200x630 landscape",
+    "quality": "professional high-detail textbook/editorial mechanism illustration",
+    "background": "clean white",
+    "composition": "Mechanism-first, high-information-density technical diagram with a coherent directional flow, clear visual hierarchy, fine-grained explanatory structure, generous safe margins, and a composition visibly distinct from the other five stories.",
+    "restrictions": [
+      "no people, faces, humanoid figures, hands, or character silhouettes",
+      "no photos or decorative object imagery",
+      "no product-screen imitation, dashboard screenshot, chat UI, or generic status architecture",
+      "no decorative filler, stock icons, or ornamental backgrounds",
+      "no unsupported metrics, claims, or invented product capabilities",
+      "no overlapping, clipped, tiny, or illegible text",
+      "visible text must be limited to the story-specific allowed_text list; omit uncertain text rather than improvise",
+      "no sparse/basic box-and-arrow fallback",
+      "no SVG, placeholder, collage, or reused composition",
+      "use abstract technical layers, rails, graphs, nodes, evidence paths, and connectors to explain the mechanism"
+    ],
+    "visible_text_guard": "Only exact strings in allowed_text may appear. Spell them exactly. Do not invent captions, legends, acronyms, numbers, labels, or filler text."
+  },
+  "specs": [
+    {
+      "task_id": "11",
+      "candidate_id": "m01",
+      "story_order": 1,
+      "subject": "NVIDIA DOCA Agent Skills: verified domain knowledge packaged for infrastructure development",
+      "mechanism": "Center a maintained DOCA Skill package containing machine-readable skill guidance. Feed an application task into the package, then fan through four verification rails—API signatures, hardware requirements, build constraints, and preflight checks—before the agent can produce a BlueField application path. Show the verification rails converging into an evidence-backed output and a validation return loop so the image explains why reusable skill knowledge is safer and more repeatable than ad-hoc prompting.",
+      "visual_structure": [
+        "left intake rail for application task",
+        "central layered DOCA Skill package",
+        "four parallel verification rails",
+        "right-side application output and validation loop"
+      ],
+      "allowed_text": [
+        "Application task",
+        "DOCA Skill",
+        "API signatures",
+        "Hardware requirements",
+        "Build constraints",
+        "Preflight checks",
+        "BlueField app",
+        "Validation"
+      ]
+    },
+    {
+      "task_id": "12",
+      "candidate_id": "m02",
+      "story_order": 2,
+      "subject": "Qodo 3.0: code-quality controls embedded in agentic software delivery",
+      "mechanism": "Show a proposed code change entering a multi-stage verification pipeline. A Software Map supplies cross-repository context and blast-radius relationships; PR Triage decomposes the review into work packages; Standards and Agentic review apply explicit quality checks; evidence then routes the change toward Accept or Repair. Make the dependency graph and feedback path visually prominent so the reader can see how context and review controls constrain agent-written software.",
+      "visual_structure": [
+        "left code-change intake",
+        "upper context graph showing repository relationships",
+        "central triage and standards gates",
+        "right evidence decision with repair loop"
+      ],
+      "allowed_text": [
+        "Code change",
+        "Software Map",
+        "Blast radius",
+        "PR Triage",
+        "Standards",
+        "Agentic review",
+        "Evidence",
+        "Accept",
+        "Repair"
+      ]
+    },
+    {
+      "task_id": "13",
+      "candidate_id": "m04",
+      "story_order": 3,
+      "subject": "Google Workspace: AI actions grounded across everyday work context",
+      "mechanism": "Create an abstract workspace context fabric rather than a product UI. Show Gmail, Drive, Calendar, and Chat as separate context streams entering a Gemini context-and-action layer. From that layer, branch to an interactive Sheets work surface, object-level image editing, and document-to-video explanation. Use cross-source connectors to show that the mechanism is bringing AI into existing work artifacts while preserving distinct source boundaries.",
+      "visual_structure": [
+        "four source streams on the left",
+        "central context-and-action layer",
+        "three differentiated output branches",
+        "thin provenance lines back to sources"
+      ],
+      "allowed_text": [
+        "Gmail",
+        "Drive",
+        "Calendar",
+        "Chat",
+        "Gemini",
+        "Sheets",
+        "Edit images",
+        "Create video"
+      ]
+    },
+    {
+      "task_id": "14",
+      "candidate_id": "m05",
+      "story_order": 4,
+      "subject": "Barclays and Claude: governed AI across knowledge support and high-volume operations",
+      "mechanism": "Use two parallel regulated-enterprise lanes. The upper lane moves governed enterprise knowledge through retrieval into a RAG assistant and search response. The lower lane moves an email stream through Classify, Enrich, and Route stages. Wrap both lanes in a continuous Governance rail with Human oversight checkpoints and traceable evidence paths, emphasizing controlled reuse of AI across different operational workloads without depicting a bank dashboard.",
+      "visual_structure": [
+        "upper knowledge-support lane",
+        "lower operational-email lane",
+        "shared governance spine",
+        "human-oversight checkpoints and audit traces"
+      ],
+      "allowed_text": [
+        "Knowledge base",
+        "RAG assistant",
+        "Search",
+        "Email intake",
+        "Classify",
+        "Enrich",
+        "Route",
+        "Governance",
+        "Human oversight"
+      ]
+    },
+    {
+      "task_id": "15",
+      "candidate_id": "m07",
+      "story_order": 5,
+      "subject": "Databricks agentic marketing: governed next-best actions from customer and business context",
+      "mechanism": "Merge three distinct input bands—Customer context, Business context, and Decision context—into an agentic decision core. Before any recommendation leaves the core, pass it through Intent, Guardrails, and Approval controls. Route the approved recommendation to a Next-best action, then return measured Outcome feedback into the decision core. The feedback loop should be visually explicit and separate from the governance gates.",
+      "visual_structure": [
+        "three context bands feeding one decision core",
+        "governance gates across the middle",
+        "single next-action output rail",
+        "closed-loop outcome feedback"
+      ],
+      "allowed_text": [
+        "Customer context",
+        "Business context",
+        "Decision context",
+        "Intent",
+        "Guardrails",
+        "Approval",
+        "Next-best action",
+        "Outcome feedback"
+      ]
+    },
+    {
+      "task_id": "16",
+      "candidate_id": "m09",
+      "story_order": 6,
+      "subject": "Asana Client Management: AI teammates coordinating through shared client context",
+      "mechanism": "Place a Shared Work Graph at the center as the common source of client, project, ownership, and status context. Arrange four differentiated AI Teammate roles around it—Creative Producer, Account Advisor, Operations Coordinator, and Executive Advisor—with distinct bidirectional flows. Route their outputs into Draft work, Handoffs, Risk, and Portfolio signals, making the shared-context dependency clear without imitating Asana UI.",
+      "visual_structure": [
+        "central shared-context graph",
+        "four role modules around the graph",
+        "four output lanes",
+        "feedback connectors that keep project state synchronized"
+      ],
+      "allowed_text": [
+        "Shared Work Graph",
+        "Creative Producer",
+        "Account Advisor",
+        "Operations Coordinator",
+        "Executive Advisor",
+        "Draft work",
+        "Handoffs",
+        "Risk",
+        "Portfolio signals"
+      ]
+    }
+  ],
+  "differentiation_check": {
+    "count": 6,
+    "distinct_primary_mechanisms": [
+      "verified reusable skill package",
+      "software quality and blast-radius verification pipeline",
+      "cross-app context-and-action fabric",
+      "dual-lane regulated enterprise AI with governance spine",
+      "governed marketing decision loop",
+      "shared work graph coordinating specialized AI teammates"
+    ],
+    "generic_dashboard_reuse": false,
+    "result": "PASS"
+  },
+  "result": "PASS"
+}
