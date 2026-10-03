@@ -226,16 +226,16 @@ A–F use the same state machine, image-consumer rules, recovery ladder, cost bo
 
 The old standalone :48 recovery behavior remains retired.
 
-### If Slot F is not visible in the ChatGPT Scheduled Tasks UI
+### If any Watchdog slot is not visible in the ChatGPT Scheduled Tasks UI
 
-The intended live configuration is six enabled Watchdog tasks A–F. If the Scheduled Tasks screen visibly shows A–E but not F:
+The intended live configuration is six enabled Watchdog tasks A–F. If any one of the six is missing from the Scheduled Tasks screen:
 
 1. refresh or reopen the Scheduled Tasks view;
-2. look specifically for **Daily Brief Watchdog F** rather than the former **Daily Brief Recovery** title;
-3. confirm its recurrence is hourly at minute **:53**;
-4. if it remains absent after refresh, treat that as a schedule-configuration defect and compare the live Scheduled-task definitions against this contract before the next production run.
+2. look for the exact **Daily Brief Watchdog A–F** titles;
+3. confirm the six hourly minute offsets are **:03, :13, :23, :33, :43 and :53**;
+4. if any slot remains absent after refresh, treat that as a schedule-configuration and image-coverage defect before the next production run.
 
-Do not create a replacement F blindly. First verify whether the repurposed task already exists so the system does not accidentally create two image consumers or two recovery owners.
+Do not create a replacement slot blindly. First verify live schedule state so the system does not accidentally create duplicate recovery/image consumers. The one-owner writer-fence rule protects production requests, but schedule duplication is still a configuration defect.
 
 ## Watchdog Permission Probe
 
