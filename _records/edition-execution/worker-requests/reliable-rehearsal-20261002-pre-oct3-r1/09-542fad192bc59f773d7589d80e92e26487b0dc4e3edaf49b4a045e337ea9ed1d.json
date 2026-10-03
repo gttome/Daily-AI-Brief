@@ -14,7 +14,9 @@
   "created_at": "2026-10-03T00:50:39.830Z",
   "writer_generation_is_provenance": false,
   "authority_refresh_required_at_invocation": false,
-  "status": "in_progress",
+  "status": "completed_pass",
   "consumed_at": "2026-10-03T00:51:18Z",
-  "authority_refreshed_at": "2026-10-03T00:51:18Z"
+  "authority_refreshed_at": "2026-10-03T00:51:18Z",
+  "completed_at": "2026-10-03T00:51:47Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-rehearsal-20261002-pre-oct3-r1/09-542fad192bc59f773d7589d80e92e26487b0dc4e3edaf49b4a045e337ea9ed1d.json"
 }

@@ -1,0 +1,134 @@
+{
+  "schema_version": "rehearsal-four-book-review-v1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "execution_key": "2026-10-02-run6",
+  "reviewed_at": "2026-10-03T00:51:47Z",
+  "catalog_path": "_data/book-reading.json",
+  "books_reviewed": [
+    {
+      "book": "Reliable Generative AI",
+      "anchor_count": 8
+    },
+    {
+      "book": "Reliable Generative AI Context Engineering",
+      "anchor_count": 8
+    },
+    {
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "anchor_count": 8
+    },
+    {
+      "book": "Generative AI Prompt Engineering Learning Ecosystem",
+      "anchor_count": 8
+    }
+  ],
+  "total_anchors_reviewed": 32,
+  "reader_copy_rule": "Explain how the verified section helps the reader understand or apply the story. Do not expose run, selection, verification, or orchestration prose.",
+  "item_reviews": [
+    {
+      "candidate_id": "m01",
+      "title": "NVIDIA packages verified DOCA expertise into reusable agent skills",
+      "reader_value_connections": [
+        {
+          "book": "Reliable Generative AI Context Engineering",
+          "reference_id": "context-quality-checklist",
+          "reader_value": "Use the context-quality checklist to decide which verified APIs, hardware constraints, examples, and preflight rules belong inside a reusable technical skill."
+        },
+        {
+          "book": "Generative AI Prompt Engineering Learning Ecosystem",
+          "reference_id": "ecosystem-template-export",
+          "reader_value": "The template-editing section helps turn NVIDIA’s skill pattern into a maintained, reusable asset instead of rebuilding instructions for every task."
+        }
+      ]
+    },
+    {
+      "candidate_id": "m02",
+      "title": "Qodo 3.0 moves code quality controls into the agentic software factory",
+      "reader_value_connections": [
+        {
+          "book": "Reliable Generative AI",
+          "reference_id": "reliable-verification",
+          "reader_value": "Read Verification as the Final Gate to connect automated code review with the evidence needed before agent-written changes are accepted."
+        },
+        {
+          "book": "Generative AI Professional Prompt Engineering Guide",
+          "reference_id": "prompt-expert-critic",
+          "reader_value": "The Expert Critic pattern is useful for designing a deliberate review role that challenges agent output rather than simply approving it."
+        }
+      ]
+    },
+    {
+      "candidate_id": "m04",
+      "title": "Google Workspace brings more AI work directly into everyday apps",
+      "reader_value_connections": [
+        {
+          "book": "Reliable Generative AI Context Engineering",
+          "reference_id": "context-envelope",
+          "reader_value": "The Context Envelope provides a practical way to decide which Gmail, Drive, Calendar, Chat, and document context should be available to each AI-assisted task."
+        },
+        {
+          "book": "Generative AI Prompt Engineering Learning Ecosystem",
+          "reference_id": "ecosystem-workflow",
+          "reader_value": "Move From Understanding to Use helps translate new Workspace AI features into repeatable work steps instead of isolated feature experiments."
+        }
+      ]
+    },
+    {
+      "candidate_id": "m05",
+      "title": "Barclays scales Claude across knowledge support and operational workflows",
+      "reader_value_connections": [
+        {
+          "book": "Reliable Generative AI",
+          "reference_id": "reliable-audit",
+          "reader_value": "Audit Trails and Legal Defensibility gives readers a framework for thinking about traceability when AI is used at regulated-enterprise scale."
+        },
+        {
+          "book": "Reliable Generative AI Context Engineering",
+          "reference_id": "context-privacy",
+          "reader_value": "The privacy section helps frame what data should be available to knowledge assistants and operational classifiers, and where access boundaries belong."
+        }
+      ]
+    },
+    {
+      "candidate_id": "m07",
+      "title": "Agentic marketing connects customer context to governed next-best actions",
+      "reader_value_connections": [
+        {
+          "book": "Generative AI Professional Prompt Engineering Guide",
+          "reference_id": "prompt-pattern-selection",
+          "reader_value": "The Pattern Selection Framework helps match different marketing decisions to the right prompting or agent pattern instead of using one generic workflow for every action."
+        },
+        {
+          "book": "Generative AI Prompt Engineering Learning Ecosystem",
+          "reference_id": "ecosystem-problem-strategies",
+          "reader_value": "Map Real Problems to Practical Prompt Strategies helps marketers turn campaign goals, approvals, and measurement needs into concrete AI-assisted work."
+        }
+      ]
+    },
+    {
+      "candidate_id": "m09",
+      "title": "Asana Client Management puts AI teammates inside client-delivery workflows",
+      "reader_value_connections": [
+        {
+          "book": "Reliable Generative AI",
+          "reference_id": "reliable-handoffs",
+          "reader_value": "Handoffs and Structured Contracts helps readers design clear boundaries between AI teammates, human owners, and the next stage of client work."
+        },
+        {
+          "book": "Reliable Generative AI Context Engineering",
+          "reference_id": "context-dynamic-facts",
+          "reader_value": "Dynamic Facts and Current-State Control explains why project status, risks, owners, and deadlines must stay current when AI teammates act on shared client context."
+        }
+      ]
+    }
+  ],
+  "distribution_check": {
+    "books_with_at_least_one_selected_connection": 4,
+    "reliable_generative_ai": true,
+    "context_engineering": true,
+    "professional_prompt_engineering_guide": true,
+    "prompt_engineering_learning_ecosystem": true
+  },
+  "result": "PASS"
+}
