@@ -36,9 +36,9 @@ test('learning ledger has no unresolved problem missing from Improvement Kanban'
 
 test('current startup is generic and the observed controller starts the next edition at 19:00 CT',()=>{
   const startup=fs.readFileSync('docs/operations/DAILY-UNATTENDED-STARTUP.md','utf8');
-  assert.doesNotMatch(startup,/\\bRun\\s+\\d+\\b|\\brun\\d+\\b|reliable-edition-\\d/i);
-  assert.match(startup,/19:00 America\\/Chicago/);
-  assert.match(startup,/next America\\/Chicago calendar day/);
+  assert.doesNotMatch(startup,/\bRun\s+\d+\b|\brun\d+\b|reliable-edition-\d/i);
+  assert.ok(startup.includes('19:00 America/Chicago'));
+  assert.ok(startup.includes('next America/Chicago calendar day'));
   const controller=receipt.scheduler_observation.controller;
   assert.equal(controller.enabled,true);
   assert.equal(controller.generic_instruction_verified,true);
