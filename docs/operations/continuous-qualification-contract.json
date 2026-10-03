@@ -1,0 +1,602 @@
+{
+  "schema_version": "1.13.0",
+  "contract_id": "continuous-qualification-v1",
+  "effective_date": "2026-09-26",
+  "repository": "gttome/Daily-AI-Brief",
+  "timezone": "America/Chicago",
+  "purpose": "Run publication-equivalent Daily Generative AI Brief qualification cycles repeatedly during stabilization without mutating production and without Work, Codex, or paid API usage.",
+  "production_invariants": {
+    "real_public_editions_per_day_max": 1,
+    "production_main_mutation": false,
+    "production_publication_pr": false,
+    "publication_candidate_label": false,
+    "production_pages_deployment": false,
+    "production_command_center_sync": false,
+    "production_novelty_memory_mutation": false,
+    "production_ratings_analytics_mutation": false
+  },
+  "cadence": {
+    "max_full_semantic_qualification_runs_per_chicago_day": 40,
+    "targeted_deterministic_regressions_per_day": "unbounded_within_github_actions",
+    "target_consecutive_full_passes": 5,
+    "minimum_distinct_fresh_evidence_cutoffs_in_streak": 3,
+    "final_graduation_requirement": "one subsequent real production edition reaches durable PUBLIC CLOSED under the same zero-Work/zero-Codex/zero-paid-API operating model"
+  },
+  "cost_boundary": {
+    "work_usage_required": 0,
+    "codex_usage_required": 0,
+    "paid_api_usage_required": 0,
+    "new_paid_services_required": 0,
+    "new_credentials_required": 0,
+    "overage_required": 0,
+    "deterministic_model_calls_required": 0,
+    "account_meter_policy": "Do not infer Work/Codex credit usage. When the platform exposes a balance, owner-observed before/after values may be attached as external evidence."
+  },
+  "run_identity": {
+    "format": "YYYY-MM-DD-QN",
+    "examples": [
+      "2026-09-26-Q1",
+      "2026-09-26-Q3",
+      "2026-09-26-Q20",
+      "2026-09-26-Q40"
+    ],
+    "preflight_branch": "discovery-preflight/qualification/YYYY-MM-DD-QN",
+    "handoff_branch": "editorial-handoff/qualification/YYYY-MM-DD-QN",
+    "semantic_receipt": "_records/qualification/YYYY-MM-DD-QN/semantic-receipt.json",
+    "deterministic_result": "_records/qualification/YYYY-MM-DD-QN/result.json",
+    "minimum_supported_slots_per_day": 20,
+    "maximum_supported_slot_number": 40,
+    "slot_number_range": "1..40"
+  },
+  "fresh_run_requirements": {
+    "fresh_metadata_discovery": true,
+    "fresh_cutoff": true,
+    "bounded_article_evidence": true,
+    "metadata_candidates_max": 20,
+    "article_evidence_candidates_max": 9,
+    "one_semantic_editorial_pass": true,
+    "post_editorial_semantic_passes": 0,
+    "stories": 6,
+    "ordered_allocation": [
+      "technical_ai_engineering",
+      "technical_ai_engineering",
+      "applied_genai_knowledge_workers",
+      "applied_genai_knowledge_workers",
+      "agents_non_technical_people",
+      "agents_non_technical_people"
+    ],
+    "agent_skills_stories": 1,
+    "videos": 2,
+    "podcasts": 2,
+    "fresh_watchlist_evaluation": true,
+    "book_mapping_evaluation": true,
+    "images": 6,
+    "image_quality_baseline": "2026-09-17-or-better",
+    "low_quality_fallback": false,
+    "media_freshness_policy": "media-research-cutoff-v1"
+  },
+  "execution_ownership": {
+    "preflight": "github_actions",
+    "semantic_editorial_and_image_generation": "ordinary_chatgpt_without_Work_or_Codex",
+    "deterministic_expansion_and_validation": "github_actions",
+    "production_promotion": "prohibited"
+  },
+  "simulated_release_chain": [
+    "PREFLIGHT_METADATA_READY",
+    "PREFLIGHT_DISCOVERY_READY",
+    "READINESS_FINAL",
+    "EDITORIAL_KERNEL_READY",
+    "MEDIA_READY",
+    "IMAGES_READY",
+    "WATCHLIST_READY",
+    "HANDOFF_COMMITTED",
+    "DETERMINISTIC_EXPANSION_READY",
+    "FULL_QUALIFICATION_CI_PASS",
+    "SIMULATED_LIVE_VALIDATION_PASS",
+    "SIMULATED_CLOSED"
+  ],
+  "pass_criteria": {
+    "owner_manual_github_ui_actions": 0,
+    "owner_supplied_branch_names": 0,
+    "owner_supplied_shas": 0,
+    "repeated_completed_stages": 0,
+    "duplicate_publication_prs": 0,
+    "work_usage": 0,
+    "codex_usage": 0,
+    "paid_api_usage": 0,
+    "critical_high_defects_open": 0,
+    "deterministic_result": "pass",
+    "simulated_lifecycle": "CLOSED"
+  },
+  "book_series_diversity": {
+    "issue_id": "BQ-01",
+    "minimum_distinct_books_in_reference_catalog": 4,
+    "selection_rule": "semantic_relevance_first",
+    "forced_daily_rotation": false,
+    "rolling_observation_window_full_runs": 10,
+    "dominant_reference_share_warning_threshold": 0.5,
+    "graduation_gate": "All four books must be represented in the verified reference catalog before stabilization graduates to mature.",
+    "current_known_gap": "The current production catalog has only three references across two books; recent use is over-concentrated in Reliable Generative AI Context Engineering Chapter 3."
+  },
+  "safety": {
+    "protected_ci_bypass": false,
+    "quality_gate_weakening": false,
+    "sharing_access_change": false,
+    "destructive_production_action": false,
+    "merge_pr_117": false
+  },
+  "schedule_separation": {
+    "production_schedules": [
+      {
+        "name": "Daily Brief Production Orchestrator",
+        "time_chicago": "04:00",
+        "scope": "production"
+      },
+      {
+        "name": "Daily Brief Live Validation & Repair",
+        "time_chicago": "08:30",
+        "scope": "production"
+      }
+    ],
+    "qualification_schedules": [
+      {
+        "name": "Qualification Sequential Controller",
+        "time_chicago": "state_driven_after_previous_terminal_and_repair_ready",
+        "run_slot": "next_unused_Q1..Q40",
+        "scope": "qualification_nonproduction"
+      }
+    ],
+    "cross_lane_reuse_prohibited": true,
+    "production_must_ignore_qualification_state": true,
+    "qualification_must_not_invoke_production_schedule": true,
+    "independently_pauseable": true,
+    "dynamic_slot_addition_allowed": true,
+    "slot_pause_resume_independent": true,
+    "slot_terminal_guard_required": true,
+    "slot_duplicate_run_guard_required": true,
+    "reserve_slot_capacity_target": 20,
+    "maximum_concurrent_nonterminal_q_runs": 1,
+    "future_q_clock_prescheduling": false,
+    "next_q_requires_previous_terminal": true,
+    "next_q_requires_failure_repair_merged_when_applicable": true
+  },
+  "qualification_novelty_baseline": {
+    "rule": "Each full qualification run is an independent hypothetical production attempt for its edition date. Novelty must be evaluated against the production history that existed before that edition date, not against the real same-day production edition or prior Q-runs.",
+    "production_history_cutoff": "strictly_before_edition_date",
+    "exclude_real_same_day_production": true,
+    "exclude_all_qualification_runs": true,
+    "production_history_mutation": false,
+    "reason": "Multiple same-day qualification runs would otherwise become impossible after the first real edition consumes the strongest 24-hour candidates. Isolation preserves the actual 30-day novelty rule while testing each Q-run as an independent production simulation.",
+    "qualification_repeat_selection_allowed": true,
+    "qualification_repeat_note": "The same source may appear in multiple Q-runs only if it was novel relative to the frozen pre-edition production history. Qualification repetition never authorizes a production repeat."
+  },
+  "image_execution_isolation": {
+    "rule": "Production and qualification use the same sealed single-story request and automated execution pipeline. Request-only isolation is enforced; hidden runtime context exclusion is not asserted.",
+    "packet_per_story": true,
+    "exactly_one_story_id_per_packet": true,
+    "exactly_one_candidate_id_per_packet": true,
+    "exclude_other_story_titles": true,
+    "exclude_other_story_sources": true,
+    "exclude_other_story_prompts": true,
+    "exclude_edition_status_art": true,
+    "rejected_wrong_subject_must_start_fresh_request": true,
+    "rejected_wrong_subject_must_not_be_edited_or_reused": true,
+    "acceptance_order": [
+      "subject_identity",
+      "factual_support",
+      "structural_quality",
+      "editorial_quality"
+    ],
+    "receipt_required_per_story": true,
+    "receipt_fields": [
+      "story_id",
+      "candidate_id",
+      "request_sha256",
+      "subject_match",
+      "factual_support",
+      "quality_result",
+      "accepted_sha256"
+    ],
+    "low_quality_fallback": false,
+    "q1_root_cause": "Q1 produced repeated wrong-subject/unsupported-detail image attempts despite the post-generation gate; isolation must be enforced before generation as well as after review."
+  },
+  "qualification_novelty_preflight": {
+    "enforced_before_semantic": true,
+    "production_history_cutoff": "strictly_before_edition_date",
+    "exclude_real_same_day_production": true,
+    "exclude_all_qualification_runs": true,
+    "exact_source_prior_production_eligible": false,
+    "material_update_exception_requires_verified": true,
+    "required_output_fields": [
+      "production_novelty_eligible",
+      "production_novelty_reason",
+      "agent_skill_story_ready_signals_after_novelty"
+    ],
+    "fail_closed_code": "qualification_agent_skill_unavailable_after_novelty",
+    "semantic_must_not_start_when_agent_skill_ready_after_novelty_is_zero": true
+  },
+  "image_worker_isolation": {
+    "rule": "Use the shared production image execution path. No owner-created chat, uploaded image or manual review. A fresh request is not a claim of a fresh platform conversation.",
+    "dedicated_worker_required": false,
+    "input_exactly_one_story_packet": true,
+    "operational_context_prohibited": true,
+    "prohibited_context_classes": [
+      "qualification_status",
+      "scheduler_state",
+      "publication_state",
+      "edition_dashboard",
+      "other_story_prompt",
+      "other_story_image",
+      "repair_status"
+    ],
+    "allowed_fields": [
+      "story_id",
+      "candidate_id",
+      "headline",
+      "source_url",
+      "visual_brief",
+      "reference_policy",
+      "acceptance_order",
+      "wrong_subject_action",
+      "low_quality_fallback"
+    ],
+    "worker_prompt_must_not_contain_run_id": true,
+    "worker_prompt_must_not_contain_q_number": true,
+    "worker_prompt_must_not_contain_status_terms": true,
+    "wrong_subject_retry_requires_new_worker_context": false,
+    "same_worker_retry_prohibited_after_subject_mismatch": false,
+    "max_wrong_subject_attempts_per_story_before_run_fail": 4,
+    "q4_root_cause": "Q4 generated qualification-status dashboards twice for m03 despite single-story packet isolation, proving that surrounding operational task context can contaminate generation. Dedicated image-only worker context is therefore mandatory.",
+    "operational_context_scope": "explicit_generation_payload_only",
+    "requires_fresh_conversation": false,
+    "manual_intervention_allowed": false,
+    "runtime_context_isolation": "not_asserted",
+    "review_phase": "after_generation"
+  },
+  "image_factual_support": {
+    "rule": "Specific image labels and examples must be supported by frozen source evidence. Generic explanatory elements are allowed only when they remain conceptual.",
+    "direct_source_support_required_for_specific_labels": true,
+    "source_phrase_allowlist_required": true,
+    "generic_conceptual_elements_allowed": true,
+    "generic_elements_must_not_imply_product_fact": true,
+    "image_packet_required_fields": [
+      "verified_visual_facts",
+      "generic_conceptual_elements",
+      "prohibited_specifics"
+    ],
+    "acceptance_order": [
+      "subject_identity",
+      "factual_support",
+      "structural_quality",
+      "editorial_quality"
+    ],
+    "factual_support_failure_action": "discard_and_automatically_generate_fresh_request_for_same_story",
+    "max_factual_support_failures_per_story_before_run_fail": 4,
+    "q5_root_cause": "Q5 image-only workers stayed on subject but added unsupported concrete details. The next control restricts concrete content to frozen-evidence facts."
+  },
+  "qualification_agent_focus_preflight": {
+    "rule": "During qualification, an upstream agents_non_technical_people hint cannot satisfy agent coverage without concrete agent intent in the title unless the item is an Agent Skills story or qualifies through the existing end-user/support-agent override.",
+    "qualification_only": true,
+    "upstream_agent_focus_hint_is_advisory": true,
+    "concrete_title_signals": [
+      "agent",
+      "agents",
+      "agentic",
+      "assistant",
+      "computer use",
+      "tool-using",
+      "mcp"
+    ],
+    "agent_skills_exception": true,
+    "existing_end_user_agent_override_preserved": true,
+    "production_focus_classification_unchanged": true,
+    "coverage_recomputed_after_reclassification": true,
+    "fail_closed_when_agent_focus_coverage_below_three": true,
+    "q6_root_cause": "Q6 preflight counted two upstream agent-focus hints whose frozen evidence was multimodal RL training and LLM quality assurance, leaving only one semantically valid Agents for Everyone story at the editorial gate."
+  },
+  "qualification_category_novelty_coverage": {
+    "rule": "Qualification focus coverage and bounded article-evidence selection must exclude candidates whose production_novelty_eligible is false.",
+    "qualification_only": true,
+    "coverage_computed_after_novelty": true,
+    "retained_metadata_may_include_ineligible_for_traceability": true,
+    "ineligible_candidates_cannot_satisfy_focus_coverage": true,
+    "ineligible_candidates_excluded_from_article_evidence_plan": true,
+    "diagnostic_pre_novelty_counts_allowed": true,
+    "minimum_novelty_eligible_candidates_per_focus": 3,
+    "fail_closed_before_semantic_when_any_focus_below_minimum": true,
+    "q7_root_cause": "Q7 reported 10/3/3 coverage while two of the three agent-focus candidates were exact-source prior-production duplicates marked production_novelty_eligible=false."
+  },
+  "qualification_source_supply_acquisition": {
+    "rule": "Qualification discovery must not stop at the normal catalog acquisition budget while fresh metadata or per-focus source supply is insufficient; it may continue only within the existing absolute retrieval budget and source-scan maximum.",
+    "qualification_only": true,
+    "production_normal_budget_behavior_unchanged": true,
+    "normal_budget_can_stop_qualification_when_supply_incomplete": false,
+    "absolute_retrieval_budget_remains_hard": true,
+    "source_scan_maximum_remains_hard": true,
+    "fresh_metadata_target_required_before_sufficiency_stop": true,
+    "minimum_fresh_focus_candidates_before_sufficiency_stop": 5,
+    "purpose_env": "DAB_DISCOVERY_PURPOSE=continuous_qualification",
+    "q8_root_cause": "Q8 scanned 12 sources and stopped at the normal acquisition budget with only 13 fresh metadata candidates; novelty-aware post-gate coverage was Technical 8 / Applied 2 / Agents 1, so qualification source supply was insufficient before semantic execution."
+  },
+  "qualification_agent_source_supply": {
+    "rule": "Qualification must maintain enough fresh, novelty-eligible, semantically agent-focused first-party candidates to satisfy the Agents for Everyone breadth gate without weakening classification.",
+    "q9_observed_coverage": {
+      "technical_ai_engineering": 13,
+      "applied_genai_knowledge_workers": 3,
+      "agents_non_technical_people": 2
+    },
+    "q9_sources_scanned": 48,
+    "q9_fresh_metadata_candidates": 52,
+    "source_supply_shortfall": "one additional fresh Agents for Everyone candidate",
+    "added_source_id": "microsoft-work-iq-agents-sep25",
+    "added_source_url": "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/",
+    "source_is_first_party": true,
+    "source_published_date": "2026-09-25",
+    "source_focus": "agents_non_technical_people",
+    "production_history_duplicate_before_edition": false,
+    "classification_gate_unchanged": true,
+    "novelty_gate_unchanged": true,
+    "q9_root_cause": "After Q8 acquisition hardening, Q9 scanned all 48 permitted sources and found 52 fresh metadata candidates, but deterministic novelty-aware classification retained only two Agents for Everyone candidates. The remaining issue was insufficient fresh agent-source supply, not early stopping."
+  },
+  "qualification_image_artifact_handoff": {
+    "rule": "Both production and qualification capture native output automatically, review exact final bytes, persist to Git and verify read-back. No owner Library transfer or upload is required.",
+    "qualification_only": false,
+    "q10_root_cause": "Q10 image generation produced visually reviewable output, but exact generated binaries were not durably routed from isolated image-worker contexts to the separate reviewer. One m08 image passed visual gates but could not be accepted_locked because its exact bytes could not be materialized and persisted.",
+    "worker_generation_isolation_unchanged": false,
+    "artifact_capture_phase": "post_generation_nonsemantic_transport",
+    "artifact_capture_may_contain_only": [
+      "story_id",
+      "candidate_id",
+      "generated_file_ref",
+      "library_destination"
+    ],
+    "artifact_capture_must_not_contain": [
+      "qualification_status",
+      "scheduler_state",
+      "publication_state",
+      "edition_dashboard",
+      "other_story_prompt",
+      "other_story_image",
+      "repair_status"
+    ],
+    "durable_surface": "exact_git_blob_with_native_output_provenance",
+    "library_path_prefix": null,
+    "exact_source_snapshot_required": true,
+    "upload_source_must_be_exact_generated_file_ref": true,
+    "required_handoff_fields": [
+      "story_id",
+      "candidate_id",
+      "request_sha256",
+      "generation",
+      "review",
+      "persistence"
+    ],
+    "ephemeral_file_id_only_prohibited": true,
+    "reviewer_must_materialize_raw_file": true,
+    "reviewer_must_compute_sha256": true,
+    "reviewer_must_verify_dimensions": true,
+    "reviewer_must_visually_review": true,
+    "reviewer_acceptance_order": [
+      "subject_identity",
+      "factual_support",
+      "structural_quality",
+      "editorial_quality"
+    ],
+    "reviewer_must_persist_exact_bytes_to_git_blob": true,
+    "git_blob_encoding": "base64",
+    "lossy_reencoding_prohibited": true,
+    "reviewer_regeneration_prohibited": false,
+    "accepted_locked_requires_git_blob_exact_byte_match": true,
+    "missing_durable_handoff_failure_code": "qualification_image_durable_handoff_missing",
+    "materialization_failure_code": "qualification_image_artifact_materialization_failed",
+    "six_story_acceptance": [
+      "six_native_generation_receipts",
+      "six_automated_reviews",
+      "six_unique_sha256_values",
+      "six_exact_git_blob_persists",
+      "six_readback_matches"
+    ],
+    "production_mutation": false,
+    "manual_intervention_allowed": false
+  },
+  "qualification_image_worker_serialization": {
+    "rule": "Execute one sealed story request at a time with automatic capture, post-generation review, bounded regeneration and exact Git persistence before the next story.",
+    "qualification_only": false,
+    "q11_root_cause": "Q11 persisted two supposed m02 image artifacts to durable Library storage, but both visually contained the m04 Copilot Memory subject. Durable transport therefore worked, while concurrent/multi-worker execution still allowed cross-story subject or artifact contamination.",
+    "maximum_concurrent_image_workers": 1,
+    "required_story_sequence": "editorial_selection_order",
+    "next_story_start_requires_prior_story_terminal": true,
+    "prior_story_terminal_states": [
+      "accepted_locked",
+      "rejected_with_attempt_budget_remaining",
+      "rejected_terminal_run_fail"
+    ],
+    "generation_and_capture_same_worker_required": true,
+    "durable_library_capture_before_worker_exit": false,
+    "separate_reviewer_after_capture": false,
+    "exact_git_persist_before_next_story": true,
+    "cross_story_parallelism_prohibited": true,
+    "cross_story_batch_generation_prohibited": true,
+    "cross_story_artifact_pooling_prohibited": true,
+    "candidate_lineage_match_required_at_generation": true,
+    "candidate_lineage_match_required_at_library_capture": true,
+    "candidate_lineage_match_required_at_review": true,
+    "candidate_lineage_match_required_at_git_persist": true,
+    "subject_mismatch_action": "discard_and_automatically_generate_fresh_request_same_story",
+    "subject_mismatch_artifact_must_remain_append_only_evidence": true,
+    "max_subject_mismatch_attempts_per_story": 4,
+    "failure_code_after_attempt_budget": "qualification_image_subject_lineage_unsatisfied",
+    "production_mutation": false,
+    "review_phase": "after_generation",
+    "requires_fresh_conversation": false
+  },
+  "qualification_q13_source_supply": {
+    "rule": "After Q13 exposed novelty-aware coverage of 11 Technical / 0 Applied / 2 Agents, qualification must add only bounded, first-party, dated Applied and Agents source candidates; category, novelty, Agent Skills, and 3-per-focus readiness gates remain unchanged.",
+    "qualification_only": true,
+    "q13_observed_coverage": {
+      "technical_ai_engineering": 11,
+      "applied_genai_knowledge_workers": 0,
+      "agents_non_technical_people": 2
+    },
+    "q13_sources_scanned": 48,
+    "q13_fresh_metadata_candidates": 48,
+    "q13_semantic_pass_started": false,
+    "added_source_ids": [
+      "google-workspace-executive-agents-sep24",
+      "adobe-acrobat-ai-workflows-sep24",
+      "adobe-workfront-ai-request-autofill-sep25",
+      "google-workspace-intelligent-content-sep23"
+    ],
+    "added_applied_candidates": 3,
+    "added_agent_candidates": 1,
+    "sources_are_first_party": true,
+    "pinned_candidates_are_metadata_only_until_article_evidence": true,
+    "production_history_checked_against_edition_baseline": true,
+    "classification_gate_unchanged": true,
+    "novelty_gate_unchanged": true,
+    "minimum_focus_coverage_unchanged": 3,
+    "agent_skills_gate_unchanged": true,
+    "q13_root_cause": "Q13 scanned the full 48-source qualification budget and discovered 48 fresh metadata items, but post-novelty deterministic classification retained 11 Technical, 0 Applied, and 2 Agents candidates. The deficit was source supply in Applied and Agents, not insufficient scanning or image execution."
+  },
+  "qualification_q14_date_precision_source_supply": {
+    "qualification_only": true,
+    "q14_observed_coverage": {
+      "technical_ai_engineering": 10,
+      "applied_genai_knowledge_workers": 1,
+      "agents_non_technical_people": 2
+    },
+    "q14_cutoff": "2026-09-28T02:53:00Z",
+    "ordinary_freshness_hours_unchanged": 72,
+    "root_cause": "Date-only publisher metadata was normalized to midnight UTC and not re-enriched because a publication date was already present, causing valid same-day publisher items to age out conservatively before exact article timestamps were recovered.",
+    "date_precision_tracking_required": true,
+    "day_precision_article_reenrichment_required": true,
+    "exact_timestamp_may_replace_day_precision_only": true,
+    "recurring_first_party_catalogs": [
+      "microsoft-copilot-product-catalog",
+      "microsoft-copilot-agentic-ai-catalog"
+    ],
+    "classification_gate_unchanged": true,
+    "novelty_gate_unchanged": true,
+    "minimum_focus_coverage_unchanged": 3,
+    "agent_skills_gate_unchanged": true,
+    "production_mutation": false
+  },
+  "qualification_q15_applied_source_supply": {
+    "qualification_only": true,
+    "q15_observed_coverage": {
+      "technical_ai_engineering": 9,
+      "applied_genai_knowledge_workers": 1,
+      "agents_non_technical_people": 3
+    },
+    "q15_cutoff": "2026-09-28T03:10:00Z",
+    "q14_date_precision_control_preserved": true,
+    "q14_precision_attempted": 17,
+    "q14_precision_resolved": 9,
+    "ordinary_freshness_hours_unchanged": 72,
+    "classification_gate_unchanged": true,
+    "novelty_gate_unchanged": true,
+    "minimum_focus_coverage_unchanged": 3,
+    "agent_skills_gate_unchanged": true,
+    "recurring_applied_catalogs": [
+      "microsoft-techcommunity-copilot-applied",
+      "microsoft-techcommunity-finops-ai",
+      "microsoft-techcommunity-skills-hub"
+    ],
+    "recurring_catalogs_not_dated_pins": true,
+    "production_mutation": false
+  },
+  "qualification_q16_applied_source_supply": {
+    "qualification_only": true,
+    "q16_observed_coverage": {
+      "technical_ai_engineering": 10,
+      "applied_genai_knowledge_workers": 2,
+      "agents_non_technical_people": 3
+    },
+    "q16_cutoff": "2026-09-28T03:18:00Z",
+    "q14_date_precision_control_preserved": true,
+    "q15_applied_source_supply_preserved": true,
+    "ordinary_freshness_hours_unchanged": 72,
+    "classification_gate_unchanged": true,
+    "novelty_gate_unchanged": true,
+    "minimum_focus_coverage_unchanged": 3,
+    "agent_skills_gate_unchanged": true,
+    "added_recurring_applied_catalog": "google-workspace-blog-applied",
+    "recurring_catalog_not_dated_pin": true,
+    "production_mutation": false
+  },
+  "qualification_q18_semantic_evidence_membership": {
+    "qualification_only": true,
+    "q18_result": "fail",
+    "failure_code": "qualification_semantic_selection_outside_article_evidence",
+    "invalid_candidate_id": "m11",
+    "rule": "Every selected semantic candidate_id must be a member of the frozen nine-item article-evidence model_visible set before downstream work begins.",
+    "semantic_selection_must_be_subset_of_article_evidence": true,
+    "fail_closed_before_media": true,
+    "fail_closed_before_images": true,
+    "semantic_pass_count_unchanged": 1,
+    "rerun_failed_identity": false,
+    "next_proof_identity": "Q19",
+    "production_mutation": false
+  },
+  "qualification_q19_novelty_aware_focus_reservation": {
+    "qualification_only": true,
+    "q19_result": "fail",
+    "failure_code": "qualification_focus_coverage_insufficient_after_novelty",
+    "q19_observed_coverage": {
+      "technical_ai_engineering": 13,
+      "applied_genai_knowledge_workers": 1,
+      "agents_non_technical_people": 2
+    },
+    "eligible_after_deterministic_filter": 36,
+    "retained_candidates": 20,
+    "rule": "During qualification, mandatory per-focus reservation must count and select production_novelty_eligible candidates first; novelty-ineligible candidates may only participate in later traceability/general fill.",
+    "minimum_focus_coverage_unchanged": 3,
+    "metadata_candidate_limit_unchanged": 20,
+    "freshness_unchanged": true,
+    "classification_unchanged": true,
+    "novelty_gate_unchanged": true,
+    "agent_skills_gate_unchanged": true,
+    "production_mutation": false,
+    "next_proof_identity": "Q20"
+  },
+  "article_freshness": {
+    "policy_id": "article-24-72-168-v1",
+    "prefer_hours": 24,
+    "normal_fallback_hours": 72,
+    "ordinary_fallback_hours": 168,
+    "agent_skills_exception_days": 7,
+    "selection_order": [
+      "primary",
+      "normal_fallback",
+      "extended_fallback"
+    ],
+    "extended_fallback_label": "Extended recency fallback",
+    "publication_timestamp_preserved": true,
+    "modified_timestamp_is_not_publication": true,
+    "historical_missing_policy": "ordinary 72 hours; Agent Skills 168 hours",
+    "media_rules_changed": false
+  },
+  "media_cutoff_correction": {
+    "source_q": "2026-09-28-Q23",
+    "failure_code": "qualification_media_freshness_uses_midnight_not_cutoff",
+    "terminal_result_preserved": true,
+    "new_request_semantic_and_kernel_policy_identity_required": true,
+    "cutoff_source": "original fresh-run request; same reference for selection and canonical validation",
+    "same_day_pre_cutoff_media_eligible": true,
+    "after_cutoff_media_ineligible": true,
+    "historical_missing_policy_unchanged": true,
+    "media_limits_unchanged": true
+  },
+  "image_execution_policy": "production-image-execution-v2",
+  "image_automation_acceptance": {
+    "policy_id": "production-image-execution-v2",
+    "shared_module": "_generator/lib/image-execution.mjs",
+    "maximum_attempts_per_story": 4,
+    "manual_image_actions_allowed": 0,
+    "live_scheduled_receipts_required_for_unattended_claim": true,
+    "fixture_tests_are_not_live_execution": true,
+    "missing_executor_state": "CAPABILITY_BLOCKED",
+    "missing_executor_owner_upload_fallback": false,
+    "historical_ih_and_q_results_immutable": true
+  }
+}

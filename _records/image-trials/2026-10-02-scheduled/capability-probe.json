@@ -1,0 +1,39 @@
+{
+  "schema_version": "scheduled-image-host-capability-probe-v1",
+  "observed_at": "2026-10-02T06:21:34.576Z",
+  "requested_host_id": "chatgpt-automation:6abeba31fe28819184544abf70874a80",
+  "evidence_type": "live_capability_probe",
+  "qualification_images_generated": 0,
+  "owner_interventions": [],
+  "account_billing_observed": false,
+  "probes": {
+    "native_image_generation": {
+      "available": true,
+      "permitted_under_authorized_cost_boundary": false,
+      "reason": "The native image tool is exposed only from the current Codex Work execution surface. The run authorization explicitly prohibits Work and Codex usage."
+    },
+    "immediate_exact_byte_capture": {
+      "available_if_generation_were_permitted": true,
+      "executed": false,
+      "reason": "No image generation was called because its host surface is outside the authorized boundary."
+    },
+    "saved_image_visual_inspection": {
+      "available_if_generation_were_permitted": true,
+      "executed": false,
+      "reason": "There were no new saved qualification pixels to inspect."
+    },
+    "git_binary_delivery": {
+      "available": true,
+      "method": "Git Data create_blob with base64, then content-addressed tree binding",
+      "executed_for_images": false,
+      "reason": "No authorized image bytes were generated."
+    },
+    "scheduler_invocation_proof": {
+      "available": false,
+      "observation_path": "_records/image-trials/2026-10-02-scheduled/scheduler-observation.json",
+      "reason": "The exact automation object was observed with last_run_time null. The current invocation therefore cannot satisfy the released validator's actual scheduled-invocation binding."
+    }
+  },
+  "result": "CAPABILITY_BLOCKED_POLICY_BOUNDARY",
+  "production_start_authorized": false
+}

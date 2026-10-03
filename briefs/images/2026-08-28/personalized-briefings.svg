@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#0d2238"/>
+<text x="60" y="72" fill="#f5fbff" font-family="Arial" font-size="46" font-weight="700">ONE REPORT → MANY BRIEFINGS</text>
+<rect x="70" y="165" width="300" height="315" rx="25" fill="#fff"/>
+<path d="M125 235h190M125 300h150M125 365h185M125 430h120" stroke="#80b9d8" stroke-width="18" stroke-linecap="round"/>
+<circle cx="585" cy="320" r="110" fill="#ffb703"/><path d="M540 275h90v90h-90z" fill="none" stroke="#0d2238" stroke-width="14"/><path d="M520 320h130" stroke="#0d2238" stroke-width="14"/>
+<path d="M380 320h85M695 265h105M695 320h105M695 375h105" stroke="#f5fbff" stroke-width="12"/>
+<g fill="#fff"><rect x="830" y="145" width="295" height="105" rx="20"/><rect x="830" y="270" width="295" height="105" rx="20"/><rect x="830" y="395" width="295" height="105" rx="20"/></g>
+<g fill="#26c6da"><circle cx="885" cy="197" r="28"/><circle cx="885" cy="322" r="28"/><circle cx="885" cy="447" r="28"/></g>
+<text x="935" y="208" fill="#0d2238" font-family="Arial" font-size="27" font-weight="700">REP A</text><text x="935" y="333" fill="#0d2238" font-family="Arial" font-size="27" font-weight="700">REP B</text><text x="935" y="458" fill="#0d2238" font-family="Arial" font-size="27" font-weight="700">REP C</text>
+<text x="60" y="570" fill="#26c6da" font-family="Arial" font-size="29" font-weight="700">PILOT • FEEDBACK • EXPLICIT RULES • REPEAT</text>
+</svg>

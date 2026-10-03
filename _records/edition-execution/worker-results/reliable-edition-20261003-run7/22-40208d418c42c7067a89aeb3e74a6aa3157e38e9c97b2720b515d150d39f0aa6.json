@@ -1,0 +1,46 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "40208d418c42c7067a89aeb3e74a6aa3157e38e9c97b2720b515d150d39f0aa6",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "branch": "reliable-edition/dab-edition-2026-10-03-run7",
+  "task_id": "22",
+  "request_writer_generation": 37,
+  "writer_generation": 38,
+  "stale_request_generation_rejected_as_mutation_authority": true,
+  "status": "passed",
+  "completed_at": "2026-10-03T14:25:03.000Z",
+  "publication_pr": {
+    "number": 400,
+    "url": "https://github.com/gttome/Daily-AI-Brief/pull/400",
+    "base": "main",
+    "base_sha": "4f683a615c8fd5b219779fd5b3e96c644410b211",
+    "head_branch": "reliable-edition/dab-edition-2026-10-03-run7",
+    "observed_head_sha": "bb783c032c22c612071bc6193c2f02883b2f81c8",
+    "reused_existing_matching_pr": true,
+    "duplicate_pr_created": false,
+    "mergeability_repair": {
+      "result": "PASS",
+      "reason": "The run branch carried a divergent projection of the canonical active-production pointer, creating the only merge conflict with protected main.",
+      "action": "Restored data/operations/active-production-run.json byte-for-byte from protected main; no publication content, accepted image, Task 18 page or Task 19 seal changed.",
+      "protected_main_sha": "4f683a615c8fd5b219779fd5b3e96c644410b211",
+      "receipt": "_records/publication/2026-10-03-run7/task22-pr-mergeability-repair.json"
+    }
+  },
+  "qualification_basis": {
+    "task20_result": "FOCUSED_REPAIR_REQUIRED",
+    "task20_receipt": "_records/qualification/2026-10-03-run7/result.json",
+    "task21_result": "PASS",
+    "task21_receipt": "_records/qualification/2026-10-03-run7/task21-focused-repair.json",
+    "protected_ci_required_next": true
+  },
+  "preserved": {
+    "completed_tasks": "00-21",
+    "accepted_locked_images": 6,
+    "task18_reader_pages": true,
+    "task19_seal": true,
+    "production_content_mutations": 0,
+    "image_mutations": 0
+  },
+  "task_outcome": "Done"
+}

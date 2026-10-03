@@ -1,0 +1,19 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "execution_key": "2026-10-03-run7",
+  "task_id": "16",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T11:48:25.330Z",
+  "writer_generation": 24,
+  "owner_id": "scheduled-consumer:6abeb9a2b8a88191949dc420d5e10feb:reliable-edition-20261003-run7:task-16:generation-24:invocation-20261003T114825Z",
+  "reason_code": "SCHEDULED_IMAGE_CONSUMER_STARTED",
+  "operation": "Consume the exact queued m08 native image request under refreshed task-specific authority.",
+  "proof": {
+    "request": "_records/edition-execution/worker-requests/reliable-edition-20261003-run7/16-941cc217a58adfea82d843a4db34eca805dafa33af2a2f22c8132d541983ea41.json",
+    "host_registration_main_sha": "8ee536e7a939fa61ef4428f9a0f43007aacc667d",
+    "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb"
+  }
+}

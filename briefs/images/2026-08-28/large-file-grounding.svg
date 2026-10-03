@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f2f7ff"/>
+<text x="60" y="72" fill="#16324f" font-family="Arial" font-size="46" font-weight="700">GROUND AGENTS WITH LARGER FILES</text>
+<g fill="#fff" stroke="#277da1" stroke-width="6"><path d="M75 160h220l70 70v230H75z"/><path d="M165 125h220l70 70v230H165z"/><path d="M255 165h220l70 70v230H255z"/></g>
+<text x="315" y="330" fill="#277da1" font-family="Arial" font-size="58" font-weight="700">512 MB</text>
+<path d="M575 175h270l-75 155v155H650V330z" fill="#f9c74f" stroke="#9b6b00" stroke-width="8"/>
+<path d="M845 330h90" stroke="#16324f" stroke-width="16"/><path d="M935 330l-35-25v50z" fill="#16324f"/>
+<circle cx="1040" cy="330" r="105" fill="#43aa8b"/>
+<path d="M995 325h90M1040 280v90" stroke="#fff" stroke-width="16" stroke-linecap="round"/>
+<text x="912" y="485" fill="#16324f" font-family="Arial" font-size="29" font-weight="700">GROUNDED AGENT</text>
+<text x="60" y="570" fill="#277da1" font-family="Arial" font-size="29" font-weight="700">FEWER SPLITS — BUT SOURCE QUALITY AND RETRIEVAL STILL MATTER</text>
+</svg>

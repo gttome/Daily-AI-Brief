@@ -1,0 +1,5 @@
+{
+  "expected_failure": "validated publication event must include all five compatibility outputs",
+  "fixture": "publication-event.valid.json",
+  "mutation": {"path": "/file_set/derived_outputs", "value": ["briefs/2026-09-07.md", "latest.md", "index.md", "archive.md"]}
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "active-production-run-v1",
+  "active": false,
+  "terminal": true,
+  "edition_id": "dab-edition-2026-10-03",
+  "execution_id": "reliable-edition-20261003-run7",
+  "execution_key": "2026-10-03-run7",
+  "branch": "reliable-edition/dab-edition-2026-10-03-run7",
+  "updated_at": "2026-10-03T15:42:26.757Z",
+  "start_scope": "full_production",
+  "image_tasks_authorized": true,
+  "publication_authorized": true,
+  "deferred_blocker": null,
+  "current_task": "29",
+  "current_task_state": "Done",
+  "note": "PUBLIC_CLOSED; Task 29 PASS through protected finalization. Admission for a future run is separate."
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "pre-next-run-kanban-proof-v1",
+  "rehearsal_id": "pre-next-run-five-change-20261002-r1",
+  "mode": "NON_PRODUCTION",
+  "recorded_at": "2026-10-02T22:15:33Z",
+  "result": "PASS",
+  "errors": [],
+  "columns": [
+    "Backlog",
+    "WIP",
+    "Done"
+  ],
+  "current_column_present": false,
+  "active_task_maps_to": "WIP",
+  "task_count": 30,
+  "required_tasks": "00-29",
+  "authoritative_timing_source": "append_only_transition_events",
+  "missing_timestamps_policy": "never_infer_use_unavailable",
+  "every_task_duration_present": true,
+  "missing_duration_literal": "unavailable",
+  "sample_task_durations": {
+    "11": "965.762s",
+    "12": "unavailable",
+    "00": "1s"
+  },
+  "total_brief_elapsed": "966.762s",
+  "total_brief_elapsed_present": true,
+  "freshness_verified": true,
+  "failing_fixture_coverage": [
+    "wrong column order",
+    "Current column",
+    "missing task duration",
+    "missing total Brief elapsed",
+    "stale projection"
+  ],
+  "source": {
+    "protected_ci_run_id": 37071199146,
+    "protected_ci_conclusion": "success",
+    "tested_head_sha": "f16aaae581355360996f0dd99a2a8ea3b60a0578",
+    "actual_scheduler_result": "_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-consumer-result.json",
+    "actual_writer_release": "_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-writer-release.json",
+    "verifier": "_generator/lib/pre-next-run-rehearsal.mjs#buildAndVerifySyntheticKanban",
+    "regression_test": "actual scheduled rehearsal evidence proves consumption, stale-generation rejection, zero mutation, handoff contract and Kanban"
+  }
+}

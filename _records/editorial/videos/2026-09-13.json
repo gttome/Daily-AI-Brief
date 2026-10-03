@@ -1,0 +1,39 @@
+{
+  "brief_date": "2026-09-13",
+  "searched_at": "2026-09-13",
+  "policy": "docs/operations/publisher-runbook.md",
+  "slots": {
+    "general": {
+      "status": "included",
+      "title": "Build Classroom Sites with ChatGPT for Teachers",
+      "channel": "OpenAI Academy",
+      "upload_date": "2026-09-11",
+      "runtime_seconds": 316,
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/build-classroom-sites-with-chatgpt-for-teachers",
+      "duration_tier": "short",
+      "queries": ["OpenAI Academy latest videos September 2026", "AI workflow video September 12 2026 under 10 minutes", "ChatGPT interactive teaching artifact short video"],
+      "verification": "OpenAI Academy displayed 5:16 and September 11, 2026 on its official catalog; 5:16 equals 316 seconds.",
+      "selection_rationale": "Fresh official demonstration, unused in the archive, directly tied to the edition’s interactive-artifact theme, and below ten minutes.",
+      "short_search_evidence": ["The selected item independently satisfies the preferred short tier at 5:16."]
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Schedule Tasks with ChatGPT for Teachers",
+      "channel": "OpenAI Academy",
+      "upload_date": "2026-09-11",
+      "runtime_seconds": 120,
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/schedule-tasks-with-chatgpt-for-teachers",
+      "duration_tier": "short",
+      "queries": ["OpenAI Academy scheduled tasks teachers September 2026", "non-technical AI agent workflow video under 10 minutes", "AI automation tutorial September 2026 short"],
+      "verification": "OpenAI Academy displayed 2:00 and September 11, 2026 on its official catalog; 2:00 equals 120 seconds.",
+      "selection_rationale": "A current two-minute official example of a useful recurring workflow for non-technical educators, with exact runtime evidence.",
+      "short_search_evidence": ["The selected item independently satisfies the preferred short tier at exactly 2:00."]
+    }
+  },
+  "rejections": [
+    {"url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-plugins-with-chatgpt-for-teachers", "reason": "Verified at 8:46 but rejected because the scheduled-task video had a clearer non-technical agent connection."},
+    {"url": "https://www.youtube.com/watch?v=CkmtS8adzjM", "reason": "Rejected because the displayed runtime was 34:41, above the 20-minute maximum."},
+    {"url": "https://www.youtube.com/watch?v=4cxifWUFH4E", "reason": "Rejected because exact runtime and upload metadata were not independently verified."}
+  ],
+  "included_count": 2
+}

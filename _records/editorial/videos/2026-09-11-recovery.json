@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-09-11T16:54:34.646700+00:00",
+  "edition": "2026-09-11",
+  "policy": "short_first_10m_fallback_20m",
+  "channels_checked": [
+    "https://www.youtube.com/@OpenAI/videos",
+    "https://www.youtube.com/@anthropic-ai/videos",
+    "https://www.youtube.com/@IBMTechnology/videos",
+    "https://www.youtube.com/@MicrosoftMechanics/videos",
+    "https://www.youtube.com/@GoogleWorkspace/videos",
+    "https://www.youtube.com/@github/videos",
+    "https://www.youtube.com/@LangChain/videos",
+    "https://www.youtube.com/@LlamaIndex/videos"
+  ],
+  "candidate_links_checked": [
+    "https://www.ibm.com/think/1_fet9mbr0",
+    "https://www.ibm.com/think/videos"
+  ],
+  "verified_eligible_candidates": 0,
+  "status": "metadata_inaccessible",
+  "outcome": "Both slots remain visibly empty. No runtime or upload date inferred.",
+  "search_queries": [
+    "site.youtube.com/watch September 2026 Agent Skills tutorial",
+    "site.youtube.com/watch 2026-09 Microsoft Mechanics AI",
+    "site.youtube.com/watch September 2026 OpenAI agents"
+  ]
+}

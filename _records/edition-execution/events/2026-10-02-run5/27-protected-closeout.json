@@ -1,0 +1,14 @@
+{
+  "task_id": "27",
+  "from": "Backlog",
+  "to": "Done",
+  "at": "2026-10-02T19:03:40.890Z",
+  "timestamp_scope": "evidence_reconciliation_observed",
+  "proof": {
+    "production_sha": "a15345c35e52388f1a6fbdc7de994e8637c5b24c",
+    "completion": "_records/publication/2026-10-02/completion.json",
+    "validation": "_records/publication/2026-10-02/delta-validation.json",
+    "pr_number": 364,
+    "ci_run_id": 37044705745
+  }
+}

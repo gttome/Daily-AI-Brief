@@ -1,0 +1,12 @@
+{
+  "task_id": "03",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-02T12:52:55.445Z",
+  "reason": "Begin fresh bounded article discovery for October 2 using the frozen Run 5 cutoff and article-24-72-168-v1 policy.",
+  "proof": {
+    "research_cutoff": "2026-10-02T12:42:37Z",
+    "candidate_limit": 20,
+    "deep_review_target": 9
+  }
+}

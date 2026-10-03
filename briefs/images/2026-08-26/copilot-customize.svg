@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f6f3ff"/><circle cx="600" cy="330" r="118" fill="#5b36d7"/><path d="M546 330c30-70 78-70 108 0-30 70-78 70-108 0z" fill="none" stroke="#fff" stroke-width="13"/>
+<g stroke="#8c77df" stroke-width="6"><path d="M498 270L310 180"/><path d="M702 270l188-90"/><path d="M486 390l-188 92"/><path d="M714 390l188 92"/></g>
+<g font-family="Arial,sans-serif" font-weight="700" font-size="28" text-anchor="middle"><rect x="165" y="115" width="250" height="105" rx="52" fill="#d9d0ff"/><text x="290" y="180" fill="#2f1d72">MCP servers</text><rect x="785" y="115" width="250" height="105" rx="20" fill="#ffe09e"/><text x="910" y="180" fill="#5a3a00">Plugins</text><path d="M175 432h230l55 52-55 52H175z" fill="#bdebdc"/><text x="310" y="493" fill="#174c3b">Skills</text><path d="M820 428h180l50 54-50 54H820l-50-54z" fill="#bfe4ff"/><text x="910" y="493" fill="#17456a">Canvases</text></g>
+<text x="54" y="70" fill="#251a55" font-family="Arial,sans-serif" font-size="40" font-weight="700">One discovery hub, four customization paths</text>
+</svg>

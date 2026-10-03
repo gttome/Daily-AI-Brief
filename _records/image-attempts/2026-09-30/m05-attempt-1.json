@@ -1,0 +1,88 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "request_sha256": "941bc346d4c28fabc73eefbe2b99cefffcf90ac45c68e5a88890836e84333f83",
+  "story_id": "dab-story-2026-09-30-9d62316c",
+  "candidate_id": "m05",
+  "execution_mode": "production",
+  "evidence_type": "live",
+  "trigger": "scheduled",
+  "owner_interventions": [],
+  "runtime_context_isolation": "not_asserted",
+  "attempt": 1,
+  "fallback_used": false,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false,
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "call_id": "imagegen-exec-c91b771f-bd16-44bf-bd99-4914b8b7c28b",
+    "artifact_id": "generated_images/exec-c91b771f-bd16-44bf-bd99-4914b8b7c28b.png",
+    "generated_at": "2026-10-01T06:35:00.628Z",
+    "raw_sha256": "8be0f54c35af5e44ef8fa85757819bd1cf5346d3059a84b3131fb9c50fa0c56f",
+    "raw_capture": {
+      "path": "_records/image-attempts/2026-09-30/m05-attempt-1.png",
+      "sha256": "8be0f54c35af5e44ef8fa85757819bd1cf5346d3059a84b3131fb9c50fa0c56f",
+      "git_blob_sha": "2123b6924d2ba168676ca271c6ac8fee50623813",
+      "commit_sha": "e046be50a1ce31a62f7111f6d0adf9f8a52e02ab",
+      "content_address_verified": true,
+      "read_back_verified": false,
+      "verification_mode": "git_content_address"
+    },
+    "evidence_type": "live",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "review": {
+    "mode": "automated",
+    "phase": "after_generation",
+    "call_id": "view-image-original-exec-c91b771f-bd16-44bf-bd99-4914b8b7c28b",
+    "reviewed_at": "2026-10-01T06:35:24.106Z",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "asset_sha256": "8be0f54c35af5e44ef8fa85757819bd1cf5346d3059a84b3131fb9c50fa0c56f",
+    "visible_text_result": "pass_exact_allowlist",
+    "allowed_text": [
+      "Inbound Question",
+      "Buying Agent",
+      "Quick Answer",
+      "Purchase",
+      "Human Handoff",
+      "Context Packet",
+      "Escalation Reason",
+      "Weekly Improvement"
+    ],
+    "unexpected_text": [],
+    "dimensions": {
+      "width": 1774,
+      "height": 887,
+      "minimum_pass": true
+    },
+    "assessment": "The illustration makes the three buying-agent outcomes and the context-rich handoff explicit, then closes the escalation-reason feedback loop into weekly improvement. All eight allowlisted labels are readable without extra copy, people or unsupported metrics.",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m05-1.png",
+    "sha256": "8be0f54c35af5e44ef8fa85757819bd1cf5346d3059a84b3131fb9c50fa0c56f",
+    "git_blob_sha": "2123b6924d2ba168676ca271c6ac8fee50623813",
+    "commit_sha": "e046be50a1ce31a62f7111f6d0adf9f8a52e02ab",
+    "persisted_at": "2026-10-01T06:35:24.106Z",
+    "persisted_at_scope": "post_review_content_address_verification_time",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address"
+  },
+  "status": "accepted_locked"
+}

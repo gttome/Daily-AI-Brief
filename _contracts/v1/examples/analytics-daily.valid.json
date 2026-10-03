@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-07",
+  "timezone": "America/Chicago",
+  "aggregation_window": {"start": "2026-09-07T05:00:00Z", "end": "2026-09-08T05:00:00Z"},
+  "privacy": {"contains_personal_identifiers": false, "small_count_suppression": true, "suppression_threshold": 5, "retention_days": 400},
+  "site_totals": {"views": 120, "source_clicks": 22, "share_initiations": 4, "worth_watching_clicks": 0, "retention_30s": 51},
+  "stories": [
+    {"story_id": "dab-story-2026-09-07-00000001", "metrics": {"views": 25, "source_clicks": 7, "share_initiations": null, "worth_watching_clicks": 0, "retention_30s": 12}}
+  ],
+  "collection_status": "complete",
+  "limitations": ["Small story-level counts are suppressed."]
+}

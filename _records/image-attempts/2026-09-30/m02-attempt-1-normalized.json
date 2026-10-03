@@ -1,0 +1,105 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "request_sha256": "f10c30b2d251d5bf6eccc15e0f253e2b54d54c027fd806c6e967fa164b319545",
+  "story_id": "dab-story-2026-09-30-77eb0ae9",
+  "candidate_id": "m02",
+  "execution_mode": "production",
+  "evidence_type": "live",
+  "trigger": "scheduled",
+  "owner_interventions": [],
+  "runtime_context_isolation": "not_asserted",
+  "attempt": 1,
+  "fallback_used": false,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false,
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "call_id": "imagegen-exec-1d98f007-8277-4c02-8262-27c70c37d7e6",
+    "artifact_id": "generated_images/exec-1d98f007-8277-4c02-8262-27c70c37d7e6.png",
+    "generated_at": "2026-10-01T06:28:19.186Z",
+    "raw_sha256": "6bc3d8af5a6bf4b9265dbf875dc2374b748854cbea7ddd1a7d5031ff3db34f29",
+    "raw_capture": {
+      "path": "_records/image-attempts/2026-09-30/m02-attempt-1.png",
+      "sha256": "6bc3d8af5a6bf4b9265dbf875dc2374b748854cbea7ddd1a7d5031ff3db34f29",
+      "git_blob_sha": "3a4ed737272d47eaea6e3d98ee65f2daa22cc50e",
+      "commit_sha": "e47ffd29b73488c894be8e15b0e2dec27fee85c8",
+      "content_address_verified": true,
+      "read_back_verified": false,
+      "verification_mode": "git_content_address"
+    },
+    "evidence_type": "live",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "review": {
+    "mode": "automated",
+    "phase": "after_generation",
+    "call_id": "view-image-normalized-contact-sheet-2026-09-30",
+    "reviewed_at": "2026-10-01T06:56:50.953Z",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "asset_sha256": "64fbf099a406e9de3db620edb64090da384a8f319ec4c8ced17fb149f5e5112a",
+    "visible_text_result": "pass_exact_allowlist",
+    "allowed_text": [
+      "Agent Sandbox",
+      "Policy Supervisor",
+      "Network Rules",
+      "Credential Vault",
+      "Approved Services",
+      "Allow or Block",
+      "Policy Log"
+    ],
+    "unexpected_text": [],
+    "dimensions": {
+      "width": 1200,
+      "height": 630,
+      "minimum_pass": true,
+      "production_exact_pass": true
+    },
+    "assessment": "Exact 1200×630 production canvas preserves the complete layered sandbox architecture, all seven allowlisted labels, and the accepted story-specific control boundaries without distortion or semantic change.",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m02-2.png",
+    "sha256": "64fbf099a406e9de3db620edb64090da384a8f319ec4c8ced17fb149f5e5112a",
+    "git_blob_sha": "5779946c9b0dacb9eebd1d3a2f426700e0add2bf",
+    "commit_sha": "b9f603a3a5a12bc8886fb9c374ae0c1132c992bf",
+    "persisted_at": "2026-10-01T06:56:53.886Z",
+    "persisted_at_scope": "post_review_content_address_verification_time",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address"
+  },
+  "status": "accepted_locked",
+  "normalization": {
+    "source_asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m02-1.png",
+    "source_sha256": "6bc3d8af5a6bf4b9265dbf875dc2374b748854cbea7ddd1a7d5031ff3db34f29",
+    "source_git_blob_sha": "3a4ed737272d47eaea6e3d98ee65f2daa22cc50e",
+    "source_dimensions": {
+      "width": 1536,
+      "height": 1024
+    },
+    "production_dimensions": {
+      "width": 1200,
+      "height": 630
+    },
+    "processing": "Lanczos proportional fit plus white canvas extent; no regeneration or semantic edit",
+    "normalized_at": "2026-10-01T06:56:50.953Z",
+    "source_preserved": true,
+    "non_overwriting_path": true
+  }
+}

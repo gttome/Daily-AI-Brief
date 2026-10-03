@@ -1,0 +1,79 @@
+{
+  "schema_version": "2.0.0",
+  "projection_version": "publication-status-v2",
+  "edition_date": "2026-10-03",
+  "edition_id": "dab-edition-2026-10-03",
+  "lifecycle_stage": "COMPLETED",
+  "lifecycle_state": "COMPLETED",
+  "operator_state": "COMPLETED",
+  "status": "COMPLETED",
+  "terminal_outcome": "COMPLETED",
+  "current_blocker": null,
+  "earliest_failed_stage": null,
+  "last_successful_stage": "COMPLETED",
+  "preserved_completed_work": [
+    "PLANNED",
+    "PREFLIGHT_READY",
+    "EDITORIAL_READY",
+    "CANDIDATE_READY",
+    "PR_OPEN",
+    "CI_PASS",
+    "MERGED",
+    "PAGES_DEPLOYED",
+    "LIVE_VERIFIED",
+    "COMPLETED"
+  ],
+  "next_automatic_recovery_step": "Synchronize Command Center from canonical status.",
+  "next_legal_recovery_action": "Synchronize Command Center from canonical status.",
+  "operator_intervention_required": null,
+  "baseline_sha": "4f683a615c8fd5b219779fd5b3e96c644410b211",
+  "candidate_sha": "ce34a0ad3e43cb7efd020d12baf22e49ea08a222",
+  "production_sha": "50cbe6f0719ff67088e65340f4322e64f582ee9e",
+  "publication_merge_sha": "50cbe6f0719ff67088e65340f4322e64f582ee9e",
+  "pr_number": 400,
+  "ci_run_id": 37132672587,
+  "ci": {
+    "state": "passed",
+    "run_id": 37132672587
+  },
+  "pages_deployment_id": 37132735290,
+  "deployed_sha": "50cbe6f0719ff67088e65340f4322e64f582ee9e",
+  "pages": {
+    "state": "succeeded",
+    "run_id": 37132735290,
+    "deployed_sha": "50cbe6f0719ff67088e65340f4322e64f582ee9e"
+  },
+  "live_verification_timestamp": "2026-10-03T15:42:25.281Z",
+  "live_reader": {
+    "state": "verified",
+    "verified_at": "2026-10-03T15:42:25.281Z"
+  },
+  "completion_path": "_records/publication/2026-10-03/completion.json",
+  "completion": {
+    "state": "verified",
+    "path": "_records/publication/2026-10-03/completion.json"
+  },
+  "command_center_sync": "pending",
+  "command_center": {
+    "state": "pending",
+    "result": "pending",
+    "last_synced_at": null,
+    "source_status_sha256": null,
+    "stale": null
+  },
+  "last_authoritative_state_transition": {
+    "stage": "COMPLETED",
+    "at": "2026-10-03T15:42:25.281Z"
+  },
+  "source_evidence": {
+    "lifecycle_path": "_records/publication/2026-10-03/lifecycle.json",
+    "completion_path": "_records/publication/2026-10-03/completion.json",
+    "current_edition_path": "data/operations/current-edition.json",
+    "run_state_path": "_records/run-state/2026-10-03.json"
+  },
+  "consistency": {
+    "state": "pass",
+    "errors": []
+  },
+  "updated_at": "2026-10-03T15:42:25.281Z"
+}

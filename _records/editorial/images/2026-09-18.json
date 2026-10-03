@@ -1,0 +1,50 @@
+{
+  "dab-candidate-2026-09-18-01": {
+    "path": "briefs/images/2026-09-18/01-frontier-lab-measurements.png",
+    "alt": "Conceptual textbook illustration of AI-driven research, agent oversight, and compute allocation as three measurement lenses.",
+    "width": 1200,
+    "height": 630,
+    "kind": "editorial_explainer",
+    "cache_key": "6bff2de1e8782d82"
+  },
+  "dab-candidate-2026-09-18-02": {
+    "path": "briefs/images/2026-09-18/02-cli-telemetry.png",
+    "alt": "Textbook diagram of Copilot CLI skills, agents, MCP servers, commands, and plugins flowing into usage and distinct-use telemetry with privacy grouping.",
+    "width": 1200,
+    "height": 630,
+    "kind": "editorial_explainer",
+    "cache_key": "e69696eeaa07df9f"
+  },
+  "dab-candidate-2026-09-18-03": {
+    "path": "briefs/images/2026-09-18/03-workflow-transformation.png",
+    "alt": "Conceptual before-and-after illustration of fragmented AI tool adoption becoming a redesigned workflow with shared data and outcome measurement.",
+    "width": 1200,
+    "height": 630,
+    "kind": "editorial_explainer",
+    "cache_key": "9141c39f4a9a0665"
+  },
+  "dab-candidate-2026-09-18-04": {
+    "path": "briefs/images/2026-09-18/04-governed-building.png",
+    "alt": "Textbook diagram showing natural-language app and agent building passing through Salesforce data, metadata, security, and governance controls before deployment.",
+    "width": 1200,
+    "height": 630,
+    "kind": "editorial_explainer",
+    "cache_key": "f97e426828ea5af6"
+  },
+  "dab-candidate-2026-09-18-05": {
+    "path": "briefs/images/2026-09-18/05-rovo-skills.png",
+    "alt": "Textbook workflow showing a repeated team process converted into a reviewed Rovo custom skill and reused across shared conversations with memory and agent handoffs.",
+    "width": 1200,
+    "height": 630,
+    "kind": "editorial_explainer",
+    "cache_key": "91a1b2c3efa2c3c2"
+  },
+  "dab-candidate-2026-09-18-06": {
+    "path": "briefs/images/2026-09-18/06-household-agent-boundaries.png",
+    "alt": "Textbook architecture diagram showing household members selectively sharing data with a distinct CC agent identity, separate memory scopes, permission gates, and an isolated cloud computer.",
+    "width": 1200,
+    "height": 630,
+    "kind": "editorial_explainer",
+    "cache_key": "5b4ff0fd59a81b50"
+  }
+}

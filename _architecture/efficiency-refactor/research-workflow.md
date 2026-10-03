@@ -1,0 +1,17 @@
+# Phase 1 research workflow
+
+The current publication and CI gates remain mandatory. These tools assist Work; they do not infer verified claims or choose six articles without editorial review.
+
+1. Run normal catalog discovery. HTML links carry unknown dates as null; RSS/Atom entries supply original publication dates when present. An Atom updated timestamp is never substituted for publication time. Discovery records distinguish catalog retrieval from full-text reading. Optional DAB_RETRIEVAL_CACHE points to a private local directory.
+2. Prepare candidate metadata with candidate_id, headline, publisher, canonical_url, published_at, focus and source_reliability. Use the existing three focus keys. Run `node _tools/research.mjs plan --file candidates.json --now <ISO-time> --out plan.json`. Unknown date/category/reliability remains in needs_review. The freshness window defaults to 120 hours; pass the actual approved edition window with --max-age-hours. This default does not authorize a freshness-policy change.
+3. Deep-read serious candidates using `node _tools/research.mjs fetch --url <primary-url> --cache <private-directory> --out source.json`. Cache validity is bounded to one hour, keyed separately for metadata and full text, with content hashes. Use --force true for an explicit fresh probe. Failed retrieval never falls back silently to cached success.
+4. Supply an explicit review: status reviewed, reviewer, reviewed_at, source_content_hash, claims with exact excerpts, novelty_status, confidence, and Agent Skills relevance. The packet input combines candidate, source and review. Run `node _tools/research.mjs packet --file reviewed-input.json --out packet.json`. A packet requires traceable excerpts and matching source bytes. Source excerpts corroborate the reviewed claim; their existence is not automatic factual verification.
+5. A reviewed manifest can run `node _tools/research.mjs run --file manifest.json --now <ISO-time> --cache <private-directory> --out research-result.json`. It balances categories, targets 12 deep candidates, and keeps retrieving beyond the target until all three categories have three strong reviewed candidates and Agent Skills coverage, or the pool is exhausted. Stale reviews fail when source content changes. Candidates still needing review are explicit.
+6. Selection, writing and semantic QA consume packet files, reopening cached source text for claims requiring more detail. Retain the scored 20–30 candidate pool, all novelty requirements, exact six-story 2/2/2 allocation, media policy and existing publication QA.
+7. Save research-result telemetry with the attempt evidence. Research-stage time and counts do not stand for complete publication time. Stage output files use exclusive creation to prevent overwriting evidence.
+
+Raw full text, caches and private usage belong outside public tracked content. Cache and temporary source files are not suitable for public publication.
+
+Validation: `node --test _generator/test/*.test.mjs`, `node _tools/validate-contracts.mjs`, repository validation and integration-check. `node _tools/research-shadow.mjs` performs only a labeled archive replay; no publication or primary-source network request is made.
+
+Known limits: No optimized production edition or token/allowance comparison exists yet. The archive replay tests reuse mechanics, not primary-evidence completeness. The callback-based editorial boundary requires Work to supply genuine reviews; the tool does not replace that judgment.

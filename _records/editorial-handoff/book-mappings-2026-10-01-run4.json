@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.1.0",
+  "edition_id": "dab-edition-2026-10-01",
+  "run_number": 4,
+  "evaluated_at": "2026-10-01T20:09:27Z",
+  "policy": "relevance-first-all-four-books-reviewed-v1",
+  "reviewed_books": [
+    {
+      "book": "Reliable Generative AI",
+      "status": "reviewed",
+      "source": "verified public table of contents"
+    },
+    {
+      "book": "Reliable Generative AI Context Engineering",
+      "status": "reviewed",
+      "source": "verified public table of contents"
+    },
+    {
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "status": "reviewed",
+      "source": "verified public sample/table of contents"
+    },
+    {
+      "book": "Generative AI Prompt Engineering Learning Ecosystem",
+      "status": "reviewed",
+      "source": "verified public sample"
+    }
+  ],
+  "selected_mappings": [
+    {
+      "candidate_id": "m03",
+      "book": "Reliable Generative AI Context Engineering",
+      "locator": "Chapter 5",
+      "section_title": "Cross-Functional Governance and Launch Readiness",
+      "reason": "The story is about governing model access across distinct operating environments and identity boundaries."
+    },
+    {
+      "candidate_id": "m01",
+      "book": "Reliable Generative AI",
+      "locator": "Chapter 4, section 4.1.2",
+      "section_title": "Managing Expectations and Calibrating Trust",
+      "reason": "A staged frontier-model release is best read through calibrated trust, bounded claims and progressive access rather than headline benchmarks alone."
+    },
+    {
+      "candidate_id": "m04",
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "locator": "Chapter 9, p. 477",
+      "section_title": "Evaluation and Challenges",
+      "reason": "The workflow links generated content to explicit selection and measurement, making evaluation part of the operating loop."
+    },
+    {
+      "candidate_id": "m05",
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "locator": "Chapter 7, p. 403",
+      "section_title": "Pattern Selection Framework",
+      "reason": "Organization-specific moderation requires choosing prompting/adaptation patterns that fit the actual policy boundary rather than a generic template."
+    },
+    {
+      "candidate_id": "m08",
+      "book": "Generative AI Prompt Engineering Learning Ecosystem",
+      "locator": "Five Generative AI Prompt Companion Users, sample PDF p. 5",
+      "section_title": "Map Real Problems to Practical Prompt Strategies",
+      "reason": "Reusable business Skills turn recurring real-world problems into maintained instruction packages for nontechnical users."
+    },
+    {
+      "candidate_id": "m07",
+      "book": "Reliable Generative AI Context Engineering",
+      "locator": "Chapter 3, Execution",
+      "section_title": "Dynamic Facts and Current-State Control",
+      "reason": "Always-on agents need current-state context and controlled updates as responsibilities continue over time."
+    }
+  ],
+  "representation": {
+    "Reliable Generative AI": 1,
+    "Reliable Generative AI Context Engineering": 2,
+    "Generative AI Professional Prompt Engineering Guide": 2,
+    "Generative AI Prompt Engineering Learning Ecosystem": 1
+  },
+  "invariant": "All four books are reviewed for relevance before mappings are selected. A book is not forced onto an item when no direct mechanism, topic, practical lesson or reader value is supported."
+}

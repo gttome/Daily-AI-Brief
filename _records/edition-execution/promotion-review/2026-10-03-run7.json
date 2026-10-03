@@ -1,0 +1,35 @@
+{
+  "schema_version": "run-promotion-review-v2",
+  "edition_id": "dab-edition-2026-10-03",
+  "execution_id": "reliable-edition-20261003-run7",
+  "run_number": 7,
+  "terminal_state": "PUBLIC_CLOSED",
+  "reviewed_at": "2026-10-03T15:42:26.757Z",
+  "ledger_digest": "sha256:8b46d898f0a8d1fc82823d1fe97920fc7d869fa78e1591fc15a1cddcb6584d48",
+  "timing_comparison": {
+    "current": "_records/edition-execution/timing/2026-10-03-run7.json",
+    "prior_comparable_measurement": null,
+    "reason": "No missing or non-comparable duration is inferred."
+  },
+  "keep": [
+    "All accepted artifacts and completed upstream tasks",
+    "Frozen exact-SHA publication candidate"
+  ],
+  "fix": [
+    "DAB-OPS-20261001-017",
+    "DAB-OPS-20261002-016",
+    "DAB-OPS-20261003-001",
+    "DAB-OPS-20261003-002",
+    "DAB-OPS-20261003-003",
+    "DAB-OPS-20261003-004",
+    "DAB-OPS-20261003-005"
+  ],
+  "simplify": [
+    "Advance eligible operations immediately; recover only the failed operation"
+  ],
+  "validate_next": [
+    "Read the full cumulative ledger and pass fresh unattended-host admission before the next run"
+  ],
+  "revise_living_plan": true,
+  "task29_owned": true
+}

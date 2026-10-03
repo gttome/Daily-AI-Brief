@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" rx="28" fill="#11202B"/>
+<text x="58" y="76" fill="#F6FAFC" font-family="Arial,sans-serif" font-size="38" font-weight="700">Agents prepare the case; people make the decision</text>
+<path d="M120 145 H470 L400 335 H190z" fill="#399E9A"/>
+<g fill="#DDF7F4"><rect x="165" y="185" width="115" height="55" rx="15"/><rect x="305" y="185" width="115" height="55" rx="15"/><rect x="225" y="260" width="130" height="45" rx="14"/></g>
+<path d="M295 335 v88" stroke="#7BE1D4" stroke-width="18"/>
+<rect x="175" y="423" width="240" height="100" rx="24" fill="#315A75"/>
+<text x="295" y="482" text-anchor="middle" fill="#EAF7FF" font-family="Arial,sans-serif" font-size="27" font-weight="700">EVIDENCE FILE</text>
+<path d="M470 470 H680" stroke="#FFB85A" stroke-width="16" stroke-linecap="round"/><path d="M645 438 l42 32-42 32" fill="none" stroke="#FFB85A" stroke-width="16"/>
+<circle cx="890" cy="320" r="155" fill="#F2D38A"/>
+<path d="M815 325 h150 M890 250 v150" stroke="#5B3A14" stroke-width="18" stroke-linecap="round"/>
+<rect x="750" y="470" width="280" height="70" rx="35" fill="#FFF8E6"/>
+<text x="890" y="515" text-anchor="middle" fill="#5B3A14" font-family="Arial,sans-serif" font-size="25" font-weight="700">HUMAN JUDGMENT</text>
+</svg>

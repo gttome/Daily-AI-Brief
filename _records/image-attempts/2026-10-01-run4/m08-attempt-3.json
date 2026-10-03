@@ -1,0 +1,33 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "edition_id": "dab-edition-2026-10-01",
+  "execution_id": "reliable-edition-20261001-run4",
+  "candidate_id": "m08",
+  "attempt": 3,
+  "fallback_used": false,
+  "worker_authority": {
+    "writer_generation": 1,
+    "request_key": "f38495c35061c05f174247adde0bbfa88973abef79e558d685f20919220e2f43"
+  },
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "gen_id": "e90b683e-7f43-408c-bc5e-c32587ce9b9d",
+    "native_sha256": "ab83841eaa7c04cdbfccbd1b39b32296995c40c09db463f00ff0cdffcf748e27",
+    "native_bytes": 2110536,
+    "native_dimensions": "1536x1024"
+  },
+  "precheck": {
+    "status": "REJECT",
+    "reason_code": "SUBJECT_MISMATCH",
+    "detail": "Generated a Run Supervisor architecture/status infographic instead of the sealed m08 reusable Perplexity Business Skill subject."
+  },
+  "persistence": {
+    "status": "not_attempted",
+    "reason": "failed subject precheck before transport"
+  },
+  "review_status": "precheck_rejected",
+  "status": "rejected",
+  "rejected_at": "2026-10-01T22:57:05.467713Z",
+  "recovery_action": "Generate m08 attempt 4 from the exact sealed Business Skill specification only: central Business Skill package with Required inputs, Instructions and Expected output; four recurring work lanes Finance, Marketing, Operations and Hiring; maintenance/version loop; no dashboard/status architecture content, no people/avatar/humanoid icons and no chat bubbles."
+}

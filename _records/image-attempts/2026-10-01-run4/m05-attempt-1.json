@@ -1,0 +1,45 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "edition_id": "dab-edition-2026-10-01",
+  "execution_id": "reliable-edition-20261001-run4",
+  "candidate_id": "m05",
+  "attempt": 1,
+  "fallback_used": false,
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "gen_id": "523d465d-509c-4020-b4e2-918a5cc8e45f",
+    "native_sha256": "fd63fee002cc17f719056aff6507500a561548446cdf19b05d70e35df94fdf57",
+    "native_bytes": 1087783,
+    "native_dimensions": "1731x909"
+  },
+  "candidate": {
+    "source_normalized_sha256": "60f4004cdf324b973c470419739c9c20abdfdb701ef2b5bf4cf5ef7711fe307a",
+    "source_normalized_bytes": 565045,
+    "delivered_sha256": "ff648b7d0ae0e863aba3ecf2b8e5660f49d2540e49504cf5709f625230095128",
+    "delivered_bytes": 188733,
+    "delivered_dimensions": "1200x630",
+    "method": "same-visual 20-color PNG transport optimization"
+  },
+  "persistence": {
+    "status": "persisted",
+    "path": "briefs/images/2026-10-01/dab-edition-2026-10-01-m05-1.png",
+    "git_blob_sha": "4e4abb54e3c7bc5db1df34022292051bf964ce11",
+    "commit_sha": "1de87e0ab736ad0b11df29f5b6075bf7caf29940",
+    "content_address_verified": true,
+    "read_back_verified": true,
+    "verification_method": "locally computed Git blob SHA matched GitHub create_blob SHA and committed tree binding"
+  },
+  "review": {
+    "structural_quality": "PASS",
+    "editorial_quality": "PASS",
+    "allowed_visible_text": "PASS",
+    "factual_scope": "PASS",
+    "people_humanoids": "NONE",
+    "low_quality_fallback": false,
+    "saved_asset_reviewed": true
+  },
+  "review_status": "accepted_locked",
+  "status": "accepted_locked",
+  "accepted_at": "2026-10-01T22:04:24Z"
+}

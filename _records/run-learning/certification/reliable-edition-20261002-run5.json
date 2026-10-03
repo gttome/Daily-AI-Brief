@@ -1,0 +1,17 @@
+{
+  "schema_version": "run-learning-task29-certification-v1",
+  "run_id": "reliable-edition-20261002-run5",
+  "result": "PASS",
+  "errors": [],
+  "problem_ids": [
+    "DAB-OPS-20261002-011",
+    "DAB-OPS-20261002-012",
+    "DAB-OPS-20261002-013",
+    "DAB-OPS-20261002-014",
+    "DAB-OPS-20261002-015",
+    "DAB-OPS-20261002-016",
+    "DAB-OPS-20261002-017",
+    "DAB-OPS-20261002-018"
+  ],
+  "reconciled_problem_count": 8
+}

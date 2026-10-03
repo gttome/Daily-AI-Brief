@@ -1,0 +1,43 @@
+{
+  "schema_version": "run-learning-readiness-v2",
+  "run_number": 5,
+  "edition_id": "dab-edition-2026-10-02",
+  "execution_id": "reliable-edition-20261002-run5",
+  "evaluated_at": "2026-10-02T18:41:15.000Z",
+  "result": "PASS",
+  "errors": [],
+  "deferred_blockers": [],
+  "start_scope": "full_production",
+  "start_authorized": true,
+  "image_tasks_authorized": true,
+  "publication_authorized": true,
+  "evidence": {
+    "protected_main_sha": "9f7c8842a9d8af7c21b109bea7284a0fe5171dde",
+    "qualification_registration_pr": 366,
+    "qualification_registration_ci_run": 37048808672,
+    "qualification_receipt_path": "_records/image-trials/2026-10-02-scheduled/recovered-six-image/qualification-receipt-complete-1.json",
+    "qualification_receipt_blob_sha": "4ff4d4453f3d5de6594bea90ea7c69dd3a884ff6",
+    "image_host_registration_blob_sha": "5ecaa1bad71dad267a801705cb7ba0c11b8ce819",
+    "image_host_status": "READY",
+    "recovered_file_count": 12,
+    "saved_git_reviews": 6,
+    "owner_quality_confirmation_bound": true,
+    "current_learning_ledger_path": "data/operations/production-continuous-improvement-ledger.jsonl",
+    "current_learning_event_count": 55,
+    "daily_controller_enabled": true,
+    "hourly_recovery_enabled": true,
+    "live_validator_enabled": true,
+    "one_writer": true,
+    "writer_generation": 17,
+    "no_competing_writer": true,
+    "cost_boundary": {
+      "chatgpt_work": false,
+      "codex": false,
+      "paid_apis": false,
+      "billable_overage": false,
+      "new_credentials": false
+    },
+    "quality_gates_preserved": true,
+    "publication_gates_preserved": true
+  }
+}

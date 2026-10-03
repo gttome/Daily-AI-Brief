@@ -1,0 +1,27 @@
+{
+  "task_id": "05",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-03T06:22:29.697Z",
+  "reason": "Locked six fully read stories in exact 2/2/2 order with exactly one reusable Agent Skills story and no Run 5 or prior-edition exact repeat.",
+  "proof": {
+    "selection_artifact": "_records/editorial/2026-10-03-run7/story-selection.json",
+    "selected_ids": [
+      "m01",
+      "m02",
+      "m04",
+      "m05",
+      "m07",
+      "m08"
+    ],
+    "reserves": [
+      "m03",
+      "m06",
+      "m09"
+    ],
+    "exact_story_count": 6,
+    "allocation": "2/2/2",
+    "agent_skills_candidate_id": "m07",
+    "result": "PASS"
+  }
+}

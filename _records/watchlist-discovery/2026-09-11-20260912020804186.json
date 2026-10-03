@@ -1,0 +1,3632 @@
+{
+  "updated_at": "2026-09-12T02:08:04.186Z",
+  "candidates": [
+    {
+      "id": "lead-925012e36d408271",
+      "url": "https://www.therundown.ai/articles/anthropic-opens-the-files-on-global-claude-misuse",
+      "title": "AI Anthropic opens the files on global Claude misuse PLUS: How Rowan used Astra to redo his wardrobe Zach Mink • 8 minutes",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-4c9ee55f743502fc",
+      "url": "https://www.therundown.ai/articles/tesla-cybercab-is-already-getting-weird",
+      "title": "Robotics Tesla’s Cybercab is already getting weird Jennifer Mossalgue • 5 minutes",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-7b3750fc444d0845",
+      "url": "https://www.therundown.ai/articles/an-anthropic-exit-becomes-an-extinction-debate",
+      "title": "AI An Anthropic exit becomes an extinction debate Zach Mink • 7 minutes",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-06e494140885a226",
+      "url": "https://www.therundown.ai/articles/openai-secret-model-settles-a-1m-math-problem",
+      "title": "AI OpenAI&#x27;s secret model settles a $1M math problem Zach Mink • 7 minutes",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-cd6dbf8f03ecfd9a",
+      "url": "https://www.therundown.ai/articles/apple-unfolds-its-decade-long-iphone",
+      "title": "Tech Apple unfolds its decade-long iPhone Jennifer Mossalgue • 6 minutes",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-a48ea3f3d7aab501",
+      "url": "https://www.therundown.ai/news/xpeng-iron-humanoid-production-lines",
+      "title": "XPeng opens IRON production lines ahead of mass production push",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-a49cc44704d20d22",
+      "url": "https://www.therundown.ai/news/zoox-san-francisco-robotaxi-marketing",
+      "title": "Zoox’s San Francisco robotaxi push has to turn attention into fares",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-bb2b1f0249938805",
+      "url": "https://www.therundown.ai/news/dynamic-creatures-roaming-robot-characters",
+      "title": "Dynamic Creatures wants to bring roaming robot characters to more venues",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-d9860397d4c89f90",
+      "url": "https://www.therundown.ai/news/tesla-cybercab-austin-debut-safety-audit",
+      "title": "Tesla’s Cybercab debut brings awkward rides and a federal safety audit",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-ca63dbd74e323dc1",
+      "url": "https://app.therundown.ai/guides/aeogeo-part-2-make-your-website-easier-for-ai-to-find-and-cite",
+      "title": "AEO/GEO Part 2: Make Your Website Easier for AI to Find and Cite",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-fa3be9dced528155",
+      "url": "https://app.therundown.ai/guides/aeogeo-part-1-find-out-where-your-brand-appears-in-ai-search",
+      "title": "AEO/GEO Part 1: Find Out Where Your Brand Appears in AI Search",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-249f9620e51201c6",
+      "url": "https://app.therundown.ai/guides/turn-a-family-scheduler-idea-into-a-working-app-with-astra",
+      "title": "Turn a Family Scheduler Idea Into a Working App With Astra",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-de2f6dd0d6a6797a",
+      "url": "https://app.therundown.ai/guides/build-a-lindy-agent-that-never-drops-a-follow-up",
+      "title": "Build a Lindy Agent That Never Drops a Follow-Up",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1f6ab29e3d12b003",
+      "url": "https://app.therundown.ai/guides/stand-out-in-an-ai-job-interview-with-the-proof-project-method",
+      "title": "Stand Out in an AI Job Interview With the “Proof Project” Method",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-8d30d3eec2464e9a",
+      "url": "https://app.therundown.ai/guides/how-to-pick-a-dedicated-ai-device",
+      "title": "How To Pick a Dedicated AI Device",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-db364e1702131986",
+      "url": "https://app.therundown.ai/guides/how-to-connect-chatgpt-to-imessage-and-what-it-can-do",
+      "title": "How To Connect ChatGPT to iMessage (and What It Can Do)",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b0ed95a1b9bb065f",
+      "url": "https://app.therundown.ai/guides/turn-your-codex-ios-app-into-a-paid-app-and-ship-it-to-the-app-store",
+      "title": "Submit Your iOS App to the App Store With ChatGPT Work",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-7abc0caa6f7a8972",
+      "url": "https://www.therundown.ai/tools/deepseek-v4-1-flash",
+      "title": "DeepSeek V4.1 Flash DeepSeek&#x27;s, small, efficient new open model",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-20d88c42d483a5aa",
+      "url": "https://www.therundown.ai/tools/gpt-live-1",
+      "title": "GPT-Live-1 OpenAI&#x27;s voice model that listens while talking, now for developers",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-5b9748a0df31b0e8",
+      "url": "https://www.therundown.ai/tools/krea-agents",
+      "title": "Krea Agents Krea&#x27;s creative agent with memory, style skills, and Slack/Figma hookups",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-ba20886558158152",
+      "url": "https://www.therundown.ai/tools/swe-2",
+      "title": "SWE-2 Cognition’s powerful new coding model inside of Devin",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-facd7b57950aa493",
+      "url": "https://www.therundown.ai/tools/alphagenome-atlas",
+      "title": "AlphaGenome Atlas Google&#x27;s AI map of every possible human DNA mutation",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-e208a177fedd5894",
+      "url": "https://www.therundown.ai/tools/suno-v6",
+      "title": "Suno v6 Suno&#x27;s new models created in collaboration with the music industry",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-cbb59b211705eef7",
+      "url": "https://www.therundown.ai/tools/chatgpt-images-2-5",
+      "title": "ChatGPT Images 2.5 OpenAI&#x27;s new SOTA AI image model",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-895073519afd1b62",
+      "url": "https://www.therundown.ai/tools/mercury-2-5",
+      "title": "Mercury 2.5 Inception&#x27;s speed-first diffusion model",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b793d8ed47ab2b38",
+      "url": "https://www.therundown.ai/tools/muse",
+      "title": "Muse Meta&#x27;s new always-working personal AI agent",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-75e72a327e331c0c",
+      "url": "https://www.therundown.ai/tools/gpt-6-astra",
+      "title": "GPT-6 Astra OpenAI&#x27;s next-generation frontier model",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1996ba6f14a354ce",
+      "url": "https://www.therundown.ai/tools/muse-spark-1-3",
+      "title": "Muse Spark 1.3 Meta&#x27;s cost-effective, intelligent model",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-fb354e55337626f1",
+      "url": "https://www.therundown.ai/tools/claude-fable-5-1",
+      "title": "Claude Fable 5.1 Anthropic&#x27;s new flagship, top-rated model",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-09988f959d38946a",
+      "url": "https://www.therundown.ai/ai-university",
+      "title": "Explore The Rundown University",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-0102261a6e4fb77a",
+      "url": "https://twitter.com/therundownai",
+      "title": "Follow The Rundown AI on X",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-f1cca1f24eb9ce1c",
+      "url": "https://www.instagram.com/therundownai",
+      "title": "Follow The Rundown AI on Instagram",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-023cb072fc146f2d",
+      "url": "https://linkedin.com/company/the-rundown-ai",
+      "title": "Follow The Rundown AI on LinkedIn",
+      "source_ids": [
+        "rundown"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-5e351276048c5641",
+      "url": "https://www.google.com/preferences/source?q=explainx.ai",
+      "title": "Add explainx.ai as a preferred source",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-629e637561a1bcc9",
+      "url": "https://explainx.ai/mind",
+      "title": "mind: share how you think",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-01450c6fda555358",
+      "url": "https://explainx.ai/state-of-ai",
+      "title": "state of AI — live results",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-be174c10614354ee",
+      "url": "https://explainx.ai/solutions/product-manager-upskilling",
+      "title": "product manager upskilling",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-af465440672652ab",
+      "url": "https://explainx.ai/onboarding?prompt=Teach+me+loop+engineering",
+      "title": "Teach me loop engineering",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b558547209946a51",
+      "url": "https://explainx.ai/dashboard/news",
+      "title": "Top AI news relevant for me today",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-8bb3fe513f184b99",
+      "url": "https://explainx.ai/onboarding?prompt=Interview+me+on+prompt+engineering&amp;mode=interview",
+      "title": "Interview me on prompt engineering",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-4f946a105f01681c",
+      "url": "https://explainx.ai/workshops/claude-for-work",
+      "title": "Workshop on Claude for Work",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-93ffdc724a33a2f1",
+      "url": "https://explainx.ai/pathways",
+      "title": "01 Free pathways Follow a clear learning sequence",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-fb27b74352bba1d8",
+      "url": "https://explainx.ai/workshops",
+      "title": "02 Live workshops Learn and build with an instructor",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-ed6ee712b984e110",
+      "url": "https://explainx.ai/bootcamps",
+      "title": "03 Hands-on bootcamps Go deeper through real projects",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-90b1a1ba57ba9fa7",
+      "url": "https://explainx.ai/dashboard/learn",
+      "title": "04 Melo AI tutor Ask, practise, and explain it back",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-e9b7cfe6ebaf673e",
+      "url": "https://explainx.ai/pathways/ai-foundations",
+      "title": "beginner · 5 h AI Foundations Understand what AI actually is — tokens, transformers, agents, and the landscape. Start here if you&#x27;re new.",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-eefe8274f53b67aa",
+      "url": "https://explainx.ai/pathways/prompt-engineering",
+      "title": "beginner · 5 h Prompt Engineering Go from vague requests to precise, reproducible AI outputs. The skill that underpins everything.",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-02fead7769f32f69",
+      "url": "https://explainx.ai/pathways/claude-code-mastery",
+      "title": "intermediate · 7 h Claude Code Mastery Go from zero to productive with Claude Code — the terminal AI coding agent that ships real projects.",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-dec7aa769d71aa4d",
+      "url": "https://explainx.ai/pathways/building-ai-agents",
+      "title": "intermediate · 7 h Building AI Agents Understand and build the loops, harnesses, and protocols that make AI agents reliable and autonomous.",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1f374a2b433cf8b1",
+      "url": "https://explainx.ai/pathways/ai-tools-by-role",
+      "title": "beginner · 5 h AI Tools by Role Practical AI adoption for your specific function — marketing, engineering, HR, finance, and more.",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-9bd9e61b4599c4c3",
+      "url": "https://explainx.ai/pathways/ai-model-landscape",
+      "title": "intermediate · 7 h AI Model Landscape Navigate the crowded model market — Claude, GPT, Gemini, open-source — and understand the tradeoffs.",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-49d0309e9466f92a",
+      "url": "https://explainx.ai/pathways/mcp-model-context-protocol",
+      "title": "intermediate · 6 h MCP: Model Context Protocol Master the open protocol that connects AI agents to every tool, API, and data source — from setup to production security.",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-fbcd7ccf5dc35889",
+      "url": "https://explainx.ai/pathways/loop-engineering",
+      "title": "intermediate · 4 h Loop Engineering Design and ship reliable AI agent loops — from first iteration to self-correcting, production-grade autonomous workflows.",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-0d0b9b316ccc09c9",
+      "url": "https://explainx.ai/pathways/context-engineering",
+      "title": "intermediate · 7 h Context Engineering Master the full discipline of designing what an AI model sees — from context window anatomy to agentic context design, token budgets, RAG injection, and tool schemas.",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-cecdec004042c608",
+      "url": "https://explainx.ai/pathways/ai-skills",
+      "title": "beginner · 3 h AI Skills Discover, install, and publish agent skills — the reusable capability layer that makes AI agents infinitely extensible.",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-6f97bb11a462f40f",
+      "url": "https://explainx.ai/courses/loop-engineering",
+      "title": "COURSE Loop Engineering Understand how AI agents think, act, and self-correct — ReAct loops, memory, and guardrails in under an hour. Enroll →",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-955538cd610c09f0",
+      "url": "https://explainx.ai/courses/generative-ai-for-leaders",
+      "title": "COURSE AI for Business Leaders Lead AI transformation with confidence through strategy, tools, and team enablement. Enroll →",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-676e28a9b3c60556",
+      "url": "https://explainx.ai/dashboard/onboarding",
+      "title": "Find what’s right for me",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1ed2024238e27930",
+      "url": "https://explainx.ai/skills",
+      "title": "Agent Skills 10K+ One-command installs for Claude Code, Cursor, Copilot, and 11+ frameworks. Publish your own and earn revenue. Browse skills",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-9c98db4175d26f36",
+      "url": "https://explainx.ai/mcp-servers",
+      "title": "MCP Servers 2K+ Connect AI agents to databases, APIs, and external services. Browse the Model Context Protocol ecosystem. Browse MCP servers",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-8f6a3c34dddf6ed6",
+      "url": "https://explainx.ai/tools",
+      "title": "AI Tools 100K+ Search, compare, and discover AI tools for every use case — ranked by real adoption and community feedback. Explore tools",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-d1d77a4466125df5",
+      "url": "https://explainx.ai/llms",
+      "title": "LLM Compare LIVE Side-by-side benchmarks, pricing, context length, and real-world performance across every major model. Compare models",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-6099db3069e2cdc3",
+      "url": "https://explainx.ai/agents",
+      "title": "AI Agents NEW Pre-built agents for specific workflows. From code review to data analysis, ready to deploy. Browse agents",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-249c5eabad9da944",
+      "url": "https://explainx.ai/loops",
+      "title": "Loops & Workflows NEW Autonomous workflow patterns that run continuously to monitor, process, or act on data. Browse loops",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b89ee6afd2473aaa",
+      "url": "https://explainx.ai/designs",
+      "title": "DESIGN.md Registry 500+ Design systems AI agents can read — YAML tokens, markdown rationale, and workflows so your AI stays on-brand. Browse design systems",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-3d4bc8e3aa2f2fbd",
+      "url": "https://explainx.ai/trending",
+      "title": "Trending Now LIVE The most-visited skills, tools, MCPs, and posts across explainx.ai — ranked by real page views, updated every 30 min. See what&#x27;s trending",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-6fd2be77ed27d62b",
+      "url": "https://explainx.ai/sentinel",
+      "title": "Explore Sentinel monitoring",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-ed04a1894f937b6b",
+      "url": "https://explainx.ai/",
+      "title": "Join the Sentinel waitlist",
+      "source_ids": [
+        "explainx"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-7c0825c896c2b324",
+      "url": "https://substack.com/ccpa",
+      "title": "Information Collection Notice",
+      "source_ids": [
+        "bens-bites"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-8197758a1671a760",
+      "url": "https://www.theneurondaily.com/p/did-openai-just-speedrun-another-millennium-problem",
+      "title": "16 hours ago 😺 Did OpenAI just speedrun another Millennium problem?! PLUS: Anthropic misuse cases, ChatGPT finance, Gemini Windows, and DeepSeek.",
+      "source_ids": [
+        "neuron"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-13e47ef8036ba548",
+      "url": "https://www.theneurondaily.com/p/live-github-for-total-beginners-cassidy-williams",
+      "title": "Sep 10, 2026 😺 LIVE NOW: GitHub for total beginners Cassidy Williams joins us live to explain repos, branches, pull requests, AI coding agents, and how to safely ship your code.",
+      "source_ids": [
+        "neuron"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-94bd104d518ff8e5",
+      "url": "https://www.theneurondaily.com/p/september-10-thursday",
+      "title": "Sep 10, 2026 An Anthropic researcher quit over self-improving AI risk PLUS: Apple AI, Mercury 2.5 at 1,100+ tokens/sec, a Doom-playing fly brain, and GitHub for total beginners LIVE with Cassidy Williams.",
+      "source_ids": [
+        "neuron"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-384434f0264e14d4",
+      "url": "https://www.theneurondaily.com/p/live-apples-ai-era-starts-now",
+      "title": "Sep 09, 2026 😺 LIVE: Apple’s AI era starts now? John Ternus, Meta Muse, OpenAI’s $1M math fight, plus a new Astra episode later today.",
+      "source_ids": [
+        "neuron"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-c33a0e4ce1fa5016",
+      "url": "https://www.theneurondaily.com/p/openai-s-1m-math-breakthrough-sparked-a-fight-with-anthropic",
+      "title": "Sep 09, 2026 😺 OpenAI&#x27;s $1M math breakthrough sparked a fight with Anthropic PLUS: Meta Muse, a fruit-fly brain, and why better AI may mostly be better data.",
+      "source_ids": [
+        "neuron"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-0b98ac7333fdbcae",
+      "url": "https://www.theneurondaily.com/p/ai-drug-reversed-aging-markers",
+      "title": "Sep 08, 2026 😺 AI drug reversed aging markers PLUS: An AI drug shaved years off patients&#x27; biological age",
+      "source_ids": [
+        "neuron"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-3fd001bfe2754b17",
+      "url": "https://www.theneurondaily.com/p/openai-s-chief-scientist-is-calling-for-brakes",
+      "title": "Sep 07, 2026 😺 OpenAI&#x27;s chief scientist is calling for brakes PLUS: Jensen Huang&#x27;s AGI claim, Nscale&#x27;s $103B pitch, and Bitcoin&#x27;s AI audit.",
+      "source_ids": [
+        "neuron"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-0b07613a64c7a842",
+      "url": "https://www.theneurondaily.com/p/openai-linked-agents-hijacked-german-wiki",
+      "title": "Sep 06, 2026 😿 OpenAI-linked agents found a way around “read only” PLUS: Claude proved Fermat and AI’s five biggest stories.",
+      "source_ids": [
+        "neuron"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-36bbe09e04de1239",
+      "url": "https://www.theneurondaily.com/p/gpt-6-astra-can-stay-on-the-job-and-use-your-computer",
+      "title": "Sep 04, 2026 GPT-6 Astra can stay on the job and use your computer PLUS: xAI Grok Bot for Enterprise and Google/HHMI fruit fly brain map",
+      "source_ids": [
+        "neuron"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-3828a06f7d6a0cdc",
+      "url": "https://www.theneurondaily.com/p/gemini-3-8-and-muse-spark-1-3-go-head-to-head-for-third-place",
+      "title": "Sep 03, 2026 😺 Gemini 3.8 and Muse Spark 1.3 go head to head for third place PLUS: NYC banning AI in school before 9th grade",
+      "source_ids": [
+        "neuron"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-8b1490d9a992037e",
+      "url": "https://www.superhuman.ai/125-ai-tools",
+      "title": "Top 125 AI Tools Check out the directory",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-ac41fc2b3308aefc",
+      "url": "https://www.superhuman.ai/prompts",
+      "title": "Top 1,000 Prompts Get better at prompting",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-65ef6a6f06bbbe3a",
+      "url": "https://www.superhuman.ai/resources",
+      "title": "50 Tutorials Learn how to use AI at work",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-57dc5d8dacaa7210",
+      "url": "https://www.superhuman.ai/p/chatgpt-gets-new-data-powers-and-personal-agents-are-gaining-traction",
+      "title": "Sep 11, 2026 • 4 min read ChatGPT gets new data powers and personal agents are gaining traction ALSO: How to automate your Monday morning work brief with ChatGPT Work Zain Kahn",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-5a8ec7d6d301f6f4",
+      "url": "https://www.superhuman.ai/p/apple-s-biggest-keynote-in-years",
+      "title": "Sep 10, 2026 • 4 min read Apple&#x27;s biggest keynote in years ALSO: How to build and activate a new marketing audience in under 10 minutes Zain Kahn",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-aab8e7899a760925",
+      "url": "https://www.superhuman.ai/p/big-releases-and-bigger-controversies",
+      "title": "Sep 9, 2026 • 4 min read Big releases and bigger controversies ALSO: Turn meeting notes into project plans with GPT-6 Astra Zain Kahn",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-93a34a656113eb9b",
+      "url": "https://www.superhuman.ai/p/viral-eco-friendly-ai-app-draws-backlash",
+      "title": "Sep 8, 2026 • 4 min read Viral ‘eco-friendly‘ AI app draws backlash ALSO: How to set up writing styles in ChatGPT Zain Kahn",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-c56aac47f7375e07",
+      "url": "https://www.superhuman.ai/p/astra-becomes-generally-available-as-ai-s-progress-accelerates",
+      "title": "Sep 7, 2026 • 4 min read Astra becomes generally available as AI&#x27;s progress accelerates ALSO: How to set an intelligence floor for your AI application Zain Kahn",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-3fddfa6f5e6c6d8d",
+      "url": "https://www.superhuman.ai/p/sunday-special-the-sounds-of-the-jurassic-forest",
+      "title": "Sep 6, 2026 • 4 min read Sunday Special: The sounds of the Jurassic forest Zain Kahn",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-4c1282370971cad9",
+      "url": "https://claude.ai/",
+      "title": "Writing & thinking Claude A thinking partner for your everyday work.",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-bbba856f6f338511",
+      "url": "https://cursor.com/",
+      "title": "Coding Cursor Bring your next idea to life with code.",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-9f79c2eb60a72df1",
+      "url": "https://perplexity.ai/",
+      "title": "Research Perplexity Follow your questions. Find the sources.",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-e30205625400ec7e",
+      "url": "https://wisprflow.ai/",
+      "title": "Voice & productivity Wispr Flow Turn a train of thought into useful text.",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-dec97fca5d47b7e7",
+      "url": "https://midjourney.com/",
+      "title": "Image creation Midjourney Give a visual idea somewhere to begin.",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-28c253213055d256",
+      "url": "https://clipto.ai/",
+      "title": "Files & organization Clipto Find what you need with a description.",
+      "source_ids": [
+        "superhuman"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-a92d9aea56339290",
+      "url": "https://hai.stanford.edu/education/professional-education",
+      "title": "Executive and Professional Education",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1a18ee09597ca870",
+      "url": "https://hai.stanford.edu/policy/policymaker-education",
+      "title": "Government and Policymakers",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-cc55d185390cb07c",
+      "url": "https://hai.stanford.edu/news/how-ai-is-accelerating-scientific-discovery",
+      "title": "How AI Is Accelerating Scientific Discovery",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1bfb54c2bb741ebe",
+      "url": "https://hai.stanford.edu/topics/sciences-social-health-biological-physical",
+      "title": "Sciences (Social, Health, Biological, Physical)",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-e2ec0c4e8c72975d",
+      "url": "https://hai.stanford.edu/news/ai-companions-may-worsen-loneliness-for-vulnerable-users-stanford-study-finds",
+      "title": "AI Companions May Worsen Loneliness for Vulnerable Users, Stanford Study Finds",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-2536785b36d14d23",
+      "url": "https://hai.stanford.edu/news/open-weight-models-arent-enough-we-need-truly-open-source-ai-models-for-science-and-society",
+      "title": "Open-Weight Models Aren’t Enough. We Need Truly Open Source AI Models for Science and Society.",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-ea241a3609d92c3d",
+      "url": "https://hai.stanford.edu/news/why-governing-world-models-is-ais-next-big-policy-challenge",
+      "title": "Why Governing World Models Is AI&#x27;s Next Big Policy Challenge",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-87846cd3458331a1",
+      "url": "https://hai.stanford.edu/news/the-complexities-of-governing-mental-health-ai",
+      "title": "The Complexities of Governing Mental Health AI",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-66e87d723e814df3",
+      "url": "https://hai.stanford.edu/news/how-ai-is-helping-states-cut-through-decades-of-red-tape",
+      "title": "How AI Is Helping States Cut Through Decades of Red Tape",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-0a24c24b17f190ca",
+      "url": "https://hai.stanford.edu/news/legal-ais-legibility-problem",
+      "title": "Legal AI’s Legibility Problem",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-0d2f53dfc55b681c",
+      "url": "https://www.washingtonpost.com/technology/2026/08/29/your-chatbot-discussions-are-not-private-you-may-think/",
+      "title": "Your Boss, Tech Companies And Police Can Read Your Chatbot Conversations",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-dc82fc9d90546649",
+      "url": "https://www.youtube.com/watch?v=N5AQFYtqx8Q",
+      "title": "Using AI to Increase Your Intelligence & Enrich Humanity | Dr. Fei-Fei Li",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-6d1f434f5b867093",
+      "url": "https://hai.stanford.edu/news/ai-legal-review-says-millions-live-under-discriminatory-local-laws",
+      "title": "AI Legal Review Says Millions Live Under Discriminatory Local Laws",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-a84914506e09fe65",
+      "url": "https://hai.stanford.edu/topics/government-public-administration",
+      "title": "Government, Public Administration",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-16cdbf3d093b95ec",
+      "url": "https://hai.stanford.edu/topics/law-enforcement-and-justice",
+      "title": "Law Enforcement and Justice",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-6d9935bdff081403",
+      "url": "https://hai.stanford.edu/topics/regulation-policy-governance",
+      "title": "Regulation, Policy, Governance",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-2ed08fcd68007145",
+      "url": "https://hai.stanford.edu/news/your-for-you-algorithm-disagrees-with-you",
+      "title": "Your ‘For You’ Algorithm Disagrees With You",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-64b7234d1a5216bf",
+      "url": "https://hai.stanford.edu/topics/design-human-computer-interaction",
+      "title": "Design, Human-Computer Interaction",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-68deed7edc7452c1",
+      "url": "https://hai.stanford.edu/news/new-stanford-grants-tackle-ais-impact-on-global-security-and-geopolitics",
+      "title": "New Stanford Grants Tackle AI&#x27;s Impact on Global Security and Geopolitics",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-3a8a110c822ece6f",
+      "url": "https://hai.stanford.edu/topics/international-affairs-international-security-international-development",
+      "title": "International Affairs, International Security, International Development",
+      "source_ids": [
+        "stanford-hai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-a9656b0306df7b6e",
+      "url": "https://www.csail.mit.edu/news/design-software-reimagines-everyday-objects-self-aware-devices",
+      "title": "This design software reimagines everyday objects as self-aware devices",
+      "source_ids": [
+        "mit-csail"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-221b3fddb61360ed",
+      "url": "https://www.csail.mit.edu/news/new-tool-lets-users-repair-ai-generated-3d-models-then-fabricate-them-just-way-they-want",
+      "title": "New tool lets users repair AI-generated 3D models, then fabricate them just the way they want",
+      "source_ids": [
+        "mit-csail"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-f033db0b9ea4a347",
+      "url": "https://www.csail.mit.edu/news/when-ai-art-has-no-author-mit-study-finds-generated-images-often-cant-be-traced-any-training",
+      "title": "When AI art has no author: MIT study finds generated images often can&#039;t be traced to any training data",
+      "source_ids": [
+        "mit-csail"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-3d06bfeca6e86f78",
+      "url": "https://www.csail.mit.edu/node/14880",
+      "title": "This design software reimagines everyday objects as self-aware devices",
+      "source_ids": [
+        "mit-csail"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-67e8ed14547e6f0d",
+      "url": "https://www.csail.mit.edu/node/14870",
+      "title": "New tool lets users repair AI-generated 3D models, then fabricate them just the way they want",
+      "source_ids": [
+        "mit-csail"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-f45809dca6455ccc",
+      "url": "https://www.csail.mit.edu/node/14790",
+      "title": "When AI art has no author: MIT study finds generated images often can&#039;t be traced to any training data",
+      "source_ids": [
+        "mit-csail"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-4441db37a7fb3d33",
+      "url": "https://openaifoundation.org/",
+      "title": "Foundation (opens in a new window)",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-5d9354f7cb0eac0c",
+      "url": "https://chatgpt.com/",
+      "title": "Try ChatGPT (opens in a new window)",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-9132274d1e438bd7",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one/",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users Engineering Sep 11, 2026",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b1a751e45eb13e38",
+      "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials/",
+      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules Applied AI Sep 10, 2026",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-5876c91d40c3dd69",
+      "url": "https://openai.com/index/put-data-to-work/",
+      "title": "Now everyone can put data to work Product Sep 10, 2026",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-80fe8cea6ec1fc1a",
+      "url": "https://openai.com/index/introducing-chatgpt-financial-services/",
+      "title": "Introducing ChatGPT for Financial Services Product Sep 10, 2026",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-0b4a16a4cd4d2819",
+      "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api/",
+      "title": "Build more natural voice experiences with GPT‑Live‑1 in the API Product Sep 10, 2026",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-8a71a2808988c5c7",
+      "url": "https://openai.com/index/introducing-the-agents-api/",
+      "title": "Introducing the Agents API Product Sep 10, 2026",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-ccf941ffb9a6917a",
+      "url": "https://openai.com/index/gpt-6-astra-next-generation-work/",
+      "title": "GPT-6 Astra: The next generation in intelligence for work Product Sep 9, 2026",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-6c328e5417f7bf0d",
+      "url": "https://openai.com/index/paul-christiano-joins-openai-foundation-board/",
+      "title": "Paul Christiano joins OpenAI Foundation Board Company Sep 9, 2026",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1f112fc7530a72ce",
+      "url": "https://openai.com/index/codex-quantum-computing-experiments/",
+      "title": "How GPT-5.6 Sol helps run quantum computing experiments Applied AI Sep 8, 2026",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-5474453270b0ad75",
+      "url": "https://deploymentsafety.openai.com/",
+      "title": "Deployment Safety (opens in a new window)",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-6171a2d121cd95be",
+      "url": "https://chatgpt.com/business/",
+      "title": "ChatGPT Business (opens in a new window)",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-84ca8dc49c4a9f15",
+      "url": "https://chatgpt.com/business/enterprise/",
+      "title": "ChatGPT Enterprise (opens in a new window)",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1771389756f28926",
+      "url": "https://chatgpt.com/business/education/",
+      "title": "ChatGPT for Education (opens in a new window)",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-6ae940f234d4c4d3",
+      "url": "https://developers.openai.com/api/docs",
+      "title": "Docs (opens in a new window)",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-d8dacafa899fd85e",
+      "url": "https://developers.openai.com/apps-sdk",
+      "title": "Apps SDK (opens in a new window)",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-3183bfc53aafd063",
+      "url": "https://developers.openai.com/",
+      "title": "Docs (opens in a new window)",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-996ebdaf61e5aeb7",
+      "url": "https://developers.openai.com/learn",
+      "title": "Resources (opens in a new window)",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-c99ad3ebcfc08b07",
+      "url": "https://community.openai.com/",
+      "title": "Developer Forum (opens in a new window)",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-bf05713c4e95425e",
+      "url": "https://help.openai.com/",
+      "title": "Help Center (opens in a new window)",
+      "source_ids": [
+        "openai"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b776bae4df96d87a",
+      "url": "https://ai.google/",
+      "title": "Google AI Learn about all our AI",
+      "source_ids": [
+        "deepmind"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-0ef9b0fe0f3c92b4",
+      "url": "https://deepmind.google/",
+      "title": "Google DeepMind Explore the frontier of AI",
+      "source_ids": [
+        "deepmind"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-73ea06ae358c9a30",
+      "url": "https://labs.google/",
+      "title": "Google Labs Try our AI experiments",
+      "source_ids": [
+        "deepmind"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-f93f00b36746f670",
+      "url": "https://research.google/",
+      "title": "Google Research Explore our research",
+      "source_ids": [
+        "deepmind"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-5b7d54409f2a9b2a",
+      "url": "https://gemini.google.com/",
+      "title": "Gemini app Chat with Gemini",
+      "source_ids": [
+        "deepmind"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-10266bdfb6648734",
+      "url": "https://aistudio.google.com/prompts/new_chat",
+      "title": "Google AI Studio Build with our next-gen AI models",
+      "source_ids": [
+        "deepmind"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-c34584c32a12aace",
+      "url": "https://antigravity.google/",
+      "title": "Google Antigravity Our agentic development platform",
+      "source_ids": [
+        "deepmind"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-85b0ca3c45b5c993",
+      "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+      "title": "An update on recent Claude Code quality reports Apr 23, 2026",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-8537165d23c701b7",
+      "url": "https://www.anthropic.com/engineering/managed-agents",
+      "title": "Scaling Managed Agents: Decoupling the brain from the hands Apr 08, 2026",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-d5f9dbd62b3ecc11",
+      "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
+      "title": "How we built Claude Code auto mode: a safer way to skip permissions Mar 25, 2026",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-9fa759b72385cdec",
+      "url": "https://www.anthropic.com/engineering/harness-design-long-running-apps",
+      "title": "Harness design for long-running application development Mar 24, 2026",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-42468eb1c49ef4da",
+      "url": "https://www.anthropic.com/engineering/eval-awareness-browsecomp",
+      "title": "Eval awareness in Claude Opus 4.6’s BrowseComp performance Mar 06, 2026",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-c78d84ac1a7e3d92",
+      "url": "https://www.anthropic.com/engineering/infrastructure-noise",
+      "title": "Quantifying infrastructure noise in agentic coding evals Feb 05, 2026",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1eba12a4a8fa384c",
+      "url": "https://www.anthropic.com/engineering/building-c-compiler",
+      "title": "Building a C compiler with a team of parallel Claudes Feb 05, 2026",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-2ab0d2c099317874",
+      "url": "https://www.anthropic.com/engineering/AI-resistant-technical-evaluations",
+      "title": "Designing AI-resistant technical evaluations Jan 21, 2026",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-6c790a16de0afd2b",
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "title": "Demystifying evals for AI agents Jan 09, 2026",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-7f7a70a676497580",
+      "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+      "title": "Effective harnesses for long-running agents Nov 26, 2025",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-eafa6e2f9f229d66",
+      "url": "https://www.anthropic.com/engineering/advanced-tool-use",
+      "title": "Introducing advanced tool use on the Claude Developer Platform Nov 24, 2025",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-9b88bfec4a46afeb",
+      "url": "https://www.anthropic.com/engineering/code-execution-with-mcp",
+      "title": "Code execution with MCP: Building more efficient agents Nov 04, 2025",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-c765441e9673d957",
+      "url": "https://www.anthropic.com/engineering/claude-code-sandboxing",
+      "title": "Beyond permission prompts: making Claude Code more secure and autonomous Oct 20, 2025",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-2e50ab69ebea3b2c",
+      "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+      "title": "Equipping agents for the real world with Agent Skills Oct 16, 2025",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-126e07cf0d684e03",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "title": "Effective context engineering for AI agents Sep 29, 2025",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-955bc6c93f35e54a",
+      "url": "https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues",
+      "title": "A postmortem of three recent issues Sep 17, 2025",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1399aec680791f78",
+      "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+      "title": "Writing effective tools for agents — with agents Sep 11, 2025",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-bb4c60b19b246a2f",
+      "url": "https://www.anthropic.com/engineering/desktop-extensions",
+      "title": "Desktop Extensions: One-click MCP server installation for Claude Desktop Jun 26, 2025",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-a3afc1e8c7c23916",
+      "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+      "title": "How we built our multi-agent research system Jun 13, 2025",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b77235353457c81e",
+      "url": "https://www.anthropic.com/engineering/claude-code-best-practices",
+      "title": "Claude Code: Best practices for agentic coding Apr 18, 2025",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-4d418dad93eb839e",
+      "url": "https://www.anthropic.com/engineering/claude-think-tool",
+      "title": "The \"think\" tool: Enabling Claude to stop and think in complex tool use situations Mar 20, 2025",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-43d7916975114d60",
+      "url": "https://www.anthropic.com/engineering/swe-bench-sonnet",
+      "title": "Raising the bar on SWE-bench Verified with Claude 3.5 Sonnet Jan 06, 2025",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-ffc229d83891918f",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "title": "Building effective agents Dec 19, 2024",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-33d81116743596d4",
+      "url": "https://www.anthropic.com/engineering/contextual-retrieval",
+      "title": "Introducing Contextual Retrieval Sep 19, 2024",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b4a03cea5de9dc36",
+      "url": "https://claude.com/claude-for-microsoft-365",
+      "title": "Claude for Microsoft 365",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-d03e3ca2752c763a",
+      "url": "https://www.anthropic.com/engineering",
+      "title": "Engineering at Anthropic",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-34f8ef8be3ccfee9",
+      "url": "https://www.anthropic.com/policy-on-the-ai-exponential",
+      "title": "Policy on the AI Exponential",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-d0ba81cc7a8fdb2b",
+      "url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+      "title": "Responsible Scaling Policy",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-94ba4e0e036a21df",
+      "url": "https://www.anthropic.com/responsible-disclosure-policy",
+      "title": "Responsible disclosure policy",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-18fc52d7c8bd283a",
+      "url": "https://anthropic.com/legal/k12-dpa",
+      "title": "Data Processing Agreement: US K-12",
+      "source_ids": [
+        "anthropic"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-56ada5d3ccc246c4",
+      "url": "https://github.com/mirza-rizvi/ResolveHQ",
+      "title": "Show HN: ResolveHQ – A Helpdesk Built on Cloudflare Workers, D1, R2 and Queues",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-69e10205d30144cb",
+      "url": "https://github.com/zachsaw/graphify-csharp",
+      "title": "Show HN: Graphify C# – Compiler-accurate Find Usages for coding agents",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-f0c8eb77f335f260",
+      "url": "https://vester.si/bodily-oddities/",
+      "title": "Show HN: Bodily Oddities",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-c9ebc6e443b6871f",
+      "url": "https://github.com/godot-pty/gpty",
+      "title": "Show HN: Godot and Rust based multiplexer (terminal panes and more)",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-e5d9f05ec1fff73f",
+      "url": "https://hcker.news/?ai=exclude",
+      "title": "Show HN: Hacker News, without AI",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-99733ded75716b75",
+      "url": "https://wesselsdesktop.com/",
+      "title": "Show HN: I built a hand-modeled 3D Windows 98 portfolio with Three.js",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-fdf69001b12f995a",
+      "url": "https://www.unslop.news/",
+      "title": "Show HN: Hacker News, Without AI",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-47f3e140bc759a15",
+      "url": "https://hnslop.nilsherzig.com/",
+      "title": "Show HN: Extension to filter LLM written articles",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-23d9dbb2a1f28cf4",
+      "url": "https://clawfight.ai/agents.md",
+      "title": "Show HN: Clawfight.ai MCP-driven agentic game play",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-acc1b2924aa946b9",
+      "url": "https://github.com/MichaelPGifford/claude-read-aloud",
+      "title": "Show HN: Claude Read Aloud – Hear Claude&#x27;s Replies Instead of Reading",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-f32b4f7426dc2d05",
+      "url": "https://news.ycombinator.com/from?site=github.com/michaelpgifford",
+      "title": "github.com/michaelpgifford",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-560ec4db55a974fd",
+      "url": "https://github.com/haxybaxy/video-pedal",
+      "title": "Show HN: Loop Pedal for Video",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-16e6e2188a5e0eb9",
+      "url": "https://github.com/Adarshent/Spnda",
+      "title": "Show HN: Spanda – Sub-microsecond LLM epistemic uncertainty in Rust",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-7c872137e77a492a",
+      "url": "https://vertumnus.fyi/",
+      "title": "Show HN: Vertumnus – printable posters of farmers&#x27; market produce seasonality",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-00b39ec48f58a4c1",
+      "url": "https://stroq.dev/",
+      "title": "Show HN: Stroq – block commands injected through MCP tool output",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-335071bda4fa6bda",
+      "url": "https://hungrygpu.com/",
+      "title": "Show HN: HungryGPU – Track local AI models, patches and recipes by hardware",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-5801d504628ca24c",
+      "url": "https://rivendell.dmitrybrant.com/relativity/",
+      "title": "Show HN: What if the speed of light was 5 km&#x2F;h?",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-39db60896f632d16",
+      "url": "https://github.com/azzenabidi/OmaGem",
+      "title": "Show HN: OmaGem – A Ruby DSL for Configuring and Managing Omarchy Linux",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-9129eb8fd53ce840",
+      "url": "https://github.com/paradise-runner/toast",
+      "title": "Show HN: Toast, a beautiful by default in terminal IDE",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-18cd2d94ff8370e6",
+      "url": "https://news.ycombinator.com/from?site=github.com/paradise-runner",
+      "title": "github.com/paradise-runner",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-950c694f7fb649c9",
+      "url": "https://ayles.github.io/doom-in-kernel/",
+      "title": "Show HN: DOOM in the kernel, or fibers in eBPF",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-5c148f18ed178aa9",
+      "url": "https://sheet-insights.netlify.app/",
+      "title": "Show HN: Sheet Insights BI – Local Excel&#x2F;CSV Dashboards for Windows",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-468134ccbcaedb3c",
+      "url": "https://news.ycombinator.com/from?site=sheet-insights.netlify.app",
+      "title": "sheet-insights.netlify.app",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b9ef69b6ceb72779",
+      "url": "https://thomasahle.com/fast-polynomials/",
+      "title": "Show HN: Compute polynomials twice as fast",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-5be41d31baf99ed3",
+      "url": "https://usefeyn.com/blog/multimatte/",
+      "title": "Show HN: MultiMatte, a Promptable Image Background Removal Model",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-31079caa43db0a97",
+      "url": "https://newworldsize.com/old-vs-new-world-map/",
+      "title": "Show HN: Mercator vs. UN&#x27;s new Equal Earth map, synced side by side",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-19e7d47c7eaa6f92",
+      "url": "https://github.com/bkovacev/keychron-macos",
+      "title": "Show HN: Keychron macOS Battery Life and Controls",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-99ca70d6d5967822",
+      "url": "https://mostlyright.md/datasets/kalshi-settlement-rules-and-sources-2026",
+      "title": "Show HN: Research-ready datasets from public data in mins",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-61b07965193c49c1",
+      "url": "https://github.com/VictorioBerra/mistatic",
+      "title": "Show HN: Minimal Static Website Hosting Tool",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-cd2877dec832df51",
+      "url": "https://news.ycombinator.com/from?site=github.com/victorioberra",
+      "title": "github.com/victorioberra",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-4dc0f75ef8a636c1",
+      "url": "https://asm-editor.specy.app/",
+      "title": "Show HN: A browser IDE for m68000, Z80 assembly (and more), with graphics",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-aac58335519ba88d",
+      "url": "https://c4.quietgridlabs.com/",
+      "title": "Show HN: Viaduct – Architecture change sets for AI coding agents",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-a44ec97f41eb3b51",
+      "url": "https://race.darebuild.com/",
+      "title": "Show HN: Make better humans and race them",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-335b2411034b2d50",
+      "url": "https://kytto.jakubhecht.sk/",
+      "title": "Show HN: MCP server manager: KyttoMCP – in beta",
+      "source_ids": [
+        "hacker-news"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-561b4078010f62e3",
+      "url": "https://github.com/features/copilot",
+      "title": "GitHub Copilot Write better code with AI",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-5c4bad7b79d826d9",
+      "url": "https://github.com/features/ai/github-app",
+      "title": "GitHub Copilot app Direct agents from issue to merge",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-9bd216a1ce736031",
+      "url": "https://github.com/mcp",
+      "title": "MCP Registry Integrate external tools",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-a8579c24f00201ac",
+      "url": "https://github.com/features/actions",
+      "title": "Actions Automate any workflow",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-dc8c950fdff4d956",
+      "url": "https://github.com/features/codespaces",
+      "title": "Codespaces Instant dev environments",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-054b3ee1bc66d991",
+      "url": "https://github.com/features/issues",
+      "title": "Issues Plan and track work",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-440986dac0dc2121",
+      "url": "https://github.com/features/code-review",
+      "title": "Code Review Manage code changes",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-4acb208c6568f420",
+      "url": "https://github.com/features/code-quality",
+      "title": "Code Quality Enforce quality at merge",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-ae983c1461977e4d",
+      "url": "https://github.com/security/advanced-security",
+      "title": "GitHub Advanced Security Find and fix vulnerabilities",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-47e99332b7baf21a",
+      "url": "https://github.com/security/advanced-security/code-security",
+      "title": "Code security Secure your code as you build",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-8282d534ed226919",
+      "url": "https://github.com/security/advanced-security/secret-protection",
+      "title": "Secret protection Stop leaks before they start",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-ecd24cac9583aa1e",
+      "url": "https://github.com/open-source/sponsors",
+      "title": "GitHub Sponsors Fund open source developers",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-7b5768df0489c4b4",
+      "url": "https://github.com/enterprise",
+      "title": "Enterprise platform AI-powered developer platform",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-e2578314b99e23b2",
+      "url": "https://github.com/features/copilot/copilot-business",
+      "title": "Copilot for Business Enterprise-grade AI features",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-7e6258930846c9d6",
+      "url": "https://github.com/enterprise/premium-support",
+      "title": "Premium Support Enterprise-grade 24/7 support",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-a514f15ae7a23a33",
+      "url": "https://github.com/trending?spoken_language_code=dv",
+      "title": "Divehi, Dhivehi, Maldivian",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-a66ffc9ea0625fb6",
+      "url": "https://github.com/trending?spoken_language_code=ia",
+      "title": "Interlingua (International Auxil...",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b9de6efed9695db0",
+      "url": "https://github.com/trending?spoken_language_code=kl",
+      "title": "Kalaallisut, Greenlandic",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-071f67ad752d9f4d",
+      "url": "https://github.com/trending?spoken_language_code=lb",
+      "title": "Luxembourgish, Letzeburgesch",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-841a24e6327202ec",
+      "url": "https://github.com/trending?spoken_language_code=li",
+      "title": "Limburgan, Limburger, Limburgish",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-6dbd9d1d985983ad",
+      "url": "https://github.com/trending?spoken_language_code=cu",
+      "title": "Church Slavic, Old Slavonic, Chu...",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-573cfeca109bb08b",
+      "url": "https://github.com/trending?spoken_language_code=ro",
+      "title": "Romanian, Moldavian, Moldovan",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-4b9554574bdc1f72",
+      "url": "https://github.com/trending/apollo-guidance-computer?since=daily",
+      "title": "Apollo Guidance Computer",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-34c80b88aa4e181a",
+      "url": "https://github.com/trending/cloud-firestore-security-rules?since=daily",
+      "title": "Cloud Firestore Security Rules",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-37152f13bc12cd87",
+      "url": "https://github.com/trending/common-workflow-language?since=daily",
+      "title": "Common Workflow Language",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-dbd8609bcb6867cd",
+      "url": "https://github.com/trending/debian-package-control-file?since=daily",
+      "title": "Debian Package Control File",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-a0263334d28f2e4e",
+      "url": "https://github.com/trending/digital-command-language?since=daily",
+      "title": "DIGITAL Command Language",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-ddc3ed5777392249",
+      "url": "https://github.com/trending/glyph-bitmap-distribution-format?since=daily",
+      "title": "Glyph Bitmap Distribution Format",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1e148790a90a2ae6",
+      "url": "https://github.com/trending/mathematical-programming-system?since=daily",
+      "title": "Mathematical Programming System",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-9e3cfc1cd4267b2e",
+      "url": "https://github.com/trending/microsoft-developer-studio-project?since=daily",
+      "title": "Microsoft Developer Studio Project",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-20b1de7815ecc88d",
+      "url": "https://github.com/trending/microsoft-visual-studio-solution?since=daily",
+      "title": "Microsoft Visual Studio Solution",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-e3ef223f3c96c5a9",
+      "url": "https://github.com/trending/module-management-system?since=daily",
+      "title": "Module Management System",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-9ba1f77ad10c06fd",
+      "url": "https://github.com/trending/object-data-instance-notation?since=daily",
+      "title": "Object Data Instance Notation",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1d70107a14b85a79",
+      "url": "https://github.com/trending/openapi-specification-v2?since=daily",
+      "title": "OpenAPI Specification v2",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-300f06b83b53386b",
+      "url": "https://github.com/trending/openapi-specification-v3?since=daily",
+      "title": "OpenAPI Specification v3",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-90954c025c870c87",
+      "url": "https://github.com/trending/parrot-internal-representation?since=daily",
+      "title": "Parrot Internal Representation",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-ae09c47ecf06c54a",
+      "url": "https://github.com/trending/protocol-buffer-text-format?since=daily",
+      "title": "Protocol Buffer Text Format",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-121f4d1a0aa32a3e",
+      "url": "https://github.com/trending/simple-file-verification?since=daily",
+      "title": "Simple File Verification",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b3eef31364bcdd9c",
+      "url": "https://github.com/trending/velocity-template-language?since=daily",
+      "title": "Velocity Template Language",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-504bf462859e0e28",
+      "url": "https://github.com/trending/webassembly-interface-type?since=daily",
+      "title": "WebAssembly Interface Type",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-c5691bb2453540a7",
+      "url": "https://github.com/trending/windows-registry-entries?since=daily",
+      "title": "Windows Registry Entries",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-e405f78b65a78de4",
+      "url": "https://github.com/trending/world-of-warcraft-addon-data?since=daily",
+      "title": "World of Warcraft Addon Data",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-f3d0d1f85de671d5",
+      "url": "https://github.com/bilawalsidhu/gods-eye-view",
+      "title": "bilawalsidhu / gods-eye-view",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-809a5e9573333bc9",
+      "url": "https://github.com/melgarafael/DeskcommCRM",
+      "title": "melgarafael / DeskcommCRM",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-d2c75eda6557ff17",
+      "url": "https://github.com/jihe520/MathModelAgent",
+      "title": "jihe520 / MathModelAgent",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-3046354ef8c2637f",
+      "url": "https://github.com/p1neappleXpress/OpenFlux",
+      "title": "p1neappleXpress / OpenFlux",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-6943fdef38504300",
+      "url": "https://github.com/jordan-gibbs/hyperresearch",
+      "title": "jordan-gibbs / hyperresearch",
+      "source_ids": [
+        "github-trending"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-4e4550e8d0d61214",
+      "url": "https://huggingface.co/papers/2609.10715",
+      "title": "NCP-ArchPreview Technical Report: Moving towards Latent Space Language Models through Next Concept Prediction",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-5b0e097ac143e98f",
+      "url": "https://huggingface.co/papers/2609.11929",
+      "title": "SenseNova-U1.5: Towards Native Unified Visual Intelligence",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-f55890bab2e7bb92",
+      "url": "https://huggingface.co/papers/2609.07064",
+      "title": "SpatialBlock: Enhancing Spatial Intelligence in LVLMs via Synthetic Block-Stacking Problem",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-0be03b4967a6a950",
+      "url": "https://huggingface.co/papers/2609.05903",
+      "title": "EvoSafeHarness: Evolving Model- and Domain-Specific Harnesses for Securing Agents",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1d4bdb817df0ea59",
+      "url": "https://huggingface.co/JohnsHopkins",
+      "title": "Johns Hopkins University",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-7c05812d2ced7bd7",
+      "url": "https://huggingface.co/papers/2609.11317",
+      "title": "Mi-Ripple: Restoring Images Degraded by Iterative AI Editing",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-51d07dc6efe70908",
+      "url": "https://huggingface.co/Miyang-AI",
+      "title": "Miyang Technology (Shanghai) Co., Ltd.",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-91d9940509b72edc",
+      "url": "https://huggingface.co/papers/2609.11412",
+      "title": "X-AuT: Progressive Audio-Encoder Compression for Speech LLMs with Cross-Scale Distillation",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-97990a8ff1d2ebfc",
+      "url": "https://huggingface.co/papers/2609.11561",
+      "title": "Memory as Plans: World-Action Modeling with Memory-Grounded Planning",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-42bb0bc27a0d8d79",
+      "url": "https://huggingface.co/papers/2609.11499",
+      "title": "Recursive Code World Models: Building Complex Worlds through Recursive Scene Programs",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-ab8ce10dd825d773",
+      "url": "https://huggingface.co/papers/2609.10712",
+      "title": "An Open Recipe for IMO Gold: Training Nemotron for Olympiad Mathematics",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-90b68cb47b049fe6",
+      "url": "https://huggingface.co/papers/2609.01515",
+      "title": "TempCloze: Can Video-LLMs Identify the Missing Middle?",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-0a27a50c747d501a",
+      "url": "https://huggingface.co/hkuhk",
+      "title": "The University of Hong Kong",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-a266a91c1ef154e3",
+      "url": "https://huggingface.co/papers/2609.11486",
+      "title": "FreeFlow: A Bias-free Hierarchical Transformer for Optical Flow Estimation",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-8d214d9aaca4eb34",
+      "url": "https://huggingface.co/papers/2609.11548",
+      "title": "World in World: Explore the World with World Models",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b80ab175ba3f9d00",
+      "url": "https://huggingface.co/papers/2609.11699",
+      "title": "Negative Self-Distillation: Learning to Reason by Avoiding Flaws",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-907ef51010c46480",
+      "url": "https://huggingface.co/papers/2609.09143",
+      "title": "Studying Image Tokenizers as Visual Languages in Unified Multimodal Models",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-498eb56832a802f0",
+      "url": "https://huggingface.co/Amazon-FAR",
+      "title": "Amazon Frontier AI & Robotics",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b3499529258ba8e0",
+      "url": "https://huggingface.co/papers/2609.06931",
+      "title": "CARDEA: Auditable Reasoning Grounded in Spatial Evidence for End-to-End Coronary Angiography Interpretation",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-7e1adb6ca0f091d8",
+      "url": "https://huggingface.co/papers/2608.27875",
+      "title": "HyQuant: Hybrid-Precision Quantization for LLM Attention",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-69515e61444caf85",
+      "url": "https://huggingface.co/SJTU",
+      "title": "Shanghai Jiao Tong University",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-f99983c207ceec0b",
+      "url": "https://huggingface.co/papers/2609.10016",
+      "title": "MetroLLM-Bench: Evaluating Language Models as Transit Kiosk Runtimes",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-bccb2acb8941b58c",
+      "url": "https://huggingface.co/papers/2609.11155",
+      "title": "DRG-MAPPO: Hierarchical Dynamic Role-Graph Multi-Agent Reinforcement Learning for Cooperative Air Combat",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-9af6c8a13767fdea",
+      "url": "https://huggingface.co/China666",
+      "title": "Chinese Academy of Sciences",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-4cb55028e254cf5f",
+      "url": "https://huggingface.co/papers/2609.11156",
+      "title": "UniH^3: Unifying Hierarchical Homogeneity and Heterogeneity for All-in-One Medical Image Restoration",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b857e1fee4445976",
+      "url": "https://huggingface.co/papers/2609.11808",
+      "title": "Generative Late-Interaction Embeddings For Visual Document Retrieval",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-162b695306dd15b2",
+      "url": "https://huggingface.co/KAUST",
+      "title": "King Abdullah University of Science and Technology",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-8de280370bd827b4",
+      "url": "https://huggingface.co/papers/2609.10745",
+      "title": "Think Before You Link: Rarity, Reasoning, and Retrieval in Multilingual Entity Linking",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-b6c6f09d64734455",
+      "url": "https://huggingface.co/papers/2609.10445",
+      "title": "Building Multilingual Bridges: Data Mixing as the Pillar of Generalization for In-Language Reasoning",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-4d71f3dbfb5b0d0b",
+      "url": "https://huggingface.co/papers/2609.11085",
+      "title": "Beyond Solver Verdicts: Generative Reward Models for Autoformalization",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-249b589f759b7205",
+      "url": "https://huggingface.co/papers/2608.15380",
+      "title": "Adaptive Bridge: A Proxy-Based Decoupling Layer for Mitigating DDS Backpressure in ROS 2",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-d6d1c0f87a009e7e",
+      "url": "https://huggingface.co/papers/2609.10539",
+      "title": "IdeaAMBIG: Benchmarking Implementation-Critical Gaps in Research-Idea Specifications",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    },
+    {
+      "id": "lead-1fce53508be109fe",
+      "url": "https://huggingface.co/papers/2609.09076",
+      "title": "ActReview: Rebuttal-Guided Training Data and Rubric Rewards for Actionable Peer Review Generation",
+      "source_ids": [
+        "huggingface-papers"
+      ],
+      "first_seen": "2026-09-12T02:08:04.186Z",
+      "last_seen": "2026-09-12T02:08:04.186Z",
+      "publication_date": null,
+      "disposition": "needs_research"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "alphasignal",
+      "status": "no_candidate_links",
+      "candidate_links": 0,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "anthropic",
+      "status": "retrieved",
+      "candidate_links": 30,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "bens-bites",
+      "status": "retrieved",
+      "candidate_links": 1,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "berkeley-bair",
+      "status": "unavailable",
+      "reason": "The operation was aborted due to timeout",
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "deepmind",
+      "status": "retrieved",
+      "candidate_links": 7,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "explainx",
+      "status": "retrieved",
+      "candidate_links": 61,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "github-trending",
+      "status": "retrieved",
+      "candidate_links": 48,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "hacker-news",
+      "status": "retrieved",
+      "candidate_links": 34,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "huggingface-papers",
+      "status": "retrieved",
+      "candidate_links": 33,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "import-ai",
+      "status": "unavailable",
+      "reason": "The operation was aborted due to timeout",
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "localllama",
+      "status": "no_candidate_links",
+      "candidate_links": 0,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "mit-csail",
+      "status": "retrieved",
+      "candidate_links": 6,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "neuron",
+      "status": "retrieved",
+      "candidate_links": 10,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "openai",
+      "status": "retrieved",
+      "candidate_links": 24,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "rundown",
+      "status": "retrieved",
+      "candidate_links": 33,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "stanford-hai",
+      "status": "retrieved",
+      "candidate_links": 22,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "superhuman",
+      "status": "retrieved",
+      "candidate_links": 19,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "the-batch",
+      "status": "unavailable",
+      "reason": "The operation was aborted due to timeout",
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "the-median",
+      "status": "unavailable",
+      "reason": "The operation was aborted due to timeout",
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    },
+    {
+      "source_id": "tldr-ai",
+      "status": "no_candidate_links",
+      "candidate_links": 0,
+      "checked_at": "2026-09-12T02:08:04.186Z"
+    }
+  ],
+  "note": "Discovery leads only. Work research must group by meaning, verify original evidence and dates, and evaluate novel topics before promotion. A failed retrieval is not no news."
+}

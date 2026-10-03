@@ -1,0 +1,38 @@
+{
+  "method": "saved_image_visual_inspection",
+  "reviewer_kind": "assistant_visual_inspection",
+  "reviewer_id": "conversation-assistant",
+  "inspection_reference": "view_image:_records/image-trials/2026-10-02-six-image/m04/final.png",
+  "reviewed_at": "2026-10-02T04:54:07.034Z",
+  "asset_sha256": "f46ff67113383133d561e31935f484b0c2d3e9df717d05854c2fa2329891dc4f",
+  "criteria": {
+    "subject_match": {
+      "verdict": "pass",
+      "observation": "Audience context and generated variants feed a contextual-bandit selection loop."
+    },
+    "mechanism_detail": {
+      "verdict": "pass",
+      "observation": "Feature encodings, alternative content, a selected experience and a policy return path are distinct."
+    },
+    "legible_labels": {
+      "verdict": "pass",
+      "observation": "The six specified labels are correctly spelled and readable at delivery size."
+    },
+    "contrast": {
+      "verdict": "pass",
+      "observation": "Navy labels and colored arrows remain clear against white."
+    },
+    "composition": {
+      "verdict": "pass",
+      "observation": "Two inputs converge into selection; observed results return through a separate learning lane."
+    },
+    "no_people": {
+      "verdict": "pass",
+      "observation": "The rejected person icon is replaced by a geometric glyph; no person silhouettes remain."
+    },
+    "no_overlap": {
+      "verdict": "pass",
+      "observation": "Panels, labels and connectors have clear separation."
+    }
+  }
+}

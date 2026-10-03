@@ -1,0 +1,37 @@
+{
+  "schema_version": "unattended-image-qualification-attempt-v1",
+  "observed_at": "2026-10-02T06:21:34.576Z",
+  "branch": "qualification/scheduled-image-host-2026-10-02",
+  "baseline_main_sha": "0f6cc4e5115f3604bb98aa6fc8099b54d69c3757",
+  "requested_qualification_schema": "unattended-image-qualification-v1",
+  "result": "BLOCKED",
+  "blocker": "CURRENT_IMAGE_HOST_OUTSIDE_AUTHORIZED_COST_BOUNDARY",
+  "details": [
+    "No production or qualification image was generated.",
+    "No interactive or fixture evidence was relabeled as scheduled.",
+    "No Work/Codex/paid-API zero-use claim was manufactured.",
+    "The controller automation is enabled, but the observed task object has last_run_time null, so the current invocation is not qualifying scheduler proof.",
+    "Run 4 remains PUBLIC CLOSED with Task 29 PASS at production SHA ce3dac9d75949f381821dfd34163048bf08c65d6.",
+    "Run 5 was not allocated because Task 00 admission remains blocked."
+  ],
+  "evidence": {
+    "bootstrap_receipt": "_records/image-trials/2026-10-02-scheduled/bootstrap-receipt.json",
+    "scheduler_observation": "_records/image-trials/2026-10-02-scheduled/scheduler-observation.json",
+    "capability_probe": "_records/image-trials/2026-10-02-scheduled/capability-probe.json"
+  },
+  "smallest_supported_recovery": {
+    "action": "Execute the same qualification from an ordinary cloud-scheduled ChatGPT host that exposes native generation and saved-pixel inspection without Work, Codex or paid API usage, then let the independent keeper persist a post-run automations.peek observation with the actual last_run_time.",
+    "reuse": [
+      "the six sealed nonproduction story specs",
+      "the released durable batch and exact-byte transport code",
+      "this bootstrap receipt and scheduler observation"
+    ],
+    "do_not_repeat": [
+      "Run 4",
+      "the interactive six-image trial",
+      "fixture control rehearsal",
+      "any accepted production image"
+    ]
+  },
+  "production_start_authorized": false
+}

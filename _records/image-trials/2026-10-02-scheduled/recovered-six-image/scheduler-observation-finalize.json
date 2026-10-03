@@ -1,0 +1,22 @@
+{
+  "schema_version": "automation-peek-observation-v1",
+  "source": "automations.peek",
+  "observed_at": "2026-10-02T18:10:02.920Z",
+  "automations": [
+    {
+      "id": "6abfb619185c819194646f77c3b314a4",
+      "team_id": null,
+      "title": "Run 5 Qualification Finalize",
+      "prompt": "Finalize recovery-only unattended-host qualification for the SAME October 2 Run 5 execution in gttome/Daily-AI-Brief. Do not generate, regenerate, edit, normalize, replace, or redesign any image. Preserve Tasks 00-22, publication PR #364, candidate head be96230e8a71825e945748a7aa7b771d354a7bee, and all six accepted_locked image bytes exactly. Use ordinary scheduled ChatGPT plus connected GitHub/Actions only; no Work, Codex, paid APIs/services, overage, alternate accounts, new credentials, or billing inference.\n\nRefresh protected main, reliable-edition/dab-edition-2026-10-02-run5, qualification/scheduled-image-host-2026-10-02, PR #364, and the full mandatory bootstrap/learning state. Reuse immutable twelve-file checkpoint 8b6dcfcedbc9dcb3be1474d23e005b7c14c6f001, the validated m07/m08 append-only dimension corrections, protected verifier/test changes already on the qualification branch, and preserve qualification-receipt-repair-1.json as historical BLOCKED evidence.\n\nCapture a fresh automations.peek observation now that the prior one-time repair invocation has completed. Bind this exact automation ID 6abfb619185c819194646f77c3b314a4, conversation ID, one-time schedule DTSTART 2026-10-02T17:25:06Z, actual completed last_run_time 2026-10-02T17:42:22.385889Z, disabled/completed state, observed_at, and unchanged relevant task object. Do not invent a start time or GitHub workflow ID. Validate through the repaired completed-one-time scheduler contract: task identity and conversation match, observed_at is after last_run_time, last_run_time is on/after DTSTART within the bounded completion window, and the one-time task is disabled only because it completed.\n\nRerun the qualification verifier against the exact committed originals/finals, correction records, saved-Git reviews, owner quality confirmation, zero-generation/edit counters, and fresh post-completion scheduler observation. Preserve prior receipts and write a new append-only receipt/result. PASS only if every gate genuinely validates. If any gate fails, record exact failure and smallest next action; do not authorize publication.\n\nIf and only if genuine PASS, create exactly one protected registration PR from current main that imports the qualification evidence/verifier/tests, updates cumulative operational learning/current standards, and registers docs/operations/unattended-image-host.json READY bound to the exact new receipt. Merge only after protected deterministic CI passes on unchanged head. Then reconcile Run 5 readiness, binding, stale active pointer, and publication authorization on the run branch without repeating Tasks 00-22 or changing candidate content. Resume existing Supervisor at Task 23/24: reuse protected CI run 37044705745 for exact PR #364 head be96230e8a71825e945748a7aa7b771d354a7bee; merge PR #364 only after registration and authorization are durably true. Continue exact-SHA deployment, independent live verification, PUBLIC CLOSED, and Task 29 cleanup. Keep daily controller, hourly recovery, and live validator enabled.",
+      "schedule": "BEGIN:VEVENT\nDTSTART:20261002T180615Z\nEND:VEVENT",
+      "timing_mode": "exact_schedule",
+      "display_schedule": null,
+      "is_enabled": true,
+      "conversation_id": "6abfbb59-6fd0-83ea-b2d4-5dba66c4b9d8",
+      "default_timezone": "America/Chicago",
+      "next_run_time": null,
+      "last_run_time": "2026-10-02T17:42:22.385889+00:00",
+      "updated_at": "2026-10-02T18:05:46.282007+00:00"
+    }
+  ]
+}

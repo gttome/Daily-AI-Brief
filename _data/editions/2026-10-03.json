@@ -1,0 +1,432 @@
+{
+  "schema_version": "1.0.0",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "policy_profile": "under80-v1",
+  "edition_id": "dab-edition-2026-10-03",
+  "brief_date": "2026-10-03",
+  "timezone": "America/Chicago",
+  "title": "Daily Generative AI Brief — October 3, 2026",
+  "published_at": "2026-10-03T12:56:17.526Z",
+  "research_cutoff_at": "2026-10-03T06:02:00.001Z",
+  "coverage_period": "September 30–October 3, 2026",
+  "status": "staged",
+  "stories": [
+    {
+      "story_id": "dab-story-2026-10-03-m01",
+      "ordinal": 1,
+      "slug": "voice-agents-get-a-100-millisecond-head-start",
+      "permanent_url": "/stories/2026-10-03/voice-agents-get-a-100-millisecond-head-start/",
+      "focus": "technical_ai_engineering",
+      "headline": "Voice agents get a 100-millisecond head start",
+      "event_date": "2026-10-01",
+      "topics": [
+        "technical ai engineering"
+      ],
+      "companies": [
+        "Microsoft AI"
+      ],
+      "image": {
+        "path": "briefs/images/2026-10-03/dab-edition-2026-10-03-m01-repair-epoch-1-attempt-1.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m01-repair-epoch-1-attempt-1.png?v=oct3-m01-8077ced2c944",
+        "alt": "Textbook mechanism diagram showing live audio entering MAI-Transcribe-2-Streaming, progressive partial transcript tokens, a 100 ms latency clock, and a return loop from a voice agent response.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "oct3-m01-8077ced2c944"
+      },
+      "summary": "Microsoft introduced MAI-Voice-2.1 and its first streaming transcription model, designed to emit partial hypotheses just over 100 milliseconds after speech arrives. The company says the transcription model supports 60 languages, while Voice-2.1 covers 23 languages across 26 locales; a Flash variant is described as reaching roughly 150 milliseconds in vendor testing.",
+      "why_it_matters": "In a spoken interface, the useful breakthrough is not merely accurate transcription but early, stable partial text. That gives an agent time to retrieve context, plan a response and interrupt naturally before a full utterance has finished.",
+      "what_to_watch": "The latency and quality figures are Microsoft’s own measurements and will vary with language, network conditions, hardware and conversational noise.",
+      "source": {
+        "title": "Our first streaming transcription model",
+        "organization": "Microsoft AI",
+        "url": "https://microsoft.ai/news/our-first-streaming-transcription-model/",
+        "normalized_url": "https://microsoft.ai/news/our-first-streaming-transcription-model/",
+        "publication_date": "2026-10-01",
+        "evidence_type": "publisher_authored",
+        "availability_status": "available",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": null,
+          "verified_at": "2026-10-03T06:21:26.732Z",
+          "method": "publisher_displayed_reading_time",
+          "full_source_read": true,
+          "measurement_note": "Microsoft AI displays “5 min read” for the source article.",
+          "reading_minutes": 5
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-10-01T00:00:00Z",
+        "fallback_reason": "The selected item is outside the primary 24-hour band but remains inside the approved normal_72h fallback and provides distinct evidence needed for the fixed 2/2/2 slate."
+      },
+      "selection_rationale": "MAI-Transcribe-2-Streaming emits partial hypotheses just over 100 ms, supports 60 languages and pairs with MAI-Voice-2.1/Flash for low-latency conversational voice systems.",
+      "editorial_limitation": "The latency and quality figures are Microsoft’s own measurements and will vary with language, network conditions, hardware and conversational noise.",
+      "social_description": "Microsoft introduced MAI-Voice-2.1 and its first streaming transcription model, designed to emit partial hypotheses just over 100 milliseconds after speech arrives. The company says the transcription model supports 60 languages, while Voice-2.1 covers 23 languages across 26 locales; a Flash variant is described as reaching roughly 150 milliseconds in vendor testing."
+    },
+    {
+      "story_id": "dab-story-2026-10-03-m02",
+      "ordinal": 2,
+      "slug": "federated-learning-gets-a-public-privacy-proof",
+      "permanent_url": "/stories/2026-10-03/federated-learning-gets-a-public-privacy-proof/",
+      "focus": "technical_ai_engineering",
+      "headline": "Federated learning gets a public privacy proof",
+      "event_date": "2026-10-02",
+      "topics": [
+        "technical ai engineering"
+      ],
+      "companies": [
+        "Google Research"
+      ],
+      "image": {
+        "path": "briefs/images/2026-10-03/dab-edition-2026-10-03-m02-attempt-3.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m02-attempt-3.png?v=oct3-m02-1b674a86a07c",
+        "alt": "Textbook mechanism diagram showing separate local-data silos sending encrypted updates into a TEE-secured aggregation chamber with remote attestation and approved code, returning only a privacy-preserving global model.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "oct3-m02-1b674a86a07c"
+      },
+      "summary": "Google Research described a federated-learning design that couples trusted execution environments with a public transparency log. A key-management service running a TEE-backed RAFT cluster releases keys only to workloads whose identities and access policies match preauthorized entries, and Google says the design has been adopted for Gboard.",
+      "why_it_matters": "Federated learning usually asks outsiders to trust claims about which code handled private updates. A public policy log and hardware-attested execution make those claims more inspectable, shifting privacy from a promise toward evidence that can be independently checked.",
+      "what_to_watch": "TEEs reduce some operator-trust risks but do not eliminate vulnerabilities in hardware, workload code, policy design or the surrounding data pipeline.",
+      "source": {
+        "title": "Toward provably private learning from federated data",
+        "organization": "Google Research",
+        "url": "https://research.google/blog/toward-provably-private-learning-from-federated-data/",
+        "normalized_url": "https://research.google/blog/toward-provably-private-learning-from-federated-data/",
+        "publication_date": "2026-10-02",
+        "evidence_type": "publisher_authored",
+        "availability_status": "available",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": null,
+          "verified_at": "2026-10-03T06:21:26.732Z",
+          "method": "indexed_source_body_estimate_200wpm",
+          "full_source_read": true,
+          "measurement_note": "Estimated from the reviewed Google Research main article body at 200 words per minute; navigation and unrelated page chrome excluded.",
+          "reading_minutes": 7
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-10-02T00:00:00Z",
+        "fallback_reason": "The selected item is outside the primary 24-hour band but remains inside the approved normal_72h fallback and provides distinct evidence needed for the fixed 2/2/2 slate."
+      },
+      "selection_rationale": "TEE-backed federated learning adds public transparency logs, externally verifiable privacy policies and RAFT/KMS enforcement, already deployed for Gboard.",
+      "editorial_limitation": "TEEs reduce some operator-trust risks but do not eliminate vulnerabilities in hardware, workload code, policy design or the surrounding data pipeline.",
+      "social_description": "Google Research described a federated-learning design that couples trusted execution environments with a public transparency log. A key-management service running a TEE-backed RAFT cluster releases keys only to workloads whose identities and access policies match preauthorized entries, and Google says the design has been adopted for Gboard."
+    },
+    {
+      "story_id": "dab-story-2026-10-03-m04",
+      "ordinal": 3,
+      "slug": "anthropic-turns-enterprise-ai-delivery-into-a-profession",
+      "permanent_url": "/stories/2026-10-03/anthropic-turns-enterprise-ai-delivery-into-a-profession/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Anthropic turns enterprise AI delivery into a profession",
+      "event_date": "2026-10-02",
+      "topics": [
+        "applied genai knowledge workers"
+      ],
+      "companies": [
+        "Anthropic"
+      ],
+      "image": {
+        "path": "briefs/images/2026-10-03/dab-edition-2026-10-03-m04-attempt-1.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m04-attempt-1.png?v=oct3-m04-f5303e8ffead",
+        "alt": "Textbook delivery blueprint showing business goal, model capability, risk, evaluation, and change management converging through delivery practice toward a governed launch gate associated with Frontier Academy.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "oct3-m04-f5303e8ffead"
+      },
+      "summary": "Anthropic announced Claude Frontier Academy, a training and deployment program centered on Frontier Deployed Engineers. The company says it is committing $100 million and aims to prepare 10,000 such engineers by the end of 2027 through a multi-day simulation followed by a 12-week residency.",
+      "why_it_matters": "Enterprise AI value often fails at the handoff between a capable model and a messy operating environment. Treating deployment as a professional discipline—part product discovery, integration, evaluation and change management—may be as important as another benchmark gain.",
+      "what_to_watch": "The investment, staffing target and outcomes are forward-looking company statements; the program’s scale and effectiveness still need independent evidence.",
+      "source": {
+        "title": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap",
+        "organization": "Anthropic",
+        "url": "https://www.anthropic.com/news/claude-frontier-academy",
+        "normalized_url": "https://www.anthropic.com/news/claude-frontier-academy",
+        "publication_date": "2026-10-02",
+        "evidence_type": "publisher_authored",
+        "availability_status": "available",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": null,
+          "verified_at": "2026-10-03T06:21:26.732Z",
+          "method": "indexed_source_body_estimate_200wpm",
+          "full_source_read": true,
+          "measurement_note": "Estimated from the reviewed Anthropic main announcement body at 200 words per minute; navigation and related-content chrome excluded.",
+          "reading_minutes": 6
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-10-02T00:00:00Z",
+        "fallback_reason": "The selected item is outside the primary 24-hour band but remains inside the approved normal_72h fallback and provides distinct evidence needed for the fixed 2/2/2 slate."
+      },
+      "selection_rationale": "Claude Frontier Academy combines multi-day simulation and a 12-week residency to develop customer-facing engineers who can ship governed enterprise AI projects.",
+      "editorial_limitation": "The investment, staffing target and outcomes are forward-looking company statements; the program’s scale and effectiveness still need independent evidence.",
+      "social_description": "Anthropic announced Claude Frontier Academy, a training and deployment program centered on Frontier Deployed Engineers. The company says it is committing $100 million and aims to prepare 10,000 such engineers by the end of 2027 through a multi-day simulation followed by a 12-week residency."
+    },
+    {
+      "story_id": "dab-story-2026-10-03-m05",
+      "ordinal": 4,
+      "slug": "customer-service-prepares-for-agents-on-both-sides",
+      "permanent_url": "/stories/2026-10-03/customer-service-prepares-for-agents-on-both-sides/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Customer service prepares for agents on both sides",
+      "event_date": "2026-10-01",
+      "topics": [
+        "applied genai knowledge workers"
+      ],
+      "companies": [
+        "Decagon"
+      ],
+      "image": {
+        "path": "briefs/images/2026-10-03/dab-edition-2026-10-03-m05-attempt-3.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m05-attempt-3.png?v=oct3-m05-54d5e81239ef",
+        "alt": "Textbook mechanism diagram showing a customer software agent and an enterprise software agent meeting at a Personal Agent Gateway that verifies identity, consent, and policy before returning a traceable resolution and audit trail.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "oct3-m05-54d5e81239ef"
+      },
+      "summary": "At Dialogues 2026, Decagon introduced Voice3, Agent Modules, Duet Apprentice and a Personal Agent Gateway intended to recognize customer-side personal agents and establish a permissioned communication channel with a company’s service agent. The product direction anticipates interactions where software represents both the business and the customer.",
+      "why_it_matters": "Agent-to-agent service could remove repetitive authentication, form filling and status checks, but it also moves trust decisions into protocols: who may act, what may be disclosed, which action requires confirmation and how a human takes control.",
+      "what_to_watch": "These capabilities and benefits are vendor claims. Real deployments will need to prove identity, consent, escalation and dispute handling across organizations.",
+      "source": {
+        "title": "The AI concierge for every customer (and their agent)",
+        "organization": "Decagon",
+        "url": "https://decagon.ai/blog/dialogues-2026",
+        "normalized_url": "https://decagon.ai/blog/dialogues-2026",
+        "publication_date": "2026-10-01",
+        "evidence_type": "publisher_authored",
+        "availability_status": "available",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": null,
+          "verified_at": "2026-10-03T06:21:26.732Z",
+          "method": "indexed_source_body_estimate_200wpm",
+          "full_source_read": true,
+          "measurement_note": "Estimated from the reviewed Decagon main article body at 200 words per minute; navigation, newsletter form, testimonial and hiring chrome excluded.",
+          "reading_minutes": 5
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-10-01T00:00:00Z",
+        "fallback_reason": "The selected item is outside the primary 24-hour band but remains inside the approved normal_72h fallback and provides distinct evidence needed for the fixed 2/2/2 slate."
+      },
+      "selection_rationale": "Voice 3, Personal Agent Gateway, Agent Modules and Duet Apprentice reshape customer support workflows around both human staff and customer-side agents.",
+      "editorial_limitation": "These capabilities and benefits are vendor claims. Real deployments will need to prove identity, consent, escalation and dispute handling across organizations.",
+      "social_description": "At Dialogues 2026, Decagon introduced Voice3, Agent Modules, Duet Apprentice and a Personal Agent Gateway intended to recognize customer-side personal agents and establish a permissioned communication channel with a company’s service agent. The product direction anticipates interactions where software represents both the business and the customer."
+    },
+    {
+      "story_id": "dab-story-2026-10-03-m07",
+      "ordinal": 5,
+      "slug": "one-agent-skills-package-many-copilot-workflows",
+      "permanent_url": "/stories/2026-10-03/one-agent-skills-package-many-copilot-workflows/",
+      "focus": "agents_non_technical_people",
+      "headline": "One Agent Skills package, many Copilot workflows",
+      "event_date": "2026-09-30",
+      "topics": [
+        "agents non technical people"
+      ],
+      "companies": [
+        "Microsoft 365 Developer Blog"
+      ],
+      "image": {
+        "path": "briefs/images/2026-10-03/dab-edition-2026-10-03-m07-attempt-2.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m07-attempt-2.png?v=oct3-m07-3557eea83d78",
+        "alt": "Textbook mechanism diagram showing one versioned Agent Skill package containing instructions, references, and scripts, installed once and reused across four Copilot workflow lanes with a centralized maintenance loop.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "oct3-m07-3557eea83d78"
+      },
+      "summary": "Microsoft’s WIQD tooling can import an Agent Plugins package and help a developer inspect, validate, package and share its skills, MCP connections and agents for Microsoft Copilot workflows. The tooling is in public preview and centers on reusing one maintained package across multiple destinations.",
+      "why_it_matters": "A portable skills package turns agent behavior into a reviewable asset instead of a collection of copied prompts. Teams can version the instructions and tool bindings once, validate them and reuse the package while keeping local workflow integration explicit.",
+      "what_to_watch": "A shared package format does not guarantee identical behavior across runtimes; identity, permissions, available tools and orchestration semantics still require environment-specific testing.",
+      "source": {
+        "title": "Bring your plugin to Microsoft Copilot with Work IQ Developer Tools",
+        "organization": "Microsoft 365 Developer Blog",
+        "url": "https://devblogs.microsoft.com/microsoft365dev/bring-your-plugin-to-microsoft-copilot-with-wiqd/",
+        "normalized_url": "https://devblogs.microsoft.com/microsoft365dev/bring-your-plugin-to-microsoft-copilot-with-wiqd/",
+        "publication_date": "2026-09-30",
+        "evidence_type": "publisher_authored",
+        "availability_status": "available",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": null,
+          "verified_at": "2026-10-03T06:21:26.732Z",
+          "method": "indexed_source_body_estimate_200wpm",
+          "full_source_read": true,
+          "measurement_note": "Estimated from the reviewed Microsoft 365 Developer Blog main article body at 200 words per minute; navigation, author bios and related chrome excluded.",
+          "reading_minutes": 6
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "extended",
+        "source_published_at": "2026-09-30T00:00:00Z",
+        "fallback_reason": "The selected item is outside the primary 24-hour band but remains inside the approved extended_168h fallback and provides distinct evidence needed for the fixed 2/2/2 slate."
+      },
+      "selection_rationale": "Packages reusable skills, MCP servers and agents into one importable Agent Plugins format; selected candidate for the edition's one reusable Agent Skills story.",
+      "editorial_limitation": "A shared package format does not guarantee identical behavior across runtimes; identity, permissions, available tools and orchestration semantics still require environment-specific testing.",
+      "social_description": "Microsoft’s WIQD tooling can import an Agent Plugins package and help a developer inspect, validate, package and share its skills, MCP connections and agents for Microsoft Copilot workflows. The tooling is in public preview and centers on reusing one maintained package across multiple destinations."
+    },
+    {
+      "story_id": "dab-story-2026-10-03-m08",
+      "ordinal": 6,
+      "slug": "california-tests-the-legal-boundary-for-rogue-agents",
+      "permanent_url": "/stories/2026-10-03/california-tests-the-legal-boundary-for-rogue-agents/",
+      "focus": "agents_non_technical_people",
+      "headline": "California tests the legal boundary for rogue agents",
+      "event_date": "2026-10-01",
+      "topics": [
+        "agents non technical people"
+      ],
+      "companies": [
+        "California Department of Justice"
+      ],
+      "image": {
+        "path": "briefs/images/2026-10-03/dab-edition-2026-10-03-m08-attempt-2.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m08-attempt-2.png?v=oct3-m08-3e4b16b1d0fd",
+        "alt": "Textbook forensic accountability diagram tracing a delegated task through an agent action log into a protected system, then through evidence preservation and legal review to deployer, operator, and provider accountability.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "oct3-m08-3e4b16b1d0fd"
+      },
+      "summary": "California Attorney General Rob Bonta announced an investigative subpoena to OpenAI as part of an inquiry into cybersecurity incidents and risks involving AI agents. The action tests what records, safeguards and organizational responsibilities regulators may expect when an agent’s behavior causes or contributes to harm.",
+      "why_it_matters": "Agent autonomy is becoming an evidence problem as well as a product problem. Organizations need durable logs, bounded credentials, human approval points and incident reconstruction before a regulator or customer asks what happened.",
+      "what_to_watch": "An investigative subpoena begins fact-finding; it is not a finding of liability or wrongdoing. Claims about the underlying incidents should remain attributed to the Attorney General’s announcement.",
+      "source": {
+        "title": "Attorney General Bonta serves investigative subpoena on OpenAI over AI cybersecurity incidents",
+        "organization": "California Department of Justice",
+        "url": "https://www.oag.ca.gov/news/press-releases/part-ongoing-investigation-attorney-general-bonta-serves-investigative-subpoena",
+        "normalized_url": "https://www.oag.ca.gov/news/press-releases/part-ongoing-investigation-attorney-general-bonta-serves-investigative-subpoena",
+        "publication_date": "2026-10-01",
+        "evidence_type": "publisher_authored",
+        "availability_status": "available",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": null,
+          "verified_at": "2026-10-03T06:21:26.732Z",
+          "method": "indexed_source_body_estimate_200wpm",
+          "full_source_read": true,
+          "measurement_note": "Estimated from the reviewed California DOJ press-release body at 200 words per minute; site navigation and footer excluded.",
+          "reading_minutes": 3
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-10-01T00:00:00Z",
+        "fallback_reason": "The selected item is outside the primary 24-hour band but remains inside the approved normal_72h fallback and provides distinct evidence needed for the fixed 2/2/2 slate."
+      },
+      "selection_rationale": "A concrete public-accountability development helps nontechnical readers understand how agent autonomy changes organizational legal and governance duties.",
+      "editorial_limitation": "An investigative subpoena begins fact-finding; it is not a finding of liability or wrongdoing. Claims about the underlying incidents should remain attributed to the Attorney General’s announcement.",
+      "social_description": "California Attorney General Rob Bonta announced an investigative subpoena to OpenAI as part of an inquiry into cybersecurity incidents and risks involving AI agents. The action tests what records, safeguards and organizational responsibilities regulators may expect when an agent’s behavior causes or contributes to harm."
+    }
+  ],
+  "worth_watching": {
+    "general": {
+      "status": "included",
+      "title": "Introducing MAI-Transcribe-2-Streaming, MAI-Voice-2.1 and MAI-Voice-2.1-Flash",
+      "channel": "Microsoft AI",
+      "upload_date": "2026-10-02",
+      "runtime_seconds": 180,
+      "why_useful": "First-party visual summary of the streaming transcription and voice models behind the selected low-latency voice-agent story.",
+      "connection": "The short visual makes the interaction between streaming transcription and speech generation concrete. For practitioners, it shows where latency is gained before an agent has a complete utterance, helping translate the article’s timing claims into interface-design decisions.",
+      "url": "https://www.youtube.com/shorts/UJeR--ao1MA",
+      "duration_tier": "short",
+      "verification_note": "Official Microsoft AI YouTube Short indexed before the sealed cutoff; Shorts format bounds runtime below 180 seconds and the companion first-party release supplies model identity."
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Flight Intelligence: The Power of Work IQ | Discover how Work IQ is your business's secret sauce",
+      "channel": "Microsoft Developer",
+      "upload_date": "2026-10-03",
+      "runtime_seconds": 874,
+      "why_useful": "Developer demonstration of Work IQ context and workflow grounding, directly supporting the selected reusable Agent Skills packaging story.",
+      "connection": "Seeing Work IQ grounding in a live developer workflow makes the reusable-skills story more concrete: the value is not just packaging instructions once, but connecting those instructions to business context and tools without copying logic into every workflow.",
+      "url": "https://www.youtube.com/watch?v=VpSCu7s4wD4",
+      "duration_tier": "fallback",
+      "short_search_evidence": [
+        "The sealed Task 07 search found no equally relevant official video at or below ten minutes for the reusable Agent Skills story."
+      ],
+      "fallback_reason": "The 14:34 first-party developer demonstration is within the approved 15-minute escalation rung and directly supports the selected Agent Skills mechanism.",
+      "verification_note": "Official Microsoft Developer video indexed before the sealed cutoff; indexed YouTube metadata reports 14:34 runtime, within the approved 15-minute escalation rung."
+    }
+  },
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-10-03-1",
+      "title": "Dots get up in Muse’s business",
+      "show": "The Vergecast",
+      "host": "The Vergecast team",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 5310,
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "business agents",
+        "trust and agentic assistants"
+      ],
+      "url": "https://www.theverge.com/podcast/1004059/openai-dots-kindle-homepad-cybercab-vergecast",
+      "summary": "Independent technology-news discussion of business agents, trust and the current agentic-assistant market.",
+      "why_useful": "The episode provides an independent, conversational check on the Brief’s agent stories, especially the tension between convenience and trust when assistants begin acting for users or businesses.",
+      "selection_rationale": "Sealed Run 7 source-diverse podcast selection.",
+      "freshness_tier": "primary_48h",
+      "connection": "Use it alongside the customer-service and reusable-skills articles to compare product announcements with broader questions about agent identity, delegation and user trust.",
+      "permanent_url": "/podcasts/2026-10-03/run7-1/",
+      "verification_note": "The Verge episode page verifies title, show context and publication at 2026-10-02 15:47 UTC. Podcast-feed directories independently report the episode runtime as 1:28:30 (88 minutes 30 seconds).",
+      "platforms": [
+        {
+          "name": "The Vergecast",
+          "url": "https://www.theverge.com/podcast/1004059/openai-dots-kindle-homepad-cybercab-vergecast"
+        }
+      ],
+      "coverage_note": "Locked October 3 Run 7 media selection."
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-10-03-2",
+      "title": "An Argument Against AI Doom",
+      "show": "Galaxy Brain",
+      "host": "Charlie Warzel",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 3376,
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent accountability",
+        "cybersecurity and AI policy"
+      ],
+      "url": "https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/",
+      "summary": "Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.",
+      "why_useful": "The conversation adds a policy lens to the technical controls in the California story: monitoring, evidence retention and corporate accountability matter because agent failures can become governance and legal questions, not just engineering bugs.",
+      "selection_rationale": "Sealed Run 7 source-diverse podcast selection.",
+      "freshness_tier": "primary_48h",
+      "connection": "It complements the California accountability article by moving from the specific investigation to the wider debate over how organizations should monitor, explain and govern agent behavior.",
+      "permanent_url": "/podcasts/2026-10-03/run7-2/",
+      "verification_note": "The Atlantic episode page identifies the host, publication at 2026-10-02 13:00 ET, complete audio controls and an exact 56:16 runtime.",
+      "platforms": [
+        {
+          "name": "Galaxy Brain",
+          "url": "https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/"
+        }
+      ],
+      "coverage_note": "Locked October 3 Run 7 media selection."
+    }
+  ],
+  "editorial_takeaway": "Today’s strongest pattern is accountable operationalization: fast voice loops, verifiable privacy, professional deployment, two-sided service agents, reusable skills and legal traceability all depend on explicit boundaries and evidence."
+}

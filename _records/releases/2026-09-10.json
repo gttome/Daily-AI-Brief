@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-10",
+  "baseline_sha": "34c1591ff4054a1a2ff642ab629faa31e6d29e2f",
+  "rollback_target_sha": "34c1591ff4054a1a2ff642ab629faa31e6d29e2f",
+  "policy_profile": "full_v1",
+  "image_review": "_records/image-quality/2026-09-10-premium3.json",
+  "image_review_sha256": "aca99a454808a7ad8787409eec2998e822d60b502c1a009496079a11aa19b813",
+  "assets": [
+    {
+      "path": "briefs/images/2026-09-10/01-anthropic-containment-premium3.png",
+      "sha256": "1adfd3ad4fef2423dacb7deba6db4bd257ade78c166a445024fb8143e3918bd2",
+      "bytes": 953385
+    },
+    {
+      "path": "briefs/images/2026-09-10/02-github-agent-permissions-premium3.png",
+      "sha256": "c318e345db3852c57f6c53f9ecf9000c6a1a8ad001025a4f23c01f14e7331217",
+      "bytes": 926642
+    },
+    {
+      "path": "briefs/images/2026-09-10/03-adobe-document-agent-premium3.png",
+      "sha256": "21be5328f80b8481c1b1d9c1a02cd9c85d193f710e26a433b881075ab7e52e1b",
+      "bytes": 768736
+    },
+    {
+      "path": "briefs/images/2026-09-10/04-microsoft-work-value-premium3.png",
+      "sha256": "4a4c92adb8810b667ccca4d4e37b969e61133f8e8b6d3970040f2f6006dd6e09",
+      "bytes": 854531
+    },
+    {
+      "path": "briefs/images/2026-09-10/05-google-opal-web-errands-premium3.png",
+      "sha256": "697d5b8ad74f3d46d55a989b4c24cd1cdfc054f66711eb34a647e355fa5d69a7",
+      "bytes": 869816
+    },
+    {
+      "path": "briefs/images/2026-09-10/06-skillmd-portability-premium3.png",
+      "sha256": "8b9ee0f755f0f1c1deb71a4a0a426bde7a1afe2cca7141386a64e13d58ae68db",
+      "bytes": 1038029
+    }
+  ],
+  "canonical_sha256": "d236b620ff304fba87fee7b7e8c7204bb7e6b3584e0279ecd9f20102b122a23f",
+  "candidate_digest": "sha256:09ef21e58449f6768578f7b56cb4976f441927b8f5e89c642d6e106965900803"
+}

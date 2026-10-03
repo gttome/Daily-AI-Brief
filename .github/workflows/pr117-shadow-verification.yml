@@ -1,0 +1,59 @@
+name: PR117 isolated shadow verification
+on:
+  push:
+    branches: [efficiency-revision-2026-09-17]
+    paths:
+      - .github/workflows/pr117-shadow-verification.yml
+      - _tools/pr117-shadow-verification.mjs
+      - _generator/test/pr117-prospective-handoff.test.mjs
+      - _generator/test/acquisition-limits.test.mjs
+      - _generator/test/daily-validation.test.mjs
+      - _generator/test/visual-output.test.mjs
+      - _generator/test/watchlist-delta.test.mjs
+      - _generator/test/watchlist-delta-cli.test.mjs
+      - _generator/test/command-center-delta.test.mjs
+      - _generator/lib/command-center-delta.mjs
+      - _tools/command-center-delta.mjs
+      - _tools/watchlist-delta-plan.mjs
+      - _tools/daily-validation.mjs
+      - _tools/discovery-links.mjs
+      - _generator/lib/visual-output.mjs
+permissions:
+  contents: read
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Verify branch and immutable baseline
+        run: |
+          test "$GITHUB_REF" = refs/heads/efficiency-revision-2026-09-17
+          git worktree add --detach /tmp/dab-baseline 1df531897edb50406b1d4bf2cf8089f69a797a92
+      - name: Verify prospective and focused deterministic contracts
+        run: |
+          mkdir -p /tmp/dab-shadow-evidence
+          node --test \
+            _generator/test/pr117-prospective-handoff.test.mjs \
+            _generator/test/acquisition-limits.test.mjs \
+            _generator/test/daily-validation.test.mjs \
+            _generator/test/visual-output.test.mjs \
+            _generator/test/watchlist-delta.test.mjs \
+            _generator/test/watchlist-delta-cli.test.mjs \
+            _generator/test/command-center-delta.test.mjs \
+            | tee /tmp/dab-shadow-evidence/focused-contracts.tap
+      - name: Replay without publication
+        run: node _tools/pr117-shadow-verification.mjs /tmp/dab-baseline /tmp/dab-shadow-evidence
+      - name: Preserve shadow evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr117-shadow-${{ github.sha }}
+          path: /tmp/dab-shadow-evidence
+          retention-days: 30

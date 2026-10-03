@@ -1,0 +1,28 @@
+{
+  "schema_version": "image-trial-capture-v1",
+  "candidate_id": "m04",
+  "execution_mode": "development_trial",
+  "trigger": "active_chat",
+  "tool": "built-in image_gen",
+  "source_artifact": "exec-90ef6f5c-2ebb-446f-a148-0db2c4d25353.png",
+  "request_sha256": "638ec47de8916e51365de7fa81d2fa1130964b059c449389a3c69eeb5f638041",
+  "generation_started_at": "2026-10-02T04:53:16.372Z",
+  "generation_finished_at": "2026-10-02T04:53:52.555Z",
+  "generation_seconds": 36.183,
+  "captured_at": "2026-10-02T04:53:54.984Z",
+  "raw": {
+    "sha256": "646cde8c1fef3be7060bdc5fe350f80a09f6a38600c4a5505250e544b4e5fc8e",
+    "git_blob_sha": "d9cc47676d8a64812161944f8ba28e917172b478",
+    "bytes": 1357259
+  },
+  "final": {
+    "sha256": "f46ff67113383133d561e31935f484b0c2d3e9df717d05854c2fa2329891dc4f",
+    "git_blob_sha": "85ace666c8efd51311a2c3a7971b9b98db8a5a26",
+    "bytes": 693671,
+    "width": 1200,
+    "height": 630
+  },
+  "account_billing_observed": false,
+  "work_or_codex_session_used": true,
+  "paid_api_adapter_used": false
+}

@@ -1,0 +1,28 @@
+{
+  "task_id": "18",
+  "from": "Backlog",
+  "to": "Blocked",
+  "state": "Blocked",
+  "at": "2026-10-02T16:27:20.458Z",
+  "operation": "assemble-canonical-brief-and-permanent-pages",
+  "writer_generation": 13,
+  "owner_id": "chatgpt-automation:6abeb9a2b8a88191949dc420d5e10feb",
+  "reason_code": "PUBLICATION_BLOCKED_PENDING_UNATTENDED_HOST_QUALIFICATION",
+  "blocker_detail": "Task 17 passed the six-image set differentiation and accessibility review from authoritative accepted image evidence. Assembly/publication-dependent Task 18 remains fail-closed because the unattended image host registration is still CAPABILITY_BLOCKED_ROUTE_ONLY pending recovery and durable commit of the six genuine original native PNGs alongside the six accepted finals.",
+  "recoverable": true,
+  "external_blocker": false,
+  "proof": {
+    "task17_done_event": "_records/edition-execution/events/2026-10-02-run5/17-done-set-review.json",
+    "task17_consumer_workflow_run_id": 37032971995,
+    "task17_consumer_result": "success",
+    "accepted_images": 6,
+    "final_png_git_readback_verified": 6,
+    "saved_git_visual_reviews_passed": 6,
+    "protected_main_sha": "2f563f68ff03beb7b03b3b52e921f43591ff0b41",
+    "host_registration_status": "CAPABILITY_BLOCKED_ROUTE_ONLY",
+    "image_tasks_authorized": false,
+    "publication_authorized": false
+  },
+  "recovery_action": "Complete the already-armed recovery-only scheduled-host evidence pass: recover and identity-verify the six genuine native originals from the same worker's prior results, bind them to the six accepted finals on the isolated qualification branch, and update host registration only through protected CI. After READY is merged, resume Task 18 without rebuilding Tasks 00-17.",
+  "publication_remains_blocked": true
+}

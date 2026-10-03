@@ -1,0 +1,780 @@
+{
+  "schema_version": "2.0.0",
+  "edition_date": "2026-09-30",
+  "method": "independent_watchlist",
+  "discovery_scope": "independent_watchlist",
+  "checked_at": "2026-10-01T05:47:00.774Z",
+  "primary_lookback_days": 7,
+  "missed_signal_check": {
+    "completed": true,
+    "lookback_days": 14
+  },
+  "surfaces": [
+    {
+      "id": "primary_research",
+      "status": "complete",
+      "queries": [
+        "official model and technical research announcements"
+      ],
+      "candidates_found": 2
+    },
+    {
+      "id": "frontier_and_small_labs",
+      "status": "complete",
+      "queries": [
+        "OpenAI and Anthropic official September releases"
+      ],
+      "candidates_found": 2
+    },
+    {
+      "id": "open_source",
+      "status": "complete",
+      "queries": [
+        "open-source agent frameworks and verification"
+      ],
+      "candidates_found": 2
+    },
+    {
+      "id": "technical_communities",
+      "status": "complete",
+      "queries": [
+        "Hugging Face and GitHub current agent work"
+      ],
+      "candidates_found": 2
+    },
+    {
+      "id": "broad_web",
+      "status": "complete",
+      "queries": [
+        "current agents, workflows, safety, and interfaces"
+      ],
+      "candidates_found": 7
+    },
+    {
+      "id": "youtube_creator_ecosystem",
+      "status": "complete",
+      "queries": [
+        "current official and creator video indexes for AI agents"
+      ],
+      "candidates_found": 2
+    }
+  ],
+  "domain_checks": [
+    {
+      "id": "frontier_models",
+      "name": "frontier models",
+      "checks": [
+        {
+          "check_id": "frontier_models-1",
+          "query": "site:openai.com September 29 2026 GPT-6.1 Sol official",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Relevant current primary or original evidence reviewed.",
+          "candidate_ids": [
+            "w30-frontier-gpt61sol"
+          ],
+          "degraded_reason": null
+        },
+        {
+          "check_id": "frontier_models-2",
+          "query": "site:anthropic.com September 2026 Claude Opus 5.5 official",
+          "method": "web_search",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Distinct corroborating surface checked; no omitted qualifying candidate.",
+          "candidate_ids": [
+            "w30-frontier-gpt61sol"
+          ],
+          "degraded_reason": null
+        }
+      ]
+    },
+    {
+      "id": "agents_harnesses",
+      "name": "agents/harnesses",
+      "checks": [
+        {
+          "check_id": "agents_harnesses-1",
+          "query": "site:openai.com September 29 2026 dots always-on agents official",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Relevant current primary or original evidence reviewed.",
+          "candidate_ids": [
+            "w30-agents-always-on"
+          ],
+          "degraded_reason": null
+        },
+        {
+          "check_id": "agents_harnesses-2",
+          "query": "site:nvidia.com September 28 2026 OpenShell runtime controls AI agents",
+          "method": "web_search",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Distinct corroborating surface checked; no omitted qualifying candidate.",
+          "candidate_ids": [
+            "w30-agents-always-on"
+          ],
+          "degraded_reason": null
+        }
+      ]
+    },
+    {
+      "id": "developer_tooling",
+      "name": "developer tooling",
+      "checks": [
+        {
+          "check_id": "developer_tooling-1",
+          "query": "site:openai.com Codex Cloud September 29 2026 official",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Relevant current primary or original evidence reviewed.",
+          "candidate_ids": [
+            "w30-devtools-codex-cloud"
+          ],
+          "degraded_reason": null
+        },
+        {
+          "check_id": "developer_tooling-2",
+          "query": "site:firebase.blog September 29 2026 Codex plugin agent skills",
+          "method": "web_search",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Distinct corroborating surface checked; no omitted qualifying candidate.",
+          "candidate_ids": [
+            "w30-devtools-codex-cloud"
+          ],
+          "degraded_reason": null
+        }
+      ]
+    },
+    {
+      "id": "multimodal_interface",
+      "name": "multimodal/interface",
+      "checks": [
+        {
+          "check_id": "multimodal_interface-1",
+          "query": "site:openai.com dots Slack Teams voice September 29 2026",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Relevant current primary or original evidence reviewed.",
+          "candidate_ids": [
+            "w30-interface-agent-glasses"
+          ],
+          "degraded_reason": null
+        },
+        {
+          "check_id": "multimodal_interface-2",
+          "query": "site:about.fb.com September 2026 Meta Muse AI agent official",
+          "method": "web_search",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Distinct corroborating surface checked; no omitted qualifying candidate.",
+          "candidate_ids": [
+            "w30-interface-agent-glasses"
+          ],
+          "degraded_reason": null
+        }
+      ]
+    },
+    {
+      "id": "knowledge_worker_workflows",
+      "name": "knowledge-worker workflows",
+      "checks": [
+        {
+          "check_id": "knowledge_worker_workflows-1",
+          "query": "site:workspace.google.com/blog September 2026 Gemini skills workspace official",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Relevant current primary or original evidence reviewed.",
+          "candidate_ids": [
+            "w30-workflow-shared-skills"
+          ],
+          "degraded_reason": null
+        },
+        {
+          "check_id": "knowledge_worker_workflows-2",
+          "query": "site:anthropic.com/news September 2026 Asana agents work teams official",
+          "method": "web_search",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Distinct corroborating surface checked; no omitted qualifying candidate.",
+          "candidate_ids": [
+            "w30-workflow-shared-skills"
+          ],
+          "degraded_reason": null
+        }
+      ]
+    },
+    {
+      "id": "safety_governance",
+      "name": "safety/governance",
+      "checks": [
+        {
+          "check_id": "safety_governance-1",
+          "query": "site:nvidia.com September 2026 AI safety agent platform official",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Relevant current primary or original evidence reviewed.",
+          "candidate_ids": [
+            "w30-safety-openshell"
+          ],
+          "degraded_reason": null
+        },
+        {
+          "check_id": "safety_governance-2",
+          "query": "site:reuters.com September 29 2026 AI researchers safety agents",
+          "method": "web_search",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Distinct corroborating surface checked; no omitted qualifying candidate.",
+          "candidate_ids": [
+            "w30-safety-openshell"
+          ],
+          "degraded_reason": null
+        }
+      ]
+    },
+    {
+      "id": "open_source_community",
+      "name": "open-source/community",
+      "checks": [
+        {
+          "check_id": "open_source_community-1",
+          "query": "site:huggingface.co/blog September 29 2026 MCP agents verification source-aware",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Relevant current primary or original evidence reviewed.",
+          "candidate_ids": [
+            "w30-open-provenanceguard"
+          ],
+          "degraded_reason": null
+        },
+        {
+          "check_id": "open_source_community-2",
+          "query": "open source AI agent framework September 29 2026 GitHub official release",
+          "method": "web_search",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "status": "complete",
+          "result_summary": "Distinct corroborating surface checked; no omitted qualifying candidate.",
+          "candidate_ids": [
+            "w30-open-provenanceguard"
+          ],
+          "degraded_reason": null
+        }
+      ]
+    }
+  ],
+  "candidate_ledger": [
+    {
+      "candidate_id": "w30-frontier-gpt61sol",
+      "name": "GPT-6.1 Sol cost-performance model",
+      "concept_class": "model_family_or_architecture",
+      "disposition": "rejected",
+      "rationale": "Material model release, but it is a model update rather than a distinct cross-cutting Watchlist mechanism.",
+      "evidence_urls": [
+        "https://deploymentsafety.openai.com/gpt-6-1-sol/respecting-auto-review",
+        "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+      ],
+      "mechanism": "near-frontier cost-performance model tier",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": true,
+      "promotional_only": false,
+      "evidence": [
+        {
+          "title": "Addendum to GPT-6 Astra System Card: GPT-6.1 Sol",
+          "url": "https://deploymentsafety.openai.com/gpt-6-1-sol/respecting-auto-review",
+          "publisher": "OpenAI",
+          "development_id": "openai-gpt-6-1-sol-2026-09-29",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "official system-card addendum",
+          "kind": "primary",
+          "credible": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "w30-agents-always-on",
+      "name": "Always-on personal agents",
+      "concept_class": "agent_pattern_or_harness",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-long-horizon-agents",
+      "same_mechanism_topic_id": "dab-topic-long-horizon-agents",
+      "mechanism_comparison": "Dots and Muse both keep working across sessions on dedicated cloud computers and return for review or approval, directly extending the existing persistence mechanism.",
+      "rationale": "Two independent primary product launches strengthen the existing cross-session persistence topic.",
+      "evidence_urls": [
+        "https://openai.com/index/introducing-dots/",
+        "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
+      ],
+      "mechanism": "persistent cross-session agent execution on dedicated cloud computers",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "meaningful_new_evidence": true,
+      "prior_development_ids": [
+        "salesforce-long-horizon-agents-2026-09-16"
+      ],
+      "evidence": [
+        {
+          "title": "Introducing dots",
+          "url": "https://openai.com/index/introducing-dots/",
+          "publisher": "OpenAI",
+          "development_id": "openai-dots-2026-09-29",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full first-party product announcement",
+          "kind": "primary",
+          "credible": true
+        },
+        {
+          "title": "Introducing Muse",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+          "publisher": "Meta",
+          "development_id": "meta-muse-2026-09-08",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full first-party product announcement",
+          "kind": "primary",
+          "credible": true
+        }
+      ],
+      "limitations": "Product announcements establish the mechanism, not comparative reliability, sustained adoption, or safe autonomy across high-impact tasks."
+    },
+    {
+      "candidate_id": "w30-devtools-codex-cloud",
+      "name": "Reusable cloud environments for coding agents",
+      "concept_class": "developer_tooling",
+      "disposition": "needs_research",
+      "rationale": "Current primary evidence is a significant Codex workflow change but remains vendor-specific and overlaps existing harness engineering.",
+      "evidence_urls": [
+        "https://openai.com/index/devday-2026-recap/",
+        "https://help-lb.openai.com/en/articles/20001545-using-codex-cloud"
+      ],
+      "mechanism": "reusable remote environments for persistent coding-agent tasks",
+      "materially_new": false,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "evidence": [
+        {
+          "title": "DevDay 2026 Recap — Codex in the cloud",
+          "url": "https://openai.com/index/devday-2026-recap/",
+          "publisher": "OpenAI",
+          "development_id": "openai-codex-cloud-2026-09-29",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full first-party recap",
+          "kind": "primary",
+          "credible": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "w30-interface-agent-glasses",
+      "name": "Personal agents on AI glasses",
+      "concept_class": "multimodal_or_interface",
+      "disposition": "needs_research",
+      "rationale": "Primary evidence shows a hands-free interface extension, but current evidence does not yet justify a durable mechanism distinct from existing multimodal assistants.",
+      "evidence_urls": [
+        "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/"
+      ],
+      "mechanism": "vision-and-voice access to persistent agents through glasses",
+      "materially_new": false,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "evidence": [
+        {
+          "title": "The Biggest News From Connect 2026",
+          "url": "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
+          "publisher": "Meta",
+          "development_id": "meta-muse-ai-glasses-2026-09-24",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full first-party product recap",
+          "kind": "primary",
+          "credible": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "w30-workflow-shared-skills",
+      "name": "Shared team know-how as reusable agent skills",
+      "concept_class": "knowledge_worker_workflow",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-agent-skills-observability",
+      "same_mechanism_topic_id": "dab-topic-agent-skills-observability",
+      "mechanism_comparison": "Google Workspace skills package team rules, templates, and reference files as reusable operating knowledge, matching the existing reusable-skills mechanism.",
+      "rationale": "Adds a distinct first-party workplace implementation to the existing reusable agent-skills topic.",
+      "evidence_urls": [
+        "https://workspace.google.com/blog/product-announcements/teach-gemini-your-teams-know-hows-with-skills-in-google-workspace"
+      ],
+      "mechanism": "reusable governed instructions and reference context for team agents",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "meaningful_new_evidence": true,
+      "prior_development_ids": [
+        "firebase-agent-skills-codex-2026-09-29"
+      ],
+      "evidence": [
+        {
+          "title": "Teach Gemini your team’s know-hows with skills in Google Workspace",
+          "url": "https://workspace.google.com/blog/product-announcements/teach-gemini-your-teams-know-hows-with-skills-in-google-workspace",
+          "publisher": "Google Workspace",
+          "development_id": "google-workspace-team-skills-2026-09-16",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full first-party product announcement",
+          "kind": "primary",
+          "credible": true
+        }
+      ],
+      "limitations": "First-party availability and workflow claims do not yet establish cross-vendor portability, measurable quality gains, or governance consistency."
+    },
+    {
+      "candidate_id": "w30-safety-openshell",
+      "name": "External runtime controls for AI agents",
+      "concept_class": "safety_security_or_governance",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-adaptive-agent-safeguards",
+      "same_mechanism_topic_id": "dab-topic-adaptive-agent-safeguards",
+      "mechanism_comparison": "OpenShell enforces task-specific access, credential, network, filesystem, and process rules outside the agent workload, directly strengthening the existing deployment-specific safeguards topic.",
+      "rationale": "A concrete open runtime supplies new implementation evidence for adaptive safeguards.",
+      "evidence_urls": [
+        "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
+        "https://docs.nvidia.com/openshell/about/overview"
+      ],
+      "mechanism": "policy-enforced agent runtime boundary outside the model process",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "meaningful_new_evidence": true,
+      "prior_development_ids": [
+        "2609.05903"
+      ],
+      "evidence": [
+        {
+          "title": "Add Runtime Controls to AI Agents with NVIDIA OpenShell",
+          "url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
+          "publisher": "NVIDIA",
+          "development_id": "nvidia-openshell-runtime-controls-2026-09-28",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full first-party technical walkthrough",
+          "kind": "primary",
+          "credible": true
+        }
+      ],
+      "limitations": "First-party technical evidence does not establish complete containment or independent assurance across every agent and runtime."
+    },
+    {
+      "candidate_id": "w30-open-provenanceguard",
+      "name": "Source-aware verification for tool-using agents",
+      "concept_class": "evaluation_or_benchmark",
+      "disposition": "new_topic",
+      "topic_id": "dab-topic-source-aware-agent-verification",
+      "rationale": "A credible original technical source demonstrates a distinct post-generation layer that preserves MCP source identity and blocks cross-source conflation.",
+      "evidence_urls": [
+        "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source"
+      ],
+      "mechanism": "post-generation claim verification that preserves tool-source identity",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "limitations": "One original research system and a medical evaluation set; independent replication, broader-domain calibration, and production reliability remain unverified.",
+      "evidence": [
+        {
+          "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
+          "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+          "publisher": "Multiverse Computing on Hugging Face",
+          "development_id": "provenanceguard-mcp-source-verification-2026-09-29",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full original technical article with method and reported evaluation",
+          "kind": "primary",
+          "credible": true
+        }
+      ],
+      "status": "early_signal",
+      "confidence": "limited"
+    }
+  ],
+  "candidates_reviewed": [
+    {
+      "candidate_id": "w30-frontier-gpt61sol",
+      "name": "GPT-6.1 Sol cost-performance model",
+      "concept_class": "model_family_or_architecture",
+      "disposition": "rejected",
+      "rationale": "Material model release, but it is a model update rather than a distinct cross-cutting Watchlist mechanism.",
+      "evidence_urls": [
+        "https://deploymentsafety.openai.com/gpt-6-1-sol/respecting-auto-review",
+        "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+      ],
+      "mechanism": "near-frontier cost-performance model tier",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": true,
+      "promotional_only": false,
+      "evidence": [
+        {
+          "title": "Addendum to GPT-6 Astra System Card: GPT-6.1 Sol",
+          "url": "https://deploymentsafety.openai.com/gpt-6-1-sol/respecting-auto-review",
+          "publisher": "OpenAI",
+          "development_id": "openai-gpt-6-1-sol-2026-09-29",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "official system-card addendum",
+          "kind": "primary",
+          "credible": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "w30-agents-always-on",
+      "name": "Always-on personal agents",
+      "concept_class": "agent_pattern_or_harness",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-long-horizon-agents",
+      "same_mechanism_topic_id": "dab-topic-long-horizon-agents",
+      "mechanism_comparison": "Dots and Muse both keep working across sessions on dedicated cloud computers and return for review or approval, directly extending the existing persistence mechanism.",
+      "rationale": "Two independent primary product launches strengthen the existing cross-session persistence topic.",
+      "evidence_urls": [
+        "https://openai.com/index/introducing-dots/",
+        "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
+      ],
+      "mechanism": "persistent cross-session agent execution on dedicated cloud computers",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "meaningful_new_evidence": true,
+      "prior_development_ids": [
+        "salesforce-long-horizon-agents-2026-09-16"
+      ],
+      "evidence": [
+        {
+          "title": "Introducing dots",
+          "url": "https://openai.com/index/introducing-dots/",
+          "publisher": "OpenAI",
+          "development_id": "openai-dots-2026-09-29",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full first-party product announcement",
+          "kind": "primary",
+          "credible": true
+        },
+        {
+          "title": "Introducing Muse",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+          "publisher": "Meta",
+          "development_id": "meta-muse-2026-09-08",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full first-party product announcement",
+          "kind": "primary",
+          "credible": true
+        }
+      ],
+      "limitations": "Product announcements establish the mechanism, not comparative reliability, sustained adoption, or safe autonomy across high-impact tasks."
+    },
+    {
+      "candidate_id": "w30-devtools-codex-cloud",
+      "name": "Reusable cloud environments for coding agents",
+      "concept_class": "developer_tooling",
+      "disposition": "needs_research",
+      "rationale": "Current primary evidence is a significant Codex workflow change but remains vendor-specific and overlaps existing harness engineering.",
+      "evidence_urls": [
+        "https://openai.com/index/devday-2026-recap/",
+        "https://help-lb.openai.com/en/articles/20001545-using-codex-cloud"
+      ],
+      "mechanism": "reusable remote environments for persistent coding-agent tasks",
+      "materially_new": false,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "evidence": [
+        {
+          "title": "DevDay 2026 Recap — Codex in the cloud",
+          "url": "https://openai.com/index/devday-2026-recap/",
+          "publisher": "OpenAI",
+          "development_id": "openai-codex-cloud-2026-09-29",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full first-party recap",
+          "kind": "primary",
+          "credible": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "w30-interface-agent-glasses",
+      "name": "Personal agents on AI glasses",
+      "concept_class": "multimodal_or_interface",
+      "disposition": "needs_research",
+      "rationale": "Primary evidence shows a hands-free interface extension, but current evidence does not yet justify a durable mechanism distinct from existing multimodal assistants.",
+      "evidence_urls": [
+        "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/"
+      ],
+      "mechanism": "vision-and-voice access to persistent agents through glasses",
+      "materially_new": false,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "evidence": [
+        {
+          "title": "The Biggest News From Connect 2026",
+          "url": "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
+          "publisher": "Meta",
+          "development_id": "meta-muse-ai-glasses-2026-09-24",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full first-party product recap",
+          "kind": "primary",
+          "credible": true
+        }
+      ]
+    },
+    {
+      "candidate_id": "w30-workflow-shared-skills",
+      "name": "Shared team know-how as reusable agent skills",
+      "concept_class": "knowledge_worker_workflow",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-agent-skills-observability",
+      "same_mechanism_topic_id": "dab-topic-agent-skills-observability",
+      "mechanism_comparison": "Google Workspace skills package team rules, templates, and reference files as reusable operating knowledge, matching the existing reusable-skills mechanism.",
+      "rationale": "Adds a distinct first-party workplace implementation to the existing reusable agent-skills topic.",
+      "evidence_urls": [
+        "https://workspace.google.com/blog/product-announcements/teach-gemini-your-teams-know-hows-with-skills-in-google-workspace"
+      ],
+      "mechanism": "reusable governed instructions and reference context for team agents",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "meaningful_new_evidence": true,
+      "prior_development_ids": [
+        "firebase-agent-skills-codex-2026-09-29"
+      ],
+      "evidence": [
+        {
+          "title": "Teach Gemini your team’s know-hows with skills in Google Workspace",
+          "url": "https://workspace.google.com/blog/product-announcements/teach-gemini-your-teams-know-hows-with-skills-in-google-workspace",
+          "publisher": "Google Workspace",
+          "development_id": "google-workspace-team-skills-2026-09-16",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full first-party product announcement",
+          "kind": "primary",
+          "credible": true
+        }
+      ],
+      "limitations": "First-party availability and workflow claims do not yet establish cross-vendor portability, measurable quality gains, or governance consistency."
+    },
+    {
+      "candidate_id": "w30-safety-openshell",
+      "name": "External runtime controls for AI agents",
+      "concept_class": "safety_security_or_governance",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-adaptive-agent-safeguards",
+      "same_mechanism_topic_id": "dab-topic-adaptive-agent-safeguards",
+      "mechanism_comparison": "OpenShell enforces task-specific access, credential, network, filesystem, and process rules outside the agent workload, directly strengthening the existing deployment-specific safeguards topic.",
+      "rationale": "A concrete open runtime supplies new implementation evidence for adaptive safeguards.",
+      "evidence_urls": [
+        "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
+        "https://docs.nvidia.com/openshell/about/overview"
+      ],
+      "mechanism": "policy-enforced agent runtime boundary outside the model process",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "meaningful_new_evidence": true,
+      "prior_development_ids": [
+        "2609.05903"
+      ],
+      "evidence": [
+        {
+          "title": "Add Runtime Controls to AI Agents with NVIDIA OpenShell",
+          "url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
+          "publisher": "NVIDIA",
+          "development_id": "nvidia-openshell-runtime-controls-2026-09-28",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full first-party technical walkthrough",
+          "kind": "primary",
+          "credible": true
+        }
+      ],
+      "limitations": "First-party technical evidence does not establish complete containment or independent assurance across every agent and runtime."
+    },
+    {
+      "candidate_id": "w30-open-provenanceguard",
+      "name": "Source-aware verification for tool-using agents",
+      "concept_class": "evaluation_or_benchmark",
+      "disposition": "new_topic",
+      "topic_id": "dab-topic-source-aware-agent-verification",
+      "rationale": "A credible original technical source demonstrates a distinct post-generation layer that preserves MCP source identity and blocks cross-source conflation.",
+      "evidence_urls": [
+        "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source"
+      ],
+      "mechanism": "post-generation claim verification that preserves tool-source identity",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "limitations": "One original research system and a medical evaluation set; independent replication, broader-domain calibration, and production reliability remain unverified.",
+      "evidence": [
+        {
+          "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
+          "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+          "publisher": "Multiverse Computing on Hugging Face",
+          "development_id": "provenanceguard-mcp-source-verification-2026-09-29",
+          "checked_at": "2026-10-01T05:47:00.774Z",
+          "review_depth": "full original technical article with method and reported evaluation",
+          "kind": "primary",
+          "credible": true
+        }
+      ],
+      "status": "early_signal",
+      "confidence": "limited"
+    }
+  ],
+  "new_topic_ids": [
+    "dab-topic-source-aware-agent-verification"
+  ],
+  "updated_topic_ids": [
+    "dab-topic-long-horizon-agents",
+    "dab-topic-agent-skills-observability",
+    "dab-topic-adaptive-agent-safeguards"
+  ],
+  "zero_new_certified": false,
+  "zero_new_justification": null,
+  "telemetry": {
+    "discovery_surfaces_required": 7,
+    "discovery_surfaces_attempted": 7,
+    "discovery_surfaces_complete": 7,
+    "focused_checks_executed": 14,
+    "candidates_discovered": 7,
+    "candidates_reviewed": 7,
+    "new_topics_admitted": 1,
+    "existing_topics_updated": 3,
+    "candidates_rejected": 1,
+    "candidates_held_for_research": 2,
+    "duplicates": 0
+  },
+  "sources_reused": [
+    "locked September 30 editorial evidence",
+    "current canonical Watchlist evidence"
+  ],
+  "story_discovery_rerun": false,
+  "editorial_rerun": false,
+  "media_rerun": false,
+  "image_rerun": false,
+  "concept_classes_reviewed": [
+    "model_family_or_architecture",
+    "agent_pattern_or_harness",
+    "developer_tooling",
+    "multimodal_or_interface",
+    "knowledge_worker_workflow",
+    "safety_security_or_governance",
+    "evaluation_or_benchmark"
+  ]
+}

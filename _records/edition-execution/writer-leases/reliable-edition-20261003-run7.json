@@ -1,0 +1,8 @@
+{
+  "schema_version": "run-writer-lease-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "owner_id": "released-task29",
+  "released": true,
+  "expires_at": "2026-10-03T15:42:26.757Z",
+  "publication_candidate_frozen": true
+}

@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-12",
+  "timezone": "America/Chicago",
+  "aggregation_window": {
+    "start": "2026-09-12T05:00:00.000Z",
+    "end": "2026-09-13T05:00:00.000Z"
+  },
+  "privacy": {
+    "contains_personal_identifiers": false,
+    "small_count_suppression": true,
+    "suppression_threshold": 5,
+    "retention_days": 400
+  },
+  "site_totals": {
+    "views": null,
+    "source_clicks": null,
+    "share_initiations": null,
+    "worth_watching_clicks": null,
+    "retention_30s": null,
+    "feedback_most_useful": null,
+    "feedback_useful": null,
+    "feedback_neutral": null,
+    "feedback_not_useful": null
+  },
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-12-4f7c9a21",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-12-8b2e61d4",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-12-c16a53ef",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-12-2d8f70b6",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-12-6ae3c942",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-12-f0397b5d",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    }
+  ],
+  "videos": [
+    {
+      "item_id": "dab-video-2026-09-12-general",
+      "title": "Friday, September 11, 2026 - 5 Minute AI News",
+      "url": "https://www.youtube.com/watch?v=BKq1NquBDa4",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "item_id": "dab-video-2026-09-12-agent-skills",
+      "title": "Agent Skills in AI Agents - Complete Tutorial (SKILL.md, Progressive Disclosure & Best Practices)",
+      "url": "https://www.youtube.com/watch?v=5vTdpYVPUyI",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    }
+  ],
+  "podcasts": [
+    {
+      "item_id": "dab-podcast-2026-09-12-ai-risk-specificity",
+      "title": "Anthropic Researcher Says AI Has Over a 10% Chance of Killing All Humans",
+      "url": "https://aidailybrief.ai/e/2026-09-10",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    }
+  ],
+  "collection_status": "partial",
+  "limitations": [
+    "Detailed reader metrics and usefulness aggregates are owner-only; null public values are withheld, not zero.",
+    "Exact credit usage is unavailable without an attributable platform usage record.",
+    "A later observation must not be represented as reconstructed event-day activity.",
+    "Counters are lifetime totals for the edition, observed at collection time; aggregation_window is the Chicago edition day, not an event-day bucket. Retention is a policy target; totals are retained for archive continuity."
+  ],
+  "observed_at": "2026-09-12T12:24:44.903Z",
+  "edition_id": "dab-edition-2026-09-12",
+  "private_evidence": {
+    "status": "not_collected",
+    "reference": "owner-only:/api/snapshot?key=_records/analytics/2026-09-12.json",
+    "metric_basis": "lifetime_observed",
+    "public_metric_status": "suppressed"
+  }
+}

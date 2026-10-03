@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.3.0",
+  "date": "2026-09-26",
+  "mode": "deterministic_delta_validation",
+  "started_at": "2026-09-26T15:54:22.043Z",
+  "ended_at": "2026-09-26T15:54:26.601Z",
+  "elapsed_seconds": 4.558,
+  "publication_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
+  "route_count": 16,
+  "model_calls": 0,
+  "input_tokens": null,
+  "output_tokens": null,
+  "owner_observed_credits": null,
+  "coverage": {
+    "articles": 6,
+    "videos": 2,
+    "podcasts": 2,
+    "included_items": 10,
+    "potential_positions": 10,
+    "video_omissions": [],
+    "podcast_omissions": []
+  },
+  "image_readiness": {
+    "expected": 6,
+    "accepted_locked": 6,
+    "integrity_passed": 6,
+    "canonical_hosted": 6,
+    "status": "pass"
+  },
+  "domain_states": {
+    "publication": "verified",
+    "coverage": "complete",
+    "measurements": "credit_target_unverified",
+    "retention": "private_unverified",
+    "learning": "deferred",
+    "book_backlog": "private_unverified"
+  },
+  "checks": [
+    {
+      "check_id": "publication_receipt",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Verified completion receipt for 10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b."
+    },
+    {
+      "check_id": "canonical_edition_contract",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Six unique stories with 2/2/2 allocation: {\"technical_ai_engineering\":2,\"applied_genai_knowledge_workers\":2,\"agents_non_technical_people\":2}."
+    },
+    {
+      "check_id": "podcast_collection_contract",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Included podcasts=2; distinct sources=2."
+    },
+    {
+      "check_id": "local_release_artifacts",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "244 current release artifacts exist locally."
+    },
+    {
+      "check_id": "image_integrity_dimensions",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Six PNG/WebP assets exist at >=1200x630; hashes computed deterministically (d992d23de34bcd0c0d2202d822ef6190c1d2f1bdc0f8249237c2147f7b645d67,971493f737fa39a538297c5607cf95ec8df39f9e1d3fcd4922918f737bb794e8,8a005fbe2f2d6ed6a02d37ba3088184923579072ae9ae82462c4829ee18618d3,3d7b0bf14f4711358911183e5356cef438f8cebab0b2b4906dac3c90860a244d,6be669ff18b28eccd830ec69195ff8d602913402ddd33853e9f5c6209d28f3dd,173b38def39d236652a7715ffde734e8661733fe0f8c5eea63336b3869e86de8)."
+    },
+    {
+      "check_id": "image_asset_lock",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "{\"expected\":6,\"accepted_locked\":6,\"integrity_passed\":6,\"canonical_hosted\":6,\"status\":\"pass\"}"
+    },
+    {
+      "check_id": "live_changed_routes",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "16 homepage/edition/archive/watchlist/feed/story/media routes returned successful HTTP responses."
+    },
+    {
+      "check_id": "live_homepage_edition",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Live homepage identifies September 26, 2026."
+    },
+    {
+      "check_id": "live_dated_edition",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Live dated edition identifies September 26, 2026."
+    },
+    {
+      "check_id": "live_image_assets",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "All six live story image assets returned successful HTTP responses."
+    },
+    {
+      "check_id": "live_image_bytes",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "All six deployed image byte streams exactly match the accepted repository assets."
+    },
+    {
+      "check_id": "source_http_state",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "6 selected source URLs returned successful HTTP responses."
+    },
+    {
+      "check_id": "rating_share_generated_ids",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Six story identities/rating controls are generated and the canonical share JS/CSS foundation is wired through the default layout."
+    },
+    {
+      "check_id": "accessibility_assertions",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "All six story images have substantive alt text."
+    },
+    {
+      "check_id": "canonical_url_parity",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Story routes/date and canonical source URLs are present."
+    },
+    {
+      "check_id": "pages_deployment",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "{\"run_id\":36253499609,\"conclusion\":\"success\",\"verified_at\":\"2026-09-26T15:54:14Z\",\"deployed_sha\":\"10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b\",\"deployment_url\":\"https://gttome.github.io/Daily-AI-Brief/\"}"
+    },
+    {
+      "check_id": "command_center_access_contract",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "{\"dashboard_read_access\":\"link_accessible\",\"viewer_mode\":\"read_only\",\"owner_authentication_required_for\":[\"administrative_actions\",\"configuration_changes\",\"saved_private_records\",\"private_comments\",\"data_mutation\",\"private_analytics_detail\",\"authoritative_state_changes\"],\"validator_classification\":{\"signed_out_dashboard_read\":\"PASS\",\"signed_out_public_safe_aggregate_read\":\"PASS\",\"signed_out_owner_operation_owner_identity_required\":\"PASS\",\"signed_out_owner_operation_not_executed\":\"NOT_APPLICABLE\",\"signed_out_state_mutation\":\"FAIL_SECURITY\",\"signed_out_private_record_read\":\"FAIL_PRIVACY\",\"owner_authenticated_owner_operation_identity_required\":\"FAIL_OWNER_WORKFLOW\",\"documentation_claims_dashboard_is_private\":\"FAIL_DOCUMENTATION_DRIFT\"}}"
+    },
+    {
+      "check_id": "command_center_public_read",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Signed-out link read returned HTTP 200; expected read-only access."
+    },
+    {
+      "check_id": "command_center_owner_operations",
+      "class": "deterministic",
+      "result": "not_applicable",
+      "severity": "medium",
+      "evidence": "Signed-out validation does not execute owner-only operations."
+    }
+  ],
+  "final_result": "pass",
+  "semantic_escalation_required": false,
+  "diagnostic_packet": [],
+  "automatic_ai_recovery_runs": 0
+}

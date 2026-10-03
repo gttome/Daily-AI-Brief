@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#08111f"/>
+  <text id="t1" x="60" y="78" fill="#f8fafc" font-family="Arial" font-size="34" font-weight="700">Semantic firewall: intent becomes policy</text>
+  <path d="M600 135 L760 195 L735 390 Q700 485 600 525 Q500 485 465 390 L440 195 Z" fill="#12243d" stroke="#4fd1c5" stroke-width="8"/>
+  <circle cx="600" cy="325" r="105" fill="none" stroke="#2dd4bf" stroke-width="16" stroke-dasharray="32 16"/>
+  <path d="M560 325 l28 28 58-68" fill="none" stroke="#a7f3d0" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M115 205 C245 205 330 245 455 265" fill="none" stroke="#60a5fa" stroke-width="8"/>
+  <path d="M115 325 C250 325 330 325 475 325" fill="none" stroke="#fbbf24" stroke-width="8"/>
+  <path d="M115 445 C245 445 330 405 455 385" fill="none" stroke="#f472b6" stroke-width="8"/>
+  <circle cx="115" cy="205" r="20" fill="#60a5fa"/><circle cx="115" cy="325" r="20" fill="#fbbf24"/><circle cx="115" cy="445" r="20" fill="#f472b6"/>
+  <text id="t2" x="65" y="175" fill="#bfdbfe" font-family="Arial" font-size="23">prompt intent</text>
+  <text id="t3" x="65" y="295" fill="#fde68a" font-family="Arial" font-size="23">tool call</text>
+  <text id="t4" x="65" y="415" fill="#fbcfe8" font-family="Arial" font-size="23">data flow</text>
+  <path d="M755 250 H1040" stroke="#34d399" stroke-width="8"/><polygon points="1040,250 1015,235 1015,265" fill="#34d399"/>
+  <path d="M755 325 H1040" stroke="#f59e0b" stroke-width="8"/><polygon points="1040,325 1015,310 1015,340" fill="#f59e0b"/>
+  <path d="M755 400 H1040" stroke="#fb7185" stroke-width="8"/><polygon points="1040,400 1015,385 1015,415" fill="#fb7185"/>
+  <text id="t5" x="1060" y="258" fill="#a7f3d0" font-family="Arial" font-size="22">ALLOW</text>
+  <text id="t6" x="1060" y="333" fill="#fde68a" font-family="Arial" font-size="22">REDACT</text>
+  <text id="t7" x="1060" y="408" fill="#fecdd3" font-family="Arial" font-size="22">BLOCK</text>
+  <text id="t8" x="60" y="575" fill="#94a3b8" font-family="Arial" font-size="21">Inline decisions across prompts, tools, code and sensitive data</text>
+</svg>

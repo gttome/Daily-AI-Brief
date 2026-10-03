@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.1.0",
+  "execution_mode": "production",
+  "staging_ref": "reliable-edition/dab-edition-2026-10-03-run7",
+  "kernel_path": "_records/editorial-handoff/kernel-2026-10-03.json",
+  "facts_path": "_records/editorial-handoff/facts-2026-10-03.json",
+  "images_path": "_records/editorial-handoff/images-2026-10-03-publication.json",
+  "media_path": "_records/editorial-handoff/media-2026-10-03.json",
+  "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates-2026-10-03-run7.json",
+  "article_evidence_path": "_records/editorial-handoff/article-evidence-2026-10-03.json",
+  "publication_manifest_path": "_records/editorial-handoff/publication-manifest.json",
+  "image_transport_method": "github_git_data_api",
+  "coverage_period": "Locked October 3 Run 7 evidence for September 30 through October 3 at the fixed 2026-10-03T06:02:00.001Z research cutoff, with six accepted professional images, two verified videos, two source-diverse podcasts, refreshed Watchlist, and all-four-book review.",
+  "editorial_model_passes": 1,
+  "post_editorial_model_passes": 0,
+  "deterministic_validation_model_calls": 0,
+  "recovery_note": "Durable execution reliable-edition-20261003-run7; completed Tasks 00-22, sealed reader pages and six accepted_locked images remain preserved.",
+  "deterministic_recovery_trigger": "Resume only the current Run 7 publication operation; repair the smallest invalidated deterministic projection without reopening completed editorial or image work.",
+  "compatibility_packaging_note": "October 3 edition identity and original research cutoff remain fixed; no completed content stage is reopened.",
+  "media_preflight_revalidation_note": "Retain the four locked media selections and their verified dates and runtimes; recheck only live reachability if the protected publication path requires it.",
+  "branch_identity_repair_note": "Use reliable-edition/dab-edition-2026-10-03-run7 for protected publication; no content, media selection, book review, Watchlist decision or accepted image changes.",
+  "media_preflight_timing_note": "Use the sealed October 3 media receipt already bound into the current publication manifest."
+}

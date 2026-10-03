@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-15",
+  "baseline_sha": "b833f01807eca040a0319c4540863fe5c19f8a4a",
+  "rollback_target_sha": "b833f01807eca040a0319c4540863fe5c19f8a4a",
+  "policy_profile": "full_v1",
+  "image_review": "_records/image-quality/2026-09-15-textbook.json",
+  "image_review_sha256": "4fb825558bee8cb05161d7568993896e89000e076bb84a2564840031bb2238e5",
+  "assets": [
+    {
+      "path": "briefs/images/2026-09-15/01-copilot-auto-model-selection.png",
+      "sha256": "7c4d7c044ab9ab740b1617cbc0414f7dc4d6c0d73dc60e5d23ebea6a1920844f",
+      "bytes": 361295
+    },
+    {
+      "path": "briefs/images/2026-09-15/02-humanist-ai-control-layers.png",
+      "sha256": "9fcc21ef7e1bd583da881127dd3a6660a1eddf764c56158e616f5c38b5f8b0fc",
+      "bytes": 569316
+    },
+    {
+      "path": "briefs/images/2026-09-15/03-financial-advisor-evidence-flow.png",
+      "sha256": "232df3cac551f42e7f7bc25fcaee3f13e91476ce79de425652acb24d9c2bfce1",
+      "bytes": 685790
+    },
+    {
+      "path": "briefs/images/2026-09-15/04-marketing-ops-as-code.png",
+      "sha256": "7184f6610275495e46c81a851dbca34c3cb208735bf40b2d638e3738b16a51cc",
+      "bytes": 711821
+    },
+    {
+      "path": "briefs/images/2026-09-15/05-agent-skills-validation-lifecycle.png",
+      "sha256": "1175ea490e13fe64ad8d5b9d463400bc36a247474425be9aa3106067219db902",
+      "bytes": 182497
+    },
+    {
+      "path": "briefs/images/2026-09-15/06-campaign-agent-orchestration.png",
+      "sha256": "e0bab25552abe5ff22ec39a08dba6ab6ca7f5cd4bb128a4c7ae89f33e6823dd5",
+      "bytes": 663061
+    }
+  ],
+  "canonical_sha256": "b93191e253795704885311b5d9322c9a6d3c1ead05acd950c2e01eebe5bd5cce",
+  "candidate_digest": "sha256:45cd07eb543ebdc18a2582ef0b3d8ce86bbbda73ef983b3d126b6fc55ff8c2c4"
+}

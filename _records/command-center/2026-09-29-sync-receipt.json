@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "result": "pass",
+  "source_edition": "2026-09-29",
+  "source_production_sha": "d294c5363c63f7055aa180283bb84395282b69e9",
+  "source_deployed_sha": "d294c5363c63f7055aa180283bb84395282b69e9",
+  "source_status_sha256": "sha256:f0b61695cda56afab88c6213e09c9f2a78f8347b8795d5ed1903816cba5c3998",
+  "synchronized_at": "2026-10-01T03:44:57.733Z",
+  "evidence": {
+    "method": "live_browser_display_parity",
+    "command_center_url": "https://daily-ai-brief-command-center.gtome.chatgpt.site",
+    "site_version": 57,
+    "repository_revision": "d7793ad04daa5924bb7d86578053c7f834344c6b",
+    "observed_display": {
+      "edition_date": "2026-09-29",
+      "lifecycle_state": "COMPLETED",
+      "production_sha": "d294c5363c63f7055aa180283bb84395282b69e9",
+      "deployed_sha": "d294c5363c63f7055aa180283bb84395282b69e9",
+      "completion_state": "verified",
+      "live_reader_state": "verified",
+      "source_status_sha256": "sha256:f0b61695cda56afab88c6213e09c9f2a78f8347b8795d5ed1903816cba5c3998",
+      "synchronized_at": "2026-10-01T03:44:57.733Z",
+      "refresh_result": "success"
+    }
+  }
+}

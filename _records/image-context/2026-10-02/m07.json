@@ -1,0 +1,8 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-02-m07"
+  ],
+  "includes_edition_context": false,
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white 1200x630 canvas. Subject: Reusable Gemini Skills. Mechanism: Show a maintained reusable Skill package containing saved instructions and reference files, invoked by matching prompts and composable with other Skills; depict repeated work lanes all reusing the same maintained package to explain why the mechanism reduces repetitive prompting.. No people or humanoid figures, no decorative filler, no unsupported metrics, no overlapping text, and only sealed visible labels."
+}

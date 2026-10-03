@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f5efe6"/>
+<text x="58" y="70" fill="#28221c" font-family="Georgia" font-size="35" font-weight="700">FRONTIER SAFEGUARDS, CUSTOMER-OWNED DATA</text>
+<circle cx="335" cy="327" r="176" fill="#fffaf3" stroke="#7c3aed" stroke-width="12"/><circle cx="335" cy="327" r="98" fill="#ede9fe" stroke="#7c3aed" stroke-width="8"/><circle cx="335" cy="327" r="28" fill="#7c3aed"/>
+<path d="M335 229v196M237 327h196M266 258l138 138M404 258L266 396" stroke="#7c3aed" stroke-width="8"/>
+<text x="234" y="540" fill="#4c1d95" font-family="Arial" font-size="26" font-weight="700">CUSTOMER CLOUD VAULT</text>
+<path d="M560 205c85 0 85 0 160 0M560 327h160M560 449h160" stroke="#0f766e" stroke-width="9" marker-end="url(#e)"/>
+<defs><marker id="e" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0l12 6-12 6z" fill="#0f766e"/></marker></defs>
+<rect x="755" y="155" width="370" height="105" rx="52" fill="#ccfbf1" stroke="#0f766e" stroke-width="5"/><text x="823" y="219" fill="#134e4a" font-family="Arial" font-size="25">ZERO RETENTION</text>
+<rect x="755" y="275" width="370" height="105" rx="52" fill="#ffedd5" stroke="#c2410c" stroke-width="5"/><text x="810" y="339" fill="#7c2d12" font-family="Arial" font-size="25">AUTOMATED REVIEW</text>
+<rect x="755" y="395" width="370" height="105" rx="52" fill="#dbeafe" stroke="#1d4ed8" stroke-width="5"/><text x="814" y="459" fill="#1e3a8a" font-family="Arial" font-size="25">CUSTOMER KEYS</text>
+</svg>

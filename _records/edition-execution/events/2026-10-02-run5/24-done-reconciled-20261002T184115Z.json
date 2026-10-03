@@ -1,0 +1,16 @@
+{
+  "task_id": "24",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-02T18:15:02Z",
+  "recorded_at": "2026-10-02T18:41:15.000Z",
+  "reconciled_under_writer_generation": 17,
+  "proof": {
+    "publication_pr": 364,
+    "candidate_head": "be96230e8a71825e945748a7aa7b771d354a7bee",
+    "merge_sha": "8f3217480edb5eb603d9f9940128cb6589af7946",
+    "merge_sequence_gate_at_merge": "FAIL_HOST_REGISTRATION_NOT_YET_DURABLE",
+    "anomaly_id": "DAB-OPS-20261002-018",
+    "reconciled_after_registration": true
+  }
+}

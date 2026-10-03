@@ -1,0 +1,44 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "task_id": "14",
+  "candidate_id": "m05",
+  "attempt": 3,
+  "reviewed_at": "2026-10-03T09:57:18.843Z",
+  "reviewer": "scheduled-consumer:6abeb9a2b8a88191949dc420d5e10feb",
+  "writer_generation": 20,
+  "branch": "reliable-edition/dab-edition-2026-10-03-run7",
+  "saved_git_commit": "82def2b9d76db7c7d7b9a02371821f5763a8bc06",
+  "original": {
+    "path": "_records/image-originals/2026-10-03-run7/dab-edition-2026-10-03-m05-attempt-3-native.png",
+    "git_blob_sha": "ea390137f1d2063e8005ca1559408ff1e51e923d",
+    "sha256": "3a1e5a79d6d0a75c9eeffcc9cdef6d24e9f776f9b08b6d39c086e80aa18b54cd",
+    "bytes": 1833203,
+    "width": 1730,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_MATCHES_LOCAL_BYTES"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-03/dab-edition-2026-10-03-m05-attempt-3.png",
+    "git_blob_sha": "299c7978183cc748c93d02ce4b3c0a1de0e94f49",
+    "sha256": "54d5e81239ef1e373ca271b935d9a84abb32206db768cb573cb865cdee76aa18",
+    "bytes": 952484,
+    "width": 1200,
+    "height": 630,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_MATCHES_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "no_people_or_humanoids": true,
+    "artifacts_or_corruption": false,
+    "note": "Saved-Git objects match the visually inspected local bytes exactly. The governed two-sided agent exchange is clear and detailed; only the eight sealed labels are visible after bounded targeted removal of the humanoid and faux-text icon defects."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "effective_date": "2026-09-17",
+  "dashboard_read_access": "link_accessible",
+  "viewer_mode": "read_only",
+  "public_safe_aggregate_signals": true,
+  "owner_authentication_required_for": [
+    "administrative_actions",
+    "configuration_changes",
+    "saved_private_records",
+    "private_comments",
+    "data_mutation",
+    "private_analytics_detail",
+    "authoritative_state_changes"
+  ],
+  "validator_classification": {
+    "signed_out_dashboard_read": "PASS",
+    "signed_out_public_safe_aggregate_read": "PASS",
+    "signed_out_owner_operation_owner_identity_required": "PASS",
+    "signed_out_owner_operation_not_executed": "NOT_APPLICABLE",
+    "signed_out_state_mutation": "FAIL_SECURITY",
+    "signed_out_private_record_read": "FAIL_PRIVACY",
+    "owner_authenticated_owner_operation_identity_required": "FAIL_OWNER_WORKFLOW",
+    "documentation_claims_dashboard_is_private": "FAIL_DOCUMENTATION_DRIFT"
+  },
+  "non_negotiable": "Do not make the dashboard private to satisfy validation. Protect mutation and private records instead."
+}

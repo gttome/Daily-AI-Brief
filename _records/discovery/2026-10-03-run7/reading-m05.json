@@ -1,0 +1,22 @@
+{
+  "candidate_id": "m05",
+  "status": "verified",
+  "verified_at": "2026-10-03T06:21:26.732Z",
+  "source_body_word_count": "not_measured",
+  "publisher": "Decagon",
+  "url": "https://decagon.ai/blog/dialogues-2026",
+  "published_date": "2026-10-01",
+  "method": "full indexed source-body review",
+  "source_type": "first_party_product_announcement",
+  "full_source_read": true,
+  "claims_verified": [
+    "four releases: Voice 3, Personal Agent Gateway, Agent Modules and Duet Apprentice",
+    "Personal Agent Gateway detects personal agents and provides a permissioned channel",
+    "Voice 3 uses duplex processing for interruptions while work continues",
+    "Duet Apprentice learns from internal resources and escalated conversations"
+  ],
+  "limitations": [
+    "performance and customer-impact claims are vendor-presented",
+    "dedicated personal-agent protocol adoption is not independently quantified"
+  ]
+}

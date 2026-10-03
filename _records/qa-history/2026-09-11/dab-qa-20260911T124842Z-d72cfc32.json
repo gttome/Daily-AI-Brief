@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "dab-qa-20260911T124842Z-d72cfc32",
+  "edition_id": "dab-edition-2026-09-11",
+  "publication_run_id": "dab-publication-20260911T122500Z-4df75c21",
+  "executed_at": "2026-09-11T12:48:42Z",
+  "initial_result": "fail",
+  "final_result": "pass",
+  "checks": [
+    {
+      "check_id": "freshness_schema_allocation",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "The live and canonical edition is dated September 11, 2026, conforms to full_v1, and contains exactly six stable stories ordered 2 Technical, 2 Applied, and 2 Agents."
+    },
+    {
+      "check_id": "candidate_memory_novelty_evidence",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Twenty candidates contain all seven score dimensions and rationales; six are selected and fourteen rejected. The 30-day memory includes today's stories. All six selections are new and use unique normalized primary-source URLs."
+    },
+    {
+      "check_id": "agent_skills_allocation",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Exactly one selected story is the reusable Agent Skills item: Atlassian TWG CLI documentation updated September 10, 2026."
+    },
+    {
+      "check_id": "media_slots",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Both video slots and podcast slot 9 are visibly empty and are not counted as included items. Dated search and rejection evidence records why exact <=20-minute video verification or a fresh strongly connected podcast could not be established."
+    },
+    {
+      "check_id": "images_textbook_quality",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Six custom built-in images were reviewed individually and together. All are exact 1200x630 white-background textbook PNGs with distinct layered-harness, paired-loop, provenance, review-loop, conversation-topology, and exploded-package compositions; deployed bytes match all six approved SHA-256 values."
+    },
+    {
+      "check_id": "canonical_reader_parity",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Repository integration reports no semantic differences among canonical, homepage, latest, dated brief, six permanent story pages, archive, Atom feed, and JSON feed."
+    },
+    {
+      "check_id": "ratings_sharing_privacy",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "A first-pass live check found public rating aggregate reads and failed this gate. Repair PR #57 removed those reads and added a regression test. Final live checks found six groups/30 stars on homepage and dated/latest, five stars plus one Share control and visible share count on every permanent story, and no public rating aggregate nodes or text. POST retains the same operation ID across retry, expires after 29 days, submits only brief_date/item_id/rating, and accepts only recorded=true."
+    },
+    {
+      "check_id": "feedback_retirement_navigation",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "The live /feedback/ route contains no form or rating controls, reader routes link to About and Home as appropriate, and the removed Search-the-Archive footer text did not return."
+    },
+    {
+      "check_id": "ci_pages_release",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Publication PR #56 CI 34599089826 and Pages 34599088692 succeeded; privacy repair PR #57 and production CI 34600425212 and Pages 34600424627 succeeded for final main d72cfc32140926a7265901ceb64d11819b408306."
+    },
+    {
+      "check_id": "usage_evidence",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "info",
+      "evidence": "Edition-specific drafts, rejects, elapsed time, failed local attempts, repairs, and exact available CI evidence were recorded. Exact credits and dollars remain unavailable and were not fabricated; authenticated private usage POST was unavailable in this runner, so the detailed usage record was retained privately rather than published to Git."
+    }
+  ],
+  "repairs": [
+    {
+      "description": "Removed public rating-average/count reads from generated reader pages while preserving the privacy-minimized star-rating POST, retries, sharing, and private Command Center analytics; added a regression test and regenerated affected pages.",
+      "commit_sha": "d72cfc32140926a7265901ceb64d11819b408306"
+    }
+  ],
+  "defects": [
+    {
+      "severity": "high",
+      "code": "public_rating_aggregate_read",
+      "status": "resolved",
+      "description": "Initial live QA found public pages fetching rating averages and counts, contrary to the private-aggregate policy. Repair PR #57 removed the public read and final browser verification found no aggregate nodes or text."
+    }
+  ],
+  "deployment_evidence": {
+    "pages_run_id": 34600424627,
+    "head_sha": "d72cfc32140926a7265901ceb64d11819b408306",
+    "conclusion": "success"
+  },
+  "record_path": "_records/qa/2026-09-11.json",
+  "deployment_latency_seconds": null
+}

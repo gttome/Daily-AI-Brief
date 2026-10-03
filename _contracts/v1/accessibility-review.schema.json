@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gttome.github.io/Daily-AI-Brief/contracts/v1/accessibility-review.schema.json",
+  "title": "Daily AI Brief accessibility review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "edition_id", "reviewed_at", "severity_policy", "automated_result", "disposition", "automated_findings", "editorial_alt_review"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "edition_id": {"type": "string", "pattern": "^dab-edition-"},
+    "reviewed_at": {"type": "string", "format": "date-time"},
+    "severity_policy": {"type": "object", "additionalProperties": false, "required": ["critical", "high", "medium", "low"], "properties": {"critical": {"const": "block"}, "high": {"const": "block"}, "medium": {"const": "degrade_and_repair"}, "low": {"const": "record"}}},
+    "automated_result": {"enum": ["PASS", "FAIL"]},
+    "disposition": {"enum": ["pass", "degraded", "block"]},
+    "automated_findings": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["story_id", "code", "severity", "message"], "properties": {"story_id": {"type": ["string", "null"]}, "code": {"type": "string"}, "severity": {"enum": ["critical", "high", "medium", "low"]}, "message": {"type": "string"}}}},
+    "editorial_alt_review": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["story_id", "result", "alt", "rationale"], "properties": {"story_id": {"type": "string", "pattern": "^dab-story-"}, "result": {"enum": ["pass", "fail"]}, "alt": {"type": "string", "minLength": 1}, "rationale": {"type": "string", "minLength": 1}}}}
+  }
+}

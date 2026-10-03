@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" rx="28" fill="#061F1A"/>
+<text x="60" y="82" fill="#F4FFF9" font-family="Arial,sans-serif" font-size="38" font-weight="700">A daily brief is an agent workflow pattern</text>
+<polygon points="600,205 720,275 720,415 600,485 480,415 480,275" fill="#48C78E"/>
+<text x="600" y="334" text-anchor="middle" fill="#052018" font-family="Arial,sans-serif" font-size="31" font-weight="700">BRIEFING</text>
+<text x="600" y="372" text-anchor="middle" fill="#0B3E2E" font-family="Arial,sans-serif" font-size="23">AGENT</text>
+<g stroke="#9DEBC8" stroke-width="8">
+<path d="M480 285 L295 200"/><path d="M720 285 L905 200"/><path d="M480 405 L295 500"/><path d="M720 405 L905 500"/>
+</g>
+<g font-family="Arial,sans-serif" font-size="24" font-weight="700" text-anchor="middle">
+<circle cx="240" cy="180" r="85" fill="#1B5E4B"/><text x="240" y="188" fill="#E9FFF5">COLLECT</text>
+<rect x="845" y="105" width="210" height="130" rx="30" fill="#265D74"/><text x="950" y="178" fill="#ECF9FF">DISTILL</text>
+<polygon points="240,400 330,455 295,560 185,560 150,455" fill="#6A4C93"/><text x="240" y="492" fill="#F8F0FF">REVIEW</text>
+<path d="M865 430 h170 v120 h-170z" fill="#E5A93F" stroke="none"/><path d="M900 405 h100 l35 25H865z" fill="#FFD37A" stroke="none"/><text x="950" y="505" fill="#2A1B00">PUBLISH</text>
+</g>
+<text x="60" y="600" fill="#99CBB9" font-family="Arial,sans-serif" font-size="23">Trigger → gather sources → synthesize → human review → publish</text>
+</svg>

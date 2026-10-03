@@ -1,0 +1,147 @@
+{
+  "schema_version": "production-image-specs-v2",
+  "edition_id": "dab-edition-2026-10-01",
+  "run_number": 4,
+  "execution_policy": "production-image-execution-v2",
+  "dimensions": {
+    "width": 1200,
+    "height": 630
+  },
+  "global_style": {
+    "background": "clean white",
+    "visual_quality": "September-19-or-better professional detailed textbook/editorial illustration",
+    "requirements": [
+      "landscape 1200x630 composition",
+      "high-information integrated mechanism diagram",
+      "clear visual hierarchy",
+      "generous safe margins",
+      "no people or humanoid figures",
+      "no decorative filler",
+      "no product screenshots",
+      "no fabricated metrics",
+      "only exact allowed visible text",
+      "no sparse/basic box-and-arrow fallback"
+    ]
+  },
+  "specs": [
+    {
+      "ordinal": 1,
+      "candidate_id": "m03",
+      "subject": "Governed multi-environment access to Claude Platform on AWS",
+      "mechanism": "Show three distinct caller environments feeding a governed identity and policy boundary before reaching the model service, with approved-path routing and audit evidence separated from model inference.",
+      "composition": "Layered infrastructure cutaway: developer environment and production workload on the left; a central identity/policy boundary with credentials and approval gates; Claude Platform on AWS on the right; an audit trail beneath the access path. Use nested security zones, keyed paths, small non-text geometric markers and detailed connectors rather than generic boxes.",
+      "allowed_text": [
+        "Developer environment",
+        "Production workload",
+        "Identity boundary",
+        "Claude Platform on AWS",
+        "Approved access",
+        "Audit trail"
+      ],
+      "restrictions": [
+        "Do not imply universal access or specific entitlements.",
+        "No credentials, code, console screenshots or fabricated IAM policy syntax."
+      ]
+    },
+    {
+      "ordinal": 2,
+      "candidate_id": "m01",
+      "subject": "Gemini 4 Argon for long-horizon professional workflows",
+      "mechanism": "Show a long-horizon task moving through planning, sustained execution and verification while access remains staged rather than broadly open.",
+      "composition": "Detailed long-trajectory workbench: a substantial task packet enters a planning layer, branches through several abstract work artifacts and iterative execution checkpoints, then converges on verification; a separate staged-access boundary surrounds the model path. Visually emphasize sustained multi-step work and review, not benchmark scores.",
+      "allowed_text": [
+        "Gemini 4 Argon",
+        "Long-horizon task",
+        "Planning",
+        "Execution",
+        "Verification",
+        "Staged access"
+      ],
+      "restrictions": [
+        "No benchmark numbers, pricing, vulnerability details or unsupported performance comparison.",
+        "Do not depict broad public availability."
+      ]
+    },
+    {
+      "ordinal": 3,
+      "candidate_id": "m04",
+      "subject": "Generative personalization tied to contextual-bandit decision and measurement loops",
+      "mechanism": "Audience context and generated variants feed a contextual-bandit decision; a selected experience produces an observed outcome that updates the policy for later decisions.",
+      "composition": "Professional closed-loop decision diagram with rich detail: context features and multiple content variants enter a central decision engine; one path is selected into an experience panel; measurable outcome signals return through a learning lane to the decision policy. Use a true feedback loop with clear directionality and multiple candidate variants.",
+      "allowed_text": [
+        "Audience context",
+        "Generated variants",
+        "Contextual bandit",
+        "Selected experience",
+        "Observed outcome",
+        "Policy update"
+      ],
+      "restrictions": [
+        "No fabricated conversion percentages or winner claims.",
+        "No people, ad screenshots or brand UI."
+      ]
+    },
+    {
+      "ordinal": 4,
+      "candidate_id": "m05",
+      "subject": "Adapting Amazon Nova to organization-specific retail moderation policy",
+      "mechanism": "Organization policy is translated into labeled examples and evaluation criteria, used to adapt the model, and then checked against a held-out evaluation set before production moderation with a review loop.",
+      "composition": "Detailed policy-to-model pipeline: policy documents fan into labeled examples and a decision taxonomy; Amazon Nova sits inside an adaptation stage; a separate evaluation set challenges the adapted model; production moderation outputs route uncertain cases into a review loop that feeds future policy/example maintenance.",
+      "allowed_text": [
+        "Retail policy",
+        "Labeled examples",
+        "Amazon Nova",
+        "Model adaptation",
+        "Evaluation set",
+        "Production moderation",
+        "Review loop"
+      ],
+      "restrictions": [
+        "No prohibited-content examples, no fabricated accuracy metrics, no product interface.",
+        "Do not imply fully autonomous policy authority."
+      ]
+    },
+    {
+      "ordinal": 5,
+      "candidate_id": "m08",
+      "subject": "Reusable Perplexity business Skills for recurring operational work",
+      "mechanism": "A reusable Skill packages required inputs, maintained instructions and an expected output format, then applies that procedure across recurring business tasks.",
+      "composition": "Rich operating-knowledge plate: central Business Skill package shown as a structured reusable module with internal layers for inputs, instructions and expected output; four distinct recurring work lanes for finance, marketing, operations and hiring connect to the same maintained package; a maintenance/version path loops back into the Skill.",
+      "allowed_text": [
+        "Business Skill",
+        "Required inputs",
+        "Instructions",
+        "Expected output",
+        "Finance",
+        "Marketing",
+        "Operations",
+        "Hiring"
+      ],
+      "restrictions": [
+        "No credit offers, pricing, card imagery or product UI.",
+        "Do not show people or generic chat bubbles."
+      ]
+    },
+    {
+      "ordinal": 6,
+      "candidate_id": "m07",
+      "subject": "OpenAI Dots as always-on agents with continuing responsibilities",
+      "mechanism": "A Dot receives a standing goal, operates through its cloud computer and connected apps, incorporates user feedback and returns important work for a review checkpoint.",
+      "composition": "Detailed responsibility-loop architecture: standing goal enters the Dot; the agent works inside a clearly bounded cloud-computer environment connected to several abstract app/service endpoints; progress and artifacts accumulate over time; feedback modifies future work; important outputs pass through a review checkpoint. Convey persistence and ongoing responsibility without depicting a dashboard.",
+      "allowed_text": [
+        "Dot",
+        "Goal",
+        "Cloud computer",
+        "Connected apps",
+        "Feedback",
+        "Review checkpoint"
+      ],
+      "restrictions": [
+        "No Slack/Teams screenshots, no product UI, no usage or pricing claims, no autonomous high-impact action implication.",
+        "No people or humanoid agent icon."
+      ]
+    }
+  ],
+  "no_cross_story_context": true,
+  "low_quality_fallback": false
+}

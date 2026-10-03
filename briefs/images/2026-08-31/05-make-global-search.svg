@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1c0b2f"/>
+  <text id="t1" x="60" y="78" fill="#faf5ff" font-family="Arial" font-size="34" font-weight="700">Global search finds the workflow—and its run</text>
+  <g fill="#4c1d95" stroke="#c084fc" stroke-width="4"><circle cx="205" cy="210" r="32"/><circle cx="380" cy="165" r="26"/><circle cx="335" cy="350" r="30"/><circle cx="520" cy="430" r="26"/><circle cx="615" cy="225" r="29"/><circle cx="805" cy="390" r="30"/><circle cx="965" cy="210" r="28"/></g>
+  <g stroke="#7c3aed" stroke-width="6"><path d="M205 210 L380 165 L615 225 L965 210"/><path d="M205 210 L335 350 L520 430 L805 390 L965 210"/><path d="M335 350 L615 225 L805 390"/></g>
+  <circle cx="575" cy="305" r="145" fill="#f8fafc" fill-opacity=".12" stroke="#f5d0fe" stroke-width="18"/>
+  <path d="M680 410 L805 535" stroke="#f5d0fe" stroke-width="38" stroke-linecap="round"/>
+  <rect x="475" y="270" width="205" height="70" rx="35" fill="#f8fafc"/>
+  <circle cx="520" cy="305" r="17" fill="#a855f7"/><path d="M555 305 h80" stroke="#64748b" stroke-width="11" stroke-linecap="round"/>
+  <path d="M870 330 h185 v98 h-185z" fill="#fbbf24" stroke="#fff7ed" stroke-width="5"/>
+  <path d="M905 362 h115 M905 395 h85" stroke="#78350f" stroke-width="10"/>
+  <text id="t2" x="60" y="575" fill="#e9d5ff" font-family="Arial" font-size="21">One workspace-level lens across scenario definitions and execution history</text>
+</svg>

@@ -1,0 +1,67 @@
+{
+  "schema_version": "run7-story-selection-v1",
+  "edition_id": "dab-edition-2026-10-03",
+  "execution_id": "reliable-edition-20261003-run7",
+  "research_cutoff": "2026-10-03T06:02:00.001Z",
+  "selected_at": "2026-10-03T06:22:29.697Z",
+  "allocation_policy": "exact-2-2-2",
+  "agent_skills_candidate_id": "m07",
+  "selection_locked": true,
+  "selected": [
+    {
+      "slot": 1,
+      "focus": "technical_ai_engineering",
+      "candidate_id": "m01",
+      "working_title": "Voice agents get a 100-millisecond head start"
+    },
+    {
+      "slot": 2,
+      "focus": "technical_ai_engineering",
+      "candidate_id": "m02",
+      "working_title": "Federated learning gets a public privacy proof"
+    },
+    {
+      "slot": 3,
+      "focus": "applied_genai_knowledge_workers",
+      "candidate_id": "m04",
+      "working_title": "Anthropic turns enterprise AI delivery into a profession"
+    },
+    {
+      "slot": 4,
+      "focus": "applied_genai_knowledge_workers",
+      "candidate_id": "m05",
+      "working_title": "Customer service prepares for agents on both sides"
+    },
+    {
+      "slot": 5,
+      "focus": "agents_non_technical_people",
+      "candidate_id": "m07",
+      "role": "agent_skills",
+      "working_title": "One Agent Skills package, many Copilot workflows"
+    },
+    {
+      "slot": 6,
+      "focus": "agents_non_technical_people",
+      "candidate_id": "m08",
+      "working_title": "California tests the legal boundary for rogue agents"
+    }
+  ],
+  "reserves": [
+    "m03",
+    "m06",
+    "m09"
+  ],
+  "checks": {
+    "exact_story_count": 6,
+    "category_counts": {
+      "technical_ai_engineering": 2,
+      "applied_genai_knowledge_workers": 2,
+      "agents_non_technical_people": 2
+    },
+    "exact_one_reusable_agent_skills_story": true,
+    "prior_edition_exact_repeat": false,
+    "all_selected_full_source_read": true,
+    "all_selected_within_72h": true
+  },
+  "result": "PASS"
+}

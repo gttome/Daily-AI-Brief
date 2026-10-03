@@ -1,0 +1,9 @@
+{
+  "task_id": "19",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-02T17:02:13.445Z",
+  "proof": {
+    "candidate_sha": "dcf61645df5689c7ab822482dfc47dba70b0ddc6"
+  }
+}

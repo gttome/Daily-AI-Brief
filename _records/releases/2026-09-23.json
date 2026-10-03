@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-23",
+  "baseline_sha": "727b41bbca5b2e07965224bfe5210e98b068968d",
+  "rollback_target_sha": "727b41bbca5b2e07965224bfe5210e98b068968d",
+  "policy_profile": "under80-v1",
+  "image_review": "_records/editorial-handoff/final-image-review-2026-09-23.json",
+  "image_review_sha256": "3b5222868290b4b31307aebd02a6717644df0b1371b99aa4ace1fd26108825e8",
+  "assets": [
+    {
+      "path": "briefs/images/2026-09-23/01-nemotron-diarization.webp",
+      "sha256": "ca2e7d51ac0bbb0cf90f8885103a0934deacdc9071950c4c81df25726475978f",
+      "bytes": 63082
+    },
+    {
+      "path": "briefs/images/2026-09-23/02-gpt6-sol-luna-copilot.webp",
+      "sha256": "4eaed753f88fcdf65f4645429db68cf34b8ae82c0127bf3391a77eb5f81a7db6",
+      "bytes": 87860
+    },
+    {
+      "path": "briefs/images/2026-09-23/03-copilot-opentelemetry.webp",
+      "sha256": "092be5cc2e6544c84c2977792d99ce25a9c59960d738ef8bb5b7e395bf005626",
+      "bytes": 96402
+    },
+    {
+      "path": "briefs/images/2026-09-23/04-nvidia-confidential-inference.webp",
+      "sha256": "2c96716383f95ae91e3ac9b0954adc7ae33d248487f81de5c9a40af38d2ac7c7",
+      "bytes": 91944
+    },
+    {
+      "path": "briefs/images/2026-09-23/05-copilot-jetbrains-skills.webp",
+      "sha256": "b240c927916df48a64491ff18a5ba8c9bc2e1985f4cd7a19180186a412a7767c",
+      "bytes": 94052
+    },
+    {
+      "path": "briefs/images/2026-09-23/06-agentforce-aws-public-sector.webp",
+      "sha256": "dc9ae606841e9f23b41e00e6e99202f9fbb5a8d5cccac2921bcce42ae95ded1e",
+      "bytes": 104400
+    }
+  ],
+  "canonical_sha256": "70eb9465d428b3913228eaa65b991c5ddb8afdde9f6fb316455eb1a17618f7f8",
+  "candidate_digest": "sha256:d9448947978699ed4a6556a0d79c1aeca18d869c35c534d828bfd0f15e0c5964"
+}

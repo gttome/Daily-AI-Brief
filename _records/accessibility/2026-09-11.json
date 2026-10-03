@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-11",
+  "reviewed_at": "2026-09-11T12:27:00Z",
+  "severity_policy": {
+    "critical": "block",
+    "high": "block",
+    "medium": "degrade_and_repair",
+    "low": "record"
+  },
+  "automated_result": "PASS",
+  "disposition": "pass",
+  "automated_findings": [],
+  "editorial_alt_review": [
+    {
+      "story_id": "dab-story-2026-09-11-8a71a280",
+      "result": "pass",
+      "alt": "Layered Agents API system view connecting a task, compacted context, tool search, MCP, subagents, deployment environments, evidence and reviewed output.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-11-d957d6c9",
+      "result": "pass",
+      "alt": "Paired threat and defensive-response loops mapping reconnaissance, access, tooling, execution, collection, adaptation and exfiltration against monitoring, containment and review.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-11-80fe8cea",
+      "result": "pass",
+      "alt": "Horizontal provenance diagram linking premium, firm and connected data through entitlements and retrieval to financial reasoning, citations, reviewed artifacts and audit controls.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-11-53dc2a82",
+      "result": "pass",
+      "alt": "Triangular review loop connecting code diff, terminal tests, browser preview, edit retries, Pick and Polish, and an explicit accept or pull-request gate.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-11-0abd52ec",
+      "result": "pass",
+      "alt": "Conversation-topology diagram showing a channel mention entering a private ask-review-revise capsule before deliberate sharing, plus a separate multi-turn direct-message context loop and authorization prerequisites.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-11-bc8138fb",
+      "result": "pass",
+      "alt": "Exploded reusable skill package containing SKILL.md, product semantics, workflows and on-demand references, installed through a universal directory and routed to several compatible agent runtimes with review controls.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    }
+  ]
+}

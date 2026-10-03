@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "period": "2026-09",
+  "created_at": "2026-10-01T12:00:00Z",
+  "inputs": {"analytics_dates": ["2026-09-07"], "trend_snapshot_dates": ["2026-09-07"], "qa_run_ids": ["dab-qa-20260907T122000Z-abcdef02"]},
+  "findings": [
+    {"finding_id": "source_click_quality", "statement": "Readers used source links most on evaluation stories.", "evidence": ["analytics:2026-09-07", "trend:dab-trend-governed-agents"], "confidence": "medium"}
+  ],
+  "weight_recommendations": [
+    {"dimension": "practical_value", "delta": 0.05, "rationale": "Test a small bounded adjustment while preserving all hard gates.", "max_duration_days": 31}
+  ],
+  "guardrails": {"popularity_only_selection_prohibited": true, "hard_gates_override_weights": true, "category_balance_preserved": true, "human_approval_required": true},
+  "approval_state": "pending"
+}

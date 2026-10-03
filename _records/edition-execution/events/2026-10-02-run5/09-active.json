@@ -1,0 +1,13 @@
+{
+  "task_id": "09",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-02T13:30:56Z",
+  "reason": "Review the locked Run 5 story set against all 32 verified Professional Series anchors across all four books, relevance-first.",
+  "proof": {
+    "catalog_path": "_data/book-reading.json",
+    "reference_count": 32,
+    "book_count": 4,
+    "writer_generation": 2
+  }
+}

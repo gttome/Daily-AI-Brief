@@ -1,0 +1,37 @@
+{
+  "brief_date": "2026-09-09",
+  "searched_at": "2026-09-10",
+  "selected_item_id": "dab-podcast-2026-09-09-agentic-loops",
+  "source_registry": "_data/podcast-sources.json",
+  "candidates": [
+    {
+      "title": "Agentic Loops for Knowledge Workers",
+      "url": "https://aidailybrief.ai/e/2026-09-03",
+      "decision": "selected",
+      "reason": "Direct non-technical reliability-workflow fit; publisher notes and Spotify identity verified."
+    },
+    {
+      "title": "The Multiplayer AI Sprint",
+      "url": "https://aidailybrief.ai/e/2026-09-07",
+      "decision": "rejected",
+      "reason": "Relevant team workflow but program promotion is a larger component."
+    },
+    {
+      "title": "Scheduling AI",
+      "url": "https://www.youreverydayai.com/ep-839-scheduling-ai-how-to-easily-make-ai-work-for-you-in-claude-gemini-and-chatgpt/",
+      "decision": "rejected",
+      "reason": "Useful practical candidate; less direct loop/verification focus than selected episode."
+    },
+    {
+      "title": "Less about Models; More about Architecture",
+      "url": "https://practicalai.show/370",
+      "decision": "rejected",
+      "reason": "Credible technical fallback; accessible primary-audience candidate available."
+    }
+  ],
+  "limitations": [
+    "YouTube channel and search checked; direct selected-episode URL not verified.",
+    "Exact runtime not established; no duration cap.",
+    "Research used accessible publisher notes and platform metadata, not full audio listening."
+  ]
+}

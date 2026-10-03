@@ -1,0 +1,20 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-03-m01"
+  ],
+  "candidate_id": "m01",
+  "task_id": "11",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-03T06:32:09.910Z",
+  "allowed_text": [
+    "Live audio",
+    "Streaming transcription",
+    "Partial tokens",
+    "100 ms",
+    "Voice agent",
+    "Response loop",
+    "MAI-Transcribe-2-Streaming"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: 100-millisecond-class streaming transcription for voice agents. Composition: Horizontal signal laboratory with a live audio waveform entering a streaming transcript rail, a latency clock inset, parallel regional lanes and a voice-response return loop. Mechanism: Show continuous speech packets entering MAI-Transcribe-2-Streaming, partial transcript tokens appearing progressively, and a low-latency handoff to a voice-agent reasoning and speech-response loop. Emphasize streaming flow and latency budget without inventing benchmark scores. No people or humanoid figures, no decorative filler, no product-screen imitation, no unsupported metrics, no overlapping text, no sparse/basic box-and-arrow fallback, and only these sealed visible labels: Live audio, Streaming transcription, Partial tokens, 100 ms, Voice agent, Response loop, MAI-Transcribe-2-Streaming."
+}

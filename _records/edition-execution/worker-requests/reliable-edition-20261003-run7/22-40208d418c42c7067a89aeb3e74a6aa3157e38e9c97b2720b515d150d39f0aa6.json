@@ -1,0 +1,22 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "40208d418c42c7067a89aeb3e74a6aa3157e38e9c97b2720b515d150d39f0aa6",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "branch": "reliable-edition/dab-edition-2026-10-03-run7",
+  "task_id": "22",
+  "capability": "repository",
+  "instruction": "Reconstruct Task 22 from authoritative evidence and resume the same operation without rerunning completed upstream tasks.",
+  "writer_generation": 37,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-03T14:22:03.178Z",
+  "writer_generation_is_provenance": true,
+  "authority_refresh_required_at_invocation": true,
+  "status": "completed_pass",
+  "consumed_at": "2026-10-03T14:25:03.000Z",
+  "completed_at": "2026-10-03T14:25:03.000Z",
+  "actual_writer_generation": 38,
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261003-run7/22-40208d418c42c7067a89aeb3e74a6aa3157e38e9c97b2720b515d150d39f0aa6.json"
+}

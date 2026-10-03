@@ -1,0 +1,22 @@
+{
+  "candidate_id": "m09",
+  "status": "verified",
+  "verified_at": "2026-10-03T06:21:26.732Z",
+  "source_body_word_count": "not_measured",
+  "publisher": "The Washington Post",
+  "url": "https://www.washingtonpost.com/technology/2026/10/02/independent-researchers-are-revealing-new-details-about-rogue-ai-agents/",
+  "published_date": "2026-10-02",
+  "method": "full indexed article-body review",
+  "source_type": "independent_reported_news",
+  "full_source_read": true,
+  "claims_verified": [
+    "independent researchers reported finding wider agent activity than initially disclosed",
+    "the article describes findings involving Australian and U.S. government sites",
+    "outside researchers published datasets and coordinated investigation",
+    "disclosures intensified calls for faster incident reporting and oversight"
+  ],
+  "limitations": [
+    "some findings remain under review and must be attributed to named researchers",
+    "The Washington Post discloses a content partnership with OpenAI"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": "trial-recovery-check-v1",
+  "verified_at": "2026-10-02T05:00:01.410069+00:00",
+  "source_commit": "4f62909a33a6db0b438cf58e6167148f2bdde928",
+  "new_generation_calls": 0,
+  "assets": [
+    {
+      "candidate": "m01",
+      "asset": "raw",
+      "sha256": "3a36cea9c27d6aa64c3d1fdabb33040d066ed6576543f75cd05614ebe031de46",
+      "recovered_from_git": true
+    },
+    {
+      "candidate": "m01",
+      "asset": "final",
+      "sha256": "0b7270b0b70aca44d8a2e83d4e9bec0388484e98cdde7c2014cdf2d2185c8e8c",
+      "recovered_from_git": true
+    },
+    {
+      "candidate": "m08",
+      "asset": "raw",
+      "sha256": "19f293a81eff6bf9877bc0371e0873a86a7a2bdd37e8df6cb3416181b6156fcb",
+      "recovered_from_git": true
+    },
+    {
+      "candidate": "m08",
+      "asset": "final",
+      "sha256": "3a0a04cae7352c7986dcd56f26f877807246567c823f6b435ccdcb9b1ed2ef13",
+      "recovered_from_git": true
+    },
+    {
+      "candidate": "m04",
+      "asset": "raw",
+      "sha256": "646cde8c1fef3be7060bdc5fe350f80a09f6a38600c4a5505250e544b4e5fc8e",
+      "recovered_from_git": true
+    },
+    {
+      "candidate": "m04",
+      "asset": "final",
+      "sha256": "f46ff67113383133d561e31935f484b0c2d3e9df717d05854c2fa2329891dc4f",
+      "recovered_from_git": true
+    },
+    {
+      "candidate": "m03",
+      "asset": "raw",
+      "sha256": "c568ae45f84b7a773bca1fcb37e574da7fcb37da2472be5b1af86e8233c1c65e",
+      "recovered_from_git": true
+    },
+    {
+      "candidate": "m03",
+      "asset": "final",
+      "sha256": "76555e980a590a8e90417a37b07cc048fa8250d1aec4b24babcef91d2fce18f7",
+      "recovered_from_git": true
+    },
+    {
+      "candidate": "m07",
+      "asset": "raw",
+      "sha256": "17feeb6862856b2720045d4d861367944dfbb43efa5b90884d32f960191a9dd6",
+      "recovered_from_git": true
+    },
+    {
+      "candidate": "m07",
+      "asset": "final",
+      "sha256": "8ac584909453f918dfeb5c60daf01a1c28ff884df008badb4fe3c27b7028fb36",
+      "recovered_from_git": true
+    },
+    {
+      "candidate": "m05",
+      "asset": "raw",
+      "sha256": "b14730106fbdcc5b1b4d231e35727c5ab19c8c162c31c55eaec30fefe7388ab4",
+      "recovered_from_git": true
+    },
+    {
+      "candidate": "m05",
+      "asset": "final",
+      "sha256": "1b5920a33978fce90fd46369c190759783a0e4f1842d9ac692f2296c0c5f9167",
+      "recovered_from_git": true
+    }
+  ]
+}

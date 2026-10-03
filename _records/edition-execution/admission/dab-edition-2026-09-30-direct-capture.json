@@ -1,0 +1,39 @@
+{
+  "schema_version": "direct-capture-admission-receipt-v1",
+  "edition_id": "dab-edition-2026-09-30",
+  "execution_id": "reliable-edition-20260930-second",
+  "edition_date": "2026-09-30",
+  "original_cutoff": "2026-10-01T04:12:21.330Z",
+  "result": "pass",
+  "admission_mode": "same-invocation-direct-capture-v1",
+  "release_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
+  "original_release_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
+  "research_baseline_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
+  "original_research_baseline_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
+  "recorded_at": "2026-10-01T04:46:28.035993Z",
+  "native_recovery_proof_required": false,
+  "native_recovery_capability_claimed": false,
+  "image_generation_proven": false,
+  "exact_bytes_proven": false,
+  "image_stage_deferred": true,
+  "image_stage_requirements": [
+    "one_story_one_attempt",
+    "persist_returned_bytes_before_yield",
+    "exact_git_content_identity",
+    "post_generation_subject_factual_structural_editorial_review",
+    "six_distinct_accepted_locked_images",
+    "full_publication_manifest_and_live_byte_gates"
+  ],
+  "release_evidence": {
+    "implementation_pr": 306,
+    "implementation_head": "52a4f245b9261900519ea0807fc9e2f894e902d5",
+    "protected_ci_run": 36816428539,
+    "protected_main_merge": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
+    "protected_main_post_merge_ci": 36816505451,
+    "protected_main_pages_run": 36816505037,
+    "controller_reconcile_pr": 307,
+    "controller_reconcile_ci": 36816559764,
+    "controller_reconcile_merge": "54928cd9216e0a403da4cab90924f3f3802f0453"
+  },
+  "audit_note": "This receipt does not certify or imitate host.recover. It records the released execution policy that defers native image handoff proof to the actual same-invocation image stage while preserving all final byte, review, set, manifest, CI, deployment and live-verification gates."
+}

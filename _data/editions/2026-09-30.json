@@ -1,0 +1,505 @@
+{
+  "schema_version": "1.0.0",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "policy_profile": "under80-v1",
+  "edition_id": "dab-edition-2026-09-30",
+  "brief_date": "2026-09-30",
+  "timezone": "America/Chicago",
+  "title": "Daily Generative AI Brief — September 30, 2026",
+  "published_at": "2026-10-01T07:05:23Z",
+  "research_cutoff_at": "2026-09-30T23:12:21.330-05:00",
+  "coverage_period": "24-hour primary window ending at 2026-09-30T23:12:21.330-05:00; recency fallback used for reviewed items outside the primary window.",
+  "status": "staged",
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-30-77eb0ae9",
+      "ordinal": 1,
+      "slug": "openshell-puts-enforceable-permissions-outside-the-agent",
+      "permanent_url": "/stories/2026-09-30/openshell-puts-enforceable-permissions-outside-the-agent/",
+      "focus": "technical_ai_engineering",
+      "headline": "OpenShell puts enforceable permissions outside the agent",
+      "event_date": "2026-09-28",
+      "topics": [
+        "agent runtime",
+        "permissions",
+        "sandboxing",
+        "credential isolation",
+        "formal policy"
+      ],
+      "companies": [
+        "NVIDIA"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m02-2.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m02-2.png?v=sep30-m02-64fbf099a406",
+        "alt": "Textbook architecture diagram showing an AI agent inside a sandbox, an external policy supervisor checking network and credential access, and approved services outside the workload.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "sep30-m02-64fbf099a406"
+      },
+      "summary": "NVIDIA describes OpenShell 0.1.0 as an open-source runtime that can wrap existing agents with sandboxed execution, service controls, credential isolation, network policy, and formal policy analysis. Its examples show the runtime allowing read operations while blocking writes and keeping real credentials outside the agent workload.",
+      "why_it_matters": "Long-running agents become more useful as they gain access to files, services, credentials, and production systems, but that also raises the cost of mistakes. External runtime controls give engineering teams a way to constrain what an agent can actually do without relying on the agent to police itself.",
+      "source": {
+        "title": "OpenShell puts enforceable permissions outside the agent",
+        "organization": "NVIDIA Developer",
+        "url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
+        "normalized_url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
+        "publication_date": "2026-09-28",
+        "evidence_type": "official_primary_source",
+        "availability_status": "published"
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-09-28T08:55:00.000Z",
+        "fallback_reason": "Published about 67 hours before the fixed cutoff; selected under the normal 72-hour fallback because it is the strongest distinct implementation-level runtime-control story not used in the September 29 edition."
+      },
+      "selection_rationale": "Long-running agents become more useful as they gain access to files, services, credentials, and production systems, but that also raises the cost of mistakes. External runtime controls give engineering teams a way to constrain what an agent can actually do without relying on the agent to police itself.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Put one existing agent behind deny-by-default runtime controls",
+        "rationale": "Choose a bounded coding or operations workflow, allow only the services and actions it needs, log every denial, and review whether the policy blocks unsafe actions without preventing legitimate work."
+      },
+      "editorial_limitation": "This is NVIDIA’s description of OpenShell and includes NVIDIA-reported experiments. It demonstrates the control architecture and examples, but it does not establish that OpenShell is the best runtime for every agent environment.",
+      "social_description": "Long-running agents become more useful as they gain access to files, services, credentials, and production systems, but that also raises the cost of mistakes. External runtime cont",
+      "social": {
+        "title": "OpenShell puts enforceable permissions outside the agent",
+        "description": "Long-running agents become more useful as they gain access to files, services, credentials, and production systems, but that also raises the cost of mistakes. External runtime cont",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m02-2.png?v=sep30-m02-64fbf099a406"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-30-bb1d40df",
+      "ordinal": 2,
+      "slug": "provenanceguard-checks-whether-an-mcp-agent-cited-the-right-source-not-just-a-true-fact",
+      "permanent_url": "/stories/2026-09-30/provenanceguard-checks-whether-an-mcp-agent-cited-the-right-source-not-just-a-true-fact/",
+      "focus": "technical_ai_engineering",
+      "headline": "ProvenanceGuard checks whether an MCP agent cited the right source, not just a true fact",
+      "event_date": "2026-09-29",
+      "topics": [
+        "MCP",
+        "provenance",
+        "agent evaluation",
+        "source attribution",
+        "verification"
+      ],
+      "companies": [
+        "Hugging Face",
+        "Multiverse Computing"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m03-2.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m03-2.png?v=sep30-m03-16fe73d5ef71",
+        "alt": "Textbook flow diagram showing an MCP answer decomposed into claims, each matched to a source, checked for factual support and attribution, and then allowed, blocked, or repaired.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "sep30-m03-16fe73d5ef71"
+      },
+      "summary": "A Hugging Face team article presents ProvenanceGuard, a post-generation verification layer for multi-tool MCP agents. It preserves source identity through claim decomposition, source routing, support checks, attribution checks, and allow-or-block decisions instead of collapsing all tool outputs into one anonymous evidence pool.",
+      "why_it_matters": "An agent can state a fact that is present somewhere in its evidence while attributing it to the wrong record or tool. For engineering teams building multi-source agents, claim-to-source verification is a separate release gate from ordinary factuality and can matter in regulated or data-sensitive workflows.",
+      "source": {
+        "title": "ProvenanceGuard checks whether an MCP agent cited the right source, not just a true fact",
+        "organization": "Hugging Face",
+        "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+        "normalized_url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+        "publication_date": "2026-09-29",
+        "evidence_type": "official_primary_source",
+        "availability_status": "published"
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-09-29T13:07:00.000Z",
+        "fallback_reason": "Published about 39 hours before the fixed cutoff; selected under the normal 72-hour fallback because it contributes a distinct source-aware verification mechanism and was not used in the September 29 edition."
+      },
+      "selection_rationale": "An agent can state a fact that is present somewhere in its evidence while attributing it to the wrong record or tool. For engineering teams building multi-source agents, claim-to-source verification is a separate release gate from ordinary factuality and can matter in regulated or data-sensitive workflows.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Add source identity to one multi-tool agent evaluation",
+        "rationale": "Capture the tool and source ID behind each important claim, then test whether the answer attributes that claim to the same source rather than merely finding support somewhere in the pooled context."
+      },
+      "editorial_limitation": "The reported evaluation is authored by the ProvenanceGuard team and includes a cautious operating point that also blocks some supported claims. The results do not show that this verifier will generalize unchanged to every domain or tool mix.",
+      "social_description": "An agent can state a fact that is present somewhere in its evidence while attributing it to the wrong record or tool. For engineering teams building multi-source agents, claim-to-s",
+      "social": {
+        "title": "ProvenanceGuard checks whether an MCP agent cited the right source, not just a true fact",
+        "description": "An agent can state a fact that is present somewhere in its evidence while attributing it to the wrong record or tool. For engineering teams building multi-source agents, claim-to-s",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m03-2.png?v=sep30-m03-16fe73d5ef71"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-30-5d21346f",
+      "ordinal": 3,
+      "slug": "openai-pairs-small-business-ai-workflows-with-local-human-coaching",
+      "permanent_url": "/stories/2026-09-30/openai-pairs-small-business-ai-workflows-with-local-human-coaching/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "OpenAI pairs small-business AI workflows with local human coaching",
+      "event_date": "2026-09-30",
+      "topics": [
+        "small business",
+        "AI adoption",
+        "workflow coaching",
+        "knowledge work",
+        "training"
+      ],
+      "companies": [
+        "OpenAI"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m04-2.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m04-2.png?v=sep30-m04-2bcfa40f8150",
+        "alt": "Textbook workflow showing a small business choosing a recurring task, receiving hands-on AI coaching, testing the workflow, reviewing results, measuring value, and iterating.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "sep30-m04-2bcfa40f8150"
+      },
+      "summary": "OpenAI announced a partnership with America’s SBDC that will train roughly 150 advisors and bring hands-on workshops, follow-up help, and reusable guides to small businesses. A companion report describes owners using AI for finance, supply chain, legal work, marketing, competitive pricing, research, and outreach.",
+      "why_it_matters": "For small teams, the adoption bottleneck is often deciding where AI belongs in the workflow and how to judge whether it helped. Pairing concrete task examples with trusted local advisors turns generative AI adoption into a coached operating change rather than a self-serve software trial.",
+      "source": {
+        "title": "OpenAI pairs small-business AI workflows with local human coaching",
+        "organization": "OpenAI",
+        "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work/",
+        "normalized_url": "https://openai.com/index/helping-small-businesses-put-ai-to-work/",
+        "publication_date": "2026-09-30",
+        "evidence_type": "official_primary_source",
+        "availability_status": "published"
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-09-30T00:00:00.000Z",
+        "fallback_reason": "The publisher exposed a September 30 date without an exact publication time. The gate conservatively treats the start of that date as the freshness timestamp, placing it just outside 24 hours while separate first-seen evidence proves it existed before the fixed cutoff."
+      },
+      "selection_rationale": "For small teams, the adoption bottleneck is often deciding where AI belongs in the workflow and how to judge whether it helped. Pairing concrete task examples with trusted local advisors turns generative AI adoption into a coached operating change rather than a self-serve software trial.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "adopt",
+        "label": "Choose one weekly workflow and measure it with a human coach",
+        "rationale": "Pick a recurring task such as pricing research, outreach, or compliance preparation, define the expected output and review owner, run the workflow for several cycles, and compare time, quality, and follow-through."
+      },
+      "editorial_limitation": "The usage figures and examples come from OpenAI’s report and selected customer stories, not an independent adoption study. The program has been announced; its eventual reach and sustained behavior change remain to be measured.",
+      "social_description": "For small teams, the adoption bottleneck is often deciding where AI belongs in the workflow and how to judge whether it helped. Pairing concrete task examples with trusted local ad",
+      "social": {
+        "title": "OpenAI pairs small-business AI workflows with local human coaching",
+        "description": "For small teams, the adoption bottleneck is often deciding where AI belongs in the workflow and how to judge whether it helped. Pairing concrete task examples with trusted local ad",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m04-2.png?v=sep30-m04-2bcfa40f8150"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-30-9d62316c",
+      "ordinal": 4,
+      "slug": "anthropics-buying-agent-shifts-sales-reps-toward-higher-value-conversations",
+      "permanent_url": "/stories/2026-09-30/anthropics-buying-agent-shifts-sales-reps-toward-higher-value-conversations/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Anthropic’s buying agent shifts sales reps toward higher-value conversations",
+      "event_date": "2026-09-30",
+      "topics": [
+        "sales agents",
+        "human escalation",
+        "Claude Managed Agents",
+        "workflow redesign",
+        "feedback loops"
+      ],
+      "companies": [
+        "Anthropic"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m05-2.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m05-2.png?v=sep30-m05-181860900e6d",
+        "alt": "Textbook decision flow showing inbound sales questions going to an AI buying agent, then to purchase, quick answer, or human handoff, with escalation reasons feeding a workflow improvement loop.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "sep30-m05-181860900e6d"
+      },
+      "summary": "Anthropic says its Claude Managed Agents buying agent now handles thousands of inbound conversations a day, answers routine plan and policy questions, and either completes a purchase, hands a complex case to a representative with context, or gives a quick answer. The company reports stronger opportunity conversion and faster closes for escalated leads.",
+      "why_it_matters": "The important pattern is role design rather than chatbot volume. The agent absorbs repetitive questions, preserves a human path for complex work, and turns escalation reasons into a feedback queue, allowing specialists to spend more time where judgment and persuasion matter.",
+      "source": {
+        "title": "Anthropic’s buying agent shifts sales reps toward higher-value conversations",
+        "organization": "Anthropic",
+        "url": "https://claude.com/blog/how-anthropics-sales-team-rebuilt-inbound-with-claude-managed-agents",
+        "normalized_url": "https://claude.com/blog/how-anthropics-sales-team-rebuilt-inbound-with-claude-managed-agents",
+        "publication_date": "2026-09-30",
+        "evidence_type": "official_primary_source",
+        "availability_status": "published"
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-09-30T00:00:00.000Z",
+        "fallback_reason": "The publisher exposed a September 30 date without an exact publication time. The gate conservatively treats the start of that date as the freshness timestamp, while independent first-seen evidence establishes that the article was available before the fixed cutoff."
+      },
+      "selection_rationale": "The important pattern is role design rather than chatbot volume. The agent absorbs repetitive questions, preserves a human path for complex work, and turns escalation reasons into a feedback queue, allowing specialists to spend more time where judgment and persuasion matter.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Treat every human escalation as training data for the workflow",
+        "rationale": "Instrument one customer-facing agent so each handoff records why the agent stopped, then review those reasons weekly to decide whether to improve the agent, change the self-service path, or keep the task human."
+      },
+      "editorial_limitation": "The conversion and cycle-time results are Anthropic’s own internal measurements and are not an independent controlled study. They illustrate one production sales workflow but should not be assumed to transfer unchanged to another company.",
+      "social_description": "The important pattern is role design rather than chatbot volume. The agent absorbs repetitive questions, preserves a human path for complex work, and turns escalation reasons into ",
+      "social": {
+        "title": "Anthropic’s buying agent shifts sales reps toward higher-value conversations",
+        "description": "The important pattern is role design rather than chatbot volume. The agent absorbs repetitive questions, preserves a human path for complex work, and turns escalation reasons into ",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m05-2.png?v=sep30-m05-181860900e6d"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-30-3b6d7f96",
+      "ordinal": 5,
+      "slug": "gemini-skills-turn-repeated-instructions-into-reusable-team-procedures",
+      "permanent_url": "/stories/2026-09-30/gemini-skills-turn-repeated-instructions-into-reusable-team-procedures/",
+      "focus": "agents_non_technical_people",
+      "headline": "Gemini Skills turn repeated instructions into reusable team procedures",
+      "event_date": "2026-09-30",
+      "topics": [
+        "Agent Skills",
+        "Gemini",
+        "reusable instructions",
+        "SKILL.md",
+        "operating knowledge"
+      ],
+      "companies": [
+        "Google"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m07-2.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m07-2.png?v=sep30-m07-320ee51e3fd8",
+        "alt": "Textbook diagram showing repeated prompts becoming a maintained reusable Gemini Skill with instructions, examples, ownership, reuse across tasks, and a versioned update loop.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "sep30-m07-320ee51e3fd8"
+      },
+      "summary": "Google Workspace announced reusable Gemini skills for the Gemini app and Workspace and says they will eventually replace Gems for task-specific instructions. Skills let users save custom instructions for recurring work instead of rebuilding the same prompt each time, with a transition path for existing Gems.",
+      "why_it_matters": "This is a practical Agent Skills pattern for nontechnical teams: capture a repeatable procedure once, maintain it like operating knowledge, and reuse it across similar tasks. The value comes from consistency and ownership, not from making every request longer or more complicated.",
+      "source": {
+        "title": "Gemini Skills turn repeated instructions into reusable team procedures",
+        "organization": "Google Workspace",
+        "url": "https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html",
+        "normalized_url": "https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html",
+        "publication_date": "2026-09-30",
+        "evidence_type": "official_primary_source",
+        "availability_status": "published"
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-09-30T00:00:00.000Z",
+        "fallback_reason": "The publisher exposed a September 30 date without an exact publication time. The gate uses start-of-day conservatively for freshness and separately records a pre-cutoff first-seen timestamp; this is the edition’s one reusable Agent Skills story."
+      },
+      "selection_rationale": "This is a practical Agent Skills pattern for nontechnical teams: capture a repeatable procedure once, maintain it like operating knowledge, and reuse it across similar tasks. The value comes from consistency and ownership, not from making every request longer or more complicated.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "teach",
+        "label": "Package one recurring team task as a maintained Skill",
+        "rationale": "Choose a narrow task such as applying brand voice or preparing a vendor review, write the steps and examples once, assign an owner, and schedule a review whenever the underlying process or policy changes."
+      },
+      "editorial_limitation": "Google’s announcement describes the product direction and rollout schedule rather than measured productivity gains. Availability is staged, and the usefulness of a skill still depends on the quality and maintenance of the instructions it contains.",
+      "social_description": "This is a practical Agent Skills pattern for nontechnical teams: capture a repeatable procedure once, maintain it like operating knowledge, and reuse it across similar tasks. The v",
+      "social": {
+        "title": "Gemini Skills turn repeated instructions into reusable team procedures",
+        "description": "This is a practical Agent Skills pattern for nontechnical teams: capture a repeatable procedure once, maintain it like operating knowledge, and reuse it across similar tasks. The v",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m07-2.png?v=sep30-m07-320ee51e3fd8"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-30-63e10dfd",
+      "ordinal": 6,
+      "slug": "asanas-coachable-agents-make-roles-memory-and-permissions-visible",
+      "permanent_url": "/stories/2026-09-30/asanas-coachable-agents-make-roles-memory-and-permissions-visible/",
+      "focus": "agents_non_technical_people",
+      "headline": "Asana’s coachable agents make roles, memory, and permissions visible",
+      "event_date": "2026-09-29",
+      "topics": [
+        "AI teammates",
+        "permissions",
+        "shared memory",
+        "Asana",
+        "human-agent teams"
+      ],
+      "companies": [
+        "Anthropic",
+        "Asana"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m08-2.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m08-2.png?v=sep30-m08-28e0215a359a",
+        "alt": "Textbook operating model showing an AI teammate profile with role, permissions, skills, users and administrators, plus a task-feedback path separated from editor-controlled permanent memory.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "sep30-m08-28e0215a359a"
+      },
+      "summary": "Anthropic’s Asana case study describes AI teammates that work inside Asana’s existing work graph with named roles, visible tasks, scoped permissions, pre-built skills, integrations, and shared memory. Asana separates everyday feedback from permanent memory changes, which are reserved for administrators and editors.",
+      "why_it_matters": "Nontechnical teams need a way to understand what an agent is responsible for, what it can access, and who can change its behavior. Treating an agent like a governed teammate makes role boundaries and durable memory visible instead of burying them in an opaque automation.",
+      "source": {
+        "title": "Asana’s coachable agents make roles, memory, and permissions visible",
+        "organization": "Anthropic",
+        "url": "https://claude.com/blog/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude",
+        "normalized_url": "https://claude.com/blog/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude",
+        "publication_date": "2026-09-29",
+        "evidence_type": "official_primary_source",
+        "availability_status": "published"
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-09-29T00:00:00.000Z",
+        "fallback_reason": "Published on September 29 and conservatively normalized to the start of that date; it remains inside the normal 72-hour fallback and adds a distinct role, permission, and memory-governance pattern not used in the September 29 edition."
+      },
+      "selection_rationale": "Nontechnical teams need a way to understand what an agent is responsible for, what it can access, and who can change its behavior. Treating an agent like a governed teammate makes role boundaries and durable memory visible instead of burying them in an opaque automation.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "adopt",
+        "label": "Write a one-page job description for one AI teammate",
+        "rationale": "Define the agent’s role, approved projects and data, actions it may take, who can use it, who can change permanent memory, and where its work will stay visible before expanding it to more people."
+      },
+      "editorial_limitation": "The article is an Anthropic-authored case study based on Asana’s own operating practices. It provides a concrete governance pattern but does not independently measure whether these controls improve productivity or safety across organizations.",
+      "social_description": "Nontechnical teams need a way to understand what an agent is responsible for, what it can access, and who can change its behavior. Treating an agent like a governed teammate makes ",
+      "social": {
+        "title": "Asana’s coachable agents make roles, memory, and permissions visible",
+        "description": "Nontechnical teams need a way to understand what an agent is responsible for, what it can access, and who can change its behavior. Treating an agent like a governed teammate makes ",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m08-2.png?v=sep30-m08-28e0215a359a"
+      }
+    }
+  ],
+  "worth_watching": {
+    "general": {
+      "status": "included",
+      "title": "Meet the all new Codex Cloud",
+      "channel": "OpenAI",
+      "upload_date": "2026-09-29",
+      "runtime_seconds": 204,
+      "why_useful": "A compact product demo of persistent cloud development environments, mobile steering, shared setup, and code-review workflows.",
+      "connection": "Directly complements the locked developer-workflow and managed-agent coverage without reopening story selection.",
+      "url": "https://frontiermodels.cc/video/meet-the-all-new-codex-cloud/",
+      "duration_tier": "short",
+      "verification_note": "Official OpenAI upload identity and September 29 publication were independently corroborated; indexed runtime evidence ranged from 3:18 to 3:24, so the conservative 3:24 bound is recorded and remains below the 10-minute target.",
+      "source_identity_url": "https://www.youtube.com/c/OpenAI"
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Introducing dots, always-on agents built to handle everything.",
+      "channel": "OpenAI",
+      "upload_date": "2026-09-29",
+      "runtime_seconds": 148,
+      "why_useful": "A two-and-a-half-minute introduction to always-on agents, their cloud-computer model, and the user-control framing.",
+      "connection": "A concise nontechnical companion to the edition’s agent and workplace-team stories.",
+      "url": "https://openai.com/index/introducing-dots/",
+      "duration_tier": "short",
+      "verification_note": "OpenAI’s dated product page establishes the launch identity and first-party claims; two independent video indexes agree on a 2:28 runtime for the official OpenAI upload.",
+      "source_identity_url": "https://www.youtube.com/c/OpenAI"
+    }
+  },
+  "editorial_takeaway": "The strongest pattern in this edition is operationalization: useful generative AI is moving from isolated answers toward governed systems with explicit runtime controls, source-aware verification, reusable skills, human escalation, and role-based memory.",
+  "provenance": {
+    "created_by": "deterministic-kernel-expander",
+    "created_at": "2026-10-01T07:05:23Z",
+    "source_commit": "63ef56bea48fce8f768b7a711395879417029927"
+  },
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-09-30-ai-show-243",
+      "title": "#243: GPT-6 Sol and Luna, Opus 5.5, the New Microsoft Copilot, Jensen Huang vs. AI Doomers & Introducing AI Score",
+      "show": "The Artificial Intelligence Show",
+      "host": "Paul Roetzer and Mike Kaput",
+      "publication_date": "2026-09-29",
+      "runtime_seconds": 5460,
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI model economics",
+        "Microsoft Copilot",
+        "agent adoption"
+      ],
+      "url": "https://podcasts.apple.com/us/podcast/243-gpt-6-sol-and-luna-opus-5-5-the-new-microsoft/id1548733275?i=1000792165046",
+      "summary": "A same-day discussion of model reliability, per-task economics, Copilot changes, and practical adoption implications.",
+      "why_useful": "Adds operational interpretation for knowledge workers evaluating model and workflow changes.",
+      "selection_rationale": "Primary 48-hour freshness tier; official show notes and Apple episode identity verified before the cutoff.",
+      "freshness_tier": "primary_48h",
+      "connection": "Supports practical evaluation of the edition’s model, workflow, and workplace-agent developments.",
+      "permanent_url": "/podcasts/2026-09-30/ai-show-243/",
+      "verification_note": "Official show notes are dated September 29, 2026; Apple Podcasts identifies episode 243, publication at 09:00 UTC, and a 1h31m runtime.",
+      "platforms": [
+        {
+          "name": "Apple Podcasts",
+          "url": "https://podcasts.apple.com/us/podcast/243-gpt-6-sol-and-luna-opus-5-5-the-new-microsoft/id1548733275?i=1000792165046"
+        },
+        {
+          "name": "Official show notes",
+          "url": "https://podcast.smarterx.ai/shownotes/243"
+        }
+      ],
+      "coverage_note": "Selected from the locked September 30 bounded media review; no downstream media rediscovery or substitution."
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-09-30-reuters-future-workers-ai",
+      "title": "The right way to prepare future workers for AI",
+      "show": "The Big View",
+      "host": "Peter Thal Larsen",
+      "publication_date": "2026-09-29",
+      "runtime_seconds": 2700,
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "future of work",
+        "AI education",
+        "critical thinking"
+      ],
+      "url": "https://www.reuters.com/podcasts/the-big-view/right-way-prepare-future-workers-ai-2026-09-29/",
+      "summary": "Daniel Susskind explains why narrow future-proofing is unreliable and why literacy, numeracy, and critical thinking remain durable foundations.",
+      "why_useful": "Provides a source-diverse, nontechnical perspective on preparing people for AI-mediated work.",
+      "selection_rationale": "Primary 48-hour freshness tier; Reuters publication and official Apple listing verified.",
+      "freshness_tier": "primary_48h",
+      "connection": "Balances product news with concrete workforce preparation and judgment.",
+      "permanent_url": "/podcasts/2026-09-30/future-workers-ai/",
+      "verification_note": "Reuters dates the episode September 29, 2026 at 05:02 UTC; Apple Podcasts lists it as the latest episode with a 45-minute runtime.",
+      "platforms": [
+        {
+          "name": "Reuters",
+          "url": "https://www.reuters.com/podcasts/the-big-view/right-way-prepare-future-workers-ai-2026-09-29/"
+        },
+        {
+          "name": "Apple Podcasts",
+          "url": "https://podcasts.apple.com/us/podcast/the-big-view/id1054549852"
+        },
+        {
+          "name": "Spotify",
+          "url": "https://open.spotify.com/show/6hlMSnWenbWSdDEakGfFoe"
+        }
+      ],
+      "coverage_note": "Selected from the locked September 30 bounded media review; no downstream media rediscovery or substitution."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "method": "saved_image_visual_inspection",
+  "reviewer_kind": "assistant_visual_inspection",
+  "reviewer_id": "conversation-assistant",
+  "inspection_reference": "view_image:_records/image-trials/2026-10-02-six-image/m08/final.png",
+  "reviewed_at": "2026-10-02T04:56:48.980Z",
+  "asset_sha256": "3a0a04cae7352c7986dcd56f26f877807246567c823f6b435ccdcb9b1ed2ef13",
+  "criteria": {
+    "subject_match": {
+      "verdict": "pass",
+      "observation": "Four business work lanes connect to a reusable Business Skill with the three specified internal layers."
+    },
+    "mechanism_detail": {
+      "verdict": "pass",
+      "observation": "Input formats, a branching instruction procedure, output formats and a maintained-document loop are visible."
+    },
+    "legible_labels": {
+      "verdict": "pass",
+      "observation": "All eight permitted labels are readable at the saved 1200 by 630 size."
+    },
+    "contrast": {
+      "verdict": "pass",
+      "observation": "Navy headings and blue, green and amber lanes remain clear on white."
+    },
+    "composition": {
+      "verdict": "pass",
+      "observation": "A central reusable module anchors four differently colored work lanes and a lower maintenance return."
+    },
+    "no_people": {
+      "verdict": "pass",
+      "observation": "Hiring is represented with anonymous documents; no portraits or humanoid icons appear."
+    },
+    "no_overlap": {
+      "verdict": "pass",
+      "observation": "Labels remain within their panels without crossing paths or clipping."
+    }
+  }
+}

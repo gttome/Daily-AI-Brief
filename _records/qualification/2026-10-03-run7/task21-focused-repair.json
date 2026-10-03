@@ -1,0 +1,54 @@
+{
+  "schema_version": "run7-task21-focused-repair-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "task_id": "21",
+  "operation": "rebuild_deterministic_publication_projection",
+  "projected_at": "2026-10-03T13:47:55.000Z",
+  "protected_main_sha": "4f683a615c8fd5b219779fd5b3e96c644410b211",
+  "source_qualification": "_records/qualification/2026-10-03-run7/result.json",
+  "preserved": {
+    "completed_tasks": "00-20",
+    "task18_reader_pages": true,
+    "task19_seal": true,
+    "accepted_locked_images": 6,
+    "selection_changed": false,
+    "media_changed": false,
+    "book_review_changed": false,
+    "watchlist_decisions_changed": false,
+    "image_bytes_changed": false
+  },
+  "outputs": [
+    "_data/editions/2026-10-03.json",
+    "_records/editorial-handoff/kernel-2026-10-03.json",
+    "_records/editorial-handoff/facts-2026-10-03.json",
+    "_records/editorial-handoff/metadata-candidates-2026-10-03-run7.json",
+    "_records/editorial-handoff/article-evidence-2026-10-03.json",
+    "_records/editorial-handoff/media-2026-10-03.json",
+    "_records/editorial/media-preflight/2026-10-03.json",
+    "_data/watchlist.json",
+    "_records/watchlist-sweeps/2026-10-03.json",
+    "_records/editorial-handoff/book-mappings-2026-10-03.json",
+    "_records/editorial-handoff/publication-manifest.json",
+    "latest.md",
+    "index.md",
+    "feed.xml",
+    "feed.json"
+  ],
+  "validation": {
+    "edition_schema": "PASS",
+    "book_mapping_contract": "PASS",
+    "watchlist_schema_and_discovery": "PASS",
+    "publication_manifest": "PASS",
+    "task18_reader_pages_unchanged": "PASS",
+    "task19_seal_unchanged": "PASS",
+    "accepted_locked_source_manifest_unchanged": "PASS",
+    "accepted_image_bytes_unchanged": "PASS",
+    "full_repository_test": "DEFERRED_TO_TASK_22_PROTECTED_CI"
+  },
+  "notes": [
+    "The strict publication image-quality record and image manifest are derived projections; the Task 17 and Task 19 source records remain byte-for-byte unchanged.",
+    "Source-body word counts remain unknown because the completed reading receipts recorded not_measured; Task 21 did not invent reading times or alter the sealed reader pages."
+  ],
+  "result": "PASS"
+}

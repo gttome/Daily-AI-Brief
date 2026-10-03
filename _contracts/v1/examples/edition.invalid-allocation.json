@@ -1,0 +1,5 @@
+{
+  "expected_failure": "story focus allocation must be exact 2/2/2 in ordinal order",
+  "fixture": "edition.valid.json",
+  "mutation": {"path": "/stories/5/focus", "value": "technical_ai_engineering"}
+}

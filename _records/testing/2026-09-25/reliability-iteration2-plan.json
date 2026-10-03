@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "iteration": "reliability-iteration-2",
+  "wave": "Wave 2 - Consolidate Publication Contracts",
+  "baseline_main_sha": "fd5cffa34489315b8ff1f2001d0701603bfa426c",
+  "problems": [
+    "P07",
+    "P08-partial",
+    "P09-partial"
+  ],
+  "strategy": "minimum_sufficient_affected_tests",
+  "changed_components": [
+    "_generator/lib/publication-manifest.mjs",
+    "_tools/publication-manifest.mjs",
+    ".github/workflows/post-editorial-kernel.yml",
+    "_generator/lib/publication.mjs",
+    "_generator/lib/render.mjs",
+    "_generator/cli.mjs",
+    "_tools/publication-candidate-lint.mjs",
+    "_tools/sync-public-watchlist.mjs",
+    "_generator/lib/run-state.mjs",
+    "_tools/run-state.mjs"
+  ],
+  "targeted_first": [
+    "_generator/test/publication-manifest.test.mjs",
+    "_generator/test/under80-handoff-transport.test.mjs",
+    "_generator/test/run-state-recovery.test.mjs"
+  ],
+  "sentinel_contracts": [
+    "wrong_schema_version",
+    "missing_artifact",
+    "stale_baseline",
+    "mismatched_date",
+    "invalid_digest",
+    "unsupported_legacy_adapter",
+    "media_receipt_mismatch",
+    "watchlist_projection_drift"
+  ],
+  "prohibited_rework": [
+    "September 25 editorial regeneration",
+    "media rediscovery",
+    "accepted image regeneration",
+    "Watchlist research replay",
+    "reader republication for verification"
+  ],
+  "full_ci_policy": "Run once on the integrated PR after affected targeted tests; do not replay historical Briefs."
+}

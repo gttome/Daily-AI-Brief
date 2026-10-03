@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gttome.github.io/Daily-AI-Brief/contracts/v1/editorial-feedback.schema.json",
+  "title": "Daily AI Brief monthly editorial feedback",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "period", "created_at", "inputs", "findings", "weight_recommendations", "guardrails", "approval_state"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "period": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}$"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "inputs": {"type": "object", "additionalProperties": false, "required": ["analytics_dates", "trend_snapshot_dates", "qa_run_ids"], "properties": {"analytics_dates": {"type": "array", "items": {"type": "string", "format": "date"}}, "trend_snapshot_dates": {"type": "array", "items": {"type": "string", "format": "date"}}, "qa_run_ids": {"type": "array", "items": {"type": "string"}}}},
+    "findings": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["finding_id", "statement", "evidence", "confidence"], "properties": {"finding_id": {"type": "string", "pattern": "^[a-z0-9_]+$"}, "statement": {"type": "string", "minLength": 1}, "evidence": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "confidence": {"enum": ["high", "medium", "low"]}}}},
+    "weight_recommendations": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["dimension", "delta", "rationale", "max_duration_days"], "properties": {"dimension": {"enum": ["significance", "freshness", "authority", "evidence_quality", "novelty", "practical_value", "category_fit"]}, "delta": {"type": "number", "minimum": -0.25, "maximum": 0.25}, "rationale": {"type": "string", "minLength": 1}, "max_duration_days": {"type": "integer", "minimum": 1, "maximum": 31}}}},
+    "guardrails": {"type": "object", "additionalProperties": false, "required": ["popularity_only_selection_prohibited", "hard_gates_override_weights", "category_balance_preserved", "human_approval_required"], "properties": {"popularity_only_selection_prohibited": {"const": true}, "hard_gates_override_weights": {"const": true}, "category_balance_preserved": {"const": true}, "human_approval_required": {"const": true}}},
+    "approval_state": {"enum": ["pending", "approved", "rejected"]}
+  }
+}

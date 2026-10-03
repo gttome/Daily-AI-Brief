@@ -1,0 +1,33 @@
+{
+  "schema_version": "daily-schedule-pause-v1",
+  "observed_at": "2026-10-02T06:28:51Z",
+  "reason": "Observed invocation reported Codex Work, prohibited by existing production policy.",
+  "source_commit": "f7a3308342276ad42026feaef51d040cb53980fe",
+  "actions": {
+    "daily_controller_paused": true,
+    "hourly_keeper_paused": true,
+    "preexisting_live_validator_prompt_restored": true
+  },
+  "image_generation_calls": 0,
+  "run5_started": false,
+  "account_billing_observed": false,
+  "automations": [
+    {
+      "id": "6abeb9a2b8a88191949dc420d5e10feb",
+      "title": "Daily Brief Recovery",
+      "is_enabled": false,
+      "schedule": "BEGIN:VEVENT\nDTSTART;TZID=America/Chicago:20261002T020000\nRRULE:FREQ=HOURLY;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+      "last_run_time": "2026-10-01T22:08:38.425864+00:00",
+      "updated_at": "2026-10-02T06:26:33.472255+00:00"
+    },
+    {
+      "id": "6abeba31fe28819184544abf70874a80",
+      "title": "Daily Brief Controller",
+      "is_enabled": false,
+      "schedule": "BEGIN:VEVENT\nDTSTART;TZID=America/Chicago:20261003T010000\nRRULE:FREQ=DAILY;BYHOUR=1;BYMINUTE=0;BYSECOND=0\nEND:VEVENT",
+      "last_run_time": null,
+      "updated_at": "2026-10-02T06:25:29.103265+00:00"
+    }
+  ],
+  "note": "Prior schedule-activation receipt is historical and superseded by this pause. Original probe files retain their first observed baseline; later reconciliation remains in Git history. A repository rollback cannot select the scheduler runtime."
+}

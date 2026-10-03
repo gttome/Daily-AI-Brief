@@ -1,0 +1,33 @@
+{
+  "schema_version": "daily-brief-run-cleanup-v1",
+  "edition_id": "dab-edition-2026-10-01",
+  "execution_id": "reliable-edition-20261001-run4",
+  "run_number": 4,
+  "terminal_state": "PUBLIC_CLOSED",
+  "terminal_at": "2026-10-02T04:05:17Z",
+  "cleanup_at": "2026-10-02T04:05:19Z",
+  "result": "PASS",
+  "next_run_ready": true,
+  "production_sha": "ce3dac9d75949f381821dfd34163048bf08c65d6",
+  "source_branch": "reliable-edition/dab-edition-2026-10-01-run4",
+  "checks": {
+    "run_specific_executors_disabled": true,
+    "no_active_writer": true,
+    "transition_ledger_reconciled": true,
+    "kanban_reconciled": true,
+    "timers_frozen": true,
+    "production_state_preserved": true,
+    "next_run_pointer_cleared": true,
+    "operational_learning_merged": true,
+    "run_learning_certified": true,
+    "promotion_review_complete": true,
+    "timing_comparison_complete": true,
+    "regression_protection_updated": true,
+    "next_run_invariant_set_complete": true
+  },
+  "ledger_digest": "sha256:9bd44dad8ad4a0b7f375f66765b7c171458309c0ec9786187bb60cb95a094f1e",
+  "learning_certification": "_records/run-learning/reliable-edition-20261001-run4-certification.json",
+  "timing_comparison": "_records/edition-execution/timing/2026-10-01-run4.json",
+  "command_center_reconciliation": "_records/command-center/2026-10-01-public-safe-delta.json",
+  "public_closed_record": "_records/publication/2026-10-01/public-closed.json"
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "edition_id": "dab-edition-2026-10-03",
+  "execution_id": "reliable-edition-20261003-run7",
+  "execution_key": "2026-10-03-run7",
+  "branch": "reliable-edition/dab-edition-2026-10-03-run7",
+  "task_id": "11",
+  "candidate_id": "m01",
+  "execution_mode": "scheduled_direct_worker",
+  "fallback_used": false,
+  "request_key": "4296ba83209f8a33c79fd89ba3368f8246e7f545ecb03848f0f416a383fd55ea",
+  "worker_authority": {
+    "writer_generation": 9,
+    "lease_owner": "scheduled-consumer:6abeb9a2b8a88191949dc420d5e10feb:reliable-edition-20261003-run7:task-11:generation-9",
+    "fence_commit": "a1737bf9aa84873773532a142266d78ba21a4745",
+    "fence_acquired_at": "2026-10-03T06:52:00.000Z"
+  },
+  "attempt": 3,
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "gen_id": "e565ccdc-b4ee-4ca5-9d11-a6f06fbd240e",
+    "exact_returned_png": {
+      "bytes": 1610391,
+      "dimensions": "1733x908",
+      "sha256": "1eb9a81a416c46f22ea565a5095c0e6668995d7347297045a4e9423799412287"
+    },
+    "generated_at": null,
+    "generated_at_observation": "Native tool did not expose a trustworthy generation timestamp; no value was invented."
+  },
+  "review": {
+    "phase": "generated_asset_pretransport_review",
+    "subject_match": "FAIL",
+    "required_mechanism": "FAIL",
+    "allowed_visible_text": "FAIL",
+    "factual_scope": "FAIL",
+    "people_humanoids": "ICONOGRAPHY_PRESENT",
+    "saved_git_asset_reviewed": false,
+    "rejection_code": "REPEATED_EXECUTION_CONTEXT_CONTAMINATION",
+    "rejection_reason": "The third bounded native result again produced a generic AI-potential infographic rather than the sealed MAI-Transcribe-2-Streaming signal laboratory. The exact seven-string visible-text allowlist was violated extensively."
+  },
+  "persistence": {
+    "status": "not_attempted_invalid_candidate",
+    "reason_code": "PRETRANSPORT_SUBJECT_AND_TEXT_GATE_FAILED",
+    "content_address_verified": false,
+    "read_back_verified": false
+  },
+  "review_status": "rejected",
+  "status": "rejected",
+  "accepted_locked": false,
+  "production_task_advanced": false,
+  "targeted_next_action": "Do not generate a fourth image in this invocation. Treat this as recurrence of DAB-OPS-20261001-017 fresh-single-story isolation failure and repair the execution-context binding before another bounded native attempt.",
+  "observed_at": "2026-10-03T06:54:19.282Z"
+}

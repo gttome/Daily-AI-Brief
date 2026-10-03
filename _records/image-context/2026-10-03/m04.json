@@ -1,0 +1,21 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-03-m04"
+  ],
+  "candidate_id": "m04",
+  "task_id": "13",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-03T06:32:09.910Z",
+  "allowed_text": [
+    "Business goal",
+    "Model capability",
+    "Risk",
+    "Evaluation",
+    "Change management",
+    "Delivery practice",
+    "Launch gate",
+    "Frontier Academy"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: Enterprise AI delivery as a professional operating discipline. Composition: Layered delivery blueprint shaped like a professional academy curriculum flowing into an enterprise launch gate, with cross-functional competency rails and evidence checkpoints. Mechanism: Show business goals, model capability, risk, evaluation and change management converging through a structured training-and-delivery pathway into an operational launch. Emphasize role clarity, measurable capability and evidence-based delivery rather than a classroom scene. No people or humanoid figures, no decorative filler, no product-screen imitation, no unsupported metrics, no overlapping text, no sparse/basic box-and-arrow fallback, and only these sealed visible labels: Business goal, Model capability, Risk, Evaluation, Change management, Delivery practice, Launch gate, Frontier Academy."
+}

@@ -1,0 +1,807 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-18",
+  "updated_at": "2026-09-18T14:31:07.655Z",
+  "source_record": "_records/watchlist-discovery/2026-09-18-20260918143107655.json",
+  "coverage": {
+    "checked": 41,
+    "retrieval_success": 28,
+    "with_candidate_links": 24,
+    "no_candidate_links": 4,
+    "retrieval_failures": 13,
+    "assisted_review_required": 8,
+    "sources_considered": 49,
+    "sources_checked": 41,
+    "retained_not_due": 6,
+    "unchanged_sources": 11,
+    "sources_returning_candidate_links": 24,
+    "fresh_successful_observations": 28,
+    "minimum_fresh_observations": 3,
+    "coverage_floor_met": true,
+    "unavailable": 13,
+    "fulltext_retrievals": 0,
+    "coverage_status": "degraded",
+    "note": "Catalog discovery only. Retained state is not a new source check. If fresh successful observations are below the floor, run only the bounded high-value fallback plan; never sweep the whole registry. No links does not establish no news."
+  },
+  "bounded_fallback": {
+    "plan": {
+      "needed": false,
+      "fresh_successes": 28,
+      "minimum_fresh": 3,
+      "max_fallback_checks": 5,
+      "sources": []
+    },
+    "checks": []
+  },
+  "sources": [
+    {
+      "source_id": "acl-anthology",
+      "status": "unavailable",
+      "reason": "normalized_body_too_large:736025>500000",
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:33:07.800Z",
+          "status": "unavailable",
+          "reason": "normalized_body_too_large:736025>500000"
+        }
+      ],
+      "checked_at": "2026-09-18T14:33:15.880Z"
+    },
+    {
+      "source_id": "alphasignal",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 12,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:31:49.235Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 101582,
+          "normalized_chars": 101522
+        }
+      ],
+      "checked_at": "2026-09-18T14:31:54.001Z",
+      "check_started_at": "2026-09-18T14:31:49.235Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "anthropic",
+      "status": "retrieved",
+      "unchanged": true,
+      "candidate_links": 30,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:09.542Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 178152,
+          "normalized_chars": 178105
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:13.819Z",
+      "check_started_at": "2026-09-18T14:32:09.542Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "anthropic-news",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 15,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:25.308Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 462587,
+          "normalized_chars": 462390
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:29.956Z",
+      "check_started_at": "2026-09-18T14:32:25.308Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "arxiv-cs-ai",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 5,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:19.136Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 85412,
+          "normalized_chars": 85395
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:25.299Z",
+      "check_started_at": "2026-09-18T14:32:19.136Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "arxiv-cs-cl",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 6,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:19.138Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 99857,
+          "normalized_chars": 99846
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:25.283Z",
+      "check_started_at": "2026-09-18T14:32:19.138Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "arxiv-cs-lg",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 7,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:19.137Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 86855,
+          "normalized_chars": 86838
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:25.268Z",
+      "check_started_at": "2026-09-18T14:32:19.137Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "bens-bites",
+      "status": "retrieved",
+      "unchanged": true,
+      "candidate_links": 1,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:31:26.979Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 75392,
+          "normalized_chars": 75390
+        }
+      ],
+      "checked_at": "2026-09-18T14:31:34.080Z",
+      "check_started_at": "2026-09-18T14:31:26.979Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "berkeley-bair",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 12,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:31:49.238Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 39359,
+          "normalized_chars": 39317
+        }
+      ],
+      "checked_at": "2026-09-18T14:31:54.227Z",
+      "check_started_at": "2026-09-18T14:31:49.238Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "deepmind",
+      "status": "retrieved",
+      "unchanged": true,
+      "candidate_links": 24,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:09.543Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 197420,
+          "normalized_chars": 197388
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:14.652Z",
+      "check_started_at": "2026-09-18T14:32:09.542Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "deepseek-news",
+      "status": "retrieved",
+      "unchanged": true,
+      "candidate_links": 3,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:41.363Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 46114,
+          "normalized_chars": 46095
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:46.223Z",
+      "check_started_at": "2026-09-18T14:32:41.363Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "explainx",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 28,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:31:07.692Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 418731,
+          "normalized_chars": 418282
+        }
+      ],
+      "checked_at": "2026-09-18T14:31:14.428Z",
+      "check_started_at": "2026-09-18T14:31:07.691Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "github-ai-agents",
+      "status": "unavailable",
+      "reason": "normalized_body_too_large:580537>500000",
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:41.364Z",
+          "status": "unavailable",
+          "reason": "normalized_body_too_large:580537>500000"
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:46.164Z"
+    },
+    {
+      "source_id": "github-generative-ai",
+      "status": "unavailable",
+      "reason": "normalized_body_too_large:609073>500000",
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:41.364Z",
+          "status": "unavailable",
+          "reason": "normalized_body_too_large:609073>500000"
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:46.191Z"
+    },
+    {
+      "source_id": "github-llm",
+      "status": "unavailable",
+      "reason": "normalized_body_too_large:571873>500000",
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:41.364Z",
+          "status": "unavailable",
+          "reason": "normalized_body_too_large:571873>500000"
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:46.069Z"
+    },
+    {
+      "source_id": "github-trending",
+      "status": "unavailable",
+      "reason": "normalized_body_too_large:646925>500000",
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:14.659Z",
+          "status": "unavailable",
+          "reason": "normalized_body_too_large:646925>500000"
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:18.944Z"
+    },
+    {
+      "source_id": "google-deepmind-blog",
+      "status": "retrieved",
+      "unchanged": true,
+      "candidate_links": 24,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:25.309Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 197420,
+          "normalized_chars": 197388
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:34.669Z",
+      "check_started_at": "2026-09-18T14:32:25.309Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "hacker-news",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 32,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:14.658Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 33204,
+          "normalized_chars": 33184
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:18.970Z",
+      "check_started_at": "2026-09-18T14:32:14.658Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "hacker-news-newest",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 31,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:46.226Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 41738,
+          "normalized_chars": 41736
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:50.925Z",
+      "check_started_at": "2026-09-18T14:32:46.226Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "hugging-face-datasets",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 30,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:25.307Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 245715,
+          "normalized_chars": 245498
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:29.744Z",
+      "check_started_at": "2026-09-18T14:32:25.307Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "hugging-face-models",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 31,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:19.138Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 378312,
+          "normalized_chars": 378071
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:19.315Z",
+      "check_started_at": "2026-09-18T14:32:19.138Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "hugging-face-spaces",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 24,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:25.308Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 336673,
+          "normalized_chars": 336540
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:29.805Z",
+      "check_started_at": "2026-09-18T14:32:25.308Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "huggingface-papers",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 26,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:14.658Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 411535,
+          "normalized_chars": 411520
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:19.134Z",
+      "check_started_at": "2026-09-18T14:32:14.657Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "iclr",
+      "status": "unavailable",
+      "reason": "The operation was aborted due to timeout",
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:33:07.800Z",
+          "status": "unavailable",
+          "reason": "HTTP 502"
+        },
+        {
+          "checked_at": "2026-09-18T14:33:15.335Z",
+          "status": "unavailable",
+          "reason": "The operation was aborted due to timeout"
+        }
+      ],
+      "checked_at": "2026-09-18T14:33:27.336Z"
+    },
+    {
+      "source_id": "icml",
+      "status": "unavailable",
+      "reason": "HTTP 502",
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:33:07.799Z",
+          "status": "unavailable",
+          "reason": "HTTP 502"
+        },
+        {
+          "checked_at": "2026-09-18T14:33:15.549Z",
+          "status": "unavailable",
+          "reason": "HTTP 502"
+        }
+      ],
+      "checked_at": "2026-09-18T14:33:23.927Z"
+    },
+    {
+      "source_id": "import-ai",
+      "status": "unavailable",
+      "reason": "HTTP 502",
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:31:26.977Z",
+          "status": "unavailable",
+          "reason": "The operation was aborted due to timeout"
+        },
+        {
+          "checked_at": "2026-09-18T14:31:38.978Z",
+          "status": "unavailable",
+          "reason": "HTTP 502"
+        }
+      ],
+      "checked_at": "2026-09-18T14:31:49.235Z"
+    },
+    {
+      "source_id": "localllama",
+      "status": "no_candidate_links",
+      "unchanged": true,
+      "candidate_links": 0,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:14.659Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 8410,
+          "normalized_chars": 8410
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:18.776Z",
+      "check_started_at": "2026-09-18T14:32:14.659Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "meta-ai-blog",
+      "status": "retrieved",
+      "unchanged": true,
+      "candidate_links": 3,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:34.673Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 205966,
+          "normalized_chars": 205953
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:41.362Z",
+      "check_started_at": "2026-09-18T14:32:34.673Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "mistral-news",
+      "status": "unavailable",
+      "reason": "normalized_body_too_large:1015766>500000",
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:34.673Z",
+          "status": "unavailable",
+          "reason": "normalized_body_too_large:1015766>500000"
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:39.089Z"
+    },
+    {
+      "source_id": "mit-csail",
+      "status": "retrieved",
+      "unchanged": true,
+      "candidate_links": 6,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:09.541Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 26208,
+          "normalized_chars": 26194
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:14.196Z",
+      "check_started_at": "2026-09-18T14:32:09.541Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "neurips",
+      "status": "unavailable",
+      "reason": "HTTP 502",
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:50.932Z",
+          "status": "unavailable",
+          "reason": "The operation was aborted due to timeout"
+        },
+        {
+          "checked_at": "2026-09-18T14:33:02.933Z",
+          "status": "unavailable",
+          "reason": "HTTP 502"
+        }
+      ],
+      "checked_at": "2026-09-18T14:33:07.799Z"
+    },
+    {
+      "source_id": "neuron",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 12,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:31:26.979Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 384360,
+          "normalized_chars": 384185
+        }
+      ],
+      "checked_at": "2026-09-18T14:31:34.374Z",
+      "check_started_at": "2026-09-18T14:31:26.979Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "openai",
+      "status": "unavailable",
+      "reason": "HTTP 403",
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:09.542Z",
+          "status": "unavailable",
+          "reason": "HTTP 403"
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:14.614Z"
+    },
+    {
+      "source_id": "openreview",
+      "status": "not_due",
+      "previous_status": "assisted_review_required",
+      "last_successful_check": null,
+      "next_check_at": "2026-09-22T12:00:53.202Z",
+      "checked_at": null
+    },
+    {
+      "source_id": "qwen-blog",
+      "status": "not_due",
+      "previous_status": "assisted_review_required",
+      "last_successful_check": null,
+      "next_check_at": "2026-09-22T12:00:53.202Z",
+      "checked_at": null
+    },
+    {
+      "source_id": "reddit-localllama",
+      "status": "no_candidate_links",
+      "unchanged": true,
+      "candidate_links": 0,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:46.226Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 8414,
+          "normalized_chars": 8414
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:50.350Z",
+      "check_started_at": "2026-09-18T14:32:46.226Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "reddit-machinelearning",
+      "status": "no_candidate_links",
+      "unchanged": true,
+      "candidate_links": 0,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:32:46.225Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 8419,
+          "normalized_chars": 8419
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:50.310Z",
+      "check_started_at": "2026-09-18T14:32:46.225Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "rundown",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 32,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:31:07.681Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 208286,
+          "normalized_chars": 208167
+        }
+      ],
+      "checked_at": "2026-09-18T14:31:14.102Z",
+      "check_started_at": "2026-09-18T14:31:07.680Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "specialized-discords",
+      "status": "assisted_review_required",
+      "reason": "Discovery signal only. Use only official or verified community access, never expose private discussion, and require public original evidence before selection.",
+      "checked_at": "2026-09-18T14:31:07.655Z"
+    },
+    {
+      "source_id": "stanford-hai",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 21,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:31:49.236Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 307742,
+          "normalized_chars": 307678
+        }
+      ],
+      "checked_at": "2026-09-18T14:31:54.221Z",
+      "check_started_at": "2026-09-18T14:31:49.236Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "superhuman",
+      "status": "unavailable",
+      "reason": "normalized_body_too_large:825072>500000",
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:31:26.978Z",
+          "status": "unavailable",
+          "reason": "normalized_body_too_large:825072>500000"
+        }
+      ],
+      "checked_at": "2026-09-18T14:31:34.172Z"
+    },
+    {
+      "source_id": "the-batch",
+      "status": "no_candidate_links",
+      "unchanged": true,
+      "candidate_links": 0,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:31:07.692Z",
+          "status": "unavailable",
+          "reason": "The operation was aborted due to timeout"
+        },
+        {
+          "checked_at": "2026-09-18T14:31:19.698Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 186918,
+          "normalized_chars": 186732
+        }
+      ],
+      "checked_at": "2026-09-18T14:31:26.974Z",
+      "check_started_at": "2026-09-18T14:31:07.692Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "the-median",
+      "status": "unavailable",
+      "reason": "HTTP 502",
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:31:49.236Z",
+          "status": "unavailable",
+          "reason": "The operation was aborted due to timeout"
+        },
+        {
+          "checked_at": "2026-09-18T14:32:01.237Z",
+          "status": "unavailable",
+          "reason": "HTTP 502"
+        }
+      ],
+      "checked_at": "2026-09-18T14:32:09.541Z"
+    },
+    {
+      "source_id": "tldr-ai",
+      "status": "retrieved",
+      "unchanged": false,
+      "candidate_links": 21,
+      "attempts": [
+        {
+          "checked_at": "2026-09-18T14:31:07.690Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 79997,
+          "normalized_chars": 79686
+        }
+      ],
+      "checked_at": "2026-09-18T14:31:19.264Z",
+      "check_started_at": "2026-09-18T14:31:07.690Z",
+      "cache_status": "miss"
+    },
+    {
+      "source_id": "x-research-feeds",
+      "status": "assisted_review_required",
+      "reason": "Discovery signal only. Confirm account identity, follow every claim to original evidence, and do not treat screenshots, engagement, or reposts as validation.",
+      "checked_at": "2026-09-18T14:31:07.655Z"
+    },
+    {
+      "source_id": "xai-news",
+      "status": "not_due",
+      "previous_status": "assisted_review_required",
+      "last_successful_check": null,
+      "next_check_at": "2026-09-22T12:00:53.202Z",
+      "checked_at": null
+    },
+    {
+      "source_id": "youtube-anthropic",
+      "status": "not_due",
+      "previous_status": "assisted_review_required",
+      "last_successful_check": null,
+      "next_check_at": "2026-09-22T12:00:53.202Z",
+      "checked_at": null
+    },
+    {
+      "source_id": "youtube-google-deepmind",
+      "status": "not_due",
+      "previous_status": "assisted_review_required",
+      "last_successful_check": null,
+      "next_check_at": "2026-09-22T12:00:53.202Z",
+      "checked_at": null
+    },
+    {
+      "source_id": "youtube-openai",
+      "status": "not_due",
+      "previous_status": "assisted_review_required",
+      "last_successful_check": null,
+      "next_check_at": "2026-09-22T12:00:53.202Z",
+      "checked_at": null
+    }
+  ],
+  "daily_summary": {
+    "new_today": 0,
+    "updated_today": 0,
+    "carried_forward": 8
+  },
+  "note": "Reconciliation of existing September 18 observations. No new retrieval; historical topic evidence is unchanged."
+}

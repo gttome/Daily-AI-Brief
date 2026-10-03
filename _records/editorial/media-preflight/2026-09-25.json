@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-25",
+  "checked_at": "2026-09-25T13:56:00Z",
+  "basis": "Targeted September 25 recovery receipt. Fresh videos were independently verified from current source listings: Microsoft Developer upload September 23, 2026 at 9:33 and Claude upload September 23, 2026 at 3:33. Podcast publisher/listing pages were rechecked September 25 and independently matched September 22 publication dates; UpNext runtime independently matched at 8 minutes. No media rediscovery or paid API path was used.",
+  "items": [
+    {
+      "item_id": "dab-video-2026-09-25-general",
+      "kind": "video",
+      "url": "https://www.youtube.com/watch?v=iTiKeH3FDoQ",
+      "reachable": true,
+      "http_status": 200,
+      "observed_date": "2026-09-23",
+      "observed_runtime_seconds": 573,
+      "verification_timestamp": "2026-09-25T13:56:00Z",
+      "verification_evidence": "Independently checked video source/listing during September 25 recovery; URL reachable and observed date plus runtime 573s matched the selected media record."
+    },
+    {
+      "item_id": "dab-video-2026-09-25-agent-skills",
+      "kind": "video",
+      "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
+      "reachable": true,
+      "http_status": 200,
+      "observed_date": "2026-09-23",
+      "observed_runtime_seconds": 213,
+      "verification_timestamp": "2026-09-25T13:56:00Z",
+      "verification_evidence": "Independently checked video source/listing during September 25 recovery; URL reachable and observed date plus runtime 213s matched the selected media record."
+    },
+    {
+      "item_id": "dab-podcast-2026-09-25-agents-rules-business",
+      "kind": "podcast",
+      "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html",
+      "reachable": true,
+      "http_status": 200,
+      "observed_date": "2026-09-22",
+      "observed_runtime_seconds": null,
+      "verification_timestamp": "2026-09-25T13:56:00Z",
+      "verification_evidence": "Independently checked podcast source/listing during September 25 recovery; URL reachable and observed date matched the selected media record."
+    },
+    {
+      "item_id": "dab-podcast-2026-09-25-upnext-ai",
+      "kind": "podcast",
+      "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026",
+      "reachable": true,
+      "http_status": 200,
+      "observed_date": "2026-09-22",
+      "observed_runtime_seconds": 480,
+      "verification_timestamp": "2026-09-25T13:56:00Z",
+      "verification_evidence": "Independently checked podcast source/listing during September 25 recovery; URL reachable and observed date plus runtime 480s matched the selected media record."
+    }
+  ],
+  "editorial_kernel_sha256": "7d79fbfb8ed1c5b8a5a984f690437fc6dbbbca4107f754e7a1fbafc50275e9a8",
+  "verification_timestamp": "2026-09-25T13:56:00Z",
+  "podcast_source_diversity": {
+    "pass": true,
+    "distinct_sources": 2,
+    "sources": [
+      "pwc.com",
+      "podscan.fm"
+    ]
+  }
+}

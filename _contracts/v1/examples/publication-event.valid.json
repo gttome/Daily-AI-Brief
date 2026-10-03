@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "event_id": "dab-publication-event-20260907T120000Z-abcdef01",
+  "run_id": "dab-publication-20260907T120000Z-abcdef01",
+  "phase": "validated",
+  "edition_id": "dab-edition-2026-09-07",
+  "observed_at": "2026-09-07T12:00:00Z",
+  "baseline_main_sha": "b70bc37b4e190750eda08842bfe3ee09995c0b8a",
+  "staged_tree_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "generator_version": "1.0.0",
+  "contract_version": "1.0.0",
+  "checks": [
+    {"check_id": "schema", "class": "deterministic", "result": "pass", "severity": "critical", "evidence": "All staged records validate."},
+    {"check_id": "editorial_review", "class": "editorial", "result": "pass", "severity": "high", "evidence": "Editorial reviewer approved the edition."}
+  ],
+  "file_set": {
+    "canonical_sources": ["_data/editions/2026-09-07.json"],
+    "assets": ["briefs/images/2026-09-07/01.svg"],
+    "derived_outputs": ["briefs/2026-09-07.md", "latest.md", "index.md", "archive.md", "README.md"],
+    "operational_records": ["_records/publication/2026-09-07/dab-publication-20260907T120000Z-abcdef01.validated.json"]
+  },
+  "commit_sha": null,
+  "pages": {"run_id": null, "conclusion": "not_run", "verified_at": null},
+  "rollback_target_sha": "b70bc37b4e190750eda08842bfe3ee09995c0b8a",
+  "supersedes_event_id": null
+}

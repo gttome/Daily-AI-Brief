@@ -1,0 +1,106 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "edition_id": "dab-edition-2026-10-02",
+  "execution_id": "reliable-edition-20261002-run5",
+  "execution_key": "2026-10-02-run5",
+  "branch": "reliable-edition/dab-edition-2026-10-02-run5",
+  "task_id": "11",
+  "candidate_id": "m01",
+  "attempt": 3,
+  "execution_mode": "scheduled_direct_worker",
+  "fallback_used": false,
+  "worker_authority": {
+    "writer_generation": 9,
+    "lease_owner": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
+    "fence_commit": "9ed4e232d35ece4b4d6b1adc476a80b46b2ed8e5",
+    "recovery_event_commit": "d9722b39c0a73a51aaf838f3e0b2ddf4b2eafb5f"
+  },
+  "timing": {
+    "generation_started_at": "2026-10-02T14:40:04.742Z",
+    "generation_completed_at": "2026-10-02T14:40:54.183Z",
+    "generation_wall_seconds": 49.441,
+    "exact_raw_capture_completed_at": "2026-10-02T14:41:11.545228076Z",
+    "same_visual_optimization_completed_at": "2026-10-02T14:41:12.989253804Z",
+    "git_persisted_at": "2026-10-02T14:43:17Z",
+    "saved_git_review_completed_at": "2026-10-02T14:47:33.913Z"
+  },
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "generation_id": null,
+    "generation_id_observation": "The native scheduled image tool result exposed image_url and output_hint but no generation ID; none was invented.",
+    "exact_returned_png": {
+      "bytes": 1834062,
+      "dimensions": "1730x909",
+      "sha256": "d882b6dd9f3752ddbbc101ee7f6ce4d2344b1fa4ec2e69c771b158e8fe0c7594",
+      "git_blob_sha_expected": "6feb6eb6f2d991406b22a57fb059d047ddac4908"
+    }
+  },
+  "candidate": {
+    "method": "same-visual center-crop resize to 1200x630 with PNG compression",
+    "bytes": 977691,
+    "dimensions": "1200x630",
+    "sha256": "7bb53d5c6b78117f0259634febfd00e2c1bf0cfd24417c952fd1070625dfb2ec",
+    "git_blob_sha": "1443514260619606260b5aefb71b6ebb206a11c0"
+  },
+  "persistence": {
+    "status": "persisted",
+    "route": "github_git_data_create_blob_complete_base64",
+    "attempt_path": "_records/image-attempts/2026-10-02-run5/m01-attempt-3.png",
+    "production_path": "briefs/images/2026-10-02/dab-edition-2026-10-02-m01-3.png",
+    "blob_created_sha": "1443514260619606260b5aefb71b6ebb206a11c0",
+    "commit_sha": "1cc5610f86b95c62c21535dd9c965ae919de3a2d",
+    "content_address_verified": true,
+    "read_back_verified": true,
+    "base64_chars": 1303588,
+    "read_back_base64_exact_identity": true,
+    "png_structure": "PASS",
+    "png_dimensions": "1200x630",
+    "chunk_bridge_used": false
+  },
+  "review": {
+    "phase": "saved_git_asset_hash_bound_review",
+    "review_binding": "Immutable Git read-back Base64 was byte-identical to the locally displayed 1200x630 candidate with SHA-256 7bb53d5c... and Git blob 14435142....",
+    "subject_match": "PASS",
+    "required_mechanism": "PASS",
+    "structural_quality": "PASS",
+    "editorial_quality": "PASS",
+    "professional_finish": "PASS",
+    "meaningful_detail": "PASS",
+    "explanatory_mechanism": "PASS",
+    "information_hierarchy": "PASS",
+    "white_background": "PASS",
+    "allowed_visible_text": "PASS",
+    "visible_strings": [
+      "Embed 5",
+      "Pro",
+      "Fast",
+      "Shared embedding space",
+      "128k context",
+      "Multilingual",
+      "Matryoshka",
+      "Text",
+      "Images"
+    ],
+    "extra_visible_text": "NONE",
+    "factual_scope": "PASS",
+    "people_humanoids": "NONE",
+    "product_ui": "NONE",
+    "overlap": "NONE",
+    "sparse_basic_fallback": false,
+    "low_quality_fallback": false,
+    "saved_git_asset_reviewed": true
+  },
+  "review_status": "accepted_locked",
+  "status": "accepted_locked",
+  "accepted_locked": true,
+  "accepted_at": "2026-10-02T14:47:33.913Z",
+  "production_task_advanced": true,
+  "qualification_effect": {
+    "native_scheduled_generation_observed": true,
+    "exact_git_persistence_observed": true,
+    "saved_git_visual_review_observed": true,
+    "single_image_route_proven": true,
+    "full_six_image_host_qualification": false
+  }
+}

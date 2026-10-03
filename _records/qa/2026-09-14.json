@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "dab-qa-20260914T125400Z-4cdb3a6d",
+  "edition_id": "dab-edition-2026-09-14",
+  "publication_run_id": "dab-publication-20260914T121500Z-721f0e36",
+  "executed_at": "2026-09-14T12:54:00Z",
+  "initial_result": "fail",
+  "final_result": "pass",
+  "checks": [
+    {"check_id":"freshness_schema_allocation","class":"deterministic","result":"pass","severity":"critical","evidence":"The canonical and live edition is dated September 14, 2026, uses full_v1, validates against the active schema, and contains exactly six stable stories ordered 2 Technical, 2 Applied and 2 Agents."},
+    {"check_id":"candidate_memory_novelty_evidence","class":"editorial","result":"pass","severity":"high","evidence":"Twenty candidates contain seven scored dimensions, correct totals, rationales and rejection reasons. Thirty-day source and concept memory was checked before selecting six new stories with normalized unique primary sources."},
+    {"check_id":"agent_skills_allocation","class":"editorial","result":"pass","severity":"high","evidence":"Exactly one selected story is the reusable Agent Skills item: Google Cloud Developer Plugin, supported by the official product announcement."},
+    {"check_id":"media_slots","class":"editorial","result":"pass","severity":"high","evidence":"Both official video slots are included with verified runtimes of 4:26 and 8:46, independently inside the preferred ten-minute limit. Podcast slot 9 uses a verified September 10 practitioner episode after the mandatory search found no newer unused eligible episode in the preferred 48-hour window."},
+    {"check_id":"images_textbook_quality","class":"editorial","result":"pass","severity":"high","evidence":"Six custom built-in images were inspected individually and together. All are exact 1200x630 dominant-white textbook PNGs with materially different compositions; final live SHA-256 bytes match every approved hash."},
+    {"check_id":"canonical_reader_parity","class":"deterministic","result":"pass","severity":"critical","evidence":"Repository and integration validation pass. Homepage, dated brief, latest content, archive, feeds and permanent item pages preserve canonical identities and content. Source-reading estimates are 15, 6, 7, 8, 5 and 9 minutes."},
+    {"check_id":"ratings_sharing_privacy","class":"deterministic","result":"pass","severity":"high","evidence":"Homepage and dated brief each contain nine rating groups and 45 stars; each permanent item contains five stars. Browser execution confirmed the Share control and visible count on the canonical article pathname. Rating POST retains exactly brief_date, item_id and rating plus x-operation-id, preserves retry identity, expires after 29 days and accepts recorded=true without exposing rating totals."},
+    {"check_id":"reader_requested_corrections","class":"deterministic","result":"pass","severity":"high","evidence":"September 13 still shows reviewed source-article times, the exact Leanpub.com disclosure and approved book CTA. September 14 openly displays the watchlist after the podcast and before Editorial takeaway without the obsolete disclosure heading or click-to-expand wrapper."},
+    {"check_id":"feedback_navigation_feeds","class":"deterministic","result":"pass","severity":"high","evidence":"The feedback route contains no form or controls. Homepage, dated brief, archive, both watchlist routes, six story pages, two video pages, podcast page and RSS, daily RSS and JSON feeds returned HTTP 200 with expected navigation."},
+    {"check_id":"watchlist_release","class":"editorial","result":"pass","severity":"medium","evidence":"Eight substantive topics and both public watchlist routes pass. All 49 registered sources were checked: 35 returned candidate links, eight require assisted review, three returned no links and three were unavailable. Partial retrieval remains transparently degraded."},
+    {"check_id":"ci_pages_release","class":"deterministic","result":"pass","severity":"critical","evidence":"Publication PR #95 passed candidate CI 34844236454. Exact content SHA 4cdb3a6deda143ee0bfbb0d1d10926b59fc91ff0 passed production CI 34844342020 and Pages 34844341092."},
+    {"check_id":"usage_private_operations","class":"deterministic","result":"pass","severity":"info","evidence":"Supported unattended Sites authentication retrieved all nine current aggregate records, saved and read back the private snapshot and edition usage, retrieved owner priorities, and completed 90-day comment retention cleanup. Private counts remain private; exact credits and costs remain unavailable."},
+    {"check_id":"subscriber_delivery","class":"deterministic","result":"not_applicable","severity":"info","evidence":"Disabled by choice / Not applicable. Signup and delivery remain disabled, and no email was sent."}
+  ],
+  "repairs": [
+    {"description":"Made the book-reading future fixture use a permanently future date so a real September 14 catalog entry cannot invalidate it.","commit_sha":"fc824d2226bc015878d9e511025051a9d6d292db"},
+    {"description":"Made the watchlist single-development fixture construct a single-evidence topic rather than relying on the first production topic forever remaining single-source.","commit_sha":"fc824d2226bc015878d9e511025051a9d6d292db"}
+  ],
+  "defects": [
+    {"severity":"medium","code":"stale_future_date_fixture","status":"resolved","description":"The initial suite failed when September 14 became a real catalog date. The fixture now uses 2099-01-01 and passes."},
+    {"severity":"medium","code":"watchlist_single_evidence_fixture","status":"resolved","description":"The initial suite assumed the first live watchlist topic contained one evidence item. The fixture now explicitly supplies one item and passes."},
+    {"severity":"medium","code":"watchlist_discovery_partial","status":"accepted","description":"Thirty-five of 49 registered watchlist sources returned candidate links; assisted-review, no-link and unavailable outcomes remain recorded without inferring an absence of news."},
+    {"severity":"low","code":"direct_source_probe_limits","status":"accepted","description":"A final command-line probe was blocked by Microsoft and timed out at Google Cloud. The official normalized links and primary evidence were already reviewed; this environment limitation is retained rather than hidden."},
+    {"severity":"info","code":"local_jekyll_unavailable","status":"accepted","description":"The local bundle executable was unavailable. Candidate and production GitHub CI completed the required deterministic Jekyll build successfully."}
+  ],
+  "deployment_evidence": {"pages_run_id":34844341092,"head_sha":"4cdb3a6deda143ee0bfbb0d1d10926b59fc91ff0","conclusion":"success"},
+  "record_path": "_records/qa/2026-09-14.json",
+  "deployment_latency_seconds": 47
+}

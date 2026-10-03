@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "entry_id": "dab-correction-20260907T130000Z-abcdef03",
+  "entry_type": "correction",
+  "created_at": "2026-09-07T13:00:00Z",
+  "status": "resolved",
+  "summary": "Corrected a material availability-status statement.",
+  "evidence": ["The vendor changelog states that the feature is in public preview."],
+  "affected_urls": ["https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/knowledge-worker-story-one/"],
+  "related_entry_ids": [],
+  "details": {
+    "kind": "correction",
+    "edition_id": "dab-edition-2026-09-07",
+    "story_id": "dab-story-2026-09-07-00000003",
+    "materiality": "material",
+    "prior_fact": "The feature was generally available.",
+    "corrected_fact": "The feature was in public preview.",
+    "reason": "The initial summary overstated availability.",
+    "corrected_at": "2026-09-07T13:05:00Z"
+  }
+}

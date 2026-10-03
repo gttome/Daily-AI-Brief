@@ -1,0 +1,116 @@
+{
+  "schema_version": "daily-run-bootstrap-receipt-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "execution_key": "2026-10-03-run7",
+  "run_number": 7,
+  "brief_date": "2026-10-03",
+  "observed_at": "2026-10-03T06:02:00.001Z",
+  "timezone": "America/Chicago",
+  "protected_main_sha": "caeb7563241fac1c1450b8545baac9faea38f325",
+  "mandatory_bootstrap_complete": true,
+  "entire_cumulative_ledger_read": true,
+  "document_digests": {
+    "docs/operations/START-HERE.md": {
+      "sha256": "7a1c228d1d7bfe1164dbbfb03786317662df91c6dafcf379f41cc138e0f9230a",
+      "bytes": 12582
+    },
+    "docs/operations/DAILY-UNATTENDED-STARTUP.md": {
+      "sha256": "73fbb6b8a1785d8fab78f695278f2ea88e9527c706b9aea2df4d5a33df86e607",
+      "bytes": 10541
+    },
+    "data/operations/production-continuous-improvement-ledger.jsonl": {
+      "sha256": "eaff863b57a25290b81a71b4a0127c9ba4c07e698b1817d6e676e9162c2cdda3",
+      "bytes": 126810
+    },
+    "docs/operations/PRODUCTION-CONTINUOUS-IMPROVEMENT-LEDGER.md": {
+      "sha256": "3d84072aae319427fb229be902c65e344f43fe751f15bba8b9607166b0f70126",
+      "bytes": 89506
+    },
+    "docs/operations/LIVING-SYSTEM-OPERATIONS.md": {
+      "sha256": "c39165dda9c103936d39666f4d5d250447d78ad5f4a91136941f1a59a8222e82",
+      "bytes": 110554
+    },
+    "docs/operations/task-recovery-contracts.json": {
+      "sha256": "73ae80db674597b109f7bc8899042ab4a27480fbf6952e21da6f5b9eeaa204fd",
+      "bytes": 56256
+    },
+    "docs/operations/run-learning-readiness-contract.json": {
+      "sha256": "ad720193d9b6d2c2f77c3f74a8e27d1e62be0077291a656f81d2db61d794ec64",
+      "bytes": 17255
+    },
+    "docs/operations/reliable-edition-execution.md": {
+      "sha256": "27bb648bac8c93532b97c4e8f52597d6279a0fc7964aa19cd4cc5a3af950c449",
+      "bytes": 17137
+    },
+    "docs/operations/automated-image-execution.md": {
+      "sha256": "f876fac41db3da7d87a659af35e10a808383c17e9e8d7af01cfdf978d8c290e6",
+      "bytes": 14386
+    },
+    "docs/operations/native-image-task-delivery.md": {
+      "sha256": "c3e19acf1d89e0b9f4cf6a2f932169fd68c6e5da55fd8102860c17a23d95d4ae",
+      "bytes": 10827
+    },
+    "docs/operations/image-file-transfer.md": {
+      "sha256": "04482115a304775e95e9b631b9ff9870323f408796fb0d52c0016a134d1f544f",
+      "bytes": 9734
+    },
+    "docs/images/publisher-policy.md": {
+      "sha256": "877b496b04e85c1285c1e7b1041fb487acf101c4b2b3f9586e10da8fbcbfd579",
+      "bytes": 15259
+    },
+    "docs/operations/publisher-runbook.md": {
+      "sha256": "511db839f9c21116539d9db0cded4c09af658d0c975f5df0879910325bae5c62",
+      "bytes": 38713
+    },
+    "docs/operations/under80-runtime-contract.json": {
+      "sha256": "2c75194390154f1506146cb45c598327e42ee628fea726a2ebc1b58bc89c1da1",
+      "bytes": 38736
+    },
+    "docs/operations/independent-watchlist-and-book-coverage.md": {
+      "sha256": "2e1d5cd4550bed2601d2ed47e778e593b471f5d1fa899a9252d87d9bfafca129",
+      "bytes": 7115
+    },
+    "data/operations/active-production-run.json": {
+      "sha256": "769fe80ec5fd97c11f567552dfcdb0baa6454547c12a2f55ed40a1b8b6d43d08",
+      "bytes": 797
+    },
+    "data/operations/current-edition.json": {
+      "sha256": "85b7ba92291b09065a6ac5e9a6d1cf33d262d32cf0a4933fb47f813cef21efc9",
+      "bytes": 372
+    },
+    "data/operations/publication-status.json": {
+      "sha256": "7f7e9e54d0a8e1d6748556a202068547a4bb69620ad746ee9fb08bdc5d04501c",
+      "bytes": 2508
+    },
+    "docs/operations/unattended-image-host.json": {
+      "sha256": "6ceac7864a4b5209178aff9ea29e6553c23ea427ee985bd41b264f9275d20c3b",
+      "bytes": 4062
+    }
+  },
+  "ledger": {
+    "path": "data/operations/production-continuous-improvement-ledger.jsonl",
+    "event_count": 69,
+    "last_event_id": "DAB-OPS-E-000069",
+    "sha256": "eaff863b57a25290b81a71b4a0127c9ba4c07e698b1817d6e676e9162c2cdda3"
+  },
+  "admission": {
+    "pre_next_run_gate": "PASS",
+    "next_production_run_authorized": true,
+    "host_status": "READY",
+    "reusable_consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+    "prior_execution_id": "reliable-edition-20261002-run5",
+    "prior_terminal_state": "PUBLIC_CLOSED",
+    "prior_task_29_done": true,
+    "no_nonterminal_execution_found": true,
+    "next_unused_run_number": 7
+  },
+  "cost_boundary": {
+    "chatgpt_work": false,
+    "codex": false,
+    "paid_apis": false,
+    "billable_overage": false,
+    "alternate_accounts": false,
+    "new_credentials": false
+  }
+}

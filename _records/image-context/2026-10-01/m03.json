@@ -1,0 +1,8 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-01-m03"
+  ],
+  "includes_edition_context": false,
+  "prompt": "Professional detailed textbook/editorial mechanism diagram. Subject: Governed multi-environment access to Claude Platform on AWS. Mechanism: Show three distinct caller environments feeding a governed identity and policy boundary before reaching the model service, with approved-path routing and audit evidence separated from model inference.. No people or humanoid figures. White background. 1200x630."
+}

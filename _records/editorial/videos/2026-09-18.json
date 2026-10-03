@@ -1,0 +1,58 @@
+{
+  "brief_date": "2026-09-18",
+  "searched_at": "2026-09-18T14:40:47.358901Z",
+  "status": "degraded_retrieval",
+  "bounded_final_pass_completed": true,
+  "selected_general": null,
+  "selected_agents_non_technical_people": null,
+  "metadata_candidates_reviewed": 0,
+  "deep_reviewed": 0,
+  "trusted_sources_attempted": 8,
+  "intents": [
+    "general practical AI",
+    "reusable Agent Skills for nontechnical knowledge workers"
+  ],
+  "duration_tiers_seconds": [
+    600,
+    900,
+    1200
+  ],
+  "maximum_age_hours": 72,
+  "candidates": [],
+  "sources": [
+    {
+      "url": "https://www.youtube.com/@OpenAI/videos",
+      "result": "navigation_only_no_video_metadata"
+    },
+    {
+      "url": "https://www.youtube.com/@anthropic-ai/videos",
+      "result": "navigation_only_no_video_metadata"
+    },
+    {
+      "url": "https://www.youtube.com/@IBMTechnology/videos",
+      "result": "navigation_only_no_video_metadata"
+    },
+    {
+      "url": "https://www.youtube.com/@MicrosoftMechanics/videos",
+      "result": "retrieval_failed"
+    },
+    {
+      "url": "https://www.youtube.com/@GoogleWorkspace/videos",
+      "result": "retrieval_failed"
+    },
+    {
+      "url": "https://www.youtube.com/@GitHub/videos",
+      "result": "navigation_only_no_video_metadata"
+    },
+    {
+      "url": "https://www.youtube.com/@LangChain/videos",
+      "result": "navigation_only_no_video_metadata"
+    },
+    {
+      "url": "https://www.youtube.com/@LlamaIndex/videos",
+      "result": "navigation_only_no_video_metadata"
+    }
+  ],
+  "search_queries": 4,
+  "result": "Eight official-channel pages plus four bounded grouped searches yielded no usable item-level upload date and runtime evidence. The 15–20 metadata-candidate target and 3–5 deep-review target could not be met. Retrieval limitation is not a claim that no suitable videos exist."
+}

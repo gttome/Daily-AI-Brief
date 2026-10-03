@@ -1,0 +1,86 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "request_sha256": "92ec752f54e88b8b01167190fdbba11c0e8ed4eb8c51ff39d48092c26c5aabf1",
+  "story_id": "dab-story-2026-09-30-5d21346f",
+  "candidate_id": "m04",
+  "execution_mode": "production",
+  "evidence_type": "live",
+  "trigger": "scheduled",
+  "owner_interventions": [],
+  "runtime_context_isolation": "not_asserted",
+  "attempt": 1,
+  "fallback_used": false,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false,
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "call_id": "imagegen-exec-0e4dcc9e-55fe-4a54-97ca-ad3a65a419c0",
+    "artifact_id": "generated_images/exec-0e4dcc9e-55fe-4a54-97ca-ad3a65a419c0.png",
+    "generated_at": "2026-10-01T06:33:08.941Z",
+    "raw_sha256": "892fc589910f31799bd9f2f7fab90e30a2d9b95aadc158d70d8389d0c2e1d7cf",
+    "raw_capture": {
+      "path": "_records/image-attempts/2026-09-30/m04-attempt-1.png",
+      "sha256": "892fc589910f31799bd9f2f7fab90e30a2d9b95aadc158d70d8389d0c2e1d7cf",
+      "git_blob_sha": "aa04a8c2169f12f35bf7ed0ad59f31e7e66ff54d",
+      "commit_sha": "8cc0a6f1e53bfc6ff80b178e06d1d2baac1f06c0",
+      "content_address_verified": true,
+      "read_back_verified": false,
+      "verification_mode": "git_content_address"
+    },
+    "evidence_type": "live",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "review": {
+    "mode": "automated",
+    "phase": "after_generation",
+    "call_id": "view-image-original-exec-0e4dcc9e-55fe-4a54-97ca-ad3a65a419c0",
+    "reviewed_at": "2026-10-01T06:33:33.976Z",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "asset_sha256": "892fc589910f31799bd9f2f7fab90e30a2d9b95aadc158d70d8389d0c2e1d7cf",
+    "visible_text_result": "pass_exact_allowlist",
+    "allowed_text": [
+      "Small Business Workflow",
+      "Local Advisor",
+      "Hands-on Test",
+      "Human Review",
+      "Outcome Measure",
+      "Iterate or Stop"
+    ],
+    "unexpected_text": [],
+    "dimensions": {
+      "width": 1774,
+      "height": 887,
+      "minimum_pass": true
+    },
+    "assessment": "Six clear panels explain the coached small-business adoption loop from workflow selection through advisor support, testing, human review, measurement and an explicit iterate-or-stop decision. All allowlisted labels are exact, with no people, extra copy or cross-story motifs.",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m04-1.png",
+    "sha256": "892fc589910f31799bd9f2f7fab90e30a2d9b95aadc158d70d8389d0c2e1d7cf",
+    "git_blob_sha": "aa04a8c2169f12f35bf7ed0ad59f31e7e66ff54d",
+    "commit_sha": "8cc0a6f1e53bfc6ff80b178e06d1d2baac1f06c0",
+    "persisted_at": "2026-10-01T06:33:33.976Z",
+    "persisted_at_scope": "post_review_content_address_verification_time",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address"
+  },
+  "status": "accepted_locked"
+}

@@ -1,0 +1,154 @@
+# Daily AI Brief — Story Image Publisher Policy
+
+## September 28, 2026 — Automated production/qualification image parity
+
+> [!IMPORTANT]
+> **Current image policy: `production-image-execution-v2`.** Production and qualification now use the same request builder, execution/receipt contract and production image gate. No owner-created fresh chats, owner image uploads, mandatory manual Library transfers or manual image approvals are part of the new path. This amendment supersedes earlier fresh-worker and Library-exit procedures for new runs only; historical IH/Q evidence remains unchanged.
+
+The automatic sequence is sealed single-story request → native image generation → exact output capture → automated post-generation review → bounded same-story regeneration when needed → exact Git persistence/read-back. Review must be a later phase, not necessarily a different conversation. The explicit payload excludes other stories and operational content; hidden runtime isolation is **not asserted**. Keep all factual, professional-quality, six-image differentiation and exact-byte gates. No Work, Codex or paid-model API use is authorized.
+
+`_generator/lib/image-execution.mjs` is shared by both modes. The qualification builder is a direct alias of the production builder. `_tools/image-execution.mjs` prepares requests and validates actual receipts; request preparation is not generation. Missing native generation/review/transport is `CAPABILITY_BLOCKED`, never an owner-upload workaround. For September 28 editions onward, the combined production image gate requires V2 live execution evidence. Earlier editions retain historical validators.
+
+**Release and proof are distinct:** require protected CI/merge for this change; require actual scheduled native generation, capture, review and exact persistence before declaring the image stage unattended. Adapter fixtures cannot establish production automation. See [Automated image execution](../operations/automated-image-execution.md). Preserve Q24's completed components and original cutoff; record the execution amendment without rewriting frozen receipts or allocating Q25 while Q24 is nonterminal.
+
+---
+
+
+Status: **Required**
+
+This policy governs the six story images in every `full_v1` Daily AI Brief edition.
+
+## Canonical visual benchmark
+
+The September 9, 2026 story-image set is the repository benchmark for visual quality, especially:
+
+- `briefs/images/2026-09-09/01-enterprise-managed-sandbox.png`
+- the other five images under `briefs/images/2026-09-09/`
+
+Future custom images must be comparable in **professional finish, information density, instructional clarity, depth, annotation quality, and textbook-illustration polish**. Matching the benchmark does not mean copying its subject or exact layout; each story must have its own composition.
+
+## September 25, 2026 quality assessment and forward requirement
+
+The September 25 replacement images are an improvement over the rejected low-quality recovery images, but they are **still materially below the professional finish, visual detail, explanatory depth, annotation richness, and textbook-quality polish demonstrated by the September 9 benchmark and the accepted September 10 `premium3` set**.
+
+This is an explicit quality finding, not a historical note to be ignored after September 25. For every new Daily Generative AI Brief:
+
+- the earlier high-quality benchmark is the minimum visual acceptance standard;
+- “better than the previous failed image” is **not** sufficient for PASS;
+- technically valid dimensions, readable labels, correct metadata, SVG/PNG/WebP validity, or a successful site build are **not** sufficient for PASS;
+- images must match the earlier benchmark in professional composition, information density, meaningful story-specific detail, refined rendering, depth, hierarchy, annotations, and instructional value;
+- reviewers must compare the rendered six-image set against the September 9 and accepted September 10 benchmark images before publication;
+- if any final image is visibly less professional, less detailed, more schematic, more generic, flatter, or materially less informative than those benchmark sets, the image gate must fail and the image must be regenerated or replaced before publication;
+- there is no lower-quality recovery, emergency, deterministic, programmatic, or placeholder path. The system must fail closed rather than publish imagery below the benchmark.
+
+**Acceptance rule:** a future image set is publishable only when it can reasonably sit beside the best earlier Daily Brief images without a noticeable downgrade in visual quality or explanatory richness.
+
+## Required visual standard
+
+Every custom story image MUST:
+
+- use a dominant white or near-white background;
+- be exactly **1200×630** and use **WebP as the preferred canonical publication format, with PNG accepted when needed**; render as the complete uncropped canvas;
+- look like a professionally commissioned technical/editorial textbook plate, not a presentation placeholder;
+- use refined vector or semi-realistic diagram rendering with subtle depth, shading, linework, hierarchy, and polished icons;
+- contain enough meaningful story-specific components to explain the core mechanism or implication visually;
+- use layered system views, cutaways, annotated workflows, control planes, evidence paths, comparison structures, or similarly information-rich constructions when appropriate;
+- use concise, legible labels and callouts with safe margins and mobile readability;
+- remain factually grounded in the story and avoid invented claims;
+- be materially differentiated from the other five images in concept and composition while retaining the common white-background textbook aesthetic.
+
+## Explicit failures
+
+The following FAIL the image gate:
+
+- simple or blocky placeholder diagrams;
+- sparse icon rows or generic box-and-arrow slides;
+- title cards, logo-only art, or mostly-text graphics;
+- dark hero backgrounds or cinematic/stock-photo compositions;
+- generic AI brains/robots unrelated to the story;
+- repeated templates with only labels swapped;
+- clipped, cropped, distorted, crowded, or illegible diagrams;
+- programmatic low-detail SVG/PNG substitutes created only because the preferred image-generation path was unavailable.
+
+## No quality downgrade / no fallback rule
+
+**Image quality may not be relaxed to complete a publication.** If the normal high-quality image-generation capability is unavailable, slow, or fails, the publisher must leave the candidate off production and report the image gate as FAIL/Pending. It must **not** substitute a simplified programmatic block diagram, sparse SVG, title card, stock visual, or other lower-quality placeholder.
+
+A manually or programmatically constructed illustration is acceptable only when it is deliberately designed to meet the full benchmark above and passes rendered visual inspection; programmatic generation is never an automatic fallback.
+
+## Required QA
+
+Before merge and again after GitHub Pages deployment, inspect all six rendered images individually and as a set. QA must compare them with the September 9 benchmark and explicitly verify:
+
+1. textbook-level professional finish;
+2. story-specific explanatory value;
+3. adequate visual detail and component richness;
+4. refined depth, iconography, hierarchy, and annotations;
+5. 1200×630 full-canvas rendering with no clipping;
+6. white/near-white background and restrained professional accents;
+7. material differentiation across all six images.
+
+File existence, metadata, dimensions, or an accessibility pass alone do **not** prove image quality. If rendered quality is materially below the September 9 benchmark, QA must fail and repair the images before publication can be reported PASS.
+
+### Stricter visual gate — September 10 recovery
+
+The six accepted `premium3` illustrations in the September 10 edition supplement the earlier benchmark. The superseded September 10 cylinder-and-icon set is an explicit negative example: repeating a template with different labels fails even when every file is valid and readable.
+
+Inspect every final accepted WebP or PNG individually at its published size and compare the complete set before merge. Record the exact canonical asset hashes, format, composition-specific assessment, meaningful components, rejected attempts and regeneration outcomes in a dated image-quality record. Aim for 6–12 or more meaningful story-specific components where appropriate; component count alone never proves quality. Primary labels must remain readable, while fine details may require opening the full image on mobile.
+
+Fail any primarily simplistic, generic, sparse, flat, title-card, low-detail icon-board or repeated-template image. Decorative props and scenery do not count as instructional richness. The gate must explicitly judge refinement, professional finish, conceptual storytelling, useful visual depth and material differentiation. An external-looking log, screenshot, chart or runtime setting must be clearly conceptual unless it is verified source evidence. Never represent a self-review as an external human or independent-agent review.
+
+For an image recovery, compare all replacement hashes against the observed main baseline and confirm every requested image changed. Record failed attempts honestly. Preserve prior QA entries and append the reason an earlier visual PASS was superseded. Rerun deterministic publication, integration, accessibility and append-only checks, then verify the deployed image bytes and reader surfaces before recording final publication PASS.
+
+## Cache and replacement behavior
+
+When replacing an already-published story image, prefer a new versioned asset filename and update the canonical `path`, `cache_key` and `public_url`, regenerate all derived reader surfaces from the canonical edition, and verify the exact public asset after deployment. Do not rely on a stale branch URL or browser cache when judging the replacement.
+
+The September 10 recovery demonstrated that changing a query cache key alone can still serve stale raw-main bytes. If a byte comparison fails, use a new asset filename and regenerate the reader surfaces; do not report success from a Pages build alone.
+
+
+## Machine-enforced quality contract — effective September 26, 2026
+
+The image gate has two independent decisions:
+
+```text
+structural_gate = pass|fail
+editorial_quality_gate = pass|fail
+overall_gate = pass ONLY IF both gates pass
+```
+
+Structural validation proves file identity, integrity, supported format, exact 1200×630 canvas, expected path/story identity, accessibility metadata, accepted hash/Git blob identity, lock state and replacement identity. It does **not** prove editorial quality.
+
+Editorial quality requires a completed rendered benchmark comparison against `_records/image-quality/benchmark-profile-v1.json`. The evidence record is versioned as `2.0.0` and must preserve dimension-level findings for professional finish, meaningful detail, explanatory mechanism, annotation richness, visual depth, hierarchy, composition, story specificity and differentiation. An opaque numerical score is not sufficient.
+
+The six-image set is also a gate. Six valid files fail when their composition signatures are duplicated or their layouts, diagram grammar, information hierarchy or annotation patterns are excessively reused.
+
+Missing or unavailable editorial review is a blocking failure. Low-detail, generic, sparse or decorative-only visuals fail even when dimensions, hashes, accessibility and build checks pass.
+
+For a legitimate replacement, the record must preserve the superseded asset identity and use a new asset version, content hash and cache key. Post-deployment validation must verify that the reader serves the exact accepted bytes; a repository-only replacement is not completion evidence.
+
+
+## Image execution-context isolation — September 26, 2026
+
+Each initial image request must be a self-contained single-story brief. Do not include edition summaries, publication status, other stories or unrelated reference images. Targeted edits may reference only the same story draft. Save the exact request, bind its digest and story ID into the v2 image-quality record, and explicitly inspect for subject match and unrelated dashboard/status artwork. The shared gate rejects missing, cross-story, changed or unreviewed context evidence. Self-review must be identified as self-review.
+
+Acceptance is durable only when exact asset bytes, SHA-256 and Git blob identity are persisted. Preserve all locked assets on downstream retries. An unrecoverable accepted asset may be regenerated only under the existing missing/corrupt exception, with the failed recovery search documented.
+
+
+## Outcome-based qualification amendment — September 27, 2026
+
+This amendment narrows the qualification gate to the outcomes that matter and supersedes earlier **categorical format bans** where they conflict with story-fit professional quality.
+
+The benchmark remains strict: images must be professional, detailed, story-specific, factually safe, explanatory, readable, differentiated across the edition, and free of low-quality fallback behavior. The following composition forms are no longer automatic failures solely because of their form: linear flows, card/panel layouts, six-stage explanations, status-flow structures, dashboard/system-view metaphors, taxonomies, comparisons, and layered architectures. They pass only when they are the clearest truthful structure for the story and meet the full professional-quality benchmark; sparse, generic, repetitive, decorative, or placeholder-like executions still fail.
+
+A central mechanism, multiple interacting layers, nonlinear cross-links, and dense hierarchy are no longer universal requirements. Use them when supported and useful. Clarity and explanatory value take precedence over complexity for its own sake.
+
+Text policy is also outcome-based. Essential story-specific labels must be readable and present. Useful duplicates, short generic headings/descriptors/legends, and non-prose technical symbols/glyphs are permitted when they do not introduce unsupported factual claims, metrics, identifiers, code, vulnerabilities, filenames, product-specific details, or misleading UI. Unsupported factual prose and invented specifics remain blocking failures.
+
+Human figures may be used when human workflow, review, collaboration, or adoption is genuinely part of the explanation; this does not relax factuality or permit unsupported identifiable-person depiction.
+
+The image generator may receive up to four bounded attempts per story during qualification. A deterministic contract defect should stop retries early. The first failed gate remains the official failure cause, while later non-mutating diagnostic review may continue to gather useful evidence.
+
+Final production publication still requires all six story images to pass and be accepted/locked. Qualification may continue with one isolated remediation lane when five images are already accepted/locked, but the sixth must pass before publication.
+
+All artifact-integrity, no-cross-story-contamination, exact-byte persistence, no-low-quality-fallback, and zero-paid-execution controls remain in force.

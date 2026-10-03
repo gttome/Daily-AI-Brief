@@ -1,0 +1,116 @@
+{
+  "schema_version": "run5-watchlist-refresh-v1",
+  "edition_id": "dab-edition-2026-10-02",
+  "execution_id": "reliable-edition-20261002-run5",
+  "research_cutoff": "2026-10-02T12:42:37Z",
+  "observed_at": "2026-10-02T13:29:44Z",
+  "discovery_checks": [
+    {
+      "domain": "frontier_models",
+      "queries": [
+        "frontier AI model Gemini 4 Argon September 30 2026",
+        "decision model JEV ai_decide Databricks September 2026"
+      ]
+    },
+    {
+      "domain": "agents_and_harnesses",
+      "queries": [
+        "AI agent harness governance Dogwood September 2026",
+        "Gemini reusable skills September 30 2026"
+      ]
+    },
+    {
+      "domain": "developer_tooling",
+      "queries": [
+        "AI developer tooling Work IQ Developer Tools September 30 2026",
+        "CoreWeave Forge agent development September 2026"
+      ]
+    },
+    {
+      "domain": "multimodal_and_interfaces",
+      "queries": [
+        "multimodal AI InstructMesh October 1 2026",
+        "AI multimodal interface new September 30 2026"
+      ]
+    },
+    {
+      "domain": "knowledge_worker_workflows",
+      "queries": [
+        "knowledge worker AI Slack MCP Lists September 30 2026",
+        "Stack Internal trusted enterprise AI September 30 2026"
+      ]
+    },
+    {
+      "domain": "safety_and_governance",
+      "queries": [
+        "AI agents safety governance September 29 2026 Reuters deception legal risk",
+        "AI governance banking regulator September 30 2026 AI"
+      ]
+    },
+    {
+      "domain": "open_source_and_community",
+      "queries": [
+        "open source AI DeepSeek Ascend September 30 2026",
+        "open source sovereign AI Eclipse initiative September 2026"
+      ]
+    }
+  ],
+  "checks_completed": 14,
+  "updates": [
+    {
+      "topic_id": "dab-topic-system-one-decision-models",
+      "label": "Updated today",
+      "title": "Decision models emerge as a separate AI systems layer",
+      "what_changed": "Databricks launched ai_decide on September 30, powered by a decision model and explicitly citing TypeSafe AI's Jev for fast structured choices, probabilities and scores over governed data.",
+      "source": "https://www.databricks.com/blog/introducing-aidecide-make-fast-decisions-your-governed-data"
+    },
+    {
+      "topic_id": "dab-topic-agent-skills-observability",
+      "label": "Updated today",
+      "title": "Reusable agent skills become observable",
+      "what_changed": "Google moved reusable Skills into Gemini chat, replacing Gems and making saved instructions directly invokable and composable with reference files.",
+      "source": "https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/"
+    },
+    {
+      "topic_id": "dab-topic-repairable-generative-design",
+      "label": "Updated today",
+      "title": "Repairable AI-generated 3D designs",
+      "what_changed": "MIT CSAIL published InstructMesh on October 1, enabling selective natural-language and slider-based repair of generated 3D models before fabrication.",
+      "source": "https://news.mit.edu/2026/instructmesh-tool-lets-users-repair-ai-3d-models-then-fabricate-them-1001"
+    },
+    {
+      "topic_id": "dab-topic-model-lifecycle-governance",
+      "label": "Updated today",
+      "title": "Model lifecycle governance for AI products",
+      "what_changed": "CoreWeave Forge connected training, inference, observability, evaluation, curation, post-training and agent development into a continuous improvement loop.",
+      "source": "https://www.coreweave.com/news/coreweave-forge-launches-turning-the-ai-loop-production-run-into-a-better-model-and-agent"
+    },
+    {
+      "topic_id": "dab-topic-harness-engineering",
+      "label": "Updated today",
+      "title": "AI harness engineering becomes a first-class layer",
+      "what_changed": "AWS Dogwood introduced execution-time temporal governance for sequences of agent actions, moving policy enforcement deeper into the agent runtime.",
+      "source": "https://aws.amazon.com/blogs/opensource/introducing-the-dogwood-local-engine-temporal-governance-for-agent-actions/"
+    }
+  ],
+  "new_topics": [
+    {
+      "topic_id": "dab-topic-trusted-enterprise-context",
+      "label": "New today",
+      "title": "Trusted enterprise context becomes machine-readable for agents",
+      "status": "early_signal",
+      "why_watch": "Stack Internal now combines provenance, recency, corroboration, expert validation and conflict handling so agents can reason about whether internal knowledge is trustworthy.",
+      "source": "https://stackoverflow.co/company/press/archive/stack-internal-trusted-enterprise-ai"
+    },
+    {
+      "topic_id": "dab-topic-sovereign-open-ai",
+      "label": "New today",
+      "title": "Sovereign open AI becomes an organized infrastructure layer",
+      "status": "early_signal",
+      "why_watch": "The Eclipse Foundation launched a 17-organization Sovereign AI Foundation to map dependencies, evaluate open alternatives and develop practical guidance across models, tooling and agentic systems.",
+      "source": "https://newsroom.eclipse.org/news/announcements"
+    }
+  ],
+  "carried_forward_count": 10,
+  "result": "PASS"
+}

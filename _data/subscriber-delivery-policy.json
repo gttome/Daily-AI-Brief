@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0.0",
+  "email_enabled": false,
+  "status": "disabled_by_choice",
+  "label": "Disabled by choice / Not applicable",
+  "effective_date": "2026-09-13",
+  "reason": "Owner chose calendar and RSS; email signup and delivery remain inactive."
+}

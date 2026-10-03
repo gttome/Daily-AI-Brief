@@ -1,0 +1,24 @@
+{
+  "task_id": "11",
+  "state": "Blocked",
+  "at": "2026-10-02T14:34:50.767Z",
+  "from": "Blocked",
+  "to": "Blocked",
+  "operation": "m01-attempt-2",
+  "writer_generation": 8,
+  "reason_code": "M01_ATTEMPT_2_REJECTED_EXTRA_VISIBLE_TEXT",
+  "blocker_detail": "Native scheduled generation and exact byte capture succeeded, but the 1200x630 candidate contains visible tiny document/interface text outside the nine-string allowlist. Direct Git transport and the chunk bridge were not attempted because the candidate failed pretransport review.",
+  "evidence_path": "_records/image-attempts/2026-10-02-run5/m01-attempt-2.json",
+  "recoverable": true,
+  "recovery_action": "Do not duplicate attempt 2. Preserve Tasks 00-10 and all accepted artifacts. Keep Task 11 Blocked pending a later fenced recovery decision under the same sealed specification.",
+  "timings": {
+    "generation_completed_at": "2026-10-02T14:32:12.263236374Z",
+    "exact_raw_capture_completed_at": "2026-10-02T14:32:45.239870997Z",
+    "same_visual_optimization_completed_at": "2026-10-02T14:32:46.615897004Z",
+    "pretransport_review_completed_at": "2026-10-02T14:34:50.767Z",
+    "generation_tool_wall_seconds": 45.6,
+    "generation_wait_seconds": 45.6,
+    "capture_and_optimization_tool_wall_seconds": 1.6,
+    "final_visual_inspection_tool_wall_seconds": 0.4
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "reliable-edition-binding-v1",
+  "profile": "reliable-edition-v1",
+  "run_number": 4,
+  "edition_id": "dab-edition-2026-10-01",
+  "edition_date": "2026-10-01",
+  "execution_id": "reliable-edition-20261001-run4",
+  "branch": "reliable-edition/dab-edition-2026-10-01-run4",
+  "original_cutoff": "2026-10-01T19:52:35Z",
+  "baseline_main_sha": "8e6328fc50254fecf3d12d103d6e3b8ec5460dc8",
+  "release_sha": "8e6328fc50254fecf3d12d103d6e3b8ec5460dc8",
+  "research_baseline_sha": "8e6328fc50254fecf3d12d103d6e3b8ec5460dc8",
+  "policies": {
+    "article_freshness": "article-24-72-168-v1",
+    "media": "media-research-cutoff-v1",
+    "image_execution": "production-image-execution-v2",
+    "image_handoff": "same-invocation-direct-capture-v1",
+    "run_readiness": "run-learning-readiness-v1"
+  },
+  "prior_failed_execution": "reliable-edition-20261001"
+}

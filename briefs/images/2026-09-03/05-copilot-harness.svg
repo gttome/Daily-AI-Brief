@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f8f7fc"/>
+<text x="70" y="85" font-family="DejaVu Sans" font-size="32" font-weight="700" fill="#241f34">Copilot Studio: new harness for complex business agents</text>
+<circle cx="600" cy="325" r="125" fill="#ece8fb" stroke="#6f5ca8" stroke-width="7"/>
+<circle cx="600" cy="325" r="58" fill="#fff" stroke="#6f5ca8" stroke-width="6"/>
+<text x="554" y="335" font-family="DejaVu Sans" font-size="23" font-weight="700" fill="#241f34">HARNESS</text>
+<g font-family="DejaVu Sans" font-size="22" font-weight="700" fill="#241f34">
+<rect x="90" y="170" width="190" height="90" rx="20" fill="#fff" stroke="#7b6ab1" stroke-width="4"/><text x="147" y="224">SKILLS</text>
+<rect x="90" y="395" width="190" height="90" rx="20" fill="#fff" stroke="#7b6ab1" stroke-width="4"/><text x="133" y="449">MEMORY</text>
+<rect x="920" y="170" width="190" height="90" rx="20" fill="#fff" stroke="#7b6ab1" stroke-width="4"/><text x="976" y="224">FILES</text>
+<rect x="920" y="395" width="190" height="90" rx="20" fill="#fff" stroke="#7b6ab1" stroke-width="4"/><text x="950" y="449">WORKFLOWS</text>
+</g>
+<g stroke="#7b6ab1" stroke-width="7" stroke-linecap="round"><line x1="280" y1="215" x2="485" y2="285"/><line x1="280" y1="440" x2="485" y2="365"/><line x1="920" y1="215" x2="715" y2="285"/><line x1="920" y1="440" x2="715" y2="365"/></g>
+<rect x="475" y="510" width="250" height="62" rx="18" fill="#fff" stroke="#6f5ca8" stroke-width="4"/>
+<text x="516" y="551" font-family="DejaVu Sans" font-size="23" font-weight="700" fill="#241f34">GOVERNANCE</text>
+</svg>

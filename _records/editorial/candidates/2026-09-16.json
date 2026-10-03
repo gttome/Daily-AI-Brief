@@ -1,0 +1,676 @@
+{
+  "schema_version": "1.0.0",
+  "candidate_set_id": "dab-candidates-2026-09-16",
+  "brief_date": "2026-09-16",
+  "generated_at": "2026-09-16T12:15:27Z",
+  "candidates": [
+    {
+      "candidate_id": "dab-candidate-2026-09-16-01",
+      "focus": "technical_ai_engineering",
+      "headline": "Google moves agent security from syntax checks to runtime intent controls",
+      "selected": true,
+      "selected_ordinal": 1,
+      "source": {
+        "url": "https://developers.googleblog.com/build-zero-trust-ai-agents-that-judge-intent-not-just-syntax/",
+        "normalized_url": "https://developers.googleblog.com/build-zero-trust-ai-agents-that-judge-intent-not-just-syntax/",
+        "evidence_type": "official_documentation",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 35,
+        "rationale": "The strongest fresh technical item: authoritative, runnable guidance for prompt, policy, tool and session-level controls."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "The strongest fresh technical item: authoritative, runnable guidance for prompt, policy, tool and session-level controls.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-02",
+      "focus": "technical_ai_engineering",
+      "headline": "Cloudflare scopes teammate, CI, and agent access to individual Workers",
+      "selected": true,
+      "selected_ordinal": 2,
+      "source": {
+        "url": "https://blog.cloudflare.com/workers-granular-authorization/",
+        "normalized_url": "https://blog.cloudflare.com/workers-granular-authorization/",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "rationale": "A concrete fresh least-privilege control with direct value for coding-agent and deployment harnesses."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "A concrete fresh least-privilege control with direct value for coding-agent and deployment harnesses.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-03",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Gemini 3.8 Live keeps reasoning and using tools while conversation continues",
+      "selected": true,
+      "selected_ordinal": 3,
+      "source": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
+        "normalized_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "rationale": "The strongest fresh knowledge-worker interface development, with primary announcement and model-card limitations."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "The strongest fresh knowledge-worker interface development, with primary announcement and model-card limitations.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-04",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Copilot now suggests values for repository governance taxonomies",
+      "selected": true,
+      "selected_ordinal": 4,
+      "source": {
+        "url": "https://github.blog/changelog/2026-09-15-github-copilot-suggests-custom-properties-definitions/",
+        "normalized_url": "https://github.blog/changelog/2026-09-15-github-copilot-suggests-custom-properties-definitions/",
+        "evidence_type": "official_changelog",
+        "availability_status": "public_preview"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 32,
+        "rationale": "A compact, immediately usable example of AI-assisted information architecture with explicit human acceptance and policy control."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "A compact, immediately usable example of AI-assisted information architecture with explicit human acceptance and policy control.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-05",
+      "focus": "agents_non_technical_people",
+      "headline": "Salesforce AIforce brings governed data and actions to conversational interfaces",
+      "selected": true,
+      "selected_ordinal": 5,
+      "source": {
+        "url": "https://www.salesforce.com/news/stories/aiforce-announcement/",
+        "normalized_url": "https://www.salesforce.com/news/stories/aiforce-announcement/",
+        "evidence_type": "official_announcement",
+        "availability_status": "announced"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "rationale": "The highest-value accessible-agent candidate after primary-window options failed the category gates; fallback is explicit and tightly bounded."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "The highest-value accessible-agent candidate after primary-window options failed the category gates; fallback is explicit and tightly bounded.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-06",
+      "focus": "agents_non_technical_people",
+      "headline": "Anthropic’s skills marketplace adds governed Informatica catalog discovery",
+      "selected": true,
+      "selected_ordinal": 6,
+      "source": {
+        "url": "https://github.com/anthropics/knowledge-work-plugins/commit/60eb554184003b8553eea733cce13c6e312cbeec",
+        "normalized_url": "https://github.com/anthropics/knowledge-work-plugins/commit/60eb554184003b8553eea733cce13c6e312cbeec",
+        "evidence_type": "official_repository",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "rationale": "Exactly one fresh reusable Agent Skills story, backed by a signed first-party marketplace commit with explicit capabilities and prerequisites."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "Exactly one fresh reusable Agent Skills story, backed by a signed first-party marketplace commit with explicit capabilities and prerequisites.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-07",
+      "focus": "technical_ai_engineering",
+      "headline": "Cloudflare separates search discovery from AI training controls",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/",
+        "normalized_url": "https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 4,
+        "practical_value": 4,
+        "category_fit": 4,
+        "total": 30,
+        "rationale": "Strong web-governance release, but lower direct fit than runtime and deployment controls."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Strong web-governance release, but lower direct fit than runtime and deployment controls.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-08",
+      "focus": "technical_ai_engineering",
+      "headline": "Gemini 3.8 Audio model card details distribution and limits",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://deepmind.google/models/model-cards/gemini-3-8-audio/",
+        "normalized_url": "https://deepmind.google/models/model-cards/gemini-3-8-audio/",
+        "evidence_type": "official_documentation",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 3,
+        "practical_value": 4,
+        "category_fit": 4,
+        "total": 30,
+        "rationale": "Used as corroborating evidence for the selected Gemini release rather than a duplicate story."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Used as corroborating evidence for the selected Gemini release rather than a duplicate story.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-09",
+      "focus": "technical_ai_engineering",
+      "headline": "Gemini 3.8 Extended Thinking changes asynchronous client state",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live-extended-thinking",
+        "normalized_url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live-extended-thinking",
+        "evidence_type": "official_documentation",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 32,
+        "rationale": "Important implementation detail, but the broader selected Gemini story serves more readers."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Important implementation detail, but the broader selected Gemini story serves more readers.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-10",
+      "focus": "technical_ai_engineering",
+      "headline": "Google publishes ADK Kotlin 1.0 guidance",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://developers.googleblog.com/announcing-adk-for-kotlin-1-0-building-production-ready-ai-agents-in-kotlin-android/",
+        "normalized_url": "https://developers.googleblog.com/announcing-adk-for-kotlin-1-0-building-production-ready-ai-agents-in-kotlin-android/",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 28,
+        "rationale": "Narrower ecosystem reach and practical value than selected controls."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Narrower ecosystem reach and practical value than selected controls.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-11",
+      "focus": "technical_ai_engineering",
+      "headline": "Google publishes harness-engineering diagnostics for coding agents",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://developers.googleblog.com/the-anatomy-of-harness-engineering-how-to-evaluate-iterate-and-guard-ai-coding-agents/",
+        "normalized_url": "https://developers.googleblog.com/the-anatomy-of-harness-engineering-how-to-evaluate-iterate-and-guard-ai-coding-agents/",
+        "evidence_type": "official_documentation",
+        "availability_status": "not_applicable"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "rationale": "High value but concept overlaps recent harness coverage in the 30-day memory."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "High value but concept overlaps recent harness coverage in the 30-day memory.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-12",
+      "focus": "technical_ai_engineering",
+      "headline": "Google publishes autonomous post-training with Tunix",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://developers.googleblog.com/autonomous-llm-post-training-with-tunix-on-tpus/",
+        "normalized_url": "https://developers.googleblog.com/autonomous-llm-post-training-with-tunix-on-tpus/",
+        "evidence_type": "official_documentation",
+        "availability_status": "research"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 4,
+        "practical_value": 2,
+        "category_fit": 4,
+        "total": 28,
+        "rationale": "Strong technical evidence but less immediately actionable for George’s workflows."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Strong technical evidence but less immediately actionable for George’s workflows.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-13",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub updates Copilot model-selection controls",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection/",
+        "normalized_url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection/",
+        "evidence_type": "official_changelog",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 3,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 1,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 28,
+        "rationale": "Rejected as a direct repeat of September 15 coverage."
+      },
+      "novelty_check": {
+        "disposition": "approved_repeat",
+        "matches": [
+          "exact normalized source identity"
+        ],
+        "prior_story_ids": [
+          "dab-story-2026-09-15-a1c3f9e2"
+        ],
+        "what_changed": "The underlying development was already covered in the previous edition."
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Rejected as a direct repeat of September 15 coverage.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-14",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Salesforce launches a campaign-planning agent",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://www.salesforce.com/blog/introducing-the-campaign-agent-that-turns-goals-into-growth/",
+        "normalized_url": "https://www.salesforce.com/blog/introducing-the-campaign-agent-that-turns-goals-into-growth/",
+        "evidence_type": "official_announcement",
+        "availability_status": "announced"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 3,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 1,
+        "practical_value": 4,
+        "category_fit": 4,
+        "total": 25,
+        "rationale": "Rejected as a direct repeat of September 15 coverage and outside the primary window."
+      },
+      "novelty_check": {
+        "disposition": "approved_repeat",
+        "matches": [
+          "exact normalized source identity"
+        ],
+        "prior_story_ids": [
+          "dab-story-2026-09-15-f4b8c1e6"
+        ],
+        "what_changed": "The underlying development was already covered in the previous edition."
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Rejected as a direct repeat of September 15 coverage and outside the primary window.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-15",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft adds conversational app building in Copilot Cowork",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/build-apps-in-copilot-cowork-and-copilot-studio/",
+        "normalized_url": "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/build-apps-in-copilot-cowork-and-copilot-studio/",
+        "evidence_type": "official_announcement",
+        "availability_status": "public_preview"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 1,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 2,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 26,
+        "rationale": "Outside the 72-hour ordinary fallback and recently represented in the Watchlist."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Outside the 72-hour ordinary fallback and recently represented in the Watchlist.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-16",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Google ships the Gemini app for Windows",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/",
+        "normalized_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 4,
+        "practical_value": 4,
+        "category_fit": 4,
+        "total": 29,
+        "rationale": "Useful access expansion, but lower generative-AI workflow significance than selected items."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Useful access expansion, but lower generative-AI workflow significance than selected items.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-17",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Meta applies AI models to assistive robotics research",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://ai.meta.com/blog/assistive-robotics-university-of-pittsburgh-sam-dino/",
+        "normalized_url": "https://ai.meta.com/blog/assistive-robotics-university-of-pittsburgh-sam-dino/",
+        "evidence_type": "official_announcement",
+        "availability_status": "research"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 4,
+        "practical_value": 2,
+        "category_fit": 2,
+        "total": 25,
+        "rationale": "Meaningful research but outside the Brief’s strongest knowledge-worker applications."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Meaningful research but outside the Brief’s strongest knowledge-worker applications.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-18",
+      "focus": "technical_ai_engineering",
+      "headline": "LlamaIndex adds document understanding to Claude Code",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://www.llamaindex.ai/blog/adding-document-understanding-to-claude-code",
+        "normalized_url": "https://www.llamaindex.ai/blog/adding-document-understanding-to-claude-code",
+        "evidence_type": "practitioner_analysis",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 4,
+        "authority": 3,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 4,
+        "category_fit": 4,
+        "total": 25,
+        "rationale": "Useful practitioner implementation, but evidence authority is below selected primary sources."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Useful practitioner implementation, but evidence authority is below selected primary sources.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-19",
+      "focus": "agents_non_technical_people",
+      "headline": "Hugging Face publishes an AI-agent explainer",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://huggingface.co/blog/Agenten/was-sind-ki-agenten",
+        "normalized_url": "https://huggingface.co/blog/Agenten/was-sind-ki-agenten",
+        "evidence_type": "practitioner_analysis",
+        "availability_status": "not_applicable"
+      },
+      "score": {
+        "significance": 2,
+        "freshness": 2,
+        "authority": 3,
+        "evidence_quality": 3,
+        "novelty": 2,
+        "practical_value": 3,
+        "category_fit": 3,
+        "total": 18,
+        "rationale": "Outside the primary window and too introductory for selection."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Outside the primary window and too introductory for selection.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-16-20",
+      "focus": "agents_non_technical_people",
+      "headline": "GitHub trending surfaces a Cloudflare security-audit skill",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://github.com/cloudflare/security-audit-skill",
+        "normalized_url": "https://github.com/cloudflare/security-audit-skill",
+        "evidence_type": "official_repository",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 4,
+        "category_fit": 4,
+        "total": 27,
+        "rationale": "A second Agent Skills story would violate the exact-one allocation, and verification depth was lower."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "A second Agent Skills story would violate the exact-one allocation, and verification depth was lower.",
+      "learning_adjustment": null
+    }
+  ]
+}

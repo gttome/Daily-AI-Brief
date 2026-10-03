@@ -1,0 +1,97 @@
+{
+  "vocabulary_version": "1.0.0",
+  "publication_state": [
+    "draft",
+    "staged",
+    "validated",
+    "published",
+    "degraded",
+    "failed",
+    "rolled_back",
+    "superseded"
+  ],
+  "check_result": [
+    "pass",
+    "fail",
+    "not_run",
+    "not_applicable",
+    "waived"
+  ],
+  "check_class": [
+    "deterministic",
+    "editorial"
+  ],
+  "severity": [
+    "critical",
+    "high",
+    "medium",
+    "low",
+    "info"
+  ],
+  "focus": [
+    "technical_ai_engineering",
+    "applied_genai_knowledge_workers",
+    "agents_non_technical_people"
+  ],
+  "evidence_type": [
+    "official_announcement",
+    "official_documentation",
+    "official_changelog",
+    "official_repository",
+    "research_paper",
+    "standard_or_government",
+    "independent_evaluation",
+    "authoritative_reporting",
+    "practitioner_analysis"
+  ],
+  "availability_status": [
+    "general_availability",
+    "public_preview",
+    "limited_preview",
+    "beta",
+    "alpha",
+    "research",
+    "announced",
+    "reported",
+    "proposed",
+    "deprecated",
+    "not_applicable"
+  ],
+  "novelty_disposition": [
+    "new",
+    "material_update",
+    "approved_repeat"
+  ],
+  "approval_state": [
+    "not_required",
+    "pending",
+    "approved",
+    "rejected"
+  ],
+  "alert_state": [
+    "open",
+    "acknowledged",
+    "resolved",
+    "suppressed"
+  ],
+  "trend_classification": [
+    "accelerating",
+    "emerging",
+    "stable",
+    "cooling"
+  ],
+  "action_type": [
+    "test",
+    "monitor",
+    "update_policy",
+    "teach",
+    "adopt",
+    "evaluate",
+    "ignore_for_now"
+  ],
+  "confidence": [
+    "high",
+    "medium",
+    "low"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "dab-qa-20260907T180054Z-39638bef",
+  "edition_id": "dab-edition-2026-09-07",
+  "publication_run_id": null,
+  "executed_at": "2026-09-07T18:00:54Z",
+  "initial_result": "pass",
+  "final_result": "pass",
+  "checks": [
+    {"check_id": "canonical_and_editorial_contracts", "class": "deterministic", "result": "pass", "severity": "critical", "evidence": "The canonical edition, 20-candidate pool, 30-day memory, and six assets passed repository CI."},
+    {"check_id": "atomic_synchronization", "class": "deterministic", "result": "pass", "severity": "critical", "evidence": "Dated brief, homepage, latest, archive, and README were published in commit 39638bef649813f33b2dd172513164c15dadd83d."},
+    {"check_id": "pages_deployment", "class": "deterministic", "result": "pass", "severity": "critical", "evidence": "GitHub Pages run 34149860638 completed successfully."},
+    {"check_id": "novelty_and_evidence_review", "class": "editorial", "result": "pass", "severity": "high", "evidence": "Selected stories retain score rationale, evidence status, and material-update lineage where required."}
+  ],
+  "repairs": [],
+  "defects": [],
+  "deployment_evidence": {"pages_run_id": 34149860638, "head_sha": "39638bef649813f33b2dd172513164c15dadd83d", "conclusion": "success"},
+  "deployment_latency_seconds": 47,
+  "record_path": "_records/qa/2026-09-07.json"
+}

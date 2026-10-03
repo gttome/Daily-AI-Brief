@@ -1,0 +1,516 @@
+{
+  "schema_version": "daily-ai-brief-improvement-kanban-v1",
+  "board_id": "daily-ai-brief-improvement-kanban",
+  "title": "Daily AI Brief — Improvement Kanban",
+  "observed_at": "2026-10-03T18:45:00Z",
+  "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
+  "lane_order": [
+    "backlog",
+    "wip",
+    "done"
+  ],
+  "source_policy": {
+    "canonical_file": "data/operations/improvement-kanban.json",
+    "living_sources": [
+      "docs/operations/LIVING-SYSTEM-OPERATIONS.md",
+      "docs/operations/PRODUCTION-CONTINUOUS-IMPROVEMENT-LEDGER.md",
+      "data/operations/production-continuous-improvement-ledger.jsonl",
+      "docs/operations/RUN-LEARNING-READINESS-PLAN.md",
+      "docs/operations/run-learning-readiness-contract.json",
+      "docs/operations/START-HERE.md",
+      "docs/operations/DAILY-UNATTENDED-STARTUP.md",
+      "docs/operations/reliable-edition-execution.md",
+      "docs/operations/unattended-image-host.json",
+      "docs/operations/task-recovery-contracts.json",
+      "docs/operations/independent-watchlist-and-book-coverage.md",
+      "docs/operations/watchlist-runbook.md",
+      "data/operations/publication-status.json"
+    ],
+    "rules": [
+      "Do not reopen items whose authoritative learning record is permanently_fixed unless new evidence demonstrates regression.",
+      "Superseded historical instructions remain evidence, not current instructions.",
+      "New cards require a source reference and explicit acceptance criteria.",
+      "Lane moves are user/operator decisions; automated reconciliation annotates evidence but never silently moves a card.",
+      "Per-edition Tasks 00–29 remain on the production Kanban, not this board.",
+      "Production instructions must be generic and must not contain a named historical run."
+    ]
+  },
+  "cards": [
+    {
+      "id": "DAB-KB-001",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Reliability",
+      "title": "Generalize terminal-run protection",
+      "summary": "Replace the transitional historical-run-specific guard with a generic rule: every prior PUBLIC_CLOSED / terminal run is immutable and recovery follows only the active nonterminal execution.",
+      "acceptance": [
+        "No persistent recovery/controller guard hard-codes the prior production baseline after the completed stability window.",
+        "Regression coverage proves multiple closed prior runs are never reopened."
+      ],
+      "sources": [
+        "Daily Brief Recovery prompt (2026-10-02)",
+        "docs/operations/DAILY-UNATTENDED-STARTUP.md"
+      ]
+    },
+    {
+      "id": "DAB-KB-002",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Liveness",
+      "title": "Validate production Task 21 repair path",
+      "summary": "The rehearsal exercised a focused-repair path not used by prior production executions. Prove a production-style repair request has an executor before changing production behavior.",
+      "acceptance": [
+        "Production-style repair request has a bound executor.",
+        "Same execution resumes without reopening completed tasks.",
+        "No production change unless production evidence justifies it."
+      ],
+      "sources": [
+        "Rehearsal Task 21 investigation",
+        "prior production executions Task 21 evidence"
+      ]
+    },
+    {
+      "id": "DAB-KB-003",
+      "lane": "done",
+      "priority": "P2",
+      "category": "Reader QA",
+      "title": "Keep rehearsal completeness regression isolated",
+      "summary": "Retain the rehearsal landing-page completeness test and correction without importing the rehearsal assembler into normal production.",
+      "acceptance": [
+        "PR #387 dispositioned after the completed stability window stability window.",
+        "Rehearsal pages cannot silently drop images, book bridges, media navigation or Watchlist detail."
+      ],
+      "sources": [
+        "PR #387",
+        "rehearsal qualification records"
+      ]
+    },
+    {
+      "id": "DAB-KB-004",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Liveness",
+      "title": "Prove real Task 11–16 handoff resumes Supervisor",
+      "summary": "Synthetic handoff passed. Confirm a real production image-worker release dispatches the same production execution and advances the first incomplete dependent task.",
+      "acceptance": [
+        "Real release triggers same-execution Supervisor.",
+        "No duplicate execution and no completed-task rework."
+      ],
+      "sources": [
+        "DAB-OPS-20261002-016",
+        "data/operations/production-continuous-improvement-ledger.jsonl"
+      ]
+    },
+    {
+      "id": "DAB-KB-005",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Liveness",
+      "title": "Prove recoverable rejection is recognized automatically",
+      "summary": "Schema normalization is implemented; validate on a real recoverable image rejection that the Supervisor dispatches the bounded next action without owner intervention.",
+      "acceptance": [
+        "Equivalent blocker shapes normalize safely.",
+        "Real recoverable rejection advances automatically."
+      ],
+      "sources": [
+        "DAB-OPS-20261002-013",
+        "docs/operations/run-learning-readiness-contract.json"
+      ]
+    },
+    {
+      "id": "DAB-KB-006",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Publication",
+      "title": "Exercise merge-time authorization guards",
+      "summary": "Run READY/authorized and blocked fixtures against both autonomous publication paths so host/run authorization changes after candidate CI fail closed.",
+      "acceptance": [
+        "Authorized fixture may promote.",
+        "Blocked/stale authorization fixture cannot merge.",
+        "Closure stays bound to the validated publication event."
+      ],
+      "sources": [
+        "DAB-OPS-20261002-018",
+        "publication identity binding tests"
+      ]
+    },
+    {
+      "id": "DAB-KB-007",
+      "lane": "backlog",
+      "priority": "P2",
+      "category": "Transport",
+      "title": "Exercise PNG chunk bridge on first real need",
+      "summary": "The protected fallback is implemented but should be exercised only when a visually valid candidate cannot use direct complete-Base64 create_blob delivery.",
+      "acceptance": [
+        "Exact bytes reconstructed and Git-read-back verified.",
+        "Saved-Git visual review still precedes acceptance."
+      ],
+      "sources": [
+        "DAB-OPS-20261002-012",
+        "_tools/image-chunk-bridge.mjs"
+      ]
+    },
+    {
+      "id": "DAB-KB-008",
+      "lane": "backlog",
+      "priority": "P1",
+      "category": "Image Quality",
+      "title": "Track image duration, attempts and safe simplification",
+      "summary": "Measure every image wall time and attempts-to-accept. If duration rises, simplify non-value-add process before adding machinery while preserving the the prior production baseline quality standard.",
+      "acceptance": [
+        "Per-image duration and attempts visible in run evidence.",
+        "Trend compared with prior runs.",
+        "Simplification preserves professional image gates."
+      ],
+      "sources": [
+        "docs/operations/LIVING-SYSTEM-OPERATIONS.md",
+        "DAB-OPS-20261002-015",
+        "owner the prior production baseline image feedback"
+      ]
+    },
+    {
+      "id": "DAB-KB-009",
+      "lane": "backlog",
+      "priority": "P2",
+      "category": "Watchlist",
+      "title": "Complete 14-edition Watchlist rubric review",
+      "summary": "Review the provisional Watchlist rubric after the documented 14-edition assessment; do not automatically enable weighting changes.",
+      "acceptance": [
+        "Detection lead time, source diversity, archival/false-positive rate and missed concepts reviewed.",
+        "Any rubric change separately approved."
+      ],
+      "sources": [
+        "docs/operations/watchlist-runbook.md"
+      ]
+    },
+    {
+      "id": "DAB-KB-010",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Documentation",
+      "title": "Reconcile stale Work/Codex language in Watchlist runbook",
+      "summary": "The Watchlist runbook still contains historical Work/Codex allowance language that conflicts with the current zero-Work production policy.",
+      "acceptance": [
+        "Current no-Work/no-paid-service policy is unambiguous.",
+        "Historical guidance is clearly marked superseded rather than silently deleted."
+      ],
+      "sources": [
+        "docs/operations/watchlist-runbook.md",
+        "docs/operations/DAILY-UNATTENDED-STARTUP.md"
+      ]
+    },
+    {
+      "id": "DAB-KB-011",
+      "lane": "done",
+      "priority": "P2",
+      "category": "Documentation",
+      "title": "Reduce conflicting historical operating instructions",
+      "summary": "Living documentation contains superseded paths. Add explicit current/superseded boundaries so startup logic cannot follow stale operational advice.",
+      "acceptance": [
+        "Current path is discoverable from START-HERE.",
+        "Superseded sections remain historical evidence but cannot be mistaken for current policy."
+      ],
+      "sources": [
+        "docs/operations/LIVING-SYSTEM-OPERATIONS.md",
+        "docs/operations/START-HERE.md"
+      ]
+    },
+    {
+      "id": "DAB-KB-012",
+      "lane": "backlog",
+      "priority": "P2",
+      "category": "Liveness",
+      "title": "Evaluate outer recovery latency SLO",
+      "summary": "Hourly Recovery at :48 is a second-level backstop. Verify Supervisor + event-driven handoff + watchdog make the near-60-minute worst-case backstop acceptable before changing cadence.",
+      "acceptance": [
+        "Observed primary recovery latency measured.",
+        "No schedule change unless evidence shows an actual liveness gap."
+      ],
+      "sources": [
+        "Daily Brief Recovery schedule",
+        "Run Supervisor / handoff architecture"
+      ]
+    },
+    {
+      "id": "DAB-KB-013",
+      "lane": "backlog",
+      "priority": "P2",
+      "category": "UI",
+      "title": "Design authenticated HTML5 write-back",
+      "summary": "Initial HTML5 board uses localStorage and JSON import/export. Design a safe repository write-back path without embedding credentials in the page.",
+      "acceptance": [
+        "No browser token embedded or stored in source.",
+        "Approved changes can be committed through an authenticated external workflow."
+      ],
+      "sources": [
+        "Owner HTML5 interface requirement"
+      ]
+    },
+    {
+      "id": "DAB-KB-014",
+      "lane": "done",
+      "priority": "P2",
+      "category": "Automation",
+      "title": "Automate Kanban reconciliation from living evidence",
+      "summary": "Build a reconciler that ingests the improvement ledger and designated living docs, removes fixed/superseded work, and proposes new cards without reviving closed incidents.",
+      "acceptance": [
+        "Deterministic dedupe/supersession rules.",
+        "Every generated card retains source references.",
+        "Human-approved lane moves remain authoritative."
+      ],
+      "sources": [
+        "data/operations/production-continuous-improvement-ledger.jsonl",
+        "docs/operations/LIVING-SYSTEM-OPERATIONS.md"
+      ]
+    },
+    {
+      "id": "DAB-KB-015",
+      "lane": "backlog",
+      "priority": "P2",
+      "category": "Command Center",
+      "title": "Resolve production Command Center sync pending state",
+      "summary": "Current publication status marks Command Center synchronization pending even though the public edition is completed.",
+      "acceptance": [
+        "Canonical status and Command Center agree or pending state is explicitly retired if no longer required."
+      ],
+      "sources": [
+        "data/operations/publication-status.json"
+      ]
+    },
+    {
+      "id": "DAB-KB-016",
+      "lane": "backlog",
+      "priority": "P2",
+      "category": "Books",
+      "title": "Reconcile four-book reader expectation with relevance-first contract",
+      "summary": "Current book-selection documentation has no balance quota, while the reader expectation is that all four Professional Series books should appear across a daily slate when support exists.",
+      "acceptance": [
+        "Policy states when four-book distribution is expected versus when relevance overrides distribution.",
+        "No forced low-relevance book mapping."
+      ],
+      "sources": [
+        "docs/operations/independent-watchlist-and-book-coverage.md",
+        "reader requirements"
+      ]
+    },
+    {
+      "id": "DAB-KB-017",
+      "lane": "backlog",
+      "priority": "P2",
+      "category": "Watchlist",
+      "title": "Maintain restricted-source assisted-review coverage",
+      "summary": "Keep X, Discord and other restricted/identity-sensitive sources classified as assisted review rather than automated failure, with current evidence and explicit deferral.",
+      "acceptance": [
+        "Required source surfaces show complete/degraded/assisted status honestly.",
+        "No empty/login page counts as reviewed."
+      ],
+      "sources": [
+        "docs/operations/watchlist-runbook.md"
+      ]
+    },
+    {
+      "id": "DAB-KB-018",
+      "lane": "backlog",
+      "priority": "P2",
+      "category": "UX",
+      "title": "Standardize improvement-board PNG rendering",
+      "summary": "Keep the approved navy dashboard style, Backlog → WIP → Done order, readable task cards, and bottom readiness/repository/controller/risk/next-action panels.",
+      "acceptance": [
+        "Same JSON produces repeatable board layout.",
+        "No clipped/overlapping text.",
+        "Current Risk and Next Action always present."
+      ],
+      "sources": [
+        "Example Kanban.png",
+        "Daily AI Brief Production Dashboard.png"
+      ]
+    },
+    {
+      "id": "DAB-KB-019",
+      "lane": "done",
+      "priority": "P0",
+      "category": "Operations UX",
+      "title": "Create canonical Improvement Kanban system",
+      "summary": "Create the machine-readable board, capture/update rules, HTML5 visual interface and reproducible PNG view.",
+      "acceptance": [
+        "Canonical JSON exists.",
+        "HTML5 add/edit/drag/drop/import/export works.",
+        "PNG generated from the same canonical data.",
+        "Repository PR opened without changing production behavior."
+      ],
+      "sources": [
+        "Current owner request"
+      ]
+    },
+    {
+      "id": "DAB-KB-020",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Rehearsal",
+      "title": "Disposition rehearsal reader correction PR #387",
+      "summary": "Exact-head CI is green; keep the correction isolated and avoid unnecessary prior non-production production changes.",
+      "acceptance": [
+        "Merge/close decision after production stability window.",
+        "No production renderer/controller changes introduced."
+      ],
+      "sources": [
+        "PR #387",
+        "CI run 37092102680"
+      ]
+    },
+    {
+      "id": "DAB-KB-021",
+      "lane": "done",
+      "priority": "P0",
+      "category": "Automation",
+      "title": "Remove expired rehearsal overlay from Recovery",
+      "summary": "Daily Brief Recovery now contains production-only image-consumer instructions; hourly :48 schedule and 01:00 Controller were preserved.",
+      "acceptance": [
+        "Verified automation state after update."
+      ],
+      "sources": [
+        "Daily Brief Recovery automation"
+      ]
+    },
+    {
+      "id": "DAB-KB-022",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Liveness",
+      "title": "Deterministic Task 17 repository consumer",
+      "summary": "Dedicated Task 17 consumer exists and succeeded in the prior production baseline and the rehearsal.",
+      "acceptance": [
+        "Task 17 request consumed from authoritative image evidence."
+      ],
+      "sources": [
+        ".github/workflows/repository-task-consumer.yml",
+        "the prior production baseline Task 17"
+      ]
+    },
+    {
+      "id": "DAB-KB-023",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Liveness",
+      "title": "Normalize recoverable-blocker schema drift",
+      "summary": "Safe alias normalization prevents semantically equivalent recovery evidence from stranding supervision while ambiguous/external blockers remain fail-closed.",
+      "acceptance": [
+        "Regression coverage present."
+      ],
+      "sources": [
+        "DAB-OPS-20261002-013"
+      ]
+    },
+    {
+      "id": "DAB-KB-024",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Liveness",
+      "title": "Refresh writer authority at scheduled worker invocation",
+      "summary": "Embedded writer generation is provenance only; scheduled workers acquire fresh same-execution fenced authority and explicitly release at durable boundaries.",
+      "acceptance": [
+        "Stale generation cannot mutate run."
+      ],
+      "sources": [
+        "DAB-OPS-20261002-014"
+      ]
+    },
+    {
+      "id": "DAB-KB-025",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Liveness",
+      "title": "Event-driven Supervisor handoff synthetic proof",
+      "summary": "Bounded non-production rehearsal proved explicit worker release can resume the same Supervisor execution with no rework.",
+      "acceptance": [
+        "Synthetic handoff PASS."
+      ],
+      "sources": [
+        "DAB-OPS-20261002-016",
+        "pre-next-run rehearsal receipt"
+      ]
+    },
+    {
+      "id": "DAB-KB-026",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Publication",
+      "title": "Add merge-time host/run authorization guard",
+      "summary": "Autonomous promotion now re-reads protected host readiness and same-run authorization immediately before merge.",
+      "acceptance": [
+        "Permanent guard implemented and live validation passed."
+      ],
+      "sources": [
+        "DAB-OPS-20261002-018"
+      ]
+    },
+    {
+      "id": "DAB-KB-027",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Image Quality",
+      "title": "Validate professional image quality pattern",
+      "summary": "the prior production baseline completed six accepted_locked images with targeted retries, pretransport review, exact Git read-back and saved-Git review; owner assessed the set as very good.",
+      "acceptance": [
+        "Six accepted images and positive owner quality validation."
+      ],
+      "sources": [
+        "DAB-OPS-20261002-015"
+      ]
+    },
+    {
+      "id": "DAB-KB-028",
+      "lane": "done",
+      "priority": "P0",
+      "category": "Readiness",
+      "title": "Pre-next-run production authorization PASS",
+      "summary": "Protected receipt authorizes the next production run with image and publication authorization true while preserving the prior production baseline.",
+      "acceptance": [
+        "next_production_run_authorized=true on protected main."
+      ],
+      "sources": [
+        "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json"
+      ]
+    },
+    {
+      "id": "DAB-KB-029",
+      "lane": "done",
+      "priority": "P0",
+      "category": "Scheduling",
+      "title": "Start each edition the prior evening",
+      "summary": "The production controller is scheduled for 19:00 America/Chicago and targets the next local calendar day, increasing the overnight recovery window.",
+      "acceptance": [
+        "Controller schedule is 19:00 America/Chicago daily.",
+        "At 19:00 the target edition date is the next local calendar day.",
+        "Existing active nonterminal execution is resumed before any allocation."
+      ],
+      "sources": [
+        "docs/operations/DAILY-UNATTENDED-STARTUP.md",
+        "Daily production controller automation"
+      ]
+    },
+    {
+      "id": "DAB-KB-030",
+      "lane": "done",
+      "priority": "P0",
+      "category": "Readiness",
+      "title": "Require article reading times and podcast runtimes",
+      "summary": "Reader-time metadata is now a publication requirement for new editions.",
+      "acceptance": [
+        "Every article has verified source reading time.",
+        "Every published podcast has verified positive runtime.",
+        "Edition overview renders both."
+      ],
+      "sources": [
+        "PR #411",
+        "_generator/lib/reading-support.mjs",
+        "_generator/lib/podcasts.mjs"
+      ]
+    }
+  ],
+  "reconciliation_contract": {
+    "implementation": "_generator/lib/improvement-kanban.mjs",
+    "ledger": "data/operations/production-continuous-improvement-ledger.jsonl",
+    "rule": "Annotate cards from latest learning status and surface every unresolved ledger problem not represented on the board. Never silently move lanes."
+  }
+}

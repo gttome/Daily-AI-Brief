@@ -1,0 +1,82 @@
+{
+  "schema_version": "run-learning-readiness-v1",
+  "run_number": 4,
+  "edition_date": "2026-10-01",
+  "edition_id": "dab-edition-2026-10-01",
+  "evaluated_at": "2026-10-01T19:51:27Z",
+  "latest_successful_run": {
+    "terminal_state": "PUBLIC_CLOSED",
+    "closed_at": "2026-10-01T07:55:53.483Z",
+    "edition_id": "dab-edition-2026-09-30",
+    "run_id": "reliable-edition-20260930-second",
+    "deployed_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c"
+  },
+  "previous_run_cleanup": {
+    "result": "PASS",
+    "path": "_records/edition-execution/cleanup/dab-edition-2026-10-01-run3.json"
+  },
+  "control_plane": {
+    "one_writer": true,
+    "controller_available": true,
+    "run_scoped_keeper_enabled": true,
+    "keeper_scope": "dab-edition-2026-10-01",
+    "keeper_until_terminal_cleanup": true,
+    "stale_active_threshold_ms": 900000,
+    "no_competing_writer": true,
+    "keeper_title": "Run 4 Production Keeper"
+  },
+  "image_pipeline": {
+    "path": "production-image-execution-v2:generate-transfer-verify-review-accept",
+    "exact_byte_capture": true,
+    "saved_asset_review": true,
+    "accepted_locked_required": true,
+    "svg_fallback_enabled": false,
+    "low_quality_fallback_enabled": false
+  },
+  "timing": {
+    "append_only_transition_ledger": true,
+    "kanban_derived_from_events": true,
+    "executor_state_visible": true,
+    "missing_timestamps_never_inferred": true
+  },
+  "content_contract": {
+    "story_count": 6,
+    "allocation": "2/2/2",
+    "agent_skills_story_count": 1,
+    "videos": 2,
+    "podcasts": 2,
+    "podcast_source_diversity": true,
+    "watchlist_refresh": true,
+    "professional_series_books_considered": 4,
+    "professional_story_images": 6
+  },
+  "publication": {
+    "protected_ci": true,
+    "exact_sha_deploy": true,
+    "independent_live_verification": true,
+    "success_state": "PUBLIC_CLOSED",
+    "cleanup_after_terminal": true
+  },
+  "cost_boundary": {
+    "chatgpt_work": false,
+    "codex": false,
+    "paid_apis": false,
+    "billable_overage": false,
+    "new_credentials": false
+  },
+  "inheritance": {
+    "controller_matches_latest_success": true,
+    "keeper_matches_latest_success": true,
+    "image_path_matches_latest_success": true,
+    "publication_path_matches_latest_success": true,
+    "unexplained_regressions_absent": true
+  },
+  "evidence": {
+    "hardening_pr": 316,
+    "hardening_ci_run": 36917004357,
+    "hardening_merge_sha": "8e6328fc50254fecf3d12d103d6e3b8ec5460dc8",
+    "latest_success_completion": "_records/publication/2026-09-30/completion.json",
+    "latest_success_lifecycle": "_records/publication/2026-09-30/lifecycle.json",
+    "run3_cleanup": "_records/edition-execution/cleanup/dab-edition-2026-10-01-run3.json"
+  }
+}

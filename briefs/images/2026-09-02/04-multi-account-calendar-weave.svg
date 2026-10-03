@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#fff7ed"/>
+<text x="55" y="68" fill="#431407" font-family="Arial" font-size="34" font-weight="700">ONE PLAN ACROSS PERSONAL AND WORK CONTEXT</text>
+<circle cx="175" cy="250" r="92" fill="#fdba74"/><circle cx="175" cy="220" r="30" fill="#7c2d12"/><path d="M115 305c15-58 105-58 120 0" fill="#7c2d12"/>
+<text x="175" y="380" fill="#7c2d12" font-family="Arial" font-size="24" text-anchor="middle">PERSONAL</text>
+<circle cx="175" cy="485" r="70" fill="#bfdbfe"/><rect x="130" y="458" width="90" height="58" rx="8" fill="#1d4ed8"/><path d="M150 458v-18h50v18" fill="none" stroke="#1d4ed8" stroke-width="10"/>
+<text x="175" y="585" fill="#1e3a8a" font-family="Arial" font-size="24" text-anchor="middle">WORK</text>
+<path d="M275 250C420 250 420 320 540 320M245 485C410 485 410 360 540 360" fill="none" stroke="#ea580c" stroke-width="11"/>
+<rect x="540" y="145" width="575" height="360" rx="24" fill="#fff" stroke="#ea580c" stroke-width="7"/>
+<rect x="540" y="145" width="575" height="70" rx="24" fill="#ea580c"/><text x="827" y="190" fill="#fff" font-family="Arial" font-size="26" text-anchor="middle">COMBINED PLANNING VIEW</text>
+<g fill="#ffedd5" stroke="#fb923c" stroke-width="3"><rect x="590" y="260" width="205" height="70" rx="12"/><rect x="835" y="260" width="220" height="70" rx="12"/><rect x="660" y="380" width="325" height="70" rx="12"/></g>
+<text x="692" y="303" fill="#7c2d12" font-family="Arial" font-size="21" text-anchor="middle">FAMILY CALENDAR</text><text x="945" y="303" fill="#7c2d12" font-family="Arial" font-size="21" text-anchor="middle">CLIENT CALENDAR</text><text x="822" y="423" fill="#7c2d12" font-family="Arial" font-size="21" text-anchor="middle">CROSS-INBOX CONTEXT</text>
+</svg>
