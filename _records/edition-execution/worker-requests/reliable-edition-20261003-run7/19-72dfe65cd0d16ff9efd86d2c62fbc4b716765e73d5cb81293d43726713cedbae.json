@@ -17,6 +17,7 @@
   "status": "active",
   "started_at": "2026-10-03T13:12:53.095Z",
   "consumed_at": "2026-10-03T13:12:53.095Z",
-  "active_writer_generation": 31,
-  "active_owner_id": "ordinary-chatgpt-repository-worker-task19-generation31"
+  "active_writer_generation": 32,
+  "active_owner_id": "automation-run7-task19-recovery-generation32",
+  "authority_reconciled_at": "2026-10-03T13:22:28.507472Z"
 }
