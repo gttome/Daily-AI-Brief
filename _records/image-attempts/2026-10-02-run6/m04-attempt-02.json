@@ -1,0 +1,57 @@
+{
+  "schema_version": "native-image-attempt-v1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "13",
+  "candidate_id": "m04",
+  "writer_generation": 12,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "attempt": 2,
+  "source_attempt": 1,
+  "generation_kind": "bounded_targeted_edit",
+  "generated_at_observed": "2026-10-03T01:28:11.731Z",
+  "generation_wait_seconds": 43.3,
+  "native_capture": {
+    "path": "_records/image-originals/2026-10-02-run6/dab-rehearsal-2026-10-02-m04-2-native.png",
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1590545,
+    "sha256": "466d772f5d09d79bd82cce24c4b14e9ed7430bcf923184153555e593dd3a8972",
+    "git_blob_sha": "42798076873f8c94a147d13877c6560b4f6bba28",
+    "captured_immediately": true
+  },
+  "normalization": {
+    "method": "deterministic resize and metadata strip",
+    "completed_at": "2026-10-03T01:28:29.728Z",
+    "output_path": "rehearsals/pre-oct3-20261002-r1/images/dab-rehearsal-2026-10-02-m04-2.png",
+    "width": 1200,
+    "height": 630,
+    "bytes": 822626,
+    "sha256": "95346d5740f98945e6cbc2f41bcfa7f90eb40b309077cd4401e497ba19f377cc",
+    "git_blob_sha": "a9b0679fd06fd1c60957cfc2b4954e5ab547b41f"
+  },
+  "pretransport_review": {
+    "composition": "PASS",
+    "story_specificity": "PASS",
+    "professional_quality": "PASS",
+    "exact_allowed_labels": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_text": [
+      "Gmail",
+      "Drive",
+      "Calendar",
+      "Chat",
+      "Gemini",
+      "Sheets",
+      "Edit images",
+      "Create video"
+    ],
+    "additional_visible_language": false,
+    "product_screen_imitation": false,
+    "transport_authorized": true
+  },
+  "disposition": "PERSISTED_PENDING_SAVED_GIT_REVIEW",
+  "accepted_locked": false
+}
