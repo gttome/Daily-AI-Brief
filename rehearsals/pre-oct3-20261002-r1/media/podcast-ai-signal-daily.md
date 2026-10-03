@@ -12,4 +12,6 @@ permalink: /rehearsals/pre-oct3-20261002-r1/media/podcast-ai-signal-daily/
 
 A practitioner briefing on agent boundary failures, data protection, post-training tool behavior, and operational guardrails.
 
+[Listen to verified source](https://www.doit.com/ai-daily)
+
 [← Back to rehearsal Brief]({{ '/rehearsals/pre-oct3-20261002-r1/' | relative_url }})
