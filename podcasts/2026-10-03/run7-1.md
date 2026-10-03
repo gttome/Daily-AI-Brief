@@ -23,7 +23,7 @@ reader_release: true
 **Host / guest:** The Vergecast team  
 **Focus:** Agents for Everyone  
 **Date:** October 2, 2026  
-**Duration:** Not independently verified  
+**Duration:** 1:28:30  
 **Topics:** business agents, trust and agentic assistants
 
 **Summary:** Independent technology-news discussion of business agents, trust and the current agentic-assistant market.
