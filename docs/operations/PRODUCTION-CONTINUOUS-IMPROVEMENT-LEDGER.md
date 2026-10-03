@@ -802,3 +802,21 @@ Canonical events `DAB-OPS-E-000067` through `DAB-OPS-E-000069` close the live ve
 
 The authoritative gate is `_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json`. It authorizes the next production run only after the closeout change passes protected deterministic CI and is merged to `main`. Run 5 remains immutable and independently `PUBLIC_CLOSED`.
 
+## Living architecture infographic quality and scope contract
+
+**Problem DAB-OPS-20261002-024 — permanently fixed.** The first redraw of the living architecture diagrams was rejected because its visual quality was substantially below the established architecture PNGs and because it mixed long-lived system architecture with transient run/date-specific status.
+
+Permanent rules:
+
+- **Architecture infographics are evergreen system documentation.** Do not put run numbers, edition dates, individual run outcomes, one-off rehearsal labels, temporary readiness windows, or other ephemeral status on them.
+- **Run-specific information belongs elsewhere.** Current execution identity, task progress, blockers, elapsed time, run closure, rehearsal state, and one-off readiness state belong in the production Kanban/status dashboard or historical evidence, not the architecture infographic.
+- **The final quality bar is professional textbook grade.** Final architecture graphics must be high-resolution, detailed, information-dense, visually balanced PNG infographics at least as polished as the established reference PNGs.
+- **Basic/sparse programmatic diagrams are not final assets.** SVG or other programmatic drawings may be used as working/source material, but a sparse box-and-arrow redraw is not an acceptable final living architecture infographic.
+- **Visible text is part of acceptance.** Inspect the final rendered PNG for correct wording, spelling, legibility, clipping, overlap, hierarchy and alignment before accepting it.
+- **Preserve history without polluting the current view.** Keep prior versions as historical evidence; the current infographic must show only the durable architecture that remains true across runs.
+- **Refresh with architecture changes.** When controller/Supervisor responsibilities, writer fencing/handoff, recovery contracts, image execution, publication gates, learning invariants, or Kanban architecture materially change, update the living infographic in the same protected documentation change.
+
+Canonical current asset paths:
+
+- `docs/images/living-architecture/Daily-AI-Brief-Persistent-Run-Supervisor-Architecture-v3.1.png`
+- `docs/images/living-architecture/Daily-AI-Brief-Operating-Contract-Living-Architecture-v3.1.png`
