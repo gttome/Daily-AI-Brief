@@ -1,0 +1,21 @@
+{
+  "task_id": "10",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T00:52:36Z",
+  "reason_code": "BEGIN_IMAGE_SPECIFICATION_SEALING",
+  "operation": "seal_six_professional_image_specifications",
+  "proof": {
+    "required_count": 6,
+    "selected_ids": [
+      "m01",
+      "m02",
+      "m04",
+      "m05",
+      "m07",
+      "m09"
+    ],
+    "request_key": "fb09c65fa61188e37a7a1fba0deeda2c215943da36e80005190190fce77c2a61",
+    "worker_scope": "specifications_only_no_generation"
+  }
+}
