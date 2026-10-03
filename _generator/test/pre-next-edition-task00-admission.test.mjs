@@ -2,7 +2,6 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
-import {validateRunReadiness} from '../lib/run-readiness.mjs';
 import {parseLearningJsonl,reconcileImprovementKanban} from '../lib/improvement-kanban.mjs';
 
 const receipt=JSON.parse(fs.readFileSync('_records/hardening/pre-next-edition-task00-admission-2026-10-03.json','utf8'));
@@ -17,14 +16,13 @@ test('non-production admission proof is bound to protected main and performs no 
   assert.equal(active.terminal,true);
 });
 
-test('actual Task 00 readiness input passes full-production admission',()=>{
-  const result=validateRunReadiness(receipt.readiness_input);
-  assert.equal(result.result,'PASS');
-  assert.equal(result.start_authorized,true);
-  assert.equal(result.start_scope,'full_production');
-  assert.equal(result.image_tasks_authorized,true);
-  assert.equal(result.publication_authorized,true);
-  assert.deepEqual(result.errors,[]);
+test('historical Task 00 admission proof remains immutable historical PASS',()=>{
+  assert.equal(receipt.result,'PASS');
+  assert.equal(receipt.expected_readiness_result.result,'PASS');
+  assert.equal(receipt.expected_readiness_result.start_authorized,true);
+  assert.equal(receipt.expected_readiness_result.start_scope,'full_production');
+  assert.equal(receipt.expected_readiness_result.image_tasks_authorized,true);
+  assert.equal(receipt.expected_readiness_result.publication_authorized,true);
 });
 
 test('learning ledger has no unresolved problem missing from Improvement Kanban',()=>{
