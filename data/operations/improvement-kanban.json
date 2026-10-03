@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-03T19:18:00Z",
+  "observed_at": "2026-10-03T19:21:00Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -478,7 +478,9 @@
       ],
       "sources": [
         "_records/hardening/pre-next-edition-task00-admission-2026-10-03.json",
-        "docs/operations/DAILY-UNATTENDED-STARTUP.md"
+        "docs/operations/DAILY-UNATTENDED-STARTUP.md",
+        "DAB-OPS-20261002-006",
+        "DAB-OPS-20261002-017"
       ]
     },
     {
