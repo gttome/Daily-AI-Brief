@@ -1,0 +1,14 @@
+{
+  "task_id": "17",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-03T01:56:36Z",
+  "reason_code": "SIX_IMAGE_SET_REVIEW_PASSED",
+  "operation": "review_six_image_set_differentiation_accessibility",
+  "proof": {
+    "set_review": "_records/image-reviews/2026-10-02-run6/set-review.json",
+    "accepted_locked_count": 6,
+    "result": "PASS",
+    "handoff": "HANDOFF_TO_SUPERVISOR"
+  }
+}
