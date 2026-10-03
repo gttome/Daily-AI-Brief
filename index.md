@@ -270,7 +270,7 @@ reader_release: true
 
 **Summary:** First-party visual summary of the streaming transcription and voice models behind the selected low-latency voice-agent story.
 
-**Why it matters:** First-party visual summary of the streaming transcription and voice models behind the selected low-latency voice-agent story.
+**Why it matters:** The short visual makes the interaction between streaming transcription and speech generation concrete. For practitioners, it shows where latency is gained before an agent has a complete utterance, helping translate the article’s timing claims into interface-design decisions.
 
 
 
@@ -297,7 +297,7 @@ reader_release: true
 
 **Summary:** Developer demonstration of Work IQ context and workflow grounding, directly supporting the selected reusable Agent Skills packaging story.
 
-**Why it matters:** Developer demonstration of Work IQ context and workflow grounding, directly supporting the selected reusable Agent Skills packaging story.
+**Why it matters:** Seeing Work IQ grounding in a live developer workflow makes the reusable-skills story more concrete: the value is not just packaging instructions once, but connecting those instructions to business context and tools without copying logic into every workflow.
 
 
 
@@ -327,9 +327,9 @@ reader_release: true
 
 **Summary:** Independent technology-news discussion of business agents, trust and the current agentic-assistant market.
 
-**Why it matters:** Independent technology-news discussion of business agents, trust and the current agentic-assistant market.
+**Why it matters:** The episode provides an independent, conversational check on the Brief’s agent stories, especially the tension between convenience and trust when assistants begin acting for users or businesses.
 
-**Connection to the brief:** Independent technology-news discussion of business agents, trust and the current agentic-assistant market.
+**Connection to the brief:** Use it alongside the customer-service and reusable-skills articles to compare product announcements with broader questions about agent identity, delegation and user trust.
 
 
 
@@ -361,9 +361,9 @@ reader_release: true
 
 **Summary:** Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.
 
-**Why it matters:** Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.
+**Why it matters:** The conversation adds a policy lens to the technical controls in the California story: monitoring, evidence retention and corporate accountability matter because agent failures can become governance and legal questions, not just engineering bugs.
 
-**Connection to the brief:** Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.
+**Connection to the brief:** It complements the California accountability article by moving from the specific investigation to the wider debate over how organizations should monitor, explain and govern agent behavior.
 
 
 
