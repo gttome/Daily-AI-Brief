@@ -1,0 +1,42 @@
+{
+  "schema_version": "isolated-preview-completion-v1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "execution_key": "2026-10-02-run6",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "preview_url": "https://gttome.github.io/Daily-AI-Brief/rehearsals/pre-oct3-20261002-r1/",
+  "completed_at": "2026-10-03T02:53:24Z",
+  "publication_pr": 386,
+  "candidate_sha": "89dbab58750710cafcaefaab1d22ca65e519b603",
+  "merge_sha": "caeb7563241fac1c1450b8545baac9faea38f325",
+  "protected_ci": {
+    "run_id": 37091235376,
+    "conclusion": "success",
+    "exact_head": true
+  },
+  "pages_deployment": {
+    "run_id": 37091305951,
+    "conclusion": "success",
+    "head_sha": "caeb7563241fac1c1450b8545baac9faea38f325"
+  },
+  "pages_artifact": {
+    "artifact_id": 11261699594,
+    "name": "github-pages",
+    "digest": "sha256:bd2d0d4329d0d1101205a2117037fcc6c2799a8886454c6df4012c4c53184354",
+    "head_sha": "caeb7563241fac1c1450b8545baac9faea38f325"
+  },
+  "verification": {
+    "pages_deployment": "PASS",
+    "deployed_artifact_inspected": true,
+    "landing_route_present": true,
+    "six_story_routes_present": true,
+    "four_media_routes_present": true,
+    "six_image_assets_present": true,
+    "external_http_fetch_status": "unavailable_environment_network_policy"
+  },
+  "canonical_preservation": "PASS",
+  "accepted_locked_images_immutable": true,
+  "production_allocation": false,
+  "october3_identity_consumed": false,
+  "terminal_state": "PUBLIC_PREVIEW_CLOSED"
+}
