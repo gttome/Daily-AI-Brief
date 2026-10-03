@@ -331,8 +331,10 @@ test('Supervisor workflow contains the one-minute loop, single concurrency lane 
   assert.match(y,/writer-lease/);
   assert.match(y,/assert-fence/);
   const loop=y.slice(y.indexOf('Persistent approximately one-minute supervision loop'));
-  assert.ok(loop.indexOf('assert-fence')<loop.indexOf('writer-lease'));
-  assert.ok(loop.indexOf('writer-lease')<loop.indexOf('image-chunk-bridge.mjs consume'));
+  const assertFence=loop.indexOf('run-supervisor.mjs assert-fence');
+  const renewLease=loop.indexOf('run-supervisor.mjs writer-lease');
+  assert.ok(assertFence>=0 && renewLease>=0 && assertFence<renewLease);
+  assert.ok(renewLease<loop.indexOf('image-chunk-bridge.mjs consume'));
   assert.match(loop,/image-transport-requests/);
   assert.match(loop,/image-transport-results/);
   assert.match(y,/timeout-minutes: 330/);
