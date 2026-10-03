@@ -374,7 +374,6 @@ ${renderSeriesImplications(slot,briefDate)}
 
 **Coverage:** ${slot.coverage_note}
 
-**Evidence:** Practitioner analysis. ${slot.verification_note}
 
 **Listen / watch:** ${slot.platforms.map(p => trackedLink(p.url,p.name,slot.item_id,briefDate,'source_clicks',true)).join(' · ')}
 
