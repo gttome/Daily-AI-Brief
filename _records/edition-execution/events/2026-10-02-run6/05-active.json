@@ -1,0 +1,14 @@
+{
+  "task_id": "05",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T00:18:17Z",
+  "reason_code": "BEGIN_EXACT_EDITORIAL_SELECTION",
+  "operation": "lock_six_stories",
+  "proof": {
+    "evidence_path": "_records/discovery/2026-10-02-run6/evidence.json",
+    "required_allocation": "2/2/2",
+    "required_agent_skills_count": 1,
+    "request_key": "89d5f3841cb667f22318a7ccd4249cd8225e90a236fdbf3f800128f149d5a070"
+  }
+}
