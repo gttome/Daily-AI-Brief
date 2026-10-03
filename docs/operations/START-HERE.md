@@ -1,13 +1,13 @@
 # Daily AI Brief — Current Operations Entry Point
 
-**October 2 liveness correction:** the live invocation correctly rejected a prohibited Work/Codex image route, but the recovery logic incorrectly paused the entire production system. That global-pause behavior is superseded. The cost boundary remains unchanged. The daily controller and hourly keeper stay enabled, Task 00 may admit `non_image_production`, and all dependency-safe non-image work continues while the image route remains explicitly blocked. Images and publication still require a qualified unattended host. See [current daily startup and live outcome](DAILY-UNATTENDED-STARTUP.md).
+**Current production authorization:** follow [Daily unattended startup](DAILY-UNATTENDED-STARTUP.md). The production controller starts at **19:00 America/Chicago on the evening before the edition date** and targets the next local calendar day. Resume only the exact active nonterminal execution; otherwise allocate one new target-edition execution. Every prior terminal execution is immutable.
 
-**October 2 daily authorization:** follow [Daily unattended startup](DAILY-UNATTENDED-STARTUP.md) for the next Brief and daily 01:00 America/Chicago execution. Read its complete bootstrap list and cumulative learning. Run 4 is terminal. The scheduled image host remains unqualified until actual live evidence passes.
+**Cost and liveness boundary:** production uses the existing scheduled ChatGPT + GitHub path only. ChatGPT Work, Codex, paid model APIs/services, billable overage, alternate accounts and new credentials are prohibited. A route-specific blocker never pauses unrelated dependency-safe work. Images and publication still require the protected unattended-image-host admission contract.
 
 > [!IMPORTANT]
 > **Run learning/readiness is now a production gate.** Before every new production run,
 > complete Task 00 using [the Living Run Learning, Cleanup and Readiness Plan](RUN-LEARNING-READINESS-PLAN.md)
-> and `run-learning-readiness-v1`. A one-time schedule may trigger a start, but every run
+> and `run-learning-readiness-v2`. A one-time schedule may trigger a start, but every run
 > must already have a run-scoped keeper bound through terminal cleanup. An Active task
 > with no durable progress for 15 minutes must be resumed or explicitly Blocked.
 > The proven production image path is locked; repository-generated SVG/basic-diagram
