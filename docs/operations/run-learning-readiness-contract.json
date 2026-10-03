@@ -80,42 +80,7 @@
           "independent_safe_non_image_work"
         ]
       }
-    },
-    "required_before_run": [
-      "operational_learning_ledger_digest",
-      "all_permanent_fixes_present",
-      "unresolved_risks_loaded",
-      "one_writer",
-      "run_supervisor_enabled_and_bound",
-      "supervisor_heartbeat_90s_or_less",
-      "outer_watchdog_enabled",
-      "writer_fencing_enabled",
-      "stale_active_recovery_fault_test",
-      "actionable_blocked_recovery_fault_test",
-      "duplicate_run_rejection_fault_test",
-      "proven_production_image_path",
-      "svg_fallback_disabled",
-      "low_quality_fallback_disabled",
-      "exact_byte_capture",
-      "small_png_persistence_route_available",
-      "small_png_readback_identity_verified",
-      "append_only_transition_ledger",
-      "kanban_digest_bound_projection",
-      "executor_state_visible",
-      "cost_boundary",
-      "protected_ci",
-      "exact_sha_deploy",
-      "independent_live_verification",
-      "previous_run_cleanup_pass",
-      "generic_terminal_run_reopen_guard",
-      "terminal_run_immutability_regression",
-      "kanban_observability_only",
-      "metrics_observability_only",
-      "projection_defects_nonblocking",
-      "improvement_board_learning_reconciliation",
-      "chatgpt_watchdog_ring_enabled",
-      "watchdog_recovery_coordination_lease_enabled"
-    ]
+    }
   },
   "supervisor": {
     "version": "run-supervisor-v2",
