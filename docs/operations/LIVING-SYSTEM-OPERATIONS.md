@@ -1465,7 +1465,7 @@ The five-change hardening acceptance gate is now satisfied by durable NON-PRODUC
 - Kanban proof is PASS: exactly Backlog → WIP → Done, no Current column, active→WIP, Tasks 00–29, duration on every card or literal `unavailable`, mandatory total Brief elapsed, append-only timing and fresh event digest. The five requested failing fixtures remain protected.
 - Final authorization receipt: `_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json`. It is effective only on protected `main` after this closeout branch passes deterministic CI and merges.
 
-This hardening process does **not** manually start the next production Brief. Once the PASS receipt is protected, the existing Daily Brief Controller remains responsible for normal scheduled allocation. Watchdog Slot F remains the durable reusable Task 11–16 image-consumer binding, while the six-member Watchdog Ring provides coordinated outer recovery.
+This historical hardening process did **not** manually start the next production Brief. At that time, Watchdog Slot F retained the durable reusable Task 11–16 image-consumer binding as a migration bridge. **That F-specific binding is now superseded by the equivalent six-slot image-consumer pool described below.** The Daily Brief Controller remains responsible for normal scheduled allocation.
 
 
 ## October 3, 2026 — ChatGPT Watchdog Ring is the current outer recovery layer
