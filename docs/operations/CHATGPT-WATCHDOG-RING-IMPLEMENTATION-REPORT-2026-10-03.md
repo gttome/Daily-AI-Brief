@@ -261,3 +261,17 @@ Duplicate generation remains prohibited. Every slot must resolve the exact curre
 Protected equivalent-consumer outcome: PR #423 merged as `6938496b84d23243692a752946846494d3440c43` from exact head `c5b51d30f7386e781dfdf4b6896456b09bba8f1e`. Deterministic publication CI run 37160416973 passed 896/896 generator tests, 24/24 contract tests, affected targeted tests, repository/lifecycle/append-only validation and Jekyll build. Pages deployment run 37160487714 also completed successfully.
 
 The permanent learning sequence is `DAB-OPS-E-000091` (permanent fix) followed by `DAB-OPS-E-000092` (verified outcome); Improvement Kanban card DAB-KB-031 is Done. The live six-slot consumer evidence remains `_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json`. The current Watchdog architecture infographic source is `docs/images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Architecture-v1.0.svg`.
+
+## 16. Professional implementation-reference infographic
+
+A professional detailed color infographic was added as implementation evidence and operator reference:
+
+![Daily AI Brief 10-Minute Watchdog Ring Implementation Handoff v1.0](../images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Implementation-Handoff-v1.0.png)
+
+Repository asset:
+
+`docs/images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Implementation-Handoff-v1.0.png`
+
+The infographic summarizes the six identical Watchdog schedules, nominal ten-minute stagger, shared recovery-lease behavior, minimum-corrective-action ladder, verification of real forward progress, required existing-system changes, testing plan, reporting/learning, and deployment checklist.
+
+It is deliberately classified as a **dated implementation-reference asset**, not as the evergreen living-architecture authority, because it contains implementation-handoff/date context. The evergreen Watchdog architecture remains generic and run/date independent.

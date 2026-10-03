@@ -19,6 +19,15 @@
 This current diagram is the scalable architecture source for the six-slot Watchdog Ring. It shows A–F as equivalent recovery/image-consumer slots, the nominal 10-minute stagger, GitHub durable authority, Run Supervisor interaction, native-image coverage improvement, one-owner duplicate-generation protection, and the Fix-to-Progress recovery ladder.
 
 
+
+### Professional Watchdog implementation reference — dated supporting asset
+
+![Daily AI Brief 10-Minute Watchdog Ring Implementation Handoff v1.0](../images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Implementation-Handoff-v1.0.png)
+
+This high-detail color PNG is the **implementation-reference** companion to the evergreen Watchdog architecture. It provides the implementation handoff, six-slot schedule table, health/recovery flow, escalation ladder, GitHub records, tests, reporting/learning and deployment checklist.
+
+**Scope boundary:** this PNG contains dated implementation-handoff context, so it is intentionally **not** the evergreen living-architecture authority and does not replace `Daily-AI-Brief-Watchdog-Ring-Architecture-v1.0.svg`. Preserve it as implementation evidence/reference while keeping the generic SVG as the current durable architecture projection.
+
 ### Persistent Run Supervisor architecture
 
 ![Daily AI Brief Persistent Run Supervisor Architecture v3.1](../images/living-architecture/Daily-AI-Brief-Persistent-Run-Supervisor-Architecture-v3.1.png)
