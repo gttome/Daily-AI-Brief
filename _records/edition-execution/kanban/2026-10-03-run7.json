@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-edition-20261003-run7",
   "edition_id": "dab-edition-2026-10-03",
-  "observed_at": "2026-10-03T13:00:58.588Z",
+  "observed_at": "2026-10-03T13:28:31.219Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:839941b4ba3f9ccd45cfdb5ce09d13aafc9f90bb6e6cbc5d26a079ddf7ba7a44",
+  "source_event_digest": "sha256:fc2e40b0ea66dfc6b7680691990ecdbc792d333d241037172a6ffa2a1bbf514a",
   "run_started_at": "2026-10-03T06:02:00.001Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 25138.587,
-  "total_brief_elapsed": "25138.587s",
+  "total_brief_elapsed_seconds": 26791.218,
+  "total_brief_elapsed": "26791.218s",
   "tasks": {
     "10": {
       "id": "10",
@@ -156,17 +156,17 @@
     "19": {
       "id": "19",
       "title": "Refresh digests and seal immutable bundle",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "column": "Done",
+      "entered_backlog_at": "2026-10-03T13:12:53.095Z",
+      "active_started_at": "2026-10-03T13:12:53.095Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "done_at": "2026-10-03T13:23:30.000Z",
+      "cycle_seconds": 636.905,
+      "active_seconds": 636.905,
+      "duration_seconds": 636.905,
+      "duration": "636.905s"
     },
     "20": {
       "id": "20",
