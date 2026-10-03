@@ -1,0 +1,21 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "execution_key": "2026-10-03-run7",
+  "task_id": "19",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T13:12:53.095Z",
+  "writer_generation": 30,
+  "owner_id": "ordinary-chatgpt-repository-worker-task19",
+  "reason_code": "TASK19_REPOSITORY_WORKER_ACQUIRED",
+  "operation": "refresh_digests_and_seal_immutable_bundle",
+  "proof": {
+    "request_key": "72dfe65cd0d16ff9efd86d2c62fbc4b716765e73d5cb81293d43726713cedbae",
+    "request_generation": 29,
+    "refreshed_authority_generation": 30,
+    "preserved_tasks": "00-18",
+    "accepted_locked_images": 6
+  }
+}
