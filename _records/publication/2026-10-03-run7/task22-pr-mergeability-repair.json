@@ -1,0 +1,27 @@
+{
+  "schema_version": "task22-pr-mergeability-repair-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "task_id": "22",
+  "publication_pr": 400,
+  "repaired_at": "2026-10-03T14:34:15.000Z",
+  "writer_generation": 39,
+  "protected_main_sha": "4f683a615c8fd5b219779fd5b3e96c644410b211",
+  "blocking_conflict": "data/operations/active-production-run.json",
+  "root_cause": "A run-branch reconciliation commit projected current task state into the canonical protected-main pointer path. That mutable control-plane file must remain owned by protected main and must not be promoted from the candidate branch.",
+  "repair": "Restore the single conflicting pointer file byte-for-byte from protected main before protected publication qualification.",
+  "preserved": {
+    "completed_tasks": "00-22",
+    "accepted_locked_images": 6,
+    "task18_reader_pages": true,
+    "task19_seal": true,
+    "publication_projection": true,
+    "production_content_mutations": 0,
+    "image_mutations": 0
+  },
+  "validation": {
+    "canonical_pointer_matches_protected_main": "PASS",
+    "only_prior_merge_conflict_removed": "PASS",
+    "result": "PASS"
+  }
+}

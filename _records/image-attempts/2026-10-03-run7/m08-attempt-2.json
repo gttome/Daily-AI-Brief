@@ -1,0 +1,54 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "task_id": "16",
+  "candidate_id": "m08",
+  "request_key": "941cc217a58adfea82d843a4db34eca805dafa33af2a2f22c8132d541983ea41",
+  "writer_generation": 24,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "attempt": 2,
+  "generated_at": "2026-10-03T11:50:44.222Z",
+  "generation_wait_seconds": 48.2,
+  "native_capture": {
+    "path": "_records/image-originals/2026-10-03-run7/dab-edition-2026-10-03-m08-attempt-2-native.png",
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1609850,
+    "sha256": "9d806e77381c5fe4e783d0eb5c5e017b1988602694471fc8e8976602e6652c9d",
+    "git_blob_sha": "4eda53b09d75873e7ea1139ea42d9d9820f26d16"
+  },
+  "normalization": {
+    "path": "briefs/images/2026-10-03/dab-edition-2026-10-03-m08-attempt-2.png",
+    "format": "PNG",
+    "width": 1200,
+    "height": 630,
+    "bytes": 820042,
+    "sha256": "3e4b16b1d0fdcdff91d944af5b00fc06d799d49c5e2742c1daf7b63dfdc7ca87",
+    "git_blob_sha": "3453fc8dad4cbd9aa10dbfe9366cbc87e3a78483",
+    "normalized_at": "2026-10-03T11:50:59.522Z"
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Delegated task",
+      "Agent action log",
+      "Protected system",
+      "Evidence",
+      "Subpoena",
+      "Deployer",
+      "Operator",
+      "Provider",
+      "Accountability"
+    ],
+    "extra_visible_text": [],
+    "pseudo_text_or_faux_document_lines": false
+  },
+  "disposition": "PERSISTED_PENDING_SAVED_GIT_REVIEW"
+}

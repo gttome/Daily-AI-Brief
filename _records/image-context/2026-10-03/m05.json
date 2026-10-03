@@ -1,0 +1,21 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-03-m05"
+  ],
+  "candidate_id": "m05",
+  "task_id": "14",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-03T06:32:09.910Z",
+  "allowed_text": [
+    "Customer agent",
+    "Personal Agent Gateway",
+    "Identity",
+    "Consent",
+    "Policy",
+    "Enterprise agent",
+    "Resolution",
+    "Audit trail"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: Personal Agent Gateway for customer service. Composition: Mirrored two-sided service exchange: a customer agent and enterprise service agent represented as non-humanoid software nodes meeting at a governed gateway with consent, identity, policy and audit layers. Mechanism: Show a customer-side agent carrying intent and preferences into a Personal Agent Gateway; the gateway verifies identity, consent and policy before the enterprise service agent can retrieve or act; return a traceable resolution. Avoid chatbot UI. No people or humanoid figures, no decorative filler, no product-screen imitation, no unsupported metrics, no overlapping text, no sparse/basic box-and-arrow fallback, and only these sealed visible labels: Customer agent, Personal Agent Gateway, Identity, Consent, Policy, Enterprise agent, Resolution, Audit trail."
+}

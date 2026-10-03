@@ -1,0 +1,22 @@
+{
+  "candidate_id": "m06",
+  "status": "verified",
+  "verified_at": "2026-10-03T06:21:26.732Z",
+  "source_body_word_count": "not_measured",
+  "publisher": "Anthropic",
+  "url": "https://www.anthropic.com/news/barclays-scales-claude",
+  "published_date": "2026-10-01",
+  "method": "full indexed source-body review",
+  "source_type": "first_party_partner_announcement",
+  "full_source_read": true,
+  "claims_verified": [
+    "16,000 colleagues adopted a knowledge assistant handling over one million searches",
+    "Global Markets processing handles approximately 120,000 emails per day",
+    "Barclays targets 50% developer adoption by end of 2026",
+    "deployment includes governance, security controls and human oversight"
+  ],
+  "limitations": [
+    "adoption target is prospective",
+    "operational metrics are reported by the vendor and partner, not independently audited"
+  ]
+}

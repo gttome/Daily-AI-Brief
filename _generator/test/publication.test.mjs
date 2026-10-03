@@ -16,7 +16,17 @@ const baseline = 'b70bc37b4e190750eda08842bfe3ee09995c0b8a';
 const edition = importLegacyFile(path.join(root, 'briefs', '2026-09-06.md'), root, baseline);
 
 function currentBriefDate() {
-  return importLegacyFile(path.join(root, 'latest.md'), root).brief_date;
+  return JSON.parse(fs.readFileSync(path.join(root, '_records', 'editorial-handoff', 'publication-manifest.json'), 'utf8')).edition_date;
+}
+
+function currentReaderCore(relative) {
+  let body = fs.readFileSync(path.join(root, relative), 'utf8');
+  if (body.startsWith('---\n')) body = body.replace(/^---\n[\s\S]*?\n---\n?/, '');
+  const subscription = body.indexOf('<section class="subscription-card');
+  if (subscription >= 0) body = body.slice(0, subscription);
+  body = body.replace(/^\[← Home\]\(\{\{ '\/' \| relative_url \}\}\) · \[Briefs Archive\]\(\{\{ '\/briefs-archive\/' \| relative_url \}\}\)\n+/m, '');
+  body = body.replace(/\n---\n\n\[← Back to Home\][\s\S]*$/, '');
+  return body.trim();
 }
 
 test('legacy edition imports into the canonical six-story contract', () => {
@@ -27,11 +37,9 @@ test('legacy edition imports into the canonical six-story contract', () => {
 
 test('homepage, latest, and dated brief are semantically synchronized', () => {
   const date = currentBriefDate();
-  const dated = semanticEditionView(importLegacyFile(path.join(root, 'briefs', `${date}.md`), root));
-  const latest = semanticEditionView(importLegacyFile(path.join(root, 'latest.md'), root));
-  const homepage = semanticEditionView(importLegacyFile(path.join(root, 'index.md'), root));
-  assert.deepEqual(latest, dated);
-  assert.deepEqual(homepage, dated);
+  const dated = currentReaderCore(`briefs/${date}.md`);
+  assert.equal(currentReaderCore('latest.md'), dated);
+  assert.equal(currentReaderCore('index.md'), dated);
 });
 
 test('generator is deterministic for identical inputs', () => {

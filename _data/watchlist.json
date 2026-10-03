@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-10-02",
-  "updated_at": "2026-10-02T13:29:44Z",
-  "verification_observed_at": "2026-10-02T13:29:44Z",
-  "baseline_note": "Independent Run 5 seven-domain sweep completed 14 focused checks: 2 new topics, 5 existing topics updated, and the remaining active topics carried forward.",
+  "edition_date": "2026-10-03",
+  "updated_at": "2026-10-03T06:29:22.781Z",
+  "verification_observed_at": "2026-10-03T06:29:22.781Z",
+  "baseline_note": "Independent Run 7 seven-domain sweep completed 14 focused checks: 2 new topics, 1 existing topic updated, and all remaining active topics carried forward.",
   "topics": [
     {
       "topic_id": "dab-topic-collaborative-vibe-coding",
@@ -1506,12 +1506,12 @@
       "name": "Decision models emerge as a separate AI systems layer",
       "audience": "AI engineers, agent builders, and technical leaders",
       "summary": "Specialized models return typed, probabilistic decisions for software workflows instead of generating free-form text.",
-      "why_now": "Databricks launched ai_decide on September 30 using a decision model and explicitly cited TypeSafe AI's Jev for fast structured choices, probabilities and scores over governed data.",
+      "why_now": "Independent reporting says TypeSafe AI's Jev is prompting copycat structured-decision products, reinforcing that calibrated classifiers may become a distinct automation layer beside generative models.",
       "practical_value": "Could move routing, classification, scoring, triage, and agent-control decisions out of general-purpose text generation and into a lower-latency typed decision layer.",
       "limitations": "The core performance and efficiency claims currently come from the vendor; the model is hosted, its low-level architecture and training data are not public, and teams still need task-specific calibration and independent evaluation.",
       "next_action": "Compare Jev with LLM-based classifiers and simpler baselines on representative routing and agent-control tasks, while tracking calibration, robustness, prompt-injection exposure, latency, and cost.",
       "first_detected": "2026-09-22T14:10:00Z",
-      "updated_at": "2026-10-02T13:29:44Z",
+      "updated_at": "2026-10-03T06:29:22.781Z",
       "status": "early_signal",
       "confidence": "limited",
       "evidence": [
@@ -1544,6 +1544,16 @@
           "checked_at": "2026-10-02T13:29:44Z",
           "development_id": "databricks-ai-decide-2026-09-30",
           "review_depth": "full first-party product article"
+        },
+        {
+          "title": "Startup TypeSafe AI’s Jev model sparks copycats, talk of LLM alternatives",
+          "url": "https://www.wsj.com/tech/ai/startup-typesafe-ais-jev-model-sparks-copycats-talk-of-llm-alternatives-e39ff57d",
+          "publisher": "The Wall Street Journal",
+          "kind": "primary",
+          "publication_date": "2026-10-02",
+          "checked_at": "2026-10-03T06:29:22.781Z",
+          "development_id": "typesafe-jev-independent-copycat-reporting-2026-10-02",
+          "review_depth": "independent original reporting reviewed in the Run 7 Watchlist sweep"
         }
       ],
       "external_attention": [],
@@ -1580,7 +1590,7 @@
         }
       },
       "trial_story_ids": [],
-      "verification_observed_at": "2026-10-02T13:29:44Z"
+      "verification_observed_at": "2026-10-03T06:29:22.781Z"
     },
     {
       "topic_id": "dab-topic-source-aware-agent-verification",
@@ -1762,6 +1772,128 @@
         "durability": {
           "score": 4,
           "reason": "The mechanism can remain useful beyond the initial implementation."
+        }
+      },
+      "trial_story_ids": []
+    },
+    {
+      "topic_id": "dab-topic-human-interaction-models",
+      "name": "Full-duplex human interaction models",
+      "audience": "Multimodal AI builders, product teams, and interaction designers",
+      "summary": "Unified real-time models listen, watch and respond concurrently instead of chaining separate turn-based components.",
+      "why_now": "Tavus introduced Griffin-Lite as a unified real-time video-to-video system that listens, watches and responds concurrently, shifting multimodal interfaces from turn-taking pipelines toward continuous interaction while explicitly retaining release-safety limits.",
+      "practical_value": "Could make video agents respond to speech, expression and visual context continuously rather than waiting for discrete turns.",
+      "limitations": "The reviewed evidence is an early vendor research preview with explicit release-safety limits; independent latency, quality and safety evaluation is still needed.",
+      "next_action": "Track public access, independent real-time interaction tests, safety controls and performance under interruption and noisy visual scenes.",
+      "first_detected": "2026-10-03T06:29:22.781Z",
+      "updated_at": "2026-10-03T06:29:22.781Z",
+      "verification_observed_at": "2026-10-03T06:29:22.781Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "Full-duplex human interaction models",
+          "url": "https://www.tavus.io/griffin",
+          "publisher": "Tavus",
+          "kind": "primary",
+          "publication_date": "2026-10-02",
+          "checked_at": "2026-10-03T06:29:22.781Z",
+          "development_id": "tavus-griffin-lite-2026-10-01",
+          "review_depth": "full Run 7 discovery source review"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First Watchlist observation; comparable repeated measurements are not yet available."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 5,
+          "reason": "The mechanism is materially distinct from currently tracked Watchlist topics."
+        },
+        "evidence": {
+          "score": 3,
+          "reason": "A reviewed original source establishes the current development; independent evaluation remains limited."
+        },
+        "independence": {
+          "score": 2,
+          "reason": "The first observation is grounded in one primary or original-reporting source."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "First observation; comparable momentum measurements are unavailable."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Directly relevant to emerging agent interfaces and deployable AI systems."
+        },
+        "durability": {
+          "score": 4,
+          "reason": "The mechanism could remain useful beyond the initial implementation."
+        }
+      },
+      "trial_story_ids": []
+    },
+    {
+      "topic_id": "dab-topic-open-agent-hardware",
+      "name": "Open agent hardware moves from demos to kits",
+      "audience": "Agent builders, hardware experimenters, and open-source communities",
+      "summary": "Open code and commodity boards are turning personal-agent gadgets into reproducible community hardware projects.",
+      "why_now": "Meta's newly open-sourced Muse gadget code targets ESP32 and Raspberry Pi builds, suggesting personal agents may become a community hardware layer rather than remain confined to phones and desktops.",
+      "practical_value": "Could let teams prototype ambient or dedicated agents on auditable, replaceable hardware outside phone and desktop ecosystems.",
+      "limitations": "The current signal is open-source gadget code and reporting, not evidence of a mature, secure or broadly supported hardware platform.",
+      "next_action": "Inspect the released code, bill of materials, permission model, update path and independent builds on ESP32 and Raspberry Pi hardware.",
+      "first_detected": "2026-10-03T06:29:22.781Z",
+      "updated_at": "2026-10-03T06:29:22.781Z",
+      "verification_observed_at": "2026-10-03T06:29:22.781Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "Open agent hardware moves from demos to kits",
+          "url": "https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link",
+          "publisher": "The Verge",
+          "kind": "primary",
+          "publication_date": "2026-10-02",
+          "checked_at": "2026-10-03T06:29:22.781Z",
+          "development_id": "meta-muse-open-hardware-report-2026-10-02",
+          "review_depth": "full Run 7 discovery source review"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First Watchlist observation; comparable repeated measurements are not yet available."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 5,
+          "reason": "The mechanism is materially distinct from currently tracked Watchlist topics."
+        },
+        "evidence": {
+          "score": 3,
+          "reason": "A reviewed original source establishes the current development; independent evaluation remains limited."
+        },
+        "independence": {
+          "score": 2,
+          "reason": "The first observation is grounded in one primary or original-reporting source."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "First observation; comparable momentum measurements are unavailable."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Directly relevant to emerging agent interfaces and deployable AI systems."
+        },
+        "durability": {
+          "score": 4,
+          "reason": "The mechanism could remain useful beyond the initial implementation."
         }
       },
       "trial_story_ids": []

@@ -1,0 +1,12 @@
+{
+  "task_id": "04",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T06:20:05.213Z",
+  "reason": "Begin full-source reading and claim-level evidence review for all nine candidates.",
+  "proof": {
+    "candidate_artifact": "_records/discovery/2026-10-03-run7/candidates.json",
+    "required_full_source_reviews": 9,
+    "unknown_or_unread_sources_permitted": 0
+  }
+}

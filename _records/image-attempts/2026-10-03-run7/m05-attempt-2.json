@@ -1,0 +1,31 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "task_id": "14",
+  "candidate_id": "m05",
+  "request_key": "df6229de5b2ff8ab768a7942a78b5cd800c10989ba0c048c7e3a7d5ce4763c97",
+  "writer_generation": 20,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "attempt": 2,
+  "generated_at": "2026-10-03T09:53:54.317Z",
+  "generation_wait_seconds": 40.8,
+  "native_capture": {
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1821781,
+    "sha256": "1d24cacd7d8c76d9f1679b6a9129232e671c495c96087be01589f21776e59280",
+    "persisted": false
+  },
+  "pretransport_review": {
+    "passed": false,
+    "subject_correct": true,
+    "context_contamination": false,
+    "visible_text_guard": "FAIL",
+    "no_people_or_humanoids": true,
+    "reason": "The Audit trail icon retained horizontal faux-document lines outside the sealed visible-text allowlist."
+  },
+  "disposition": "REJECTED_PRETRANSPORT",
+  "targeted_retry": "Replace only the Audit trail document/list icon with a non-text geometric chain/hash symbol; preserve all allowed labels and composition."
+}

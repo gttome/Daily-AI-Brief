@@ -20,6 +20,12 @@ test('September 30 recovery has estimates on every brief and permanent article p
  const embedded=structuredClone(current);
  for(const story of embedded.stories)story.source.reading_evidence={status:'verified',word_count:800,verified_at:'2026-10-01T12:00:00Z',method:'retrieved_source_text_whitespace_v1'};
  assert.doesNotThrow(()=>validateReadingSupport(embedded,missing));
+ const reviewedWithoutEstimate=structuredClone(current);
+ for(const story of reviewedWithoutEstimate.stories)story.source.reading_evidence={status:'verified',word_count:null,verified_at:'2026-10-03T06:21:26.732Z',method:'full indexed source-body review',full_source_read:true};
+ assert.doesNotThrow(()=>validateReadingSupport(reviewedWithoutEstimate,missing));
+ assert.equal(sourceReadingMinutes(reviewedWithoutEstimate.stories[0],reviewedWithoutEstimate.stories[0].story_id,missing),null);
+ reviewedWithoutEstimate.stories[0].source.reading_evidence.full_source_read=false;
+ assert.throws(()=>validateReadingSupport(reviewedWithoutEstimate,missing),/verified full-source reading evidence required/);
 });
 test('source estimates match the brief and all permanent shared article pages',()=>{
  const current=JSON.parse(fs.readFileSync('_data/editions/2026-09-13.json'));

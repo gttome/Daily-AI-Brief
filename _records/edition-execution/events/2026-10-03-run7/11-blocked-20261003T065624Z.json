@@ -1,0 +1,24 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "execution_key": "2026-10-03-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "task_id": "11",
+  "candidate_id": "m01",
+  "operation": "m01-bounded-native-generation",
+  "writer_generation": 9,
+  "at": "2026-10-03T06:56:24.608Z",
+  "from": "Active",
+  "to": "Blocked",
+  "external_blocker": false,
+  "recoverable": true,
+  "reason_code": "M01_BOUNDED_NATIVE_RETRIES_CONTEXT_CONTAMINATED",
+  "blocker_detail": "Three bounded native image generations under the Task 11 scheduled consumer returned unrelated generic AI-progress infographics instead of the sealed MAI-Transcribe-2-Streaming mechanism. Each result failed subject/mechanism and exact-visible-text gates before transport; no rejected PNG was persisted to Git or accepted.",
+  "evidence_paths": [
+    "_records/image-attempts/2026-10-03-run7/m01-attempt-1.json",
+    "_records/image-attempts/2026-10-03-run7/m01-attempt-2.json",
+    "_records/image-attempts/2026-10-03-run7/m01-attempt-3.json"
+  ],
+  "recurrence_of": "DAB-OPS-20261001-017",
+  "recovery_action": "Repair the native image execution-context binding so the scheduled consumer receives only the sealed single-story Task 11 specification, then authorize one fresh bounded m01 attempt under the same execution. Do not reuse rejected pixels, use SVG/basic fallback, owner upload, Work, Codex, or paid APIs."
+}

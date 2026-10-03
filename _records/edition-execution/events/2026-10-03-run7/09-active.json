@@ -1,0 +1,13 @@
+{
+  "task_id": "09",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T06:29:22.781Z",
+  "reason": "Begin all-four-book relevance review against the locked six-story edition.",
+  "proof": {
+    "catalog_path": "_data/book-reading.json",
+    "books_required": 4,
+    "anchors_required": 32,
+    "reading_evidence_required": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "candidate_id": "m04",
+  "status": "verified",
+  "verified_at": "2026-10-03T06:21:26.732Z",
+  "source_body_word_count": "not_measured",
+  "publisher": "Anthropic",
+  "url": "https://www.anthropic.com/news/claude-frontier-academy",
+  "published_date": "2026-10-02",
+  "method": "full indexed source-body review",
+  "source_type": "first_party_announcement",
+  "full_source_read": true,
+  "claims_verified": [
+    "Anthropic states a $100 million investment",
+    "target is 10,000 Frontier Deployed Engineers by end of 2027",
+    "program combines multi-day simulation and a 12-week residency",
+    "named enterprise cohorts and project examples are included"
+  ],
+  "limitations": [
+    "investment and training targets are forward-looking company claims",
+    "outcome evidence is early and should not be described as completed at scale"
+  ]
+}

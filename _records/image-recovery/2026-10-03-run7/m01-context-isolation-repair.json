@@ -1,0 +1,52 @@
+{
+  "schema_version": "image-context-isolation-repair-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "task_id": "11",
+  "candidate_id": "m01",
+  "observed_blocker": "M01_BOUNDED_NATIVE_RETRIES_CONTEXT_CONTAMINATED",
+  "repaired_at": "2026-10-03T07:00:11.591Z",
+  "repair_result": "PASS_PENDING_SAVED_GIT_REVIEW",
+  "repair_action": "Used a fresh isolated native image context bound only to the sealed m01 specification; recovered the exact successful bytes and withheld repository mutation until a fresh unique generation-10 fence was acquired.",
+  "same_execution": true,
+  "duplicate_run_created": false,
+  "completed_tasks_preserved": [
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10"
+  ],
+  "native_generation_calls": 1,
+  "image_edit_calls": 2,
+  "calls_after_blocker_recorded": 0,
+  "preliminary_outputs": [
+    {
+      "kind": "native_generation",
+      "at": "2026-10-03T06:53:26.680Z",
+      "sha256": "ea9f2a48d5b408c84556bf42f08e5041d34e478adfbafe8013db4e3a58ff2e90",
+      "disposition": "REJECTED_PRETRANSPORT_TEXT_SPACING"
+    },
+    {
+      "kind": "targeted_edit",
+      "at": "2026-10-03T06:54:24.432Z",
+      "sha256": "820e471444249de2acd578b955118b2d4a726118428c91235fc8cc5fac55221f",
+      "disposition": "REJECTED_PRETRANSPORT_TEXT_SPACING"
+    },
+    {
+      "kind": "targeted_edit",
+      "at": "2026-10-03T06:55:29.707Z",
+      "sha256": "bc1e6268609a8071734bb2e8b3b2751c27369453f07c41898d06498ffd8a75a1",
+      "disposition": "RECOVERED_FOR_PERSISTENCE_AFTER_AUTHORITY_REFRESH"
+    }
+  ],
+  "concurrency_observation": "The prior generation-9 owner string did not uniquely identify an invocation. Generation 10 adds an invocation suffix before mutation, preventing the observed same-consumer identity collision from being silently treated as authority.",
+  "pointer_mutations": 0,
+  "run5_mutations": 0,
+  "publication_mutations": 0
+}

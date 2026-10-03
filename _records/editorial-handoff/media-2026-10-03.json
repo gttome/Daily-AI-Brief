@@ -1,0 +1,98 @@
+{
+  "schema_version": "legacy-run7-selected-media-v1",
+  "edition_id": "dab-edition-2026-10-03",
+  "research_cutoff": "2026-10-03T06:02:00.001Z",
+  "verified_at": "2026-10-03T06:26:52.947Z",
+  "worth_watching": {
+    "general": {
+      "status": "included",
+      "title": "Introducing MAI-Transcribe-2-Streaming, MAI-Voice-2.1 and MAI-Voice-2.1-Flash",
+      "channel": "Microsoft AI",
+      "upload_date": "2026-10-02",
+      "runtime_seconds": 180,
+      "why_useful": "First-party visual summary of the streaming transcription and voice models behind the selected low-latency voice-agent story.",
+      "connection": "First-party visual summary of the streaming transcription and voice models behind the selected low-latency voice-agent story.",
+      "url": "https://www.youtube.com/shorts/UJeR--ao1MA",
+      "duration_tier": "short",
+      "verification_note": "Official Microsoft AI YouTube Short indexed before the sealed cutoff; Shorts format bounds runtime below 180 seconds and the companion first-party release supplies model identity."
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Flight Intelligence: The Power of Work IQ | Discover how Work IQ is your business's secret sauce",
+      "channel": "Microsoft Developer",
+      "upload_date": "2026-10-03",
+      "runtime_seconds": 874,
+      "why_useful": "Developer demonstration of Work IQ context and workflow grounding, directly supporting the selected reusable Agent Skills packaging story.",
+      "connection": "Developer demonstration of Work IQ context and workflow grounding, directly supporting the selected reusable Agent Skills packaging story.",
+      "url": "https://www.youtube.com/watch?v=VpSCu7s4wD4",
+      "duration_tier": "fallback",
+      "short_search_evidence": [
+        "The sealed Task 07 search found no equally relevant official video at or below ten minutes for the reusable Agent Skills story."
+      ],
+      "fallback_reason": "The 14:34 first-party developer demonstration is within the approved 15-minute escalation rung and directly supports the selected Agent Skills mechanism.",
+      "verification_note": "Official Microsoft Developer video indexed before the sealed cutoff; indexed YouTube metadata reports 14:34 runtime, within the approved 15-minute escalation rung."
+    }
+  },
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-10-03-1",
+      "title": "Dots get up in Muse’s business",
+      "show": "The Vergecast",
+      "host": "The Vergecast team",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": null,
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "business agents",
+        "trust and agentic assistants"
+      ],
+      "url": "https://www.theverge.com/podcast/1004059/openai-dots-kindle-homepad-cybercab-vergecast",
+      "summary": "Independent technology-news discussion of business agents, trust and the current agentic-assistant market.",
+      "why_useful": "Independent technology-news discussion of business agents, trust and the current agentic-assistant market.",
+      "selection_rationale": "Sealed Run 7 source-diverse podcast selection.",
+      "freshness_tier": "primary_48h",
+      "connection": "Independent technology-news discussion of business agents, trust and the current agentic-assistant market.",
+      "permanent_url": "/podcasts/2026-10-03/run7-1/",
+      "verification_note": "The Verge episode page identifies title, show context and publication at 2026-10-02 15:47 UTC; direct Watch and Listen routes are present. Runtime was not exposed in the reviewed page and remains unknown.",
+      "platforms": [
+        {
+          "name": "The Vergecast",
+          "url": "https://www.theverge.com/podcast/1004059/openai-dots-kindle-homepad-cybercab-vergecast"
+        }
+      ],
+      "coverage_note": "Locked October 3 Run 7 media selection."
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-10-03-2",
+      "title": "An Argument Against AI Doom",
+      "show": "Galaxy Brain",
+      "host": "Charlie Warzel",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 3376,
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent accountability",
+        "cybersecurity and AI policy"
+      ],
+      "url": "https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/",
+      "summary": "Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.",
+      "why_useful": "Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.",
+      "selection_rationale": "Sealed Run 7 source-diverse podcast selection.",
+      "freshness_tier": "primary_48h",
+      "connection": "Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.",
+      "permanent_url": "/podcasts/2026-10-03/run7-2/",
+      "verification_note": "The Atlantic episode page identifies the host, publication at 2026-10-02 13:00 ET, complete audio controls and an exact 56:16 runtime.",
+      "platforms": [
+        {
+          "name": "Galaxy Brain",
+          "url": "https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/"
+        }
+      ],
+      "coverage_note": "Locked October 3 Run 7 media selection."
+    }
+  ]
+}

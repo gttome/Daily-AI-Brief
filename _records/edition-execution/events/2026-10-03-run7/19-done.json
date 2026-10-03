@@ -1,0 +1,18 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "execution_key": "2026-10-03-run7",
+  "task_id": "19",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-03T13:23:30.000Z",
+  "writer_generation": 32,
+  "owner_id": "automation-run7-task19-recovery-generation32",
+  "reason_code": "IMMUTABLE_BUNDLE_SEALED",
+  "proof": {
+    "bundle_receipt": "_records/editorial/2026-10-03-run7/task19-bundle-seal.json",
+    "accepted_locked_images": 6
+  },
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

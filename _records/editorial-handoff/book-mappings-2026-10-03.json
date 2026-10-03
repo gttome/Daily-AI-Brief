@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-03",
+  "reviewed_books": [
+    "Reliable Generative AI",
+    "Reliable Generative AI Context Engineering",
+    "Generative AI Professional Prompt Engineering Guide",
+    "Generative AI Prompt Engineering Learning Ecosystem"
+  ],
+  "editions": {
+    "2026-10-03": [
+      {
+        "item_id": "dab-story-2026-10-03-m01",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Use the verification gate to test latency, transcript stability and end-to-end conversational response under real operating conditions."
+      },
+      {
+        "item_id": "dab-story-2026-10-03-m02",
+        "reference_id": "context-privacy",
+        "label": "READ DEEPER",
+        "why": "Map every context boundary to distinguish cryptographic guarantees, hardware trust and organizational controls in the federated-learning design."
+      },
+      {
+        "item_id": "dab-story-2026-10-03-m04",
+        "reference_id": "ecosystem-practice",
+        "label": "READ DEEPER",
+        "why": "Build practice, feedback and peer support around deployed AI work so professional expertise grows through real projects."
+      },
+      {
+        "item_id": "dab-story-2026-10-03-m05",
+        "reference_id": "reliable-trust",
+        "label": "READ DEEPER",
+        "why": "Define when either service agent should proceed, ask for confirmation or defer to a person."
+      },
+      {
+        "item_id": "dab-story-2026-10-03-m07",
+        "reference_id": "prompt-core-components",
+        "label": "READ DEEPER",
+        "why": "Make each reusable skill explicit about task, context, constraints and examples so behavior remains legible across workflows."
+      },
+      {
+        "item_id": "dab-story-2026-10-03-m08",
+        "reference_id": "context-failure-playbooks",
+        "label": "READ DEEPER",
+        "why": "Define observable failures, stop conditions, retained evidence and human escalation before an agent incident becomes unreconstructable."
+      }
+    ]
+  },
+  "selection_review_digest": "11547abeccea3cb125bfb7574dd92fb74bf2ce9695e6e1d75985035f5e064f3b"
+}

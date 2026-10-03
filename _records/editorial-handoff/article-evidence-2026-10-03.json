@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "edition_id": "dab-edition-2026-10-03",
+  "cutoff": "2026-10-03T06:02:00.001Z",
+  "model_visible": [
+    {
+      "candidate_id": "m01",
+      "focus": "technical_ai_engineering",
+      "source_published_at": "2026-10-01T00:00:00Z",
+      "freshness_band": "normal_72h",
+      "source_url": "https://microsoft.ai/news/our-first-streaming-transcription-model/",
+      "evidence_summary": "MAI-Transcribe-2-Streaming emits partial hypotheses just over 100 ms, supports 60 languages and pairs with MAI-Voice-2.1/Flash for low-latency conversational voice systems."
+    },
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "source_published_at": "2026-10-02T00:00:00Z",
+      "freshness_band": "primary_24h",
+      "source_url": "https://research.google/blog/toward-provably-private-learning-from-federated-data/",
+      "evidence_summary": "TEE-backed federated learning adds public transparency logs, externally verifiable privacy policies and RAFT/KMS enforcement, already deployed for Gboard."
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "applied_genai_knowledge_workers",
+      "source_published_at": "2026-10-02T00:00:00Z",
+      "freshness_band": "primary_24h",
+      "source_url": "https://www.anthropic.com/news/claude-frontier-academy",
+      "evidence_summary": "Claude Frontier Academy combines multi-day simulation and a 12-week residency to develop customer-facing engineers who can ship governed enterprise AI projects."
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "source_published_at": "2026-10-01T00:00:00Z",
+      "freshness_band": "normal_72h",
+      "source_url": "https://decagon.ai/blog/dialogues-2026",
+      "evidence_summary": "Voice 3, Personal Agent Gateway, Agent Modules and Duet Apprentice reshape customer support workflows around both human staff and customer-side agents."
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "agents_non_technical_people",
+      "source_published_at": "2026-09-30T00:00:00Z",
+      "freshness_band": "normal_72h",
+      "source_url": "https://devblogs.microsoft.com/microsoft365dev/bring-your-plugin-to-microsoft-copilot-with-wiqd/",
+      "evidence_summary": "Packages reusable skills, MCP servers and agents into one importable Agent Plugins format; selected candidate for the edition's one reusable Agent Skills story."
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "source_published_at": "2026-10-01T00:00:00Z",
+      "freshness_band": "normal_72h",
+      "source_url": "https://www.oag.ca.gov/news/press-releases/part-ongoing-investigation-attorney-general-bonta-serves-investigative-subpoena",
+      "evidence_summary": "A concrete public-accountability development helps nontechnical readers understand how agent autonomy changes organizational legal and governance duties."
+    }
+  ]
+}

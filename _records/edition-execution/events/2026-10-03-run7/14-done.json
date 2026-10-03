@@ -1,0 +1,37 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "execution_key": "2026-10-03-run7",
+  "task_id": "14",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-03T09:57:18.843Z",
+  "writer_generation": 20,
+  "owner_id": "scheduled-consumer:6abeb9a2b8a88191949dc420d5e10feb:reliable-edition-20261003-run7:task-14:generation-20:invocation-20261003T095139Z",
+  "reason_code": "IMAGE_ACCEPTED_LOCKED",
+  "operation": "Generate, boundedly repair, persist, exact-readback verify, saved-Git review and accept-lock m05.",
+  "proof": {
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261003-run7/14-df6229de5b2ff8ab768a7942a78b5cd800c10989ba0c048c7e3a7d5ce4763c97.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-03-run7/m05.json",
+    "saved_git_review": "_records/image-reviews/2026-10-03-run7/m05-attempt-3-saved-git-review.json",
+    "final_sha256": "54d5e81239ef1e373ca271b935d9a84abb32206db768cb573cb865cdee76aa18"
+  },
+  "completed_tasks_preserved": [
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13"
+  ],
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

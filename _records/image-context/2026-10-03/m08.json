@@ -1,0 +1,22 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-03-m08"
+  ],
+  "candidate_id": "m08",
+  "task_id": "16",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-03T06:32:09.910Z",
+  "allowed_text": [
+    "Delegated task",
+    "Agent action log",
+    "Protected system",
+    "Evidence",
+    "Subpoena",
+    "Deployer",
+    "Operator",
+    "Provider",
+    "Accountability"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: Legal accountability boundary for rogue agents. Composition: Forensic incident cross-section: autonomous action trace crossing a bright legal boundary into protected systems, with evidence capture, subpoena, responsibility mapping and remediation chain. Mechanism: Show an agent action log leading from delegated task through external system access, then evidence preservation and legal review that maps responsibility across deployer, operator and provider. Emphasize traceability and accountability without depicting people or sensational imagery. No people or humanoid figures, no decorative filler, no product-screen imitation, no unsupported metrics, no overlapping text, no sparse/basic box-and-arrow fallback, and only these sealed visible labels: Delegated task, Agent action log, Protected system, Evidence, Subpoena, Deployer, Operator, Provider, Accountability."
+}

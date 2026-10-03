@@ -1,0 +1,12 @@
+{
+  "task_id": "07",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T06:26:52.947Z",
+  "reason": "Begin verification of two fresh, source-diverse podcast episodes.",
+  "proof": {
+    "required_count": 2,
+    "source_diversity_required": true,
+    "publication_before_cutoff_required": true
+  }
+}

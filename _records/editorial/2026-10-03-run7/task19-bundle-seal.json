@@ -1,0 +1,74 @@
+{
+  "schema_version": "task19-immutable-bundle-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "task_id": "19",
+  "sealed_at": "2026-10-03T13:23:10.000Z",
+  "protected_main_baseline": "8ee536e7a939fa61ef4428f9a0f43007aacc667d",
+  "source_task18": "_records/editorial/2026-10-03-run7/task18-assembly.json",
+  "digest_scheme": "git_blob_sha1",
+  "shards": [
+    {
+      "path": "_records/editorial/2026-10-03-run7/task19-digests-reader.json",
+      "git_blob_sha1": "ceb51dfdaf94412f06239a024ade82b8cc15d87f"
+    },
+    {
+      "path": "_records/editorial/2026-10-03-run7/task19-digests-images.json",
+      "git_blob_sha1": "6282fefdeac8a88ebf1592b01b94b91623ac094a"
+    },
+    {
+      "path": "_records/editorial/2026-10-03-run7/task19-digests-evidence-a.json",
+      "git_blob_sha1": "ab620fe900df4ccc8d172632b42f7c687e1516bd"
+    },
+    {
+      "path": "_records/editorial/2026-10-03-run7/task19-digests-evidence-b.json",
+      "git_blob_sha1": "248647a320cceb0beb3e42b9d183a0c8dbafb2e8"
+    }
+  ],
+  "counts": {
+    "canonical_brief": 1,
+    "story_pages": 6,
+    "video_pages": 2,
+    "podcast_pages": 2,
+    "accepted_locked_images": 6
+  },
+  "preserved": {
+    "completed_tasks": "00-18",
+    "accepted_locked_images": 6
+  },
+  "focused_reseal": {
+    "at": "2026-10-03T14:46:30.000Z",
+    "reason": "Reconcile the already-dispositioned carried-forward Watchlist count onto the three current reader surfaces after protected CI detected drift.",
+    "changed_shards": [
+      "reader-pages",
+      "editorial-evidence-b"
+    ],
+    "accepted_image_shard_unchanged": true,
+    "story_selection_changed": false,
+    "media_selection_changed": false
+  },
+  "ci_focused_reseal": {
+    "at": "2026-10-03T14:53:27.438Z",
+    "reason": "Project the frozen October 3 edition through the canonical reader renderer after protected CI detected reader-surface drift; preserve unknown reading-time measurements while recognizing independently verified full-source review.",
+    "changed_shards": [
+      "reader-pages"
+    ],
+    "accepted_image_shard_unchanged": true,
+    "story_selection_changed": false,
+    "media_selection_changed": false,
+    "source_word_counts_invented": false
+  },
+  "integrated_ci_focused_reseal": {
+    "at": "2026-10-03T14:59:34.258Z",
+    "reason": "Complete the deterministic current-edition projection after protected integrated validation detected pre-projection permanent reader files.",
+    "changed_shards": [
+      "reader-pages"
+    ],
+    "accepted_image_shard_unchanged": true,
+    "story_selection_changed": false,
+    "media_selection_changed": false,
+    "book_review_changed": false,
+    "watchlist_decisions_changed": false
+  },
+  "result": "PASS"
+}
