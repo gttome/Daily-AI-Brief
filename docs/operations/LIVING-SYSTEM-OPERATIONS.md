@@ -1461,3 +1461,13 @@ The five-change hardening acceptance gate is now satisfied by durable NON-PRODUC
 
 This hardening process does **not** manually start the next production Brief. Once the PASS receipt is protected, the existing Daily Brief Controller remains responsible for normal scheduled allocation. The hourly Recovery automation remains the reusable Task 11–16 image consumer and recovery keeper.
 
+
+
+## Canonical Kanban presentation standard — October 3, 2026
+
+The owner-approved Run 7 Kanban is the single gold-standard visual format for future Daily AI Brief Kanban PNGs. The authoritative specification is `docs/operations/KANBAN-GOLD-STANDARD.md`. Task 00 Production Readiness Validation must load and enforce that specification before any run-status Kanban rendering. The format uses exactly Backlog → WIP → Done, all Tasks 00–29, authoritative per-task durations, total Brief elapsed time, and the approved Run Information / Edition Completion / Content Targets / Key Notes plus Recent Activity / Upcoming Tasks / Current Risk / Next Action panels. Current run data must always come from append-only durable evidence; historical values from the example are never copied forward.
+
+
+### Kanban is measurement-only — non-blocking invariant
+
+Kanban data is observability, not control-plane authority. Kanban metrics, durations, freshness checks, projections and visual states may never block, pause, stop, retry, authorize or otherwise change a production task. Authoritative task state comes only from execution contracts and append-only transition evidence. If the Kanban is stale or contradicts durable execution evidence, production continues from the durable execution state and the Kanban is reprojected separately. A task must never be classified or displayed as Blocked solely because of a Kanban metric or Kanban projection defect. Task 00 must verify this separation on every production run.
