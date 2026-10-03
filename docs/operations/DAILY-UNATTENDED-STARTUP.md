@@ -38,6 +38,7 @@ Resolve live protected `main`. Read and bind the current versions/digests of:
 - `data/operations/production-continuous-improvement-ledger.jsonl`
 - `docs/operations/PRODUCTION-CONTINUOUS-IMPROVEMENT-LEDGER.md`
 - `docs/operations/LIVING-SYSTEM-OPERATIONS.md`
+- `docs/operations/CHATGPT-WATCHDOG-RING.md`
 - `docs/operations/KANBAN-GOLD-STANDARD.md`
 - `docs/operations/IMPROVEMENT-KANBAN.md`
 - `data/operations/improvement-kanban.json`
@@ -101,6 +102,18 @@ The reusable scheduled native-image consumer must:
 
 No SVG/basic/low-quality fallback, owner upload, alternate account, Work, Codex, paid service or new credential is authorized.
 
+## ChatGPT Watchdog Ring
+
+The GitHub control plane remains the inner liveness authority: Run Supervisor approximately every minute and the GitHub Supervisor watchdog every five minutes. The outer ChatGPT Watchdog Ring uses six ordinary exact-hourly Scheduled tasks at minutes **03, 13, 23, 33, 43 and 53**, giving a nominal ten-minute independent recovery check.
+
+Every ring member uses the same generic state machine. Healthy or legitimately waiting executions cause no mutation. If another ring member owns an unexpired recovery lease, the arriving member exits. A real stall uses the execution-scoped coordination lease at `_records/edition-execution/watchdog-leases/<execution-id>.json`, then still obeys the existing production writer/fence before any production mutation.
+
+The recovery lease lasts approximately fifteen minutes, uses optimistic Git blob concurrency, and is released at a durable boundary. Actual stall/recovery evidence is append-only under `_records/edition-execution/watchdog-events/<execution-id>/`; healthy checks write nothing.
+
+Recovery uses the minimum authorized action: reconcile authoritative state, re-dispatch the same executor, restore same-execution authority only after a proven dead/released owner, consume the exact newest queued request, then perform a minimal protected repair only if necessary. A dispatch, retry, lease/heartbeat, Kanban refresh, queue change or status update is never success by itself. Recovery is complete only after substantive forward progress is verified.
+
+Slot F is the repurposed former Recovery schedule and remains the durable registered reusable native-image consumer. All six members can safely evaluate an exact queued native request, but any takeover still requires the recovery lease plus current writer authority, preserves every accepted_locked image, and follows the existing Supervisor handoff.
+
 ## Daily execution and recovery
 
 Drain all dependency-safe work in the same invocation whenever possible.
@@ -152,9 +165,9 @@ Closeout repairs preserve accepted reader content unless a separate explicit rea
 ## Persistent automation identities
 
 - Daily production controller: `6abeba31fe28819184544abf70874a80`
-- Hourly recovery / scheduled native-image consumer: `6abeb9a2b8a88191949dc420d5e10feb`
+- Watchdog Ring Slot F / durable scheduled native-image consumer: `6abeb9a2b8a88191949dc420d5e10feb` (hourly at minute 53)
 - Daily live validation and secondary recovery: `6aadf3587b1c8191846a078f49102633`
 
-These identities are reusable service bindings. Their instructions must remain generic and must never name a particular production run.
+Watchdog Slots A–E are additional generic hourly members at minutes 03, 13, 23, 33 and 43. These identities are reusable service bindings. Their instructions must remain generic and must never name a particular production run.
 
 Configuration is not completion evidence. Only durable task/publication evidence establishes progress or closure.

@@ -9,7 +9,7 @@
 > complete Task 00 using [the Living Run Learning, Cleanup and Readiness Plan](RUN-LEARNING-READINESS-PLAN.md)
 > and `run-learning-readiness-v2`. A one-time schedule may trigger a start, but every run
 > must already have a run-scoped keeper bound through terminal cleanup. An Active task
-> with no durable progress for 15 minutes must be resumed or explicitly Blocked.
+> is evaluated by route-specific durable liveness evidence. The Supervisor observes approximately every minute, the GitHub watchdog protects the Supervisor every five minutes, and the ChatGPT Watchdog Ring independently re-evaluates unresolved real stalls at a nominal ten-minute cadence.
 > The proven production image path is locked; repository-generated SVG/basic-diagram
 > substitution and low-quality fallback are prohibited. After `PUBLIC CLOSED` or
 > `FAILED`, Task 29 cleanup and the promotion review are mandatory before the next run.
@@ -159,3 +159,5 @@ Maintenance/branch cleanup is a separate explicit task, not part of ordinary con
 ## September 30 direct-capture note
 
 For the bound September 30 second-edition recovery, use the released `same-invocation-direct-capture-v1` admission mode when the active native image surface has generation/editing but no supported cross-invocation result-recovery callback. This is not a native capability proof: all image-byte, quality, manifest, CI, deployment and live-verification gates remain required. The default recovery-proof mode remains available for hosts that actually implement it.
+
+- `docs/operations/CHATGPT-WATCHDOG-RING.md` — current outer autonomous recovery contract.

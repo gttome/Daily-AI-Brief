@@ -2,7 +2,7 @@
   "schema_version": "unattended-image-host-registration-v2",
   "status": "READY",
   "authorization_scope": "image_route_capability",
-  "reason": "Protected historical qualification evidence remains READY, and the enabled exact-hourly Daily Brief Recovery scheduler is the reusable production image consumer. Qualification evidence and reusable consumption are separate durable bindings.",
+  "reason": "Protected historical qualification evidence remains READY. Watchdog Ring Slot F retains the durable reusable production image-consumer identity at minute :53, while the six-slot ring adds coordinated outer recovery without changing the native-image quality or writer-fence contracts.",
   "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
   "host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
   "qualification_receipt_path": "_records/image-trials/2026-10-02-scheduled/recovered-six-image/qualification-receipt-complete-1.json",
@@ -16,13 +16,13 @@
   "reusable_consumer": {
     "scheduler_kind": "chatgpt_automation",
     "automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
-    "title": "Daily Brief Recovery",
+    "title": "Daily Brief Watchdog F",
     "enabled": true,
     "role": "scheduled_native_image_request_consumer",
-    "schedule": "BEGIN:VEVENT\nDTSTART;TZID=America/Chicago:20261002T174800\nRRULE:FREQ=HOURLY;BYMINUTE=48;BYSECOND=0\nEND:VEVENT",
+    "schedule": "BEGIN:VEVENT\nDTSTART:20261003T193557Z\nRRULE:FREQ=HOURLY;BYMINUTE=53;BYSECOND=0\nEND:VEVENT",
     "timing_mode": "exact_schedule",
-    "observation_path": "_records/hardening/pre-next-run-five-change-2026-10-02/reusable-consumer-observation.json",
-    "observation_sha256": "d9136ed4ab437b7369e09685d22d6b6727753b92e23d1005023eb90684ef5ac4",
+    "observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/schedule-observation.json",
+    "observation_sha256": "31082e37b948c56155c55406d132243a2b433658305598bfea8c4d2e824ae7c9",
     "observed_at": "2026-10-02T21:55:00.000Z",
     "current_fence_refresh_required": true,
     "request_generation_semantics": "scheduling_provenance_only",
@@ -60,6 +60,26 @@
     "The reusable hourly consumer completed the bounded synthetic Task 11 consumption with zero image, publication, Run 5, or production-content mutation.",
     "The explicit Task 11 release automatically dispatched the same synthetic Supervisor execution; the terminal boundary caused publication, writer acquisition and persistent supervision to be skipped.",
     "The pre-next-run rehearsal receipt is PASS. Authorization becomes live only when this registration and the matching receipt pass protected CI and merge to main.",
-    "Run 5 remains terminal and was not reopened, regenerated or modified."
-  ]
+    "Run 5 remains terminal and was not reopened, regenerated or modified.",
+    "The former standalone minute-48 Recovery schedule was repurposed in place as Watchdog Slot F at minute :53; no separate :48 recovery remains.",
+    "All six Watchdog members use the same generic recovery state machine; Slot F remains the durable registered reusable image-consumer binding."
+  ],
+  "watchdog_ring": {
+    "schema_version": "chatgpt-watchdog-ring-binding-v1",
+    "enabled": true,
+    "slot_minutes": [
+      3,
+      13,
+      23,
+      33,
+      43,
+      53
+    ],
+    "nominal_check_minutes": 10,
+    "bound_reusable_consumer_slot": "F",
+    "recovery_lease_path_pattern": "_records/edition-execution/watchdog-leases/<execution-id>.json",
+    "separate_writer_fence_required": true,
+    "schedule_observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/schedule-observation.json",
+    "schedule_observation_sha256": "31082e37b948c56155c55406d132243a2b433658305598bfea8c4d2e824ae7c9"
+  }
 }

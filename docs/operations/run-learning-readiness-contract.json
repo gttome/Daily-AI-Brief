@@ -38,7 +38,9 @@
       "kanban_observability_only",
       "metrics_observability_only",
       "projection_defects_nonblocking",
-      "improvement_board_learning_reconciliation"
+      "improvement_board_learning_reconciliation",
+      "chatgpt_watchdog_ring_enabled",
+      "watchdog_recovery_coordination_lease_enabled"
     ],
     "deferred_route_gates": {
       "unattended_image_host": {
@@ -74,7 +76,7 @@
           "run_allocation",
           "Tasks 01-10",
           "controller_liveness",
-          "hourly_recovery",
+          "chatgpt_watchdog_ring",
           "independent_safe_non_image_work"
         ]
       }
@@ -103,7 +105,18 @@
     "publication_boundary": "Freeze candidate writes before Task 23, including lease acquisition and projection writes. Existing protected candidate workflow owns promotion; protected delta-validation finalization owns Task29.",
     "external_native_worker_handoff": "A scheduled/native task worker must refresh durable state at invocation, acquire the current fenced writer generation for the same execution before mutation, never rely on a generation embedded at scheduling time, and release/expire its task-specific lease at a durable Done or Blocked boundary so supervision can resume.",
     "terminal_run_policy": "All terminal production executions are immutable. Recovery may resume only the exact active nonterminal execution; otherwise allocation creates a new edition identity. Stale projections, pointers, worker requests, Kanban state, metrics or historical instructions can never reopen a terminal execution.",
-    "observability_boundary": "Kanban, timing targets, duration estimates and performance metrics are measurement only. They may trigger diagnosis but never block publication, change task state, authorize retries, create workers, consume retry budget, or reopen an execution."
+    "observability_boundary": "Kanban, timing targets, duration estimates and performance metrics are measurement only. They may trigger diagnosis but never block publication, change task state, authorize retries, create workers, consume retry budget, or reopen an execution.",
+    "github_watchdog_minutes": 5,
+    "chatgpt_watchdog_ring_nominal_minutes": 10,
+    "chatgpt_watchdog_ring_slots": [
+      3,
+      13,
+      23,
+      33,
+      43,
+      53
+    ],
+    "chatgpt_watchdog_recovery_lease": "_records/edition-execution/watchdog-leases/<execution-id>.json"
   },
   "task_recovery_contracts": {
     "path": "docs/operations/task-recovery-contracts.json",
@@ -187,7 +200,11 @@
       ],
       "automatic_same_execution_resume": ".github/workflows/run-supervisor-handoff.yml",
       "completed_tasks_redone": false
-    }
+    },
+    "chatgpt_watchdog_ring_remains_enabled_during_blocked_external": true,
+    "chatgpt_watchdog_ring_healthy_checks_are_non_mutating": true,
+    "chatgpt_watchdog_repair_requires_verified_forward_progress": true,
+    "chatgpt_watchdog_recovery_lease_is_not_writer_authority": true
   },
   "image_path": {
     "required": "production-image-execution-v2:generate-transfer-verify-review-accept",
@@ -238,8 +255,10 @@
       "request_writer_generation_semantics": "scheduling_provenance_only",
       "production_mutation_authority": "refreshed fenced lease acquired by scheduled consumer at invocation",
       "next_production_run_gate": "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json must PASS before allocation",
-      "reusable_consumer_stable_schedule": "exact hourly scheduler with explicit America/Chicago TZID",
-      "nonproduction_handoff_rehearsal_path": ".github/workflows/run-supervisor-handoff.yml rehearsal/** branch-local pointer guarded by mode=NON_PRODUCTION, production_allocation=false, image_generation_allowed=false and synthetic execution identity"
+      "reusable_consumer_stable_schedule": "exact hourly Watchdog Ring slot; durable bound reusable image consumer is Slot F at minute :53",
+      "nonproduction_handoff_rehearsal_path": ".github/workflows/run-supervisor-handoff.yml rehearsal/** branch-local pointer guarded by mode=NON_PRODUCTION, production_allocation=false, image_generation_allowed=false and synthetic execution identity",
+      "watchdog_ring_schedule_observation": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/schedule-observation.json",
+      "watchdog_ring_nominal_check_minutes": 10
     },
     "visible_text_guard": {
       "phase": "pretransport_review",
@@ -331,7 +350,9 @@
     "billable_overage": false,
     "alternate_accounts": false,
     "new_credentials": false,
-    "github_runner": "standard public-repository runner only"
+    "github_runner": "standard public-repository runner only",
+    "event_triggered_work_tasks": false,
+    "browser_automation": false
   },
   "run5_preparation": "docs/operations/RUN5-UNATTENDED-PREPARATION-2026-10-02.md",
   "image_qualification_metadata_corrections": {

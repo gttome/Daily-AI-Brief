@@ -333,38 +333,34 @@ gantt
     dateFormat HH:mm
     axisFormat %H:%M
 
-    section Prior Evening
-    Nightly readiness + owner notification :done, ready, 21:30, 30m
+    section Prior Evening Production Start
+    Daily Brief Controller               :active, controller, 19:00, 5h
 
-    section Zero-Model Prework
-    Metadata preflight                   :active, meta, 03:00, 15m
-    Evidence preflight                   :evidence, 03:15, 30m
+    section Inner GitHub Liveness
+    Run Supervisor (~1-minute loop)      :active, supervisor, 19:00, 13h30m
+    Supervisor watchdog (every 5 min)    :crit, ghwatch, 19:00, 13h30m
 
-    section Production
-    Primary Production Orchestrator      :prod, 04:00, 4h
-    Hourly Recovery Watchdog             :crit, recover, 04:30, 6h
+    section Outer ChatGPT Recovery
+    Watchdog Ring (:03/:13/:23/:33/:43/:53) :crit, ring, 19:03, 13h27m
 
-    section Independent Supervisors
-    Live Validation + Secondary Recovery :validate, 08:30, 90m
-    Closure Audit                        :close, 10:30, 60m
+    section Independent Validation
+    Live Validation + Reader Repair      :validate, 08:30, 90m
 ```
 
 ### Schedule table
 
 | Time — America/Chicago | Control | Responsibility | If prior work did not run |
 |---|---|---|---|
-| **21:30 prior evening** | 📣 GitHub-native Nightly Readiness | Verify next-run structural readiness and notify owner | Record attention state |
-| **~03:00** | ⚙️ Metadata Preflight | Fresh zero-model source discovery and bounded metadata shortlist | Later supervisor may trigger missing prework |
-| **~03:15** | ⚙️ Evidence Preflight | Build bounded nine-candidate evidence package | Later supervisor repairs only missing evidence stage |
-| **04:00** | 🟣 Production Orchestrator | Primary run from current durable state through `PUBLIC CLOSED` | 04:30 watchdog takes over |
-| **04:30 + hourly** | 🟠 Publication Recovery Supervisor | Detect missed starts/stalls and continue from last valid checkpoint | **Immediately becomes executor** |
-| **08:30** | 🧪 Live Validation & Secondary Recovery | Independently verify progress/live state; take over if primary path stalled | Becomes recovery executor |
-| **10:30** | 📌 Closure Audit | Final lifecycle, Command Center and documentation reconciliation | Repairs remaining safe gaps |
-| **After closure** | 🔵 Command Center reconciliation | Reflect final production SHA and final edition state | May be degraded independently without reopening public edition |
+| **19:00 prior evening** | 🟣 Daily Brief Controller | Resume the active nonterminal execution or allocate exactly one next-day edition, then drive dependency-safe work | Same execution is recovered; no duplicate allocation |
+| **~1-minute loop while active** | ⚙️ Run Supervisor | Normal orchestration, task ordering, writer fencing, worker-request routing and deterministic continuation | GitHub watchdog checks for a missing Supervisor |
+| **Every 5 minutes** | 🟠 GitHub Supervisor watchdog | Restart the same active Supervisor execution when no legitimate Supervisor is queued/running | Re-dispatch same execution only |
+| **:03 / :13 / :23 / :33 / :43 / :53 each hour** | 🟠 ChatGPT Watchdog Ring | Independently detect unresolved real stalls, acquire the recovery coordination lease, take the minimum authorized repair and verify real forward progress | Another slot safely takes over after lease expiry; healthy checks do nothing |
+| **08:30** | 🧪 Live Validation & Reader/Publication Repair | Independently verify the published/live reader result and repair only the smallest invalidated publication stage | Does not compete with a Watchdog recovery that already has a valid lease and real progress |
+| **After terminal closure** | 🔵 Terminal cleanup / reconciliation | Preserve immutable terminal execution, release execution-specific authority, reconcile derived state and learning records | Never reopens the closed production execution |
 
 > [!WARNING]
-> A schedule being **enabled** is not evidence that it **ran**.  
-> A scheduled start that produces no current-day durable progress is classified as `scheduled_start_missed` and triggers takeover.
+> A schedule being **enabled** is not evidence that it **ran**, and a dispatch is not proof of recovery.  
+> Production liveness is established only by authoritative task/worker/protected-executor progress.
 
 ---
 
@@ -402,10 +398,11 @@ flowchart TB
     end
 
     subgraph SUP["🟠 Supervisory / Recovery Layer"]
-      R1["04:00 primary orchestrator"]
-      R2["04:30 + hourly watchdog"]
-      R3["08:30 secondary recovery"]
-      R4["10:30 closure audit"]
+      R1["19:00 prior-evening Controller"]
+      R2["Run Supervisor ~1-minute loop"]
+      R3["GitHub watchdog every 5 minutes"]
+      R4["ChatGPT Watchdog Ring nominal 10 minutes"]
+      R5["08:30 independent live validation"]
     end
 
     G1 --> G2 --> G3 --> G4 --> S1
@@ -413,13 +410,17 @@ flowchart TB
     I1 --> I2 --> I3 --> I4 --> G5
     G5 --> G6 --> G7 --> G8 --> G9
 
-    R1 -. supervises .-> G1
-    R2 -. resumes .-> G1
-    R2 -. resumes .-> S1
-    R2 -. resumes .-> G5
-    R2 -. resumes .-> G7
-    R3 -. validates / takes over .-> G8
-    R4 -. closes / reconciles .-> G9
+    R1 -. starts / resumes .-> G1
+    R2 -. orchestrates .-> G1
+    R2 -. orchestrates .-> S1
+    R2 -. orchestrates .-> G5
+    R2 -. orchestrates .-> G7
+    R3 -. restarts missing Supervisor .-> R2
+    R4 -. minimum autonomous recovery .-> R2
+    R4 -. exact-request recovery .-> S1
+    R4 -. protected-route recovery .-> G7
+    R5 -. validates / targeted repair .-> G8
+    R5 -. verifies terminal result .-> G9
 
     classDef gh fill:#ddf4ff,color:#0550ae,stroke:#54aeff,stroke-width:2px;
     classDef sem fill:#fbefff,color:#8250df,stroke:#a475f9,stroke-width:2px;
@@ -429,7 +430,7 @@ flowchart TB
     class G1,G2,G3,G4,G5,G6,G7,G8,G9 gh;
     class S1,S2,S3,S4,S5 sem;
     class I1,I2,I3,I4 img;
-    class R1,R2,R3,R4 sup;
+    class R1,R2,R3,R4,R5 sup;
 ```
 
 ## Lifecycle state machine
@@ -1343,7 +1344,7 @@ Every production run now begins with **Task 00 — Production Readiness Validati
 
 Task 00 validates successful-run inheritance from the most recent PUBLIC CLOSED run, persistent run-scoped supervision, one-writer enforcement, stale-Active recovery, the proven professional image path, append-only timing/Kanban integrity, protected publication gates and the no-incremental-cost boundary. A one-shot start trigger may not be the sole executor.
 
-An Active task with no durable progress for 15 minutes must be resumed by the same-run keeper or explicitly transitioned to Blocked with a timestamped blocker and recovery action. Task state and executor liveness are separate observables.
+An Active task is evaluated by its route-specific durable liveness contract. The Supervisor checks approximately every minute, repository requests retain their protected approximately-60-second liveness boundary, the GitHub watchdog checks Supervisor presence every five minutes, and the ChatGPT Watchdog Ring re-evaluates unresolved real stalls nominally every ten minutes. Task state and executor liveness remain separate observables.
 
 The production image path is locked to `production-image-execution-v2: generate → transfer exact file → verify content identity → review saved asset → accept/reject`. Repository-generated SVG/basic-diagram substitution and low-quality fallback are prohibited unless the owner explicitly changes policy and the same quality contract passes.
 
@@ -1363,7 +1364,7 @@ A blocked execution route is not a terminal run state. The October 2 Run 5 start
 
 Permanent rule: **reject the prohibited route, not the run.** Task 00 may authorize `non_image_production` when the unattended image host is the only deferred blocker. In that state, Run allocation, Tasks 01-10, discovery, evidence review, editorial selection, media work, Watchlist work, book mapping, image-spec sealing, event logging, supervision and recovery remain live. Image Tasks 11-16, image-dependent downstream gates and publication remain blocked until a registered READY unattended host passes the existing scheduled qualification.
 
-The daily controller and hourly recovery keeper remain enabled during route-specific `Blocked` states. Recovery re-reads durable state each cycle, performs newly available safe work, and rechecks the blocked route without repeating a known prohibited Work/Codex execution. Only a run-specific writer stops at terminal cleanup. No Work, Codex, paid API, overage, alternate account, quality fallback, image-proof bypass or publication-gate relaxation is introduced by this liveness correction.
+The daily controller and ChatGPT Watchdog Ring remain enabled during route-specific `Blocked` states. Recovery re-reads durable state each cycle, performs newly available safe work, and rechecks the blocked route without repeating a known prohibited Work/Codex execution. Only a run-specific writer stops at terminal cleanup. No Work, Codex, paid API, overage, alternate account, quality fallback, image-proof bypass or publication-gate relaxation is introduced by this liveness correction.
 
 
 ## October 2, 2026 — Run 5 recovery evidence, writer handoff and visible-text learning
@@ -1409,7 +1410,7 @@ This section is the current operating contract before the next production alloca
 ### Image host and scheduled consumer
 
 - Current mutable image-route readiness comes only from `docs/operations/unattended-image-host.json` and its bound committed evidence. Narrative policy files do not maintain a second READY/BLOCKED state.
-- The completed one-time qualification automation remains historical execution proof only. The enabled hourly Daily Brief Recovery automation `6abeb9a2b8a88191949dc420d5e10feb` is the reusable scheduled native-image consumer.
+- The completed one-time qualification automation remains historical execution proof only. Watchdog Slot F (the repurposed automation `6abeb9a2b8a88191949dc420d5e10feb`) is the durable registered scheduled native-image consumer at minute :53; the six-slot Watchdog Ring is the outer recovery layer.
 - Qualification and reusable consumption are separate gates. READY without an enabled bound consumer is not production-ready.
 - GitHub routing uses `QUEUED_FOR_SCHEDULED_CONSUMER`. Consumerless `AWAITING_SCHEDULED_EXECUTOR` is prohibited.
 - A queued native-image request's `writer_generation` is scheduling provenance, not mutation authority. The scheduled consumer refreshes durable state and acquires current task-specific fenced authority at invocation.
@@ -1430,12 +1431,12 @@ This section is the current operating contract before the next production alloca
 
 - The production liveness objective is substantive durable progress at least once per Supervisor interval, approximately 60 seconds. A queued or Active repository task that makes no substantive durable worker progress for more than one interval is a liveness fault, not a healthy wait state.
 - Supervisor lease acquisition, lease renewal, heartbeat, Kanban reprojection and request-queue commits are orchestration evidence only. They do **not** reset the substantive-progress clock.
-- The normal post-image path must not depend on the hourly recovery schedule. After Task 16, the existing ordinary-ChatGPT production consumer should remain in the same invocation long enough to drain exact eligible repository work through Tasks 17-22 when safe, with the Supervisor owning task ordering and fenced handoffs between tasks.
+- The normal post-image path must not depend on an outer Watchdog check. After Task 16, the existing ordinary-ChatGPT production consumer should remain in the same invocation long enough to drain exact eligible repository work through Tasks 17-22 when safe, with the Supervisor owning task ordering and fenced handoffs between tasks.
 - The dedicated Task 17 repository consumer remains a deterministic fallback. Because pushes made with the repository `GITHUB_TOKEN` do not recursively start another workflow, the Supervisor explicitly dispatches that consumer with `workflow_dispatch` when the exact Task 17 request is queued and no consumer is already active.
 - Repository recovery contracts for Tasks 17-22 and later repository closeout Tasks 24, 27, 28 and 29 use a 60-second stale threshold. A stale actionable task must be resumed from the same durable state; accepted images and completed upstream artifacts remain immutable.
 - The Supervisor writes exactly one route-scoped `repository_consumer_unclaimed` record under `_records/edition-execution/liveness-faults/<execution_id>/` when an exact repository request crosses that 60-second boundary. That record is evidence of a fault, not a task transition or worker progress, and it never authorizes skipping the task or stopping other safe routes.
-- Task 17 currently has an immediate deterministic GitHub Actions consumer. Semantic repository Tasks 18-22 and closeout Tasks 24/27-29 depend on the ordinary-ChatGPT same-invocation consumer, with the hourly recovery service as fallback. The automation service rejected attaching a GitHub PR-update trigger to the already scheduled hourly recovery task; a rejected webhook experiment is not an admitted consumer and must not be reported as one.
-- Hourly recovery remains a safety net, not the mechanism that defines acceptable queue latency.
+- Task 17 currently has an immediate deterministic GitHub Actions consumer. Semantic repository Tasks 18-22 and closeout Tasks 24/27-29 depend on the ordinary-ChatGPT same-invocation consumer, with the ChatGPT Watchdog Ring as the outer fallback. Event-triggered Work tasks remain prohibited and are not an admitted consumer.
+- The ChatGPT Watchdog Ring remains an outer safety net, not the mechanism that defines acceptable repository queue latency.
 
 ### Kanban enforcement
 
@@ -1464,4 +1465,15 @@ The five-change hardening acceptance gate is now satisfied by durable NON-PRODUC
 - Kanban proof is PASS: exactly Backlog → WIP → Done, no Current column, active→WIP, Tasks 00–29, duration on every card or literal `unavailable`, mandatory total Brief elapsed, append-only timing and fresh event digest. The five requested failing fixtures remain protected.
 - Final authorization receipt: `_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json`. It is effective only on protected `main` after this closeout branch passes deterministic CI and merges.
 
-This hardening process does **not** manually start the next production Brief. Once the PASS receipt is protected, the existing Daily Brief Controller remains responsible for normal scheduled allocation. The hourly Recovery automation remains the reusable Task 11–16 image consumer and recovery keeper.
+This hardening process does **not** manually start the next production Brief. Once the PASS receipt is protected, the existing Daily Brief Controller remains responsible for normal scheduled allocation. Watchdog Slot F remains the durable reusable Task 11–16 image-consumer binding, while the six-member Watchdog Ring provides coordinated outer recovery.
+
+
+## October 3, 2026 — ChatGPT Watchdog Ring is the current outer recovery layer
+
+The current liveness hierarchy is Run Supervisor (approximately one-minute loop) → GitHub Supervisor watchdog (five minutes) → six-member ordinary ChatGPT Watchdog Ring (hourly slots staggered at minutes 03/13/23/33/43/53, nominal ten-minute outer check) → independent daily live validation. The ring does not replace the inner GitHub liveness mechanisms.
+
+A separate execution-scoped recovery coordination lease at `_records/edition-execution/watchdog-leases/<execution-id>.json` prevents overlapping scheduled ChatGPT repairs. That lease never grants production write authority; the existing writer fence remains mandatory. Healthy checks and checks that encounter another active recovery owner are silent and non-mutating. Actual stall/recovery events are append-only under `_records/edition-execution/watchdog-events/<execution-id>/`.
+
+Recovery success means verified durable forward progress, not merely dispatching a workflow, changing a lease, refreshing a queue/Kanban, or writing a status. The ring escalates through the smallest authorized action and never reopens terminal executions, redoes completed tasks, regenerates accepted_locked images, steals a live writer, or bypasses protected CI/deploy/verification.
+
+The former hourly Daily Brief Recovery schedule was repurposed in place as Watchdog Slot F at minute :53 and remains the durable bound scheduled native-image consumer. Slots A–E run at :03/:13/:23/:33/:43 with the same generic state machine. There is no separate standalone :48 Recovery task after cutover. See `docs/operations/CHATGPT-WATCHDOG-RING.md` for the executable contract.

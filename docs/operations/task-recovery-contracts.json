@@ -953,14 +953,125 @@
     "max_idle_seconds": 60,
     "rule": "A queued or Active repository task with no substantive durable worker progress for more than one Supervisor interval is a liveness fault. Supervisor lease/heartbeat/Kanban-only commits do not count as substantive progress.",
     "primary_post_image_path": "The ordinary ChatGPT consumer that completes Task 16 must remain in the same invocation long enough to drain exact queued repository Tasks 17-22 when safe, handing off through the Supervisor between tasks.",
-    "fallback": "The Supervisor may use the dedicated deterministic Task 17 consumer and the hourly recovery service, but these are fallbacks and must not redefine a >60-second idle queue as healthy.",
+    "fallback": "The Supervisor may use the dedicated deterministic Task 17 consumer and the ChatGPT Watchdog Ring as the outer recovery fallback, but these are fallbacks and must not redefine a >60-second idle repository queue as healthy.",
     "fault_evidence_path": "_records/edition-execution/liveness-faults/<execution_id>/<task_id>-<request_key>-unclaimed.json",
     "fault_semantics": "A 60-second liveness fault is durable evidence that the exact repository route is unclaimed; it is not a task transition, not substantive worker progress, and not permission to skip, duplicate, or globally stop the run.",
     "current_consumer_coverage": {
-      "17": "Immediate deterministic GitHub Actions consumer plus ordinary-ChatGPT recovery fallback.",
-      "18-22,24,27-29": "Ordinary-ChatGPT same-invocation consumer; hourly recovery is the supported fallback when that invocation has ended."
+      "17": "Immediate deterministic GitHub Actions consumer plus ordinary-ChatGPT Watchdog Ring recovery fallback.",
+      "18-22,24,27-29": "Ordinary-ChatGPT same-invocation consumer; the ChatGPT Watchdog Ring is the outer fallback when that invocation has ended."
     },
-    "unsupported_event_wake": "The automation service does not currently admit a GitHub webhook trigger on the already hourly scheduled recovery task. Do not claim a PR-sentinel or subhourly schedule as an active consumer unless the automation service durably accepts it.",
+    "unsupported_event_wake": "The automation service does not currently admit event-triggered Work wakeups for this route, and no event-triggered Work task is authorized. The outer recovery contract instead uses six ordinary exact-hourly ChatGPT schedules staggered to a nominal ten-minute cadence.",
     "forbidden_terminal_claim": "AWAITING_SCHEDULED_EXECUTOR is never a healthy or terminal repository-task outcome."
+  },
+  "chatgpt_watchdog_ring": {
+    "schema_version": "chatgpt-watchdog-ring-contract-v1",
+    "enabled": true,
+    "role": "outer_autonomous_recovery",
+    "schedule": {
+      "timing_mode": "exact_schedule",
+      "per_slot_recurrence": "hourly",
+      "nominal_check_minutes": 10,
+      "slots": {
+        "A": 3,
+        "B": 13,
+        "C": 23,
+        "D": 33,
+        "E": 43,
+        "F": 53
+      }
+    },
+    "lease": {
+      "schema_version": "chatgpt-watchdog-recovery-lease-v1",
+      "path_pattern": "_records/edition-execution/watchdog-leases/<execution-id>.json",
+      "ttl_minutes": 15,
+      "optimistic_concurrency": true,
+      "replaces_writer_fence": false
+    },
+    "events": {
+      "schema_version": "chatgpt-watchdog-event-v1",
+      "path_pattern": "_records/edition-execution/watchdog-events/<execution-id>/",
+      "append_only": true,
+      "healthy_noop_writes": false
+    },
+    "health_states": [
+      "HEALTHY_ACTIVE",
+      "READY_IDLE",
+      "STALE_ACTIVE",
+      "BLOCKED_ACTIONABLE",
+      "BLOCKED_EXTERNAL",
+      "TERMINAL"
+    ],
+    "no_op": {
+      "healthy_no_mutation": true,
+      "other_recovery_owner_no_mutation": true,
+      "terminal_no_production_work": true
+    },
+    "progress": {
+      "counts": [
+        "task_transition",
+        "worker_claim",
+        "worker_result",
+        "accepted_locked_asset",
+        "bounded_repair_completion",
+        "protected_executor_state_advance",
+        "first_incomplete_task_advance",
+        "publication_or_verification_evidence"
+      ],
+      "does_not_count": [
+        "supervisor_lease",
+        "supervisor_heartbeat",
+        "watchdog_lease_heartbeat",
+        "kanban_refresh",
+        "timing_update",
+        "metric_update",
+        "queue_rewrite",
+        "status_only_commit",
+        "orchestration_only_commit",
+        "dispatch_without_executor_activation"
+      ]
+    },
+    "recovery": {
+      "minimum_action_ladder": [
+        "RECONCILE_AUTHORITATIVE_STATE",
+        "REDISPATCH_SAME_EXECUTOR",
+        "RESTORE_SAME_EXECUTION_AUTHORITY",
+        "CONSUME_EXACT_QUEUED_REQUEST",
+        "MINIMAL_PROTECTED_REPAIR"
+      ],
+      "verification_required": true,
+      "dispatch_only_is_success": false,
+      "retry_same_failed_action_forever": false
+    },
+    "protections": {
+      "terminal_reopen_allowed": false,
+      "completed_task_rework_allowed": false,
+      "accepted_asset_regeneration_allowed": false,
+      "live_writer_takeover_allowed": false,
+      "production_allocation_allowed": false
+    },
+    "native_image_consumer": {
+      "tasks": [
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "durable_bound_slot": "F",
+      "current_fence_refresh_required": true,
+      "sealed_single_story_spec_required": true,
+      "accepted_locked_assets_immutable": true,
+      "explicit_supervisor_handoff_required": true
+    },
+    "cost_boundary": {
+      "chatgpt_work": false,
+      "codex": false,
+      "paid_apis": false,
+      "billable_overage": false,
+      "event_triggered_work_tasks": false,
+      "browser_automation": false,
+      "new_credentials": false
+    }
   }
 }

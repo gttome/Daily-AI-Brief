@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-03T19:21:00Z",
+  "observed_at": "2026-10-03T19:37:15Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -220,18 +220,28 @@
     },
     {
       "id": "DAB-KB-012",
-      "lane": "backlog",
-      "priority": "P2",
+      "lane": "wip",
+      "priority": "P0",
       "category": "Liveness",
-      "title": "Evaluate outer recovery latency SLO",
-      "summary": "Hourly Recovery at :48 is a second-level backstop. Verify Supervisor + event-driven handoff + watchdog make the near-60-minute worst-case backstop acceptable before changing cadence.",
+      "title": "Implement 10-minute ChatGPT Watchdog Ring",
+      "summary": "Replace the single hourly :48 outer backstop with six coordinated ordinary ChatGPT hourly schedules staggered ten minutes apart. Preserve the GitHub inner Supervisor/watchdog, add a separate recovery coordination lease, and require verified forward progress before recovery is declared successful.",
       "acceptance": [
-        "Observed primary recovery latency measured.",
-        "No schedule change unless evidence shows an actual liveness gap."
+        "Six enabled exact-hourly Watchdog schedules at minutes 03,13,23,33,43,53.",
+        "Combined nominal outer check cadence is 10 minutes.",
+        "Execution-scoped recovery lease prevents concurrent repairs and supports expired-owner takeover.",
+        "Healthy checks and checks that see another recovery owner are non-mutating.",
+        "Minimum corrective action restores an active/progressing same execution and is verified by substantive durable progress.",
+        "Terminal executions are never reopened; Done tasks and accepted_locked assets are never redone.",
+        "No Work, Codex, paid API/service, event-triggered Work, browser automation, overage or new credential route is added.",
+        "Former standalone :48 Recovery schedule is repurposed as Slot F at :53 and no independent :48 recovery remains.",
+        "Live validator coordinates with an active Watchdog lease without becoming a competing routine liveness worker.",
+        "Protected regression suite and final live schedule-definition verification pass."
       ],
       "sources": [
-        "Daily Brief Recovery schedule",
-        "Run Supervisor / handoff architecture"
+        "docs/operations/CHATGPT-WATCHDOG-RING.md",
+        "_generator/lib/chatgpt-watchdog-ring.mjs",
+        "_records/hardening/chatgpt-watchdog-ring-2026-10-03/schedule-observation.json",
+        "Run Supervisor / GitHub watchdog architecture"
       ]
     },
     {
@@ -366,14 +376,15 @@
       "priority": "P0",
       "category": "Automation",
       "title": "Remove expired rehearsal overlay from Recovery",
-      "summary": "The persistent Recovery service contains generic production-only recovery/image-consumer instructions; the hourly :48 backstop remains enabled and the production controller now starts at 19:00 America/Chicago on the prior evening.",
+      "summary": "Historical completed change that removed the rehearsal overlay from the then-hourly :48 Recovery service. DAB-KB-012 later repurposes that service into Watchdog Slot F; this card remains closed historical evidence.",
       "acceptance": [
         "Generic recovery instruction verified.",
         "Hourly recovery remains enabled.",
         "Production controller uses the prior-evening 19:00 schedule."
       ],
       "sources": [
-        "Daily Brief Recovery automation"
+        "Daily Brief Recovery automation",
+        "DAB-KB-012"
       ]
     },
     {
