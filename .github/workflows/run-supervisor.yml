@@ -188,22 +188,14 @@ jobs:
         run: |
           set -euo pipefail
           delegated=false
-          lease="run/_records/edition-execution/writer-leases/${EXECUTION_ID}.json"
-          if [ -f "$lease" ]; then
-            release_reason="$(node -e "const x=require('./$lease');process.stdout.write(String(x.release_reason||''))")"
-            released="$(node -e "const x=require('./$lease');process.stdout.write(String(x.released===true))")"
-            if [ "$released" = "true" ] && [[ "$release_reason" =~ ^TASK_(1[1-6])_QUEUED_HANDOFF_TO_SCHEDULED_IMAGE_CONSUMER$ ]]; then
-              task="${BASH_REMATCH[1]}"
-              done_event="run/_records/edition-execution/events/${EXECUTION_KEY}/${task}-done.json"
-              request_dir="run/_records/edition-execution/worker-requests/${EXECUTION_ID}"
-              if [ ! -f "$done_event" ] && [ -d "$request_dir" ]; then
-                queued="$(node -e 'const fs=require("fs"),p=require("path");const d=process.argv[1],t=process.argv[2];let ok=false;for(const n of fs.readdirSync(d)){if(!n.startsWith(t+"-")||!n.endsWith(".json"))continue;const x=JSON.parse(fs.readFileSync(p.join(d,n),"utf8"));if(String(x.task_id)===t&&x.capability==="native_chatgpt"&&["queued","queued_for_scheduled_consumer"].includes(String(x.status||""))){ok=true;break}}process.stdout.write(String(ok))' "$request_dir" "$task")"
-                if [ "$queued" = "true" ]; then
-                  delegated=true
-                  echo "Task ${task} is already delegated to the scheduled image consumer; Supervisor will not reacquire the writer fence."
-                fi
-              fi
-            fi
+          delegated_task=""
+          request_dir="run/_records/edition-execution/worker-requests/${EXECUTION_ID}"
+          if [ -d "$request_dir" ]; then
+            delegated_task="$(node -e 'const fs=require("fs"),p=require("path");const d=process.argv[1],events=process.argv[2];let found="";for(const n of fs.readdirSync(d).sort()){if(!n.endsWith(".json"))continue;const x=JSON.parse(fs.readFileSync(p.join(d,n),"utf8"));const t=String(x.task_id||"").padStart(2,"0");if(!/^1[1-6]$/.test(t)||x.capability!=="native_chatgpt"||String(x.status||"")!=="queued_for_scheduled_consumer")continue;if(fs.existsSync(p.join(events,t+"-done.json")))continue;found=t;break}process.stdout.write(found)' "$request_dir" "run/_records/edition-execution/events/${EXECUTION_KEY}")"
+          fi
+          if [ -n "$delegated_task" ]; then
+            delegated=true
+            echo "Task ${delegated_task} is already queued for the scheduled image consumer; Supervisor will not acquire or take over the writer fence."
           fi
           echo "delegated=$delegated" >> "$GITHUB_OUTPUT"
 
