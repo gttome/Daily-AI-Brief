@@ -1,0 +1,22 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "081739ea10721ac69a11bb88082009bd99d2935d8ced5327e5b2688180c4e229",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "21",
+  "status": "passed",
+  "completed_at": "2026-10-03T02:48:00Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "qualification_path": "_records/rehearsal/2026-10-02-run6/qualification-post-repair.json",
+    "result": "PASS",
+    "repaired_defects": [
+      "reader_book_bridge_incomplete",
+      "media_source_navigation_incomplete",
+      "landing_media_navigation_incomplete"
+    ],
+    "canonical_preservation": "PASS",
+    "next_task": "22"
+  }
+}
