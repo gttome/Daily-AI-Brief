@@ -252,8 +252,22 @@ Protected hardening evidence: PR #420 merged as `480a4c559ac2b900dd29b746eec4e27
 
 The initial Watchdog Ring migration preserved the former Recovery automation as a special Slot F image-consumer binding. That was a safe migration bridge but not the preferred steady-state architecture.
 
-The permanent model now makes **A–F operationally equivalent**. The Watchdog Ring itself is the registered reusable scheduled native-image consumer pool. Any slot may immediately consume the exact next queued, unclaimed Tasks 11–16 `native_chatgpt` request; normal image pickup does not wait for the task to become stale or blocked.
+The permanent model now makes **A–F operationally equivalent**. This change is protected on main through PR #423. The Watchdog Ring itself is the registered reusable scheduled native-image consumer pool. Any slot may immediately consume the exact next queued, unclaimed Tasks 11–16 `native_chatgpt` request; normal image pickup does not wait for the task to become stale or blocked.
 
 Coverage therefore improves from one designated recurring image-consumer opportunity per hour to six staggered opportunities per hour. Nominal maximum wait to the next scheduled image consumer improves from about 60 minutes to about 10 minutes. This is a schedule-spacing improvement, not a real-time execution guarantee.
 
 Duplicate generation remains prohibited. Every slot must resolve the exact current request and acquire current task-specific writer authority before generation. If another slot owns the work, it yields. Accepted images remain immutable, sealed single-story prompts remain mandatory, exact-byte Git persistence/read-back and saved-Git review remain mandatory, and the Supervisor handoff remains unchanged.
+
+### Equivalent-consumer protected outcome
+
+- Protected PR: #423
+- Merge SHA: `6938496b84d23243692a752946846494d3440c43`
+- Protected CI: 37160416973 — PASS
+- Targeted tests: 118/118
+- Generator tests: 896/896
+- Contract tests: 24/24
+- Operational-learning, repository-state, publication-lifecycle, integrated-system, append-only-ledger and Jekyll validation: PASS
+- Image coverage: one designated recurring consumer/hour → six equivalent staggered consumer opportunities/hour
+- Nominal next scheduled consumer opportunity: ~10 minutes rather than up to ~60 minutes
+- Hard latency guarantee: **No** — Scheduled ChatGPT execution may start late
+- Duplicate generation prevention: exact request identity + current task-specific writer fence; overlapping slots yield
