@@ -234,7 +234,7 @@ Permanent rule:
 In short: **one repair attempt is not recovery; actionable recovery continues until active progress is restored or the still-unresolved incident is safely handed forward after exhausting the applicable options for the current invocation.**
 
 Protected hardening evidence: PR #420 merged as `480a4c559ac2b900dd29b746eec4e279a365e73f`; protected CI run 37152873713 passed 890/890 generator tests and 24/24 contract tests plus repository/lifecycle/append-only/Jekyll validation. Final hardening receipt: `_records/hardening/chatgpt-watchdog-ring-2026-10-03/fix-to-progress-final-verification.json`.
-## 14. Final evidence
+## 15. Final evidence
 
 - Core protected PR: #415
 - Core merge SHA: `715c34cd07ebaf534be5307fd03eeb7f2ef8b5e0`
@@ -257,3 +257,7 @@ The permanent model now makes **A–F operationally equivalent**. The Watchdog R
 Coverage therefore improves from one designated recurring image-consumer opportunity per hour to six staggered opportunities per hour. Nominal maximum wait to the next scheduled image consumer improves from about 60 minutes to about 10 minutes. This is a schedule-spacing improvement, not a real-time execution guarantee.
 
 Duplicate generation remains prohibited. Every slot must resolve the exact current request and acquire current task-specific writer authority before generation. If another slot owns the work, it yields. Accepted images remain immutable, sealed single-story prompts remain mandatory, exact-byte Git persistence/read-back and saved-Git review remain mandatory, and the Supervisor handoff remains unchanged.
+
+Protected equivalent-consumer outcome: PR #423 merged as `6938496b84d23243692a752946846494d3440c43` from exact head `c5b51d30f7386e781dfdf4b6896456b09bba8f1e`. Deterministic publication CI run 37160416973 passed 896/896 generator tests, 24/24 contract tests, affected targeted tests, repository/lifecycle/append-only validation and Jekyll build. Pages deployment run 37160487714 also completed successfully.
+
+The permanent learning sequence is `DAB-OPS-E-000091` (permanent fix) followed by `DAB-OPS-E-000092` (verified outcome); Improvement Kanban card DAB-KB-031 is Done. The live six-slot consumer evidence remains `_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json`. The current Watchdog architecture infographic source is `docs/images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Architecture-v1.0.svg`.
