@@ -451,3 +451,14 @@ test('enqueue records the one permitted post-repair dispatch in the repair epoch
   assert.match(tool,/last_post_repair_request_key/);
   assert.match(tool,/post_repair_dispatch_requires_passed_repair_epoch/);
 });
+
+
+test('Supervisor explicitly dispatches queued Task 17 repository work despite GITHUB_TOKEN push suppression',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.match(y,/request_capability\" = \"repository\"/);
+  assert.match(y,/request_task\" = \"17\"/);
+  assert.match(y,/repository-task-consumer\.yml\/runs/);
+  assert.match(y,/gh workflow run repository-task-consumer\.yml --ref \"\$RUN_BRANCH\"/);
+  assert.match(y,/pushes created by GITHUB_TOKEN do not recursively trigger workflows/);
+  assert.match(y,/active_repository_consumers/);
+});
