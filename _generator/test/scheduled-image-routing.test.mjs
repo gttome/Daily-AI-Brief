@@ -11,10 +11,22 @@ function readyRegistration(){
     host_id:'chatgpt-automation:6abfb619185c819194646f77c3b314a4',
     qualification_receipt_path:'_records/live-qualified.json',
     reusable_consumer:{
-      scheduler_kind:'chatgpt_automation',
-      automation_id:'6abeb9a2b8a88191949dc420d5e10feb',
+      scheduler_kind:'chatgpt_watchdog_ring',
       enabled:true,
-      role:'scheduled_native_image_request_consumer'
+      role:'scheduled_native_image_request_consumer_ring',
+      eligible_slots:['A','B','C','D','E','F'],
+      special_slot:null,
+      functional_equivalence_required:true,
+      single_slot_binding:false,
+      consume_queued_request_without_stale_wait:true,
+      slots:[
+        {slot:'A',automation_id:'6ac15929a81c8191956080955da7eaad',minute:3,enabled:true,native_image_eligible:true},
+        {slot:'B',automation_id:'6ac15934c8c88191a33c94b91941d60d',minute:13,enabled:true,native_image_eligible:true},
+        {slot:'C',automation_id:'6ac1594249d081918df3145cca65dd91',minute:23,enabled:true,native_image_eligible:true},
+        {slot:'D',automation_id:'6ac1594e974881919639e0c40a2d9da8',minute:33,enabled:true,native_image_eligible:true},
+        {slot:'E',automation_id:'6ac1595c12fc8191b9a25b42d465692d',minute:43,enabled:true,native_image_eligible:true},
+        {slot:'F',automation_id:'6abeb9a2b8a88191949dc420d5e10feb',minute:53,enabled:true,native_image_eligible:true}
+      ]
     }
   };
 }
@@ -28,7 +40,10 @@ test('qualified host routes the exact fenced request to the enabled reusable sch
     const args=['_tools/native-image-worker.py','--run-root',root,'--request',request,'--execution-key','next-run','--execution-id','next-run','--edition-id','next-edition','--writer-generation','3','--host-registration',registration];
     const result=JSON.parse(execFileSync('python3',args));
     assert.equal(result.status,'QUEUED_FOR_SCHEDULED_CONSUMER');
-    assert.equal(result.consumer_id,'6abeb9a2b8a88191949dc420d5e10feb');
+    assert.equal(result.consumer_kind,'chatgpt_watchdog_ring');
+    assert.deepEqual(result.eligible_consumer_slots,['A','B','C','D','E','F']);
+    assert.equal(result.special_consumer_slot,null);
+    assert.equal(result.single_operation_owner_required,true);
     assert.equal(result.generation_started,false);
     assert.equal(result.accepted_locked,false);
     assert.equal(result.writer_generation_is_provenance,true);
