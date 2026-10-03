@@ -9,7 +9,7 @@
 > complete Task 00 using [the Living Run Learning, Cleanup and Readiness Plan](RUN-LEARNING-READINESS-PLAN.md)
 > and `run-learning-readiness-v2`. A one-time schedule may trigger a start, but every run
 > must already have a run-scoped keeper bound through terminal cleanup. An Active task
-> is evaluated by route-specific durable liveness evidence. The Supervisor observes approximately every minute, the GitHub watchdog protects the Supervisor every five minutes, and the ChatGPT Watchdog Ring independently re-evaluates unresolved real stalls at a nominal ten-minute cadence. For an actionable stall, the Ring does not stop after one repair attempt: it continues through the remaining safe authorized recovery options until the task/process has a real active executor and demonstrable durable progress, or hands the still-unresolved incident to the next slot at a safe boundary. Failed repair attempts alone never justify `BLOCKED_EXTERNAL`.
+> is evaluated by route-specific durable liveness evidence. The Supervisor observes approximately every minute, the GitHub watchdog protects the Supervisor every five minutes, and the ChatGPT Watchdog Ring independently re-evaluates unresolved real stalls at a nominal ten-minute cadence. The Ring is also the reusable native-image consumer: all six slots A–F are equally eligible to pick up an exact queued unclaimed Task 11–16 request at their next scheduled opportunity, without waiting for Slot F or for a stale threshold. For an actionable stall, the Ring does not stop after one repair attempt: it continues through the remaining safe authorized recovery options until the task/process has a real active executor and demonstrable durable progress, or hands the still-unresolved incident to the next slot at a safe boundary. Failed repair attempts alone never justify `BLOCKED_EXTERNAL`.
 > The proven production image path is locked; repository-generated SVG/basic-diagram
 > substitution and low-quality fallback are prohibited. After `PUBLIC CLOSED` or
 > `FAILED`, Task 29 cleanup and the promotion review are mandatory before the next run.
@@ -69,8 +69,11 @@ capture counts during the first source review, before discarding the source text
 5. **Self-heal before yielding:** classify the blocker. Reconcile stale state from immutable
    results; recover the same operation/bytes after uncertain handoff; advance from a
    documented quality rejection; fix pre-generation deterministic lint without consuming
-   an attempt; and continue in the same invocation. Only genuine external waits, host
-   limits, or a current safety/tool denial may yield. Never route around a denial.
+   an attempt; and continue through every applicable safe authorized recovery option until
+   a real executor is ACTIVE and substantive durable progress is proven. One failed attempt
+   never ends actionable recovery. A safe-boundary yield is an unresolved handoff to the
+   next Watchdog, not success. Only a verified external wait, host limit, or current
+   safety/tool denial may stop internal repair. Never route around a denial.
 6. Treat immutable image attempt results as truth. Controller image counts/cursors and
    Kanban/status are derived projections, not independent records. Use
    `node _tools/edition-execution.mjs image-progress --state <controller-state.json>`
@@ -162,3 +165,10 @@ For the bound September 30 second-edition recovery, use the released `same-invoc
 
 - `docs/operations/CHATGPT-WATCHDOG-RING.md` — current outer autonomous recovery contract.
 - Watchdog recovery invariant — diagnose → fix → ACTIVE executor → durable progress; one failed attempt is never completion, and safe-boundary yield means continuation by the next slot.
+
+
+## Ring-wide native image coverage
+
+Image Tasks 11–16 are intentionally covered by **all six Watchdog slots**, not by one special schedule. The current model provides six scheduled image-consumer opportunities per hour at :03/:13/:23/:33/:43/:53. This is a nominal 6× increase in scheduled pickup opportunities versus the former single F-only hourly binding, reducing conceptual worst-case wait from under 60 minutes to under 10 minutes.
+
+This is not a hard real-time guarantee: Scheduled task delivery can be late and active image work can take longer than ten minutes. Duplicate generation is prevented by exact-request identity, one shared Watchdog recovery/consumer lease, current production writer fencing, and accepted_locked immutability.
