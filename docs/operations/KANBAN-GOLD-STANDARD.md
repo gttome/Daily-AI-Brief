@@ -29,3 +29,7 @@ Task 00 Production Readiness Validation must load this gold-standard specificati
 ## Learning
 
 Owner feedback on 2026-10-03: this is the best Daily AI Brief Kanban produced to date and is the one example to always follow. Treat that approval as a durable presentation requirement, not a run-specific preference.
+
+## Measurement-only rule
+
+Kanban metrics and projections are **observability only**. They measure and display the production system; they never control, gate, block, pause, retry, stop, authorize, or change production task state for any reason. A stale/missing/contradictory Kanban projection is a telemetry defect only. Task state comes exclusively from authoritative execution contracts and append-only transition evidence. If Kanban disagrees with those sources, the Kanban must be reprojected from the authoritative evidence while production continues unaffected. No task may be shown as Blocked solely because of a Kanban metric, duration, freshness threshold, projection age, visualization state, or Kanban contract failure.
