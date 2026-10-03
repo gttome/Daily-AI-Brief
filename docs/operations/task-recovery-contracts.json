@@ -966,7 +966,7 @@
   "chatgpt_watchdog_ring": {
     "schema_version": "chatgpt-watchdog-ring-contract-v1",
     "enabled": true,
-    "role": "outer_autonomous_recovery_and_ring_wide_native_image_consumption",
+    "role": "outer_autonomous_recovery",
     "schedule": {
       "timing_mode": "exact_schedule",
       "per_slot_recurrence": "hourly",
