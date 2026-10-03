@@ -473,3 +473,13 @@ test('repository recovery contracts enforce the 60-second substantive-progress l
   assert.match(c.repository_liveness_policy.rule,/lease\/heartbeat\/Kanban-only/i);
   assert.match(c.repository_liveness_policy.primary_post_image_path,/same invocation/i);
 });
+
+
+test('production writer handoff resumes the same execution for any Task 00-29 durable boundary',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor-handoff.yml','utf8');
+  assert.match(y,/TASK_\[0-2\]\[0-9\]_DONE_HANDOFF_TO_SUPERVISOR/);
+  assert.match(y,/TASK_\[0-2\]\[0-9\]_BLOCKED_HANDOFF_TO_SUPERVISOR/);
+  assert.match(y,/run_branch.*GITHUB_REF_NAME/);
+  assert.match(y,/Supervisor already queued\/running/);
+  assert.match(y,/gh workflow run run-supervisor\.yml/);
+});

@@ -97,7 +97,7 @@ jobs:
             esac
           else
             case "$reason" in
-              TASK_1[1-6]_DONE_HANDOFF_TO_SUPERVISOR|TASK_1[1-6]_BLOCKED_HANDOFF_TO_SUPERVISOR) ;;
+              TASK_1[1-6]_DONE_HANDOFF_TO_SUPERVISOR|TASK_1[1-6]_BLOCKED_HANDOFF_TO_SUPERVISOR|TASK_[0-2][0-9]_DONE_HANDOFF_TO_SUPERVISOR|TASK_[0-2][0-9]_BLOCKED_HANDOFF_TO_SUPERVISOR) ;;
               *) exit 0 ;;
             esac
           fi
