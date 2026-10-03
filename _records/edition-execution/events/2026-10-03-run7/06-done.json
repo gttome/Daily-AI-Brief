@@ -1,0 +1,21 @@
+{
+  "task_id": "06",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-03T06:26:52.947Z",
+  "reason": "Verified two fresh, directly playable videos from official channels within the approved duration ladder.",
+  "proof": {
+    "selection_artifact": "_records/editorial/2026-10-03-run7/videos.json",
+    "count": 2,
+    "official_channels": [
+      "Microsoft AI",
+      "Microsoft Developer"
+    ],
+    "runtime_seconds_or_max": [
+      180,
+      874
+    ],
+    "publication_before_cutoff": true,
+    "result": "PASS"
+  }
+}
