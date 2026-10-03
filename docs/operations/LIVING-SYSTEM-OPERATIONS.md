@@ -401,7 +401,7 @@ flowchart TB
       R1["19:00 prior-evening Controller"]
       R2["Run Supervisor ~1-minute loop"]
       R3["GitHub watchdog every 5 minutes"]
-      R4["ChatGPT Watchdog Ring nominal 10 minutes"]
+      R4["ChatGPT Watchdog Ring — recovery + ring-wide image consumer"]
       R5["08:30 independent live validation"]
     end
 
@@ -417,7 +417,7 @@ flowchart TB
     R2 -. orchestrates .-> G7
     R3 -. restarts missing Supervisor .-> R2
     R4 -. persistent fix-to-progress recovery .-> R2
-    R4 -. exact-request recovery .-> S1
+    R4 -. exact-request recovery / image consumption .-> S1
     R4 -. protected-route recovery .-> G7
     R5 -. validates / targeted repair .-> G8
     R5 -. verifies terminal result .-> G9
@@ -1410,7 +1410,7 @@ This section is the current operating contract before the next production alloca
 ### Image host and scheduled consumer
 
 - Current mutable image-route readiness comes only from `docs/operations/unattended-image-host.json` and its bound committed evidence. Narrative policy files do not maintain a second READY/BLOCKED state.
-- The completed one-time qualification automation remains historical execution proof only. Watchdog Slot F (the repurposed automation `6abeb9a2b8a88191949dc420d5e10feb`) is the durable registered scheduled native-image consumer at minute :53; the six-slot Watchdog Ring is the outer recovery layer.
+- The completed one-time qualification automation remains historical execution proof only. The **six-slot Watchdog Ring itself** is the durable registered scheduled native-image consumer. A–F are equally eligible for Tasks 11–16; Slot F's prior single-consumer binding is migration history only.
 - Qualification and reusable consumption are separate gates. READY without an enabled bound consumer is not production-ready.
 - GitHub routing uses `QUEUED_FOR_SCHEDULED_CONSUMER`. Consumerless `AWAITING_SCHEDULED_EXECUTOR` is prohibited.
 - A queued native-image request's `writer_generation` is scheduling provenance, not mutation authority. The scheduled consumer refreshes durable state and acquires current task-specific fenced authority at invocation.
@@ -1468,6 +1468,12 @@ The five-change hardening acceptance gate is now satisfied by durable NON-PRODUC
 This hardening process does **not** manually start the next production Brief. Once the PASS receipt is protected, the existing Daily Brief Controller remains responsible for normal scheduled allocation. Watchdog Slot F remains the durable reusable Task 11–16 image-consumer binding, while the six-member Watchdog Ring provides coordinated outer recovery.
 
 
+### Ring-wide image-consumer coverage
+
+Image Tasks 11–16 have the highest operational failure exposure, so consumer coverage is deliberately redundant across scheduling opportunities while execution ownership remains singular. The Ring provides six eligible scheduled consumer opportunities per hour rather than one F-only opportunity. Nominally, this changes the next-consumer opportunity from under 60 minutes to under 10 minutes and increases scheduled pickup opportunities 6×. This is coverage improvement, not a hard scheduler SLA.
+
+Safety remains one-owner: exact request identity + shared Watchdog recovery/consumer lease + current production writer fence + accepted_locked immutability. If one slot is already generating/persisting/reviewing an image, every other slot yields. A later slot may resume only the same still-authoritative request after ownership is proven expired/released/dead.
+
 ## October 3, 2026 — ChatGPT Watchdog Ring is the current outer recovery layer
 
 The current liveness hierarchy is Run Supervisor (approximately one-minute loop) → GitHub Supervisor watchdog (five minutes) → six-member ordinary ChatGPT Watchdog Ring (hourly slots staggered at minutes 03/13/23/33/43/53, nominal ten-minute outer check) → independent daily live validation. The ring does not replace the inner GitHub liveness mechanisms.
@@ -1476,4 +1482,4 @@ A separate execution-scoped recovery coordination lease at `_records/edition-exe
 
 Recovery success requires **both a real active executor and verified durable forward progress**, not merely dispatching a workflow, changing a lease, refreshing a queue/Kanban, writing a status, or trying one repair. For an actionable incident, the ring must keep escalating through the remaining safe authorized Fix-to-Progress actions until that condition is proven. If an invocation reaches a safe boundary first, it persists an unresolved continuation handoff so the next slot resumes the same incident. Exhausted internal attempts do not automatically become `BLOCKED_EXTERNAL`; that classification requires current verified external evidence. The ring never reopens terminal executions, redoes completed tasks, regenerates accepted_locked images, steals a live writer, or bypasses protected CI/deploy/verification.
 
-The former hourly Daily Brief Recovery schedule was repurposed in place as Watchdog Slot F at minute :53 and remains the durable bound scheduled native-image consumer. Slots A–E run at :03/:13/:23/:33/:43 with the same generic state machine. There is no separate standalone :48 Recovery task after cutover. See `docs/operations/CHATGPT-WATCHDOG-RING.md` for the executable contract.
+The former hourly Daily Brief Recovery schedule was repurposed in place as Watchdog Slot F at minute :53 during migration, but F now has **no special image authority**. Slots A–F are functionally equivalent recovery and native-image consumers at :03/:13/:23/:33/:43/:53. A newly queued unclaimed Task 11–16 request can be consumed by the next eligible slot without waiting for staleness. There is no separate standalone :48 Recovery task. See `docs/operations/CHATGPT-WATCHDOG-RING.md` for the executable contract.
