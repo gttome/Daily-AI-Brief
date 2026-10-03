@@ -1,0 +1,37 @@
+{
+  "task_id": "15",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T01:38:15.773Z",
+  "reason_code": "SCHEDULED_NATIVE_IMAGE_CONSUMER_ACQUIRED_FRESH_FENCE",
+  "operation": "generate_persist_review_accept_image_5",
+  "proof": {
+    "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+    "branch": "rehearsal/dab-edition-2026-10-02-run6",
+    "request_key": "a21765759e0efe27c63c91b3e25f325ebca16cf044ebc517903eda0d624841a2",
+    "reusable_consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+    "protected_main_sha": "f0d61eb7b4481d28755db549e53826fb7ccf4ade",
+    "host_registration": "READY",
+    "request_writer_generation": 15,
+    "current_generation_before": 15,
+    "fresh_authority_generation": 16,
+    "stale_generation_rejected": true,
+    "completed_tasks_preserved": [
+      "00",
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14"
+    ]
+  }
+}
