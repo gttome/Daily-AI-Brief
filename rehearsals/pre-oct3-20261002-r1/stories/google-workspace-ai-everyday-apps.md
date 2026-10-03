@@ -15,6 +15,8 @@ Google’s September Workspace feature drop expands AI-assisted work across exis
 
 **Why it matters:** AI becomes more useful when it works inside the artifacts people already use.
 
-[Authoritative source](https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop)
+{% include_relative _workspace-read-deeper.md %}
+
+{% include_relative _workspace-authoritative-source.md %}
 
 [← Back to rehearsal Brief]({{ '/rehearsals/pre-oct3-20261002-r1/' | relative_url }})
