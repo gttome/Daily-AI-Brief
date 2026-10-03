@@ -15,6 +15,10 @@ Qodo 3.0 introduces additional context, triage, standards, review, and quality c
 
 **Why it matters:** Teams using coding agents need explicit quality evidence and repository context alongside generation speed.
 
-[Authoritative source](https://www.qodo.ai/blog/introducing-qodo-3-0/)
+## Read deeper
+
+**Reliable Generative AI — Verification as the Final Gate.** Read this section to connect automated code review with the evidence needed before agent-written changes are accepted.
+
+[Book page](https://leanpub.com/reliablegenerativeai) · [Authoritative source](https://www.qodo.ai/blog/introducing-qodo-3-0/)
 
 [← Back to rehearsal Brief]({{ '/rehearsals/pre-oct3-20261002-r1/' | relative_url }})
