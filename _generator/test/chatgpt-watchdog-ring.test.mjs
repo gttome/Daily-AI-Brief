@@ -28,6 +28,14 @@ test('native-image consumer eligibility is exact-execution and Tasks 11-16 only'
   assert.equal(watchdogNativeImageRequestEligible({execution_id:'other',task_id:'11',capability:'native_chatgpt',status:'queued'},{execution_id:active.execution_id}),false);
   assert.equal(watchdogNativeImageRequestEligible({execution_id:active.execution_id,task_id:'11',capability:'repository',status:'queued'},{execution_id:active.execution_id}),false);
 });
+
+test('current task writer prevents duplicate native-image pickup by another slot',()=>{
+  const req={execution_id:active.execution_id,task_id:'12',request_key:'img-12',capability:'native_chatgpt',status:'queued'};
+  const d=watchdogDecision({active_pointer:active,classification:{state:'READY_IDLE'},owner_slot:'E',authoritative_request:req,task_writer_active:true,now:'2026-10-03T19:01:00Z'});
+  assert.equal(d.action,'NO_ACTION');
+  assert.equal(d.reason,'current_task_writer_owns_request');
+});
+
 test('existing recovery ownership prevents a second slot from consuming the same queued native image',()=>{
   const lease=acquireWatchdogRecoveryLease(null,{execution_id:active.execution_id,incident_id:incident,owner_slot:'A',action_key:action,now:'2026-10-03T19:00:00Z'}).lease;
   const req={execution_id:active.execution_id,task_id:'11',request_key:'img-11',capability:'native_chatgpt',status:'queued'};
