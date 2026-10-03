@@ -85,9 +85,9 @@ A Kanban or timing defect may be repaired separately while production continues 
 
 Current image-route readiness comes only from `docs/operations/unattended-image-host.json` and its bound evidence.
 
-Qualification and reusable consumption are separate gates. A READY qualification with no enabled bound reusable consumer is not image-production-ready.
+Qualification and reusable consumption are separate gates. A READY qualification with no enabled six-slot Watchdog Ring consumer is not image-production-ready.
 
-The reusable scheduled native-image consumer must:
+The reusable scheduled native-image consumer is the **six-slot Watchdog Ring**. Every slot A–F is equally eligible for Tasks 11–16; no slot-specific image binding is permitted. The consumer must:
 
 - refresh current durable state and fenced writer authority at invocation;
 - treat an embedded writer generation as scheduling provenance only;
@@ -112,7 +112,7 @@ The recovery lease lasts approximately fifteen minutes, uses optimistic Git blob
 
 Recovery uses the Fix-to-Progress ladder: reconcile authoritative state, re-dispatch the same executor, restore same-execution authority only after a proven dead/released owner, consume the exact newest queued request, then perform a minimal protected repair when necessary. **One failed corrective action can never end an actionable recovery.** After every action, re-read durable state and continue through the next-smallest applicable safe authorized option until a real executor is active and substantive durable forward progress is proven. A dispatch, retry, lease/heartbeat, Kanban refresh, queue change or status update is never success by itself. `BLOCKED_EXTERNAL` requires verified external evidence; failed internal repair attempts alone do not qualify. If an invocation must yield at a safe boundary while the incident remains actionable, persist unresolved continuation evidence and hand it to the next Watchdog slot. That handoff is not recovery success.
 
-Slot F is the repurposed former Recovery schedule and remains the durable registered reusable native-image consumer. All six members can safely evaluate an exact queued native request, but any takeover still requires the recovery lease plus current writer authority, preserves every accepted_locked image, and follows the existing Supervisor handoff.
+The **Ring itself** is the durable registered reusable native-image consumer. If the first incomplete task is 11–16 and the exact newest `native_chatgpt` request is queued and unclaimed, the next Watchdog A–F may consume it immediately without waiting for staleness or for a particular slot. Exactly one slot may own the request at a time under the shared recovery/consumer lease plus current writer authority. Accepted_locked images remain immutable and all image work follows the existing Supervisor handoff.
 
 ## Daily execution and recovery
 
@@ -165,9 +165,8 @@ Closeout repairs preserve accepted reader content unless a separate explicit rea
 ## Persistent automation identities
 
 - Daily production controller: `6abeba31fe28819184544abf70874a80`
-- Watchdog Ring Slot F / durable scheduled native-image consumer: `6abeb9a2b8a88191949dc420d5e10feb` (hourly at minute 53)
 - Daily live validation and secondary recovery: `6aadf3587b1c8191846a078f49102633`
 
-Watchdog Slots A–E are additional generic hourly members at minutes 03, 13, 23, 33 and 43. These identities are reusable service bindings. Their instructions must remain generic and must never name a particular production run.
+Watchdog Slots A–F are six equivalent generic hourly members at minutes 03, 13, 23, 33, 43 and 53. **The Ring, not any individual automation identity, is the durable reusable native-image consumer.** Their instructions must remain generic and must never name a particular production run. Slot F's historical identity is retained only as migration history; it carries no unique image authority.
 
 Configuration is not completion evidence. Only durable task/publication evidence establishes progress or closure.
