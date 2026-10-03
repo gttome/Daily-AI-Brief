@@ -1,0 +1,16 @@
+{
+  "schema_version": "isolated-rehearsal-cleanup-v1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "execution_key": "2026-10-02-run6",
+  "completed_at": "2026-10-03T02:53:24Z",
+  "writer_released": true,
+  "writer_release_proof": "_records/edition-execution/writer-leases/reliable-rehearsal-20261002-pre-oct3-r1.json",
+  "rehearsal_pointer_terminal": true,
+  "terminal_state": "PUBLIC_PREVIEW_CLOSED",
+  "canonical_pointers_unchanged": true,
+  "run5_unchanged": true,
+  "october3_identity_consumed": false,
+  "accepted_images_immutable": true,
+  "next_run_ready": true,
+  "result": "PASS"
+}
