@@ -28,9 +28,9 @@ reader_release: true
 
 **Summary:** Independent technology-news discussion of business agents, trust and the current agentic-assistant market.
 
-**Why it matters:** Independent technology-news discussion of business agents, trust and the current agentic-assistant market.
+**Why it matters:** The episode provides an independent, conversational check on the Brief’s agent stories, especially the tension between convenience and trust when assistants begin acting for users or businesses.
 
-**Connection to the brief:** Independent technology-news discussion of business agents, trust and the current agentic-assistant market.
+**Connection to the brief:** Use it alongside the customer-service and reusable-skills articles to compare product announcements with broader questions about agent identity, delegation and user trust.
 
 
 
