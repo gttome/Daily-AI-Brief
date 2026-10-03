@@ -2,7 +2,7 @@
   "schema_version": "unattended-image-host-registration-v2",
   "status": "READY",
   "authorization_scope": "image_route_capability",
-  "reason": "Protected historical qualification evidence remains READY. Watchdog Ring Slot F retains the durable reusable production image-consumer identity at minute :53, while the six-slot ring adds coordinated outer recovery without changing the native-image quality or writer-fence contracts.",
+  "reason": "Protected historical qualification evidence remains READY. The six-slot ChatGPT Watchdog Ring is now the durable reusable production native-image consumer: A-F are functionally equivalent eligible consumers at minutes :03/:13/:23/:33/:43/:53. Exact-request ownership, the shared Watchdog recovery/consumer lease, current production writer fencing, exact-byte persistence and professional image-quality gates prevent duplicate or degraded generation.",
   "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
   "host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
   "qualification_receipt_path": "_records/image-trials/2026-10-02-scheduled/recovered-six-image/qualification-receipt-complete-1.json",
@@ -14,19 +14,79 @@
   "saved_bytes_recovered": true,
   "zero_production_cost_verified": true,
   "reusable_consumer": {
-    "scheduler_kind": "chatgpt_automation",
-    "automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
-    "title": "Daily Brief Watchdog F",
+    "scheduler_kind": "chatgpt_watchdog_ring",
     "enabled": true,
-    "role": "scheduled_native_image_request_consumer",
-    "schedule": "BEGIN:VEVENT\nDTSTART:20261003T193557Z\nRRULE:FREQ=HOURLY;BYMINUTE=53;BYSECOND=0\nEND:VEVENT",
-    "timing_mode": "exact_schedule",
+    "role": "scheduled_native_image_request_consumer_ring",
+    "eligible_slots": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "special_slot": null,
+    "functional_equivalence_required": true,
+    "single_slot_binding": false,
+    "consume_queued_request_without_stale_wait": true,
+    "slots": [
+      {
+        "slot": "A",
+        "automation_id": "6ac15929a81c8191956080955da7eaad",
+        "title": "Daily Brief Watchdog A",
+        "minute": 3,
+        "enabled": true,
+        "native_image_eligible": true
+      },
+      {
+        "slot": "B",
+        "automation_id": "6ac15934c8c88191a33c94b91941d60d",
+        "title": "Daily Brief Watchdog B",
+        "minute": 13,
+        "enabled": true,
+        "native_image_eligible": true
+      },
+      {
+        "slot": "C",
+        "automation_id": "6ac1594249d081918df3145cca65dd91",
+        "title": "Daily Brief Watchdog C",
+        "minute": 23,
+        "enabled": true,
+        "native_image_eligible": true
+      },
+      {
+        "slot": "D",
+        "automation_id": "6ac1594e974881919639e0c40a2d9da8",
+        "title": "Daily Brief Watchdog D",
+        "minute": 33,
+        "enabled": true,
+        "native_image_eligible": true
+      },
+      {
+        "slot": "E",
+        "automation_id": "6ac1595c12fc8191b9a25b42d465692d",
+        "title": "Daily Brief Watchdog E",
+        "minute": 43,
+        "enabled": true,
+        "native_image_eligible": true
+      },
+      {
+        "slot": "F",
+        "automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+        "title": "Daily Brief Watchdog F",
+        "minute": 53,
+        "enabled": true,
+        "native_image_eligible": true
+      }
+    ],
     "observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/schedule-observation.json",
-    "observation_sha256": "31082e37b948c56155c55406d132243a2b433658305598bfea8c4d2e824ae7c9",
-    "observed_at": "2026-10-02T21:55:00.000Z",
+    "observation_sha256": "f7b4882074d7c43a600a5b970e39acd95f58d653d1d557a97b178ae883f50c4f",
+    "observed_at": "2026-10-03T21:33:36.027723Z",
     "current_fence_refresh_required": true,
     "request_generation_semantics": "scheduling_provenance_only",
     "stale_generation_mutation_rejected": true,
+    "exact_request_identity_required": true,
+    "shared_recovery_consumer_lease_required": true,
     "explicit_supervisor_handoff_required": true,
     "handoff_reason_suffix": "HANDOFF_TO_SUPERVISOR",
     "production_task_scope": [
@@ -57,16 +117,17 @@
   "notes": [
     "Protected registration plus bound evidence is the sole mutable source of truth for image-host capability state.",
     "The historical one-time qualification automation remains immutable evidence and is not the reusable production consumer.",
-    "The reusable hourly consumer completed the bounded synthetic Task 11 consumption with zero image, publication, Run 5, or production-content mutation.",
-    "The explicit Task 11 release automatically dispatched the same synthetic Supervisor execution; the terminal boundary caused publication, writer acquisition and persistent supervision to be skipped.",
-    "The pre-next-run rehearsal receipt is PASS. Authorization becomes live only when this registration and the matching receipt pass protected CI and merge to main.",
-    "Run 5 remains terminal and was not reopened, regenerated or modified.",
-    "The former standalone minute-48 Recovery schedule was repurposed in place as Watchdog Slot F at minute :53; no separate :48 recovery remains.",
-    "All six Watchdog members use the same generic recovery state machine; Slot F remains the durable registered reusable image-consumer binding.",
+    "The pre-next-run synthetic consumer proof remains historical evidence for the native-image execution path; current consumer eligibility is ring-wide.",
+    "All six Watchdog members A-F are functionally equivalent native-image consumers. No slot is special.",
+    "A newly queued unclaimed Task 11-16 request may be consumed by the next eligible Watchdog slot without waiting for a stale threshold or for Slot F.",
+    "Exactly one slot may own an image operation at a time under the shared Watchdog recovery/consumer lease plus the current production writer fence.",
+    "A later slot may take over the same exact request only after prior ownership is proven expired, released or dead and the request is still authoritative.",
+    "Accepted_locked images remain immutable and cannot be regenerated merely because another Watchdog wakes.",
+    "The old standalone minute-48 Recovery schedule remains absent.",
     "Current Watchdog prompts use the Fix-to-Progress directive: one failed repair attempt never ends actionable recovery; unresolved safe-boundary yield is a continuation handoff, not success."
   ],
   "watchdog_ring": {
-    "schema_version": "chatgpt-watchdog-ring-binding-v1",
+    "schema_version": "chatgpt-watchdog-ring-binding-v2",
     "enabled": true,
     "slot_minutes": [
       3,
@@ -77,15 +138,35 @@
       53
     ],
     "nominal_check_minutes": 10,
-    "bound_reusable_consumer_slot": "F",
+    "bound_reusable_consumer_slot": null,
+    "all_slots_functionally_equivalent": true,
+    "all_slots_native_image_eligible": true,
+    "native_image_task_scope": [
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "consume_queued_native_image_without_stale_wait": true,
+    "scheduled_image_opportunity_multiplier_vs_prior_single_slot": 6,
+    "prior_nominal_max_image_wait_minutes_lt": 60,
+    "current_nominal_max_image_wait_minutes_lt": 10,
+    "scheduler_delivery_is_real_time_guarantee": false,
     "recovery_lease_path_pattern": "_records/edition-execution/watchdog-leases/<execution-id>.json",
     "separate_writer_fence_required": true,
     "schedule_observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/schedule-observation.json",
-    "schedule_observation_sha256": "31082e37b948c56155c55406d132243a2b433658305598bfea8c4d2e824ae7c9",
+    "schedule_observation_sha256": "f7b4882074d7c43a600a5b970e39acd95f58d653d1d557a97b178ae883f50c4f",
     "fix_to_progress": true,
     "one_failed_attempt_may_end_recovery": false,
     "active_and_progressing_required_for_recovery_success": true,
     "safe_boundary_is_continuation_handoff": true,
     "blocked_external_requires_verified_external_condition": true
+  },
+  "migration_history": {
+    "prior_single_consumer_slot": "F",
+    "prior_single_consumer_role": "scheduled_native_image_request_consumer",
+    "reason_for_change": "Image Tasks 11-16 are the most failure-prone production stage. Removing the F-only binding gives every nominal ten-minute Watchdog opportunity authority to consume the exact queued image request while preserving one-owner and writer-fence safety."
   }
 }
