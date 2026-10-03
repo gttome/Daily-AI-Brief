@@ -46,9 +46,18 @@ function goodInput(){
         review_method:'saved_image_visual_inspection',saved_bytes_recovered:true,zero_production_cost_verified:true,
         receipt_path:'_records/test-host-proof.json',
         reusable_consumer:{
-          scheduler_kind:'chatgpt_automation',automation_id:'6abeb9a2b8a88191949dc420d5e10feb',
-          enabled:true,role:'scheduled_native_image_request_consumer',observation_verified:true,
-          current_fence_refresh_required:true,explicit_supervisor_handoff_required:true
+          scheduler_kind:'chatgpt_watchdog_ring',enabled:true,role:'scheduled_native_image_request_consumer_ring',
+          eligible_slots:['A','B','C','D','E','F'],special_slot:null,functional_equivalence_required:true,
+          single_slot_binding:false,consume_queued_request_without_stale_wait:true,observation_verified:true,
+          current_fence_refresh_required:true,explicit_supervisor_handoff_required:true,
+          slots:[
+            {slot:'A',automation_id:'6ac15929a81c8191956080955da7eaad',minute:3,enabled:true,native_image_eligible:true},
+            {slot:'B',automation_id:'6ac15934c8c88191a33c94b91941d60d',minute:13,enabled:true,native_image_eligible:true},
+            {slot:'C',automation_id:'6ac1594249d081918df3145cca65dd91',minute:23,enabled:true,native_image_eligible:true},
+            {slot:'D',automation_id:'6ac1594e974881919639e0c40a2d9da8',minute:33,enabled:true,native_image_eligible:true},
+            {slot:'E',automation_id:'6ac1595c12fc8191b9a25b42d465692d',minute:43,enabled:true,native_image_eligible:true},
+            {slot:'F',automation_id:'6abeb9a2b8a88191949dc420d5e10feb',minute:53,enabled:true,native_image_eligible:true}
+          ]
         }
       }
     },
@@ -208,16 +217,29 @@ test('protected registration is the sole mutable host-state source and includes 
     status:'READY',host_id:'chatgpt-automation:6abfb619185c819194646f77c3b314a4',
     qualification_receipt_path:'_records/q.json',saved_bytes_recovered:true,zero_production_cost_verified:true,
     reusable_consumer:{
-      scheduler_kind:'chatgpt_automation',automation_id:'6abeb9a2b8a88191949dc420d5e10feb',
-      enabled:true,role:'scheduled_native_image_request_consumer',
+      scheduler_kind:'chatgpt_watchdog_ring',enabled:true,role:'scheduled_native_image_request_consumer_ring',
+      eligible_slots:['A','B','C','D','E','F'],special_slot:null,functional_equivalence_required:true,
+      single_slot_binding:false,consume_queued_request_without_stale_wait:true,
       observation_path:'_records/c.json',observation_sha256:'b'.repeat(64),
-      current_fence_refresh_required:true,explicit_supervisor_handoff_required:true
+      current_fence_refresh_required:true,explicit_supervisor_handoff_required:true,
+      slots:[
+        {slot:'A',automation_id:'6ac15929a81c8191956080955da7eaad',title:'Daily Brief Watchdog A',minute:3,enabled:true,native_image_eligible:true},
+        {slot:'B',automation_id:'6ac15934c8c88191a33c94b91941d60d',title:'Daily Brief Watchdog B',minute:13,enabled:true,native_image_eligible:true},
+        {slot:'C',automation_id:'6ac1594249d081918df3145cca65dd91',title:'Daily Brief Watchdog C',minute:23,enabled:true,native_image_eligible:true},
+        {slot:'D',automation_id:'6ac1594e974881919639e0c40a2d9da8',title:'Daily Brief Watchdog D',minute:33,enabled:true,native_image_eligible:true},
+        {slot:'E',automation_id:'6ac1595c12fc8191b9a25b42d465692d',title:'Daily Brief Watchdog E',minute:43,enabled:true,native_image_eligible:true},
+        {slot:'F',automation_id:'6abeb9a2b8a88191949dc420d5e10feb',title:'Daily Brief Watchdog F',minute:53,enabled:true,native_image_eligible:true}
+      ]
     }
   };
   const admission=deriveImageHostAdmission({registration,qualification_verified:true,consumer_observation_verified:true});
   assert.equal(admission.source_of_truth,'protected_host_registration');
   assert.equal(admission.registration_status,'READY');
   assert.equal(admission.qualification_verified,true);
-  assert.equal(admission.reusable_consumer.automation_id,'6abeb9a2b8a88191949dc420d5e10feb');
+  assert.equal(admission.reusable_consumer.scheduler_kind,'chatgpt_watchdog_ring');
+  assert.deepEqual(admission.reusable_consumer.eligible_slots,['A','B','C','D','E','F']);
+  assert.equal(admission.reusable_consumer.special_slot,null);
+  assert.equal(admission.reusable_consumer.slots.length,6);
+  assert.ok(admission.reusable_consumer.slots.every(x=>x.enabled&&x.native_image_eligible));
   assert.equal(admission.reusable_consumer.observation_verified,true);
 });
