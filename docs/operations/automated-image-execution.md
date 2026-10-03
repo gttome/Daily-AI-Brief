@@ -120,3 +120,12 @@ Q24's six-story order is m04, m03, m05, m06, m01, m09. Preserve its original cut
 ## Verification obligations
 
 Test identical production/qualification requests; rejection of manual steps and false isolation claims; sequential generation; wrong-subject/factual/quality rejection; four-attempt exhaustion; exact-byte read-back; accepted checkpoint reuse; changed-byte/request rejection; missing native capability; and exclusion of fixtures from live approval. Preserve full historical benchmark regression tests. Release only through protected pull-request CI.
+
+## Current scheduled-consumer binding — Watchdog Ring
+
+For production Tasks 11–16, the reusable scheduled native-image consumer is the **six-slot ChatGPT Watchdog Ring**, not one designated slot. A–F are functionally equivalent eligible consumers at :03/:13/:23/:33/:43/:53.
+
+The next eligible slot may consume the exact newest authoritative queued `native_chatgpt` request immediately when it is unclaimed; it does not wait for a stale threshold or a special F invocation. Exactly one slot may own the operation through the shared Watchdog recovery/consumer lease plus current production writer fencing. Other slots yield while real image work is progressing. A later slot may take over only after prior ownership is proven expired/released/dead and the same exact request remains authoritative.
+
+This improves scheduled pickup coverage for the most problematic production stage from one dedicated opportunity per hour to six nominal opportunities per hour. It does not weaken the sealed-story, professional-quality, exact-byte, saved-Git review, bounded-attempt or accepted_locked contracts, and the nominal ten-minute spacing is not a hard scheduler SLA.
+
