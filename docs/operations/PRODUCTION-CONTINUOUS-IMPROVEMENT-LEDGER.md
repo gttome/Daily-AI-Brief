@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:42f5df4e69f678cf83bc42adb7c59137705b4f927f0c89fda7d58eb76d9a1528`
+Ledger digest: `sha256:8b46d898f0a8d1fc82823d1fe97920fc7d869fa78e1591fc15a1cddcb6584d48`
 
-Problems: 44 · Events: 61
+Problems: 49 · Events: 82
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -352,19 +352,19 @@ Problems: 44 · Events: 61
 
 - **Status:** permanently_fixed
 - **First observed run:** reliable-edition-20261001-run4
-- **Task(s):** 15
-- **Symptom:** m08 attempts 2 and 3 generated Daily AI Brief/Supervisor dashboard architecture instead of the sealed Business Skill subject; fresh-context attempt 4 restored subject_match=PASS.
-- **Root cause:** The image request was executed with unrelated orchestration/dashboard context available to the generation worker, allowing that context to displace the sealed single-story subject. Fresh single-story isolation removed the repeated subject mismatch.
+- **Task(s):** 15, 11
+- **Symptom:** m01 attempts 1-3 all ignored the sealed MAI-Transcribe-2-Streaming mechanism and rendered unrelated general-AI visuals; no invalid pixels were persisted.
+- **Root cause:** The Supervisor recovery decision counted context-mismatch attempts like ordinary candidate-quality rejections, allowing alternate recovery inside the same execution context instead of immediately invoking the engineering-repair epoch.
 - **Operational impact:** Two bounded image attempts were spent on the wrong subject and Task 15 was delayed.
 - **Timing impact:** unknown / not safely inferable
 - **Attempted fixes:** Run attempt 4 from a fresh context containing only the sealed Business Skill image specification.
-- **Actual fix:** Require a fresh single-story image worker after a context/subject mismatch, using only the sealed image specification and explicitly excluding orchestration/dashboard context.
-- **Fix outcome:** Attempt 4 restored subject_match=PASS; its separate human-icon and transport defects are handled by the engineering-repair epoch.
-- **Permanent implementation:** docs/operations/task-recovery-contracts.json, _generator/lib/repository-repair-consumer.mjs
-- **Regression tests:** _generator/test/repository-repair-consumer.test.mjs
-- **Production invariants:** fresh_single_story_image_worker_after_context_mismatch
+- **Actual fix:** Normalize targeted_next_action as recoverable image evidence; detect wrong-subject, sealed-prompt displacement and execution-context contamination; force the image engineering-repair epoch immediately; document that a fresh one-story worker is the only permitted post-repair generator.
+- **Fix outcome:** Same-context retries are now structurally bypassed after the first context mismatch. Run 7 Task 11 remains the same blocked candidate and completed Tasks 00-10 are preserved.
+- **Permanent implementation:** docs/operations/task-recovery-contracts.json, _generator/lib/repository-repair-consumer.mjs, _generator/lib/run-supervisor.mjs, docs/operations/LIVING-SYSTEM-OPERATIONS.md
+- **Regression tests:** _generator/test/repository-repair-consumer.test.mjs, _generator/test/run-supervisor.test.mjs
+- **Production invariants:** fresh_single_story_image_worker_after_context_mismatch, context_mismatch_bypasses_same_context_retry, same_execution_continues_without_rework
 - **Recurrences:** none recorded
-- **Future validation:** Task 00 must prove fresh_single_story_image_worker_after_context_mismatch
+- **Future validation:** Task 00 must prove fresh_single_story_image_worker_after_context_mismatch | A future context-mismatch attempt must produce engineering_repair on the next Supervisor decision even when recovery_attempts is below retry_limit.
 
 ## DAB-OPS-20261001-018 — Repository engineering-repair request was queued without any active consumer
 
@@ -550,19 +550,19 @@ Problems: 44 · Events: 61
 
 - **Status:** permanently_fixed
 - **First observed run:** scheduled-image-host-qualification-20261002
-- **Task(s):** 00
+- **Task(s):** 00, 11
 - **Symptom:** The Run 5 controller and recovery keeper were disabled after the scheduled image host was found on a prohibited Work/Codex surface.
 - **Root cause:** Run readiness incorrectly treated unattended image-host qualification as a global Task 00 start prerequisite instead of a route-specific prerequisite for image work and publication.
 - **Operational impact:** Run 5 remained unallocated and all otherwise safe non-image production work stopped for hours.
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Re-enabled the existing daily controller and keeper, requested an immediate invocation, and inspected its actual GitHub capability receipt. | Repeated the full bootstrap from current protected main, read all 42 ledger events, reconciled Run4 completion evidence and inspected a fresh automations.peek snapshot. The controller now reports a real prior last_run_time. | Separate run-start readiness from image-host readiness, preserve the existing cost and quality gates, and encode liveness behavior in code and operating contracts.
-- **Actual fix:** Task 00 can now PASS with start_scope=non_image_production while image_tasks_authorized=false and publication_authorized=false. The CLI records missing host proof as a deferred blocker rather than a global failure. Controller/keeper liveness is mandatory during route-specific blockers.
-- **Fix outcome:** Run allocation and Tasks 01-10 may proceed without violating the no-Work/no-Codex boundary. Images and publication remain fail-closed until qualified host evidence exists.
-- **Permanent implementation:** _records/image-trials/2026-10-02-scheduled/bootstrap-receipt-2.json, _records/image-trials/2026-10-02-scheduled/scheduler-observation-2.json, _records/image-trials/2026-10-02-scheduled/capability-probe-2.json, _records/image-trials/2026-10-02-scheduled/result-2.json, _records/image-trials/2026-10-02-scheduled/schedule-pause-2.json, _generator/lib/run-readiness.mjs, _tools/run-readiness.mjs, docs/operations/run-learning-readiness-contract.json, docs/operations/DAILY-UNATTENDED-STARTUP.md, docs/operations/LIVING-SYSTEM-OPERATIONS.md, docs/operations/unattended-image-host.json
-- **Regression tests:** _generator/test/run-readiness.test.mjs, _generator/test/run5-unattended.test.mjs
-- **Production invariants:** schedule_configuration_is_not_runtime_mode_proof, unchanged_prohibited_execution_must_not_repeat, blocked_is_not_progress, route_specific_blocker_never_disables_global_liveness, image_host_required_before_image_tasks_and_publication_not_run_allocation, cost_boundary_remains_fail_closed, blocked_route_rechecked_without_repeating_prohibited_execution
+- **Attempted fixes:** Re-enabled the existing daily controller and keeper, requested an immediate invocation, and inspected its actual GitHub capability receipt. | Repeated the full bootstrap from current protected main, read all 42 ledger events, reconciled Run4 completion evidence and inspected a fresh automations.peek snapshot. The controller now reports a real prior last_run_time. | Separate run-start readiness from image-host readiness, preserve the existing cost and quality gates, and encode liveness behavior in code and operating contracts. | Reuse an existing enabled production scheduler rather than create another persistent executor, bind its live observation durably, and derive Task 00 admission from protected host registration. | Bind the existing enabled Recovery scheduler as the reusable consumer and prove actual scheduled consumption rather than queueing alone.
+- **Actual fix:** Automation 6abeb9a2b8a88191949dc420d5e10feb consumed the exact synthetic Task 11 request, rejected request generation 1 as mutation authority, refreshed live generation 2 to task-specific generation 3, preserved completed Task 00 and released explicitly to Supervisor.
+- **Fix outcome:** PASS; generation_calls=0, image_edit_calls=0, publication_mutations=0, run5_mutations=0, duplicate_execution_created=false.
+- **Permanent implementation:** _records/image-trials/2026-10-02-scheduled/bootstrap-receipt-2.json, _records/image-trials/2026-10-02-scheduled/scheduler-observation-2.json, _records/image-trials/2026-10-02-scheduled/capability-probe-2.json, _records/image-trials/2026-10-02-scheduled/result-2.json, _records/image-trials/2026-10-02-scheduled/schedule-pause-2.json, _generator/lib/run-readiness.mjs, _tools/run-readiness.mjs, docs/operations/run-learning-readiness-contract.json, docs/operations/DAILY-UNATTENDED-STARTUP.md, docs/operations/LIVING-SYSTEM-OPERATIONS.md, docs/operations/unattended-image-host.json, _tools/native-image-worker.py
+- **Regression tests:** _generator/test/run-readiness.test.mjs, _generator/test/run5-unattended.test.mjs, _generator/test/scheduled-image-routing.test.mjs, _generator/test/pre-next-run-rehearsal.test.mjs
+- **Production invariants:** schedule_configuration_is_not_runtime_mode_proof, unchanged_prohibited_execution_must_not_repeat, blocked_is_not_progress, route_specific_blocker_never_disables_global_liveness, image_host_required_before_image_tasks_and_publication_not_run_allocation, cost_boundary_remains_fail_closed, blocked_route_rechecked_without_repeating_prohibited_execution, protected_host_registration_is_live_image_readiness_source, qualification_evidence_and_reusable_consumption_are_separate_bindings, ready_host_requires_enabled_reusable_consumer, consumerless_awaiting_scheduled_executor_is_prohibited, next_production_allocation_requires_rehearsal_pass, ready_image_route_requires_enabled_reusable_consumer, scheduled_request_generation_is_provenance_only, scheduled_consumer_refreshes_current_fence_at_invocation, synthetic_rehearsal_never_generates_or_edits_images
 - **Recurrences:** none recorded
-- **Future validation:** Use an actually supported ordinary non-Work/non-Codex scheduled image host within existing cost policy before re-enabling production. | Do not retry unchanged prohibited scheduled execution or treat scheduling instructions as a runtime-mode selector. | A post-run scheduler observation can resolve last_run_time timing, but cannot remove the runtime-policy blocker. | Resume only after a supported ordinary non-Work/non-Codex scheduled image host exists within the zero-paid-service boundary. | Reuse the isolated qualification branch and its valid checkpoints; do not create another controller or repeat Run4. | Confirm Run 5 allocates and completes non-image Tasks 01-10 while image host remains blocked. | Confirm image tasks and publication cannot proceed until qualified host evidence passes. | Confirm daily controller and hourly keeper remain enabled during the blocked route.
+- **Future validation:** Use an actually supported ordinary non-Work/non-Codex scheduled image host within existing cost policy before re-enabling production. | Do not retry unchanged prohibited scheduled execution or treat scheduling instructions as a runtime-mode selector. | A post-run scheduler observation can resolve last_run_time timing, but cannot remove the runtime-policy blocker. | Resume only after a supported ordinary non-Work/non-Codex scheduled image host exists within the zero-paid-service boundary. | Reuse the isolated qualification branch and its valid checkpoints; do not create another controller or repeat Run4. | Confirm Run 5 allocates and completes non-image Tasks 01-10 while image host remains blocked. | Confirm image tasks and publication cannot proceed until qualified host evidence passes. | Confirm daily controller and hourly keeper remain enabled during the blocked route. | Verify the bounded synthetic Task 11 request is consumed by the enabled admitted scheduler without generation. | Verify Task 00 derives one coherent decision from protected registration and rehearsal evidence. | Confirm the first real Task 11-16 request is consumed by the same registered scheduler without consumerless waiting.
 
 ## DAB-OPS-20261002-011 — A same-owner recovery heartbeat shortened the Supervisor's six-hour writer fence to thirty minutes, causing the healthy persistent loop to fail with WRITER_LEASE_EXPIRED.
 
@@ -602,39 +602,39 @@ Problems: 44 · Events: 61
 
 ## DAB-OPS-20261002-013 — A recoverable image failure was recorded in fields the Supervisor did not consume, so the live loop kept treating Task 11 as externally blocked.
 
-- **Status:** mitigated
+- **Status:** permanently_fixed
 - **First observed run:** reliable-edition-20261002-run5
 - **Task(s):** 11
 - **Symptom:** The 14:03:56 Task 11 blocker refresh declared recoverable=true and named a recovery action, but used state=Blocked rather than the canonical to=Blocked transition shape. The m01 attempt-1 receipt used targeted_next_action instead of recovery_action. The Supervisor therefore continued reading the older external blocker and did not dispatch attempt 2.
 - **Root cause:** The scheduled image worker and the Run Supervisor had drifted to two semantically similar but mechanically incompatible recovery-evidence schemas.
 - **Operational impact:** The persistent loop remained alive but could not convert an actually recoverable Task 11 failure into work. Owner/status intervention was required to expose and correct the mismatch.
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Diagnose the exact parser/selector expectations, require the next scheduled worker to append a normal to=Blocked recoverable transition, and require image receipts to expose a canonical recovery action.
-- **Actual fix:** Operational recovery instructions now require canonical machine-readable transition fields and a canonical recovery action. Permanent code/schema normalization remains required so semantically equivalent recovery evidence cannot strand a future run.
-- **Fix outcome:** The defect is understood and the next worker was launched from explicit actionable state rather than the stale external blocker. Repository-level normalization/regression coverage is still pending.
-- **Permanent implementation:** docs/operations/run-learning-readiness-contract.json, docs/operations/LIVING-SYSTEM-OPERATIONS.md
-- **Regression tests:** none
-- **Production invariants:** recoverable_blocker_must_be_machine_readable, task_transition_uses_canonical_to_field, image_recovery_exposes_canonical_recovery_action, semantic_recovery_schema_drift_must_not_strand_supervision
+- **Attempted fixes:** Diagnose the exact parser/selector expectations, require the next scheduled worker to append a normal to=Blocked recoverable transition, and require image receipts to expose a canonical recovery action. | Normalize only explicitly equivalent legacy aliases while retaining strict actionable requirements.
+- **Actual fix:** Supervisor event loading normalizes state=Blocked to to=Blocked and targeted_next_action to recovery_action, including nested blocker aliases. A blocker is actionable only with exact task identity, valid timestamp, Blocked state, recoverable=true, external_blocker not true and non-empty recovery_action.
+- **Fix outcome:** Semantically equivalent recoverable worker evidence can no longer strand supervision, while ambiguous or externally blocked records remain non-actionable.
+- **Permanent implementation:** docs/operations/run-learning-readiness-contract.json, docs/operations/LIVING-SYSTEM-OPERATIONS.md, _generator/lib/run-supervisor.mjs, _tools/run-supervisor.mjs
+- **Regression tests:** _generator/test/run-supervisor.test.mjs
+- **Production invariants:** recoverable_blocker_must_be_machine_readable, task_transition_uses_canonical_to_field, image_recovery_exposes_canonical_recovery_action, semantic_recovery_schema_drift_must_not_strand_supervision, safe_alias_normalization_does_not_infer_recoverability, external_blocker_never_normalizes_to_actionable
 - **Recurrences:** none recorded
-- **Future validation:** Add regression coverage proving a scheduled-worker recoverable image receipt is recognized by the Supervisor without owner intervention. | Fail readiness or normalize safely when a recoverable blocker uses a noncanonical shape.
+- **Future validation:** Add regression coverage proving a scheduled-worker recoverable image receipt is recognized by the Supervisor without owner intervention. | Fail readiness or normalize safely when a recoverable blocker uses a noncanonical shape. | Exercise one real recoverable image rejection and confirm the Supervisor dispatches the exact bounded next action without owner intervention.
 
 ## DAB-OPS-20261002-014 — A scheduled image retry was bound to writer generation 5 after the restarted Supervisor had already acquired generation 6.
 
-- **Status:** mitigated
+- **Status:** permanently_fixed
 - **First observed run:** reliable-edition-20261002-run5
 - **Task(s):** 11
 - **Symptom:** The first dedicated m01 retry inherited generation-5 authority from its schedule prompt while GitHub Supervisor run 37017573659 had acquired generation 6 at 14:06:59Z. The image worker could not safely mutate the Run 5 branch under the stale fence.
 - **Root cause:** The external task prompt captured mutable writer-generation state at scheduling time instead of refreshing durable state and acquiring current fenced authority at execution time. There was no explicit task-specific handoff protocol.
 - **Operational impact:** The retry invocation completed without advancing Task 11, creating additional delay while preserving one-writer safety.
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Change the scheduled image worker to refresh the branch and lease first, acquire the next writer generation for the same execution, treat Supervisor bookkeeping as non-substantive progress, and release/expire the task-specific lease at a durable boundary.
-- **Actual fix:** The subsequent m01 worker acquired generation 8 at 14:30:53Z, generated and reviewed attempt 2, persisted its immutable rejection receipt, and expired its lease at the terminal blocked boundary.
-- **Fix outcome:** The operational handoff worked for attempt 2 and preserved single-writer safety. The rule is now documented in the readiness/living contracts; repository-level automated handoff coverage remains a next hardening item.
-- **Permanent implementation:** docs/operations/run-learning-readiness-contract.json, docs/operations/LIVING-SYSTEM-OPERATIONS.md
-- **Regression tests:** none
-- **Production invariants:** scheduled_worker_refreshes_fence_at_execution, stale_generation_never_mutates_run, task_specific_writer_handoff_is_explicit, worker_releases_or_expires_lease_at_durable_boundary
+- **Attempted fixes:** Change the scheduled image worker to refresh the branch and lease first, acquire the next writer generation for the same execution, treat Supervisor bookkeeping as non-substantive progress, and release/expire the task-specific lease at a durable boundary. | Move writer-generation authority from schedule creation time to invocation time and encode explicit task-specific release.
+- **Actual fix:** Native-image requests mark embedded writer_generation as provenance. The scheduled consumer must refresh the current durable lease, acquire task-specific authority for the same execution, reject stale generation for mutation, and release only from a durable Done/Blocked boundary with released=true, released_at, immediate expiry and task-specific HANDOFF_TO_SUPERVISOR reason.
+- **Fix outcome:** One-writer safety is preserved without letting scheduling delay invalidate the worker. Stale scheduled generations cannot mutate the run.
+- **Permanent implementation:** docs/operations/run-learning-readiness-contract.json, docs/operations/LIVING-SYSTEM-OPERATIONS.md, _generator/lib/run-supervisor.mjs, _tools/run-supervisor.mjs, docs/operations/DAILY-UNATTENDED-STARTUP.md
+- **Regression tests:** _generator/test/run-supervisor.test.mjs
+- **Production invariants:** scheduled_worker_refreshes_fence_at_execution, stale_generation_never_mutates_run, task_specific_writer_handoff_is_explicit, worker_releases_or_expires_lease_at_durable_boundary, request_writer_generation_is_provenance_only
 - **Recurrences:** none recorded
-- **Future validation:** Prove every scheduled native-image worker acquires current authority at invocation rather than embedding a generation in its schedule. | Add a regression test for Supervisor-to-native-worker handoff and automatic Supervisor recovery after worker release.
+- **Future validation:** Prove every scheduled native-image worker acquires current authority at invocation rather than embedding a generation in its schedule. | Add a regression test for Supervisor-to-native-worker handoff and automatic Supervisor recovery after worker release. | Synthetic rehearsal must prove a stale embedded generation is rejected as authority while a fresh generation is acquired at invocation.
 
 ## DAB-OPS-20261002-015 — Native image generation violated the exact visible-text allowlist in two different ways despite otherwise professional m01 results.
 
@@ -658,19 +658,19 @@ Problems: 44 · Events: 61
 
 - **Status:** mitigated
 - **First observed run:** reliable-edition-20261002-run5
-- **Task(s):** 17
+- **Task(s):** 17, 11, 23
 - **Symptom:** GitHub Supervisor run 37019747940 exited when the scheduled ChatGPT worker replaced writer generation 7 with generation 8. After Tasks 11-16 completed, generation 9 was explicitly released with TASKS_11_THROUGH_16_DONE_HANDOFF_TO_SUPERVISOR, yet Task 17 remained Backlog and no Supervisor was running.
-- **Root cause:** Writer-fence transfer was treated as an action failure, the five-minute cron watchdog was not a sufficiently reliable handoff mechanism, and there was no event-driven consumer of an explicit worker release.
+- **Root cause:** The earlier repository-explicit handoff repair covered run-supervisor dispatch but no direct regression test protected the separate frozen-publication dispatcher. Its publish-candidate and existing-merge delta-validation branches both omitted -R repo.
 - **Operational impact:** The run preserved all accepted images and completed evidence but stalled at the Task 16 to Task 17 boundary until status inspection.
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Convert fence transfer into a graceful Supervisor yield, immediately restart failed/cancelled Supervisors via workflow_run, add an explicit writer-release handoff workflow for reliable-edition branches, and refresh the protected active-run pointer to Task 17.
-- **Actual fix:** The repair branch adds graceful fence-yield behavior, a failure/cancellation restart trigger, a writer-lease HANDOFF_TO_SUPERVISOR trigger, and a current Run 5 pointer refresh. Protected CI and same-run restart are required before permanent-fix status.
-- **Fix outcome:** Implementation staged for protected CI; no completed Run 5 task or accepted image is modified.
-- **Permanent implementation:** .github/workflows/run-supervisor.yml, .github/workflows/run-supervisor-watchdog.yml, .github/workflows/run-supervisor-handoff.yml, data/operations/active-production-run.json
-- **Regression tests:** protected deterministic CI workflow syntax/contracts, same-run restart must acquire a fresh writer generation and advance from Task 17 without touching Tasks 00-16
-- **Production invariants:** writer_fence_transfer_is_a_handoff_not_a_production_failure, explicit_worker_release_resumes_same_execution, completed_tasks_are_never_redone_during_handoff, cron_is_not_the_only_run_liveness_mechanism, active_pointer_matches_durable_run_boundary
+- **Attempted fixes:** Convert fence transfer into a graceful Supervisor yield, immediately restart failed/cancelled Supervisors via workflow_run, add an explicit writer-release handoff workflow for reliable-edition branches, and refresh the protected active-run pointer to Task 17. | Tighten the event-driven handoff workflow so only an exact released Task 11-16 lease for the active same execution can resume supervision. | Exercise the real event-driven writer-handoff workflow from an explicit synthetic Task 11 release and require same-execution Supervisor dispatch with no rework.
+- **Actual fix:** Pass -R repo on both workflow dispatches and add direct regression coverage that fails if either dispatch returns to repository inference.
+- **Fix outcome:** Implementation prepared for protected CI; Run 7 remains frozen at the exact candidate SHA, Tasks 00-22 and all six accepted_locked images remain unchanged, and publication is not bypassed.
+- **Permanent implementation:** .github/workflows/run-supervisor.yml, .github/workflows/run-supervisor-watchdog.yml, .github/workflows/run-supervisor-handoff.yml, data/operations/active-production-run.json, _generator/lib/run-supervisor.mjs, _tools/run-supervisor.mjs, _generator/lib/pre-next-run-rehearsal.mjs, _records/hardening/pre-next-run-five-change-2026-10-02/synthetic-handoff-result.json, _tools/dispatch-frozen-publication.mjs
+- **Regression tests:** protected deterministic CI workflow syntax/contracts, same-run restart must acquire a fresh writer generation and advance from Task 17 without touching Tasks 00-16, _generator/test/run-supervisor.test.mjs, _generator/test/pre-next-run-rehearsal.test.mjs, _generator/test/dispatch-frozen-publication.test.mjs
+- **Production invariants:** writer_fence_transfer_is_a_handoff_not_a_production_failure, explicit_worker_release_resumes_same_execution, completed_tasks_are_never_redone_during_handoff, cron_is_not_the_only_run_liveness_mechanism, active_pointer_matches_durable_run_boundary, ambiguous_release_never_dispatches_supervisor, handoff_dispatch_is_repository_explicit, completed_tasks_are_not_redone, terminal_rehearsal_supervisor_is_noop, nonproduction_rehearsal_never_allocates_production, all_gh_workflow_dispatches_from_workspace_root_are_repository_explicit, frozen_candidate_resumes_same_execution, publication_requires_protected_executor, accepted_images_are_immutable
 - **Recurrences:** none recorded
-- **Future validation:** Verify merge triggers the existing Run 5 Supervisor through the refreshed active-run pointer. | Verify the same execution acquires a fresh writer generation after released generation 9. | Verify Task 17 is the next task and Tasks 00-16 remain Done. | On the next native-image worker release, verify the writer-handoff workflow resumes the Supervisor without owner/status intervention.
+- **Future validation:** Verify merge triggers the existing Run 5 Supervisor through the refreshed active-run pointer. | Verify the same execution acquires a fresh writer generation after released generation 9. | Verify Task 17 is the next task and Tasks 00-16 remain Done. | On the next native-image worker release, verify the writer-handoff workflow resumes the Supervisor without owner/status intervention. | Bounded rehearsal must prove worker release advances the same synthetic Supervisor execution and preserves already-completed synthetic tasks. | Confirm a real Task 11-16 release dispatches the same production execution and continues with the first incomplete dependent task. | After protected merge, confirm the same Run 7 Supervisor dispatches publish-candidate.yml and the exact frozen candidate advances through protected publication.
 
 ## DAB-OPS-20261002-017 — Recovery-only scheduled image-host qualification passed after binding exact completed scheduler evidence and exact PNG-header metadata corrections.
 
@@ -708,52 +708,65 @@ Problems: 44 · Events: 61
 - **Recurrences:** none recorded
 - **Future validation:** Add or verify a merge-time authorization gate independent of earlier CI. | Reconcile this run from durable evidence without repeating Tasks 00-22. | Exercise both autonomous promotion paths with READY/authorized and blocked fixtures. | Reject merge if host status, qualification receipt, active-run identity, or authorization changes after candidate CI. | Bind closure to the validated publication event rather than the most recent main commit PR.
 
+## DAB-OPS-20261002-019 — Canonicalized the protected terminal pointer after Run 5 closeout exposed stale pre-qualification task and authorization fields.
 
-## DAB-OPS-20261002-019 — Terminal closeout retained stale pre-qualification pointer fields
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261002-run5
+- **Task(s):** 29
+- **Symptom:** Run 5 was durably PUBLIC_CLOSED with Task 29 PASS, but data/operations/active-production-run.json simultaneously retained Task 18 Blocked, non_image_production scope, false image/publication authorization, and the obsolete missing-originals blocker.
+- **Root cause:** buildProductionRunCloseout spread the pre-closeout pointer and changed only active, terminal, timestamp and note. It did not canonicalize the final task, state, authorization scope, or cleared blocker from the live-verified completion evidence.
+- **Operational impact:** The active=false and terminal=true fence prevented duplicate production, but controllers, recovery reports, and future readiness readers could receive internally contradictory terminal state.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Verify PUBLIC_CLOSED, completion, lifecycle, writer release and Task 29 certification first; preserve all content, images and publication identities; then correct only the terminal pointer projection and its generator.
+- **Actual fix:** The closeout generator now projects full_production, both authorizations true, no deferred blocker, current_task 29 and current_task_state Done whenever exact live publication evidence reaches protected terminal closeout. The current protected pointer is reconciled to the same canonical state.
+- **Fix outcome:** The terminal pointer and future generated closeouts are internally consistent without changing the October 2 candidate, six accepted image bytes, completion identity, original Run 4 production SHA, or public reader content.
+- **Permanent implementation:** _generator/lib/production-run-closeout.mjs, data/operations/active-production-run.json
+- **Regression tests:** _generator/test/production-closeout-terminal-pointer.test.mjs
+- **Production invariants:** terminal_pointer_matches_public_closed_and_task29, terminal_closeout_clears_route_blockers, live_verified_closeout_preserves_final_authorization_state, terminal_pointer_repair_never_changes_reader_or_image_bytes
+- **Recurrences:** none recorded
+- **Future validation:** Verify the next protected closeout writes Task 29 Done and no blocker without a follow-up repair. | Confirm future admission allocates a new run from terminal state rather than reusing the closed Run 5 pointer.
 
-- **Run / task:** `reliable-edition-20261002-run5` / Task 29
-- **Status:** permanently fixed
-- **Observed:** 2026-10-02T19:08:11.489Z
-- **Symptom:** Run 5 was PUBLIC CLOSED with Task 29 PASS, but the terminal active pointer still reported Task 18 Blocked, `non_image_production`, false image/publication authorization, and an obsolete qualification blocker.
-- **Root cause:** The protected closeout generator spread the earlier pointer and changed only `active`, `terminal`, timestamp and note. It did not canonicalize the final task, authorization state, or cleared blocker from live-verified completion evidence.
-- **Fix:** Project terminal closeout as Task 29 Done, `full_production`, both authorizations true, and no deferred blocker; reconcile the current pointer identically.
-- **Regression protection:** `_generator/test/production-closeout-terminal-pointer.test.mjs`.
-- **Preservation:** No story, image, candidate, completion identity, Run 4 production SHA, or public reader byte is changed.
+## DAB-OPS-20261002-020 — Removed a duplicate inline manifest binding that made the protected publication-promotion workflow fail before route eligibility checks.
 
-## DAB-OPS-20261002-020 — Promotion workflow redeclared its manifest binding
-
-- **Run / task:** `reliable-edition-20261002-run5` / Task 29
-- **Status:** permanently fixed
-- **Observed:** 2026-10-02T19:13:17.963Z
-- **Symptom:** Post-editorial deterministic publication run 37052666870 failed before eligibility checks with `SyntaxError: Identifier 'manifest' has already been declared`.
-- **Root cause:** The merge-time authorization guard added a pre-merge manifest binding to a script that already declared `manifest` after merge.
-- **Fix:** Keep the authorization binding as `manifest`; rename the post-merge dispatch binding to `mergedManifest` and test both references.
-- **Regression protection:** `_generator/test/publication-identity-binding.test.mjs`.
-- **Preservation:** Run 5 remains PUBLIC CLOSED; no reader, candidate, image, lifecycle, or deployment evidence is changed.
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261002-run5
+- **Task(s):** 29
+- **Symptom:** Post-editorial deterministic publication run 37052666870 failed with SyntaxError: Identifier 'manifest' has already been declared.
+- **Root cause:** The merge-time authorization repair introduced a pre-merge manifest binding in an existing github-script block that already declared manifest again after merge dispatch.
+- **Operational impact:** Run 5 remained safely PUBLIC CLOSED, but the future autonomous promotion route could not execute any eligibility or no-op decision because the inline script failed to compile.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Inspect the exact failed job log, preserve the terminal Run 5 state, and change only the post-merge binding name plus its dispatch reference.
+- **Actual fix:** The post-merge manifest now uses mergedManifest while the pre-merge authorization manifest remains unchanged, eliminating the duplicate declaration without weakening either authorization gate.
+- **Fix outcome:** The publication promotion script is syntactically unambiguous and protected by a regression assertion; no closed-run, reader, candidate, image, or deployment evidence changed.
+- **Permanent implementation:** .github/workflows/post-editorial-kernel.yml
+- **Regression tests:** _generator/test/publication-identity-binding.test.mjs
+- **Production invariants:** promotion_script_must_compile_before_eligibility_checks, premerge_authorization_and_postmerge_dispatch_use_distinct_bindings, route_specific_workflow_failure_never_reopens_public_closed_run
+- **Recurrences:** none recorded
+- **Future validation:** Exercise the next labeled publication candidate through both merge-time authorization paths. | Verify a non-publication CI head exits cleanly without a syntax or policy failure.
 
 ## DAB-OPS-20261002-021 — Kanban presentation must use Backlog, WIP and Done in that left-to-right order, with task-level durations and total Brief elapsed time.
 
-- **Status:** mitigated
+- **Status:** permanently_fixed
 - **First observed run:** unknown
 - **Task(s):** 22
 - **Symptom:** A Run 5 Kanban used reversed/redundant workflow columns, included a separate Current column, replaced some durations with state words, and omitted total Brief elapsed time.
 - **Root cause:** The Kanban projection contract defined event-derived state but did not define a canonical visual column order or mandatory timing presentation.
 - **Operational impact:** The board was harder to scan and could not reliably support bottleneck or end-to-end speed comparison across runs.
 - **Timing impact:** 0 seconds
-- **Attempted fixes:** Record the owner correction as durable learning without regenerating the already-completed Run 5 board.
-- **Actual fix:** The canonical readiness and living-system contracts now require exactly Backlog, WIP, Done; map the active task to WIP; require a duration or explicit unavailable marker on every task; require total Brief elapsed time; and derive timing from append-only transition evidence.
-- **Fix outcome:** The reporting contract is durable for future boards. Renderer/report regression enforcement remains a follow-up hardening item.
-- **Permanent implementation:** docs/operations/run-learning-readiness-contract.json, docs/operations/LIVING-SYSTEM-OPERATIONS.md
-- **Regression tests:** Pending: reject wrong column order, a separate Current column, missing per-task duration, or missing total Brief elapsed time.
-- **Production invariants:** kanban_columns_are_backlog_wip_done_left_to_right, current_is_not_a_separate_column_active_task_is_wip, every_task_card_displays_duration, missing_duration_is_explicitly_unavailable_not_replaced_by_status, kanban_displays_total_brief_elapsed_time, kanban_timing_comes_from_append_only_transition_evidence
+- **Attempted fixes:** Record the owner correction as durable learning without regenerating the already-completed Run 5 board. | Promote the owner-approved reporting rules from prose into the canonical projection and validator. | Validate the owner-approved Kanban projection against synthetic append-only evidence and the five required failing fixtures before next production authorization.
+- **Actual fix:** Protected CI verified exactly Backlog/WIP/Done, no Current, active-to-WIP, Tasks 00-29, per-task duration or unavailable, total Brief elapsed and stale-digest rejection; durable proof was sealed in the rehearsal closeout.
+- **Fix outcome:** PASS; the next-run gate no longer depends on prose-only Kanban requirements.
+- **Permanent implementation:** docs/operations/run-learning-readiness-contract.json, docs/operations/LIVING-SYSTEM-OPERATIONS.md, _generator/lib/run-supervisor.mjs, _tools/run-supervisor.mjs, _generator/lib/pre-next-run-rehearsal.mjs, _records/hardening/pre-next-run-five-change-2026-10-02/synthetic-kanban-proof.json
+- **Regression tests:** Pending: reject wrong column order, a separate Current column, missing per-task duration, or missing total Brief elapsed time., _generator/test/run-supervisor.test.mjs, _generator/test/fixtures/kanban-contract-failures.json, _generator/test/pre-next-run-rehearsal.test.mjs
+- **Production invariants:** kanban_columns_are_backlog_wip_done_left_to_right, current_is_not_a_separate_column_active_task_is_wip, every_task_card_displays_duration, missing_duration_is_explicitly_unavailable_not_replaced_by_status, kanban_displays_total_brief_elapsed_time, kanban_timing_comes_from_append_only_transition_evidence, stale_kanban_projection_fails_closed, missing_duration_is_unavailable_not_inferred
 - **Recurrences:** none recorded
-- **Future validation:** Generate the next production Kanban with exactly Backlog, WIP and Done columns in that order. | Verify every Task 00-29 card shows its duration or explicit unavailable. | Verify total Brief elapsed time is shown from run start to observation time while active and frozen at terminal completion.
+- **Future validation:** Generate the next production Kanban with exactly Backlog, WIP and Done columns in that order. | Verify every Task 00-29 card shows its duration or explicit unavailable. | Verify total Brief elapsed time is shown from run start to observation time while active and frozen at terminal completion. | Bounded rehearsal must generate and validate a 30-task synthetic board using the exact contract before next production allocation. | Render the first real post-hardening Kanban from append-only events and verify task durations plus total elapsed remain present.
 
-## DAB-OPS-20261002-022 — Reader-facing presentation leaked operational copy and hid archive transparency
+## DAB-OPS-20261002-022 — Corrected reader-facing book, coverage, media-duration, and Watchlist transparency copy and hardened future rendering.
 
-- **Status:** permanently fixed
-- **First observed run:** post-publication correction for October 2
-- **Task(s):** reader presentation / post-publication correction
+- **Status:** permanently_fixed
+- **First observed run:** unknown
+- **Task(s):** unknown
 - **Symptom:** The October 2 reader exposed internal book-selection wording, described editorial freshness mechanics instead of the actual content date range, duplicated video/podcast duration beneath titles, labeled video duration as Runtime, appended 'No episode time limit' to podcast duration, and hid an archived Watchlist topic from the daily summary.
 - **Root cause:** Reader rendering reused operational/editorial metadata as public copy, media reading-support duplicated duration already rendered in item metadata, coverage_period was authored as an editorial freshness policy narrative, and the Watchlist daily renderer filtered archived topics without a reader-visible archive reason.
 - **Operational impact:** Reader-facing pages contained unnecessary operational language and incomplete Watchlist change transparency; story selections, sources, media selections, images, and Run 5 publication identity were unaffected.
@@ -767,72 +780,111 @@ Problems: 44 · Events: 61
 - **Recurrences:** none recorded
 - **Future validation:** Verify the next generated brief contains no run/review/selection language inside book bridges. | Verify Coverage period equals the minimum and maximum publication dates of included articles, videos, and podcasts. | Verify video and podcast duration appears once per item and video uses Duration. | Verify any newly archived or removed Watchlist topic is surfaced with a reason.
 
-## DAB-OPS-20261002-023 — Internal candidate IDs appeared in reader-facing article Topics
+## DAB-OPS-20261002-023 — Internal candidate IDs leaked into reader-facing article Topics fields.
 
-- **Status:** permanently fixed
+- **Status:** permanently_fixed
+- **First observed run:** unknown
+- **Task(s):** unknown
 - **Symptom:** October 2 articles displayed Topics such as 'm01, technical ai engineering' even though m01–m08 are internal candidate identifiers.
 - **Root cause:** The Run 5 finalizer copied candidate_id into the public topics array, while rendering and final validation did not distinguish internal candidate identifiers from reader-facing topic labels.
 - **Operational impact:** Reader-facing metadata exposed implementation identifiers that add no reader value.
+- **Timing impact:** 0 seconds
+- **Attempted fixes:** Remove only the internal IDs from October 2 Topics and preserve all story content and publication identity.
 - **Actual fix:** Canonical October 2 topics were cleaned; renderers defensively filter mNN IDs; editorial-kernel and final-edition validation reject mNN topic labels from October 2 forward; the Run 5 finalizer source is corrected; regression tests cover Brief and permanent story pages.
 - **Fix outcome:** Internal candidate IDs are no longer reader-facing topic labels and future publication attempts fail closed if they re-enter canonical topic data.
 - **Permanent implementation:** _generator/lib/editorial-kernel.mjs, _generator/lib/validate.mjs, _generator/lib/render.mjs, _generator/lib/reader.mjs, _tools/run5-post-image-finalizer.mjs
 - **Regression tests:** _generator/test/editorial-kernel.test.mjs, _generator/test/reader-copy-contract.test.mjs
 - **Production invariants:** candidate_id_is_internal_metadata_only, reader_topics_are_semantic_reader_facing_labels, mNN_candidate_ids_never_render_as_article_topics
+- **Recurrences:** none recorded
 - **Future validation:** Verify all six article Topics fields contain only reader-facing semantic topics. | Reject any editorial kernel or final edition whose article topics contain an mNN candidate ID.
 
-## Pre-next-run hardening closure addendum — October 2, 2026
+## DAB-OPS-20261003-001 — Supervisor writer-lease transfer is now treated as a clean one-writer handoff instead of an exit-code-2 production failure.
 
-This addendum projects new permanent-fix events `DAB-OPS-E-000062` through `DAB-OPS-E-000066` from the canonical JSONL ledger. These are proactive closure of already-recorded Run 5 problems, not new production failures.
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261003-run7
+- **Task(s):** 01
+- **Symptom:** not recorded
+- **Root cause:** The persistent Supervisor renewed its lease without first proving it still owned the current fence, so a legitimate generation transfer was interpreted as a hard production failure instead of a clean one-writer handoff.
+- **Operational impact:** not recorded
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Preserve the same Run 7 execution while allowing the scheduled controller to take the writer fence without the previous Supervisor reporting a hard failure.
+- **Actual fix:** The persistent Supervisor loop now asserts its current fence before renewal and treats both pre-renewal ownership loss and a renewal-time transfer race as a clean yield. Regression assertions enforce assert-before-renew ordering and explicit renewal-race handling.
+- **Fix outcome:** A legitimate fenced writer transfer no longer produces a red Supervisor failure or tempts duplicate recovery. Run 7 remains on the same execution and completed work is preserved.
+- **Permanent implementation:** .github/workflows/run-supervisor.yml, _generator/test/run-supervisor.test.mjs
+- **Regression tests:** _generator/test/run-supervisor.test.mjs
+- **Production invariants:** writer_fence_transfer_is_a_handoff_not_a_production_failure, supervisor_asserts_current_fence_before_renewal, renewal_race_yields_cleanly, same_execution_continues_without_rework, one_writer_rule_is_preserved
+- **Recurrences:** none recorded
+- **Future validation:** Confirm a real controller-to-Supervisor or Supervisor-to-controller fence transfer completes without a failed Supervisor workflow and without duplicate task execution.
 
-- **DAB-OPS-20261002-010 — permanently fixed:** protected `unattended-image-host.json` is the sole mutable image-route readiness source; immutable one-time qualification evidence is separated from the enabled reusable hourly consumer `6abeb9a2b8a88191949dc420d5e10feb`; consumerless `AWAITING_SCHEDULED_EXECUTOR` is prohibited. Regression coverage: `run-readiness.test.mjs`, `scheduled-image-routing.test.mjs`.
-- **DAB-OPS-20261002-013 — permanently fixed:** recoverable blocker aliases are normalized only when explicit recovery semantics remain provable; ambiguous/external blockers do not become actionable. Regression coverage: `run-supervisor.test.mjs`.
-- **DAB-OPS-20261002-014 — permanently fixed:** a scheduled worker refreshes current fenced authority at invocation; embedded generation is provenance only; stale generation cannot mutate; task-specific release is explicit. Regression coverage: `run-supervisor.test.mjs`.
-- **DAB-OPS-20261002-016 — permanently fixed in code, live proof pending rehearsal:** event-driven handoff accepts only an exact Task 11-16 released lease for the same active execution and refuses duplicate Supervisor dispatch. The bounded synthetic rehearsal is the acceptance proof before next production allocation.
-- **DAB-OPS-20261002-021 — permanently fixed:** executable Kanban v3 enforces Backlog → WIP → Done, no Current column, active→WIP, Tasks 00-29, per-task duration or literal `unavailable`, total elapsed, append-only timing, and stale-projection rejection. Five failing fixtures protect these conditions.
+## DAB-OPS-20261003-002 — A Supervisor triggered by an unrelated protected-main push must not reacquire a writer fence already released for a queued scheduled image consumer.
 
-The next production run remains unauthorized until the protected non-production rehearsal receipt passes. Run 5 remains immutable and closed.
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261003-run7
+- **Task(s):** 11
+- **Symptom:** not recorded
+- **Root cause:** Supervisor startup treated the protected-main push as authority to reacquire the writer fence without first recognizing the matching queued scheduled-consumer request as the authoritative delegation state.
+- **Operational impact:** not recorded
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** First require a released TASK_11-16_QUEUED_HANDOFF_TO_SCHEDULED_IMAGE_CONSUMER lease plus matching queued request before Supervisor acquisition; after the pre-fix Supervisor had already replaced that marker, refine the guard to treat the newest queued consumer request itself as authoritative.
+- **Actual fix:** Supervisor startup now detects an unfinished Tasks 11-16 native_chatgpt request in queued_for_scheduled_consumer state and yields before any writer acquisition regardless of the stale Supervisor lease contents.
+- **Fix outcome:** Protected workflow now has an executable startup guard and targeted regression coverage for scheduled image delegation.
+- **Permanent implementation:** .github/workflows/run-supervisor.yml, _generator/test/run-supervisor.test.mjs, docs/operations/LIVING-SYSTEM-OPERATIONS.md
+- **Regression tests:** _generator/test/run-supervisor.test.mjs
+- **Production invariants:** delegated_image_task_lease_is_not_reacquired_by_supervisor, control_plane_push_cannot_block_scheduled_image_consumer, one_writer_rule_is_preserved, same_execution_continues_without_rework
+- **Recurrences:** none recorded
+- **Future validation:** During the next real Tasks 11-16 delegation, confirm an unrelated protected-main push cannot reacquire the released image-consumer fence.
 
-## Pre-next-run bounded rehearsal PASS — October 2, 2026
+## DAB-OPS-20261003-003 — Historical queued native-image requests could falsely pin the Supervisor after a newer Task 11 request had become blocked or completed.
 
-Canonical events `DAB-OPS-E-000067` through `DAB-OPS-E-000069` close the live verification of existing problems 010, 016 and 021. These are not new production failures.
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261003-run7
+- **Task(s):** 11
+- **Symptom:** not recorded
+- **Root cause:** The startup delegation guard scanned request files independently instead of selecting the newest durable request per image task, and its Done check assumed one exact untimestamped filename.
+- **Operational impact:** not recorded
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Preserve every request record for audit, then replace the independent all-files queue scan with deterministic newest-request-per-task selection and recognize timestamp-suffixed Done events as terminal.
+- **Actual fix:** Group Tasks 11-16 requests by task, select the newest request by created_at with deterministic filename tie-break, delegate only when that latest request is queued_for_scheduled_consumer, and treat any timestamp-suffixed <task>-done*.json event as terminal for delegation.
+- **Fix outcome:** Historical queue records can no longer override a newer blocked/done request or keep the Supervisor from reconciling the current durable Task 11 state.
+- **Permanent implementation:** .github/workflows/run-supervisor.yml, _generator/test/run-supervisor.test.mjs, docs/operations/LIVING-SYSTEM-OPERATIONS.md
+- **Regression tests:** _generator/test/run-supervisor.test.mjs
+- **Production invariants:** latest_image_worker_request_is_authoritative, historical_queued_request_cannot_pin_supervisor, timestamped_done_event_ends_image_delegation, same_execution_continues_without_rework
+- **Recurrences:** none recorded
+- **Future validation:** On Run 7 Task 11, confirm the newer blocked_recoverable request prevents stale queued-request yielding and the Supervisor reconciles the persisted repair candidate without regenerating it.
 
-- **Problem 010:** the enabled hourly Recovery automation actually consumed the synthetic Task 11 request; request generation 1 was provenance only, current generation 2 was refreshed to authority generation 3, and all image/edit/publication/Run-5 mutation counters remained zero.
-- **Problem 016:** live writer-handoff attempt 1 was blocked by GitHub CLI repository inference from the workspace root. The exact repair added repository-explicit dispatch; protected CI passed; live attempt 2 succeeded as writer-handoff run `37071330741` and automatically dispatched same-execution Supervisor run `37071366751`, which exited at the terminal boundary without acquiring a writer or redoing work.
-- **Problem 021:** the executable Kanban contract passed with exactly Backlog → WIP → Done, all Tasks 00–29, required durations/`unavailable`, mandatory total elapsed and freshness enforcement.
+## DAB-OPS-20261003-004 — A valid accepted_locked Task 11 Done event used from_state/to_state aliases and was silently excluded from Supervisor projection, causing redundant repair attempts.
 
-The authoritative gate is `_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json`. It authorizes the next production run only after the closeout change passes protected deterministic CI and is merged to `main`. Run 5 remains immutable and independently `PUBLIC_CLOSED`.
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261003-run7
+- **Task(s):** 11
+- **Symptom:** not recorded
+- **Root cause:** normalizeTaskEvent handled state->to but not the from_state/to_state field names emitted by the image acceptance closeout.
+- **Operational impact:** not recorded
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Keep the accepted Task 11 image and historical event immutable; teach projection to read legacy from_state/to_state only when canonical from/to are absent, then require all new transitions to use canonical fields.
+- **Actual fix:** Normalize from_state->from and to_state->to only when canonical fields are absent; retain state->to as the lower-priority legacy alias. Require future workers to emit canonical from/to fields.
+- **Fix outcome:** The existing append-only Run 7 Task 11 acceptance event becomes authoritative without rewriting history; accepted image m01 remains immutable and the next Supervisor can advance to Task 12.
+- **Permanent implementation:** _generator/lib/run-supervisor.mjs, _generator/test/run-supervisor.test.mjs, docs/operations/LIVING-SYSTEM-OPERATIONS.md
+- **Regression tests:** _generator/test/run-supervisor.test.mjs
+- **Production invariants:** accepted_locked_done_event_must_project_done, safe_state_aliases_never_override_canonical_fields, append_only_history_is_preserved, completed_image_is_never_regenerated
+- **Recurrences:** none recorded
+- **Future validation:** Confirm the first Supervisor after merge projects Task 11 Done from the existing 11-done.json and selects Task 12 as the first unfinished task.
 
-## DAB-OPS-20261002-016 recurrence — frozen-publication dispatch lost repository-explicit routing
+## DAB-OPS-20261003-005 — A protected alternate promotion path could merge an exact candidate without the durable validated-publication bridge required for deterministic closure.
 
-- **Status:** mitigated; protected merge and same-run live validation pending
-- **Observed:** 2026-10-03T15:06:56.000Z
-- **Run / task:** `reliable-edition-20261003-run7` / Task 23
-- **Symptom:** Supervisor run `37132062299` reached the frozen candidate handoff, then `gh workflow run publish-candidate.yml` failed with `fatal: not a git repository` from the Actions workspace root.
-- **Root cause:** The earlier repair protected the writer-handoff dispatch, but the separate frozen-publication dispatcher had no direct repository-context regression test. Both its publication and existing-merge delta-validation workflow dispatches omitted `-R repo`.
-- **Fix:** Make both dispatches repository-explicit and add a focused regression test for each workflow.
-- **Preservation:** The same exact frozen Run 7 candidate remains authoritative. Tasks 00–22 and all six `accepted_locked` images are unchanged; publication is not bypassed.
-- **Next validation:** Protected CI must pass, the repair must merge to `main`, and the same Run 7 Supervisor must dispatch the protected publication executor successfully.
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261003-run7
+- **Task(s):** 27
+- **Symptom:** not recorded
+- **Root cause:** The post-editorial promotion routes did not require the same validated-event bridge enforced by the frozen publication workflow; the closure workflow also assumed its triggering main CI SHA was the production SHA.
+- **Operational impact:** not recorded
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Do not republish or synthesize success; first persist a validated event from exact PR 400, candidate CI 37132672587, Pages 37132735290 and merge 50cbe6f0719ff67088e65340f4322e64f582ee9e, then harden both promotion paths and rerun deterministic closure against that original production identity.
+- **Actual fix:** Require a matching all-critical-PASS validated event on both post-editorial promotion routes; for this already-published run reconstruct the missing bridge only from the exact manifest, merged PR, candidate CI, Task 19 seal and original merge SHA; bind closure to the original publication merge while permitting only non-reader control-plane commits after it.
+- **Fix outcome:** Regression coverage and the full 835-test/24-contract suite pass locally. The same published Run 7 can now close without republishing, changing reader content or replacing any of the six accepted_locked images.
+- **Permanent implementation:** .github/workflows/post-editorial-kernel.yml, .github/workflows/daily-delta-validation.yml
+- **Regression tests:** _generator/test/publication-validated-bridge.test.mjs
+- **Production invariants:** every_protected_promotion_requires_durable_validated_event, closure_preserves_original_publication_merge_sha, control_plane_commits_cannot_become_production_identity, validated_bridge_recovery_requires_exact_pr_ci_merge_and_frozen_bundle_evidence, reader_content_must_be_unchanged_after_original_publication_sha
+- **Recurrences:** none recorded
+- **Future validation:** Confirm protected CI passes and Run 7 closure records production SHA 50cbe6f0719ff67088e65340f4322e64f582ee9e with PUBLIC_CLOSED and Task 29 Done.
 
-## DAB-OPS-20261003-005 — alternate protected promotion omitted the validated-event bridge
-
-- **Status:** permanently fixed in code; protected merge and same-run closure verification pending
-- **Observed:** 2026-10-03T15:19:18.000Z
-- **Run / task:** `reliable-edition-20261003-run7` / Task 27
-- **Symptom:** PR 400 and exact-SHA Pages deployment succeeded, but delta validation could not construct completion evidence because the merged candidate had no durable validated-publication event.
-- **Root cause:** The post-editorial promotion routes did not require the validated-event bridge enforced by the frozen publication workflow, and closure treated its triggering control-plane CI SHA as the production identity.
-- **Fix:** Require a matching critical-PASS validated event on both promotion routes. For the already-published edition, reconstruct only from the exact manifest, merged PR, candidate CI, Task 19 seal and original merge SHA; allow later non-reader control changes without changing the original production identity.
-- **Preservation:** Run 7 remains published at `50cbe6f0719ff67088e65340f4322e64f582ee9e`; reader content and all six accepted_locked images are unchanged.
-- **Regression:** `_generator/test/publication-validated-bridge.test.mjs`; full 835-test and 24-contract suites pass locally.
-- **Next validation:** Protected CI must pass, then the same Run 7 must reach `PUBLIC_CLOSED` / Task 29 Done while retaining the original production SHA.
-
-## Run 7 Task 29 learning-completeness addendum — October 3, 2026
-
-Append-only events `DAB-OPS-E-000078` through `DAB-OPS-E-000082` fill the exact learning fields that deterministic Task 29 certification found missing; they do not change any problem outcome or production artifact.
-
-- **DAB-OPS-20261003-001:** records that lease renewal lacked an ownership assertion, so a valid fence transfer appeared to be a hard failure.
-- **DAB-OPS-20261003-002:** records the missing delegation root cause and the bounded released-lease/request guard attempt that was refined when the pre-fix Supervisor had already replaced the release marker.
-- **DAB-OPS-20261003-003:** records the preserve-history/newest-request-per-task attempted fix.
-- **DAB-OPS-20261003-004:** records the immutable-history compatibility-normalizer attempted fix and canonical-field requirement for new events.
-- **DAB-OPS-20261003-005:** records the exact-evidence closure attempt using PR 400, CI 37132672587, Pages 37132735290 and production SHA `50cbe6f0719ff67088e65340f4322e64f582ee9e`.
-
-The addendum preserves all Run 7 content, exact image bytes, publication identity, and existing statuses. Its only purpose is to make the cumulative ledger complete enough for deterministic Task 29 certification.
