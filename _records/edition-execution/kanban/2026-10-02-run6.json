@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
   "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
-  "observed_at": "2026-10-03T00:12:59.210Z",
+  "observed_at": "2026-10-03T00:16:02.795Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:fb2a3e3cd69798e891debdf0d401bbbd89a1ce6af233955de46eefcf743e7947",
+  "source_event_digest": "sha256:a9557d6fefce01a764c75f7b5706075953e17965e4ea7f48b515d6f94ef083d5",
   "run_started_at": "2026-10-02T23:00:34.043Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 4345.167,
-  "total_brief_elapsed": "4345.167s",
+  "total_brief_elapsed_seconds": 4528.752,
+  "total_brief_elapsed": "4528.752s",
   "tasks": {
     "10": {
       "id": "10",
@@ -381,17 +381,17 @@
     "04": {
       "id": "04",
       "title": "Verify evidence and freshness fallback",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Active",
+      "column": "WIP",
+      "entered_backlog_at": "2026-10-03T00:15:42Z",
+      "active_started_at": "2026-10-03T00:15:42Z",
       "review_started_at": null,
       "blocked_started_at": null,
       "done_at": null,
       "cycle_seconds": null,
       "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "duration_seconds": 20.795,
+      "duration": "20.795s"
     },
     "05": {
       "id": "05",
