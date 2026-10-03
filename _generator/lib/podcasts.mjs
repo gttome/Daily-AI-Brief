@@ -23,5 +23,6 @@ export function validatePodcastDiversity(edition){
  const ids=items.map(item=>item.item_id).filter(Boolean),urls=items.map(item=>item.url).filter(Boolean);
  if(new Set(ids).size!==ids.length)errors.push('podcast item IDs must be unique');
  if(new Set(urls).size!==urls.length)errors.push('podcast source URLs must be unique');
+ if(edition?.brief_date>='2026-10-04'&&items.some(item=>!Number.isInteger(item.runtime_seconds)||item.runtime_seconds<1))errors.push('published podcasts require verified positive runtime_seconds');
  return errors;
 }
