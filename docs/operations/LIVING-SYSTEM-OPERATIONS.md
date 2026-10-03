@@ -1422,6 +1422,15 @@ This section is the current operating contract before the next production alloca
 - Image subject/context mismatches are never retried inside the same image-generation conversation. The first durable wrong-subject, sealed-prompt displacement, or execution-context contamination rejection immediately enters the image engineering-repair epoch; only a new fresh single-story worker containing the sealed story specification may perform the bounded post-repair attempt.
 - For each unfinished Task 11-16 image task, only the newest durable worker request by `created_at` (with deterministic filename tie-break) is authoritative. A newest request with `capability=native_chatgpt` and `status=queued_for_scheduled_consumer` is the active delegation boundary even if a prior Supervisor briefly reacquired the lease; historical queued requests become inert as soon as a newer request exists. Any append-only event whose filename begins `<task>-done` ends delegation for that task, including timestamp-suffixed Done events. A newly triggered Supervisor must not configure a writer, acquire/take over the fence or enter its persistent loop only when that newest unfinished request is queued. The scheduled image consumer refreshes authority at invocation and is explicitly allowed to take over a prior Supervisor fence.
 
+### Repository-task liveness after image production
+
+- The production liveness objective is substantive durable progress at least once per Supervisor interval, approximately 60 seconds. A queued or Active repository task that makes no substantive durable worker progress for more than one interval is a liveness fault, not a healthy wait state.
+- Supervisor lease acquisition, lease renewal, heartbeat, Kanban reprojection and request-queue commits are orchestration evidence only. They do **not** reset the substantive-progress clock.
+- The normal post-image path must not depend on the hourly recovery schedule. After Task 16, the existing ordinary-ChatGPT production consumer should remain in the same invocation long enough to drain exact eligible repository work through Tasks 17-22 when safe, with the Supervisor owning task ordering and fenced handoffs between tasks.
+- The dedicated Task 17 repository consumer remains a deterministic fallback. Because pushes made with the repository `GITHUB_TOKEN` do not recursively start another workflow, the Supervisor explicitly dispatches that consumer with `workflow_dispatch` when the exact Task 17 request is queued and no consumer is already active.
+- Repository recovery contracts for Tasks 17-22 and later repository closeout Tasks 24, 27, 28 and 29 use a 60-second stale threshold. A stale actionable task must be resumed from the same durable state; accepted images and completed upstream artifacts remain immutable.
+- Hourly recovery remains a safety net, not the mechanism that defines acceptable queue latency.
+
 ### Kanban enforcement
 
 - Visual columns are exactly **Backlog → WIP → Done**. There is no Current column; the active task is WIP.
