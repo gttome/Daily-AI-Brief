@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
   "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
-  "observed_at": "2026-10-03T02:16:00.286Z",
+  "observed_at": "2026-10-03T02:19:03.642Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:9f025b4551bf5b46f07de8b577db912f21f48923cc7a2925658576a831132e99",
+  "source_event_digest": "sha256:081739ea10721ac69a11bb88082009bd99d2935d8ced5327e5b2688180c4e229",
   "run_started_at": "2026-10-02T23:00:34.043Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 11726.243,
-  "total_brief_elapsed": "11726.243s",
+  "total_brief_elapsed_seconds": 11909.599,
+  "total_brief_elapsed": "11909.599s",
   "tasks": {
     "10": {
       "id": "10",
@@ -171,17 +171,17 @@
     "20": {
       "id": "20",
       "title": "Run qualification",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Active",
+      "column": "WIP",
+      "entered_backlog_at": "2026-10-03T02:16:00Z",
+      "active_started_at": "2026-10-03T02:16:00Z",
       "review_started_at": null,
       "blocked_started_at": null,
       "done_at": null,
       "cycle_seconds": null,
       "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "duration_seconds": 183.642,
+      "duration": "183.642s"
     },
     "21": {
       "id": "21",
