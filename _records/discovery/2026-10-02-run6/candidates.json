@@ -1,0 +1,113 @@
+{
+  "schema_version": "rehearsal-discovery-v1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "execution_key": "2026-10-02-run6",
+  "research_cutoff": "2026-10-03T00:10:51Z",
+  "policy": "article-24-72-168-v1",
+  "metadata_candidate_count": 9,
+  "deep_review_target": 9,
+  "prior_edition_novelty_check": "Excluded all six Run 5 locked stories and exact repeated developments; adjacent developments require distinct mechanism/value before Task 05 selection.",
+  "balance": "3/3/3",
+  "candidates": [
+    {
+      "id": "m01",
+      "focus": "technical_ai_engineering",
+      "title": "Build Applications on NVIDIA BlueField Faster with NVIDIA DOCA Agent Skills",
+      "publisher": "NVIDIA Technical Blog",
+      "published_date": "2026-10-01",
+      "url": "https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/",
+      "freshness_band": "normal_72h",
+      "novelty": "new_development",
+      "rationale": "Verified domain-specific agent skills expose real API signatures, hardware capability requirements and build constraints; a strong mechanism story about grounding coding agents in machine-readable infrastructure contracts rather than generic model memory."
+    },
+    {
+      "id": "m02",
+      "focus": "technical_ai_engineering",
+      "title": "Introducing Qodo 3.0: Quality and Governance for the Agentic Software Factory",
+      "publisher": "Qodo",
+      "published_date": "2026-10-01",
+      "url": "https://www.qodo.ai/blog/introducing-qodo-3-0/",
+      "freshness_band": "normal_72h",
+      "novelty": "new_development",
+      "rationale": "Agentic software development is shifting the bottleneck toward verification and governance; Qodo 3.0 is a current implementation candidate for standards, change mapping and quality controls around agent-written code."
+    },
+    {
+      "id": "m03",
+      "focus": "technical_ai_engineering",
+      "title": "10 technical talks I’m excited about at GitHub Universe 2026",
+      "publisher": "GitHub",
+      "published_date": "2026-10-01",
+      "url": "https://github.blog/news-insights/company-news/10-technical-talks-im-excited-about-at-github-universe-2026/",
+      "freshness_band": "normal_72h",
+      "novelty": "new_development",
+      "rationale": "Current engineering agenda surfaces concrete mechanisms for agent memory, evaluations, fine-grained MCP authorization and deterministic verification of AI-generated code; useful reserve candidate pending Task 04 full-source evidence."
+    },
+    {
+      "id": "m04",
+      "focus": "applied_genai_knowledge_workers",
+      "title": "Workspace Drops: Pro-level AI image creation and editing, new ways to make your data interactive, and more AI help across your apps",
+      "publisher": "Google Workspace",
+      "published_date": "2026-10-01",
+      "url": "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop",
+      "freshness_band": "normal_72h",
+      "novelty": "new_development",
+      "rationale": "Adds directly usable knowledge-work capabilities including object-level AI image editing, no-code Sheets canvases, background cross-app task completion, Ask Gemini in Chat and document-to-video explainers."
+    },
+    {
+      "id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "title": "Barclays scales Claude to upgrade operations and improve client experience",
+      "publisher": "Anthropic",
+      "published_date": "2026-10-01",
+      "url": "https://www.anthropic.com/news/barclays-scales-claude",
+      "freshness_band": "normal_72h",
+      "novelty": "new_development",
+      "rationale": "Concrete enterprise adoption evidence: a Claude-powered colleague knowledge assistant, operational email classification/enrichment and broad software-development deployment inside a regulated bank."
+    },
+    {
+      "id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "title": "ChatGPT Enterprise and Edu release notes: ChatGPT for Word and Windows Appshots",
+      "publisher": "OpenAI",
+      "published_date": "2026-10-01",
+      "url": "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-and-edu-release-notes",
+      "freshness_band": "normal_72h",
+      "novelty": "new_development",
+      "rationale": "Fresh end-user workflow changes place ChatGPT directly in Word and add Windows Appshots for contextual assistance, making this a practical candidate about reducing application switching in document work."
+    },
+    {
+      "id": "m07",
+      "focus": "agents_non_technical_people",
+      "title": "Connecting customer context to measurable ROI with agentic marketing",
+      "publisher": "Databricks",
+      "published_date": "2026-10-01",
+      "url": "https://www.databricks.com/blog/connecting-customer-context-measurable-roi-agentic-marketing",
+      "freshness_band": "normal_72h",
+      "novelty": "new_development",
+      "rationale": "Shows how marketing agents can recommend next-best actions from governed customer/business context while operating inside human-set guardrails and closed-loop measurement—directly relevant to nontechnical business teams."
+    },
+    {
+      "id": "m08",
+      "focus": "agents_non_technical_people",
+      "title": "Launching Meta Enterprise Platform",
+      "publisher": "Meta",
+      "published_date": "2026-09-28",
+      "url": "https://about.fb.com/news/2026/09/launching-meta-enterprise-platform/",
+      "freshness_band": "extended_168h",
+      "novelty": "distinct_adjacent_development",
+      "rationale": "A distinct enterprise platform announcement that brings Muse, Meta Business Agent, Muse API and Muse Code together for businesses; materially broader than the Run 5 small-business Muse story and must pass Task 04 novelty scrutiny before selection."
+    },
+    {
+      "id": "m09",
+      "focus": "agents_non_technical_people",
+      "title": "Deliver great client work at scale with Asana Client Management, now GA",
+      "publisher": "Asana",
+      "published_date": "2026-09-28",
+      "url": "https://asana.com/inside-asana/asana-client-management",
+      "freshness_band": "extended_168h",
+      "novelty": "new_development",
+      "rationale": "Four prebuilt AI Teammates work from shared client context to draft work, manage handoffs, monitor account risk and surface executive signals, providing a concrete nontechnical agent workflow with human-visible context and governance."
+    }
+  ]
+}
