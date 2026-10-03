@@ -1,0 +1,20 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "execution_key": "2026-10-03-run7",
+  "task_id": "20",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T13:28:09.203876Z",
+  "writer_generation": 33,
+  "owner_id": "automation-run7-task20-qualification-generation33",
+  "reason_code": "TASK20_QUALIFICATION_ACQUIRED",
+  "operation": "run_qualification",
+  "proof": {
+    "task19_done": "_records/edition-execution/events/2026-10-03-run7/19-done.json",
+    "task19_bundle": "_records/editorial/2026-10-03-run7/task19-bundle-seal.json",
+    "preserved_tasks": "00-19",
+    "accepted_locked_images": 6
+  }
+}
