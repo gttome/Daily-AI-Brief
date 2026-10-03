@@ -2,7 +2,7 @@
   "schema_version": "task18-canonical-assembly-v1",
   "execution_id": "reliable-edition-20261003-run7",
   "edition_id": "dab-edition-2026-10-03",
-  "assembled_at": "2026-10-03T12:58:00.000Z",
+  "assembled_at": "2026-10-03T12:56:17.526Z",
   "protected_main_sha": "8ee536e7a939fa61ef4428f9a0f43007aacc667d",
   "writer_generation": 28,
   "source_task_range": "00-17",
