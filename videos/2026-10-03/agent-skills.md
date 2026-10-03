@@ -24,7 +24,7 @@ reader_release: true
 
 **Summary:** Developer demonstration of Work IQ context and workflow grounding, directly supporting the selected reusable Agent Skills packaging story.
 
-**Why it matters:** Developer demonstration of Work IQ context and workflow grounding, directly supporting the selected reusable Agent Skills packaging story.
+**Why it matters:** Seeing Work IQ grounding in a live developer workflow makes the reusable-skills story more concrete: the value is not just packaging instructions once, but connecting those instructions to business context and tools without copying logic into every workflow.
 
 
 

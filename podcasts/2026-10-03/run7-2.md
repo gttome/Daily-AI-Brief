@@ -28,9 +28,9 @@ reader_release: true
 
 **Summary:** Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.
 
-**Why it matters:** Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.
+**Why it matters:** The conversation adds a policy lens to the technical controls in the California story: monitoring, evidence retention and corporate accountability matter because agent failures can become governance and legal questions, not just engineering bugs.
 
-**Connection to the brief:** Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.
+**Connection to the brief:** It complements the California accountability article by moving from the specific investigation to the wider debate over how organizations should monitor, explain and govern agent behavior.
 
 
 
