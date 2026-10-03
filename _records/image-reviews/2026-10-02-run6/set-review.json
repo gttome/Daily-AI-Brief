@@ -1,0 +1,50 @@
+{
+  "schema_version": "rehearsal-six-image-set-review-v1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "reviewed_at": "2026-10-03T01:56:36Z",
+  "review_basis": {
+    "sealed_specs": "_records/image-specs/2026-10-02-run6.json",
+    "accepted_locked_count": 6,
+    "saved_git_reviews_all_pass": true,
+    "reviewed_pixels_identical_to_persisted_blob": true,
+    "page_integration_review_deferred_to_task18": true
+  },
+  "images": [
+    {"candidate_id":"m01","attempt":2,"path":"rehearsals/pre-oct3-20261002-r1/images/dab-rehearsal-2026-10-02-m01-2.png","sha256":"8fbeb566204332335e7ab1ec3821e167c31bc740838a25bafb147d9eb4f18b77","width":1200,"height":630,"mechanism":"verified reusable skill package","saved_git_review":"PASS"},
+    {"candidate_id":"m02","attempt":1,"path":"rehearsals/pre-oct3-20261002-r1/images/dab-rehearsal-2026-10-02-m02-1.png","sha256":"35c06722862b39e1ba6f2886b1c1421f5143fba1819e2e3b9be7ca368553baf7","width":1200,"height":630,"mechanism":"software quality and blast-radius verification pipeline","saved_git_review":"PASS"},
+    {"candidate_id":"m04","attempt":2,"path":"rehearsals/pre-oct3-20261002-r1/images/dab-rehearsal-2026-10-02-m04-2.png","sha256":"95346d5740f98945e6cbc2f41bcfa7f90eb40b309077cd4401e497ba19f377cc","width":1200,"height":630,"mechanism":"cross-app context-and-action fabric","saved_git_review":"PASS"},
+    {"candidate_id":"m05","attempt":1,"path":"rehearsals/pre-oct3-20261002-r1/images/dab-rehearsal-2026-10-02-m05-1.png","sha256":"e9f297a33dcee546941b3b926d4ac7a9d187f8b75aebf4ba1baa368ef1720bc6","width":1200,"height":630,"mechanism":"dual-lane regulated enterprise AI with governance spine","saved_git_review":"PASS"},
+    {"candidate_id":"m07","attempt":1,"path":"rehearsals/pre-oct3-20261002-r1/images/dab-rehearsal-2026-10-02-m07-1.png","sha256":"d7c07121b551f3b85604842a016df6d6f9e86aad86dbe9fde4d617e5d6462b4e","width":1200,"height":630,"mechanism":"governed marketing decision loop","saved_git_review":"PASS"},
+    {"candidate_id":"m09","attempt":2,"path":"rehearsals/pre-oct3-20261002-r1/images/dab-rehearsal-2026-10-02-m09-2.png","sha256":"ac30d31bb0550dac3658c0cc6bcdd241f81800d71ba7b4862d49055c03f7b9af","width":1200,"height":630,"mechanism":"shared work graph coordinating specialized AI teammates","saved_git_review":"PASS"}
+  ],
+  "set_checks": {
+    "accepted_locked_six_of_six": "PASS",
+    "unique_final_sha256": "PASS",
+    "dimensions_1200x630_six_of_six": "PASS",
+    "professional_quality_six_of_six": "PASS",
+    "story_specificity_six_of_six": "PASS",
+    "visible_text_guard_six_of_six": "PASS",
+    "no_additional_visible_language_six_of_six": "PASS",
+    "composition_differentiation": "PASS",
+    "mechanism_differentiation": "PASS",
+    "no_generic_dashboard_reuse": "PASS",
+    "no_low_quality_fallback": "PASS",
+    "accessibility_asset_readiness": "PASS"
+  },
+  "accessibility": {
+    "readable_controlled_text": "PASS",
+    "clipping_or_corruption": "PASS",
+    "stable_story_specific_asset_mapping": "PASS",
+    "story_specific_alt_text_required_in_task18": true,
+    "page_level_alt_and_route_validation": "DEFERRED_TO_TASK18",
+    "assessment": "All six persisted assets passed saved-Git visual and text controls and are ready for story-specific alt text during page assembly."
+  },
+  "differentiation": {
+    "result": "PASS",
+    "distinct_primary_mechanisms": 6,
+    "assessment": "The six accepted images explain six different mechanisms and use distinct sealed visual structures; no accepted asset reuses a generic dashboard or status architecture."
+  },
+  "result": "PASS"
+}
