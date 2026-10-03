@@ -5,7 +5,8 @@ import {
   activeRunDecision, acquireWriterLease, assertWriterFence, classifyRunHealth, applyImmediateImageRecovery,
   normalizeTaskEvent, recoverableBlockerEvidence, refreshScheduledWorkerFence, buildTaskWriterHandoffRelease,
   validateTaskRecoveryContracts, taskRecoveryDecision, buildWorkerRequest, buildEngineeringRepairRequest,
-  projectKanbanFromEvents, validateKanbanContract, kanbanProjectionFresh, publicationWriteBoundary, latestRecoverableImage
+  projectKanbanFromEvents, validateKanbanContract, kanbanProjectionFresh, publicationWriteBoundary, latestRecoverableImage,
+  classifyRepositoryQueueLiveness
 } from '../_generator/lib/run-supervisor.mjs';
 
 const argv=process.argv.slice(2), command=argv.shift();
@@ -187,6 +188,15 @@ try{
     }
     emit({result:queueResult,file:path.relative(runRoot,file),request_key:request.request_key,
       post_repair_attempt:Number(request.post_repair_attempt||0)});
+  }else if(command==='repository-liveness'){
+    if(!args.request) throw Error('request_required');
+    const result=classifyRepositoryQueueLiveness({
+      request:readJson(args.request),
+      now:args.now||new Date().toISOString(),
+      max_idle_seconds:Number(args['max-idle-seconds']||60)
+    });
+    if(args.output) writeJson(args.output,result);
+    emit(result);
   }else if(command==='tick'){
     const runRoot=path.resolve(args['run-root']||'.'), executionKey=safeExecutionKey(args['execution-key']);
     const contract=readJson(args.contracts), errors=validateTaskRecoveryContracts(contract);
@@ -273,7 +283,7 @@ try{
       terminal
     });
   }else{
-    throw Error('expected_validate-contracts_active-run-decision_writer-lease_assert-fence_scheduled-worker-fence_release-handoff_project-kanban_enqueue_or_tick');
+    throw Error('expected_validate-contracts_active-run-decision_writer-lease_assert-fence_scheduled-worker-fence_release-handoff_project-kanban_enqueue_repository-liveness_or_tick');
   }
 }catch(error){
   console.error(JSON.stringify({result:'FAIL',error:error.message}));

@@ -1430,6 +1430,8 @@ This section is the current operating contract before the next production alloca
 - The normal post-image path must not depend on the hourly recovery schedule. After Task 16, the existing ordinary-ChatGPT production consumer should remain in the same invocation long enough to drain exact eligible repository work through Tasks 17-22 when safe, with the Supervisor owning task ordering and fenced handoffs between tasks.
 - The dedicated Task 17 repository consumer remains a deterministic fallback. Because pushes made with the repository `GITHUB_TOKEN` do not recursively start another workflow, the Supervisor explicitly dispatches that consumer with `workflow_dispatch` when the exact Task 17 request is queued and no consumer is already active.
 - Repository recovery contracts for Tasks 17-22 and later repository closeout Tasks 24, 27, 28 and 29 use a 60-second stale threshold. A stale actionable task must be resumed from the same durable state; accepted images and completed upstream artifacts remain immutable.
+- The Supervisor writes exactly one route-scoped `repository_consumer_unclaimed` record under `_records/edition-execution/liveness-faults/<execution_id>/` when an exact repository request crosses that 60-second boundary. That record is evidence of a fault, not a task transition or worker progress, and it never authorizes skipping the task or stopping other safe routes.
+- Task 17 currently has an immediate deterministic GitHub Actions consumer. Semantic repository Tasks 18-22 and closeout Tasks 24/27-29 depend on the ordinary-ChatGPT same-invocation consumer, with the hourly recovery service as fallback. The automation service rejected attaching a GitHub PR-update trigger to the already scheduled hourly recovery task; a rejected webhook experiment is not an admitted consumer and must not be reported as one.
 - Hourly recovery remains a safety net, not the mechanism that defines acceptable queue latency.
 
 ### Kanban enforcement
@@ -1460,4 +1462,3 @@ The five-change hardening acceptance gate is now satisfied by durable NON-PRODUC
 - Final authorization receipt: `_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json`. It is effective only on protected `main` after this closeout branch passes deterministic CI and merges.
 
 This hardening process does **not** manually start the next production Brief. Once the PASS receipt is protected, the existing Daily Brief Controller remains responsible for normal scheduled allocation. The hourly Recovery automation remains the reusable Task 11–16 image consumer and recovery keeper.
-

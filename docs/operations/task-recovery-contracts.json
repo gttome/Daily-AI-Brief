@@ -953,6 +953,14 @@
     "max_idle_seconds": 60,
     "rule": "A queued or Active repository task with no substantive durable worker progress for more than one Supervisor interval is a liveness fault. Supervisor lease/heartbeat/Kanban-only commits do not count as substantive progress.",
     "primary_post_image_path": "The ordinary ChatGPT consumer that completes Task 16 must remain in the same invocation long enough to drain exact queued repository Tasks 17-22 when safe, handing off through the Supervisor between tasks.",
-    "fallback": "The Supervisor may use the dedicated deterministic Task 17 consumer and the hourly recovery service, but these are fallbacks and must not redefine a >60-second idle queue as healthy."
+    "fallback": "The Supervisor may use the dedicated deterministic Task 17 consumer and the hourly recovery service, but these are fallbacks and must not redefine a >60-second idle queue as healthy.",
+    "fault_evidence_path": "_records/edition-execution/liveness-faults/<execution_id>/<task_id>-<request_key>-unclaimed.json",
+    "fault_semantics": "A 60-second liveness fault is durable evidence that the exact repository route is unclaimed; it is not a task transition, not substantive worker progress, and not permission to skip, duplicate, or globally stop the run.",
+    "current_consumer_coverage": {
+      "17": "Immediate deterministic GitHub Actions consumer plus ordinary-ChatGPT recovery fallback.",
+      "18-22,24,27-29": "Ordinary-ChatGPT same-invocation consumer; hourly recovery is the supported fallback when that invocation has ended."
+    },
+    "unsupported_event_wake": "The automation service does not currently admit a GitHub webhook trigger on the already hourly scheduled recovery task. Do not claim a PR-sentinel or subhourly schedule as an active consumer unless the automation service durably accepts it.",
+    "forbidden_terminal_claim": "AWAITING_SCHEDULED_EXECUTOR is never a healthy or terminal repository-task outcome."
   }
 }

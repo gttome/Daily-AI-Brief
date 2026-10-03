@@ -334,6 +334,40 @@ export function buildWorkerRequest({
   };
 }
 
+export function classifyRepositoryQueueLiveness({
+  request,
+  now = new Date().toISOString(),
+  max_idle_seconds = 60
+} = {}) {
+  if (!request || request.capability !== 'repository') return {state:'not_repository'};
+  if (!stamp(now) || !Number.isInteger(max_idle_seconds) || max_idle_seconds < 60)
+    throw Error('valid_repository_liveness_clock_required');
+  const task_id=String(request.task_id||'').padStart(2,'0');
+  if (!/^\d{2}$/.test(task_id) || !request.execution_id || !request.request_key || !stamp(request.created_at))
+    throw Error('valid_repository_request_required');
+  if (['completed','completed_pass','done','passed'].includes(String(request.status||'').toLowerCase()))
+    return {state:'complete',task_id,request_key:request.request_key};
+  const substantiveAt=stamp(request.substantive_progress_at)?request.substantive_progress_at:null;
+  const basis=substantiveAt||request.created_at;
+  const idle_seconds=Math.max(0,(Date.parse(now)-Date.parse(basis))/1000);
+  const fault=idle_seconds>=max_idle_seconds;
+  return {
+    state:fault?'fault':'healthy_wait',
+    fault_code:fault?'repository_consumer_unclaimed':null,
+    task_id,
+    request_key:request.request_key,
+    execution_id:request.execution_id,
+    request_status:String(request.status||'unknown'),
+    queued_at:request.created_at,
+    substantive_progress_at:substantiveAt,
+    observed_at:now,
+    idle_seconds,
+    max_idle_seconds,
+    supervisor_bookkeeping_is_progress:false,
+    next_action:fault?'The bound ordinary-ChatGPT repository consumer must claim the same request; preserve completed work and do not skip ahead.':null
+  };
+}
+
 export function eventLedgerDigest(events = []) {
   const normalized = [...events].map(e=>JSON.stringify(e)).sort().join('\n');
   return 'sha256:' + hash(normalized + (normalized ? '\n' : ''));

@@ -18,7 +18,8 @@ import {
   projectKanbanFromEvents,
   validateKanbanContract,
   kanbanProjectionFresh,
-  latestRecoverableImage
+  latestRecoverableImage,
+  classifyRepositoryQueueLiveness
 } from '../lib/run-supervisor.mjs';
 
 function contract(){
@@ -472,6 +473,27 @@ test('repository recovery contracts enforce the 60-second substantive-progress l
   assert.match(c.repository_liveness_policy.rule,/substantive durable worker progress/i);
   assert.match(c.repository_liveness_policy.rule,/lease\/heartbeat\/Kanban-only/i);
   assert.match(c.repository_liveness_policy.primary_post_image_path,/same invocation/i);
+  assert.match(c.repository_liveness_policy.fault_evidence_path,/liveness-faults/);
+  assert.match(c.repository_liveness_policy.fault_semantics,/not substantive worker progress/i);
+  assert.match(c.repository_liveness_policy.unsupported_event_wake,/does not currently admit/i);
+  assert.match(c.repository_liveness_policy.forbidden_terminal_claim,/AWAITING_SCHEDULED_EXECUTOR/);
+});
+
+test('repository queue liveness faults after 60 seconds without substantive progress',()=>{
+  const request={capability:'repository',task_id:'18',execution_id:'run-x',request_key:'abc',status:'queued',created_at:'2026-10-03T12:00:00.000Z'};
+  assert.equal(classifyRepositoryQueueLiveness({request,now:'2026-10-03T12:00:59.999Z'}).state,'healthy_wait');
+  const fault=classifyRepositoryQueueLiveness({request,now:'2026-10-03T12:01:00.000Z'});
+  assert.equal(fault.state,'fault');
+  assert.equal(fault.fault_code,'repository_consumer_unclaimed');
+  assert.equal(fault.supervisor_bookkeeping_is_progress,false);
+});
+
+test('Supervisor persists an unclaimed repository-worker fault without globally stopping the run',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.match(y,/repository-liveness/);
+  assert.match(y,/--max-idle-seconds 60/);
+  assert.match(y,/edition-execution\/liveness-faults/);
+  assert.match(y,/route-specific fault is not a global stop/);
 });
 
 
