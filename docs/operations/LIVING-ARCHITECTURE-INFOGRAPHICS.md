@@ -1,7 +1,7 @@
 # Daily AI Brief — Living Architecture Infographics
 
 **Status:** evergreen living documentation projection  
-**Version:** v3.1
+**Version:** v3.2
 
 > [!IMPORTANT]
 > These diagrams explain the durable Daily AI Brief system architecture. They are **not run-status dashboards**. Machine evidence remains authoritative for live state.
@@ -15,6 +15,12 @@
 ### Current operating contract and living architecture
 
 ![Daily AI Brief Current Operating Contract and Living Architecture v3.1](../images/living-architecture/Daily-AI-Brief-Operating-Contract-Living-Architecture-v3.1.png)
+
+### ChatGPT Watchdog Ring — Fix-to-Progress and ring-wide image coverage
+
+![Daily AI Brief Watchdog Ring — Fix-to-Progress and ring-wide image coverage](../images/living-architecture/Daily-AI-Brief-Watchdog-Ring-v1.png)
+
+The Watchdog Ring infographic must show A–F as **functionally equivalent**. No slot may be visually presented as the permanent image consumer. The Ring as a whole owns scheduled native-image consumption, with one-operation-at-a-time ownership enforced by the shared recovery/consumer lease plus the production writer fence.
 
 ## Permanent scope rule
 
@@ -50,6 +56,7 @@ Programmatic SVGs or simple diagrams may be used as drafting/source aids, but th
 Refresh both current diagrams in the same protected documentation change whenever any of these materially changes:
 
 - Daily Brief Controller, Run Supervisor, watchdog, writer-fence or handoff responsibilities;
+- Watchdog Ring slot equivalence, native-image consumer coverage or recovery/consumer lease semantics;
 - Watchdog Fix-to-Progress semantics, including continued escalation after a failed repair, ACTIVE+PROGRESSING success, and unresolved safe-boundary handoff;
 - Task 00 readiness or Task 29 closure contracts;
 - Task 00–29 recovery semantics;
@@ -66,6 +73,8 @@ Before a living architecture infographic is accepted:
 
 - [ ] no run-specific or date-specific operational status is present;
 - [ ] every statement describes a durable system contract or role;
+- [ ] A–F are shown as equivalent; no special F image-consumer role appears;
+- [ ] image Tasks 11–16 show ring-wide pickup plus single-owner duplicate prevention;
 - [ ] Watchdog visuals do not imply one retry is enough; they show continued safe escalation until ACTIVE+PROGRESSING, verified external block, terminal state, or explicit continuation handoff;
 - [ ] final output is a professional high-resolution PNG;
 - [ ] visual quality is at least as strong as the established reference infographics;
@@ -75,6 +84,7 @@ Before a living architecture infographic is accepted:
 
 ## Primary living sources
 
+- `docs/operations/CHATGPT-WATCHDOG-RING.md`
 - `docs/operations/START-HERE.md`
 - `docs/operations/DAILY-UNATTENDED-STARTUP.md`
 - `docs/operations/RUN-LEARNING-READINESS-PLAN.md`
