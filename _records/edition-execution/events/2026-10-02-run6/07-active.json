@@ -1,0 +1,15 @@
+{
+  "task_id": "07",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-03T00:45:55Z",
+  "reason_code": "BEGIN_PODCAST_SELECTION_AND_VERIFICATION",
+  "operation": "select_verify_two_source_diverse_podcasts",
+  "proof": {
+    "required_count": 2,
+    "source_diverse": true,
+    "primary_freshness_hours": 48,
+    "max_runtime_minutes": 20,
+    "request_key": "fd18dbffad060701211e089fe36192f14cc4b8e6b79424a820bd3b10c6ac8b6e"
+  }
+}
