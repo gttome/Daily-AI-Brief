@@ -156,11 +156,18 @@ test('repository ring contract is exact',()=>{
   const c=JSON.parse(fs.readFileSync('docs/operations/task-recovery-contracts.json','utf8')).chatgpt_watchdog_ring;
   assert.deepEqual(validateWatchdogRingContract(c),[]); assert.deepEqual(c.recovery.minimum_action_ladder,WATCHDOG_MINIMUM_ACTION_LADDER);
 });
-test('startup and host bind ring and remove standalone minute 48',()=>{
+test('startup and host bind equivalent six-slot image-consumer ring and remove standalone minute 48',()=>{
   const s=fs.readFileSync('docs/operations/DAILY-UNATTENDED-STARTUP.md','utf8');
   assert.match(s,/03, 13, 23, 33, 43 and 53/); assert.match(s,/watchdog-leases/); assert.doesNotMatch(s,/Hourly recovery \/ scheduled native-image consumer/);
   const h=JSON.parse(fs.readFileSync('docs/operations/unattended-image-host.json','utf8'));
-  assert.equal(h.reusable_consumer.title,'Daily Brief Watchdog F'); assert.match(h.reusable_consumer.schedule,/BYMINUTE=53;BYSECOND=0/); assert.equal(h.watchdog_ring.nominal_check_minutes,10);
+  assert.equal(h.reusable_consumer_pool.scheduler_kind,'chatgpt_watchdog_ring');
+  assert.equal(h.reusable_consumer_pool.all_slots_equivalent,true);
+  assert.deepEqual(h.reusable_consumer_pool.slot_ids,['A','B','C','D','E','F']);
+  assert.equal(h.reusable_consumer_pool.automation_ids.length,6);
+  assert.equal(h.reusable_consumer_pool.nominal_pickup_minutes,10);
+  assert.equal(h.reusable_consumer_pool.normal_queued_native_request_consumption,true);
+  assert.equal(h.watchdog_ring.nominal_check_minutes,10);
+  assert.equal(h.watchdog_ring.bound_reusable_consumer_slot,null);
 });
 test('GitHub inner watchdog remains every five minutes',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8'); assert.match(y,/cron: '\*\/5 \* \* \* \*'/);
