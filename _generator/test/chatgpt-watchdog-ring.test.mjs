@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {WATCHDOG_SLOTS,WATCHDOG_MINIMUM_ACTION_LADDER,buildWatchdogIncidentId,buildWatchdogActionKey,acquireWatchdogRecoveryLease,releaseWatchdogRecoveryLease,watchdogLeaseActive,watchdogLeaseWritePlan,selectAuthoritativeRequest,watchdogDecision,nextWatchdogCorrectiveAction,verifyWatchdogRecoveryProgress,watchdogRecoveryContinuation,buildWatchdogEvent,validateWatchdogRingContract} from '../lib/chatgpt-watchdog-ring.mjs';
+import {WATCHDOG_SLOTS,WATCHDOG_NATIVE_IMAGE_TASKS,WATCHDOG_MINIMUM_ACTION_LADDER,buildWatchdogIncidentId,buildWatchdogActionKey,acquireWatchdogRecoveryLease,releaseWatchdogRecoveryLease,watchdogLeaseActive,watchdogLeaseWritePlan,selectAuthoritativeRequest,watchdogNativeImageConsumerDecision,watchdogDecision,nextWatchdogCorrectiveAction,verifyWatchdogRecoveryProgress,watchdogRecoveryContinuation,buildWatchdogEvent,validateWatchdogRingContract} from '../lib/chatgpt-watchdog-ring.mjs';
 import {classifyRunHealth} from '../lib/run-supervisor.mjs';
 
 const active={active:true,terminal:false,execution_id:'synthetic-watchdog-execution',edition_id:'dab-edition-2099-01-01',branch:'synthetic/watchdog'};
@@ -64,6 +64,30 @@ test('newest exact native request wins over historical contamination',()=>{
     {execution_id:'history',task_id:'11',request_key:'wrong',created_at:'2026-10-03T19:02:00Z'}
   ];
   assert.equal(selectAuthoritativeRequest(rs,{execution_id:active.execution_id,task_id:'11'}).request_key,'current');
+});
+test('all six watchdog slots are equally eligible native image consumers',()=>{
+  assert.deepEqual(WATCHDOG_NATIVE_IMAGE_TASKS,['11','12','13','14','15','16']);
+  const req={execution_id:active.execution_id,task_id:'11',request_key:'image-current',capability:'native_chatgpt',status:'queued_for_scheduled_consumer'};
+  for(const slot of Object.keys(WATCHDOG_SLOTS)){
+    const x=watchdogNativeImageConsumerDecision({owner_slot:slot,authoritative_request:req,first_incomplete_task:'11',now:'2026-10-03T19:01:00Z'});
+    assert.equal(x.action,'CONSUME_NATIVE_IMAGE_REQUEST',slot);
+    assert.equal(x.owner_slot,slot);
+  }
+});
+test('queued native image is consumed without waiting for stale classification',()=>{
+  const x=watchdogDecision({active_pointer:active,classification:{state:'READY_IDLE'},owner_slot:'C',native_image_request_ready:true,now:'2026-10-03T19:01:00Z'});
+  assert.equal(x.action,'CONSUME_NATIVE_IMAGE_REQUEST');
+});
+test('another valid watchdog owner prevents duplicate native image consumption',()=>{
+  const lease=acquireWatchdogRecoveryLease(null,{execution_id:active.execution_id,incident_id:incident,owner_slot:'A',action_key:action,now:'2026-10-03T19:00:00Z'}).lease;
+  const req={execution_id:active.execution_id,task_id:'12',request_key:'image-current',capability:'native_chatgpt',status:'queued_for_scheduled_consumer'};
+  const x=watchdogNativeImageConsumerDecision({owner_slot:'B',authoritative_request:req,first_incomplete_task:'12',recovery_lease:lease,now:'2026-10-03T19:01:00Z'});
+  assert.equal(x.action,'NO_ACTION'); assert.equal(x.reason,'another_watchdog_consumer_owner_active');
+});
+test('active native image worker prevents duplicate ring consumption',()=>{
+  const req={execution_id:active.execution_id,task_id:'13',request_key:'image-current',capability:'native_chatgpt',status:'queued_for_scheduled_consumer'};
+  const x=watchdogNativeImageConsumerDecision({owner_slot:'F',authoritative_request:req,first_incomplete_task:'13',substantive_worker_active:true,now:'2026-10-03T19:01:00Z'});
+  assert.equal(x.action,'NO_ACTION'); assert.equal(x.reason,'native_image_worker_already_progressing');
 });
 test('actionable blocker selects smallest repair',()=>assert.equal(nextWatchdogCorrectiveAction({classification:'BLOCKED_ACTIONABLE',stale_derived_state:true,same_executor_missing:true}).action,'RECONCILE_AUTHORITATIVE_STATE'));
 test('external blocker is not bypassed',()=>assert.equal(watchdogDecision({active_pointer:active,classification:{state:'BLOCKED_EXTERNAL'},owner_slot:'C',now:'2026-10-03T19:01:00Z'}).action,'WAIT_EXTERNAL'));
@@ -130,11 +154,18 @@ test('repository ring contract is exact',()=>{
   const c=JSON.parse(fs.readFileSync('docs/operations/task-recovery-contracts.json','utf8')).chatgpt_watchdog_ring;
   assert.deepEqual(validateWatchdogRingContract(c),[]); assert.deepEqual(c.recovery.minimum_action_ladder,WATCHDOG_MINIMUM_ACTION_LADDER);
 });
-test('startup and host bind ring and remove standalone minute 48',()=>{
+test('startup and host bind the whole ring as the reusable image consumer',()=>{
   const s=fs.readFileSync('docs/operations/DAILY-UNATTENDED-STARTUP.md','utf8');
   assert.match(s,/03, 13, 23, 33, 43 and 53/); assert.match(s,/watchdog-leases/); assert.doesNotMatch(s,/Hourly recovery \/ scheduled native-image consumer/);
   const h=JSON.parse(fs.readFileSync('docs/operations/unattended-image-host.json','utf8'));
-  assert.equal(h.reusable_consumer.title,'Daily Brief Watchdog F'); assert.match(h.reusable_consumer.schedule,/BYMINUTE=53;BYSECOND=0/); assert.equal(h.watchdog_ring.nominal_check_minutes,10);
+  assert.equal(h.reusable_consumer.scheduler_kind,'chatgpt_watchdog_ring');
+  assert.equal(h.reusable_consumer.role,'scheduled_native_image_request_consumer_ring');
+  assert.equal(h.reusable_consumer.special_slot,null);
+  assert.deepEqual(h.reusable_consumer.eligible_slots,['A','B','C','D','E','F']);
+  assert.equal(h.reusable_consumer.slots.length,6);
+  assert.ok(h.reusable_consumer.slots.every(x=>x.enabled===true&&x.native_image_eligible===true));
+  assert.equal(h.watchdog_ring.nominal_check_minutes,10);
+  assert.equal(h.watchdog_ring.bound_reusable_consumer_slot,null);
 });
 test('GitHub inner watchdog remains every five minutes',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8'); assert.match(y,/cron: '\*\/5 \* \* \* \*'/);
