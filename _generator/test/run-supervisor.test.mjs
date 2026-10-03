@@ -462,3 +462,14 @@ test('Supervisor explicitly dispatches queued Task 17 repository work despite GI
   assert.match(y,/pushes created by GITHUB_TOKEN do not recursively trigger workflows/);
   assert.match(y,/active_repository_consumers/);
 });
+
+
+test('repository recovery contracts enforce the 60-second substantive-progress liveness boundary',()=>{
+  const c=contract();
+  for(const id of ['17','18','19','20','21','22','24','27','28','29'])
+    assert.equal(c.tasks[id].stale_after_seconds,60,id);
+  assert.equal(c.repository_liveness_policy.max_idle_seconds,60);
+  assert.match(c.repository_liveness_policy.rule,/substantive durable worker progress/i);
+  assert.match(c.repository_liveness_policy.rule,/lease\/heartbeat\/Kanban-only/i);
+  assert.match(c.repository_liveness_policy.primary_post_image_path,/same invocation/i);
+});
