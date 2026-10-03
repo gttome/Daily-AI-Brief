@@ -1,0 +1,103 @@
+{
+  "schema_version": "rehearsal-story-selection-v1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "execution_key": "2026-10-02-run6",
+  "locked_at": "2026-10-03T00:18:32Z",
+  "evidence_path": "_records/discovery/2026-10-02-run6/evidence.json",
+  "allocation": "2/2/2",
+  "selected_ids": [
+    "m01",
+    "m02",
+    "m04",
+    "m05",
+    "m07",
+    "m09"
+  ],
+  "agent_skills_candidate_id": "m01",
+  "agent_skills_story_count": 1,
+  "extended_fallback_selected": [
+    "m09"
+  ],
+  "selections": [
+    {
+      "order": 1,
+      "id": "m01",
+      "category": "technical_ai_engineering",
+      "display_category": "Technical AI Engineering",
+      "headline": "NVIDIA packages verified DOCA expertise into reusable agent skills",
+      "publisher": "NVIDIA",
+      "source_url": "https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/",
+      "agent_skills_story": true,
+      "selection_reason": "Concrete machine-readable skill mechanism with verified APIs, hardware constraints, preflight checks and measured evaluation results."
+    },
+    {
+      "order": 2,
+      "id": "m02",
+      "category": "technical_ai_engineering",
+      "display_category": "Technical AI Engineering",
+      "headline": "Qodo 3.0 moves code quality controls into the agentic software factory",
+      "publisher": "Qodo",
+      "source_url": "https://www.qodo.ai/blog/introducing-qodo-3-0/",
+      "agent_skills_story": false,
+      "selection_reason": "Strong verification/governance mechanism spanning agent workflows, cross-repo impact and review evidence."
+    },
+    {
+      "order": 3,
+      "id": "m04",
+      "category": "applied_genai_knowledge_workers",
+      "display_category": "Applied Generative AI for Knowledge Workers",
+      "headline": "Google Workspace brings more AI work directly into everyday apps",
+      "publisher": "Google Workspace",
+      "source_url": "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop",
+      "agent_skills_story": false,
+      "selection_reason": "Broad but concrete knowledge-worker value across Chat, Sheets, image editing and document-to-video workflows."
+    },
+    {
+      "order": 4,
+      "id": "m05",
+      "category": "applied_genai_knowledge_workers",
+      "display_category": "Applied Generative AI for Knowledge Workers",
+      "headline": "Barclays scales Claude across knowledge support and operational workflows",
+      "publisher": "Anthropic",
+      "source_url": "https://www.anthropic.com/news/barclays-scales-claude",
+      "agent_skills_story": false,
+      "selection_reason": "Current regulated-enterprise evidence with measurable knowledge-assistant adoption and high-volume email operations."
+    },
+    {
+      "order": 5,
+      "id": "m07",
+      "category": "agents_non_technical_people",
+      "display_category": "Agents for Non-Technical People",
+      "headline": "Agentic marketing connects customer context to governed next-best actions",
+      "publisher": "Databricks",
+      "source_url": "https://www.databricks.com/blog/connecting-customer-context-measurable-roi-agentic-marketing",
+      "agent_skills_story": false,
+      "selection_reason": "Clear nontechnical agent workflow where marketers define goals, guardrails and approvals while agents choose and measure actions."
+    },
+    {
+      "order": 6,
+      "id": "m09",
+      "category": "agents_non_technical_people",
+      "display_category": "Agents for Non-Technical People",
+      "headline": "Asana Client Management puts AI teammates inside client-delivery workflows",
+      "publisher": "Asana",
+      "source_url": "https://asana.com/inside-asana/asana-client-management",
+      "agent_skills_story": false,
+      "selection_reason": "Four named AI Teammate roles operate on shared client context to draft work, manage handoffs and surface business risk.",
+      "freshness_disclosure": "Extended 168-hour fallback used; September 28 publication selected for category strength and distinct practical value."
+    }
+  ],
+  "reserve_ids": [
+    "m03",
+    "m08"
+  ],
+  "excluded_ids": [
+    "m06"
+  ],
+  "reader_copy_guards": {
+    "internal_candidate_ids_in_topics": false,
+    "book_connections_must_explain_reader_value": true,
+    "operational_selection_prose_reader_visible": false
+  }
+}
