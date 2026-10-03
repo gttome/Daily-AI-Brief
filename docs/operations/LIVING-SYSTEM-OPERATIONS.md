@@ -1461,3 +1461,8 @@ The five-change hardening acceptance gate is now satisfied by durable NON-PRODUC
 
 This hardening process does **not** manually start the next production Brief. Once the PASS receipt is protected, the existing Daily Brief Controller remains responsible for normal scheduled allocation. The hourly Recovery automation remains the reusable Task 11–16 image consumer and recovery keeper.
 
+
+
+## Canonical Kanban presentation standard — October 3, 2026
+
+The owner-approved Run 7 Kanban is the single gold-standard visual format for future Daily AI Brief Kanban PNGs. The authoritative specification is `docs/operations/KANBAN-GOLD-STANDARD.md`. Task 00 Production Readiness Validation must load and enforce that specification before any run-status Kanban rendering. The format uses exactly Backlog → WIP → Done, all Tasks 00–29, authoritative per-task durations, total Brief elapsed time, and the approved Run Information / Edition Completion / Content Targets / Key Notes plus Recent Activity / Upcoming Tasks / Current Risk / Next Action panels. Current run data must always come from append-only durable evidence; historical values from the example are never copied forward.
