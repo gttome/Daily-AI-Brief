@@ -1,0 +1,36 @@
+{
+  "schema_version": "task23-ci-input-repair-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "edition_id": "dab-edition-2026-10-03",
+  "task_id": "23",
+  "repaired_at": "2026-10-03T14:39:45.000Z",
+  "writer_generation": 40,
+  "failed_ci": {
+    "workflow": "Deterministic publication CI",
+    "run_id": 37130160903,
+    "head_sha": "3c4326eb8f73756ad84c076d0e96983283b723aa",
+    "conclusion": "failure",
+    "failing_test": "current manifest binds completed artifacts without rework",
+    "actual_staging_ref": "reliable-edition/dab-edition-2026-10-03-run7",
+    "stale_expected_staging_ref": "reliable-edition/dab-edition-2026-10-02-run5"
+  },
+  "root_cause": "Task 21 rebuilt the October 3 publication manifest and deterministic projections but did not refresh the generic editorial handoff pointer, leaving it bound to Run 5.",
+  "repair_scope": "Refresh only _records/editorial-handoff/handoff.json to the already-locked Run 7 artifacts and branch identity.",
+  "preserved": {
+    "completed_tasks": "00-22",
+    "accepted_locked_images": 6,
+    "task18_reader_pages": true,
+    "task19_seal": true,
+    "story_selection": true,
+    "media_selection": true,
+    "book_review": true,
+    "watchlist_decisions": true,
+    "image_bytes_changed": false
+  },
+  "validation": {
+    "publication_manifest_targeted_test": "PASS",
+    "handoff_staging_ref_matches_manifest": "PASS",
+    "handoff_artifact_paths_exist": "PASS",
+    "result": "PASS"
+  }
+}
