@@ -14,5 +14,13 @@
   "created_at": "2026-10-03T01:49:33.865Z",
   "writer_generation_is_provenance": false,
   "authority_refresh_required_at_invocation": false,
-  "status": "queued"
+  "status": "completed_pass",
+  "consumed_at": "2026-10-03T01:56:08Z",
+  "authority_refreshed_at": "2026-10-03T01:56:08Z",
+  "completed_at": "2026-10-03T01:56:36Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-rehearsal-20261002-pre-oct3-r1/17-c3ed134cd0959cbdab3cf1228d11b3f402c43e504a6c6c6ce47f72bd77f72786.json",
+  "released": true,
+  "released_at": "2026-10-03T01:56:36Z",
+  "expires_at": "2026-10-03T01:56:36Z",
+  "release_reason": "TASK17_SIX_IMAGE_SET_REVIEW_PASS_HANDOFF_TO_SUPERVISOR"
 }
