@@ -342,12 +342,13 @@ test('Supervisor workflow contains the one-minute loop, single concurrency lane 
 });
 
 
-test('Supervisor does not steal a released Tasks 11-16 scheduled-image delegation',()=>{
+test('Supervisor does not steal an unfinished Tasks 11-16 scheduled-image delegation',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
   assert.match(y,/Yield while a scheduled image consumer owns the next operation/);
-  assert.match(y,/TASK_\(1\[1-6\]\)_QUEUED_HANDOFF_TO_SCHEDULED_IMAGE_CONSUMER/);
   assert.match(y,/queued_for_scheduled_consumer/);
-  assert.match(y,/Supervisor will not reacquire the writer fence/);
+  assert.match(y,/\^1\[1-6\]\$/);
+  assert.match(y,/events,t\+"-done\.json"/);
+  assert.match(y,/Supervisor will not acquire or take over the writer fence/);
   const configure=y.indexOf('- name: Configure run-branch writer');
   const delegation=y.indexOf('- name: Yield while a scheduled image consumer owns the next operation');
   assert.ok(delegation>=0 && configure>delegation);
