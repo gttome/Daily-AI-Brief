@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "081739ea10721ac69a11bb88082009bd99d2935d8ced5327e5b2688180c4e229",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "21",
+  "capability": "repository",
+  "instruction": "Execute Task 21 focused repair identified by Task 20 qualification: add missing reader-value book bridges on three preview story pages, add verified source links to four media permanent pages, link four media titles from the rehearsal landing page, then rerun focused qualification without modifying canonical production pointers or accepted images.",
+  "writer_generation": 20,
+  "recovery_attempt": 0,
+  "repair_epoch": 1,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-03T02:25:19Z",
+  "writer_generation_is_provenance": true,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
