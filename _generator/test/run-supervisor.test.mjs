@@ -383,9 +383,9 @@ test('Supervisor workflow contains the one-minute loop, single concurrency lane 
 });
 
 
-test('Supervisor delegates only when the newest unfinished Tasks 11-16 request is queued for the scheduled image consumer',()=>{
+test('Supervisor delegates only when the newest unfinished Tasks 11-16 request is queued for the Watchdog Ring image consumer',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
-  assert.match(y,/Yield while a scheduled image consumer owns the next operation/);
+  assert.match(y,/Yield while a Watchdog Ring image consumer owns the next operation/);
   assert.match(y,/const latest=new Map\(\)/);
   assert.match(y,/Date\.parse\(x\.created_at\|\|0\)/);
   assert.match(y,/ts>pts\|\|\(ts===pts&&n>prior\.n\)/);
@@ -393,7 +393,7 @@ test('Supervisor delegates only when the newest unfinished Tasks 11-16 request i
   assert.match(y,/x\.capability==="native_chatgpt"&&String\(x\.status\|\|""\)==="queued_for_scheduled_consumer"/);
   assert.match(y,/Supervisor will not acquire or take over the writer fence/);
   const configure=y.indexOf('- name: Configure run-branch writer');
-  const delegation=y.indexOf('- name: Yield while a scheduled image consumer owns the next operation');
+  const delegation=y.indexOf('- name: Yield while a Watchdog Ring image consumer owns the next operation');
   assert.ok(delegation>=0 && configure>delegation);
   assert.match(y,/Configure run-branch writer\n        if: steps\.boundary\.outputs\.write_allowed == 'true' && steps\.image_delegation\.outputs\.delegated != 'true'/);
   assert.match(y,/Acquire fenced writer authority for this exact execution\n        if: steps\.boundary\.outputs\.write_allowed == 'true' && steps\.image_delegation\.outputs\.delegated != 'true'/);
