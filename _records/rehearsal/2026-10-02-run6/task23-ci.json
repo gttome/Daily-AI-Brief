@@ -1,0 +1,13 @@
+{
+  "schema_version": "rehearsal-ci-receipt-v1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "task_id": "23",
+  "candidate_sha": "89dbab58750710cafcaefaab1d22ca65e519b603",
+  "pr_number": 386,
+  "workflow_run_id": 37091235376,
+  "check_run_id": 111111829562,
+  "conclusion": "success",
+  "completed_at": "2026-10-03T02:52:08Z",
+  "recorded_at": "2026-10-03T02:52:35Z",
+  "exact_head_verified": true
+}
