@@ -9,7 +9,8 @@ import {
   assertImageTasksReady,
   staleActiveDecision,
   terminalCleanupReceipt,
-  buildPromotionReview
+  buildPromotionReview,
+  terminalRunProtectionDecision
 } from '../lib/run-readiness.mjs';
 
 function goodInput(){
@@ -30,7 +31,8 @@ function goodInput(){
       supervisor_scope:'reliable-edition-20261002-run5',supervisor_until_terminal_cleanup:true,
       watchdog_enabled:true,writer_fencing_enabled:true,supervisor_interval_seconds:60,
       stale_active_threshold_ms:15*60*1000,no_competing_writer:true,
-      actionable_blocked_recovery_tested:true,stale_active_recovery_tested:true,duplicate_run_rejection_tested:true
+      actionable_blocked_recovery_tested:true,stale_active_recovery_tested:true,duplicate_run_rejection_tested:true,
+      terminal_run_reopen_guard_enabled:true,terminal_run_immutability_tested:true
     },
     image_pipeline:{
       path:PROVEN_IMAGE_PATH,exact_byte_capture:true,saved_asset_review:true,
@@ -52,7 +54,8 @@ function goodInput(){
     },
     timing:{
       append_only_transition_ledger:true,kanban_derived_from_events:true,kanban_digest_bound:true,
-      executor_state_visible:true,missing_timestamps_never_inferred:true
+      executor_state_visible:true,missing_timestamps_never_inferred:true,
+      kanban_observability_only:true,metrics_observability_only:true,projection_defects_nonblocking:true
     },
     content_contract:{
       story_count:6,allocation:'2/2/2',agent_skills_story_count:1,videos:2,podcasts:2,
@@ -93,6 +96,27 @@ test('missing Supervisor, ledger proof and small-PNG route fail readiness',()=>{
   assert.ok(receipt.errors.includes('run_supervisor_required'));
   assert.ok(receipt.errors.includes('operational_learning_readiness_pass_required'));
   assert.ok(receipt.errors.includes('small_png_persistence_route_required'));
+});
+
+test('generic terminal protection never reopens any prior terminal execution',()=>{
+  const terminal_runs=[
+    {edition_id:'dab-edition-2026-10-01',execution_id:'closed-a',terminal_state:'PUBLIC_CLOSED'},
+    {edition_id:'dab-edition-2026-10-02',execution_id:'closed-b',terminal_state:'FAILED'}
+  ];
+  assert.equal(terminalRunProtectionDecision({terminal_runs,requested_execution_id:'closed-a'}).action,'reject_terminal_reopen');
+  assert.equal(terminalRunProtectionDecision({terminal_runs,active_pointer:{active:true,terminal:false,edition_id:'dab-edition-2026-10-03',execution_id:'active-c'}}).action,'resume_active_nonterminal');
+  assert.equal(terminalRunProtectionDecision({terminal_runs,active_pointer:{active:false,terminal:true,edition_id:'dab-edition-2026-10-02',execution_id:'closed-b'},requested_edition_id:'dab-edition-2026-10-04'}).action,'allocate_new_edition');
+  assert.equal(terminalRunProtectionDecision({terminal_runs,active_pointer:{active:true,terminal:false,edition_id:'dab-edition-2026-10-01',execution_id:'closed-a'}}).action,'reject_terminal_reopen');
+});
+
+test('Task 00 readiness requires terminal immutability and observability-only metrics',()=>{
+  const x=goodInput();
+  x.control_plane.terminal_run_reopen_guard_enabled=false;
+  x.timing.kanban_observability_only=false;
+  x.timing.metrics_observability_only=false;
+  x.timing.projection_defects_nonblocking=false;
+  const receipt=validateRunReadiness(x);
+  for(const code of ['terminal_run_reopen_guard_required','kanban_observability_only_required','metrics_observability_only_required','projection_defects_must_be_nonblocking'])assert.ok(receipt.errors.includes(code),code);
 });
 
 test('stale Active task requires same-operation recovery without status request',()=>{
