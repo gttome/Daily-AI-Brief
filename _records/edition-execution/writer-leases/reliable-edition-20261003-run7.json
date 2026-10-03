@@ -1,9 +1,13 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261003-run7",
-  "owner_id": "github-actions-37102153635-1",
-  "generation": 4,
-  "acquired_at": "2026-10-03T06:10:25.431Z",
-  "last_heartbeat_at": "2026-10-03T06:10:25.431Z",
-  "expires_at": "2026-10-03T12:10:25.431Z"
+  "owner_id": "scheduled-chatgpt-controller-6abeba31fe28819184544abf70874a80-task01",
+  "generation": 5,
+  "acquired_at": "2026-10-03T06:16:21.278Z",
+  "last_heartbeat_at": "2026-10-03T06:16:21.278Z",
+  "expires_at": "2026-10-03T08:16:21.278Z",
+  "prior_owner_id": "github-actions-37102153635-1",
+  "prior_generation": 4,
+  "takeover_reason": "Supervisor-only reconciliation had not produced substantive task progress; primary controller resumed the same execution under the one-writer rule.",
+  "released": false
 }
