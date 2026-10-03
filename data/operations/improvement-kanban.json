@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-03T20:44:35.362413Z",
+  "observed_at": "2026-10-03T20:49:46Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -251,7 +251,11 @@
         "DAB-OPS-20261003-007",
         "docs/operations/CHATGPT-WATCHDOG-RING-IMPLEMENTATION-REPORT-2026-10-03.md",
         "_records/hardening/chatgpt-watchdog-ring-2026-10-03/final-verification.json",
-        "_records/hardening/chatgpt-watchdog-ring-2026-10-03/fix-to-progress-schedule-observation.json"
+        "_records/hardening/chatgpt-watchdog-ring-2026-10-03/fix-to-progress-schedule-observation.json",
+        "PR #420",
+        "CI run 37152873713",
+        "merge 480a4c559ac2b900dd29b746eec4e279a365e73f",
+        "DAB-OPS-E-000088"
       ]
     },
     {
