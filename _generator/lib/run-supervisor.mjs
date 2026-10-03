@@ -133,6 +133,8 @@ export function applyImmediateImageRecovery({
 
 export function normalizeTaskEvent(event = {}) {
   const normalized = {...event};
+  if (!normalized.from && typeof normalized.from_state === 'string') normalized.from = normalized.from_state;
+  if (!normalized.to && typeof normalized.to_state === 'string') normalized.to = normalized.to_state;
   if (!normalized.to && typeof normalized.state === 'string') normalized.to = normalized.state;
   if (!normalized.at && typeof normalized.blocker?.at === 'string') normalized.at = normalized.blocker.at;
   if (normalized.recoverable === undefined && typeof normalized.blocker?.recoverable === 'boolean')
