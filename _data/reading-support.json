@@ -341,6 +341,66 @@
       "words_per_minute": 200,
       "source_text_sha256": "9fa992b448aed164884f75f8dd4a9cb4b4ed0ffeb5d7f0589c2d24828d167408",
       "exclusions": "Navigation, author metadata, comments, related-story cards and unrelated promotional material excluded."
+    },
+    "dab-story-2026-10-03-m01": {
+      "status": "verified",
+      "source_url": "https://microsoft.ai/news/our-first-streaming-transcription-model/",
+      "word_count": null,
+      "reading_minutes": 5,
+      "verified_at": "2026-10-03T18:30:00Z",
+      "method": "publisher_displayed_reading_time",
+      "full_source_read": true,
+      "measurement_note": "Microsoft AI displays “5 min read” for the source article."
+    },
+    "dab-story-2026-10-03-m02": {
+      "status": "verified",
+      "source_url": "https://research.google/blog/toward-provably-private-learning-from-federated-data/",
+      "word_count": null,
+      "reading_minutes": 7,
+      "verified_at": "2026-10-03T18:30:00Z",
+      "method": "indexed_source_body_estimate_200wpm",
+      "full_source_read": true,
+      "measurement_note": "Estimated from the reviewed Google Research main article body at 200 words per minute; navigation and unrelated page chrome excluded."
+    },
+    "dab-story-2026-10-03-m04": {
+      "status": "verified",
+      "source_url": "https://www.anthropic.com/news/claude-frontier-academy",
+      "word_count": null,
+      "reading_minutes": 6,
+      "verified_at": "2026-10-03T18:30:00Z",
+      "method": "indexed_source_body_estimate_200wpm",
+      "full_source_read": true,
+      "measurement_note": "Estimated from the reviewed Anthropic main announcement body at 200 words per minute; navigation and related-content chrome excluded."
+    },
+    "dab-story-2026-10-03-m05": {
+      "status": "verified",
+      "source_url": "https://decagon.ai/blog/dialogues-2026",
+      "word_count": null,
+      "reading_minutes": 5,
+      "verified_at": "2026-10-03T18:30:00Z",
+      "method": "indexed_source_body_estimate_200wpm",
+      "full_source_read": true,
+      "measurement_note": "Estimated from the reviewed Decagon main article body at 200 words per minute; navigation, newsletter form, testimonial and hiring chrome excluded."
+    },
+    "dab-story-2026-10-03-m07": {
+      "status": "verified",
+      "source_url": "https://devblogs.microsoft.com/microsoft365dev/bring-your-plugin-to-microsoft-copilot-with-wiqd/",
+      "word_count": null,
+      "reading_minutes": 6,
+      "verified_at": "2026-10-03T18:30:00Z",
+      "method": "indexed_source_body_estimate_200wpm",
+      "full_source_read": true,
+      "measurement_note": "Estimated from the reviewed Microsoft 365 Developer Blog main article body at 200 words per minute; navigation, author bios and related chrome excluded."
+    },
+    "dab-story-2026-10-03-m08": {
+      "status": "verified",
+      "source_url": "https://www.oag.ca.gov/news/press-releases/part-ongoing-investigation-attorney-general-bonta-serves-investigative-subpoena",
+      "word_count": null,
+      "reading_minutes": 3,
+      "verified_at": "2026-10-03T18:30:00Z",
+      "method": "indexed_source_body_estimate_200wpm",
+      "full_source_read": true,
+      "measurement_note": "Estimated from the reviewed California DOJ press-release body at 200 words per minute; site navigation and footer excluded."
     }
   },
   "schema_version": "1.0.0",
