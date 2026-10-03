@@ -1,0 +1,17 @@
+{
+  "task_id": "03",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-03T00:10:51Z",
+  "reason_code": "FRESH_DISCOVERY_COMPLETED_AFTER_STALE_ACTIVE_TAKEOVER",
+  "operation": "discover_fresh_article_candidates",
+  "proof": {
+    "candidate_path": "_records/discovery/2026-10-02-run6/candidates.json",
+    "candidate_count": 9,
+    "balanced": "3/3/3",
+    "metadata_limit": 20,
+    "deep_review_target": 9,
+    "run5_selection_excluded": true,
+    "request_key": "8ce1345a08632796cfd32ff8153bcf0d3df2d3dceae0152b40d573186fc6ebe1"
+  }
+}
