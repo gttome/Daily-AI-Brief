@@ -7,6 +7,9 @@
   "operation_key": "resume_run7_task23_protected_promotion_after_branch_local_handoff_drift",
   "capability": "repository",
   "acquired_at": "2026-10-03T15:04:50.441Z",
-  "last_heartbeat_at": "2026-10-03T15:04:50.441Z",
-  "expires_at": "2026-10-03T15:19:50.441Z"
+  "last_heartbeat_at": "2026-10-03T15:05:34.575Z",
+  "expires_at": "2026-10-03T15:05:34.575Z",
+  "released": true,
+  "released_at": "2026-10-03T15:05:34.575Z",
+  "release_reason": "TASK_23_BLOCKED_HANDOFF_TO_SUPERVISOR"
 }
