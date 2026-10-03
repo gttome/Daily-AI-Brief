@@ -966,7 +966,7 @@
   "chatgpt_watchdog_ring": {
     "schema_version": "chatgpt-watchdog-ring-contract-v1",
     "enabled": true,
-    "role": "outer_autonomous_recovery",
+    "role": "outer_autonomous_recovery_and_ring_wide_native_image_consumption",
     "schedule": {
       "timing_mode": "exact_schedule",
       "per_slot_recurrence": "hourly",
@@ -1054,7 +1054,8 @@
         "task_or_process_active",
         "real_executor_confirmed",
         "durable_progress_confirmed"
-      ]
+      ],
+      "minimum_action_means": "minimum_sufficient_action_that_restores_active_and_progressing_state"
     },
     "protections": {
       "terminal_reopen_allowed": false,
@@ -1064,6 +1065,17 @@
       "production_allocation_allowed": false
     },
     "native_image_consumer": {
+      "role": "ring_wide_scheduled_native_image_consumer",
+      "eligible_slots": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "all_slots_equivalent": true,
+      "special_slot": null,
       "tasks": [
         "11",
         "12",
@@ -1072,11 +1084,15 @@
         "15",
         "16"
       ],
-      "durable_bound_slot": "F",
-      "current_fence_refresh_required": true,
-      "sealed_single_story_spec_required": true,
-      "accepted_locked_assets_immutable": true,
-      "explicit_supervisor_handoff_required": true
+      "consume_queued_request_without_stale_wait": true,
+      "exact_request_only": true,
+      "single_operation_owner": true,
+      "shared_recovery_consumer_lease_required": true,
+      "current_writer_fence_required": true,
+      "accepted_locked_immutable": true,
+      "later_slot_takeover_requires_expired_released_or_dead_owner": true,
+      "nominal_consumer_opportunity_minutes": 10,
+      "scheduler_delivery_real_time_guarantee": false
     },
     "cost_boundary": {
       "chatgpt_work": false,
