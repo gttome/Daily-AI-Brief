@@ -1,0 +1,41 @@
+{
+  "task_id": "12",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-03T01:22:49.838Z",
+  "reason_code": "IMAGE_ACCEPTED_LOCKED",
+  "operation": "generate_persist_review_accept_image_2",
+  "proof": {
+    "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+    "branch": "rehearsal/dab-edition-2026-10-02-run6",
+    "request_key": "4d68bbdbf5c79383e3433417016a8f7abb0b536ca84adc8e6b939a95d4ff70c0",
+    "candidate_id": "m02",
+    "attempt": 1,
+    "writer_generation": 10,
+    "accepted_locked": true,
+    "final_path": "rehearsals/pre-oct3-20261002-r1/images/dab-rehearsal-2026-10-02-m02-1.png",
+    "final_sha256": "35c06722862b39e1ba6f2886b1c1421f5143fba1819e2e3b9be7ca368553baf7",
+    "final_git_blob_sha": "b7ce3e1af728ed0f2c6881b8932e32893d1865e2",
+    "original_path": "_records/image-originals/2026-10-02-run6/dab-rehearsal-2026-10-02-m02-1-native.png",
+    "original_sha256": "4eb4cb7dbaeff6eac0a171f7f704c5d3fbdc000e4e12e6540a28c2ec8826cf2b",
+    "original_git_blob_sha": "d3e1ab34f2a92b338d93bf280189e8f95785689f",
+    "saved_git_visual_review": "PASS",
+    "visible_text_guard": "PASS",
+    "completed_tasks_preserved": [
+      "00",
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11"
+    ],
+    "handoff": "HANDOFF_TO_SUPERVISOR",
+    "result": "PASS"
+  }
+}
