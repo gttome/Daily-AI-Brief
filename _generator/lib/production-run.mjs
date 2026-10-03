@@ -24,7 +24,7 @@ export function evidenceViews(packets){
   const facts=p.verified_claims.map(x=>({claim:x.claim,evidence:x.evidence}));
   const capsule=compactPacket(p);views.research_capsule.push(capsule);
   views.editorial.push({candidate_id:capsule.candidate_id,headline:capsule.headline,canonical_url:capsule.canonical_url,category:capsule.category,published_at:capsule.published_at,source_reliability:capsule.source_reliability,freshness_tier:capsule.freshness_tier,novelty_status:capsule.novelty_status,confidence:capsule.confidence,agent_skill_relevance:capsule.agent_skill_relevance,evidence:capsule.evidence,source_word_count:capsule.source_word_count,source_reading_minutes:capsule.source_reading_minutes,limitation:capsule.limitation,availability:capsule.availability,why_candidate_matters:capsule.why_candidate_matters});
-  // The following views remain as traceable compatibility artifacts, not normal Work inputs.
+  // The following views remain as traceable compatibility artifacts, not normal model-context inputs.
   views.selection.push({...identity,category:p.category,published_at:p.published_at,novelty_status:p.novelty_status,confidence:p.confidence,agent_skill_relevance:p.agent_skill_relevance,claims:facts});
   views.writing.push({...identity,published_at:p.published_at,why_it_matters:p.why_it_matters,claims:facts,limitations:p.limitations||[],availability:p.availability||null});
   views.images.push({...identity,verified_relationships:facts.map(x=>x.claim),limitations:p.limitations||[],availability:p.availability||null,required_preflight:['verified mechanism and labels','current versus planned status','distinct composition','no invented settings or measurements'],review_status:'pending_visual_brief_review'});
@@ -33,7 +33,7 @@ export function evidenceViews(packets){
  const researchCapsuleChars=JSON.stringify(views.research_capsule).length,workContextChars=JSON.stringify(views.editorial).length;
  if(researchCapsuleChars>RESEARCH_CAPSULE_CHAR_BUDGET)throw Error(`research_capsule_budget_exceeded:${researchCapsuleChars}>${RESEARCH_CAPSULE_CHAR_BUDGET}`);
  if(workContextChars>WORK_CONTEXT_CHAR_BUDGET)throw Error(`work_context_budget_exceeded:${workContextChars}>${WORK_CONTEXT_CHAR_BUDGET}`);
- return {views,telemetry:{archive_chars:JSON.stringify(packets).length,research_capsule_chars:researchCapsuleChars,work_context_chars:workContextChars,stage_chars:Object.fromEntries(Object.entries(views).map(([k,v])=>[k,JSON.stringify(v).length])),actual_model_input_chars:null,note:'Full reviewed excerpts remain in the private packet archive. The normal Work path consumes only research_capsule/editorial views; compatibility views are not normal model inputs.'}};
+ return {views,telemetry:{archive_chars:JSON.stringify(packets).length,research_capsule_chars:researchCapsuleChars,work_context_chars:workContextChars,stage_chars:Object.fromEntries(Object.entries(views).map(([k,v])=>[k,JSON.stringify(v).length])),actual_model_input_chars:null,note:'Full reviewed excerpts remain in the private packet archive. The normal model-context path consumes only research_capsule/editorial views; compatibility views are not normal model inputs.'}};
 }
 export function saveJson(file,value){fs.mkdirSync(path.dirname(file),{recursive:true});const text=JSON.stringify(value,null,2)+'\n',temp=file+'.'+process.pid+'.tmp';fs.writeFileSync(temp,text);fs.renameSync(temp,file);return sha256(text);}
 export function completionDecision({editionDate,completion,lastProcessed=null}){
