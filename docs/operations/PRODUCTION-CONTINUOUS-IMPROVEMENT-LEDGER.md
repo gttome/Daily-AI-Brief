@@ -888,3 +888,20 @@ Problems: 49 · Events: 82
 - **Recurrences:** none recorded
 - **Future validation:** Confirm protected CI passes and Run 7 closure records production SHA 50cbe6f0719ff67088e65340f4322e64f582ee9e with PUBLIC_CLOSED and Task 29 Done.
 
+## DAB-OPS-20261003-006 — Post-image repository requests could wait for the hourly recovery consumer without a durable 60-second liveness fault.
+
+- **Status:** partially_mitigated
+- **First observed run:** reliable-edition-20261003-run7
+- **Task(s):** 18-22, 24, 27-29
+- **Symptom:** Run 7 Task 18 was queued at 2026-10-03T12:29:57.144Z and was not claimed until 2026-10-03T12:54:30.000Z even though the protected repository-worker idle boundary is 60 seconds.
+- **Root cause:** Only Task 17 has an immediate deterministic GitHub Actions consumer. Later repository tasks depend on the ordinary-ChatGPT worker remaining in the same invocation or on the hourly recovery schedule. Supervisor bookkeeping and repeated queue reconciliation did not create durable fault evidence when that consumer was absent.
+- **Operational impact:** The same execution remained correct and ultimately reached PUBLIC_CLOSED, but Task 18 incurred avoidable queue latency and the control plane could describe the queue without proving that a worker had claimed it.
+- **Timing impact:** 1,472.856 seconds from request creation to recorded worker start.
+- **Attempted fixes:** A permanently open draft PR synchronize signal was tested against the existing recovery automation. The GitHub trigger is supported, but the automation service rejected adding it to an automation that already retains its required hourly schedule; closed PR #407 was never admitted as a consumer and was not merged.
+- **Actual fix:** Repository tasks retain a 60-second substantive-progress contract. The persistent Supervisor now classifies the exact queued request every loop and writes one durable route-scoped `repository_consumer_unclaimed` fault after 60 seconds, excluding leases, heartbeats, Kanban projection and queue-only commits from progress. The hourly recovery service remains enabled and Task 17 retains its deterministic immediate consumer.
+- **Fix outcome:** Silent multi-minute repository queues now fault durably within the Supervisor interval without altering task state, skipping work, duplicating the run or stopping other safe routes. A true immediate ordinary-ChatGPT consumer for semantic Task 18+ remains a platform limitation; it must not be reported as solved by a rejected webhook or nonexistent subhourly schedule.
+- **Permanent implementation:** _generator/lib/run-supervisor.mjs, _tools/run-supervisor.mjs, .github/workflows/run-supervisor.yml, docs/operations/task-recovery-contracts.json
+- **Regression tests:** _generator/test/run-supervisor.test.mjs
+- **Production invariants:** repository_queue_idle_over_60_seconds_is_a_durable_fault, supervisor_bookkeeping_is_not_worker_progress, route_specific_liveness_fault_is_not_a_global_stop, awaiting_scheduled_executor_is_not_terminal, rejected_webhook_is_not_an_admitted_consumer
+- **Recurrences:** Run 7 Task 18 recorded this first confirmed latency breach; no later recurrence has been evaluated under the durable-fault repair.
+- **Future validation:** On the next real repository request, verify that a consumer claims it within 60 seconds or that exactly one unclaimed-request fault appears at the canonical path. Continue draining the same execution from the first queued request and preserve all completed tasks.
