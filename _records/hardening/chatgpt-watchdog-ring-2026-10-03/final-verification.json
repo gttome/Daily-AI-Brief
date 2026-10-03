@@ -165,5 +165,12 @@
     ],
     "kanban_card": "DAB-KB-012",
     "kanban_lane": "done"
+  },
+  "learning_and_evidence_closure": {
+    "pull_request": 416,
+    "protected_ci_run_id": 37149958179,
+    "protected_ci_conclusion": "success",
+    "merge_sha": "a1c19e5ac1c89ab0cff88976ed3a8a3772bf9667",
+    "merged_at": "2026-10-03T20:01:31Z"
   }
 }

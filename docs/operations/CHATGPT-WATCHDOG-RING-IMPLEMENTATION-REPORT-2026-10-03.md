@@ -5,7 +5,10 @@
 **Timezone:** `America/Chicago`  
 **Core implementation PR:** #415  
 **Core merge SHA:** `715c34cd07ebaf534be5307fd03eeb7f2ef8b5e0`  
-**Result:** PASS, subject to this report/learning closure change itself passing protected CI before merge.
+**Learning/evidence closure PR:** #416  
+**Learning/evidence closure merge SHA:** `a1c19e5ac1c89ab0cff88976ed3a8a3772bf9667`  
+**Learning/evidence closure CI:** run 37149958179 — PASS  
+**Result:** PASS.
 
 ## 1. Before state
 
@@ -219,6 +222,9 @@ Rollback must never weaken terminal-run immutability, writer fencing, accepted-i
 - Core protected PR: #415
 - Core merge SHA: `715c34cd07ebaf534be5307fd03eeb7f2ef8b5e0`
 - Core final protected CI run: 37149575554
+- Learning/evidence closure PR: #416
+- Learning/evidence closure merge SHA: `a1c19e5ac1c89ab0cff88976ed3a8a3772bf9667`
+- Learning/evidence closure protected CI run: 37149958179 — PASS
 - Final verification receipt: `_records/hardening/chatgpt-watchdog-ring-2026-10-03/final-verification.json`
 - Scheduled GitHub permission receipt: `_records/hardening/chatgpt-watchdog-ring-2026-10-03/scheduled-permission-probe.json`
 - Learning problem: DAB-OPS-20261003-007
