@@ -1,0 +1,144 @@
+{
+  "schema_version": "rehearsal-evidence-v1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "execution_key": "2026-10-02-run6",
+  "verified_at": "2026-10-03T00:16:20Z",
+  "policy": "article-24-72-168-v1",
+  "candidate_count": 9,
+  "full_source_reviews": 9,
+  "result": "PASS",
+  "eligible_for_selection": [
+    "m01",
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m07",
+    "m08",
+    "m09"
+  ],
+  "not_selection_eligible": [
+    "m06"
+  ],
+  "freshness_summary": {
+    "primary_or_normal_72h": 6,
+    "extended_168h": 2,
+    "failed_freshness": 1
+  },
+  "reviews": [
+    {
+      "id": "m01",
+      "status": "eligible",
+      "freshness_band": "normal_72h",
+      "published_date": "2026-10-01",
+      "source_url": "https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/",
+      "source_read": "full",
+      "evidence": "NVIDIA documents DOCA skills as machine-readable SKILL.md-based domain knowledge with verified API signatures, hardware requirements and build constraints; the post reports a 65-prompt evaluation and concrete preflight/safety mechanisms.",
+      "novelty": "Distinct from all Run 5 locked stories; technical mechanism is domain-grounded agent skills for infrastructure development."
+    },
+    {
+      "id": "m02",
+      "status": "eligible",
+      "freshness_band": "normal_72h",
+      "published_date": "2026-10-01",
+      "source_url": "https://www.qodo.ai/blog/introducing-qodo-3-0/",
+      "source_read": "full",
+      "evidence": "Qodo 3.0 adds PR Triage work packages, Agentic Toolbox standards/review in coding-agent workflows, Software Map blast-radius context, quality analytics, Gerrit/on-prem/air-gapped and self-hosted-model support.",
+      "novelty": "Distinct governance/verification layer for agent-written software; not a Run 5 repeat."
+    },
+    {
+      "id": "m03",
+      "status": "eligible_reserve",
+      "freshness_band": "normal_72h",
+      "published_date": "2026-10-01",
+      "source_url": "https://github.blog/news-insights/company-news/10-technical-talks-im-excited-about-at-github-universe-2026/",
+      "source_read": "full",
+      "evidence": "GitHub's current Universe preview identifies concrete engineering topics including agent memory, team-distributed AI context, fine-grained authorization for hosted MCP servers, production evaluations and deterministic controls for agents verifying AI-written code.",
+      "novelty": "Fresh current engineering agenda; suitable reserve because it previews sessions rather than shipping one implementation."
+    },
+    {
+      "id": "m04",
+      "status": "eligible",
+      "freshness_band": "normal_72h",
+      "published_date": "2026-10-01",
+      "source_url": "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop",
+      "source_read": "full",
+      "evidence": "Google Workspace Drop describes object-level AI image editing, interactive Sheets canvases, Ask Gemini in Chat across Gmail/Drive/Calendar, task/event actions, and Docs/PDF/Word-to-video explainers.",
+      "novelty": "Fresh knowledge-worker workflow expansion and distinct from Run 5."
+    },
+    {
+      "id": "m05",
+      "status": "eligible",
+      "freshness_band": "normal_72h",
+      "published_date": "2026-10-01",
+      "source_url": "https://www.anthropic.com/news/barclays-scales-claude",
+      "source_read": "full",
+      "evidence": "Anthropic reports Barclays expanding Claude; its RAG knowledge assistant has over 16,000 colleague users and over one million searches, while Global Markets uses Claude to classify/enrich/route about 120,000 emails per day with governance and human oversight.",
+      "novelty": "Fresh regulated-enterprise deployment evidence distinct from Run 5."
+    },
+    {
+      "id": "m06",
+      "status": "not_selection_eligible",
+      "freshness_band": "failed_current_article_window",
+      "published_date": "2026-09-17_or_2026-09-11_entries",
+      "source_url": "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-and-edu-release-notes",
+      "source_read": "full",
+      "evidence": "The current release-note page says ChatGPT for Word was announced September 17 with default enablement starting October 1; Appshots on Windows appears under the September 11 section. These are useful product changes but the underlying release-note entries are outside the active article window.",
+      "novelty": "Potentially useful applied workflow, but excluded from selection on freshness rather than stretched to fit."
+    },
+    {
+      "id": "m07",
+      "status": "eligible",
+      "freshness_band": "normal_72h",
+      "published_date": "2026-10-01",
+      "source_url": "https://www.databricks.com/blog/connecting-customer-context-measurable-roi-agentic-marketing",
+      "source_read": "full",
+      "evidence": "Databricks describes agentic marketing grounded in customer, business and decision context with human-defined intent, guardrails, permissions and approval points; campaign agents recommend next-best actions and feed measured outcomes back into future decisions.",
+      "novelty": "Fresh practical nontechnical-agent workflow; not a Run 5 repeat."
+    },
+    {
+      "id": "m08",
+      "status": "eligible_reserve_with_novelty_caution",
+      "freshness_band": "extended_168h",
+      "published_date": "2026-09-28",
+      "source_url": "https://about.fb.com/news/2026/09/launching-meta-enterprise-platform/",
+      "source_read": "full",
+      "evidence": "Meta announces an Enterprise Platform bringing Muse, Meta Business Agent, Muse API and Muse Code together for businesses and developers.",
+      "novelty": "Broader platform announcement than Run 5's Muse for Small Business item, but adjacency is material; keep as reserve rather than select when fresher distinct options exist."
+    },
+    {
+      "id": "m09",
+      "status": "eligible",
+      "freshness_band": "extended_168h",
+      "published_date": "2026-09-28",
+      "source_url": "https://asana.com/inside-asana/asana-client-management",
+      "source_read": "full",
+      "evidence": "Asana Client Management is GA with four prebuilt/customizable AI Teammates using the shared Work Graph: Creative Producer, Account Advisor, Operations Coordinator and Executive Advisor; they draft work, manage handoffs, monitor risk and surface portfolio signals inside visible client/project context.",
+      "novelty": "Distinct nontechnical agent workflow; extended-window disclosure required."
+    }
+  ],
+  "selection_readiness": {
+    "exact_2_2_2_possible": true,
+    "exactly_one_reusable_agent_skills_story_possible": true,
+    "recommended_selection": [
+      "m01",
+      "m02",
+      "m04",
+      "m05",
+      "m07",
+      "m09"
+    ],
+    "agent_skills_candidate_id": "m01",
+    "extended_fallback_selected": [
+      "m09"
+    ],
+    "reserve_candidates": [
+      "m03",
+      "m08"
+    ],
+    "excluded_candidates": [
+      "m06"
+    ]
+  }
+}
