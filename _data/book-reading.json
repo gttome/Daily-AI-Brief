@@ -903,6 +903,44 @@
         "label": "READ DEEPER",
         "why": "Use this section to map a real small-business workflow to the right prompt or agent strategy, then decide where Muse’s skills, connectors, and approval steps add value without over-automating the task."
       }
+    ],
+    "2026-10-03": [
+      {
+        "item_id": "dab-story-2026-10-03-m01",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Use the verification gate to test latency, transcript stability and end-to-end conversational response under real operating conditions."
+      },
+      {
+        "item_id": "dab-story-2026-10-03-m02",
+        "reference_id": "context-privacy",
+        "label": "READ DEEPER",
+        "why": "Map every context boundary to distinguish cryptographic guarantees, hardware trust and organizational controls in the federated-learning design."
+      },
+      {
+        "item_id": "dab-story-2026-10-03-m04",
+        "reference_id": "ecosystem-practice",
+        "label": "READ DEEPER",
+        "why": "Build practice, feedback and peer support around deployed AI work so professional expertise grows through real projects."
+      },
+      {
+        "item_id": "dab-story-2026-10-03-m05",
+        "reference_id": "reliable-trust",
+        "label": "READ DEEPER",
+        "why": "Define when either service agent should proceed, ask for confirmation or defer to a person."
+      },
+      {
+        "item_id": "dab-story-2026-10-03-m07",
+        "reference_id": "prompt-core-components",
+        "label": "READ DEEPER",
+        "why": "Make each reusable skill explicit about task, context, constraints and examples so behavior remains legible across workflows."
+      },
+      {
+        "item_id": "dab-story-2026-10-03-m08",
+        "reference_id": "context-failure-playbooks",
+        "label": "READ DEEPER",
+        "why": "Define observable failures, stop conditions, retained evidence and human escalation before an agent incident becomes unreconstructable."
+      }
     ]
   },
   "selection_reviews": {
@@ -10675,6 +10713,3264 @@
             {
               "reference_id": "ecosystem-template-export",
               "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        }
+      ]
+    },
+    "2026-10-03": {
+      "schema_version": "1.0.0",
+      "edition_date": "2026-10-03",
+      "catalog_digest": "95cac16503b72b8a06c6dce9f6dbd484d74a30c6f82a0d592f3c87ea4767b320",
+      "items_digest": "e9cb3a72021e3c266afea6927c03f51bd7ad59d7d0a660e16f3555af6b28480c",
+      "items": [
+        {
+          "item_id": "dab-story-2026-10-03-m01",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "Use the verification gate to test latency, transcript stability and end-to-end conversational response under real operating conditions.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-03-m02",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "Map every context boundary to distinguish cryptographic guarantees, hardware trust and organizational controls in the federated-learning design.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-03-m04",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "Build practice, feedback and peer support around deployed AI work so professional expertise grows through real projects.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-03-m05",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "Define when either service agent should proceed, ask for confirmation or defer to a person.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-03-m07",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "Make each reusable skill explicit about task, context, constraints and examples so behavior remains legible across workflows.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-03-m08",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "Define observable failures, stop conditions, retained evidence and human escalation before an agent incident becomes unreconstructable.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-video-2026-10-03-general",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-video-2026-10-03-agent-skills",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-podcast-2026-10-03-1",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-podcast-2026-10-03-2",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "No direct reader-facing connection is strong enough for this item.",
               "mechanism": 0,
               "topic": 0,
               "practical_lesson": 0,

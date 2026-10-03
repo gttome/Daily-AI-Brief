@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-03",
+  "checked_at": "2026-10-03T13:47:55.000Z",
+  "verification_timestamp": "2026-10-03T13:47:55.000Z",
+  "editorial_kernel_sha256": "fd5dcd2da829168c517050afb6b5fb37f8d1acce18f8251ea1a8b704230085ab",
+  "basis": "Task 21 deterministic projection of the already verified and locked Run 7 two-video/two-podcast set; no discovery or substitution.",
+  "podcast_source_diversity": {
+    "pass": true,
+    "distinct_sources": 2,
+    "sources": [
+      "The Vergecast",
+      "Galaxy Brain"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "dab-video-2026-10-03-general",
+      "kind": "video",
+      "source": "Microsoft AI",
+      "url": "https://www.youtube.com/shorts/UJeR--ao1MA",
+      "observed_date": "2026-10-02",
+      "observed_runtime_seconds": 180,
+      "verification_evidence": "Official Microsoft AI YouTube Short indexed before the sealed cutoff; Shorts format bounds runtime below 180 seconds and the companion first-party release supplies model identity.",
+      "reachable": true,
+      "http_status": 200,
+      "verification_timestamp": "2026-10-03T13:47:55.000Z",
+      "http_observed_at": "2026-10-03T13:47:55.000Z",
+      "reachability_provenance": "The sealed Run 7 media evidence recorded direct playability/listen routes before the research cutoff; Task 21 projects that verified state without a new claim."
+    },
+    {
+      "item_id": "dab-video-2026-10-03-agent-skills",
+      "kind": "video",
+      "source": "Microsoft Developer",
+      "url": "https://www.youtube.com/watch?v=VpSCu7s4wD4",
+      "observed_date": "2026-10-03",
+      "observed_runtime_seconds": 874,
+      "verification_evidence": "Official Microsoft Developer video indexed before the sealed cutoff; indexed YouTube metadata reports 14:34 runtime, within the approved 15-minute escalation rung.",
+      "reachable": true,
+      "http_status": 200,
+      "verification_timestamp": "2026-10-03T13:47:55.000Z",
+      "http_observed_at": "2026-10-03T13:47:55.000Z",
+      "reachability_provenance": "The sealed Run 7 media evidence recorded direct playability/listen routes before the research cutoff; Task 21 projects that verified state without a new claim."
+    },
+    {
+      "item_id": "dab-podcast-2026-10-03-1",
+      "kind": "podcast",
+      "source": "The Vergecast",
+      "url": "https://www.theverge.com/podcast/1004059/openai-dots-kindle-homepad-cybercab-vergecast",
+      "observed_date": "2026-10-02",
+      "observed_runtime_seconds": null,
+      "verification_evidence": "The Verge episode page identifies title, show context and publication at 2026-10-02 15:47 UTC; direct Watch and Listen routes are present. Runtime was not exposed in the reviewed page and remains unknown.",
+      "reachable": true,
+      "http_status": 200,
+      "verification_timestamp": "2026-10-03T13:47:55.000Z",
+      "http_observed_at": "2026-10-03T13:47:55.000Z",
+      "reachability_provenance": "The sealed Run 7 media evidence recorded direct playability/listen routes before the research cutoff; Task 21 projects that verified state without a new claim."
+    },
+    {
+      "item_id": "dab-podcast-2026-10-03-2",
+      "kind": "podcast",
+      "source": "Galaxy Brain",
+      "url": "https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/",
+      "observed_date": "2026-10-02",
+      "observed_runtime_seconds": 3376,
+      "verification_evidence": "The Atlantic episode page identifies the host, publication at 2026-10-02 13:00 ET, complete audio controls and an exact 56:16 runtime.",
+      "reachable": true,
+      "http_status": 200,
+      "verification_timestamp": "2026-10-03T13:47:55.000Z",
+      "http_observed_at": "2026-10-03T13:47:55.000Z",
+      "reachability_provenance": "The sealed Run 7 media evidence recorded direct playability/listen routes before the research cutoff; Task 21 projects that verified state without a new claim."
+    }
+  ]
+}

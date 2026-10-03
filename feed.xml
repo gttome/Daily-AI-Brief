@@ -4,7 +4,77 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-10-02T17:02:11.298Z</updated>
+  <updated>2026-10-03T12:56:17.526Z</updated>
+  <entry>
+    <title>Voice agents get a 100-millisecond head start</title>
+    <id>dab-story-2026-10-03-m01</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-03/voice-agents-get-a-100-millisecond-head-start/" />
+    <updated>2026-10-03T18:00:00Z</updated>
+    <summary>Microsoft introduced MAI-Voice-2.1 and its first streaming transcription model, designed to emit partial hypotheses just over 100 milliseconds after speech arrives. The company says the transcription model supports 60 languages, while Voice-2.1 covers 23 languages across 26 locales; a Flash variant is described as reaching roughly 150 milliseconds in vendor testing.</summary>
+  </entry>
+  <entry>
+    <title>Federated learning gets a public privacy proof</title>
+    <id>dab-story-2026-10-03-m02</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-03/federated-learning-gets-a-public-privacy-proof/" />
+    <updated>2026-10-03T18:00:00Z</updated>
+    <summary>Google Research described a federated-learning design that couples trusted execution environments with a public transparency log. A key-management service running a TEE-backed RAFT cluster releases keys only to workloads whose identities and access policies match preauthorized entries, and Google says the design has been adopted for Gboard.</summary>
+  </entry>
+  <entry>
+    <title>Anthropic turns enterprise AI delivery into a profession</title>
+    <id>dab-story-2026-10-03-m04</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-03/anthropic-turns-enterprise-ai-delivery-into-a-profession/" />
+    <updated>2026-10-03T18:00:00Z</updated>
+    <summary>Anthropic announced Claude Frontier Academy, a training and deployment program centered on Frontier Deployed Engineers. The company says it is committing $100 million and aims to prepare 10,000 such engineers by the end of 2027 through a multi-day simulation followed by a 12-week residency.</summary>
+  </entry>
+  <entry>
+    <title>Customer service prepares for agents on both sides</title>
+    <id>dab-story-2026-10-03-m05</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-03/customer-service-prepares-for-agents-on-both-sides/" />
+    <updated>2026-10-03T18:00:00Z</updated>
+    <summary>At Dialogues 2026, Decagon introduced Voice3, Agent Modules, Duet Apprentice and a Personal Agent Gateway intended to recognize customer-side personal agents and establish a permissioned communication channel with a company’s service agent. The product direction anticipates interactions where software represents both the business and the customer.</summary>
+  </entry>
+  <entry>
+    <title>One Agent Skills package, many Copilot workflows</title>
+    <id>dab-story-2026-10-03-m07</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-03/one-agent-skills-package-many-copilot-workflows/" />
+    <updated>2026-10-03T18:00:00Z</updated>
+    <summary>Microsoft’s WIQD tooling can import an Agent Plugins package and help a developer inspect, validate, package and share its skills, MCP connections and agents for Microsoft Copilot workflows. The tooling is in public preview and centers on reusing one maintained package across multiple destinations.</summary>
+  </entry>
+  <entry>
+    <title>California tests the legal boundary for rogue agents</title>
+    <id>dab-story-2026-10-03-m08</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-03/california-tests-the-legal-boundary-for-rogue-agents/" />
+    <updated>2026-10-03T18:00:00Z</updated>
+    <summary>California Attorney General Rob Bonta announced an investigative subpoena to OpenAI as part of an inquiry into cybersecurity incidents and risks involving AI agents. The action tests what records, safeguards and organizational responsibilities regulators may expect when an agent’s behavior causes or contributes to harm.</summary>
+  </entry>
+  <entry>
+    <title>Introducing MAI-Transcribe-2-Streaming, MAI-Voice-2.1 and MAI-Voice-2.1-Flash</title>
+    <id>dab-video-2026-10-03-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-10-03/general/" />
+    <updated>2026-10-03T18:00:00Z</updated>
+    <summary>First-party visual summary of the streaming transcription and voice models behind the selected low-latency voice-agent story.</summary>
+  </entry>
+  <entry>
+    <title>Flight Intelligence: The Power of Work IQ | Discover how Work IQ is your business&apos;s secret sauce</title>
+    <id>dab-video-2026-10-03-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-10-03/agent-skills/" />
+    <updated>2026-10-03T18:00:00Z</updated>
+    <summary>Developer demonstration of Work IQ context and workflow grounding, directly supporting the selected reusable Agent Skills packaging story.</summary>
+  </entry>
+  <entry>
+    <title>Dots get up in Muse’s business</title>
+    <id>dab-podcast-2026-10-03-1</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-03/run7-1/" />
+    <updated>2026-10-03T18:00:00Z</updated>
+    <summary>Independent technology-news discussion of business agents, trust and the current agentic-assistant market.</summary>
+  </entry>
+  <entry>
+    <title>An Argument Against AI Doom</title>
+    <id>dab-podcast-2026-10-03-2</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-03/run7-2/" />
+    <updated>2026-10-03T18:00:00Z</updated>
+    <summary>Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.</summary>
+  </entry>
   <entry>
     <title>Cohere Embed 5 splits retrieval into Pro and Fast models with one shared space</title>
     <id>dab-story-2026-10-02-m01</id>
@@ -1551,47 +1621,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-04/fabric-data-agents-become-reusable-tools-inside-low-code-copilot-studio-agents/" />
     <updated>2026-09-04T18:00:00Z</updated>
     <summary>Microsoft made the integration generally available for adding a Fabric data agent as a tool inside a Copilot Studio agent. The Fabric agent continues to run against governed data in Fabric and applies underlying data permissions, while the Copilot Studio agent can use that specialist data capability alongside other tools and publish the resulting experience to channels such as Microsoft Teams or Microsoft 365 Copilot.</summary>
-  </entry>
-  <entry>
-    <title>Gemini 3.8 Flash pushes long-horizon agents while Cyber access stays bounded</title>
-    <id>dab-story-2026-09-03-9e81e5ce</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-03/gemini-3-8-flash-pushes-long-horizon-agents-while-cyber-access-stays-bounded/" />
-    <updated>2026-09-03T18:00:00Z</updated>
-    <summary>Google introduced Gemini 3.8 Flash for software engineering, agentic tasks and multi-step reasoning, plus Gemini 3.8 Flash Cyber for trusted defenders. Google says 3.8 Flash keeps the introductory 3.7 Flash price of $0.75 per million input tokens and $3.75 per million output tokens, while both variants use long-running agentic loops that recursively evaluate and refine their work. The Cyber variant is distributed through the limited-access Fairwind Program.</summary>
-  </entry>
-  <entry>
-    <title>Repo-To-Skill argues that operational know-how belongs in reusable agent skills</title>
-    <id>dab-story-2026-09-03-a001445a</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-03/repo-to-skill-argues-that-operational-know-how-belongs-in-reusable-agent-skills/" />
-    <updated>2026-09-03T18:00:00Z</updated>
-    <summary>The Repo-To-Skill preprint introduces DisCo, a research agent that distills operational knowledge from repositories and papers into compact, verified skills. The authors report an AREX-Skill Library containing more than 5,000 verified skills derived from 1,000 machine-learning repositories across 20 areas and 178 capability families. With the backbone model, harness and execution budget held fixed, they report substantial benchmark gains from adding the skill layer.</summary>
-  </entry>
-  <entry>
-    <title>Google’s AI-adoption playbook moves the target from licenses to redesigned workflows</title>
-    <id>dab-story-2026-09-03-98cf7178</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-03/google-s-ai-adoption-playbook-moves-the-target-from-licenses-to-redesigned-workf/" />
-    <updated>2026-09-03T18:00:00Z</updated>
-    <summary>Google Workspace published a four-phase playbook for moving organizations from AI deployment toward measurable transformation. It starts with executive sponsorship, then emphasizes continuous upskilling and champions, departmental workflows and reusable practices, and finally scaling successful innovations. The central message is explicit: licensing an AI tool is not the same as transforming how work gets done.</summary>
-  </entry>
-  <entry>
-    <title>Empower Work uses AI for retrieval and handoffs while counselors retain judgment</title>
-    <id>dab-story-2026-09-03-acfceabb</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-03/empower-work-uses-ai-for-retrieval-and-handoffs-while-counselors-retain-judgment/" />
-    <updated>2026-09-03T18:00:00Z</updated>
-    <summary>OpenAI Academy profiled Empower Work’s assistant for volunteer counselors supporting workers facing job loss and workplace crises. The assistant retrieves vetted resources and summarizes conversations when a case moves between volunteers; counselors review suggestions and decide what to send. Empower Work reports that the share of counselors handling at least three conversations rose from 27% to 53%, resource sharing became 41% faster, and handoff summaries became 60% faster.</summary>
-  </entry>
-  <entry>
-    <title>Copilot Studio brings a reasoning-heavy harness into the low-code agent builder</title>
-    <id>dab-story-2026-09-03-1cda360c</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-03/copilot-studio-brings-a-reasoning-heavy-harness-into-the-low-code-agent-builder/" />
-    <updated>2026-09-03T18:00:00Z</updated>
-    <summary>Microsoft’s September Copilot Studio update highlights the generally available GitHub Copilot harness as the foundation for reasoning-heavy agents and workflows. The maker environment can orchestrate model calls, context, tools, MCP servers and connected agents, while recent additions include agent skills, preview memory, preview enterprise context, files, workflows and governance capabilities.</summary>
-  </entry>
-  <entry>
-    <title>Freshdesk documents no-code building blocks for bounded agentic workflows</title>
-    <id>dab-story-2026-09-03-e5b0cb85</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-03/freshdesk-documents-no-code-building-blocks-for-bounded-agentic-workflows/" />
-    <updated>2026-09-03T18:00:00Z</updated>
-    <summary>Freshdesk updated its documentation for a no-code Workflow Builder that lets administrators create agentic workflows from modular blocks including triggers, information collection, condition paths, API actions, functions, custom responses and human handoffs. The guidance also supports confirmation before high-impact actions, MCP-mediated tool access and workflow versioning.</summary>
   </entry>
 </feed>
