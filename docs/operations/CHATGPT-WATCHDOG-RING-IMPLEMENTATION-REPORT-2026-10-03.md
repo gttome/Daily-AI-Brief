@@ -90,9 +90,9 @@ A command, retry, dispatch, queue rewrite, lease change, heartbeat, Kanban refre
 
 ## 5. Native-image consumer preservation
 
-The durable reusable image-consumer identity was preserved by moving the existing Recovery schedule to Slot F rather than replacing it with a new unrelated service.
+The original cutover preserved the old Recovery automation as Slot F to avoid breaking the qualified image path. That was a migration safeguard, not a permanent architectural requirement.
 
-Tasks 11–16 still require the sealed single-story specification, current fenced authority at invocation, professional native-image path, exact-byte persistence/read-back, saved-Git visual review, immutable `accepted_locked` assets and explicit Supervisor handoff. Other Watchdog slots can take over only through the same recovery lease and writer-fence contracts.
+The current hardened architecture removes the F-only binding: **the six-slot Watchdog Ring itself is the durable reusable image consumer.** A–F are functionally equivalent and any next eligible slot may consume an exact queued unclaimed Task 11–16 request immediately, without waiting for staleness or for F. Tasks 11–16 still require the sealed single-story specification, current fenced authority at invocation, professional native-image path, exact-byte persistence/read-back, saved-Git visual review, immutable `accepted_locked` assets and explicit Supervisor handoff. Exactly one slot may own an image request at a time.
 
 ## 6. Repository changes
 
@@ -247,3 +247,46 @@ Protected hardening evidence: PR #420 merged as `480a4c559ac2b900dd29b746eec4e27
 - Learning problem: DAB-OPS-20261003-007
 - Learning events: DAB-OPS-E-000083 through DAB-OPS-E-000086
 - Kanban: DAB-KB-012 = Done
+
+
+## 14. Ring-wide native-image consumer hardening
+
+A subsequent hardening pass removed the last special-case dependency on Slot F.
+
+### Current invariant
+
+**A = B = C = D = E = F for production capability.** The only intentional differences are slot letter and scheduled minute. Every slot is eligible for both Fix-to-Progress recovery and exact queued native-image Tasks 11–16.
+
+A queued image request is normal executable work for the next Watchdog slot. It does not need to become stale first.
+
+### Coverage effect
+
+The former F-only durable binding offered one dedicated scheduled image-consumer opportunity per hour. The ring-wide binding provides six scheduled opportunities per hour, nominally ten minutes apart.
+
+| Measure | Prior F-only binding | Ring-wide binding |
+|---|---:|---:|
+| Eligible scheduled image consumers | 1 | 6 |
+| Scheduled opportunities per hour | 1 | 6 |
+| Nominal spacing | 60 min | 10 min |
+| Conceptual worst-case wait for next eligible slot | <60 min | <10 min |
+| Hard real-time guarantee | No | No |
+
+This is therefore **better image-task coverage** and specifically targets the production stage with the most operational failures. It does not make image generation itself faster, and ChatGPT Scheduled task delivery can still be late.
+
+### Duplicate-prevention chain
+
+```text
+exact queued Task 11–16 request
+→ one Watchdog recovery/consumer lease owner
+→ refresh current production writer fence
+→ one native image worker
+→ exact-byte persistence and saved-Git review
+→ accepted_locked / bounded rejection
+→ Supervisor handoff
+```
+
+A later slot can take over only if prior ownership is proven expired, released, or dead and the same exact request remains authoritative. Accepted_locked images remain immutable.
+
+### Migration history
+
+Slot F remains the automation that descended from the former hourly Recovery service, but that identity has no unique production authority. The special F image-consumer role is retired.
