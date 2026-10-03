@@ -14,9 +14,11 @@
   "created_at": "2026-10-02T23:25:19.250Z",
   "writer_generation_is_provenance": false,
   "authority_refresh_required_at_invocation": false,
-  "status": "in_progress",
+  "status": "completed_pass",
   "authority_refreshed_at": "2026-10-03T00:10:51Z",
   "consumed_at": "2026-10-03T00:10:51Z",
   "takeover_reason": "STALE_ACTIVE_NO_SUBSTANTIVE_WORKER_RESULT",
-  "takeover_baseline": "Run 5 Task 03 completed in normal bounded duration; rehearsal exceeded liveness threshold with only Supervisor reconciliation."
+  "takeover_baseline": "Run 5 Task 03 completed in normal bounded duration; rehearsal exceeded liveness threshold with only Supervisor reconciliation.",
+  "completed_at": "2026-10-03T00:10:51Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-rehearsal-20261002-pre-oct3-r1/03-8ce1345a08632796cfd32ff8153bcf0d3df2d3dceae0152b40d573186fc6ebe1.json"
 }
