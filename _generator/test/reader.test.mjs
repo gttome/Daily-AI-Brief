@@ -104,6 +104,17 @@ test('current reader surfaces omit original commentary and the redundant star gu
   assert.doesNotMatch(generated, /Original commentary|What do the stars mean/i);
 });
 
+test('podcast reader pages omit internal Evidence sections', () => {
+  const current = JSON.parse(fs.readFileSync(path.join(root, '_data/editions/2026-10-03.json'), 'utf8'));
+  const files = readerFoundationFiles(current, root);
+  for (const name of ['podcasts/2026-10-03/run7-1.md','podcasts/2026-10-03/run7-2.md']) {
+    const page=files.get(name);
+    assert.ok(page);
+    assert.doesNotMatch(page, /\\*\\*Evidence:\\*\\*/);
+    assert.match(page, /\\*\\*Listen \\/ watch:\\*\\*/);
+  }
+});
+
 test('current video and podcast sources open in a new tab', () => {
   const current = JSON.parse(fs.readFileSync(path.join(root, '_data/editions/2026-09-12.json'), 'utf8'));
   const files = readerFoundationFiles(current, root);
