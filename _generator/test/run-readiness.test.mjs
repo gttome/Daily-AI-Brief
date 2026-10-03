@@ -46,8 +46,11 @@ function goodInput(){
         review_method:'saved_image_visual_inspection',saved_bytes_recovered:true,zero_production_cost_verified:true,
         receipt_path:'_records/test-host-proof.json',
         reusable_consumer:{
-          scheduler_kind:'chatgpt_automation',automation_id:'6abeb9a2b8a88191949dc420d5e10feb',
-          enabled:true,role:'scheduled_native_image_request_consumer',observation_verified:true,
+          scheduler_kind:'chatgpt_watchdog_ring',
+          automation_ids:['a'.repeat(32),'b'.repeat(32),'c'.repeat(32),'d'.repeat(32),'e'.repeat(32),'f'.repeat(32)],
+          slot_ids:['A','B','C','D','E','F'],all_slots_equivalent:true,
+          normal_queued_native_request_consumption:true,nominal_pickup_minutes:10,
+          enabled:true,role:'scheduled_native_image_request_consumer_pool',observation_verified:true,
           current_fence_refresh_required:true,explicit_supervisor_handoff_required:true
         }
       }
@@ -175,7 +178,7 @@ test('verified bounded same-visual PNG transport is an approved professional per
   assert.equal(receipt.result,'PASS');
 });
 
-test('missing or disabled reusable image consumer blocks image/publication only, not non-image run start',()=>{
+test('missing or disabled reusable image consumer pool blocks image/publication only, not non-image run start',()=>{
   const x=goodInput();
   x.image_pipeline.host_admission.reusable_consumer.enabled=false;
   let receipt=validateRunReadiness(x);
@@ -203,13 +206,16 @@ test('cost-boundary violations still block all run start',()=>{
 });
 
 
-test('protected registration is the sole mutable host-state source and includes reusable consumer binding',()=>{
+test('protected registration is the sole mutable host-state source and supports the equivalent six-slot consumer pool',()=>{
   const registration={
     status:'READY',host_id:'chatgpt-automation:6abfb619185c819194646f77c3b314a4',
     qualification_receipt_path:'_records/q.json',saved_bytes_recovered:true,zero_production_cost_verified:true,
-    reusable_consumer:{
-      scheduler_kind:'chatgpt_automation',automation_id:'6abeb9a2b8a88191949dc420d5e10feb',
-      enabled:true,role:'scheduled_native_image_request_consumer',
+    reusable_consumer_pool:{
+      scheduler_kind:'chatgpt_watchdog_ring',
+      automation_ids:['a'.repeat(32),'b'.repeat(32),'c'.repeat(32),'d'.repeat(32),'e'.repeat(32),'f'.repeat(32)],
+      slot_ids:['A','B','C','D','E','F'],all_slots_equivalent:true,
+      normal_queued_native_request_consumption:true,nominal_pickup_minutes:10,
+      enabled:true,role:'scheduled_native_image_request_consumer_pool',
       observation_path:'_records/c.json',observation_sha256:'b'.repeat(64),
       current_fence_refresh_required:true,explicit_supervisor_handoff_required:true
     }
@@ -218,6 +224,24 @@ test('protected registration is the sole mutable host-state source and includes 
   assert.equal(admission.source_of_truth,'protected_host_registration');
   assert.equal(admission.registration_status,'READY');
   assert.equal(admission.qualification_verified,true);
-  assert.equal(admission.reusable_consumer.automation_id,'6abeb9a2b8a88191949dc420d5e10feb');
+  assert.equal(admission.reusable_consumer.scheduler_kind,'chatgpt_watchdog_ring');
+  assert.deepEqual(admission.reusable_consumer.slot_ids,['A','B','C','D','E','F']);
+  assert.equal(admission.reusable_consumer.automation_ids.length,6);
+  assert.equal(admission.reusable_consumer.all_slots_equivalent,true);
+  assert.equal(admission.reusable_consumer.normal_queued_native_request_consumption,true);
+  assert.equal(admission.reusable_consumer.nominal_pickup_minutes,10);
   assert.equal(admission.reusable_consumer.observation_verified,true);
+});
+
+
+test('historical single scheduled image consumer remains backward-compatible evidence',()=>{
+  const x=goodInput();
+  x.image_pipeline.host_admission.reusable_consumer={
+    scheduler_kind:'chatgpt_automation',automation_id:'6abeb9a2b8a88191949dc420d5e10feb',
+    enabled:true,role:'scheduled_native_image_request_consumer',observation_verified:true,
+    current_fence_refresh_required:true,explicit_supervisor_handoff_required:true
+  };
+  const receipt=validateRunReadiness(x);
+  assert.equal(receipt.result,'PASS');
+  assert.equal(receipt.image_tasks_authorized,true);
 });
