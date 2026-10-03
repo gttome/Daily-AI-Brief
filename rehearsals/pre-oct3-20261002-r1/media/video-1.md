@@ -12,4 +12,6 @@ permalink: /rehearsals/pre-oct3-20261002-r1/media/video-1/
 
 A concise first-party technical walkthrough of orchestrating specialized agents and deploying the system on a cloud runtime.
 
+[Watch verified source](https://www.youtube.com/watch?v=6nofrnjOCNI)
+
 [← Back to rehearsal Brief]({{ '/rehearsals/pre-oct3-20261002-r1/' | relative_url }})
