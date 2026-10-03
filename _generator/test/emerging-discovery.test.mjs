@@ -39,9 +39,10 @@ test('zero-new days require every candidate disposition and all checks completed
 test('new policy cannot be bypassed by submitting a legacy receipt; historical receipts remain accepted',()=>{
  assert.ok(validateEmergingSignalSweep({schema_version:'1.0.0',edition_date:'2026-09-30'}).some(e=>e.includes('Independent Watchlist')));
 });
-test('daily counts and complete lists include carried topics and escape names',()=>{
+test('daily counts list new and updated topics, hide carried names, and escape names',()=>{
  const date='2026-09-30',html=renderDailyTopicGroups({edition_date:date,topics:[{name:'<New>',first_detected:date},{name:'Updated',updated_at:date},{name:'Carried'}]});
- for(const text of ['1 New today','1 Updated today','1 Carried forward','&lt;New&gt;','<li>Updated</li>','<li>Carried</li>'])assert.ok(html.includes(text));
+ for(const text of ['1 New today','1 Updated today','1 Carried forward','&lt;New&gt;','<li>Updated</li>','<strong>Carried forward:</strong> 1'])assert.ok(html.includes(text));
+ assert.ok(!html.includes('<li>Carried</li>'));
 });
 test('an update validates against its prior inventory after new evidence is projected',()=>{
  const r=receipt(),topic={topic_id:'dab-topic-existing',evidence:[{...evidence,development_id:'old'},evidence]};
