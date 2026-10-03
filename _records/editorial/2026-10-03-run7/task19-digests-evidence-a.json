@@ -1,0 +1,27 @@
+{
+  "schema_version": "task19-bundle-digest-shard-v1",
+  "execution_id": "reliable-edition-20261003-run7",
+  "task_id": "19",
+  "shard": "editorial-evidence-a",
+  "sealed_at": "2026-10-03T13:17:32.000Z",
+  "digests": [
+    [
+      "_records/editorial/2026-10-03-run7/watchlist-refresh.json",
+      "95e9d0aca9b8c118defa131b987de94c6ebaa61b"
+    ],
+    [
+      "_records/editorial/2026-10-03-run7/book-review.json",
+      "223b0357d7f0879e470a7301d9b025c23e43dfc3"
+    ],
+    [
+      "_records/editorial/2026-10-03-run7/videos.json",
+      "8ba33c4560a864feaf84a93adc030d1eeed8987e"
+    ],
+    [
+      "_records/editorial/2026-10-03-run7/podcasts.json",
+      "1638b314c3e95ce3f0fb0f99017ee5b1d3af4f50"
+    ]
+  ],
+  "digest_scheme": "git_blob_sha1",
+  "result": "PASS"
+}
