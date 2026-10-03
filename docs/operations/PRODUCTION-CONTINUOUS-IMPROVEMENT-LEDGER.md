@@ -929,7 +929,7 @@ Problems: 49 · Events: 82
 
 ## DAB-OPS-20261003-008 — Slot F remained a special image-consumer binding after recovery became a six-slot ring.
 
-- **Status:** mitigated; protected implementation in progress
+- **Status:** permanently_fixed
 - **Task(s):** 11–16 native-image production
 - **Symptom:** A–F were equivalent for outer recovery, but the protected image-host registration still bound reusable native-image consumption specifically to F.
 - **Root cause:** F's special role was retained as a migration bridge from the old hourly Recovery automation. That compatibility choice outlived its architectural need.
@@ -940,4 +940,4 @@ Problems: 49 · Events: 82
 - **Attempted fix:** Make the Watchdog Ring itself the reusable native-image consumer pool. Every slot may consume the exact next queued unclaimed Tasks 11–16 request without waiting for stale/block classification. Exact request identity and current task-specific writer fencing ensure one request produces one generation.
 - **Preserved protections:** accepted_locked image immutability, sealed single-story prompt, visible-text/subject controls, exact-byte persistence/read-back, saved-Git review, Supervisor handoff, one-writer fencing and zero-Work/Codex/paid-API boundary.
 - **Evidence:** `_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json`
-- **Permanent outcome:** pending protected CI and merge.
+- **Permanent outcome:** PR #423 merged as `6938496b84d23243692a752946846494d3440c43` after protected CI run 37160416973 passed 118/118 targeted tests, 896/896 generator tests, 24/24 contract tests, operational-learning/repository/lifecycle/integrated/append-only validation and Jekyll build. A–F are now equivalent image consumers; the nominal scheduled opportunity improves from one per hour to six per hour.
