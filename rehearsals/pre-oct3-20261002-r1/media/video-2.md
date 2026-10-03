@@ -12,5 +12,7 @@ permalink: /rehearsals/pre-oct3-20261002-r1/media/video-2/
 
 A practical side-by-side comparison of two coding-agent modes on real work.
 
+[Watch verified source](https://www.youtube.com/watch?v=pY5_Ux_YJjo)
+
 [← Back to rehearsal Brief]({{ '/rehearsals/pre-oct3-20261002-r1/' | relative_url }})
 
