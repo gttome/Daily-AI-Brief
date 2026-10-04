@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "dffc6b82e4ad726a1aa6d6a1ff62bf5cda68d7ba3d841ae31143731e87dd8631",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "03",
+  "capability": "repository",
+  "instruction": "Execute Task 03 (Discover fresh article candidates) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 9,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-04T02:08:59.328Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}

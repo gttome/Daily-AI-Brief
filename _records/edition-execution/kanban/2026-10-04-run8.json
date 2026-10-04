@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-edition-20261004-run8",
   "edition_id": "dab-edition-2026-10-04",
-  "observed_at": "2026-10-04T01:53:25.912Z",
+  "observed_at": "2026-10-04T02:08:59.406Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:b083f23f057fd85553f6354be9cf74e1d7677979f127f594b4a5f381d71ad79d",
+  "source_event_digest": "sha256:075676ad452ca93276637910febf9679d742866cd25c7ae41b89b88d1f59b401",
   "run_started_at": "2026-10-04T01:32:36.576Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 1249.336,
-  "total_brief_elapsed": "1249.336s",
+  "total_brief_elapsed_seconds": 2182.83,
+  "total_brief_elapsed": "2182.83s",
   "tasks": {
     "10": {
       "id": "10",
@@ -351,17 +351,17 @@
     "02": {
       "id": "02",
       "title": "Start controller and persistent Run Supervisor",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "column": "Done",
+      "entered_backlog_at": "2026-10-04T02:07:06.282Z",
+      "active_started_at": "2026-10-04T02:07:06.282Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "done_at": "2026-10-04T02:07:56.833Z",
+      "cycle_seconds": 50.551,
+      "active_seconds": 50.551,
+      "duration_seconds": 50.551,
+      "duration": "50.551s"
     },
     "03": {
       "id": "03",
