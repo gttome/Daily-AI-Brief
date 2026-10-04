@@ -281,6 +281,8 @@ export function validateTaskRecoveryContracts(contract = {}) {
   else{
     if(routing.recovery_owner_without_required_capability_must_handoff!==true)errors.push('capability_routing_handoff_required');
     if(routing.tasks?.['03']!=='research_chatgpt'||routing.tasks?.['08']!=='research_chatgpt')errors.push('capability_routing_research_tasks');
+    if(tasks['03']?.capability!=='research_chatgpt'||tasks['08']?.capability!=='research_chatgpt')errors.push('capability_routing_task_contract_mismatch');
+    if(routing.fallback_research_consumer_required!==true)errors.push('capability_routing_fallback_research_consumer');
   }
   const autonomy=contract.protected_repair_autonomy;
   if(!autonomy||autonomy.schema_version!=='protected-repair-autonomy-contract-v1'||autonomy.enabled!==true)
