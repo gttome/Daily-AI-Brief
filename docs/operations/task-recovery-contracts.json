@@ -690,12 +690,12 @@
     "03": {
       "task_id": "03",
       "title": "Discover fresh article candidates",
-      "capability": "repository",
-      "normal_operation": "Execute Task 03 (Discover fresh article candidates) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+      "capability": "research_chatgpt",
+      "normal_operation": "Perform fresh external article discovery and evidence collection with an ordinary research-capable ChatGPT execution, then persist the bounded authoritative result without redoing completed upstream work.",
       "success_evidence": "Task 03 Done transition plus its task-specific authoritative receipt/artifact.",
       "stale_after_seconds": 900,
-      "first_recovery": "Reconstruct Task 03 from authoritative evidence and resume the same operation without rerunning completed upstream tasks.",
-      "alternate_recovery": "Repair only the earliest invalid dependency or exact blocker for Task 03; preserve valid work and use the existing deterministic recovery path.",
+      "first_recovery": "Re-read the exact Task 03 request and durable upstream evidence. If fresh research is still required, hand off immediately to a research_chatgpt-capable consumer; do not churn in a GitHub-only executor.",
+      "alternate_recovery": "Use a materially different bounded research path or repair only the exact dependency that prevents fresh research; preserve every valid completed upstream artifact.",
       "retry_limit": 3,
       "terminal_failure_condition": "The required capability for Task 03 remains unavailable or unsafe after bounded recovery and no approved recovery can preserve production invariants.",
       "invalidate_downstream": [
@@ -885,12 +885,12 @@
     "08": {
       "task_id": "08",
       "title": "Refresh Emerging AI Watchlist",
-      "capability": "repository",
-      "normal_operation": "Execute Task 08 (Refresh Emerging AI Watchlist) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+      "capability": "research_chatgpt",
+      "normal_operation": "Perform the bounded fresh external research required to refresh the Emerging AI Watchlist, reconcile adds/updates/drops, and persist the exact result without repeating valid completed work.",
       "success_evidence": "Task 08 Done transition plus its task-specific authoritative receipt/artifact.",
       "stale_after_seconds": 900,
-      "first_recovery": "Reconstruct Task 08 from authoritative evidence and resume the same operation without rerunning completed upstream tasks.",
-      "alternate_recovery": "Repair only the earliest invalid dependency or exact blocker for Task 08; preserve valid work and use the existing deterministic recovery path.",
+      "first_recovery": "Re-read the exact Task 08 request and current Watchlist evidence. If fresh external research is still required, hand off immediately to a research_chatgpt-capable consumer; do not churn in a GitHub-only executor.",
+      "alternate_recovery": "Use a materially different bounded Watchlist research path or repair only the exact dependency that blocks fresh research; preserve prior valid Watchlist decisions.",
       "retry_limit": 3,
       "terminal_failure_condition": "The required capability for Task 08 remains unavailable or unsafe after bounded recovery and no approved recovery can preserve production invariants.",
       "invalidate_downstream": [
@@ -1092,7 +1092,9 @@
         "SAME_TASK_RESUME_REQUIRED",
         "SAME_TASK_RESUMED",
         "RECOVERY_VERIFIED_PROGRESSING"
-      ]
+      ],
+      "strategy_interrupt_required": true,
+      "third_materially_equivalent_blind_retry_allowed": false
     },
     "protections": {
       "terminal_reopen_allowed": false,
@@ -1141,6 +1143,21 @@
       "event_triggered_work_tasks": false,
       "browser_automation": false,
       "new_credentials": false
+    },
+    "compact_health": {
+      "schema_version": "watchdog-health-v1",
+      "runtime_ref": "runtime/watchdog-health",
+      "path": "data/operations/watchdog-health.json",
+      "maximum_age_minutes": 12,
+      "healthy_active_compact_exit": true,
+      "terminal_compact_exit": true,
+      "progressing_recovery_owner_compact_exit": true,
+      "missing_stale_or_contradictory_must_expand": true,
+      "false_healthy_forbidden": true,
+      "decision_counter_buckets": [
+        "healthy_noop",
+        "escalated"
+      ]
     }
   },
   "protected_repair_autonomy": {
@@ -1282,5 +1299,50 @@
       "explicit_repository_identity_for_gh_dispatch": true,
       "parse_lint_embedded_shell_and_node_before_protected_merge": true
     }
+  },
+  "strategy_interrupt": {
+    "schema_version": "strategy-interrupt-v1",
+    "enabled": true,
+    "before_materially_equivalent_attempt": 3,
+    "triggers": [
+      "same_normalized_failure_signature_twice",
+      "two_cycles_without_substantive_durable_delta",
+      "corrective_action_completed_same_root_failure_remains",
+      "control_plane_churn_without_artifact_or_validation_progress",
+      "materially_anomalous_task_age_without_progress"
+    ],
+    "required_analysis": "action -> durable delta -> validation result",
+    "required_method_checks": [
+      "already_green_repair_pr_not_promoted",
+      "completed_prerequisite_not_connected_to_active_path",
+      "stale_dependency_binding",
+      "wrong_validator_or_contract_version",
+      "wrong_executor_or_capability",
+      "smaller_repair_target",
+      "unnecessary_repeated_ci_or_retry"
+    ],
+    "identical_retry_after_interrupt_allowed": false,
+    "already_green_repair_must_be_consumed_first": true,
+    "one_writer_no_rework_protections_preserved": true
+  },
+  "capability_routing": {
+    "schema_version": "capability-routing-v1",
+    "enabled": true,
+    "capabilities": {
+      "research_chatgpt": "Fresh external research and semantic evidence collection in ordinary ChatGPT.",
+      "repository": "Repository mutation and deterministic GitHub-side repair.",
+      "native_chatgpt": "Native professional image generation from a sealed single-story specification.",
+      "protected_ci": "Exact-head deterministic protected CI.",
+      "deployment": "Protected publication/deployment.",
+      "verification": "Deterministic live/publication verification."
+    },
+    "tasks": {
+      "03": "research_chatgpt",
+      "08": "research_chatgpt"
+    },
+    "recovery_owner_without_required_capability_must_handoff": true,
+    "handoff_must_bind_exact_execution_task_and_request": true,
+    "incapable_owner_may_not_hold_recovery_lease": true,
+    "fallback_research_consumer_required": true
   }
 }
