@@ -130,3 +130,5 @@
 ## Editorial takeaway
 
 Today’s strongest pattern is operational control: agents and AI-assisted work are becoming more useful when verification, reusable domain knowledge, governed computer actions, connected work artifacts, and explicit human escalation are designed into the workflow.
+
+[← Back to Home]({{ '/' | relative_url }})

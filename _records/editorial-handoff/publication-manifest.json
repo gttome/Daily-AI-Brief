@@ -59,7 +59,7 @@
     "watchlist_evidence": {
       "path": "_records/watchlist-sweeps/2026-10-04.json",
       "schema_version": "2.0.0",
-      "digest": "git_blob_sha1:8b19663135eea3071260c8838d3af9c4f44a0984"
+      "digest": "git_blob_sha1:2a69ca9740a970e92fc9a750e9904126aeac1a0e"
     },
     "book_mappings": {
       "path": "_records/editorial-handoff/book-mappings-2026-10-04.json",
@@ -139,7 +139,11 @@
     "repaired_contracts": [
       "run8_incomplete_deterministic_publication_projection",
       "run8_frozen_image_identity_metadata",
-      "run8_watchlist_projection_digest"
+      "run8_watchlist_projection_digest",
+      "run8_book_mapping_projection",
+      "run8_aggregate_watchlist_receipt_binding",
+      "run8_reader_footer_projection",
+      "run8_archive_projection"
     ]
   },
   "migration": {
