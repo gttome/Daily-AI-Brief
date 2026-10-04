@@ -1,16 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261004-run8:task-11:generation-29:fd280431",
-  "generation": 29,
-  "task_id": "11",
-  "operation_key": "native-image-fd28043122d9f47d251f01f4e0ffaa587a4103be22f40537e6d5a68b1774fc48",
-  "capability": "native_chatgpt",
-  "acquired_at": "2026-10-04T08:14:29.506Z",
-  "last_heartbeat_at": "2026-10-04T08:22:53.836Z",
-  "expires_at": "2026-10-04T08:22:53.836Z",
-  "state": "RELEASED",
-  "released": true,
-  "released_at": "2026-10-04T08:22:53.836Z",
-  "release_reason": "TASK_11_DONE_HANDOFF_TO_SUPERVISOR"
+  "owner_id": "github-actions-37188751471-1",
+  "generation": 30,
+  "acquired_at": "2026-10-04T08:23:44.900Z",
+  "last_heartbeat_at": "2026-10-04T08:23:44.900Z",
+  "expires_at": "2026-10-04T08:28:44.900Z"
 }
