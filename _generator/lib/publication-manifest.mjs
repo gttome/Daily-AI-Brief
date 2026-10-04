@@ -89,15 +89,16 @@ function selectedMedia(media,date){
  const podcasts=(media?.podcasts||[]).filter(included);
  return {videos,podcasts};
 }
-function mediaErrors(ctx,date,{allowLegacyKernelHash=false}={}){
+function mediaErrors(ctx,date,{allowLegacyKernelHash=false,migration={}}={}){
  const errors=[],{videos,podcasts}=selectedMedia(ctx.media,date),receipt=ctx.mediaReceipt;
  if(videos.length!==2)errors.push('publication_manifest_media_video_count_invalid');
  if(new Set(videos.map(x=>x._slot)).size!==2||!videos.some(x=>x._slot==='general')||!videos.some(x=>x._slot==='agents_non_technical_people'))errors.push('publication_manifest_media_focus_coverage_invalid');
  if(podcasts.length!==2)errors.push('publication_manifest_media_podcast_count_invalid');
  for(const item of videos){
   if(!/^https:\/\//.test(item.url||''))errors.push('publication_manifest_media_url_invalid:'+item._receipt_id);
-  if(!jsonDate(item.upload_date)||!Number.isInteger(item.runtime_seconds)||item.runtime_seconds<=0||item.runtime_seconds>1200)errors.push('publication_manifest_video_metadata_incomplete:'+item._receipt_id);
-  const age=daysBetween(date,item.upload_date);if(!Number.isFinite(age)||age<0||age>3)errors.push('publication_manifest_video_freshness_invalid:'+item._receipt_id);
+  const migrationOK=verifiedVideoMigration(item,date,migration,daysBetween);
+  if((!jsonDate(item.upload_date)&&!migrationOK)||!Number.isInteger(item.runtime_seconds)||item.runtime_seconds<=0||item.runtime_seconds>1200)errors.push('publication_manifest_video_metadata_incomplete:'+item._receipt_id);
+  if(jsonDate(item.upload_date)){const age=daysBetween(date,item.upload_date);if(!Number.isFinite(age)||age<0||(age>3&&!migrationOK))errors.push('publication_manifest_video_freshness_invalid:'+item._receipt_id);}
  }
  for(const item of podcasts){
   if(!/^https:\/\//.test(item.url||'')||!jsonDate(item.publication_date))errors.push('publication_manifest_podcast_metadata_incomplete:'+String(item.item_id||item.title));
