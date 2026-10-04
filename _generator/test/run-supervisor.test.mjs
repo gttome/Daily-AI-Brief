@@ -554,7 +554,7 @@ test('production writer handoff resumes the same execution for any Task 00-29 du
 
 
 test('repeated post-repair context failure enters the next bounded repair epoch',()=>{
-  const c=contract();
+  const c=JSON.parse(fs.readFileSync(new URL('../../docs/operations/task-recovery-contracts.json',import.meta.url),'utf8'));
   const repair=c.tasks['11'].engineering_repair;
   assert.equal(repair.max_epochs,2);
   assert.equal(repair.post_repair_attempt_limit,1);
