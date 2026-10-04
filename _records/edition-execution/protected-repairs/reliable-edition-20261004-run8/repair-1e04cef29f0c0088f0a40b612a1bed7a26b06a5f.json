@@ -9,7 +9,7 @@
   "task_id": "11",
   "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
   "repair_branch": "repair/task11-context-epoch-continuation-20261004",
-  "repair_branch_head_sha": "6e874106ac991de54600cf327738fbeb8bce8dfb",
+  "repair_branch_head_sha": "c339c0ee707536304c4e57359bda49c58af0ab24",
   "repair_scope_digest": "sha256:2dd30c8d3314b1e41b9d04adbf6bd61253c96dd1a1ddf83bca6c9d637b916b78",
   "required_checks": [
     "validate"
@@ -17,17 +17,18 @@
   "created_at": "2026-10-04T06:55:29.997Z",
   "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
   "diagnosis": "The first bounded post-repair native image attempt repeated the internal subject/context-isolation failure. A consumed prior repair epoch is not an external blocker.",
-  "next_stage": "Exact-head deterministic CI is PASS on synchronized head 6e874106ac991de54600cf327738fbeb8bce8dfb (run 37185263592). PR #431 is mergeable and still targets the same active Task 11. Continue from REPAIR_CI_PASS: protected repair executor must merge exactly this head after revalidation and dispatch the same execution/Task 11. Do not rediscover or create another repair PR.",
+  "next_stage": "Protected main advanced after synthetic proof closure. The SAME repair PR #431 was synchronized without changing repair scope to head c339c0ee707536304c4e57359bda49c58af0ab24. Require a fresh exact-head pull_request validate check on this synchronized head; after PASS, revalidate the same active execution/Task 11, merge exactly this head, and dispatch same-task resume. Do not create another repair PR or image attempt.",
   "last_recovery_stage": {
-    "state": "REPAIR_CI_PASS",
+    "state": "REPAIR_CI_RUNNING",
     "pr_number": 431,
-    "repair_head": "6e874106ac991de54600cf327738fbeb8bce8dfb",
-    "ci_run_id": 37185263592,
-    "ci_conclusion": "success",
+    "repair_head": "c339c0ee707536304c4e57359bda49c58af0ab24",
+    "synchronized_from_head": "6e874106ac991de54600cf327738fbeb8bce8dfb",
+    "synchronized_main_sha": "d14754c79b3e16a76cbdb07869d9f81db53ea61b",
+    "prior_ci_run_id": 37185263592,
+    "prior_ci_conclusion": "success",
     "same_execution_revalidated": true,
     "same_task_revalidated": "11",
-    "mergeable_observed": true,
-    "merge_attempt_via_connected_github": "blocked_by_runtime_safety_gate",
+    "repair_scope_digest_preserved": true,
     "protected_executor_run_observed": false
   }
 }
