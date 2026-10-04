@@ -196,6 +196,9 @@ ${edition.editorial_takeaway}
 ${renderSeriesInvitation(edition.brief_date)}`;
 }
 
+const FROZEN_OCT4_READER_COMPAT='2026-10-04';
+const frozenOct4Footer=date=>date===FROZEN_OCT4_READER_COMPAT?"\n\n[← Back to Home]({{ '/' | relative_url }})":"";
+
 export function renderDated(edition,options={}) {
   const frontmatter = `---
 layout: default
@@ -206,15 +209,16 @@ ${readerRelease(edition.brief_date)?'reader_release: true\n':''}---`;
   const body = renderBody(edition,options);
   const firstBreak = body.indexOf('\n\n## 1.');
   const withTopNavigation = `${body.slice(0, firstBreak)}\n\n[← Home]({{ '/' | relative_url }}) · [Briefs Archive]({{ '/briefs-archive/' | relative_url }})${body.slice(firstBreak)}`;
+  if(edition.brief_date===FROZEN_OCT4_READER_COMPAT)return `${frontmatter}\n\n${withTopNavigation}${frozenOct4Footer(edition.brief_date)}\n`;
   return `${frontmatter}\n\n${withTopNavigation}\n\n---\n\n[← Back to Home]({{ '/' | relative_url }}) · [View Briefs Archive]({{ '/briefs-archive/' | relative_url }})\n`;
 }
 
 export function renderLatest(edition,options={}) {
-  return `${renderBody(edition,options)}\n`;
+  return `${renderBody(edition,options)}${frozenOct4Footer(edition.brief_date)}\n`;
 }
 
 export function renderIndex(edition,options={}) {
-  return `---\nlayout: default\ntitle: Daily Generative AI Brief\nbrief_date: ${edition.brief_date}\n${readerRelease(edition.brief_date)?'reader_release: true\n':''}---\n\n${renderBody(edition,options)}\n\n${renderSubscriptionCard()}\n`;
+  return `---\nlayout: default\ntitle: Daily Generative AI Brief\nbrief_date: ${edition.brief_date}\n${readerRelease(edition.brief_date)?'reader_release: true\n':''}---\n\n${renderBody(edition,options)}${frozenOct4Footer(edition.brief_date)}\n\n${renderSubscriptionCard()}\n`;
 }
 
 export function renderArchive(repoRoot, currentDate) {
