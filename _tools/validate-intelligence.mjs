@@ -17,7 +17,12 @@ if(base&&!/^0+$/.test(base)){
 for(const file of fs.readdirSync('_data/editions').filter(f=>/^\d{4}-\d{2}-\d{2}\.json$/.test(f))){
  const edition=JSON.parse(fs.readFileSync('_data/editions/'+file,'utf8'));
  if(data.editions[edition.brief_date]||edition.brief_date>='2026-09-30')validateBookReading(edition,data);
- if(edition.brief_date>='2026-09-30')console.log(JSON.stringify({edition_date:edition.brief_date,books:selectBookReferences(edition,data,data.selection_reviews?.[edition.brief_date]).metrics}));
+ if(edition.brief_date>='2026-09-30'){
+  const migration=data.frozen_migrations?.[edition.brief_date];
+  const frozen=migration?.contract_transition==='pre-2026-10-05-frozen-reader-recovery';
+  const metrics=frozen?bookCoverageMetrics(data,edition.brief_date,data.editions[edition.brief_date]||[]):selectBookReferences(edition,data,data.selection_reviews?.[edition.brief_date]).metrics;
+  console.log(JSON.stringify({edition_date:edition.brief_date,books:metrics,frozen_mapping_migration:frozen}));
+ }
 }
 const watch=JSON.parse(fs.readFileSync('_data/watchlist.json','utf8'));
 if(watch.edition_date>='2026-09-23'){
