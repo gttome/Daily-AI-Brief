@@ -1,0 +1,92 @@
+{
+  "schema_version": "2.0.0",
+  "event_id": "dab-publication-recovery-2026-10-04-83927438851d",
+  "run_id": "reliable-edition-20261004-run8",
+  "phase": "live_verified",
+  "edition_id": "dab-edition-2026-10-04",
+  "observed_at": "2026-10-04T16:39:24Z",
+  "baseline_main_sha": "b99313ebebbf789d6eb218231dd13f170d42eac4",
+  "staged_tree_digest": "sha256:2a7686b5cb2c3127fa3ec5ff619bbc2626a6585408e2dbaf1a8c755fdc33788c",
+  "generator_version": "1.0.0",
+  "contract_version": "1.0.0",
+  "checks": [
+    {
+      "check_id": "exact_candidate_ci",
+      "class": "protected_recovery",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "CI 37217420793 passed on candidate 83927438851d6697f67edf4d8728ea89b603b267."
+    },
+    {
+      "check_id": "protected_merge_identity",
+      "class": "protected_recovery",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "PR 442 merged as 0098c607a479e6b75f0e8d456570f033e7b50c20."
+    },
+    {
+      "check_id": "frozen_bundle_identity",
+      "class": "protected_recovery",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Task 19 sealed 4 immutable digest shards with 6 accepted images."
+    }
+  ],
+  "file_set": {
+    "canonical_sources": [
+      "_data/editions/2026-10-04.json"
+    ],
+    "assets": [
+      "briefs/images/2026-10-04/dab-edition-2026-10-04-m02.png",
+      "briefs/images/2026-10-04/dab-edition-2026-10-04-m04.png",
+      "briefs/images/2026-10-04/dab-edition-2026-10-04-m06.png",
+      "briefs/images/2026-10-04/dab-edition-2026-10-04-m07.png",
+      "briefs/images/2026-10-04/dab-edition-2026-10-04-m01.png",
+      "briefs/images/2026-10-04/dab-edition-2026-10-04-m09.png"
+    ],
+    "derived_outputs": [
+      "briefs/2026-10-04.md",
+      "latest.md",
+      "index.md",
+      "archive.md",
+      "feed.xml",
+      "daily-feed.xml",
+      "feed.json"
+    ],
+    "operational_records": []
+  },
+  "pr_number": 442,
+  "candidate_sha": "83927438851d6697f67edf4d8728ea89b603b267",
+  "publication_merge_sha": "0098c607a479e6b75f0e8d456570f033e7b50c20",
+  "ci_run_id": 37217420793,
+  "recovery_basis": "exact_pr_candidate_ci_merge_manifest_and_frozen_bundle_evidence",
+  "commit_sha": "0098c607a479e6b75f0e8d456570f033e7b50c20",
+  "production_sha": "0098c607a479e6b75f0e8d456570f033e7b50c20",
+  "deployed_sha": "0098c607a479e6b75f0e8d456570f033e7b50c20",
+  "pages": {
+    "run_id": 37217509983,
+    "conclusion": "success",
+    "verified_at": "2026-10-04T16:39:24Z",
+    "deployed_sha": "0098c607a479e6b75f0e8d456570f033e7b50c20",
+    "deployment_url": "https://gttome.github.io/Daily-AI-Brief/"
+  },
+  "supersedes_event_id": "dab-publication-recovery-2026-10-04-83927438851d",
+  "live_verified_at": "2026-10-04T16:53:41.913Z",
+  "live_verification": {
+    "final_result": "pass",
+    "homepage_edition_date": "2026-10-04",
+    "dated_edition_verified": true,
+    "route_count": 16,
+    "checks": [
+      "publication_receipt",
+      "pages_deployment",
+      "live_changed_routes",
+      "live_homepage_edition",
+      "live_dated_edition",
+      "live_image_assets"
+    ],
+    "source_validation_run_id": 37218427465
+  },
+  "lifecycle_status": "completed",
+  "completion_persistence": "protected_pull_request"
+}
