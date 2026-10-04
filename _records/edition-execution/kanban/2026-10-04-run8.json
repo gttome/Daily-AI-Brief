@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-edition-20261004-run8",
   "edition_id": "dab-edition-2026-10-04",
-  "observed_at": "2026-10-04T08:52:40.872Z",
+  "observed_at": "2026-10-04T08:53:26.690Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:595093f6e824b03c6a3983310ba487ab528cb3fe4d9504efd5b4a209aa09c0d5",
+  "source_event_digest": "sha256:bc1ff09d73278e5296a93e8446ea2c414b2845bcf89117f3d2140de26aae947b",
   "run_started_at": "2026-10-04T01:32:36.576Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 26404.296,
-  "total_brief_elapsed": "26404.296s",
+  "total_brief_elapsed_seconds": 26450.114,
+  "total_brief_elapsed": "26450.114s",
   "tasks": {
     "10": {
       "id": "10",
