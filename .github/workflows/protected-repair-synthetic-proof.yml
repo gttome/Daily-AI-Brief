@@ -10,7 +10,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  actions: read
+  actions: write
 
 concurrency:
   group: protected-repair-synthetic-proof
@@ -108,22 +108,24 @@ jobs:
         run: |
           set -euo pipefail
           head="${{ steps.pr.outputs.head }}"
+          target="${{ steps.target.outputs.target_branch }}"
+          gh workflow run ci.yml --repo "$GITHUB_REPOSITORY" --ref "$target"
           run_id=0
           for _ in $(seq 1 75); do
-            gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${head}&per_page=100" > /tmp/runs.json
-            run_id="$(node -e 'const fs=require("fs"),head=process.argv[1],x=JSON.parse(fs.readFileSync("/tmp/runs.json","utf8"));const rows=(x.workflow_runs||[]).filter(r=>r.name==="Deterministic publication CI"&&r.head_sha===head).sort((a,b)=>String(b.updated_at).localeCompare(String(a.updated_at)));process.stdout.write(String(rows[0]?.id||0));' "$head")"
+            gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${head}&event=workflow_dispatch&per_page=100" > /tmp/runs.json
+            run_id="$(node -e 'const fs=require("fs"),head=process.argv[1],x=JSON.parse(fs.readFileSync("/tmp/runs.json","utf8"));const rows=(x.workflow_runs||[]).filter(r=>r.name==="Deterministic publication CI"&&r.head_sha===head&&r.event==="workflow_dispatch").sort((a,b)=>String(b.updated_at).localeCompare(String(a.updated_at)));process.stdout.write(String(rows[0]?.id||0));' "$head")"
             if [ "$run_id" != "0" ]; then
               state="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}" --jq '.status+":"+(.conclusion//"")')"
               case "$state" in
                 completed:success) break ;;
-                completed:*) echo "::error::Synthetic exact-head CI failed: $state"; exit 1 ;;
+                completed:*) echo "::error::Synthetic exact-head workflow-dispatch CI failed: $state"; exit 1 ;;
               esac
             fi
             sleep 8
           done
-          [ "$run_id" != "0" ] || { echo "::error::No exact-head deterministic CI found."; exit 1; }
+          [ "$run_id" != "0" ] || { echo "::error::No exact-head workflow-dispatch CI found."; exit 1; }
           state="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}" --jq '.status+":"+(.conclusion//"")')"
-          [ "$state" = "completed:success" ] || { echo "::error::Synthetic exact-head CI did not reach PASS."; exit 1; }
+          [ "$state" = "completed:success" ] || { echo "::error::Synthetic exact-head workflow-dispatch CI did not reach PASS."; exit 1; }
           echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
 
       - name: Merge exact synthetic head and record same-task progress
