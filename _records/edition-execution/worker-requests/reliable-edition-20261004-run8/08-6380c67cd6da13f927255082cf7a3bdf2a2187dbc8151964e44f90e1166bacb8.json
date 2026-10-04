@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "6380c67cd6da13f927255082cf7a3bdf2a2187dbc8151964e44f90e1166bacb8",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "08",
+  "capability": "repository",
+  "instruction": "Execute Task 08 (Refresh Emerging AI Watchlist) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 14,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-04T02:59:32.254Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
