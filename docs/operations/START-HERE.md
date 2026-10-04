@@ -163,3 +163,18 @@ For the bound September 30 second-edition recovery, use the released `same-invoc
 
 - `docs/operations/CHATGPT-WATCHDOG-RING.md` — current outer autonomous recovery contract.
 - Watchdog recovery invariant — diagnose → fix → ACTIVE executor → durable progress; one failed attempt is never completion, and safe-boundary yield means continuation by the next slot.
+
+---
+
+## Protected Repair Autonomy invariant
+
+For all production recovery, treat the following as a non-negotiable invariant:
+
+\`actionable_recovery_must_not_terminate_at_owner_prompt_boundary\`
+
+A bounded repair is not complete when a branch, PR, CI run or merge exists. The permanent recovery path is: **bounded repair → protected PR → exact-head CI → safe merge → same execution/task resume → real executor → substantive durable progress**. Routine GitHub promotion, failed/cancelled writer cleanup, and same-task resume must use the already-authorized repository paths rather than waiting for the owner to ask why the run is stuck.
+
+Authoritative machine contract: \`docs/operations/task-recovery-contracts.json#protected_repair_autonomy\`.
+
+Executor: \`.github/workflows/protected-repair-executor.yml\`.
+
