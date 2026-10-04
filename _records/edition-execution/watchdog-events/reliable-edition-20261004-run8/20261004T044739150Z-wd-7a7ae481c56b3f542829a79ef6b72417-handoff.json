@@ -1,0 +1,17 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
+  "slot_id": "D",
+  "classification": "BLOCKED_ACTIONABLE",
+  "authoritative_request_key": "6e05f531275e1608eb2cf392d2f082bfec7ae197276a68e984b6e81f91a9caa9",
+  "blocker": "Task 11 is recoverably blocked by repeated execution-context contamination. Same-context native retries are prohibited. The queued request has been superseded by blocked_recoverable recovery evidence; Supervisor redispatch from this invocation could not be safely re-triggered after reconciliation.",
+  "lease_generation": 7,
+  "action_key": "wa-88f34d1827bf6a58a3999f3671f10502",
+  "action_taken": "Released the expired Task 11 writer, re-dispatched the same Supervisor once, reconciled the context-contamination recovery, marked Task 11 Blocked, and superseded the queued native request with blocked_recoverable state.",
+  "next_authorized_action": "Resume the same Task 11 through the protected engineering-repair path, then execute exactly one fresh isolated single-story post-repair image attempt. Do not generate in a mixed Watchdog context.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "occurred_at": "2026-10-04T04:47:39.150Z"
+}
