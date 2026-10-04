@@ -36,6 +36,14 @@ function heredocOpener(line){
   return {indent:match[1],stripTabs:Boolean(match[2]),delimiter:match[4],command:String(line).trim()};
 }
 
+function yamlRunBlockIndent(lines,index,fallback){
+  for(let i=index-1;i>=0;i--){
+    const match=lines[i].match(/^(\s*)run:\s*\|[-+0-9]*\s*$/);
+    if(match)return match[1]+'  ';
+  }
+  return fallback;
+}
+
 function deindentBody(lines,indent){
   return lines.map(line=>line.startsWith(indent)?line.slice(indent.length):line).join('\n');
 }
@@ -57,16 +65,20 @@ export function scanWorkflowText({workflowPath='workflow.yml',text=''}={}){
       continue;
     }
 
+    const blockIndent=yamlRunBlockIndent(lines,i,opener.indent);
     const closerIndent=lines[close].slice(0,lines[close].length-lines[close].trimStart().length);
-    if(closerIndent!==opener.indent){
+    const closerOk=opener.stripTabs
+      ? closerIndent.startsWith(blockIndent)&&/^\t*$/.test(closerIndent.slice(blockIndent.length))
+      : closerIndent===blockIndent;
+    if(!closerOk){
       errors.push({
         workflow:workflowPath,line:close+1,code:'WORKFLOW_HEREDOC_CLOSER_INDENT_MISMATCH',
-        detail:`opener_line=${i+1}; expected_indent=${opener.indent.length}; actual_indent=${closerIndent.length}`
+        detail:`opener_line=${i+1}; expected_yaml_block_indent=${blockIndent.length}; actual_indent=${closerIndent.length}`
       });
     }
 
     if(/\bnode(?:\s|$)/.test(opener.command)&&/^(?:NODE|JS|JAVASCRIPT)$/.test(opener.delimiter)){
-      const body=deindentBody(lines.slice(i+1,close),opener.indent);
+      const body=deindentBody(lines.slice(i+1,close),blockIndent);
       try{new vm.Script(body,{filename:`${workflowPath}:${i+2}`});}
       catch(error){
         errors.push({
