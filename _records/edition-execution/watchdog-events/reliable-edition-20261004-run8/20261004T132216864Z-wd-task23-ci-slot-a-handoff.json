@@ -1,0 +1,22 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "23",
+  "incident_id": "wd-task23-ci-37204156674",
+  "slot_id": "A",
+  "classification": "BLOCKED_ACTIONABLE",
+  "lease_generation": 36,
+  "action_key": "wd-task23-ci-37204156674:continue-task23",
+  "attempted_actions": [
+    "Confirmed PR 442 exact-head CI failure.",
+    "Confirmed stale handoff identity is the failing deterministic input.",
+    "Attempted bounded same-task repair."
+  ],
+  "blocker": "The current invocation cannot complete the bounded repository mutation required to correct the stale handoff identity.",
+  "next_authorized_action": "Continue the same Task 23, correct only the stale handoff identity from current Run 8 authoritative artifacts, then rerun exact-head protected validation on PR 442.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "recovery_required": true,
+  "occurred_at": "2026-10-04T13:22:16.864Z"
+}
