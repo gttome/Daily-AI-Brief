@@ -1,12 +1,14 @@
 # Daily AI Brief — Living Architecture Infographics
 
 **Status:** evergreen living documentation projection  
-**Version:** v3.3
+**Version:** v3.4
 
 > [!IMPORTANT]
 > These diagrams explain the durable Daily AI Brief system architecture. They are **not run-status dashboards**. Machine evidence remains authoritative for live state.
 
 ## Current architecture amendment
+
+**Protected Repair Autonomy:** the Watchdog Ring now has a repository-native Protected Repair Executor for bounded repair promotion through one PR, exact-head CI, safe merge and same-task resume. Dead GitHub Actions writers require exact terminal evidence before supersession. Recovery success still requires a real executor plus substantive durable progress.
 
 **Watchdog Ring image-consumer pool:** all six slots A–F are operationally equivalent. Each is both an outer recovery worker and an eligible scheduled native-image consumer for Tasks 11–16. A normal queued unclaimed image request is consumed by the next eligible slot without waiting for stale classification. One exact request + one current writer fence prevents duplicate generation. The living diagrams must show this six-slot image coverage explicitly and must not depict F as special.
 
@@ -14,7 +16,7 @@
 
 ### ChatGPT Watchdog Ring — equivalent image-consumer architecture
 
-![Daily AI Brief ChatGPT Watchdog Ring Architecture v1.0](../images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Architecture-v1.0.svg)
+![Daily AI Brief ChatGPT Watchdog Ring Architecture v1.1](../images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Architecture-v1.1.svg)
 
 This current diagram is the scalable architecture source for the six-slot Watchdog Ring. It shows A–F as equivalent recovery/image-consumer slots, the nominal 10-minute stagger, GitHub durable authority, Run Supervisor interaction, native-image coverage improvement, one-owner duplicate-generation protection, and the Fix-to-Progress recovery ladder.
 
@@ -26,7 +28,7 @@ This current diagram is the scalable architecture source for the six-slot Watchd
 
 This high-detail color PNG is the **implementation-reference** companion to the evergreen Watchdog architecture. It provides the implementation handoff, six-slot schedule table, health/recovery flow, escalation ladder, GitHub records, tests, reporting/learning and deployment checklist.
 
-**Scope boundary:** this PNG contains dated implementation-handoff context, so it is intentionally **not** the evergreen living-architecture authority and does not replace `Daily-AI-Brief-Watchdog-Ring-Architecture-v1.0.svg`. Preserve it as implementation evidence/reference while keeping the generic SVG as the current durable architecture projection.
+**Scope boundary:** this PNG contains dated implementation-handoff context, so it is intentionally **not** the evergreen living-architecture authority and does not replace `Daily-AI-Brief-Watchdog-Ring-Architecture-v1.1.svg`. Preserve it as implementation evidence/reference while keeping the generic SVG as the current durable architecture projection.
 
 ### Persistent Run Supervisor architecture
 
