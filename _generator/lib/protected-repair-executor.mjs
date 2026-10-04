@@ -9,6 +9,7 @@ export const PROTECTED_REPAIR_STATES = Object.freeze([
   'REPAIR_PR_OPENED',
   'REPAIR_CI_RUNNING',
   'REPAIR_CI_PASS',
+  'REPAIR_PR_CONTEXT_REFRESH_REQUIRED',
   'REPAIR_MERGED',
   'SAME_TASK_RESUME_REQUIRED',
   'SAME_TASK_RESUMED',
@@ -124,6 +125,47 @@ export function exactHeadCiGate({record, observed_head_sha, check_runs = []} = {
   const pending = required.filter(name => byName.get(name)?.status !== 'completed');
   if (pending.length) return {allowed:false,state:'REPAIR_CI_RUNNING',reason:'required_check_pending',pending};
   return {allowed:true,state:'REPAIR_CI_PASS',reason:'exact_head_required_checks_passed'};
+}
+
+export function protectedPrContextGate({workflow_run = null, observed_head_sha = null} = {}) {
+  if (!workflow_run || !Number(workflow_run.id)) {
+    return {allowed:false,state:'REPAIR_CI_RUNNING',reason:'deterministic_ci_run_missing'};
+  }
+  if (observed_head_sha && workflow_run.head_sha && observed_head_sha !== workflow_run.head_sha) {
+    return {allowed:false,state:'REPAIR_HEAD_CHANGED',reason:'deterministic_ci_head_mismatch'};
+  }
+  if (String(workflow_run.status || '') !== 'completed') {
+    return {allowed:false,state:'REPAIR_CI_RUNNING',reason:'deterministic_ci_not_completed'};
+  }
+  const conclusion = String(workflow_run.conclusion || '').toLowerCase();
+  if (conclusion === 'action_required') {
+    return {
+      allowed:false,
+      state:'REPAIR_PR_CONTEXT_REFRESH_REQUIRED',
+      reason:'pull_request_validate_requires_connected_identity_refresh',
+      connected_github_context_refresh_required:true,
+      owner_prompt_required:false
+    };
+  }
+  if (conclusion !== 'success') {
+    return {allowed:false,state:'REPAIR_CI_FAIL',reason:'deterministic_ci_failed',conclusion};
+  }
+  if (String(workflow_run.event || '') !== 'pull_request') {
+    return {
+      allowed:false,
+      state:'REPAIR_PR_CONTEXT_REFRESH_REQUIRED',
+      reason:'successful_ci_not_attached_to_pull_request_merge_context',
+      connected_github_context_refresh_required:true,
+      owner_prompt_required:false
+    };
+  }
+  return {
+    allowed:true,
+    state:'REPAIR_CI_PASS',
+    reason:'exact_head_pull_request_validate_passed',
+    connected_github_context_refresh_required:false,
+    owner_prompt_required:false
+  };
 }
 
 export function mergeGate({

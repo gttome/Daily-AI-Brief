@@ -1495,9 +1495,9 @@ The production system can detect and diagnose an actionable defect yet still fai
 
 ### State machine
 
-\`PROTECTED_REPAIR_REQUIRED → REPAIR_PR_OPENED → REPAIR_CI_RUNNING → REPAIR_CI_PASS → REPAIR_MERGED → SAME_TASK_RESUME_REQUIRED → SAME_TASK_RESUMED → RECOVERY_VERIFIED_PROGRESSING\`
+\`PROTECTED_REPAIR_REQUIRED → REPAIR_PR_OPENED → REPAIR_CI_RUNNING → REPAIR_CI_PASS → REPAIR_PR_CONTEXT_REFRESH_REQUIRED (only when protected merge context/base freshness requires it) → REPAIR_MERGED → SAME_TASK_RESUME_REQUIRED → SAME_TASK_RESUMED → RECOVERY_VERIFIED_PROGRESSING\`
 
-Failure states (\`REPAIR_CI_FAIL\`, \`REPAIR_HEAD_CHANGED\`, \`REPAIR_EXECUTION_MISMATCH\`, \`REPAIR_MERGE_CONFLICT\`, \`REPAIR_RESUME_FAILED\`) are continuation points unless an external blocker is proven.
+Failure states (`REPAIR_CI_FAIL`, `REPAIR_HEAD_CHANGED`, `REPAIR_EXECUTION_MISMATCH`, `REPAIR_MERGE_CONFLICT`, `REPAIR_RESUME_FAILED`) and the merge-policy continuation state `REPAIR_PR_CONTEXT_REFRESH_REQUIRED` are continuation points unless an external blocker is proven. A successful workflow-dispatch CI run is validation evidence but is not treated as a substitute for the PR-attached `validate` context required by the active `main` ruleset. When that context is missing, an equivalent Watchdog reuses the same repair PR/key/scope, refreshes the existing branch through the connected GitHub identity after current-main synchronization as needed, updates the same repair record head, and requires fresh exact-head `pull_request` validation before merge. No admin bypass or routine owner prompt is permitted.
 
 ### Authority split
 

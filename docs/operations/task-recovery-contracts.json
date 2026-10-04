@@ -1087,6 +1087,7 @@
         "REPAIR_PR_OPENED",
         "REPAIR_CI_RUNNING",
         "REPAIR_CI_PASS",
+        "REPAIR_PR_CONTEXT_REFRESH_REQUIRED",
         "REPAIR_MERGED",
         "SAME_TASK_RESUME_REQUIRED",
         "SAME_TASK_RESUMED",
@@ -1161,6 +1162,7 @@
       "REPAIR_PR_OPENED",
       "REPAIR_CI_RUNNING",
       "REPAIR_CI_PASS",
+      "REPAIR_PR_CONTEXT_REFRESH_REQUIRED",
       "REPAIR_MERGED",
       "SAME_TASK_RESUME_REQUIRED",
       "SAME_TASK_RESUMED",
@@ -1215,6 +1217,19 @@
       "new_credentials": false,
       "alternate_accounts": false,
       "browser_automation": false
+    },
+    "merge_policy_context_refresh": {
+      "state": "REPAIR_PR_CONTEXT_REFRESH_REQUIRED",
+      "trigger": "The same repair PR has passed deterministic validation but GitHub protected-main merge policy does not recognize an exact-head pull_request validate context, or the protected base advanced and the existing repair head must be refreshed.",
+      "connected_watchdog_action": "Re-read the active ruleset and same execution/task; preserve the exact repair key, scope and PR; synchronize the repair branch with current protected main when needed; refresh the existing PR head through the connected GitHub identity without repair-content drift; update the same durable repair record to the new exact head; require a fresh pull_request validate PASS from GitHub Actions integration 15368; then resume protected merge and same-task recovery.",
+      "create_second_pr_allowed": false,
+      "weaken_or_bypass_protection_allowed": false,
+      "admin_merge_allowed": false,
+      "owner_prompt_required": false,
+      "workflow_dispatch_ci_alone_satisfies_merge_policy": false,
+      "same_repair_key_required": true,
+      "same_repair_scope_required": true,
+      "exact_head_pull_request_validate_required": true
     }
   }
 }
