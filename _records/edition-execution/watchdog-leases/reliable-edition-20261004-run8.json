@@ -4,9 +4,12 @@
   "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
   "owner_slot": "F",
   "generation": 19,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-04T07:56:29.978Z",
-  "last_heartbeat_at": "2026-10-04T08:10:37.455Z",
-  "expires_at": "2026-10-04T08:25:37.455Z",
-  "action_key": "wf-task11-protected-repair-pr439-g19"
+  "last_heartbeat_at": "2026-10-04T08:22:53.836Z",
+  "expires_at": "2026-10-04T08:22:53.836Z",
+  "action_key": "wf-task11-accepted-locked-g19",
+  "released": true,
+  "released_at": "2026-10-04T08:22:53.836Z",
+  "release_reason": "RECOVERY_VERIFIED_PROGRESSING"
 }

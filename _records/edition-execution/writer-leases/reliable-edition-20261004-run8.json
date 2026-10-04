@@ -7,8 +7,10 @@
   "operation_key": "native-image-fd28043122d9f47d251f01f4e0ffaa587a4103be22f40537e6d5a68b1774fc48",
   "capability": "native_chatgpt",
   "acquired_at": "2026-10-04T08:14:29.506Z",
-  "last_heartbeat_at": "2026-10-04T08:14:29.506Z",
-  "expires_at": "2026-10-04T08:44:29.506Z",
-  "state": "ACTIVE",
-  "released": false
+  "last_heartbeat_at": "2026-10-04T08:22:53.836Z",
+  "expires_at": "2026-10-04T08:22:53.836Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-04T08:22:53.836Z",
+  "release_reason": "TASK_11_DONE_HANDOFF_TO_SUPERVISOR"
 }

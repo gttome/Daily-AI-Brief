@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-edition-20261004-run8",
   "edition_id": "dab-edition-2026-10-04",
-  "observed_at": "2026-10-04T05:50:38.826Z",
+  "observed_at": "2026-10-04T08:22:53.836Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:8a7e7478da8cd5a1f56d3a85abbcaea95ec3e8496e331137f152a0d90a086ee1",
+  "source_event_digest": "sha256:6d19369edf567595283548db2888b3d6b9339c1432bae041aec7580562a23885",
   "run_started_at": "2026-10-04T01:32:36.576Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 15482.25,
-  "total_brief_elapsed": "15482.25s",
+  "total_brief_elapsed_seconds": 24617.26,
+  "total_brief_elapsed": "24617.26s",
   "tasks": {
     "10": {
       "id": "10",
@@ -36,17 +36,17 @@
     "11": {
       "id": "11",
       "title": "Generate, persist, review and accept image 1",
-      "state": "Blocked",
-      "column": "WIP",
+      "state": "Done",
+      "column": "Done",
       "entered_backlog_at": "2026-10-04T03:59:16.000Z",
       "active_started_at": "2026-10-04T03:59:16.000Z",
       "review_started_at": null,
       "blocked_started_at": "2026-10-04T04:43:26.189Z",
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": 6682.826,
-      "duration": "6682.826s"
+      "done_at": "2026-10-04T08:22:53.836Z",
+      "cycle_seconds": 15817.836,
+      "active_seconds": 15817.836,
+      "duration_seconds": 15817.836,
+      "duration": "15817.836s"
     },
     "12": {
       "id": "12",
