@@ -1,22 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "watchdog-F:wd-2cce2bdf9b238e7c5f473f42b4b43d03:task-17:post-merge-handoff",
-  "generation": 44,
-  "task_id": "17",
-  "capability": "repository",
-  "operation_key": "repair-818233a7f4bb0a3684ed04efba57e4cc62a4115f",
-  "acquired_at": "2026-10-04T09:13:39.059Z",
-  "last_heartbeat_at": "2026-10-04T09:13:39.059Z",
-  "expires_at": "2026-10-04T09:13:39.059Z",
-  "state": "RELEASED",
-  "released": true,
-  "transfer_from": {
-    "owner_id": "watchdog-F:wd-2cce2bdf9b238e7c5f473f42b4b43d03:task-17:ci-pass-record",
-    "generation": 43,
-    "reason": "PROTECTED_REPAIR_MERGED",
-    "at": "2026-10-04T09:13:39.059Z"
-  },
-  "released_at": "2026-10-04T09:13:39.059Z",
-  "release_reason": "TASK_17_PROTECTED_REPAIR_MERGED_HANDOFF_TO_SUPERVISOR"
+  "owner_id": "github-actions-repository-task-37191461578-1",
+  "generation": 45,
+  "acquired_at": "2026-10-04T09:13:52.122Z",
+  "last_heartbeat_at": "2026-10-04T09:13:52.122Z",
+  "expires_at": "2026-10-04T09:28:52.122Z"
 }
