@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "eab6c1749bdd9dec9fcadc21ffef5080d6510686777730dbbbc4949999ca46b1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "19",
+  "capability": "repository",
+  "instruction": "Execute Task 19 (Refresh digests and seal immutable bundle) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 57,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-04T10:53:05.020Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
