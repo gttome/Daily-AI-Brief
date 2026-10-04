@@ -59,7 +59,7 @@ function frozenReaderAllowed(repoRoot,date,manifest){
     const bound=(seal?.shards||[]).find(x=>x?.path===shardPath);
     if(!bound||bound.git_blob_sha1!==gitBlobSha1(shardText))return false;
     if(shard?.schema_version!=='task19-bundle-digest-shard-v1'||shard?.task_id!=='19'||shard?.shard!=='reader-pages'||shard?.digest_scheme!=='git_blob_sha1'||shard?.result!=='PASS')return false;
-    const row=(shard?.digests||[]).find(x=>Array.isArray(x)&&x[0]===`briefs/${date}.md`);
+    const datedPath=`briefs/${date}.md`,row=(shard?.digests||[]).find(x=>Array.isArray(x)&&x[0]===datedPath);
     return Boolean(row&&/^[a-f0-9]{40}$/.test(row[1]||''));
   }catch{return false;}
 }
