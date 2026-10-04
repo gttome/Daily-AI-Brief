@@ -1,0 +1,12 @@
+{
+  "task_id": "06",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-04T02:41:00.000Z",
+  "reason": "Task 06 media selection passed.",
+  "proof": {
+    "artifact": "_records/editorial/2026-10-04-run8/videos.json",
+    "count": 2,
+    "result": "PASS"
+  }
+}
