@@ -4,11 +4,11 @@
   "incident_id": "wd-73cec405a0bae31734051e1ed785acf6",
   "owner_slot": "B",
   "generation": 4,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-04T02:21:00.000Z",
-  "last_heartbeat_at": "2026-10-04T02:21:00.000Z",
-  "expires_at": "2026-10-04T02:36:00.000Z",
+  "last_heartbeat_at": "2026-10-04T02:23:00.000Z",
+  "expires_at": "2026-10-04T02:23:00.000Z",
   "action_key": "wa-task03-discovery-preflight-b-01",
-  "released_at": null,
-  "release_reason": null
+  "released_at": "2026-10-04T02:23:00.000Z",
+  "release_reason": "RECOVERY_VERIFIED_PROGRESSING"
 }
