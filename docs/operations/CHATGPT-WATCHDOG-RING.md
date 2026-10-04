@@ -341,3 +341,37 @@ Run 8 proved that the Ring can preserve one execution, continue unresolved safe-
 The current six-slot implementation remains the proven liveness mechanism until a protected replacement is implemented. Do not weaken one-writer fencing, exact-request identity, accepted_locked immutability, terminal-run immutability or protected-repair semantics while reducing polling cost.
 
 See `OCT4-RUN-INCIDENT-RECONCILIATION-2026-10-04.md`, DAB-OPS-20261004-002/003 and DAB-KB-033 through DAB-KB-035.
+
+## Compact health fast path
+
+Every scheduled Watchdog begins with the smallest authoritative control-plane read available.
+
+GitHub's five-minute inner Watchdog publishes a compact health record to the bounded runtime ref `runtime/watchdog-health` at `data/operations/watchdog-health.json`. The runtime ref is control-state only; it is not protected production `main`, is rewritten with force-with-lease from the current protected-main base, and must never allocate or mutate a production execution.
+
+The compact record binds the active execution identity, first incomplete task and state, last substantive progress, live executor state, queued authoritative request key, recovery owner, protected-repair stage, normalized fault and evidence references.
+
+Decision contract:
+
+- `HEALTHY_ACTIVE` with fresh matching identity -> exit silently from the compact record.
+- `TERMINAL` with matching execution identity -> exit silently; terminal records may remain stable without periodic refresh commits.
+- a valid recovery owner with proven substantive progress -> exit silently.
+- `STALE_ACTIVE`, `BLOCKED_ACTIONABLE`, `READY_IDLE`, ambiguous state, missing record, stale active record, contradictory record or identity mismatch -> expand into the existing bounded recovery path.
+- compact state can never manufacture a false `HEALTHY_ACTIVE`. Any uncertainty expands rather than exits.
+- decision telemetry distinguishes `healthy_noop` and `escalated` buckets without requiring healthy production mutations.
+
+This fast path is the normal cost-control path. Broad repository reconstruction is an exception reserved for actionable or ambiguous states.
+
+## Strategy Interrupt before blind retry
+
+A third materially equivalent repair attempt is forbidden when the preceding two attempts share a normalized failure signature and produced no substantive durable delta. The same method-level interrupt also fires when a corrective action completed but the same root failure remains, control-plane churn continues without artifact/validation movement, or task age is materially anomalous without progress.
+
+The interrupt records `action -> durable delta -> validation result` and checks, in order, for an already-green protected repair, an unconnected completed prerequisite, stale dependency binding, wrong validator or contract version, wrong executor capability, a smaller repair target, and unnecessary repeated CI/retry.
+
+An already-green protected repair is consumed before new rework. After an interrupt, an identical retry is prohibited unless new evidence changes the failure hypothesis. One-writer, no-rework, protected-main, terminal-run and accepted-image immutability remain unchanged.
+
+## Capability-aware recovery routing
+
+Recovery ownership does not imply execution capability. The canonical capability classes are fresh external research, repository mutation, native image generation, deterministic/protected CI, deployment and verification.
+
+Tasks 03 and 08 require `research_chatgpt`. A GitHub-only recovery owner that reaches one of those requests must persist/bind the exact handoff and release ownership rather than churn while incapable of doing fresh research. A research-capable ordinary ChatGPT consumer claims that exact request. The same rule applies to every capability: an incapable owner cannot hold recovery merely because it detected the problem.
+

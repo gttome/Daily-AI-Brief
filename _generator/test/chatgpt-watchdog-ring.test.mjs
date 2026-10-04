@@ -199,3 +199,14 @@ test('startup and host bind equivalent six-slot image-consumer ring and remove s
 test('GitHub inner watchdog remains every five minutes',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8'); assert.match(y,/cron: '\*\/5 \* \* \* \*'/);
 });
+
+test('GitHub inner watchdog publishes compact health to a bounded runtime ref',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
+  assert.match(y,/watchdog-health\.mjs/);
+  assert.match(y,/runtime\/watchdog-health/);
+  assert.match(y,/data\/operations\/watchdog-health\.json/);
+  assert.match(y,/force-with-lease/);
+  assert.match(y,/contents: write/);
+  assert.match(y,/gh workflow run run-supervisor\.yml[\s\S]*--repo "\$GITHUB_REPOSITORY"/);
+});
+

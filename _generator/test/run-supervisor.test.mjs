@@ -14,6 +14,7 @@ import {
   buildTaskWriterHandoffRelease,
   validateTaskRecoveryContracts,
   taskRecoveryDecision,
+  strategyInterruptDecision,
   buildWorkerRequest,
   buildEngineeringRepairRequest,
   projectKanbanFromEvents,
@@ -40,9 +41,22 @@ function contract(){
       simplification_rule:'Preserve valid prior work and repair only the affected task'
     };
   }
+  tasks['03'].capability='research_chatgpt';
+  tasks['08'].capability='research_chatgpt';
   return {
     schema_version:'task-recovery-contracts-v1',
     tasks,
+    strategy_interrupt:{
+      schema_version:'strategy-interrupt-v1',enabled:true,before_materially_equivalent_attempt:3,
+      identical_retry_after_interrupt_allowed:false,already_green_repair_must_be_consumed_first:true,
+      required_method_checks:['green repair','prerequisite','dependency','validator','executor','smaller target','repeated ci']
+    },
+    capability_routing:{
+      schema_version:'capability-routing-v1',enabled:true,
+      tasks:{'03':'research_chatgpt','08':'research_chatgpt'},
+      recovery_owner_without_required_capability_must_handoff:true,
+      fallback_research_consumer_required:true
+    },
     protected_repair_autonomy:{
       schema_version:'protected-repair-autonomy-contract-v1',
       enabled:true,
@@ -586,3 +600,57 @@ test('repeated post-repair context failure enters the next bounded repair epoch'
     assert.equal(c.tasks[id].engineering_repair.post_repair_attempt_limit,1,id);
   }
 });
+
+test('strategy interrupt fires before a third materially equivalent blind repair attempt',()=>{
+  const recent=[
+    {normalized_failure_signature:'same-root',action:'retry-ci',durable_delta:false,validation_result:'FAIL'},
+    {normalized_failure_signature:'same-root',action:'retry-ci',durable_delta:false,validation_result:'FAIL'}
+  ];
+  const interrupt=strategyInterruptDecision({recent_attempts:recent});
+  assert.equal(interrupt.triggered,true);
+  assert.equal(interrupt.blind_retry_allowed,false);
+  assert.equal(interrupt.action,'METHOD_LEVEL_DIAGNOSIS');
+  const decision=taskRecoveryDecision({
+    classification:{state:'BLOCKED_ACTIONABLE'},taskContract:contract().tasks['23'],
+    strategyInterrupt:interrupt
+  });
+  assert.equal(decision.action,'strategy_interrupt');
+  assert.equal(decision.capability,'repository');
+  assert.equal(decision.blind_retry_allowed,false);
+});
+
+test('strategy interrupt consumes an already-green protected repair before new rework',()=>{
+  const interrupt=strategyInterruptDecision({
+    recent_attempts:[
+      {normalized_failure_signature:'same-root',action:'repair',durable_delta:false,validation_result:'FAIL'},
+      {normalized_failure_signature:'same-root',action:'repair',durable_delta:false,validation_result:'FAIL'}
+    ],
+    already_green_repair:true
+  });
+  assert.equal(interrupt.triggered,true);
+  assert.equal(interrupt.action,'CONSUME_ALREADY_GREEN_REPAIR');
+  assert.match(interrupt.instruction,/already-green/i);
+});
+
+test('materially different recovery does not trigger same-signature strategy interrupt',()=>{
+  const interrupt=strategyInterruptDecision({recent_attempts:[
+    {normalized_failure_signature:'root-a',action:'retry',durable_delta:false,validation_result:'FAIL'},
+    {normalized_failure_signature:'root-b',action:'different-method',durable_delta:false,validation_result:'FAIL'}
+  ]});
+  assert.equal(interrupt.triggered,false);
+});
+
+test('research-capable queue liveness is explicit for Tasks 03 and 08',()=>{
+  const request={capability:'research_chatgpt',task_id:'03',execution_id:'run-x',request_key:'research-1',status:'queued',created_at:'2026-10-03T12:00:00.000Z'};
+  const fault=classifyRepositoryQueueLiveness({request,now:'2026-10-03T12:01:00.000Z'});
+  assert.equal(fault.state,'fault');
+  assert.equal(fault.fault_code,'research_consumer_unclaimed');
+  assert.match(fault.next_action,/research-capable consumer/i);
+});
+
+test('Supervisor preserves queued research_chatgpt work for a capable ordinary ChatGPT consumer',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.match(y,/request_capability\" = \"research_chatgpt\"/);
+  assert.match(y,/research_consumer_unclaimed|repository-liveness/);
+});
+

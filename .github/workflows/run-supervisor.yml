@@ -384,7 +384,7 @@ jobs:
               request_kind="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_kind||''))")"
               request_capability="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.capability||''))")"
               request_task="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.task_id||''))")"
-              if [ "$request_capability" = "repository" ] && [ "$request_kind" != "engineering_repair" ]; then
+              if { [ "$request_capability" = "repository" ] || [ "$request_capability" = "research_chatgpt" ]; } && [ "$request_kind" != "engineering_repair" ]; then
                 request_key="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_key))")"
                 request_rel="_records/edition-execution/worker-requests/${EXECUTION_ID}/${request_task}-${request_key}.json"
                 liveness_rel="_records/edition-execution/liveness-faults/${EXECUTION_ID}/${request_task}-${request_key}-unclaimed.json"
@@ -401,7 +401,7 @@ jobs:
                   git -C run commit -m "Record unclaimed Task ${request_task} repository-worker liveness fault"
                   git -C run pull --rebase origin "$RUN_BRANCH"
                   git -C run push origin "HEAD:$RUN_BRANCH"
-                  echo "::error title=Repository worker liveness fault::Task ${request_task} request ${request_key} exceeded the protected 60-second unclaimed threshold. Hourly recovery remains enabled; this route-specific fault is not a global stop."
+                  echo "::error title=Bound worker liveness fault::Task ${request_task} ${request_capability} request ${request_key} exceeded the protected 60-second unclaimed threshold. Watchdog recovery remains enabled; this route-specific fault is not a global stop."
                 fi
               fi
               if [ "$request_capability" = "native_chatgpt" ] && [[ "$request_task" =~ ^1[1-6]$ ]]; then
