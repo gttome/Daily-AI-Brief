@@ -281,7 +281,7 @@ Whenever a permanent Watchdog schedule, role, minute offset, recovery-lease rule
 
 The current Watchdog Ring architecture infographic is maintained at:
 
-- `docs/images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Architecture-v1.0.svg`
+- `docs/images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Architecture-v1.1.svg`
 - final equivalent-consumer verification: `_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-final-verification.json`
 
 The diagram must show A–F as operationally equivalent, six-slot native-image coverage, GitHub as durable authority, one-owner duplicate-generation protection, the Run Supervisor handoff, and Fix-to-Progress continuation semantics.
