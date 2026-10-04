@@ -7,8 +7,10 @@
   "operation_key": "reconcile-terminal-native-requests",
   "capability": "repository",
   "acquired_at": "2026-10-04T07:56:52.292Z",
-  "last_heartbeat_at": "2026-10-04T07:56:52.292Z",
-  "expires_at": "2026-10-04T08:11:52.292Z",
-  "state": "ACTIVE",
-  "released": false
+  "last_heartbeat_at": "2026-10-04T07:57:48.957Z",
+  "expires_at": "2026-10-04T07:57:48.957Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-04T07:57:48.957Z",
+  "release_reason": "TASK_11_BLOCKED_HANDOFF_TO_SUPERVISOR"
 }
