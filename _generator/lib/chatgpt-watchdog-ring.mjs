@@ -175,6 +175,10 @@ export function validateWatchdogRingContract(contract={}){
   if(contract.recovery?.owner_prompt_boundary_allowed!==false)e.push('watchdog_ring_owner_prompt_boundary_forbidden');
   if(contract.recovery?.actionable_recovery_must_not_terminate_at_owner_prompt_boundary!==true)e.push('watchdog_ring_no_owner_dependency_invariant');
   if(contract.recovery?.protected_repair_failure_is_recoverable_unless_external!==true)e.push('watchdog_ring_protected_repair_failure_recoverable');
+  if(contract.recovery?.protected_pr_authority!=='scheduled_chatgpt_connected_github')e.push('watchdog_ring_connected_pr_authority');
+  if(contract.recovery?.repository_executor_may_create_or_merge_protected_pr!==false)e.push('watchdog_ring_repository_executor_pr_boundary');
+  if(contract.recovery?.connected_watchdog_must_create_and_merge_protected_pr!==true)e.push('watchdog_ring_connected_watchdog_pr_merge');
+  if(contract.recovery?.protected_merge_bypass_allowed!==false)e.push('watchdog_ring_no_merge_bypass');
   if(contract.native_image_consumer?.all_slots_equivalent!==true)e.push('watchdog_ring_image_slots_equivalent');
   if(JSON.stringify(contract.native_image_consumer?.eligible_slots)!==JSON.stringify(Object.keys(WATCHDOG_SLOTS)))e.push('watchdog_ring_image_eligible_slots');
   if(contract.native_image_consumer?.normal_queued_request_consumption!==true)e.push('watchdog_ring_image_normal_consumption');
