@@ -379,6 +379,7 @@ jobs:
                 --output "$kanban_path" >/tmp/kanban-projection.json
             fi
 
+            protected_repair_boundary=false
             has_request="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(x.worker_request?'true':'false')")"
             if [ "$has_request" = "true" ]; then
               node -e "const fs=require('fs');const x=require('/tmp/supervisor-tick.json');fs.writeFileSync('/tmp/worker-request.json',JSON.stringify(x.worker_request,null,2)+'\n')"
@@ -441,29 +442,76 @@ jobs:
               fi
               if [ "$request_kind" = "engineering_repair" ] && [ "$request_capability" = "repository" ]; then
                 export GH_TOKEN="${{ github.token }}"
-                control_sha="$(git -C control rev-parse HEAD)"
-                repair_pr="$(gh api "repos/${GITHUB_REPOSITORY}/commits/${control_sha}/pulls" --jq '.[0].number // 0')"
-                if [ "$repair_pr" -le 0 ]; then
-                  echo "No protected pull request evidence found for repository-repair control SHA $control_sha."
-                  exit 1
+                repair_dir="run/_records/edition-execution/protected-repairs/${EXECUTION_ID}"
+                repair_record=""
+                if [ -d "$repair_dir" ]; then
+                  repair_record="$(node - "$repair_dir" "$request_task" <<'NODE'
+                  const fs=require('fs'),p=require('path'),d=process.argv[2],task=String(process.argv[3]).padStart(2,'0');
+                  const rows=[];
+                  for(const name of fs.readdirSync(d).filter(x=>x.endsWith('.json')).sort()){
+                    const file=p.join(d,name),x=JSON.parse(fs.readFileSync(file,'utf8'));
+                    if(String(x.task_id||'').padStart(2,'0')!==task)continue;
+                    if(!['PROTECTED_REPAIR_REQUIRED','REPAIR_CI_FAIL','REPAIR_MERGE_CONFLICT','REPAIR_RESUME_FAILED'].includes(String(x.state||'')))continue;
+                    rows.push({file,t:Date.parse(x.created_at||0)||0});
+                  }
+                  rows.sort((a,b)=>b.t-a.t||b.file.localeCompare(a.file));
+                  process.stdout.write(rows[0]?.file||'');
+                  NODE
+                  )"
                 fi
-                repair_head="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${repair_pr}" --jq '.head.sha')"
-                repair_ci_run="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${repair_head}&per_page=100" \
-                  --jq '[.workflow_runs[] | select(.name=="Deterministic publication CI" and .conclusion=="success")] | sort_by(.updated_at) | reverse | .[0].id // 0')"
-                if [ "$repair_ci_run" -le 0 ]; then
-                  echo "No successful protected CI found for repository-repair PR #$repair_pr head $repair_head."
-                  exit 1
+
+                if [ -z "$repair_record" ]; then
+                  echo "Engineering repair remains actionable but no bounded protected-repair record exists yet. This is not an owner boundary; release production authority so the Watchdog can prepare the smallest repair and persist PROTECTED_REPAIR_REQUIRED."
+                  protected_repair_boundary=true
+                else
+                  cp "$repair_record" /tmp/protected-repair.json
+                  if ! node control/_tools/protected-repair-executor.mjs validate-record \
+                    --record /tmp/protected-repair.json \
+                    --active control/data/operations/active-production-run.json >/tmp/protected-repair-validation.json; then
+                    cat /tmp/protected-repair-validation.json
+                    echo "Protected repair identity no longer matches the active execution. Fail closed and let recovery re-read authoritative state."
+                    protected_repair_boundary=true
+                  else
+                    repair_key="$(node -e "const x=require('/tmp/protected-repair.json');process.stdout.write(x.repair_key)")"
+                    repair_branch="$(node -e "const x=require('/tmp/protected-repair.json');process.stdout.write(x.repair_branch)")"
+                    repair_head="$(node -e "const x=require('/tmp/protected-repair.json');process.stdout.write(x.repair_branch_head_sha)")"
+                    gh pr list --repo "$GITHUB_REPOSITORY" --state all --base main --head "$repair_branch" --limit 20 \
+                      --json number,state,headRefOid,body > /tmp/protected-repair-prs.json
+                    repair_pr="$(node - "$repair_key" "$repair_head" <<'NODE'
+                    const fs=require('fs'),[key,head]=process.argv.slice(2),xs=JSON.parse(fs.readFileSync('/tmp/protected-repair-prs.json','utf8'));
+                    const m=xs.filter(x=>String(x.body||'').includes('Repair-Key: '+key)&&x.headRefOid===head);
+                    if(m.length>1){console.error('duplicate_protected_repair_pr');process.exit(2)}
+                    process.stdout.write(String(m[0]?.number||0));
+                    NODE
+                    )"
+                    repair_state="NONE"
+                    if [ "$repair_pr" -gt 0 ]; then
+                      repair_state="$(gh pr view "$repair_pr" --repo "$GITHUB_REPOSITORY" --json state --jq '.state')"
+                    fi
+                    if [ "$repair_state" != "MERGED" ]; then
+                      echo "Protected repair $repair_key has not crossed PR/CI/merge yet. Release production writer; the Protected Repair Executor continues from the exact durable stage."
+                      protected_repair_boundary=true
+                    else
+                      repair_ci_run="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${repair_head}&per_page=100" \
+                        --jq '[.workflow_runs[] | select(.name=="Deterministic publication CI" and .conclusion=="success")] | sort_by(.updated_at) | reverse | .[0].id // 0')"
+                      if [ "$repair_ci_run" -le 0 ]; then
+                        echo "Merged repair has no exact-head protected CI PASS evidence; fail closed and continue recovery instead of accepting unrelated green CI."
+                        protected_repair_boundary=true
+                      else
+                        node control/_tools/repository-repair-consumer.mjs consume \
+                          --run-root run \
+                          --control-root control \
+                          --execution-key "$EXECUTION_KEY" \
+                          --request /tmp/worker-request.json \
+                          --writer-generation "$WRITER_GENERATION" \
+                          --protected-ci-run-id "$repair_ci_run" \
+                          --protected-ci-sha "$repair_head" \
+                          --protected-ci-conclusion success >/tmp/repository-repair-result.json
+                        cat /tmp/repository-repair-result.json
+                      fi
+                    fi
+                  fi
                 fi
-                node control/_tools/repository-repair-consumer.mjs consume \
-                  --run-root run \
-                  --control-root control \
-                  --execution-key "$EXECUTION_KEY" \
-                  --request /tmp/worker-request.json \
-                  --writer-generation "$WRITER_GENERATION" \
-                  --protected-ci-run-id "$repair_ci_run" \
-                  --protected-ci-sha "$control_sha" \
-                  --protected-ci-conclusion success >/tmp/repository-repair-result.json
-                cat /tmp/repository-repair-result.json
               fi
             fi
 
@@ -489,6 +537,28 @@ jobs:
                 git -C run rebase "origin/$RUN_BRANCH"
                 git -C run push origin "HEAD:$RUN_BRANCH"
               fi
+            fi
+
+            if [ "$protected_repair_boundary" = "true" ]; then
+              node control/_tools/run-supervisor.mjs release-writer-lease \
+                --lease "run/$lease_rel" \
+                --execution-id "$EXECUTION_ID" \
+                --owner-id "$SUPERVISOR_OWNER" \
+                --generation "$WRITER_GENERATION" \
+                --reason PROTECTED_REPAIR_IN_PROGRESS \
+                --output /tmp/released-writer-lease.json >/tmp/release-writer.stdout
+              cat /tmp/release-writer.stdout
+              cp /tmp/released-writer-lease.json "run/$lease_rel"
+              git -C run add "$lease_rel"
+              git -C run commit -m "Release production writer for protected repair"
+              if ! git -C run push origin "HEAD:$RUN_BRANCH"; then
+                git -C run fetch --no-tags origin "$RUN_BRANCH"
+                git -C run rebase "origin/$RUN_BRANCH"
+                git -C run push origin "HEAD:$RUN_BRANCH"
+              fi
+              gh workflow run protected-repair-executor.yml --repo "$GITHUB_REPOSITORY" --ref main || true
+              echo "Protected repair is an intermediate recovery state. Supervisor released authority and yielded; recovery remains open."
+              break
             fi
 
             terminal="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(String(x.terminal))")"
