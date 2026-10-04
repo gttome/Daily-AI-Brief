@@ -7,9 +7,10 @@ import {evaluateReaderSemanticCloseGate} from '../lib/reader-semantic-close-gate
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..','..');
 const date='2026-10-04';
+const executionKey='2026-10-04-run8';
 
 test('correct generated edition passes reader semantic PUBLIC_CLOSED gate',()=>{
-  const gate=evaluateReaderSemanticCloseGate({root,editionDate:date,observedAt:'2026-10-04T18:00:00Z'});
+  const gate=evaluateReaderSemanticCloseGate({root,editionDate:date,executionKey,observedAt:'2026-10-04T18:00:00Z'});
   assert.equal(gate.result,'PASS',gate.errors.join('\n'));
   assert.equal(gate.checks.six_articles,true);
   assert.equal(gate.checks.two_videos,true);
@@ -26,7 +27,7 @@ test('removing one required Brief block fails the close gate',()=>{
   const altered=original.replace('CONTINUE LEARNING','CONTINUE_REMOVED');
   assert.notEqual(altered,original);
   const gate=evaluateReaderSemanticCloseGate({
-    root,editionDate:date,observedAt:'2026-10-04T18:00:00Z',
+    root,editionDate:date,executionKey,observedAt:'2026-10-04T18:00:00Z',
     fileOverrides:{[relative]:altered}
   });
   assert.equal(gate.result,'FAIL');
@@ -42,7 +43,7 @@ test('altering one permanent story page fails the close gate',()=>{
   const altered=original.replace('class="reading-context"','class="reading-context-removed"');
   assert.notEqual(altered,original);
   const gate=evaluateReaderSemanticCloseGate({
-    root,editionDate:date,observedAt:'2026-10-04T18:00:00Z',
+    root,editionDate:date,executionKey,observedAt:'2026-10-04T18:00:00Z',
     fileOverrides:{[relative]:altered}
   });
   assert.equal(gate.result,'FAIL');
@@ -51,7 +52,7 @@ test('altering one permanent story page fails the close gate',()=>{
 });
 
 test('semantic gate requires all six article book bridges and reader evidence',()=>{
-  const gate=evaluateReaderSemanticCloseGate({root,editionDate:date,observedAt:'2026-10-04T18:00:00Z'});
+  const gate=evaluateReaderSemanticCloseGate({root,editionDate:date,executionKey,observedAt:'2026-10-04T18:00:00Z'});
   for(let i=1;i<=6;i++){
     assert.equal(gate.checks['story_'+String(i).padStart(2,'0')+'_reading_evidence'],true);
     assert.equal(gate.checks['story_'+String(i).padStart(2,'0')+'_evidence_availability'],true);
