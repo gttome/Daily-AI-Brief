@@ -9,7 +9,7 @@ on:
     types: [completed]
 
 permissions:
-  contents: read
+  contents: write
   actions: write
 
 concurrency:
@@ -53,9 +53,53 @@ jobs:
           edition_id="$(node -e "const x=require('./$pointer');process.stdout.write(x.edition_id)")"
 
           gh workflow run run-supervisor.yml \
+            --repo "$GITHUB_REPOSITORY" \
             --ref main \
             -f run_branch="$run_branch" \
             -f execution_key="$execution_key" \
             -f execution_id="$execution_id" \
             -f edition_id="$edition_id" \
             -f takeover_dead_owner=true
+
+      - name: Publish compact Watchdog health state
+        run: |
+          set -euo pipefail
+          pointer="data/operations/active-production-run.json"
+          test -f "$pointer"
+          base_main="$(git rev-parse HEAD)"
+          run_root_args=()
+          active="$(node -e "const x=require('./$pointer');process.stdout.write(String(x.active===true && x.terminal!==true))")"
+          if [ "$active" = "true" ]; then
+            run_branch="$(node -e "const x=require('./$pointer');process.stdout.write(String(x.branch||''))")"
+            if [ -n "$run_branch" ]; then
+              git fetch --depth=1 origin "$run_branch"
+              rm -rf /tmp/dab-watchdog-health-run
+              git worktree add --detach /tmp/dab-watchdog-health-run FETCH_HEAD
+              run_root_args=(--run-root /tmp/dab-watchdog-health-run)
+            fi
+          fi
+
+          node _tools/watchdog-health.mjs \
+            --pointer "$pointer" \
+            --contracts docs/operations/task-recovery-contracts.json \
+            "${run_root_args[@]}" \
+            --output /tmp/watchdog-health.json
+          cat /tmp/watchdog-health.json
+
+          git worktree remove /tmp/dab-watchdog-health-run --force 2>/dev/null || true
+          runtime_ref="runtime/watchdog-health"
+          old_sha="$(git ls-remote --heads origin "refs/heads/$runtime_ref" | awk '{print $1}')"
+          git checkout -B runtime-watchdog-health "$base_main"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p data/operations
+          cp /tmp/watchdog-health.json data/operations/watchdog-health.json
+          git add data/operations/watchdog-health.json
+          git commit -m "Refresh compact Watchdog health"
+          if [ -n "$old_sha" ]; then
+            git push origin HEAD:refs/heads/runtime/watchdog-health \
+              --force-with-lease=refs/heads/runtime/watchdog-health:"$old_sha"
+          else
+            git push origin HEAD:refs/heads/runtime/watchdog-health
+          fi
+
