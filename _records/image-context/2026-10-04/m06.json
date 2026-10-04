@@ -1,0 +1,20 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-04-m06"
+  ],
+  "candidate_id": "m06",
+  "task_id": "13",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-04T03:49:00.000Z",
+  "allowed_text": [
+    "Study hub",
+    "Notebook",
+    "Source material",
+    "Flashcards",
+    "Practice quiz",
+    "Admin controls",
+    "Gemini"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: Gemini study workflows in one hub. Composition: a central study hub receives notebook and source-material inputs, then branches into flashcards and practice quizzes inside a clearly bounded administrative-control perimeter. Emphasize organization, reuse and the relationship between source material and generated study aids. No people or humanoid figures, no decorative filler, no product-screen imitation, no unsupported metrics, no overlapping text, no sparse/basic box-and-arrow fallback. Only these visible labels: Study hub, Notebook, Source material, Flashcards, Practice quiz, Admin controls, Gemini."
+}
