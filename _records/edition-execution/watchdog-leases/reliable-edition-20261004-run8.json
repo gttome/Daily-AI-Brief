@@ -6,9 +6,9 @@
   "generation": 40,
   "state": "ACTIVE",
   "acquired_at": "2026-10-04T15:03:04.000Z",
-  "last_heartbeat_at": "2026-10-04T15:03:04.000Z",
-  "expires_at": "2026-10-04T15:18:04.000Z",
-  "action_key": "wd-task23-manifest-contract-37205934438:post-repair-merge-resume:slot-a:g40",
+  "last_heartbeat_at": "2026-10-04T15:13:00.000Z",
+  "expires_at": "2026-10-04T15:28:00.000Z",
+  "action_key": "wd-task23-manifest-contract-37205934438:followup-frozen-image-contract-repair:slot-a:g40",
   "takeover_from": {
     "owner_slot": "E",
     "generation": 39,
