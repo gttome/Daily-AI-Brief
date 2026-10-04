@@ -1,0 +1,25 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "18",
+  "incident_id": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch",
+  "owner_slot": "C",
+  "at": "2026-10-04T09:37:02.000Z",
+  "type": "SAFE_BOUNDARY_HANDOFF",
+  "classification": "BLOCKED_ACTIONABLE",
+  "action_key": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch:protected-handoff-repair-required:g27",
+  "diagnosis": "Task 17 is durably Done and first incomplete task is 18. The Task 17 recovery verifier replaced the writer lease release reason with TASK_17_RECOVERY_VERIFIED_PROGRESSING_HANDOFF_TO_SUPERVISOR, but the protected Writer Handoff workflow accepts only TASK_XX_DONE_HANDOFF_TO_SUPERVISOR or TASK_XX_BLOCKED_HANDOFF_TO_SUPERVISOR. Therefore run 37192151895 completed without dispatching a new Run Supervisor; no Task 18 request, worker result, or task transition followed.",
+  "attempted_actions": [
+    "Re-read current protected main, production branch, Task 17 result, writer lease, Watchdog lease, recent Actions runs and Writer Handoff logs.",
+    "Acquire Watchdog Slot C recovery lease generation 27 under optimistic file-SHA concurrency.",
+    "Attempt to re-run the exact Writer Handoff job; the connected GitHub mutation was not permitted in this invocation.",
+    "Create repair branch repair/run8-task18-recovery-handoff-resume from current protected main and attempt the bounded workflow/test repair; workflow-file mutation was not permitted in this invocation."
+  ],
+  "blocker": "The incident remains internally actionable, but this invocation cannot perform the required GitHub Actions re-run or workflow-file mutation through the connected GitHub write surface. This is not evidence of external non-actionability.",
+  "next_authorized_action": "Re-read fresh state first. If no real Task 18 executor has appeared, reuse repair/run8-task18-recovery-handoff-resume and make the bounded repair that treats TASK_XX_RECOVERY_VERIFIED_PROGRESSING_HANDOFF_TO_SUPERVISOR as a valid Writer Handoff release reason (with regression test), persist exactly one protected-repair-required-v1 record for this execution/task, then continue through exact-head PR-attached validate, merge and SAME Task 18 resume. If a Supervisor has already started independently, yield and verify substantive Task 18 progress instead.",
+  "recovery_required": true,
+  "recovery_complete": false,
+  "release_reason": "SAFE_BOUNDARY_REACHED"
+}
