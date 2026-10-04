@@ -1,11 +1,22 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "github-actions-repository-task-37192041799-1",
-  "generation": 48,
-  "acquired_at": "2026-10-04T09:24:43.900Z",
-  "last_heartbeat_at": "2026-10-04T09:24:45.472Z",
-  "expires_at": "2026-10-04T09:24:45.472Z",
-  "released_at": "2026-10-04T09:24:45.472Z",
-  "release_reason": "TASK17_DONE_HANDOFF_TO_SUPERVISOR"
+  "owner_id": "watchdog-F:wd-2f779cb803587c2784d8560d926ee46d:task-17:recovery-verified",
+  "generation": 49,
+  "task_id": "17",
+  "capability": "repository",
+  "operation_key": "repair-ce8c7a1216071d075bbb4d6403eadd831913a788",
+  "acquired_at": "2026-10-04T09:26:17.467Z",
+  "last_heartbeat_at": "2026-10-04T09:26:17.467Z",
+  "expires_at": "2026-10-04T09:26:17.467Z",
+  "state": "RELEASED",
+  "released": true,
+  "transfer_from": {
+    "owner_id": "github-actions-repository-task-37192041799-1",
+    "generation": 48,
+    "reason": "TASK17_DONE_HANDOFF_TO_SUPERVISOR",
+    "at": "2026-10-04T09:26:17.467Z"
+  },
+  "released_at": "2026-10-04T09:26:17.467Z",
+  "release_reason": "TASK_17_RECOVERY_VERIFIED_PROGRESSING_HANDOFF_TO_SUPERVISOR"
 }
