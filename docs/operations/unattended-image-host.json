@@ -76,7 +76,9 @@
     "nominal_image_pickup_minutes": 10,
     "duplicate_generation_prohibited": true,
     "image_consumer_observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json",
-    "image_consumer_observation_sha256": "21149cbd717b457f00416e9f2ed353085ac29f203e7b39c39c5b45565a9bd674"
+    "image_consumer_observation_sha256": "21149cbd717b457f00416e9f2ed353085ac29f203e7b39c39c5b45565a9bd674",
+    "generator_visible_context_policy": "story-only-generator-context-v1",
+    "context_contamination_exits_current_generation_context": true
   },
   "legacy_single_consumer_binding": {
     "automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
@@ -135,7 +137,12 @@
       "16"
     ],
     "image_quality_contract_unchanged": true,
-    "synthetic_rehearsal_no_generation_supported": true
+    "synthetic_rehearsal_no_generation_supported": true,
+    "generator_visible_context_policy": "story-only-generator-context-v1",
+    "delivery_projection_must_equal_shared_generation_instruction": true,
+    "hidden_platform_context_isolation_asserted": false,
+    "context_contamination_same_context_retry_allowed": false,
+    "context_contamination_requires_engineering_repair": true
   },
   "october_4_field_validation": {
     "execution": "reliable-edition-20261004-run8",
