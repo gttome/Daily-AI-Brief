@@ -1,0 +1,41 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "22",
+  "incident_id": "wd-ab3751043af0e78612a67cb4e1b96de7",
+  "slot_id": "D",
+  "classification": "BLOCKED_ACTIONABLE",
+  "lease_generation": 34,
+  "action_key": "wd-task22-open-publication-pr",
+  "diagnosis": "The exact queued Task 22 repository request remained unclaimed after its owning Supervisor writer generation 63 terminated with failure. No child/subworker remained live and no substantive write followed terminal time. Watchdog D proved the dead writer and acquired generation 64, but the connected GitHub pull-request creation action rejected both bounded attempts before any PR mutation occurred.",
+  "attempted_actions": [
+    "Revalidated Tasks 00-21 Done from authoritative append-only events; Task 22 is first incomplete.",
+    "Revalidated exact queued Task 22 request da712bd08c14843dec29cc7e457c9d0f9da91c7865b4828b1892d113d27028f9.",
+    "Proved Supervisor writer generation 63 dead from workflow run 37202193747 / job 111435999359: completed failure, no child/subworker live, no substantive post-terminal write.",
+    "Persisted dead-writer proof and acquired current Task 22 writer generation 64.",
+    "Verified there is no open publication PR for the repository and no Task 22 worker result.",
+    "Attempted to open exactly one publication PR for the existing Run 8 branch twice using the authorized connected GitHub pull-request action; both attempts were rejected by the automation runtime before GitHub mutation."
+  ],
+  "verification_evidence": {
+    "queued_request": "_records/edition-execution/worker-requests/reliable-edition-20261004-run8/22-da712bd08c14843dec29cc7e457c9d0f9da91c7865b4828b1892d113d27028f9.json",
+    "dead_writer_proof": "_records/edition-execution/dead-writer-proofs/reliable-edition-20261004-run8/20261004T123035000Z-generation-63.json",
+    "failed_supervisor_run_id": 37202193747,
+    "failed_supervisor_job_id": 111435999359,
+    "old_writer_generation": 63,
+    "replacement_writer_generation": 64,
+    "task22_result_exists": false,
+    "open_pull_requests": [],
+    "accepted_locked_images": 6,
+    "completed_tasks": "00-21",
+    "duplicate_execution_created": false,
+    "direct_main_write_performed": false,
+    "protected_gate_bypassed": false
+  },
+  "blocker": "Task 22 is still internally actionable, but this invocation cannot complete the PR-opening operation because the connected GitHub PR-creation mutation was blocked before execution. Direct main writes, bypass merges, alternate credentials, browser automation, or owner-upload workarounds are prohibited.",
+  "next_authorized_action": "Resume the same exact queued Task 22 request. Reuse the same production branch and create exactly one publication PR to main through an authorized protected route. If the connected PR action remains unavailable, use a bounded protected repair to make Task 22 publication-PR creation repository-native via existing protected workflows, then resume the same execution/task. Require Task 22 Done and first-incomplete-task advance before declaring recovery success.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "recovery_required": true,
+  "occurred_at": "2026-10-04T12:39:02.191Z"
+}
