@@ -1,0 +1,28 @@
+{
+  "schema_version": "task19-bundle-digest-shard-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "task_id": "19",
+  "shard": "editorial-evidence-b",
+  "sealed_at": "2026-10-04T11:06:27.092Z",
+  "digests": [
+    [
+      "_records/editorial/2026-10-04-run8/story-selection.json",
+      "84e57bd1bbfd7264a4ac1040e04367f62f711eed"
+    ],
+    [
+      "_records/discovery/2026-10-04-run8/evidence.json",
+      "b7905c5c6c7f105ab6b76154c9e1b9e07d6fd034"
+    ],
+    [
+      "_records/editorial/2026-10-04-run8/task18-assembly.json",
+      "d8d61b1c58fa881d7c62fa623a94b8b2412429d5"
+    ]
+  ],
+  "digest_scheme": "git_blob_sha1",
+  "checks": {
+    "story_allocation": "2/2/2",
+    "selected_stories": 6,
+    "accepted_locked_images": 6
+  },
+  "result": "PASS"
+}
