@@ -49,7 +49,7 @@ try{
 
   const contracts=readJson(path.join(controlRoot,'docs/operations/task-recovery-contracts.json'));
   const taskContract=contracts.tasks?.[incoming.task_id];
-  const transportPath=path.join(runRoot,'_records/image-attempts',executionKey,'m03-attempt-2.json');
+  const transportPath=path.join(controlRoot,'_records/image-attempts/2026-10-01-run4/m03-attempt-2.json');
   if(!fs.existsSync(transportPath)) throw Error('known_good_transport_proof_missing');
   const transportAttempt=readJson(transportPath);
   const ledgerPath=path.join(controlRoot,'data/operations/production-continuous-improvement-ledger.jsonl');
