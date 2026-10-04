@@ -6,8 +6,8 @@
   "generation": 38,
   "state": "ACTIVE",
   "acquired_at": "2026-10-04T13:54:30.000Z",
-  "last_heartbeat_at": "2026-10-04T14:08:45.000Z",
-  "expires_at": "2026-10-04T14:23:45.000Z",
+  "last_heartbeat_at": "2026-10-04T14:23:35.000Z",
+  "expires_at": "2026-10-04T14:38:35.000Z",
   "action_key": "wd-task23-manifest-contract-37205934438:continue-deterministic-manifest-contract-repair:slot-e:g38",
   "takeover_from": {
     "owner_slot": "D",
