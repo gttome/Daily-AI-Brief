@@ -1,4 +1,5 @@
 import {createHash} from 'node:crypto';
+import {writerTakeoverDecision} from './protected-repair-executor.mjs';
 
 export const RUN_SUPERVISOR_VERSION = 'run-supervisor-v2';
 export const DEFAULT_SUPERVISOR_INTERVAL_MS = 60_000;
@@ -24,16 +25,31 @@ export function activeRunDecision({activeRun = null, request = null} = {}) {
 
 export function acquireWriterLease(current, {
   execution_id, owner_id, now = new Date().toISOString(), ttl_ms = DEFAULT_WRITER_LEASE_MS,
-  takeover_dead_owner = false
+  takeover_dead_owner = false, dead_owner_proof = null, authorized_handoff = false
 } = {}) {
   if (!execution_id || !owner_id || !stamp(now) || !Number.isInteger(ttl_ms) || ttl_ms < 1) throw Error('valid_writer_lease_request_required');
   const nowMs = Date.parse(now);
   if (current && current.execution_id !== execution_id && stamp(current.expires_at) && Date.parse(current.expires_at) > nowMs)
     return {acquired:false, reason:'writer_lease_owned_by_other_execution', lease:current};
-  if (current && current.execution_id === execution_id && current.owner_id !== owner_id &&
-      stamp(current.expires_at) && Date.parse(current.expires_at) > nowMs && takeover_dead_owner !== true)
-    return {acquired:false, reason:'writer_lease_owned_by_other_worker', lease:current};
-  const sameOwner = current?.execution_id === execution_id && current?.owner_id === owner_id;
+
+  let takeover = {allowed:true,reason:'no_existing_writer'};
+  if (current && current.owner_id !== owner_id) {
+    takeover = writerTakeoverDecision({
+      lease:current,
+      request_execution_id:execution_id,
+      request_owner_id:owner_id,
+      dead_writer_proof:dead_owner_proof,
+      authorized_handoff,
+      now
+    });
+    if (!takeover.allowed) {
+      return {acquired:false, reason:takeover.reason, lease:current, takeover_dead_owner_requested:takeover_dead_owner === true};
+    }
+  }
+
+  const currentReleased = current?.state === 'RELEASED' || Boolean(current?.released_at);
+  const currentActive = current && !currentReleased && stamp(current.expires_at) && Date.parse(current.expires_at) > nowMs;
+  const sameOwner = currentActive && current?.execution_id === execution_id && current?.owner_id === owner_id;
   const generation = sameOwner ? current.generation : Math.max(0, Number(current?.generation || 0)) + 1;
   const requestedExpiryMs = nowMs + ttl_ms;
   const currentExpiryMs = sameOwner && stamp(current.expires_at) ? Date.parse(current.expires_at) : 0;
@@ -42,12 +58,14 @@ export function acquireWriterLease(current, {
     execution_id, owner_id, generation,
     acquired_at:sameOwner ? current.acquired_at : now,
     last_heartbeat_at:now,
-    // A same-owner heartbeat may extend a lease, but it must never shorten an
-    // already-valid fence. Shortening can strand a healthy long-running
-    // supervisor when a recovery worker uses a smaller default TTL.
     expires_at:new Date(Math.max(requestedExpiryMs,currentExpiryMs)).toISOString()
   };
-  return {acquired:true, reason:sameOwner ? 'lease_renewed' : 'lease_acquired', lease};
+  return {
+    acquired:true,
+    reason:sameOwner ? 'lease_renewed' : 'lease_acquired',
+    takeover_reason:current && current.owner_id !== owner_id ? takeover.reason : null,
+    lease
+  };
 }
 
 export function assertWriterFence(lease, {
@@ -57,6 +75,21 @@ export function assertWriterFence(lease, {
   if (lease.execution_id !== execution_id || lease.owner_id !== owner_id || lease.generation !== generation) throw Error('STALE_WRITER_FENCE');
   if (!stamp(lease.expires_at) || Date.parse(lease.expires_at) <= Date.parse(now)) throw Error('WRITER_LEASE_EXPIRED');
   return true;
+}
+
+export function releaseWriterLease(lease, {
+  execution_id, owner_id, generation, reason = 'SAFE_RECOVERY_BOUNDARY', now = new Date().toISOString()
+} = {}) {
+  if (!reason || !stamp(now)) throw Error('writer_lease_release_context_required');
+  assertWriterFence(lease,{execution_id,owner_id,generation,now});
+  return {
+    ...lease,
+    state:'RELEASED',
+    released_at:now,
+    release_reason:reason,
+    last_heartbeat_at:now,
+    expires_at:now
+  };
 }
 
 export function classifyRunHealth({
@@ -179,7 +212,7 @@ export function refreshScheduledWorkerFence(current, {
   const schedulingGeneration = Number(request.writer_generation);
   const currentGeneration = Number(current.generation);
   const result = acquireWriterLease(current,{
-    execution_id:request.execution_id, owner_id, now, ttl_ms, takeover_dead_owner:true
+    execution_id:request.execution_id, owner_id, now, ttl_ms, authorized_handoff:true
   });
   if (!result.acquired) throw Error('scheduled_worker_fence_acquire_failed');
   return {
