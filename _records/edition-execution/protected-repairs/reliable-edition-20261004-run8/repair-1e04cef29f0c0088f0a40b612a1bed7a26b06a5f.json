@@ -1,6 +1,6 @@
 {
   "schema_version": "protected-repair-required-v1",
-  "state": "PROTECTED_REPAIR_REQUIRED",
+  "state": "RECOVERY_VERIFIED_PROGRESSING",
   "repair_key": "repair-1e04cef29f0c0088f0a40b612a1bed7a26b06a5f",
   "execution_id": "reliable-edition-20261004-run8",
   "edition_id": "dab-edition-2026-10-04",
@@ -33,5 +33,7 @@
     "ci_run_id": 37186217728,
     "ci_conclusion": "success",
     "mergeable_observed": true
-  }
+  },
+  "resolved_at": "2026-10-04T14:07:00.000Z",
+  "resolution_reason": "TARGET_TASK_ALREADY_DONE_AND_EXECUTION_ADVANCED"
 }
