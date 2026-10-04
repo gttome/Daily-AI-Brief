@@ -1,9 +1,19 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "github-actions-37188751471-1",
-  "generation": 30,
-  "acquired_at": "2026-10-04T08:23:44.900Z",
-  "last_heartbeat_at": "2026-10-04T08:23:44.900Z",
-  "expires_at": "2026-10-04T08:28:44.900Z"
+  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261004-run8:task-12:generation-31:888f5ecd",
+  "generation": 31,
+  "task_id": "12",
+  "operation_key": "native-image-888f5ecd4e752f516e5837c0b3b61d9a66f5ac994b5256844fc0b2b393627161",
+  "capability": "native_chatgpt",
+  "acquired_at": "2026-10-04T08:24:40.496Z",
+  "last_heartbeat_at": "2026-10-04T08:24:40.496Z",
+  "expires_at": "2026-10-04T08:54:40.496Z",
+  "state": "ACTIVE",
+  "released": false,
+  "transfer_from": {
+    "owner_id": "github-actions-37188751471-1",
+    "generation": 30,
+    "reason": "QUEUED_NATIVE_IMAGE_HANDOFF"
+  }
 }
