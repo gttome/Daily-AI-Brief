@@ -1,14 +1,21 @@
 import {projectKanbanFromEvents,publicationWriteBoundary} from './run-supervisor.mjs';
 import {canonicalLedgerText,parseOperationalLearningLedger,certifyRunLearningForTask29,renderOperationalLearningMarkdown,operationalLearningDigest} from './operational-learning.mjs';
 import {buildPromotionReview} from './run-readiness.mjs';
+import {READER_SEMANTIC_CLOSE_GATE_EFFECTIVE_DATE,READER_SEMANTIC_CLOSE_GATE_VERSION} from './reader-semantic-close-gate.mjs';
 
 /** Project cleanup only from an already live-verified protected publication.
  * This does no rendering, selection, image generation or production deployment. */
-export function buildProductionRunCloseout({pointer,completion,validation,runState,cc,tasks,events,ledgerText,deltaText='',now}) {
+export function buildProductionRunCloseout({pointer,completion,validation,runState,cc,tasks,events,ledgerText,deltaText='',readerSemanticGate=null,now}) {
   if(pointer?.active!==true || pointer.terminal===true) return {status:'PRESERVED_TERMINAL_OR_INACTIVE',files:{}};
   const key=pointer.execution_key,match=/^(\d{4}-\d{2}-\d{2})-run(\d+)$/.exec(key||'');
   if(!match || Number(match[2])<5 || !/^[\w-]+$/.test(pointer.execution_id||'') || !Number.isFinite(Date.parse(now))) throw Error('new_run_identity_required');
   const date=match[1],id=pointer.execution_id,edition='dab-edition-'+date,sha=completion?.production_sha;
+  if(date>=READER_SEMANTIC_CLOSE_GATE_EFFECTIVE_DATE){
+    if(readerSemanticGate?.schema_version!==READER_SEMANTIC_CLOSE_GATE_VERSION||
+       readerSemanticGate?.edition_date!==date||readerSemanticGate?.edition_id!==edition||
+       readerSemanticGate?.result!=='PASS'||!Array.isArray(readerSemanticGate?.errors)||readerSemanticGate.errors.length)
+      throw Error('reader_semantic_close_gate_required');
+  }
   if(pointer.edition_id!==edition || completion?.edition_id!==edition || !/^[a-f0-9]{40}$/.test(sha||'') ||
     completion.phase!=='live_verified' || completion.deployed_sha!==sha || completion.pages?.conclusion!=='success' ||
     completion.live_verification?.final_result!=='pass' || !completion.pr_number || !completion.ci_run_id)
@@ -31,6 +38,7 @@ export function buildProductionRunCloseout({pointer,completion,validation,runSta
   const canonical=canonicalLedgerText(merged),cert=certifyRunLearningForTask29({ledgerText:canonical,runId:id});
   if(cert.result!=='PASS') throw Error('task29_learning_not_reconciled:'+cert.errors.join(','));
   const files={},all=[...events];
+  if(date>=READER_SEMANTIC_CLOSE_GATE_EFFECTIVE_DATE)files[`_records/publication/${date}/reader-semantic-close-gate.json`]=readerSemanticGate;
   // These are observed reconciliation times. Original CI, merge and live times
   // stay in their source receipts; absent Active timestamps remain unknown.
   for(let n=23;n<=29;n++) {
@@ -40,7 +48,7 @@ export function buildProductionRunCloseout({pointer,completion,validation,runSta
       timestamp_scope:'evidence_reconciliation_observed',proof:{production_sha:sha,
         completion:`_records/publication/${date}/completion.json`,validation:`_records/publication/${date}/delta-validation.json`,
         pr_number:completion.pr_number,ci_run_id:completion.ci_run_id,
-        ...(n===29?{learning_certification:`_records/run-learning/certification/${id}.json`,result:'PASS'}:{})}};
+        ...(n===29?{learning_certification:`_records/run-learning/certification/${id}.json`,reader_semantic_close_gate:date>=READER_SEMANTIC_CLOSE_GATE_EFFECTIVE_DATE?`_records/publication/${date}/reader-semantic-close-gate.json`:null,result:'PASS'}:{})}};
     files[`_records/edition-execution/events/${key}/${task}-protected-closeout.json`]=event;all.push(event);
   }
   const kanban=projectKanbanFromEvents({tasks,events:all,execution_id:id,edition_id:edition,observed_at:now});
@@ -58,7 +66,8 @@ export function buildProductionRunCloseout({pointer,completion,validation,runSta
   files['data/operations/production-continuous-improvement-ledger.jsonl']=canonical;
   files['docs/operations/PRODUCTION-CONTINUOUS-IMPROVEMENT-LEDGER.md']=renderOperationalLearningMarkdown(canonical);
   files[`_records/edition-execution/public-closed/${key}.json`]={schema_version:'public-closed-v1',state:'PUBLIC_CLOSED',
-    edition_id:edition,execution_id:id,production_sha:sha,observed_at:now,completion:`_records/publication/${date}/completion.json`};
+    edition_id:edition,execution_id:id,production_sha:sha,observed_at:now,completion:`_records/publication/${date}/completion.json`,
+    reader_semantic_close_gate:date>=READER_SEMANTIC_CLOSE_GATE_EFFECTIVE_DATE?`_records/publication/${date}/reader-semantic-close-gate.json`:null};
   files[`_records/edition-execution/writer-leases/${id}.json`]={schema_version:'run-writer-lease-v1',execution_id:id,
     owner_id:'released-task29',released:true,expires_at:now,publication_candidate_frozen:true};
   files['data/operations/active-production-run.json']={...pointer,active:false,terminal:true,updated_at:now,
