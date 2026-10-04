@@ -1,21 +1,19 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "incident_id": "wd-task23-manifest-contract-37205934438",
+  "incident_id": "wd-task26-live-validation-37217564023",
   "owner_slot": "E",
-  "generation": 41,
-  "state": "RELEASED",
-  "acquired_at": "2026-10-04T15:53:00.000Z",
-  "last_heartbeat_at": "2026-10-04T15:56:31.000Z",
-  "expires_at": "2026-10-04T15:56:31.000Z",
-  "action_key": "wd-task23-manifest-contract-37205934438:shadow-frozen-contract-repair:slot-e:g41",
+  "generation": 42,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-04T16:42:43.000Z",
+  "last_heartbeat_at": "2026-10-04T16:42:43.000Z",
+  "expires_at": "2026-10-04T16:57:43.000Z",
+  "action_key": "wd-task26-live-validation-37217564023:repair-live-reader-contract:slot-e:g42",
   "takeover_from": {
-    "owner_slot": "A",
-    "generation": 40,
-    "reason": "PRIOR_RECOVERY_LEASE_EXPIRED",
-    "prior_expires_at": "2026-10-04T15:28:00.000Z",
-    "observed_at": "2026-10-04T15:53:00.000Z"
-  },
-  "released_at": "2026-10-04T15:56:31.000Z",
-  "release_reason": "SAFE_BOUNDARY_REACHED"
+    "owner_slot": "E",
+    "generation": 41,
+    "reason": "PRIOR_RECOVERY_LEASE_RELEASED",
+    "prior_expires_at": "2026-10-04T15:56:31.000Z",
+    "observed_at": "2026-10-04T16:42:43.000Z"
+  }
 }
