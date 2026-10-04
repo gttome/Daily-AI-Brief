@@ -11,7 +11,7 @@ if(!pointer.active || pointer.terminal || pointer.edition_id!=='dab-edition-'+da
   if(!/^\d{4}-\d{2}-\d{2}$/.test(date||'') || !/^\d{4}-\d{2}-\d{2}-run\d+$/.test(pointer.execution_key||'')) throw Error('run_identity_required');
   const dir=`_records/edition-execution/events/${pointer.execution_key}`;
   const delta=`_records/run-learning/incidents/${pointer.execution_id}.jsonl`;
-  const readerSemanticGate=evaluateReaderSemanticCloseGate({root:'.',editionDate:date,observedAt:new Date().toISOString()});
+  const readerSemanticGate=evaluateReaderSemanticCloseGate({root:'.',editionDate:date,executionKey:pointer.execution_key,observedAt:new Date().toISOString()});
   if(readerSemanticGate.result!=='PASS') throw Error('reader_semantic_close_gate_failed:'+readerSemanticGate.errors.join(','));
   const result=buildProductionRunCloseout({pointer,completion:read(`_records/publication/${date}/completion.json`),
     validation:read(`_records/publication/${date}/delta-validation.json`),runState:read(`_records/run-state/${date}.json`),
