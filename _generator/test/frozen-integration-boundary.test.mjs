@@ -6,7 +6,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {validateFrozenTask19Bundle,validateFrozenProjectionState} from '../lib/integrity.mjs';
 
-const blob=bytes=>createHash('sha1').update(Buffer.from('blob '+bytes.length+'\\0')).update(bytes).digest('hex');
+const blob=bytes=>createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');
 const write=(root,relative,content)=>{const full=path.join(root,relative);fs.mkdirSync(path.dirname(full),{recursive:true});fs.writeFileSync(full,content);return blob(Buffer.from(content));};
 
 test('frozen integration validates sealed reader/image bytes instead of newer generator rules',()=>{
