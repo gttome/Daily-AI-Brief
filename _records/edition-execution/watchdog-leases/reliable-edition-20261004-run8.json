@@ -6,7 +6,7 @@
   "generation": 19,
   "state": "ACTIVE",
   "acquired_at": "2026-10-04T07:56:29.978Z",
-  "last_heartbeat_at": "2026-10-04T08:05:23.854Z",
-  "expires_at": "2026-10-04T08:20:23.854Z",
-  "action_key": "wf-task11-protected-repair-pr438-g19"
+  "last_heartbeat_at": "2026-10-04T08:10:37.455Z",
+  "expires_at": "2026-10-04T08:25:37.455Z",
+  "action_key": "wf-task11-protected-repair-pr439-g19"
 }
