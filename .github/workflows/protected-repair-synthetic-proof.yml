@@ -18,6 +18,7 @@ concurrency:
 
 jobs:
   proof:
+    if: github.event_name != 'push' || !contains(github.event.head_commit.message, '[proof-base-sync]')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -107,8 +108,23 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          head="${{ steps.pr.outputs.head }}"
+          head="${{ steps.ci.outputs.head }}"
           target="${{ steps.target.outputs.target_branch }}"
+          git fetch --no-tags origin main
+          if ! git merge-base --is-ancestor origin/main HEAD; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git merge --no-ff -m "[proof-base-sync] synchronize protected main before exact-head CI" origin/main
+            git push origin "HEAD:$target"
+            head="$(git rev-parse HEAD)"
+            for _ in $(seq 1 20); do
+              pr_head="$(gh pr view "${{ steps.pr.outputs.number }}" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq '.headRefOid')"
+              [ "$pr_head" = "$head" ] && break
+              sleep 2
+            done
+            [ "$pr_head" = "$head" ] || { echo "::error::Synthetic PR did not advance to synchronized head."; exit 1; }
+          fi
+          echo "head=$head" >> "$GITHUB_OUTPUT"
           gh workflow run ci.yml --repo "$GITHUB_REPOSITORY" --ref "$target"
           run_id=0
           for _ in $(seq 1 75); do
@@ -136,7 +152,7 @@ jobs:
         run: |
           set -euo pipefail
           pr="${{ steps.pr.outputs.number }}"
-          head="${{ steps.pr.outputs.head }}"
+          head="${{ steps.ci.outputs.head }}"
           target="${{ steps.target.outputs.target_branch }}"
           state="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json state --jq '.state')"
           if [ "$state" = "MERGED" ]; then
