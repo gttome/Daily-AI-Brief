@@ -1,9 +1,14 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "github-actions-37188114271-1",
-  "generation": 28,
-  "acquired_at": "2026-10-04T08:11:50.178Z",
-  "last_heartbeat_at": "2026-10-04T08:11:50.178Z",
-  "expires_at": "2026-10-04T08:16:50.178Z"
+  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261004-run8:task-11:generation-29:fd280431",
+  "generation": 29,
+  "task_id": "11",
+  "operation_key": "native-image-fd28043122d9f47d251f01f4e0ffaa587a4103be22f40537e6d5a68b1774fc48",
+  "capability": "native_chatgpt",
+  "acquired_at": "2026-10-04T08:14:29.506Z",
+  "last_heartbeat_at": "2026-10-04T08:14:29.506Z",
+  "expires_at": "2026-10-04T08:44:29.506Z",
+  "state": "ACTIVE",
+  "released": false
 }
