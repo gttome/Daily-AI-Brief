@@ -7,15 +7,18 @@
   "capability": "protected_ci",
   "operation_key": "task23-ci-wd-task23-ci-37204156674",
   "acquired_at": "2026-10-04T13:10:46.829Z",
-  "last_heartbeat_at": "2026-10-04T13:10:46.829Z",
-  "expires_at": "2026-10-04T13:25:46.829Z",
-  "state": "ACTIVE",
-  "released": false,
+  "last_heartbeat_at": "2026-10-04T13:22:32.937Z",
+  "expires_at": "2026-10-04T13:22:32.937Z",
+  "state": "RELEASED",
+  "released": true,
   "transfer_from": {
     "owner_id": "watchdog-F:wd-ab3751043af0e78612a67cb4e1b96de7:task-22:recovery",
     "generation": 65,
     "reason": "PRIOR_WRITER_RELEASED",
     "prior_expires_at": "2026-10-04T13:01:30.000Z",
     "at": "2026-10-04T13:10:46.829Z"
-  }
+  },
+  "released_at": "2026-10-04T13:22:32.937Z",
+  "release_reason": "TASK_23_BLOCKED_HANDOFF_TO_SUPERVISOR",
+  "handoff_event": "_records/edition-execution/watchdog-events/reliable-edition-20261004-run8/20261004T132216864Z-wd-task23-ci-slot-a-handoff.json"
 }
