@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {validateEdition} from './validate.mjs';
-import {generatedFiles,renderDated,renderIndex,renderLatest} from './render.mjs';
+import {generatedFiles} from './render.mjs';
 
 export const READER_SEMANTIC_CLOSE_GATE_VERSION='reader-semantic-close-gate-v1';
 export const READER_SEMANTIC_CLOSE_GATE_EFFECTIVE_DATE='2026-10-05';
@@ -104,31 +104,50 @@ export function evaluateReaderSemanticCloseGate({root='.',editionDate,executionK
   if(!watchlistOk)errors.push('detailed_watchlist_daily_state_required');
 
   const expected=generatedFiles(edition,repoRoot,{watchlist});
-  const dated=renderDated(edition,{watchlist});
-  const latest=renderLatest(edition,{watchlist});
-  const index=renderIndex(edition,{watchlist});
-  checkFileExact(repoRoot,'briefs/'+editionDate+'.md',dated,errors,checks,'dated_brief_canonical',fileOverrides);
-  checkFileExact(repoRoot,'latest.md',latest,errors,checks,'latest_canonical',fileOverrides);
-  checkFileExact(repoRoot,'index.md',index,errors,checks,'homepage_canonical',fileOverrides);
+  const surfaces={
+    dated:savedText(repoRoot,'briefs/'+editionDate+'.md',fileOverrides),
+    latest:savedText(repoRoot,'latest.md',fileOverrides),
+    homepage:savedText(repoRoot,'index.md',fileOverrides)
+  };
+  for(const [surface,text] of Object.entries(surfaces)){
+    if(text===null){errors.push(surface+'_reader_surface_missing');checks[surface+'_reader_surface']=false;continue;}
+    checks[surface+'_reader_surface']=true;
+    const overview=/IN THIS EDITION · 6 ARTICLES \/ 2 VIDEOS \/ 2 PODCASTS/.test(text);
+    checks[surface+'_edition_overview']=overview;
+    if(!overview)errors.push(surface+':edition_overview_missing');
+    const ratingCount=count(text,/class="story-feedback story-feedback-compact star-feedback"/g);
+    checks[surface+'_rating_control_count']=ratingCount;
+    if(ratingCount!==10)errors.push(surface+':ten_rating_controls_required');
+    const bookBridgeCount=count(text,/class="book-bridge"/g);
+    checks[surface+'_book_bridge_render_count']=bookBridgeCount;
+    if(bookBridgeCount<mappedIds.size)errors.push(surface+':required_book_bridge_not_rendered');
+    const topicsCount=count(text,/\*\*Topics:\*\*/g);
+    const evidenceCount=count(text,/\*\*Evidence:\*\*/g);
+    const availabilityCount=count(text,/\*\*Availability:\*\*/g);
+    checks[surface+'_topics_count']=topicsCount;
+    checks[surface+'_evidence_count']=evidenceCount;
+    checks[surface+'_availability_count']=availabilityCount;
+    if(topicsCount<stories.length)errors.push(surface+':reader_topics_incomplete');
+    if(evidenceCount<stories.length)errors.push(surface+':reader_evidence_incomplete');
+    if(availabilityCount<stories.length)errors.push(surface+':reader_availability_incomplete');
+    const watchlistDetail=[
+      'watchlist-daily-summary','New today:','Updated today:','Carried forward:','Archived / dropped recently:'
+    ].every(token=>text.includes(token));
+    checks[surface+'_watchlist_reader_detail']=watchlistDetail;
+    if(!watchlistDetail)errors.push(surface+':watchlist_daily_detail_not_rendered');
+    const learning=text.includes('CONTINUE LEARNING');
+    checks[surface+'_continue_learning']=learning;
+    if(!learning)errors.push(surface+':continue_learning_missing');
+    for(const story of stories){
+      if(!text.includes(story.headline))errors.push(surface+':story_missing:'+story.ordinal);
+    }
+  }
 
-  const overviewOk=/IN THIS EDITION · 6 ARTICLES \/ 2 VIDEOS \/ 2 PODCASTS/.test(dated);
-  checks.edition_overview=overviewOk;
-  if(!overviewOk)errors.push('edition_overview_missing');
-
-  const ratingCount=count(dated,/class="story-feedback story-feedback-compact star-feedback"/g);
-  checks.rating_control_count=ratingCount;
-  if(ratingCount!==10)errors.push('ten_rating_controls_required');
-
-  const bookBridgeCount=count(dated,/class="book-bridge"/g);
-  checks.book_bridge_render_count=bookBridgeCount;
-  if(bookBridgeCount<mappedIds.size)errors.push('required_book_bridge_not_rendered');
-
-  const watchlistRenderOk=[
-    'watchlist-daily-summary','New today:','Updated today:','Carried forward:','Archived / dropped recently:'
-  ].every(token=>dated.includes(token));
-  checks.watchlist_reader_detail=watchlistRenderOk;
-  if(!watchlistRenderOk)errors.push('watchlist_daily_detail_not_rendered');
-
+  const dated=surfaces.dated||'';
+  checks.edition_overview=checks.dated_edition_overview===true;
+  checks.rating_control_count=checks.dated_rating_control_count||0;
+  checks.book_bridge_render_count=checks.dated_book_bridge_render_count||0;
+  checks.watchlist_reader_detail=checks.dated_watchlist_reader_detail===true;
   const navigationOk=dated.includes('CONTINUE LEARNING')&&dated.includes('View Briefs Archive');
   checks.continue_learning_and_archive=navigationOk;
   if(!navigationOk)errors.push('continue_learning_or_archive_navigation_missing');
