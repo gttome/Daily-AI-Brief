@@ -1,7 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import vm from 'node:vm';
 
-export const WORKFLOW_STATIC_GUARD_VERSION='workflow-static-guard-v1';
+export const WORKFLOW_STATIC_GUARD_VERSION='workflow-static-guard-v2';
 export const ACTIVE_PRODUCTION_WORKFLOWS=Object.freeze([
   '.github/workflows/ci.yml',
   '.github/workflows/daily-delta-validation.yml',
@@ -29,17 +30,62 @@ function logicalShellLines(text){
   return logical;
 }
 
+function heredocOpener(line){
+  const match=String(line||'').match(/^(\s*).*?<<(-)?\s*(['"]?)([A-Za-z_][A-Za-z0-9_]*)\3(?:\s*)$/);
+  if(!match)return null;
+  return {indent:match[1],stripTabs:Boolean(match[2]),delimiter:match[4],command:String(line).trim()};
+}
+
+function deindentBody(lines,indent){
+  return lines.map(line=>line.startsWith(indent)?line.slice(indent.length):line).join('\n');
+}
+
 export function scanWorkflowText({workflowPath='workflow.yml',text=''}={}){
   const errors=[];
   const lines=String(text||'').split('\n');
+
   for(let i=0;i<lines.length;i++){
-    const line=lines[i];
-    if(/<<-?\s*['"]?[A-Za-z_][A-Za-z0-9_]*['"]?/.test(line))
-      errors.push({workflow:workflowPath,line:i+1,code:'WORKFLOW_HEREDOC_PROHIBITED',detail:line.trim()});
+    const opener=heredocOpener(lines[i]);
+    if(!opener)continue;
+
+    let close=-1;
+    for(let j=i+1;j<lines.length;j++){
+      if(lines[j].trim()===opener.delimiter){close=j;break;}
+    }
+    if(close<0){
+      errors.push({workflow:workflowPath,line:i+1,code:'WORKFLOW_HEREDOC_UNCLOSED',detail:opener.command});
+      continue;
+    }
+
+    const closerIndent=lines[close].slice(0,lines[close].length-lines[close].trimStart().length);
+    if(closerIndent!==opener.indent){
+      errors.push({
+        workflow:workflowPath,line:close+1,code:'WORKFLOW_HEREDOC_CLOSER_INDENT_MISMATCH',
+        detail:`opener_line=${i+1}; expected_indent=${opener.indent.length}; actual_indent=${closerIndent.length}`
+      });
+    }
+
+    if(/\bnode(?:\s|$)/.test(opener.command)&&/^(?:NODE|JS|JAVASCRIPT)$/.test(opener.delimiter)){
+      const body=deindentBody(lines.slice(i+1,close),opener.indent);
+      try{new vm.Script(body,{filename:`${workflowPath}:${i+2}`});}
+      catch(error){
+        errors.push({
+          workflow:workflowPath,line:i+1,code:'NODE_HEREDOC_SYNTAX_INVALID',
+          detail:String(error?.message||error).split('\n')[0]
+        });
+      }
+    }
+    i=close;
   }
+
   for(const logical of logicalShellLines(text)){
-    if(/\bgh\s+workflow\s+run\b/.test(logical.text)&&!/\s--repo(?:\s|=)/.test(logical.text))
-      errors.push({workflow:workflowPath,line:logical.line,code:'GH_WORKFLOW_RUN_REPOSITORY_REQUIRED',detail:logical.text});
+    if(/\bgh\s+workflow\s+run\b/.test(logical.text)&&
+       !/\s(?:--repo|-R)(?:\s|=)/.test(logical.text)){
+      errors.push({
+        workflow:workflowPath,line:logical.line,code:'GH_WORKFLOW_RUN_REPOSITORY_REQUIRED',
+        detail:logical.text
+      });
+    }
   }
   return errors;
 }
