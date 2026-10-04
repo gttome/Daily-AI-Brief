@@ -1,0 +1,17 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "18",
+  "incident_id": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch",
+  "owner_slot": "F",
+  "at": "2026-10-04T09:49:24.517Z",
+  "type": "RECOVERY_ACTION",
+  "classification": "BLOCKED_ACTIONABLE",
+  "action_key": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch:reconcile-task17-done-handoff:g28",
+  "diagnosis": "Task 17 is canonically Done, but the prior recovery-verification release reason was outside the protected Writer Handoff accepted patterns and therefore did not dispatch the Supervisor.",
+  "attempted_action": "Reconcile the released writer boundary to the truthful canonical TASK_17_DONE_HANDOFF_TO_SUPERVISOR reason without changing Task 17 evidence or assets.",
+  "expected_progress": "Protected Writer Handoff dispatches the same execution Supervisor, which creates and consumes the authoritative Task 18 request.",
+  "recovery_required": true
+}
