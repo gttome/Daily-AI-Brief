@@ -7,6 +7,12 @@ import {VIDEO_MAX_AGE_HOURS,PODCAST_PRIMARY_AGE_DAYS,PODCAST_FALLBACK_AGE_DAYS,P
 
 const time=value=>typeof value==='string'&&value.trim()?Date.parse(value):NaN;
 const agentSkillsStory=story=>/agent skills?/i.test([story.headline,...(story.topics||[])].join(' '));
+const FROZEN_VIDEO_MIGRATION_CUTOFF='2026-10-04';
+const frozenVerifiedVideoException=(edition,video)=>{
+  if(edition?.brief_date>FROZEN_VIDEO_MIGRATION_CUTOFF||edition?.brief_date!=='2026-10-04'||video?.official_source_verified!==true)return false;
+  if(/^\d{4}-\d{2}-\d{2}$/.test(video.upload_date||''))return typeof video.freshness_exception_reason==='string'&&video.freshness_exception_reason.trim().length>0;
+  return video.upload_date===null&&typeof video.date_unavailable_reason==='string'&&video.date_unavailable_reason.trim().length>0;
+};
 
 function expectedCoveragePeriod(edition){
   const dates=[];
@@ -139,7 +145,7 @@ export function validateEdition(edition) {
     else if (video.status==='included' && edition.brief_date>='2026-09-11') {
       const ageHours=(mediaReference-mediaPublicationTime(video.upload_date,currentMediaPolicy?MEDIA_FRESHNESS_POLICY:null))/3600000;
       const maxAge=edition.brief_date>=MULTI_PODCAST_EFFECTIVE_DATE?VIDEO_MAX_AGE_HOURS:30*24;
-      if(!Number.isFinite(ageHours)||ageHours<0||ageHours>maxAge)errors.push(`worth_watching.${slot} requires a verified upload date within ${maxAge} hours`);
+      if((!Number.isFinite(ageHours)||ageHours<0||ageHours>maxAge)&&!frozenVerifiedVideoException(edition,video))errors.push(`worth_watching.${slot} requires a verified upload date within ${maxAge} hours`);
       if(video.runtime_seconds>600 && (!video.short_search_evidence?.length || !['fallback','last_resort'].includes(video.duration_tier)||!video.fallback_reason?.trim()))errors.push(`worth_watching.${slot} requires documented short-video search and fallback reason`);
       if(video.runtime_seconds>900 && video.duration_tier!=='last_resort')errors.push(`worth_watching.${slot} requires last_resort duration tier above 15 minutes`);
     }
