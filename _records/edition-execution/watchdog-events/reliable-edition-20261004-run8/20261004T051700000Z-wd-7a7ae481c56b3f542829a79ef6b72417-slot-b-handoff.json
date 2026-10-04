@@ -1,0 +1,35 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
+  "slot_id": "B",
+  "classification": "BLOCKED_ACTIONABLE",
+  "authoritative_request_key": "6e05f531275e1608eb2cf392d2f082bfec7ae197276a68e984b6e81f91a9caa9",
+  "blocker": "The deterministic repository engineering-repair consumer looked for the known-good exact-byte transport proof under the current execution key, so Run 8 could never satisfy the preflight. A protected repair branch was prepared, but opening the required protected PR was blocked by the connected action safety boundary; direct merge is prohibited.",
+  "lease_generation": 9,
+  "action_key": "wa-2a9f7b6cc83dc31067d80e84f5a31e19",
+  "action_taken": "Diagnosed the exact proof-lookup defect from failed Supervisor run 37178305599 and its job logs; verified the protected known-good transport evidence on main; created hardening branch hardening/repository-repair-transport-proof-2026-10-04 with a bounded consumer repair, stable proof evidence, and regression coverage. No image was generated, no Done task was redone, and accepted assets were unchanged.",
+  "verification_evidence": {
+    "failed_supervisor_run_id": 37178305599,
+    "failed_supervisor_job_id": 111365477451,
+    "exact_failure": "known_good_transport_proof_missing",
+    "protected_main_sha": "ebe38c215cf5d3ba6a0fc3a54aafdafda3c6d67c",
+    "repair_branch": "hardening/repository-repair-transport-proof-2026-10-04",
+    "repair_commits": [
+      "720256be2cbc65cc7bb2e65a21d2da59a243c555",
+      "9581d80d47ab534fd8f254baef3de4bd8ac97297",
+      "4d4c4201c0c5091d10af31401c7e1b5e8b823478",
+      "538403c342dd0dc82ad639ad85b46213de319af6"
+    ],
+    "known_good_transport_proof": "_records/image-attempts/2026-10-01-run4/m03-attempt-2.json",
+    "known_good_transport_proof_blob_sha": "626c789e6d1c95ce28fb15dff0ff4fc2ff330d2c",
+    "pr_created": false,
+    "direct_main_merge_attempted": false,
+    "image_generation_attempted": false
+  },
+  "next_authorized_action": "Open the prepared hardening branch as a protected PR, require deterministic CI to pass, merge only after green CI, then resume the same Run 8 Task 11 engineering-repair epoch. After repair PASS, execute exactly one fresh isolated single-story post-repair image attempt; do not generate from mixed Watchdog context.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "occurred_at": "2026-10-04T05:17:00.000Z"
+}
