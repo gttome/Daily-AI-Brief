@@ -1,27 +1,21 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "watchdog-F:wd-ab3751043af0e78612a67cb4e1b96de7:task-22:recovery",
-  "generation": 65,
-  "task_id": "22",
-  "capability": "repository",
-  "operation_key": "da712bd08c14843dec29cc7e457c9d0f9da91c7865b4828b1892d113d27028f9",
-  "acquired_at": "2026-10-04T12:59:00.000Z",
-  "last_heartbeat_at": "2026-10-04T13:01:30.000Z",
-  "expires_at": "2026-10-04T13:01:30.000Z",
-  "state": "RELEASED",
-  "released": true,
-  "released_at": "2026-10-04T13:01:30.000Z",
-  "release_reason": "TASK22_DONE_HANDOFF_TO_SUPERVISOR",
+  "owner_id": "watchdog-A:wd-task23-ci-37204156674:task-23:recovery",
+  "generation": 66,
+  "task_id": "23",
+  "capability": "protected_ci",
+  "operation_key": "task23-ci-wd-task23-ci-37204156674",
+  "acquired_at": "2026-10-04T13:10:46.829Z",
+  "last_heartbeat_at": "2026-10-04T13:10:46.829Z",
+  "expires_at": "2026-10-04T13:25:46.829Z",
+  "state": "ACTIVE",
+  "released": false,
   "transfer_from": {
-    "owner_id": "watchdog-D:wd-da712bd08c14843dec29cc7e457c9d0f-task22-unclaimed:task-22:recovery",
-    "generation": 64,
-    "reason": "EXPIRED_SAFE_BOUNDARY_HANDOFF",
-    "prior_expires_at": "2026-10-04T12:45:35.000Z",
-    "handoff_events": [
-      "_records/edition-execution/watchdog-events/reliable-edition-20261004-run8/20261004T123902191Z-wd-ab3751043af0e78612a67cb4e1b96de7-slot-d-task22-pr-boundary-handoff.json",
-      "_records/edition-execution/watchdog-events/reliable-edition-20261004-run8/20261004T124024386Z-wd-ab3751043af0e78612a67cb4e1b96de7-slot-d-task22-pr-boundary-handoff.json"
-    ],
-    "at": "2026-10-04T12:59:00.000Z"
+    "owner_id": "watchdog-F:wd-ab3751043af0e78612a67cb4e1b96de7:task-22:recovery",
+    "generation": 65,
+    "reason": "PRIOR_WRITER_RELEASED",
+    "prior_expires_at": "2026-10-04T13:01:30.000Z",
+    "at": "2026-10-04T13:10:46.829Z"
   }
 }
