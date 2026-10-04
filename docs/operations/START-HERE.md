@@ -178,3 +178,8 @@ Authoritative machine contract: \`docs/operations/task-recovery-contracts.json#p
 
 Executor: \`.github/workflows/protected-repair-executor.yml\`.
 
+<!-- oct4-post-close-current-learning -->
+> [!IMPORTANT]
+> **October 4 post-close learning:** the edition ultimately reached PUBLIC_CLOSED, but field evidence exposed open hardening in five areas: Strategy Interrupt / meta-diagnostic escalation, heavy ChatGPT polling cost, native-image context isolation, Task 29 incident-inventory completeness, and semantic reader parity before terminal close. The normal 19:00 prior-evening controller also missed the October 4 allocation and must be re-proven on the next edition.
+>
+> These are tracked in `OCT4-RUN-INCIDENT-RECONCILIATION-2026-10-04.md`, `OCT4-USAGE-EFFICIENCY-AUDIT-AND-POST-CLOSE-HARDENING-2026-10-04.md`, the canonical operational-learning ledger, and Improvement Kanban cards DAB-KB-033 through DAB-KB-043. Do not interpret the current six-slot Watchdog Ring as usage-optimal simply because it is liveness-capable.

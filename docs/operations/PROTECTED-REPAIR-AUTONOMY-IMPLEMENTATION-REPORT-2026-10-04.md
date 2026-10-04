@@ -200,3 +200,18 @@ Only ordinary Scheduled ChatGPT, the connected GitHub capability, and repository
 Protected Repair Autonomy is **accepted**.
 
 The system no longer treats “protected PR/CI/merge required” as a terminal owner boundary. When the exact protected PR merge context is missing, recovery remains durable and actionable through `REPAIR_PR_CONTEXT_REFRESH_REQUIRED`, preserving the same repair identity and protected-main policy until same-task recovery can continue.
+
+<!-- oct4-run8-field-results -->
+## Run 8 field results
+
+Run 8 materially validated Protected Repair Autonomy: the system reused repair identities, exact-head CI, protected merges and same-task continuation without reopening completed tasks or replacing accepted images.
+
+Field evidence also exposed remaining boundaries:
+
+- embedded Supervisor heredoc defects can prevent recovery from reaching the protected repair stage;
+- a repair can be green but not yet connected to the active production path;
+- individual connected mutation invocations can fail even when a protected repair is otherwise valid;
+- versioned frozen contracts are required when newer validators encounter sealed historical artifacts;
+- “continue until fixed” requires **Strategy Interrupt**, not only persistence, when equivalent attempts stop reducing uncertainty.
+
+Protected Repair Autonomy remains the correct repair mechanism. The next change is meta-diagnostic control over **which repair tactic** to continue, not weakening protection or allowing bypasses.

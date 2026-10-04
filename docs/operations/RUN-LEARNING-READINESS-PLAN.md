@@ -241,3 +241,19 @@ The new Supervisor must attach to:
 It reconstructs completed work from existing durable events and accepted image evidence. Tasks 00-14 remain complete unless their own immutable evidence is proven invalid. Existing accepted images remain immutable. At adoption, recovery begins from current Task 15 and its latest durable m08 attempt evidence.
 
 Run 4 becomes the first production run closed under Supervisor v2 and cumulative Task 29 learning reconciliation.
+
+<!-- oct4-task29-completeness-gap -->
+## October 4 Task 29 completeness gap
+
+Run 8's immutable Task 29 certification reconciled one problem, but post-close review found material incidents in Watchdog events, liveness faults, protected-repair records, blocked task transitions, qualification repair and reader corrections.
+
+Do not rewrite the historical certification. The append-only supplement is:
+
+`_records/run-learning/supplements/reliable-edition-20261004-run8-post-close.json`
+
+Future Task 29 certification must first build an **incident inventory** from all run-scoped durable sources and prove that every material incident maps to either:
+
+- an existing operational-learning problem with a recurrence/disposition, or
+- a new operational-learning problem with root cause/status/follow-up.
+
+Task 29 must fail closed if a material incident has no ledger mapping. Post-close discoveries remain supplements, never edits to the historical certification.

@@ -275,3 +275,17 @@ Repository asset:
 The infographic summarizes the six identical Watchdog schedules, nominal ten-minute stagger, shared recovery-lease behavior, minimum-corrective-action ladder, verification of real forward progress, required existing-system changes, testing plan, reporting/learning, and deployment checklist.
 
 It is deliberately classified as a **dated implementation-reference asset**, not as the evergreen living-architecture authority, because it contains implementation-handoff/date context. The evergreen Watchdog architecture remains generic and run/date independent.
+
+<!-- oct4-field-validation -->
+## October 4 field validation
+
+The first full production evidence after implementation changes the interpretation of success. The Ring **did** recover multiple real stalls, preserve one execution and avoid rework. However, the six full ChatGPT invocations also produced substantial model usage and control-plane churn, and Task 11 proved that recovery context can contaminate native image generation.
+
+The implementation is therefore **liveness-proven but not usage-optimal**. The next hardening phase is to retain recovery semantics while:
+
+- moving frequent health detection to deterministic GitHub state;
+- invoking ChatGPT only for bounded escalation/semantic repair;
+- adding Strategy Interrupt before repeated equivalent recovery;
+- separating native image generation from Watchdog/Supervisor context.
+
+This does not invalidate the October 3 acceptance proof; it narrows the next architecture target based on real production evidence.

@@ -184,3 +184,16 @@ The Supervisor must release its production writer at the protected-repair safe b
 
 **Startup/recovery invariant:** an actionable incident cannot terminate because “PR required,” “CI required,” “owner retry required,” “dead writer still leased,” or “resume task required.” Those are internal recovery stages. The system must continue until the same task has a real executor and substantive durable progress, or an exact external blocker is proved.
 
+<!-- oct4-missed-start-validation -->
+## October 4 missed-start evidence and next-run requirement
+
+The October 4 edition did **not** enter through the normal 19:00 America/Chicago allocation path; it was allocated later by `MISSED_START_RECOVERY`. The fallback correctly proved the prior execution terminal and allocated exactly one target-edition execution, but fallback success does not certify the normal schedule.
+
+For the next edition:
+
+1. record durable evidence that the 19:00 controller ran and either resumed the exact active execution or allocated exactly one next-day execution;
+2. if no allocation/resume occurs inside the startup envelope, emit a missed-start alert/receipt rather than waiting for an owner status question;
+3. fallback may allocate only after proving no active nonterminal target execution exists;
+4. never reopen a terminal prior edition.
+
+Tracked by DAB-OPS-20261004-004 / DAB-KB-040.

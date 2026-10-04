@@ -329,3 +329,15 @@ A long wall-clock writer lease does not keep a failed GitHub Actions owner alive
 
 A healthy or unproven writer is never stolen. Native-image task handoff remains an explicit exact-task authority transfer, not dead-writer takeover.
 
+<!-- oct4-post-close-reconciliation -->
+## October 4 production field validation
+
+Run 8 proved that the Ring can preserve one execution, continue unresolved safe-boundary handoffs and complete protected repairs without redoing accepted work. It also exposed three material limitations:
+
+1. **Usage efficiency:** six full recovery-capable ChatGPT schedules are too expensive as the routine polling substrate. Frequent health classification should move to deterministic GitHub logic that emits one compact health/escalation record. A healthy result should terminate immediately without broad repository scanning.
+2. **Strategy Interrupt:** Fix-to-Progress must escalate to method-level diagnosis when failure signatures repeat or recovery cycles create no substantive delta. Persistence is not permission for blind repetition.
+3. **Image context isolation:** image-consumer eligibility does not authorize Watchdog/Supervisor context to flow into native generation. Native image generation must be story-only.
+
+The current six-slot implementation remains the proven liveness mechanism until a protected replacement is implemented. Do not weaken one-writer fencing, exact-request identity, accepted_locked immutability, terminal-run immutability or protected-repair semantics while reducing polling cost.
+
+See `OCT4-RUN-INCIDENT-RECONCILIATION-2026-10-04.md`, DAB-OPS-20261004-002/003 and DAB-KB-033 through DAB-KB-035.
