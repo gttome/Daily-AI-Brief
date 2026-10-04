@@ -1,22 +1,22 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "watchdog-F:wd-2cce2bdf9b238e7c5f473f42b4b43d03:task-17:repair-record-refresh",
-  "generation": 42,
+  "owner_id": "watchdog-F:wd-2cce2bdf9b238e7c5f473f42b4b43d03:task-17:ci-pass-record",
+  "generation": 43,
   "task_id": "17",
   "capability": "repository",
   "operation_key": "repair-818233a7f4bb0a3684ed04efba57e4cc62a4115f",
-  "acquired_at": "2026-10-04T09:11:37.035Z",
-  "last_heartbeat_at": "2026-10-04T09:11:37.035Z",
-  "expires_at": "2026-10-04T09:11:37.035Z",
+  "acquired_at": "2026-10-04T09:12:57.346Z",
+  "last_heartbeat_at": "2026-10-04T09:12:57.346Z",
+  "expires_at": "2026-10-04T09:12:57.346Z",
   "state": "RELEASED",
   "released": true,
   "transfer_from": {
-    "owner_id": "watchdog-F:wd-2cce2bdf9b238e7c5f473f42b4b43d03:task-17:protected-repair",
-    "generation": 41,
-    "reason": "PROTECTED_REPAIR_RECORD_REFRESH",
-    "at": "2026-10-04T09:11:37.035Z"
+    "owner_id": "watchdog-F:wd-2cce2bdf9b238e7c5f473f42b4b43d03:task-17:repair-record-refresh",
+    "generation": 42,
+    "reason": "PROTECTED_REPAIR_CI_PASS_RECORD",
+    "at": "2026-10-04T09:12:57.346Z"
   },
-  "released_at": "2026-10-04T09:11:37.035Z",
-  "release_reason": "PROTECTED_REPAIR_CI_RETRY_IN_PROGRESS_HANDOFF_TO_PROTECTED_EXECUTOR"
+  "released_at": "2026-10-04T09:12:57.346Z",
+  "release_reason": "PROTECTED_REPAIR_CI_PASS_HANDOFF_TO_PROTECTED_MERGE"
 }

@@ -17,18 +17,18 @@
   "created_at": "2026-10-04T09:09:18.505Z",
   "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
   "diagnosis": "The Supervisor generated the exact Task 17 repository request, then `gh workflow run repository-task-consumer.yml --ref \"$RUN_BRANCH\"` executed from the workflow root, which is not a Git repository. GitHub CLI repository discovery failed before the request was committed or the repository consumer started.",
-  "next_stage": "Same PR #440 now points to refreshed exact head 2530edb6ef0ca804a81bfad78b38279366fcf1bc with the bounded regression assertion updated. Require fresh pull_request validate PASS, merge without bypass, then dispatch the SAME execution and Task 17.",
+  "next_stage": "PR #440 has exact-head pull_request validate PASS on 2530edb6ef0ca804a81bfad78b38279366fcf1bc (CI run 37191323370). Merge this exact head without bypass, then resume the same execution and Task 17.",
   "last_recovery_stage": {
-    "state": "REPAIR_CI_FAIL_CORRECTED_HEAD_REFRESHED",
+    "state": "REPAIR_CI_PASS",
     "pr_number": 440,
-    "prior_repair_head": "818233a7f4bb0a3684ed04efba57e4cc62a4115f",
-    "prior_ci_run_id": 37191244962,
-    "prior_ci_conclusion": "failure",
-    "failure": "Task 17 dispatch regression assertion expected the pre-repair command.",
     "repair_head": "2530edb6ef0ca804a81bfad78b38279366fcf1bc",
+    "ci_run_id": 37191323370,
+    "ci_conclusion": "success",
+    "pull_request_validate_attached": true,
     "same_execution_revalidated": true,
     "same_task_revalidated": "17",
     "repair_key_preserved": true,
-    "protected_executor_run_observed": false
+    "scope_digest_preserved": true,
+    "mergeable_observed": true
   }
 }
