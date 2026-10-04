@@ -1,0 +1,24 @@
+{
+  "schema_version": "dead-writer-proof-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "18",
+  "proved_at": "2026-10-04T10:43:40.000Z",
+  "workflow_run_id": 37193396610,
+  "workflow_job_id": 111417761799,
+  "owner_id": "github-actions-37193396610-3",
+  "conclusion": "failure",
+  "completed_at": "2026-10-04T10:37:58Z",
+  "old_generation": 55,
+  "replacement_generation": 56,
+  "child_or_subworker_live": false,
+  "repository_consumer_started": false,
+  "last_substantive_write": {
+    "commit": "010bc1e7bc83b6b92667f8184c3ce5573cacc37c",
+    "at": "2026-10-04T10:37:51Z",
+    "kind": "supervisor_writer_fence_acquisition_only",
+    "substantive_progress": false
+  },
+  "substantive_write_after_terminal": false,
+  "reason": "Run Supervisor attempt 3 failed after reacquiring the Task 18 writer fence. The only post-restart durable write was the writer-fence acquisition commit; no Task 18 repository consumer started, no worker result was produced, and the single supervise job completed with failure."
+}
