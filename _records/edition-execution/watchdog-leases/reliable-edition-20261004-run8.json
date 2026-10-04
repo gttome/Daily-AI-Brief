@@ -4,10 +4,12 @@
   "incident_id": "normal-image-task15-87154f02",
   "owner_slot": "F",
   "generation": 23,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-04T08:55:49.652Z",
-  "last_heartbeat_at": "2026-10-04T08:55:49.652Z",
-  "expires_at": "2026-10-04T09:10:49.652Z",
+  "last_heartbeat_at": "2026-10-04T09:00:00.236Z",
+  "expires_at": "2026-10-04T09:00:00.236Z",
   "action_key": "normal-task15-native-consume-g23",
-  "released": false
+  "released": true,
+  "released_at": "2026-10-04T09:00:00.236Z",
+  "release_reason": "RECOVERY_VERIFIED_PROGRESSING"
 }

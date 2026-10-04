@@ -1,0 +1,59 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "15",
+  "candidate_id": "m01",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "request_key": "87154f02b98eb674bedf72277ad9a88a02e79d7150234e96f96ee55a269a4a96",
+  "writer_generation": 37,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-04T08:55:49.652Z",
+  "generated_at": "2026-10-04T09:00:00.236Z",
+  "native_capture": {
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1468725,
+    "sha256": "45e1f2fe2f4c66155348a279d86fd8a0854fd8013650343e224e51db896db8aa",
+    "persisted": false,
+    "reason": "Native payload exceeded the connected Git blob transport envelope; bounded same-visual professional PNG transport representation used."
+  },
+  "normalization": {
+    "path": "briefs/images/2026-10-04/dab-edition-2026-10-04-m01.png",
+    "format": "PNG",
+    "width": 1199,
+    "height": 630,
+    "bytes": 194949,
+    "sha256": "24659b69ce845c0c58ad9769d014bc832843d75f767b36ee40303d461352fd5e",
+    "git_blob_sha": "ab3cc2a213bfd56fe1c5476fac6bc67de03c85b4",
+    "normalized_at": "2026-10-04T09:00:00.236Z",
+    "method": "same-visual resized 256-color professional PNG transport representation",
+    "same_visual": true,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "DOCA Agent Skill",
+      "Instructions",
+      "References",
+      "Scripts",
+      "API check",
+      "Hardware check",
+      "Build check",
+      "Preflight"
+    ],
+    "extra_visible_text": [],
+    "note": "A sealed DOCA Agent Skill package containing Instructions, References and Scripts passes through API, Hardware and Build checks on a bounded Preflight rail."
+  },
+  "disposition": "ACCEPTED_LOCKED"
+}
