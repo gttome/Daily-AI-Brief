@@ -134,8 +134,6 @@ export function buildQualificationImageGenerationInstruction(payload){
     `CONCEPTUAL ELEMENTS: ${spec.conceptual_elements.join('; ')}`,
     `COMPOSITION MODE: ${spec.composition_mode}`,
     `REFERENCE POLICY: ${spec.reference_policy}`,
-    `ACCEPTANCE ORDER: ${spec.acceptance_order.join(' -> ')}`,
-    `WRONG SUBJECT ACTION: ${spec.wrong_subject_action}`,
     `PROHIBITED SPECIFICS: ${spec.prohibited_specifics.join('; ')}`,
     `PROHIBITED COMPOSITION PATTERNS: ${spec.prohibited_composition_patterns.join(' | ')}`,
     `VISIBLE TEXT ALLOWLIST — EXACT: ${spec.visible_text_allowlist.join(' | ')}`,
