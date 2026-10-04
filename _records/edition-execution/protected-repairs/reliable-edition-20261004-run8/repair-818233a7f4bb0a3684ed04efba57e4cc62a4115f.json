@@ -1,0 +1,33 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "PROTECTED_REPAIR_REQUIRED",
+  "repair_key": "repair-818233a7f4bb0a3684ed04efba57e4cc62a4115f",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "production_branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "17",
+  "incident_id": "wd-2cce2bdf9b238e7c5f473f42b4b43d03",
+  "repair_branch": "repair/run8-task17-repository-dispatch-context",
+  "repair_branch_head_sha": "818233a7f4bb0a3684ed04efba57e4cc62a4115f",
+  "repair_scope_digest": "sha256:55bc542e581bc066a7541dc6e679a4bf6f730a30c92358835e290300829a01f6",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-04T09:09:18.505Z",
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+  "diagnosis": "The Supervisor generated the exact Task 17 repository request, then `gh workflow run repository-task-consumer.yml --ref \"$RUN_BRANCH\"` executed from the workflow root, which is not a Git repository. GitHub CLI repository discovery failed before the request was committed or the repository consumer started.",
+  "next_stage": "Open or reuse exactly one protected repair PR for exact head 818233a7f4bb0a3684ed04efba57e4cc62a4115f, require pull_request validate PASS, merge without bypass, then dispatch the SAME execution and Task 17 and prove a real repository executor plus substantive durable progress.",
+  "last_recovery_stage": {
+    "state": "REPAIR_BRANCH_PREPARED",
+    "repair_head": "818233a7f4bb0a3684ed04efba57e4cc62a4115f",
+    "same_execution_revalidated": true,
+    "same_task_revalidated": "17",
+    "failed_supervisor_run_id": 37191028528,
+    "failed_supervisor_job_id": 111403045886,
+    "dead_writer_generation": 40,
+    "dead_writer_conclusion": "failure",
+    "failed_uncommitted_request_key": "780e6bbd94bded2f19cf2f424d9c073b0047c18c6b49bf732eff40c4331cad6b",
+    "protected_executor_run_observed": false
+  }
+}

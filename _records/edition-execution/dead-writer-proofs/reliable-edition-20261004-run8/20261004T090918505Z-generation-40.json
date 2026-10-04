@@ -1,0 +1,24 @@
+{
+  "schema_version": "dead-writer-proof-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "17",
+  "proved_at": "2026-10-04T09:09:18.505Z",
+  "workflow_run_id": 37191028528,
+  "workflow_job_id": 111403045886,
+  "owner_id": "github-actions-37191028528-1",
+  "conclusion": "failure",
+  "completed_at": "2026-10-04T09:05:56Z",
+  "old_generation": 40,
+  "replacement_generation": 41,
+  "child_or_subworker_live": false,
+  "repository_consumer_started": false,
+  "last_substantive_write": {
+    "commit": "307b0df12870dd04d36d54cf8f6c4d46f6466357",
+    "at": "2026-10-04T09:05:49Z",
+    "kind": "writer_fence_only",
+    "substantive_progress": false
+  },
+  "substantive_write_after_terminal": false,
+  "reason": "Supervisor failed while dispatching Task 17 repository consumer because GitHub CLI lacked explicit repository context."
+}
