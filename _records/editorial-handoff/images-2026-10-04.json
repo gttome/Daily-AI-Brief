@@ -18,7 +18,12 @@
     "quality_accepted": true,
     "overall_gate": "pass",
     "execution_receipt_path": "_records/image-attempts/2026-10-04-run8/m02-repair-epoch-2-attempt-1.json",
-    "deployment_verification_required": true
+    "deployment_verification_required": true,
+    "cache_key": "oct4-m02-4ba1ac627b51",
+    "asset_version": "oct4-m02-accepted-v1",
+    "supersedes": null,
+    "quality_evidence_path": "_records/image-quality/2026-10-04-editorial-v2.json",
+    "quality_evidence_sha256": "508f53bedcc0689977f7e78cf7de76ee0b27f22c1642dd1fde67998915362d99"
   },
   "m04": {
     "story_id": "dab-story-2026-10-04-m04",
@@ -39,7 +44,12 @@
     "quality_accepted": true,
     "overall_gate": "pass",
     "execution_receipt_path": "_records/image-attempts/2026-10-04-run8/m04-attempt-1.json",
-    "deployment_verification_required": true
+    "deployment_verification_required": true,
+    "cache_key": "oct4-m04-05cae8a2dd3d",
+    "asset_version": "oct4-m04-accepted-v1",
+    "supersedes": null,
+    "quality_evidence_path": "_records/image-quality/2026-10-04-editorial-v2.json",
+    "quality_evidence_sha256": "508f53bedcc0689977f7e78cf7de76ee0b27f22c1642dd1fde67998915362d99"
   },
   "m06": {
     "story_id": "dab-story-2026-10-04-m06",
@@ -60,7 +70,12 @@
     "quality_accepted": true,
     "overall_gate": "pass",
     "execution_receipt_path": "_records/image-attempts/2026-10-04-run8/m06-attempt-1.json",
-    "deployment_verification_required": true
+    "deployment_verification_required": true,
+    "cache_key": "oct4-m06-d91ed6e4d8ed",
+    "asset_version": "oct4-m06-accepted-v1",
+    "supersedes": null,
+    "quality_evidence_path": "_records/image-quality/2026-10-04-editorial-v2.json",
+    "quality_evidence_sha256": "508f53bedcc0689977f7e78cf7de76ee0b27f22c1642dd1fde67998915362d99"
   },
   "m07": {
     "story_id": "dab-story-2026-10-04-m07",
@@ -81,7 +96,12 @@
     "quality_accepted": true,
     "overall_gate": "pass",
     "execution_receipt_path": "_records/image-attempts/2026-10-04-run8/m07-attempt-1.json",
-    "deployment_verification_required": true
+    "deployment_verification_required": true,
+    "cache_key": "oct4-m07-0305fe28dc18",
+    "asset_version": "oct4-m07-accepted-v1",
+    "supersedes": null,
+    "quality_evidence_path": "_records/image-quality/2026-10-04-editorial-v2.json",
+    "quality_evidence_sha256": "508f53bedcc0689977f7e78cf7de76ee0b27f22c1642dd1fde67998915362d99"
   },
   "m01": {
     "story_id": "dab-story-2026-10-04-m01",
@@ -102,7 +122,12 @@
     "quality_accepted": true,
     "overall_gate": "pass",
     "execution_receipt_path": "_records/image-attempts/2026-10-04-run8/m01-attempt-1.json",
-    "deployment_verification_required": true
+    "deployment_verification_required": true,
+    "cache_key": "oct4-m01-24659b69ce84",
+    "asset_version": "oct4-m01-accepted-v1",
+    "supersedes": null,
+    "quality_evidence_path": "_records/image-quality/2026-10-04-editorial-v2.json",
+    "quality_evidence_sha256": "508f53bedcc0689977f7e78cf7de76ee0b27f22c1642dd1fde67998915362d99"
   },
   "m09": {
     "story_id": "dab-story-2026-10-04-m09",
@@ -123,6 +148,11 @@
     "quality_accepted": true,
     "overall_gate": "pass",
     "execution_receipt_path": "_records/image-attempts/2026-10-04-run8/m09-attempt-1.json",
-    "deployment_verification_required": true
+    "deployment_verification_required": true,
+    "cache_key": "oct4-m09-535cff947344",
+    "asset_version": "oct4-m09-accepted-v1",
+    "supersedes": null,
+    "quality_evidence_path": "_records/image-quality/2026-10-04-editorial-v2.json",
+    "quality_evidence_sha256": "508f53bedcc0689977f7e78cf7de76ee0b27f22c1642dd1fde67998915362d99"
   }
 }
