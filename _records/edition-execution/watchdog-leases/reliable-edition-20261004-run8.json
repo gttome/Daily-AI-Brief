@@ -4,10 +4,12 @@
   "incident_id": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch",
   "owner_slot": "C",
   "generation": 27,
-  "state": "ACTIVE",
-  "acquired_at": "2026-10-04T09:28:00.000Z",
-  "last_heartbeat_at": "2026-10-04T09:28:00.000Z",
-  "expires_at": "2026-10-04T09:43:00.000Z",
-  "action_key": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch:redispatch-writer-handoff:37192151895:g27",
-  "released": false
+  "state": "RELEASED",
+  "acquired_at": "2026-10-04T09:30:16.000Z",
+  "last_heartbeat_at": "2026-10-04T09:32:51.000Z",
+  "expires_at": "2026-10-04T09:32:51.000Z",
+  "action_key": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch:protected-handoff-repair-required:g27",
+  "released": true,
+  "released_at": "2026-10-04T09:32:51.000Z",
+  "release_reason": "SAFE_BOUNDARY_REACHED"
 }
