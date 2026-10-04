@@ -60,7 +60,8 @@ function frozenReaderAllowed(repoRoot,date,manifest){
     if(!bound||bound.git_blob_sha1!==gitBlobSha1(shardText))return false;
     if(shard?.schema_version!=='task19-bundle-digest-shard-v1'||shard?.task_id!=='19'||shard?.shard!=='reader-pages'||shard?.digest_scheme!=='git_blob_sha1'||shard?.result!=='PASS')return false;
     const datedPath=`briefs/${date}.md`,row=(shard?.digests||[]).find(x=>Array.isArray(x)&&x[0]===datedPath);
-    return Boolean(row&&/^[a-f0-9]{40}$/.test(row[1]||''));
+    if(!row||!/^[a-f0-9]{40}$/.test(row[1]||''))return false;
+    return gitBlobSha1(fs.readFileSync(path.join(repoRoot,datedPath)))===row[1];
   }catch{return false;}
 }
 
