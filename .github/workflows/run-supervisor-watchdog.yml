@@ -89,6 +89,17 @@ jobs:
           git worktree remove /tmp/dab-watchdog-health-run --force 2>/dev/null || true
           runtime_ref="runtime/watchdog-health"
           old_sha="$(git ls-remote --heads origin "refs/heads/$runtime_ref" | awk '{print $1}')"
+          new_terminal="$(node -e "const x=require('/tmp/watchdog-health.json');process.stdout.write(String(x.health_state==='TERMINAL'))")"
+          if [ -n "$old_sha" ] && [ "$new_terminal" = "true" ]; then
+            git fetch --depth=1 origin "$runtime_ref"
+            if git show FETCH_HEAD:data/operations/watchdog-health.json >/tmp/previous-watchdog-health.json 2>/dev/null; then
+              same_terminal="$(node -e "const a=require('/tmp/watchdog-health.json'),b=require('/tmp/previous-watchdog-health.json');process.stdout.write(String(a.execution_id===b.execution_id&&b.health_state==='TERMINAL'))")"
+              if [ "$same_terminal" = "true" ]; then
+                echo "Terminal compact health already published for this execution; skip refresh-only control-state churn."
+                exit 0
+              fi
+            fi
+          fi
           git checkout -B runtime-watchdog-health "$base_main"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
