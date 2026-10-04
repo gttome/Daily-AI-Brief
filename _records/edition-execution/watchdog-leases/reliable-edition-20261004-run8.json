@@ -2,21 +2,18 @@
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
   "incident_id": "wd-task23-manifest-contract-37205934438",
-  "owner_slot": "D",
-  "generation": 37,
-  "state": "RELEASED",
-  "acquired_at": "2026-10-04T13:49:09.226Z",
-  "last_heartbeat_at": "2026-10-04T13:52:56.742Z",
-  "expires_at": "2026-10-04T13:52:56.742Z",
-  "action_key": "wd-task23-manifest-contract-37205934438:diagnose-exact-head-ci-and-repair-minimal-invalid-dependency:slot-d:g37",
+  "owner_slot": "E",
+  "generation": 38,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-04T13:54:30.000Z",
+  "last_heartbeat_at": "2026-10-04T13:54:30.000Z",
+  "expires_at": "2026-10-04T14:09:30.000Z",
+  "action_key": "wd-task23-manifest-contract-37205934438:continue-deterministic-manifest-contract-repair:slot-e:g38",
   "takeover_from": {
-    "owner_slot": "A",
-    "generation": 36,
+    "owner_slot": "D",
+    "generation": 37,
     "reason": "PRIOR_RECOVERY_RELEASED",
-    "prior_expires_at": "2026-10-04T13:22:53.181Z",
-    "observed_at": "2026-10-04T13:49:09.226Z"
-  },
-  "released_at": "2026-10-04T13:52:56.742Z",
-  "release_reason": "SAFE_BOUNDARY_REACHED",
-  "continuation_event": "_records/edition-execution/watchdog-events/reliable-edition-20261004-run8/20261004T135238Z-wd-task23-ci-slot-d-handoff.json"
+    "prior_expires_at": "2026-10-04T13:52:56.742Z",
+    "observed_at": "2026-10-04T13:54:30.000Z"
+  }
 }
