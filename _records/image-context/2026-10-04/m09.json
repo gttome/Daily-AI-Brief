@@ -1,0 +1,20 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-04-m09"
+  ],
+  "candidate_id": "m09",
+  "task_id": "16",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-04T03:49:00.000Z",
+  "allowed_text": [
+    "Event",
+    "Ambient agent",
+    "Job state",
+    "Action",
+    "Ask human",
+    "Escalation",
+    "Audit trail"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: ambient agents triggered by events with human escalation. Composition: an event bus starts a non-humanoid ambient-agent work graph with a trackable job-state rail; the graph branches toward a bounded action path or an explicit ask-human escalation path, with an audit trail running alongside both. Emphasize event-driven initiation, visible job state and a clear stopping point for human input. No people or humanoid figures, no decorative filler, no product-screen imitation, no unsupported metrics, no overlapping text, no sparse/basic box-and-arrow fallback. Only these visible labels: Event, Ambient agent, Job state, Action, Ask human, Escalation, Audit trail."
+}
