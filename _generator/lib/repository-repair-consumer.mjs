@@ -1,6 +1,6 @@
 import {createHash} from 'node:crypto';
 
-export const REPOSITORY_REPAIR_CONSUMER_VERSION = 'repository-repair-consumer-v1';
+export const REPOSITORY_REPAIR_CONSUMER_VERSION = 'repository-repair-consumer-v2';
 export const REPOSITORY_REPAIR_QUEUE_MAX_INTERVALS = 1;
 export const REQUIRED_IMAGE_REPAIR_PROOFS = Object.freeze([
   'fresh_single_story_worker_isolation',
@@ -13,6 +13,25 @@ export const REQUIRED_IMAGE_REPAIR_PROOFS = Object.freeze([
 const stamp=value=>typeof value==='string'&&Number.isFinite(Date.parse(value));
 const hash=value=>createHash('sha256').update(typeof value==='string'?value:JSON.stringify(value)).digest('hex');
 const hasAll=(haystack,needles)=>needles.every(x=>haystack.includes(x));
+
+export function knownGoodTransportProof(record = {}) {
+  const method=String(record?.candidate?.delivery_normalization?.method||record?.candidate?.method||'').toLowerCase();
+  return record?.status==='accepted_locked' &&
+    record?.persistence?.content_address_verified===true &&
+    record?.persistence?.read_back_verified===true &&
+    record?.review?.low_quality_fallback===false &&
+    method.includes('same-visual');
+}
+
+export function selectKnownGoodTransportProof(records = []) {
+  const eligible=records.filter(x=>knownGoodTransportProof(x.record)).sort((a,b)=>{
+    const at=Date.parse(a.record?.accepted_at||a.record?.observed_at||0)||0;
+    const bt=Date.parse(b.record?.accepted_at||b.record?.observed_at||0)||0;
+    if(at!==bt) return bt-at;
+    return String(a.path||'').localeCompare(String(b.path||''));
+  });
+  return eligible[0]||null;
+}
 
 export function queuedRepositoryRepairDecision({
   request,
