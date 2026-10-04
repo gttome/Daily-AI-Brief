@@ -515,7 +515,7 @@ test('Supervisor explicitly dispatches queued Task 17 repository work despite GI
   assert.match(y,/request_capability\" = \"repository\"/);
   assert.match(y,/request_task\" = \"17\"/);
   assert.match(y,/repository-task-consumer\.yml\/runs/);
-  assert.match(y,/gh workflow run repository-task-consumer\.yml --ref \"\$RUN_BRANCH\"/);
+  assert.match(y,/gh workflow run repository-task-consumer\.yml --repo \"\$GITHUB_REPOSITORY\" --ref \"\$RUN_BRANCH\"/);
   assert.match(y,/pushes created by GITHUB_TOKEN do not recursively trigger workflows/);
   assert.match(y,/active_repository_consumers/);
 });
