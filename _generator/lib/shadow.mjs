@@ -56,6 +56,8 @@ function frozenReaderAllowed(repoRoot,date,manifest){
     const shardText=fs.readFileSync(path.join(repoRoot,shardPath),'utf8');
     const shard=JSON.parse(shardText);
     if(seal?.schema_version!=='task19-immutable-bundle-v1'||seal?.edition_id!==manifest.edition_id||seal?.task_id!=='19'||seal?.exact_artifact_digests!==true||seal?.result!=='PASS')return false;
+    const bound=(seal?.shards||[]).find(x=>x?.path===shardPath);
+    if(!bound||bound.git_blob_sha1!==gitBlobSha1(shardText))return false;
     if(shard?.schema_version!=='task19-bundle-digest-shard-v1'||shard?.task_id!=='19'||shard?.shard!=='reader-pages'||shard?.digest_scheme!=='git_blob_sha1'||shard?.result!=='PASS')return false;
     const row=(shard?.digests||[]).find(x=>Array.isArray(x)&&x[0]===`briefs/${date}.md`);
     return Boolean(row&&/^[a-f0-9]{40}$/.test(row[1]||''));
