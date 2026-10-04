@@ -1,0 +1,60 @@
+{
+  "schema_version": "task21-focused-publication-repair-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "21",
+  "repaired_at": "2026-10-04T12:26:37.247Z",
+  "qualification_source": "_records/qualification/2026-10-04-run8/result.json",
+  "defect_id": "RUN8_INCOMPLETE_DETERMINISTIC_PUBLICATION_PROJECTION",
+  "source_bundle": "_records/editorial/2026-10-04-run8/task19-bundle-seal.json",
+  "repair_scope": "Rebuilt only deterministic October 4 publication projections and missing same-edition handoff artifacts from already-locked Run 8 evidence.",
+  "repaired_paths": [
+    "_records/editorial-handoff/kernel-2026-10-04.json",
+    "_records/editorial-handoff/facts-2026-10-04.json",
+    "_records/editorial-handoff/media-2026-10-04.json",
+    "_records/editorial-handoff/book-mappings-2026-10-04.json",
+    "_records/editorial/media-preflight/2026-10-04.json",
+    "_records/editorial-handoff/publication-manifest.json",
+    "_data/watchlist.json",
+    "data/watchlist.json",
+    "latest.md",
+    "index.md",
+    "feed.xml",
+    "feed.json",
+    "daily-feed.xml",
+    "README.md"
+  ],
+  "verification": {
+    "latest_projects_edition_date": "2026-10-04",
+    "index_projects_edition_date": "2026-10-04",
+    "feeds_include_current_edition": true,
+    "publication_manifest_edition_date": "2026-10-04",
+    "publication_manifest_execution": "reliable-edition/dab-edition-2026-10-04-run8",
+    "watchlist_edition_date": "2026-10-04",
+    "watchlist_counts": {
+      "new_today": 0,
+      "updated_today": 3,
+      "carried_forward": 17
+    },
+    "same_edition_handoffs_present": [
+      "kernel",
+      "facts",
+      "media",
+      "book_mappings",
+      "media_receipt"
+    ],
+    "accepted_locked_images_preserved": 6,
+    "selection_changed": false,
+    "task19_sealed_source_artifacts_preserved": true
+  },
+  "preserved": {
+    "completed_tasks": "00-20",
+    "accepted_locked_images": 6,
+    "story_selection": true,
+    "media_selection": true,
+    "book_review": true,
+    "watchlist_decisions": true,
+    "task19_bundle": true
+  },
+  "result": "PASS"
+}
