@@ -948,3 +948,20 @@ Problems: 49 · Events: 82
 - **Infographic:** `docs/images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Architecture-v1.0.svg`.
 - **Future validation:** On the next real Tasks 11–16 request, record which A–F slot acquires the exact request, verify overlapping slots yield without duplicate generation, and measure actual queued-to-consumer-start latency against the prior single-consumer baseline.
 
+## DAB-OPS-20261004-001 — Six-slot heavyweight ChatGPT Watchdog recovery amplified weekly usage and contaminated the first native-image task.
+
+- **Status:** open_post_close_hardening
+- **First observed run:** reliable-edition-20261004-run8
+- **Task(s):** control plane; especially 11, 18, 21 and downstream recovery
+- **Symptom:** The October 4 production execution consumed an unexpectedly large share of weekly ChatGPT allocation while the run remained active for many hours. Repository evidence shows 321 production-branch commits during the audited window, approximately 173 orchestration-like commit subjects and approximately 106 Watchdog-named commit subjects. Task 11 alone recorded 67 commits and about 4h24m elapsed.
+- **Root cause:** The six-slot Ring uses full Scheduled ChatGPT invocations as both frequent polling/detection and semantic repair. Each slot carries a large recovery prompt and may perform broad GitHub inspection. The same recovery-heavy conversational context was also used for native-image consumption, causing operational Watchdog context to leak into image generation.
+- **Image evidence:** Candidate m02 required four native generations. The first two were rejected because they generated Watchdog operational dashboards instead of the sealed story diagram; the first protected post-repair attempt also failed subject/context isolation; the second repair epoch finally produced the accepted_locked image. Run 8 recorded nine native-image attempts for six required images.
+- **Operational impact:** Autonomy improved, but at excessive ChatGPT-model usage cost. Repeated leases, fences, writer generations, dead-writer proofs, handoffs and recovery takeovers also produced large control-plane churn. Task 18 and Task 21 each consumed about 57–58 minutes under repeated recovery.
+- **Timing impact:** severe for Task 11; material for Tasks 18 and 21. Final terminal-run totals must be refreshed after PUBLIC_CLOSED.
+- **Do not change during active run:** preserve the current October 4 execution exactly through PUBLIC_CLOSED and Task 29. No mid-run redesign, no completed-task rework, no accepted_locked replacement.
+- **Required post-close direction:** move frequent deterministic health checking to GitHub; make Scheduled ChatGPT a bounded escalation layer; read a compact health/escalation record before any broader repository work; reduce heavyweight recurring ChatGPT Watchdogs; isolate Tasks 11–16 image generation into a minimal sealed story-only context; reduce no-op/heartbeat Git mutation while preserving durable incident evidence.
+- **Quality constraints:** do not reduce editorial quality, evidence requirements, media verification, Watchlist, four-book review, image quality, protected CI, exact-SHA deployment or independent live verification.
+- **Cost boundary:** no Work, Codex, paid APIs/services, billable overage, alternate accounts or owner intervention as the solution.
+- **Detailed handoff:** `docs/operations/OCT4-USAGE-EFFICIENCY-AUDIT-AND-POST-CLOSE-HARDENING-2026-10-04.md`
+- **Future validation:** after October 4 is independently PUBLIC_CLOSED / Task 29 Done, freeze the final Run 8 usage-efficiency baseline, implement the redesign on a protected hardening branch, test HEALTHY no-op, stalled-task recovery and image-context isolation, then prove model-intensive recovery invocations are materially lower while autonomy and one-writer/accepted_locked protections remain intact.
+
