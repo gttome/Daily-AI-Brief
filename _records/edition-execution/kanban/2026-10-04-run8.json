@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-edition-20261004-run8",
   "edition_id": "dab-edition-2026-10-04",
-  "observed_at": "2026-10-04T01:37:04.653Z",
+  "observed_at": "2026-10-04T01:49:23.013Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:03067e56734cee00475f8a1c260dfbcaf3aaf3b7c631de8c47f4220a317a750a",
+  "source_event_digest": "sha256:3e987edc99d994e768654db52b7bebdf46e4cf8492556dd24d7771f7fb5f3bf7",
   "run_started_at": "2026-10-04T01:32:36.576Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 268.077,
-  "total_brief_elapsed": "268.077s",
+  "total_brief_elapsed_seconds": 1006.437,
+  "total_brief_elapsed": "1006.437s",
   "tasks": {
     "10": {
       "id": "10",
@@ -321,17 +321,17 @@
     "00": {
       "id": "00",
       "title": "Production Readiness Validation",
-      "state": "Active",
-      "column": "WIP",
+      "state": "Done",
+      "column": "Done",
       "entered_backlog_at": "2026-10-04T01:32:36.576Z",
       "active_started_at": "2026-10-04T01:32:36.576Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": 268.077,
-      "duration": "268.077s"
+      "done_at": "2026-10-04T01:48:12.199Z",
+      "cycle_seconds": 935.623,
+      "active_seconds": 935.623,
+      "duration_seconds": 935.623,
+      "duration": "935.623s"
     },
     "01": {
       "id": "01",
