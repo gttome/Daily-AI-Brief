@@ -6,8 +6,8 @@
   "generation": 25,
   "state": "ACTIVE",
   "acquired_at": "2026-10-04T09:09:18.505Z",
-  "last_heartbeat_at": "2026-10-04T09:12:57.346Z",
-  "expires_at": "2026-10-04T09:27:57.346Z",
-  "action_key": "wd-2cce2bdf9b238e7c5f473f42b4b43d03:merge-pr-440-exact-head:2530edb6:g25",
+  "last_heartbeat_at": "2026-10-04T09:13:39.059Z",
+  "expires_at": "2026-10-04T09:28:39.059Z",
+  "action_key": "wd-2cce2bdf9b238e7c5f473f42b4b43d03:resume-same-task-17-after-merge:e41e7336:g25",
   "released": false
 }

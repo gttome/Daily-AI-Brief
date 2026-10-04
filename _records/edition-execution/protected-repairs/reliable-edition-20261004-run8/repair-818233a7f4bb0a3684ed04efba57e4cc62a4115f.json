@@ -17,18 +17,18 @@
   "created_at": "2026-10-04T09:09:18.505Z",
   "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
   "diagnosis": "The Supervisor generated the exact Task 17 repository request, then `gh workflow run repository-task-consumer.yml --ref \"$RUN_BRANCH\"` executed from the workflow root, which is not a Git repository. GitHub CLI repository discovery failed before the request was committed or the repository consumer started.",
-  "next_stage": "PR #440 has exact-head pull_request validate PASS on 2530edb6ef0ca804a81bfad78b38279366fcf1bc (CI run 37191323370). Merge this exact head without bypass, then resume the same execution and Task 17.",
+  "next_stage": "Protected repair PR #440 merged at e41e733636ae68701c4d2566b1ee1fbae1243e54 after exact-head PR validate PASS. Dispatch the SAME execution and Task 17; recovery remains incomplete until a real repository executor produces substantive durable progress.",
   "last_recovery_stage": {
-    "state": "REPAIR_CI_PASS",
+    "state": "REPAIR_MERGED_AWAITING_SAME_TASK_PROGRESS",
     "pr_number": 440,
     "repair_head": "2530edb6ef0ca804a81bfad78b38279366fcf1bc",
+    "merge_sha": "e41e733636ae68701c4d2566b1ee1fbae1243e54",
     "ci_run_id": 37191323370,
     "ci_conclusion": "success",
     "pull_request_validate_attached": true,
     "same_execution_revalidated": true,
     "same_task_revalidated": "17",
     "repair_key_preserved": true,
-    "scope_digest_preserved": true,
-    "mergeable_observed": true
+    "scope_digest_preserved": true
   }
 }
