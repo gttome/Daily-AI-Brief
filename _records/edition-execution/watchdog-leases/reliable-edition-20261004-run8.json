@@ -6,8 +6,8 @@
   "generation": 25,
   "state": "ACTIVE",
   "acquired_at": "2026-10-04T09:09:18.505Z",
-  "last_heartbeat_at": "2026-10-04T09:09:18.505Z",
-  "expires_at": "2026-10-04T09:24:18.505Z",
-  "action_key": "wd-2cce2bdf9b238e7c5f473f42b4b43d03:prepare-protected-repair:818233a7f4bb0a3684ed04efba57e4cc62a4115f:g25",
+  "last_heartbeat_at": "2026-10-04T09:11:37.035Z",
+  "expires_at": "2026-10-04T09:26:37.035Z",
+  "action_key": "wd-2cce2bdf9b238e7c5f473f42b4b43d03:repair-pr-440-head-refresh:2530edb6:g25",
   "released": false
 }
