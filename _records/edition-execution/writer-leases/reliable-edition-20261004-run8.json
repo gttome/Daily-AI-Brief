@@ -4,6 +4,9 @@
   "owner_id": "chatgpt-watchdog-f-task07-recovery",
   "generation": 13,
   "acquired_at": "2026-10-04T02:58:22.313Z",
-  "last_heartbeat_at": "2026-10-04T02:58:22.313Z",
-  "expires_at": "2026-10-04T03:13:22.313Z"
+  "last_heartbeat_at": "2026-10-04T02:59:06.698Z",
+  "expires_at": "2026-10-04T02:59:06.698Z",
+  "released": true,
+  "released_at": "2026-10-04T02:59:06.698Z",
+  "release_reason": "TASK_07_DONE_HANDOFF_TO_SUPERVISOR"
 }
