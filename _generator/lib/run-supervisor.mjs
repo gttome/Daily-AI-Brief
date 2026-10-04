@@ -7,7 +7,7 @@ export const DEFAULT_WRITER_LEASE_MS = 120_000;
 export const SUPERVISOR_STATES = Object.freeze([
   'HEALTHY_ACTIVE','READY_IDLE','STALE_ACTIVE','BLOCKED_ACTIONABLE','BLOCKED_EXTERNAL','TERMINAL'
 ]);
-export const WORKER_CAPABILITIES = Object.freeze(['repository','native_chatgpt','protected_ci','deployment','verification']);
+export const WORKER_CAPABILITIES = Object.freeze(['repository','research_chatgpt','native_chatgpt','protected_ci','deployment','verification']);
 
 const stamp = value => typeof value === 'string' && Number.isFinite(Date.parse(value));
 const hash = value => createHash('sha256').update(typeof value === 'string' ? value : JSON.stringify(value)).digest('hex');
@@ -268,6 +268,20 @@ export function validateTaskRecoveryContracts(contract = {}) {
       if (typeof repair.post_repair_operation !== 'string' || !repair.post_repair_operation.trim()) errors.push(`engineering_repair_post_operation:${id}`);
     }
   }
+  const strategy=contract.strategy_interrupt;
+  if(!strategy||strategy.schema_version!=='strategy-interrupt-v1'||strategy.enabled!==true)errors.push('strategy_interrupt_contract');
+  else{
+    if(strategy.before_materially_equivalent_attempt!==3)errors.push('strategy_interrupt_third_attempt_boundary');
+    if(strategy.identical_retry_after_interrupt_allowed!==false)errors.push('strategy_interrupt_blind_retry_forbidden');
+    if(strategy.already_green_repair_must_be_consumed_first!==true)errors.push('strategy_interrupt_green_repair_first');
+    if(!Array.isArray(strategy.required_method_checks)||strategy.required_method_checks.length<6)errors.push('strategy_interrupt_method_checks');
+  }
+  const routing=contract.capability_routing;
+  if(!routing||routing.schema_version!=='capability-routing-v1'||routing.enabled!==true)errors.push('capability_routing_contract');
+  else{
+    if(routing.recovery_owner_without_required_capability_must_handoff!==true)errors.push('capability_routing_handoff_required');
+    if(routing.tasks?.['03']!=='research_chatgpt'||routing.tasks?.['08']!=='research_chatgpt')errors.push('capability_routing_research_tasks');
+  }
   const autonomy=contract.protected_repair_autonomy;
   if(!autonomy||autonomy.schema_version!=='protected-repair-autonomy-contract-v1'||autonomy.enabled!==true)
     errors.push('protected_repair_autonomy_contract');
@@ -292,15 +306,62 @@ export function validateTaskRecoveryContracts(contract = {}) {
   return uniq(errors);
 }
 
+export function strategyInterruptDecision({
+  recent_attempts=[],already_green_repair=false,task_age_anomalous=false,control_plane_churn=false
+}={}){
+  if(!Array.isArray(recent_attempts))throw Error('strategy_interrupt_attempts_array_required');
+  const attempts=recent_attempts.filter(Boolean).slice(-4).map((attempt,index)=>({
+    index,
+    normalized_failure_signature:String(attempt.normalized_failure_signature||attempt.signature||'').trim()||null,
+    action:String(attempt.action||attempt.action_type||'unknown'),
+    durable_delta:attempt.durable_delta===true,
+    validation_result:String(attempt.validation_result||'unknown'),
+    corrective_action_completed:attempt.corrective_action_completed===true,
+    root_failure_remains:attempt.root_failure_remains!==false
+  }));
+  const lastTwo=attempts.slice(-2);
+  const sameSignature=lastTwo.length===2&&lastTwo[0].normalized_failure_signature&&
+    lastTwo[0].normalized_failure_signature===lastTwo[1].normalized_failure_signature;
+  const noDurableDelta=lastTwo.length===2&&lastTwo.every(attempt=>attempt.durable_delta!==true);
+  const correctiveButSame=lastTwo.some(attempt=>attempt.corrective_action_completed===true&&attempt.root_failure_remains===true);
+  const churnWithoutProgress=control_plane_churn===true&&attempts.length>=2&&attempts.slice(-2).every(attempt=>attempt.durable_delta!==true);
+  const anomalousNoProgress=task_age_anomalous===true&&attempts.length>=1&&attempts.at(-1).durable_delta!==true;
+  const triggered=(sameSignature&&noDurableDelta)||correctiveButSame||churnWithoutProgress||anomalousNoProgress;
+  if(!triggered)return {triggered:false,reason:'strategy_interrupt_not_required',analysis:attempts};
+  const triggers=[];
+  if(sameSignature&&noDurableDelta)triggers.push('same_normalized_failure_signature_twice_without_durable_delta');
+  if(correctiveButSame)triggers.push('corrective_action_completed_same_root_failure_remains');
+  if(churnWithoutProgress)triggers.push('control_plane_churn_without_artifact_or_validation_progress');
+  if(anomalousNoProgress)triggers.push('task_age_anomalous_without_progress');
+  return {
+    triggered:true,
+    action:already_green_repair?'CONSUME_ALREADY_GREEN_REPAIR':'METHOD_LEVEL_DIAGNOSIS',
+    blind_retry_allowed:false,
+    triggers,
+    analysis:attempts,
+    instruction:already_green_repair
+      ? 'Consume the already-green protected repair or completed prerequisite before any new retry or rework; revalidate the same execution and task first.'
+      : 'Stop the current tactic before a third materially equivalent attempt. Compare action -> durable delta -> validation result, then check for an already-green repair PR, an unconnected completed prerequisite, stale dependency binding, wrong validator or contract version, wrong executor capability, a smaller repair target, or unnecessary repeated CI. Select a materially different recovery before continuing.'
+  };
+}
+
 export function taskRecoveryDecision({
   classification, taskContract, attempts = 0, recoveryAttempts = 0, repairEpochs = 0,
-  repairReady = false, postRepairAttempts = 0, forceEngineeringRepair = false
+  repairReady = false, postRepairAttempts = 0, forceEngineeringRepair = false,
+  strategyInterrupt = null
 } = {}) {
   if (!classification?.state || !taskContract) throw Error('classification_and_task_contract_required');
   if (classification.state === 'HEALTHY_ACTIVE') return {action:'observe'};
   if (classification.state === 'READY_IDLE') return {action:'dispatch_normal', capability:taskContract.capability, instruction:taskContract.normal_operation};
   if (classification.state === 'BLOCKED_EXTERNAL') return {action:'recheck', instruction:'Preserve exact blocker evidence; do not request owner status to advance.'};
   if (classification.state === 'TERMINAL') return {action:'task29'};
+  if(strategyInterrupt?.triggered===true) return {
+    action:'strategy_interrupt', capability:'repository',
+    instruction:strategyInterrupt.instruction,
+    strategy_action:strategyInterrupt.action,
+    blind_retry_allowed:false,
+    triggers:[...(strategyInterrupt.triggers||[])]
+  };
   const repair = taskContract.engineering_repair;
   if (forceEngineeringRepair && repair?.enabled === true) {
     if (repairReady === true && Number.isInteger(repair.post_repair_attempt_limit) &&
@@ -393,7 +454,7 @@ export function classifyRepositoryQueueLiveness({
   now = new Date().toISOString(),
   max_idle_seconds = 60
 } = {}) {
-  if (!request || request.capability !== 'repository') return {state:'not_repository'};
+  if (!request || !['repository','research_chatgpt'].includes(request.capability)) return {state:'not_repository'};
   if (!stamp(now) || !Number.isInteger(max_idle_seconds) || max_idle_seconds < 60)
     throw Error('valid_repository_liveness_clock_required');
   const task_id=String(request.task_id||'').padStart(2,'0');
@@ -407,7 +468,7 @@ export function classifyRepositoryQueueLiveness({
   const fault=idle_seconds>=max_idle_seconds;
   return {
     state:fault?'fault':'healthy_wait',
-    fault_code:fault?'repository_consumer_unclaimed':null,
+    fault_code:fault?(request.capability==='research_chatgpt'?'research_consumer_unclaimed':'repository_consumer_unclaimed'):null,
     task_id,
     request_key:request.request_key,
     execution_id:request.execution_id,
@@ -418,7 +479,7 @@ export function classifyRepositoryQueueLiveness({
     idle_seconds,
     max_idle_seconds,
     supervisor_bookkeeping_is_progress:false,
-    next_action:fault?'The bound ordinary-ChatGPT repository consumer must claim the same request; preserve completed work and do not skip ahead.':null
+    next_action:fault?(request.capability==='research_chatgpt'?'The bound ordinary-ChatGPT research-capable consumer must claim the same request, perform fresh external research, preserve completed work and do not skip ahead.':'The bound ordinary-ChatGPT repository consumer must claim the same request; preserve completed work and do not skip ahead.'):null
   };
 }
 
