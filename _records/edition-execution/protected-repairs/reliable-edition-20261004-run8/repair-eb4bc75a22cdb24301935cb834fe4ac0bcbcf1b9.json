@@ -17,14 +17,17 @@
   "created_at": "2026-10-04T08:04:40.864Z",
   "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
   "diagnosis": "The Run Supervisor dead-writer evidence path contains an indented shell heredoc terminator. The workflow acquires a replacement lease in memory, then bash exits with an unmatched command substitution before persisting the lease or starting the same Task 11 recovery.",
-  "next_stage": "Open or reuse exactly one PR for the bound repair head, require exact-head pull_request validate PASS, merge without bypass, then dispatch the same production execution and Task 11 until substantive durable progress is proven.",
+  "next_stage": "Wait for exact-head pull_request validate. On PASS, merge PR 438 without bypass and dispatch the same execution and Task 11.",
   "last_recovery_stage": {
-    "state": "REPAIR_BRANCH_READY",
+    "state": "REPAIR_CI_QUEUED",
     "repair_head": "c8b30516bbe84864d614dfd9affb9bbdf358de53",
     "same_execution_revalidated": true,
     "same_task_revalidated": "11",
     "prior_failed_supervisor_run_id": 37186681590,
     "prior_failed_supervisor_job_id": 111392243645,
-    "protected_executor_run_observed": false
+    "protected_executor_run_observed": false,
+    "pr_number": 438,
+    "ci_run_id": 37187768823,
+    "ci_conclusion": null
   }
 }
