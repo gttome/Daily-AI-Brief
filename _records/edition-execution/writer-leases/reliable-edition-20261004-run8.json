@@ -4,11 +4,9 @@
   "owner_id": "scheduled-chatgpt-run8-watchlist-recovery",
   "generation": 16,
   "acquired_at": "2026-10-04T03:37:10.000Z",
-  "last_heartbeat_at": "2026-10-04T03:37:10.000Z",
-  "expires_at": "2026-10-04T03:52:10.000Z",
-  "supersedes": {
-    "owner_id": "github-actions-37169348459-6",
-    "generation": 15,
-    "reason": "orchestration-only supervisor lease with persisted repository_consumer_unclaimed liveness fault; no substantive Task 08 progress"
-  }
+  "last_heartbeat_at": "2026-10-04T03:50:15.000Z",
+  "expires_at": "2026-10-04T03:50:15.000Z",
+  "released": true,
+  "released_at": "2026-10-04T03:50:15.000Z",
+  "release_reason": "TASK_10_DONE_HANDOFF_TO_SUPERVISOR"
 }
