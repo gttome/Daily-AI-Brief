@@ -3,17 +3,25 @@
   "execution_id": "reliable-edition-20261004-run8",
   "incident_id": "wd-task26-live-validation-37217564023",
   "owner_slot": "E",
-  "generation": 42,
+  "generation": 43,
   "state": "ACTIVE",
-  "acquired_at": "2026-10-04T16:42:43.000Z",
-  "last_heartbeat_at": "2026-10-04T16:42:43.000Z",
-  "expires_at": "2026-10-04T16:57:43.000Z",
-  "action_key": "wd-task26-live-validation-37217564023:repair-live-reader-contract:slot-e:g42",
+  "acquired_at": "2026-10-04T17:02:30.000Z",
+  "last_heartbeat_at": "2026-10-04T17:02:30.000Z",
+  "expires_at": "2026-10-04T17:17:30.000Z",
+  "action_key": "wd-task26-live-validation-37217564023:finalization-pr451:slot-e:g43",
   "takeover_from": {
     "owner_slot": "E",
-    "generation": 41,
-    "reason": "PRIOR_RECOVERY_LEASE_RELEASED",
-    "prior_expires_at": "2026-10-04T15:56:31.000Z",
-    "observed_at": "2026-10-04T16:42:43.000Z"
+    "generation": 42,
+    "reason": "PRIOR_RECOVERY_LEASE_EXPIRED",
+    "prior_expires_at": "2026-10-04T16:57:43.000Z",
+    "observed_at": "2026-10-04T17:02:30.000Z"
+  },
+  "evidence": {
+    "repair_pr": 450,
+    "repair_merge_sha": "826529105a126d295bebef8bad852b4e2e845658",
+    "finalization_pr": 451,
+    "refreshed_finalization_head": "1dad23ab85cd07e18196fda1ee5920a1d9f57cf0",
+    "pr_attached_validate_run_id": 37218937340,
+    "pr_attached_validate_conclusion": "success"
   }
 }
