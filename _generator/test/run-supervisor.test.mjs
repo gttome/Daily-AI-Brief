@@ -429,11 +429,13 @@ test('Supervisor workflow contains the one-minute loop, single concurrency lane 
 });
 
 
-test('Supervisor dead-writer proof path avoids indented shell heredocs',()=>{
+test('Supervisor shell blocks avoid indented Node heredocs',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
   const acquire=y.slice(y.indexOf('Acquire fenced writer authority for this exact execution'),y.indexOf('Persistent approximately one-minute supervision loop'));
   assert.match(acquire,/proof_rel="\$\(node -e '/);
-  assert.doesNotMatch(acquire,/node - <<'NODE'/);
+  assert.match(y,/repair_record="\$\(node -e '/);
+  assert.match(y,/repair_pr="\$\(node -e '/);
+  assert.doesNotMatch(y,/<<'NODE'/);
   assert.match(acquire,/dead-writer-proof-final\.json/);
 });
 
