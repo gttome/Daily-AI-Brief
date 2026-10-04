@@ -31,7 +31,7 @@
     "media": {
       "path": "_records/editorial-handoff/media-2026-10-04.json",
       "schema_version": "legacy-unversioned",
-      "digest": "git_blob_sha1:c2f830773568d890927c4b73cef7c5ec9986b5e5",
+      "digest": "git_blob_sha1:c1a837b30f1d6c3bb0412802c728a46d03e6b0f2",
       "adapter": "selected-media-v1"
     },
     "media_receipt": {
@@ -139,5 +139,18 @@
     "repaired_contracts": [
       "run8_incomplete_deterministic_publication_projection"
     ]
+  },
+  "migration": {
+    "contract_transition": "pre-2026-10-05-frozen-contract-recovery",
+    "allow_verified_video_exception": true,
+    "preserve_accepted_locked_assets": true,
+    "aggregate_watchlist_task08": {
+      "enabled": true,
+      "worker_result_path": "_records/edition-execution/worker-results/reliable-edition-20261004-run8/08-6380c67cd6da13f927255082cf7a3bdf2a2187dbc8151964e44f90e1166bacb8.json",
+      "watchlist_refresh_path": "_records/editorial/2026-10-04-run8/watchlist-refresh.json"
+    },
+    "repair_key": "repair-be62fc6860a0e5550e26d833c9643c8ea893a67f",
+    "protected_repair_pr": 444,
+    "protected_repair_merge_sha": "0d7cd92402337f103a2018679ac8cfa02dd5b094"
   }
 }

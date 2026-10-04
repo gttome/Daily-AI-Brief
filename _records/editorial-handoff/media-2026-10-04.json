@@ -14,7 +14,10 @@
       "connection": "Official tour of the Copilot desktop agent surface relevant to the selected computer-use story.",
       "url": "https://www.youtube.com/watch?v=LsA4vIX_3UY",
       "duration_tier": "short",
-      "verification_note": "GitHub's current enterprise resource roundup records a 7:42 runtime and identifies the official GitHub video."
+      "verification_note": "GitHub's current enterprise resource roundup records a 7:42 runtime and identifies the official GitHub video.",
+      "official_source_verified": true,
+      "freshness_exception_reason": "Locked Task 06 evidence verified the official GitHub source and 7:42 runtime; bounded search found no equally relevant same-window official video with a verified runtime.",
+      "verification_evidence": "_records/editorial/2026-10-04-run8/videos.json"
     },
     "agents_non_technical_people": {
       "status": "included",
@@ -26,7 +29,10 @@
       "connection": "Shows work items launching agent sessions and complements the Brief's governed agent workflow coverage.",
       "url": "https://www.youtube.com/watch?v=h9g4umRfgn0",
       "duration_tier": "short",
-      "verification_note": "GitHub's current enterprise resource roundup records a 5:24 runtime and identifies the official GitHub video."
+      "verification_note": "GitHub's current enterprise resource roundup records a 5:24 runtime and identifies the official GitHub video.",
+      "official_source_verified": true,
+      "date_unavailable_reason": "Locked Task 06 and media-preflight evidence verified the official GitHub source and 5:24 runtime; a reliable upload date was unavailable in the sealed evidence.",
+      "verification_evidence": "_records/editorial/2026-10-04-run8/videos.json"
     }
   },
   "podcasts": [
