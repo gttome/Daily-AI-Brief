@@ -118,7 +118,7 @@ function mediaErrors(ctx,date,{allowLegacyKernelHash=false,migration={}}={}){
  if(receipt?.podcast_source_diversity?.pass!==true)errors.push('publication_manifest_media_source_diversity_invalid');
  return errors;
 }
-function imageErrors(root,ctx,{allowLegacyStoryIdentity=false}={}){
+function imageErrors(root,ctx,{allowLegacyStoryIdentity=false,migration={}}={}){
  const errors=[],ids=(ctx.kernel.stories||[]).map(x=>x.candidate_id),storyById=new Map((ctx.kernel.stories||[]).map(x=>[x.candidate_id,x]));
  for(const [label,data] of [['image_manifest',ctx.imageManifest],['image_review',ctx.imageReview]]){
   if(!sameSet(Object.keys(data||{}),ids))errors.push('publication_manifest_'+label+'_candidate_set_mismatch');
@@ -141,15 +141,22 @@ function imageErrors(root,ctx,{allowLegacyStoryIdentity=false}={}){
    })
   };
   const gated=reviewedHandoffImages(edition,root,publicationArtifactPath(ctx.manifest,'image_review'),{mode:'combined'});
-  for(const error of gated.errors)errors.push('publication_manifest_image_quality:'+error);
+  for(const error of gated.errors){
+   if(lockedCanvasMigrationAllowed(ctx,gated,error,ctx.manifest.edition_date,migration))continue;
+   errors.push('publication_manifest_image_quality:'+error);
+  }
   const evidencePath=publicationArtifactPath(ctx.manifest,'image_quality_evidence');
   if(gated.quality_evidence_path!==evidencePath)errors.push('publication_manifest_image_quality_evidence_path_mismatch');
  }
  return errors;
 }
-function watchlistErrors(root,ctx,date,freeze){
+function watchlistErrors(root,ctx,date,freeze,migration={}){
  const errors=[],watch=ctx.watchlist,sweep=ctx.watchlistEvidence;
- if(date>='2026-09-30')errors.push(...validateEmergingSignalSweep(sweep,{editionDate:date,topics:watch?.topics||[]}).map(e=>'publication_manifest_watchlist_discovery:'+e));
+ if(date>='2026-09-30'){
+  const strict=validateEmergingSignalSweep(sweep,{editionDate:date,topics:watch?.topics||[]});
+  if(strict.length&&migrationEnabled(date,migration)&&migration?.aggregate_watchlist_task08?.enabled===true)errors.push(...aggregateWatchlistMigrationErrors(root,ctx,date,migration).map(e=>'publication_manifest_watchlist_discovery:'+e));
+  else errors.push(...strict.map(e=>'publication_manifest_watchlist_discovery:'+e));
+ }
  for(const e of validateWatchlist(watch))errors.push('publication_manifest_watchlist_invalid:'+e);
  if(watch?.edition_date!==date||sweep?.edition_date!==date)errors.push('publication_manifest_watchlist_date_mismatch');
  const counts=watchlistDailySummary(watch||{topics:[],edition_date:date});
@@ -197,7 +204,8 @@ export function publicationManifestErrors(root,manifest,{expectedBaseline=null,e
  const legacyDate=date<CONTRACT_FREEZE_DATE;
  const allowLegacyKernelHash=legacyDate&&manifest?.migration?.allow_legacy_media_kernel_hash_semantics===true;
  const allowLegacyStoryIdentity=legacyDate&&manifest?.migration?.allow_legacy_image_story_identity===true;
- errors.push(...mediaErrors(ctx,date,{allowLegacyKernelHash}),...imageErrors(root,ctx,{allowLegacyStoryIdentity}),...watchlistErrors(root,ctx,date,manifest?.freeze?.watchlist));
+ const migration=manifest?.migration||{};
+ errors.push(...mediaErrors(ctx,date,{allowLegacyKernelHash,migration}),...imageErrors(root,ctx,{allowLegacyStoryIdentity,migration}),...watchlistErrors(root,ctx,date,manifest?.freeze?.watchlist,migration));
  if(!Array.isArray(ctx.bookMappings?.editions?.[date]))errors.push('publication_manifest_book_mapping_date_missing');
  const deps=manifest?.lifecycle_dependencies||{};
  for(const stage of ['MEDIA_READY','IMAGES_READY','WATCHLIST_READY','HANDOFF_COMMITTED'])if(!Array.isArray(deps[stage])||!deps[stage].length)errors.push('publication_manifest_lifecycle_dependency_missing:'+stage);
