@@ -218,7 +218,7 @@ jobs:
             existing="$(node - "$marker" <<'NODE'
             const fs=require('fs'),marker=process.argv[2],xs=JSON.parse(fs.readFileSync('/tmp/repair-pr-comments.json','utf8'));
             process.stdout.write(String(xs.filter(x=>String(x.body||'').includes(marker)).length));
-            NODE
+          NODE
             )"
             if [ "$existing" = "0" ]; then
               gh pr comment "$pr" --repo "$GITHUB_REPOSITORY" --body "$marker. The protected repair remains actionable. A connected Watchdog must re-read the active ruleset and SAME execution/task, preserve the exact repair scope and repair key, synchronize the existing repair branch with current protected main if needed, refresh the PR head through the connected GitHub identity without content drift, update the SAME durable repair record to that exact head, then require an exact-head pull_request validate PASS. Do not create another PR, weaken protection, use admin bypass, or ask the owner for routine PR/CI/merge work."
@@ -329,7 +329,7 @@ jobs:
               existing="$(node - "$marker" <<'NODE'
               const fs=require('fs'),marker=process.argv[2],xs=JSON.parse(fs.readFileSync('/tmp/merge-policy-comments.json','utf8'));
               process.stdout.write(String(xs.filter(x=>String(x.body||'').includes(marker)).length));
-              NODE
+          NODE
               )"
               if [ "$existing" = "0" ]; then
                 gh pr comment "$pr" --repo "$GITHUB_REPOSITORY" --body "$marker. Protected merge policy still blocks the exact tested head. Recovery remains actionable: a connected Watchdog must re-read the ruleset, preserve the SAME repair scope/key/PR, synchronize current protected main if needed, refresh the existing PR head through connected GitHub identity, update the SAME repair record head, and require a fresh exact-head pull_request validate PASS. No admin bypass or owner routine action."
