@@ -1,0 +1,25 @@
+{
+  "task_id": "05",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-04T02:38:20.000Z",
+  "reason": "Locked exactly six fresh stories in 2/2/2 order with exactly one reusable Agent Skills story. The freshness-conflicted AWS migration candidate remains excluded.",
+  "proof": {
+    "selection_artifact": "_records/editorial/2026-10-04-run8/story-selection.json",
+    "selected_candidate_ids": [
+      "m02",
+      "m04",
+      "m06",
+      "m07",
+      "m01",
+      "m09"
+    ],
+    "category_counts": {
+      "technical_ai_engineering": 2,
+      "applied_genai_knowledge_workers": 2,
+      "agents_non_technical_people": 2
+    },
+    "agent_skills_candidate_id": "m01",
+    "result": "PASS"
+  }
+}
