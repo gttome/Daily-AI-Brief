@@ -6,6 +6,7 @@ import {
   validateProtectedRepairRecord,
   selectRepairPr,
   exactHeadCiGate,
+  protectedPrContextGate,
   mergeGate,
   parseGitHubActionsOwner,
   buildDeadWriterProof,
@@ -68,6 +69,44 @@ test('CI FAIL prevents merge and remains a continuation state',()=>{
   assert.equal(ci.allowed,false);
   assert.equal(ci.state,'REPAIR_CI_FAIL');
   assert.equal(mergeGate({record,activePointer:active,current_task:'11',observed_head_sha:record.repair_branch_head_sha,ciGate:ci}).allowed,false);
+});
+
+test('workflow-dispatch CI success still requires PR merge-context refresh',()=>{
+  const gate=protectedPrContextGate({
+    workflow_run:{id:77,status:'completed',conclusion:'success',event:'workflow_dispatch',head_sha:record.repair_branch_head_sha},
+    observed_head_sha:record.repair_branch_head_sha
+  });
+  assert.equal(gate.allowed,false);
+  assert.equal(gate.state,'REPAIR_PR_CONTEXT_REFRESH_REQUIRED');
+  assert.equal(gate.connected_github_context_refresh_required,true);
+  assert.equal(gate.owner_prompt_required,false);
+});
+
+test('action-required PR validation is a recoverable context-refresh stage',()=>{
+  const gate=protectedPrContextGate({
+    workflow_run:{id:78,status:'completed',conclusion:'action_required',event:'pull_request',head_sha:record.repair_branch_head_sha},
+    observed_head_sha:record.repair_branch_head_sha
+  });
+  assert.equal(gate.state,'REPAIR_PR_CONTEXT_REFRESH_REQUIRED');
+  assert.equal(gate.owner_prompt_required,false);
+});
+
+test('exact-head pull-request validate success satisfies protected PR context',()=>{
+  const gate=protectedPrContextGate({
+    workflow_run:{id:79,status:'completed',conclusion:'success',event:'pull_request',head_sha:record.repair_branch_head_sha},
+    observed_head_sha:record.repair_branch_head_sha
+  });
+  assert.equal(gate.allowed,true);
+  assert.equal(gate.state,'REPAIR_CI_PASS');
+});
+
+test('PR context gate fails closed when CI head moves',()=>{
+  const gate=protectedPrContextGate({
+    workflow_run:{id:80,status:'completed',conclusion:'success',event:'pull_request',head_sha:'b'.repeat(40)},
+    observed_head_sha:record.repair_branch_head_sha
+  });
+  assert.equal(gate.allowed,false);
+  assert.equal(gate.state,'REPAIR_HEAD_CHANGED');
 });
 
 test('repair branch head movement fails closed',()=>{
