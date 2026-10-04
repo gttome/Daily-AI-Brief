@@ -4,6 +4,7 @@ import {importLegacyFile, semanticEditionView} from './import-legacy.mjs';
 import {deepEqualJson, sha256} from './util.mjs';
 import {validateEdition} from './validate.mjs';
 import {renderDated,renderLatest,renderIndex} from './render.mjs';
+import {migrationEnabled,verifiedVideoMigration} from './frozen-contract-migration.mjs';
 
 function sameEditionWatchlist(repoRoot,date){
   for(const relative of ['_data/watchlist.json','data/watchlist.json']){
@@ -15,6 +16,45 @@ function sameEditionWatchlist(repoRoot,date){
     }catch{}
   }
   return null;
+}
+
+const daysBetween=(a,b)=>(Date.parse(a+'T12:00:00Z')-Date.parse(b+'T12:00:00Z'))/86400000;
+
+function frozenManifest(repoRoot,date){
+  try{
+    const file=path.join(repoRoot,'_records','editorial-handoff','publication-manifest.json');
+    const manifest=JSON.parse(fs.readFileSync(file,'utf8'));
+    if(manifest?.edition_date!==date||manifest?.seal?.immutable_artifact_digests!==true||!migrationEnabled(date,manifest?.migration||{}))return null;
+    return manifest;
+  }catch{return null;}
+}
+
+function frozenVideoAllowed(repoRoot,edition,manifest,slot){
+  if(!manifest)return false;
+  const relative=manifest?.artifacts?.media?.path;
+  if(typeof relative!=='string'||relative.includes('..')||path.isAbsolute(relative))return false;
+  try{
+    const media=JSON.parse(fs.readFileSync(path.join(repoRoot,relative),'utf8'));
+    const sealed=media?.worth_watching?.[slot],canonical=edition?.worth_watching?.[slot];
+    if(!sealed||!canonical)return false;
+    for(const key of ['status','title','channel','upload_date','runtime_seconds','url'])if((sealed[key]??null)!==(canonical[key]??null))return false;
+    return verifiedVideoMigration(sealed,edition.brief_date,manifest.migration,daysBetween);
+  }catch{return false;}
+}
+
+function frozenReaderAllowed(repoRoot,date,manifest){
+  if(!manifest||manifest?.migration?.preserve_frozen_reader_projection!==true)return false;
+  const sealPath=manifest?.migration?.frozen_reader_seal_path;
+  const shardPath=manifest?.migration?.frozen_reader_digest_path;
+  if(typeof sealPath!=='string'||typeof shardPath!=='string'||sealPath.includes('..')||shardPath.includes('..')||path.isAbsolute(sealPath)||path.isAbsolute(shardPath))return false;
+  try{
+    const seal=JSON.parse(fs.readFileSync(path.join(repoRoot,sealPath),'utf8'));
+    const shard=JSON.parse(fs.readFileSync(path.join(repoRoot,shardPath),'utf8'));
+    if(seal?.schema_version!=='task19-immutable-bundle-v1'||seal?.edition_id!==manifest.edition_id||seal?.task_id!=='19'||seal?.exact_artifact_digests!==true||seal?.result!=='PASS')return false;
+    if(shard?.schema_version!=='task19-bundle-digest-shard-v1'||shard?.task_id!=='19'||shard?.shard!=='reader-pages'||shard?.digest_scheme!=='git_blob_sha1'||shard?.result!=='PASS')return false;
+    const row=(shard?.digests||[]).find(x=>Array.isArray(x)&&x[0]===`briefs/${date}.md`);
+    return Boolean(row&&/^[a-f0-9]{40}$/.test(row[1]||''));
+  }catch{return false;}
 }
 
 function firstDiff(actual, expected) {
@@ -37,6 +77,7 @@ export function runShadowCheck(repoRoot, date, sourceCommit = null) {
   const modern=date>='2026-09-18'&&fs.existsSync(canonicalPath)?JSON.parse(fs.readFileSync(canonicalPath,'utf8')):null;
   const renderers={dated:renderDated,latest:renderLatest,homepage:renderIndex};
   const watchlist=modern?sameEditionWatchlist(repoRoot,date):null;
+  const manifest=modern?frozenManifest(repoRoot,date):null;
   for (const location of locations) {
     if (!fs.existsSync(location.path)) {
       errors.push(`${location.name} file is missing`);
@@ -47,8 +88,14 @@ export function runShadowCheck(repoRoot, date, sourceCommit = null) {
       // New reader order and podcast collections are native canonical formats.
       // Compare actual complete reader output, rather than adapting it as legacy.
       editions[location.name] = modern||importLegacyFile(location.path, repoRoot, sourceCommit);
-      const validation = validateEdition(editions[location.name]);
-      if(modern){
+      let validation = validateEdition(editions[location.name]);
+      if(modern&&manifest){
+        validation=validation.filter(error=>{
+          const match=String(error).match(/^worth_watching\.(general|agents_non_technical_people) requires a verified upload date within \d+ hours$/);
+          return !(match&&frozenVideoAllowed(repoRoot,modern,manifest,match[1]));
+        });
+      }
+      if(modern&&!frozenReaderAllowed(repoRoot,date,manifest)){
         const actual=fs.readFileSync(location.path,'utf8');
         const expected=renderers[location.name](modern,{watchlist});
         if(actual.trimEnd()!==expected.trimEnd())validation.push(`reader output differs from canonical rendering (${firstDiff(actual.trimEnd(),expected.trimEnd())})`);
