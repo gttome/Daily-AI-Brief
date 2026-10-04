@@ -965,3 +965,21 @@ Problems: 49 · Events: 82
 - **Detailed handoff:** `docs/operations/OCT4-USAGE-EFFICIENCY-AUDIT-AND-POST-CLOSE-HARDENING-2026-10-04.md`
 - **Future validation:** after October 4 is independently PUBLIC_CLOSED / Task 29 Done, freeze the final Run 8 usage-efficiency baseline, implement the redesign on a protected hardening branch, test HEALTHY no-op, stalled-task recovery and image-context isolation, then prove model-intensive recovery invocations are materially lower while autonomy and one-writer/accepted_locked protections remain intact.
 
+
+## DAB-OPS-20261004-002 — Repeated recovery activity did not automatically trigger a change in strategy
+
+- **Status:** open_post_close_hardening
+- **First observed run:** reliable-edition-20261004-run8
+- **Task(s):** 23
+- **Symptom:** Task 23 remained in protected-CI recovery for an excessive period while multiple Watchdog generations, handoffs and CI reruns continued. The owner question “Task 23 is taking way too long” caused a better meta-level diagnosis than the preceding automatic loop.
+- **Root cause:** The recovery architecture has strong rules for continued liveness, authority transfer and retry, but no explicit strategy-interrupt rule that asks whether the current repair tactic is itself failing. Activity was treated as progress even when repeated validations preserved the same blocking failure surface.
+- **Key October 4 evidence:** The meta-diagnostic review discovered that protected-repair PR #444 had already passed exact-head deterministic CI but had not been promoted into protected `main`, while the production PR continued validating against the pre-repair contract. Promoting the proven repair was higher leverage than another blind retry.
+- **Operational impact:** Owner attention supplied a missing out-of-band reasoning trigger. Without an automatic equivalent, future runs can remain active yet spend long periods repeating a safe but ineffective recovery method.
+- **Replication pattern:** Introduce a Strategy Interrupt / Meta-Diagnostic Escalation when repeated failure signatures, repeated recovery cycles without substantive delta, elapsed-time anomalies, or ineffective corrective actions show that the tactic is not reducing the blocker.
+- **Required guard:** After a Strategy Interrupt, another identical retry is prohibited unless new durable evidence changes the failure hypothesis. The next action must be materially different in repair target, dependency, evidence binding, validator path, promotion path or execution method.
+- **Owner override:** Owner phrases such as “taking way too long,” “are you stuck,” “why are you waiting,” or equivalent should trigger the same meta-diagnostic path immediately, but owner prompting must not be required.
+- **Required post-close implementation:** deterministic strategy-interrupt signals in compact health state; Supervisor/Watchdog meta-diagnostic transition; normalized failure-signature comparison; no-progress/recovery-churn detection; strategy-generation fencing; regression tests that prevent a third blind rerun after two identical failures.
+- **Core invariant:** Persistence is not progress. Repeating a tactic that does not reduce the blocker is itself a liveness failure.
+- **Detailed learning:** `docs/operations/OCT4-USAGE-EFFICIENCY-AUDIT-AND-POST-CLOSE-HARDENING-2026-10-04.md#strategy-interrupt--meta-diagnostic-escalation`
+- **Future validation:** after Run 8 is PUBLIC_CLOSED / Task 29 Done, implement on a protected hardening branch and prove both automatic and owner-triggered Strategy Interrupts produce a materially different recovery action while preserving one-writer, protected-main, terminal-run and accepted_locked invariants.
+
