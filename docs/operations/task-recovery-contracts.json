@@ -1231,5 +1231,56 @@
       "same_repair_scope_required": true,
       "exact_head_pull_request_validate_required": true
     }
+  },
+  "october_4_post_close_hardening": {
+    "status": "required_pending_implementation",
+    "strategy_interrupt": {
+      "trigger_any": [
+        "same_normalized_failure_signature_twice",
+        "two_recovery_cycles_without_substantive_durable_delta",
+        "successful_corrective_action_followed_by_same_root_failure",
+        "elapsed_time_anomaly_with_no_progress",
+        "control_plane_churn_without_artifact_or_validation_delta"
+      ],
+      "required_analysis": [
+        "restated_task_objective",
+        "recent_action_delta_validation_history",
+        "failure_signature_comparison",
+        "already_green_prerequisite_search",
+        "materially_different_next_tactic"
+      ],
+      "blind_equivalent_retry_prohibited": true
+    },
+    "capability_routing": {
+      "required": true,
+      "capability_classes": [
+        "external_research",
+        "repository_mutation",
+        "native_image_generation",
+        "protected_publication",
+        "deterministic_validation"
+      ],
+      "incapable_owner_behavior": "persist_bounded_handoff_and_release; do_not_retain_incident_ownership"
+    },
+    "native_image_context": {
+      "required": "story_only",
+      "exclude": [
+        "watchdog_prose",
+        "supervisor_history",
+        "kanban",
+        "leases",
+        "protected_repair_narrative",
+        "unrelated_tasks"
+      ],
+      "context_mismatch_is_engineering_repair_signal": true
+    },
+    "handoff_contract": {
+      "target": "typed_canonical_state",
+      "prose_release_reason_pattern_matching_should_not_be_authoritative": true
+    },
+    "workflow_script_integrity": {
+      "explicit_repository_identity_for_gh_dispatch": true,
+      "parse_lint_embedded_shell_and_node_before_protected_merge": true
+    }
   }
 }

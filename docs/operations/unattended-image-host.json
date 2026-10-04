@@ -36,7 +36,8 @@
     "A legitimately queued unclaimed Tasks 11-16 native request may be consumed by the next eligible Watchdog slot without waiting for stale/block classification.",
     "Nominal scheduled image-consumer coverage improves from one designated hourly consumer opportunity to six staggered opportunities per hour; schedule delivery remains non-real-time.",
     "Exact queued request identity plus current task-specific writer fencing prevents duplicate image generation when slots overlap.",
-    "The prior F-specific binding is retained only as historical compatibility evidence."
+    "The prior F-specific binding is retained only as historical compatibility evidence.",
+    "October 4 field evidence proved image liveness but also exposed operational-context contamination; READY is not a claim of story-context isolation or usage-optimal polling."
   ],
   "watchdog_ring": {
     "schema_version": "chatgpt-watchdog-ring-binding-v1",
@@ -135,5 +136,20 @@
     ],
     "image_quality_contract_unchanged": true,
     "synthetic_rehearsal_no_generation_supported": true
+  },
+  "october_4_field_validation": {
+    "execution": "reliable-edition-20261004-run8",
+    "liveness_capability_proven": true,
+    "six_slot_pool_proven_to_claim_real_image_work": true,
+    "usage_optimal": false,
+    "native_generation_context_isolation_mechanically_proven": false,
+    "observed_context_contamination": true,
+    "contamination_evidence": "_records/image-recovery/2026-10-04-run8/m02-watchdog-A-context-contamination.json",
+    "required_hardening": [
+      "story_only_native_generation_context",
+      "recovery_context_separate_from_generation_context",
+      "deterministic_health_polling_replacing_routine_heavy_chatgpt_checks"
+    ],
+    "note": "READY continues to mean route/capability availability, not proof that the six-slot architecture is usage-optimal or that hidden generation context isolation is complete."
   }
 }

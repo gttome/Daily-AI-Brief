@@ -1,5 +1,9 @@
 # Daily Brief Readiness Certification
 
+<!-- current-authority-oct4 -->
+> [!IMPORTANT]
+> **Current schedule authority is not the 05:45 / 06:45 / 07:00 sequence below.** Current production starts at **19:00 America/Chicago on the evening before the edition date** under [Daily unattended startup](DAILY-UNATTENDED-STARTUP.md) and `run-learning-readiness-v2`. The older sequence below is retained as historical readiness-design evidence. October 4 also proved the normal 19:00 allocation must be observed and recorded; MISSED_START_RECOVERY is a fallback, not normal-start certification.
+
 ## Purpose
 
 Strengthen the existing Daily Generative AI Brief production path without adding another schedule.

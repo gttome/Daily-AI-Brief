@@ -448,5 +448,53 @@
     "handoff_repair_protected_ci_run_id": 37071199146,
     "live_writer_handoff_run_id": 37071330741,
     "live_auto_supervisor_run_id": 37071366751
+  },
+  "october_4_post_close_hardening": {
+    "status": "required_pending_implementation",
+    "evidence": "_records/run-learning/supplements/reliable-edition-20261004-run8-post-close.json",
+    "historical_task29_certification_immutable": true,
+    "requirements": {
+      "task29_incident_inventory": {
+        "required": true,
+        "sources": [
+          "_records/edition-execution/events/<execution>/",
+          "_records/edition-execution/watchdog-events/<execution>/",
+          "_records/edition-execution/liveness-faults/<execution>/",
+          "_records/edition-execution/protected-repairs/<execution>/",
+          "_records/image-recovery/<execution-key>/",
+          "_records/editorial/<execution-key>/task21-focused-repair.json",
+          "_records/publication/<date>/reader-correction.json"
+        ],
+        "rule": "Every material run incident must map to an existing operational-learning recurrence/disposition or a new problem before Task 29 learning certification can pass."
+      },
+      "strategy_interrupt": {
+        "required": true,
+        "implementation_status": "pending",
+        "repeated_failure_signature_threshold": 2,
+        "no_substantive_delta_recovery_cycles_threshold": 2,
+        "identical_retry_after_interrupt_allowed_only_with_new_evidence": true
+      },
+      "semantic_reader_parity_before_public_closed": {
+        "required": true,
+        "implementation_status": "pending",
+        "surfaces": [
+          "homepage",
+          "dated_brief",
+          "six_permanent_story_pages"
+        ],
+        "route_existence_alone_is_sufficient": false
+      },
+      "normal_1900_start_proof": {
+        "required": true,
+        "implementation_status": "pending_validation",
+        "missed_start_receipt_required": true
+      },
+      "recovered_task_timing_integrity": {
+        "required": true,
+        "implementation_status": "pending",
+        "missing_start_time_renders": "unavailable",
+        "bulk_closeout_zero_inference_prohibited": true
+      }
+    }
   }
 }
