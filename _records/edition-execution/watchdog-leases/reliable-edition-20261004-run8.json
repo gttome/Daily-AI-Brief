@@ -6,9 +6,9 @@
   "generation": 31,
   "state": "ACTIVE",
   "acquired_at": "2026-10-04T10:33:20.000Z",
-  "last_heartbeat_at": "2026-10-04T10:33:20.000Z",
-  "expires_at": "2026-10-04T10:48:20.000Z",
-  "action_key": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch:resume-task18-reconstruction:g31",
+  "last_heartbeat_at": "2026-10-04T10:43:30.000Z",
+  "expires_at": "2026-10-04T10:58:30.000Z",
+  "action_key": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch:repair-supervisor-liveness-and-resume:g31",
   "released": false,
   "takeover_from": {
     "owner_slot": "B",
