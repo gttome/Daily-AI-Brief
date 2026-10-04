@@ -1,0 +1,14 @@
+{
+  "schema_version": "chatgpt-watchdog-recovery-lease-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "incident_id": "wd-242c293d809f61912e6ff75c193f5829",
+  "owner_slot": "E",
+  "generation": 1,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-04T01:44:06.079Z",
+  "last_heartbeat_at": "2026-10-04T01:44:06.079Z",
+  "expires_at": "2026-10-04T01:59:06.079Z",
+  "action_key": "wa-1611f249721b7760ca3c7a564a9ab2bf",
+  "released_at": null,
+  "release_reason": null
+}
