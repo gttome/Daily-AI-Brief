@@ -5,6 +5,7 @@ import {
   activeRunDecision,
   acquireWriterLease,
   assertWriterFence,
+  releaseWriterLease,
   classifyRunHealth,
   applyImmediateImageRecovery,
   normalizeTaskEvent,
@@ -65,10 +66,25 @@ test('writer lease fences stale executors and permits takeover only after expiry
   const takeover=acquireWriterLease(first.lease,{execution_id:'run4',owner_id:'supervisor-b',now:'2026-10-01T20:03:00Z',ttl_ms:120000});
   assert.equal(takeover.acquired,true);
   assert.ok(takeover.lease.generation>first.lease.generation);
-  const forced=acquireWriterLease(first.lease,{execution_id:'run4',owner_id:'supervisor-c',now:'2026-10-01T20:01:30Z',ttl_ms:120000,takeover_dead_owner:true});
-  assert.equal(forced.acquired,true);
-  assert.ok(forced.lease.generation>first.lease.generation);
+  const unprovenForced=acquireWriterLease(first.lease,{execution_id:'run4',owner_id:'supervisor-c',now:'2026-10-01T20:01:30Z',ttl_ms:120000,takeover_dead_owner:true});
+  assert.equal(unprovenForced.acquired,false);
+  assert.equal(unprovenForced.reason,'live_or_unproven_writer_cannot_be_stolen');
   assert.throws(()=>assertWriterFence(first.lease,{execution_id:'run4',owner_id:'supervisor-a',generation:first.lease.generation,now:'2026-10-01T20:03:01Z'}),/WRITER_LEASE_EXPIRED/);
+});
+
+test('generic writer release ends authority at a protected repair boundary',()=>{
+  const first=acquireWriterLease(null,{execution_id:'run4',owner_id:'supervisor-a',now:'2026-10-01T20:00:00Z',ttl_ms:120000});
+  const released=releaseWriterLease(first.lease,{
+    execution_id:'run4',owner_id:'supervisor-a',generation:first.lease.generation,
+    reason:'PROTECTED_REPAIR_IN_PROGRESS',now:'2026-10-01T20:00:30Z'
+  });
+  assert.equal(released.state,'RELEASED');
+  assert.equal(released.expires_at,'2026-10-01T20:00:30Z');
+  const replacement=acquireWriterLease(released,{
+    execution_id:'run4',owner_id:'supervisor-b',now:'2026-10-01T20:00:31Z',ttl_ms:120000
+  });
+  assert.equal(replacement.acquired,true);
+  assert.ok(replacement.lease.generation>first.lease.generation);
 });
 
 test('same-owner lease renewal never shortens an existing fence',()=>{
