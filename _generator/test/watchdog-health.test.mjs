@@ -73,3 +73,18 @@ test('fast-path counters distinguish healthy no-op and escalation decisions',()=
   counters=updateWatchdogFastPathCounters(counters,{counter_bucket:'healthy_noop'});
   assert.deepEqual(counters,{healthy_noop:2,escalated:1,total:3});
 });
+
+test('terminal compact state may remain stable without refresh churn but identity changes fail safe',()=>{
+  const terminal=buildWatchdogHealthRecord({
+    observed_at:'2099-01-01T00:00:00Z',active:false,terminal:true,
+    edition_id:identity.edition_id,execution_id:identity.execution_id,
+    execution_key:identity.execution_key,branch:identity.branch,
+    classification:{state:'TERMINAL'},evidence_refs:[]
+  });
+  const same=watchdogFastPathDecision(terminal,{now:'2099-01-02T12:00:00Z',expected_execution_id:identity.execution_id});
+  assert.equal(same.action,'EXIT_SILENT');
+  const changed=watchdogFastPathDecision(terminal,{now:'2099-01-02T12:00:00Z',expected_execution_id:'new-execution'});
+  assert.equal(changed.action,'EXPAND_RECOVERY');
+  assert.equal(changed.reason,'compact_health_execution_mismatch');
+});
+
