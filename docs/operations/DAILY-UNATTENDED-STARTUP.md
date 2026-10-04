@@ -197,3 +197,14 @@ For the next edition:
 4. never reopen a terminal prior edition.
 
 Tracked by DAB-OPS-20261004-004 / DAB-KB-040.
+
+## Low-cost Watchdog admission path
+
+The six-slot Watchdog Ring must use the compact GitHub health record before broad reconstruction. Read protected `data/operations/active-production-run.json`, then the matching `data/operations/watchdog-health.json` from `runtime/watchdog-health`.
+
+A fresh matching `HEALTHY_ACTIVE` record, a matching terminal record, or a valid progressing recovery owner is a silent no-op. Missing, stale, contradictory, mismatched or actionable compact state expands into the normal recovery contract. Never infer HEALTHY from absence.
+
+Fresh external research is an explicit capability. Tasks 03 and 08 are `research_chatgpt`; GitHub-only recovery must hand off the exact queued request immediately instead of repeatedly attempting repository-only recovery.
+
+Before a third materially equivalent repair/retry, apply Strategy Interrupt and require a different method unless new evidence changes the failure hypothesis.
+
