@@ -1,0 +1,12 @@
+{
+  "task_id": "08",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-04T03:37:12.000Z",
+  "reason": "Begin fresh Emerging AI Watchlist research with an authorized current-research consumer after repository-consumer liveness fault.",
+  "proof": {
+    "request_key": "6380c67cd6da13f927255082cf7a3bdf2a2187dbc8151964e44f90e1166bacb8",
+    "writer_generation": 16,
+    "watchdog_handoff": "20261004T031753Z-wd-6380c67cd6da13f927255082cf7a3bdf-handoff.json"
+  }
+}
