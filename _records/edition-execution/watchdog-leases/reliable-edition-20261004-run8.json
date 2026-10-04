@@ -4,9 +4,11 @@
   "incident_id": "wd-df90e7ca681c9a160bf7ceb68693c575",
   "owner_slot": "A",
   "generation": 2,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-04T01:58:30.000Z",
-  "last_heartbeat_at": "2026-10-04T01:58:30.000Z",
-  "expires_at": "2026-10-04T02:13:30.000Z",
-  "action_key": "wa-e6244fdde703c63c07cca22462b22f64"
+  "last_heartbeat_at": "2026-10-04T02:11:31.916Z",
+  "expires_at": "2026-10-04T02:11:31.916Z",
+  "action_key": "wa-e6244fdde703c63c07cca22462b22f64",
+  "released_at": "2026-10-04T02:11:31.916Z",
+  "release_reason": "RECOVERY_VERIFIED_PROGRESSING"
 }
