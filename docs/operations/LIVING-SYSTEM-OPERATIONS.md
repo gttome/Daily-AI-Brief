@@ -1533,3 +1533,14 @@ Run 8 adds the following living requirements:
 - **Timing is evidence, not decoration.** Missing recovered-task timestamps render unavailable; closeout must not fabricate 0-second durations.
 - **Task 29 must inventory incident sources before certifying learning reconciliation.** Late findings use an append-only post-close supplement rather than rewriting historical certification.
 - **The 19:00 normal start must be observed, not assumed.** A missed scheduled allocation must emit a durable missed-start receipt/alert and use the existing single-execution recovery guard.
+
+## Compact control-plane health, Strategy Interrupt, and capability routing
+
+The unattended control plane now has a deterministic compact-health layer in front of semantic recovery. GitHub publishes a bounded runtime health projection every five minutes while production is active. Scheduled Watchdogs use that projection as the normal first read and exit immediately when the exact execution is healthy, terminal, or already owned by a recovery path that is demonstrably progressing. Stale, missing, contradictory, mismatched or actionable health expands safely into the full recovery state machine.
+
+This separates inexpensive health observation from expensive diagnosis. It does not replace the recovery lease, production writer fence, protected repair path, terminal immutability, or exact request binding.
+
+The recovery state machine also implements Strategy Interrupt. Two materially equivalent no-delta failures prevent a third blind retry. The system must diagnose the method, consume any already-green repair or completed prerequisite first, and select a materially different recovery when the prior tactic is not moving durable state.
+
+Executor routing is capability-aware. Fresh external research is distinct from repository mutation. Tasks 03 and 08 are bound to a research-capable ordinary ChatGPT consumer; a GitHub-only owner persists the exact handoff and releases rather than retaining an action it cannot perform. Native image generation, protected CI, deployment and verification retain their own explicit capability boundaries.
+
