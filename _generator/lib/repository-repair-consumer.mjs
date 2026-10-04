@@ -1,6 +1,7 @@
 import {createHash} from 'node:crypto';
 
 export const REPOSITORY_REPAIR_CONSUMER_VERSION = 'repository-repair-consumer-v2';
+export const KNOWN_GOOD_TRANSPORT_PROOF_PATH = '_records/hardening/image-transport/known-good-exact-byte-proof.json';
 export const REPOSITORY_REPAIR_QUEUE_MAX_INTERVALS = 1;
 export const REQUIRED_IMAGE_REPAIR_PROOFS = Object.freeze([
   'fresh_single_story_worker_isolation',
