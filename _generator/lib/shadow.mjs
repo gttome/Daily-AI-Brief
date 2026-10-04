@@ -33,10 +33,12 @@ function frozenManifest(repoRoot,date){
 
 function frozenVideoAllowed(repoRoot,edition,manifest,slot){
   if(!manifest)return false;
-  const relative=manifest?.artifacts?.media?.path;
-  if(typeof relative!=='string'||relative.includes('..')||path.isAbsolute(relative))return false;
+  const spec=manifest?.artifacts?.media,relative=spec?.path;
+  if(typeof relative!=='string'||relative.includes('..')||path.isAbsolute(relative)||!/^git_blob_sha1:[a-f0-9]{40}$/.test(spec?.digest||''))return false;
   try{
-    const media=JSON.parse(fs.readFileSync(path.join(repoRoot,relative),'utf8'));
+    const bytes=fs.readFileSync(path.join(repoRoot,relative));
+    if('git_blob_sha1:'+gitBlobSha1(bytes)!==spec.digest)return false;
+    const media=JSON.parse(bytes.toString('utf8'));
     const sealed=media?.worth_watching?.[slot],canonical=edition?.worth_watching?.[slot];
     if(!sealed||!canonical)return false;
     for(const key of ['status','title','channel','upload_date','runtime_seconds','url'])if((sealed[key]??null)!==(canonical[key]??null))return false;
