@@ -3,20 +3,17 @@
   "execution_id": "reliable-edition-20261004-run8",
   "incident_id": "wd-task23-manifest-contract-37205934438",
   "owner_slot": "E",
-  "generation": 38,
-  "state": "RELEASED",
-  "acquired_at": "2026-10-04T13:54:30.000Z",
-  "last_heartbeat_at": "2026-10-04T14:30:41.418Z",
-  "expires_at": "2026-10-04T14:30:41.418Z",
-  "action_key": "wd-task23-manifest-contract-37205934438:continue-deterministic-manifest-contract-repair:slot-e:g38",
+  "generation": 39,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-04T14:43:00.000Z",
+  "last_heartbeat_at": "2026-10-04T14:43:00.000Z",
+  "expires_at": "2026-10-04T14:58:00.000Z",
+  "action_key": "wd-task23-manifest-contract-37205934438:continue-protected-repair-pr444:slot-e:g39",
   "takeover_from": {
-    "owner_slot": "D",
-    "generation": 37,
+    "owner_slot": "E",
+    "generation": 38,
     "reason": "PRIOR_RECOVERY_RELEASED",
-    "prior_expires_at": "2026-10-04T13:52:56.742Z",
-    "observed_at": "2026-10-04T13:54:30.000Z"
-  },
-  "released_at": "2026-10-04T14:30:41.418Z",
-  "release_reason": "SAFE_BOUNDARY_REACHED",
-  "next_action": "Reconcile remaining stale completed-task protected repair records, rerun Protected Repair Executor, reuse PR 444, merge only exact CI-green head, then resume same Task 23."
+    "prior_expires_at": "2026-10-04T14:30:41.418Z",
+    "observed_at": "2026-10-04T14:43:00.000Z"
+  }
 }
