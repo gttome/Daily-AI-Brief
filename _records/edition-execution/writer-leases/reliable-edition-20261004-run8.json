@@ -7,5 +7,6 @@
   "last_heartbeat_at": "2026-10-04T12:26:37.247Z",
   "expires_at": "2026-10-04T12:26:37.247Z",
   "released_at": "2026-10-04T12:26:37.247Z",
-  "release_reason": "TASK_21_DONE_HANDOFF_TO_SUPERVISOR"
+  "release_reason": "TASK_21_DONE_HANDOFF_TO_SUPERVISOR",
+  "released": true
 }
