@@ -438,19 +438,7 @@ jobs:
                 repair_dir="run/_records/edition-execution/protected-repairs/${EXECUTION_ID}"
                 repair_record=""
                 if [ -d "$repair_dir" ]; then
-                  repair_record="$(node - "$repair_dir" "$request_task" <<'NODE'
-                  const fs=require('fs'),p=require('path'),d=process.argv[2],task=String(process.argv[3]).padStart(2,'0');
-                  const rows=[];
-                  for(const name of fs.readdirSync(d).filter(x=>x.endsWith('.json')).sort()){
-                    const file=p.join(d,name),x=JSON.parse(fs.readFileSync(file,'utf8'));
-                    if(String(x.task_id||'').padStart(2,'0')!==task)continue;
-                    if(!['PROTECTED_REPAIR_REQUIRED','REPAIR_CI_FAIL','REPAIR_MERGE_CONFLICT','REPAIR_RESUME_FAILED'].includes(String(x.state||'')))continue;
-                    rows.push({file,t:Date.parse(x.created_at||0)||0});
-                  }
-                  rows.sort((a,b)=>b.t-a.t||b.file.localeCompare(a.file));
-                  process.stdout.write(rows[0]?.file||'');
-                  NODE
-                  )"
+                  repair_record="$(node -e 'const fs=require("fs"),p=require("path"),d=process.argv[1],task=String(process.argv[2]).padStart(2,"0"),rows=[];for(const name of fs.readdirSync(d).filter(x=>x.endsWith(".json")).sort()){const file=p.join(d,name),x=JSON.parse(fs.readFileSync(file,"utf8"));if(String(x.task_id||"").padStart(2,"0")!==task)continue;if(!["PROTECTED_REPAIR_REQUIRED","REPAIR_CI_FAIL","REPAIR_MERGE_CONFLICT","REPAIR_RESUME_FAILED"].includes(String(x.state||"")))continue;rows.push({file,t:Date.parse(x.created_at||0)||0})}rows.sort((a,b)=>b.t-a.t||b.file.localeCompare(a.file));process.stdout.write(rows[0]?.file||"")' "$repair_dir" "$request_task")"
                 fi
 
                 if [ -z "$repair_record" ]; then
@@ -470,13 +458,7 @@ jobs:
                     repair_head="$(node -e "const x=require('/tmp/protected-repair.json');process.stdout.write(x.repair_branch_head_sha)")"
                     gh pr list --repo "$GITHUB_REPOSITORY" --state all --base main --head "$repair_branch" --limit 20 \
                       --json number,state,headRefOid,body > /tmp/protected-repair-prs.json
-                    repair_pr="$(node - "$repair_key" "$repair_head" <<'NODE'
-                    const fs=require('fs'),[key,head]=process.argv.slice(2),xs=JSON.parse(fs.readFileSync('/tmp/protected-repair-prs.json','utf8'));
-                    const m=xs.filter(x=>String(x.body||'').includes('Repair-Key: '+key)&&x.headRefOid===head);
-                    if(m.length>1){console.error('duplicate_protected_repair_pr');process.exit(2)}
-                    process.stdout.write(String(m[0]?.number||0));
-                    NODE
-                    )"
+                    repair_pr="$(node -e 'const fs=require("fs"),[key,head]=process.argv.slice(1),xs=JSON.parse(fs.readFileSync("/tmp/protected-repair-prs.json","utf8")),m=xs.filter(x=>String(x.body||"").includes("Repair-Key: "+key)&&x.headRefOid===head);if(m.length>1){console.error("duplicate_protected_repair_pr");process.exit(2)}process.stdout.write(String(m[0]?.number||0))' "$repair_key" "$repair_head")"
                     repair_state="NONE"
                     if [ "$repair_pr" -gt 0 ]; then
                       repair_state="$(gh pr view "$repair_pr" --repo "$GITHUB_REPOSITORY" --json state --jq '.state')"
