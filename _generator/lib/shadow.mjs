@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import {importLegacyFile, semanticEditionView} from './import-legacy.mjs';
 import {deepEqualJson, sha256} from './util.mjs';
 import {validateEdition} from './validate.mjs';
@@ -19,6 +20,7 @@ function sameEditionWatchlist(repoRoot,date){
 }
 
 const daysBetween=(a,b)=>(Date.parse(a+'T12:00:00Z')-Date.parse(b+'T12:00:00Z'))/86400000;
+const gitBlobSha1=value=>{const bytes=Buffer.isBuffer(value)?value:Buffer.from(value);return crypto.createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');};
 
 function frozenManifest(repoRoot,date){
   try{
