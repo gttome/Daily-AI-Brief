@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-04T06:22:01Z",
+  "observed_at": "2026-10-04T07:47:11.088993Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -579,11 +579,11 @@
     },
     {
       "id": "DAB-KB-032",
-      "lane": "wip",
+      "lane": "done",
       "priority": "P0",
       "category": "Recovery Autonomy",
       "title": "Complete protected repairs without owner intervention",
-      "summary": "Implement a durable Protected Repair Executor and dead-writer cleanup so actionable incidents cross bounded repair branch → one protected PR → exact-head CI → safe merge → same-task resume → substantive progress without waiting for an owner prompt.",
+      "summary": "Implemented and acceptance-proven: actionable protected repairs now preserve one repair key/PR/scope across exact-head PR validation, protected merge, same-task resume and verified progress, including the recoverable PR merge-context refresh boundary, without routine owner intervention or protection bypass.",
       "acceptance": [
         "A durable protected-repair record deterministically binds execution, task, incident, repair branch/head and repair scope.",
         "Exactly one PR is opened or reused for a repair key; duplicate Watchdogs cannot create duplicates.",
@@ -603,7 +603,17 @@
         "PR #428",
         ".github/workflows/protected-repair-executor.yml",
         "_generator/lib/protected-repair-executor.mjs",
-        "docs/operations/task-recovery-contracts.json"
+        "docs/operations/task-recovery-contracts.json",
+        "DAB-OPS-E-000095",
+        "DAB-OPS-E-000096",
+        "DAB-OPS-E-000097",
+        "PR #433",
+        "CI #37185867323",
+        "PR #436",
+        "CI #37186614579",
+        "PR #431",
+        "CI #37186217728",
+        "docs/operations/PROTECTED-REPAIR-AUTONOMY-IMPLEMENTATION-REPORT-2026-10-04.md"
       ]
     }
   ],
