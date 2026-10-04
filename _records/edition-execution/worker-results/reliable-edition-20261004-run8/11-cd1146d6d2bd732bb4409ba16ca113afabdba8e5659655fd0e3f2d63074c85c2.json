@@ -1,20 +1,13 @@
 {
-  "schema_version": "run-engineering-repair-epoch-v1",
+  "schema_version": "run-engineering-repair-result-v1",
+  "request_key": "cd1146d6d2bd732bb4409ba16ca113afabdba8e5659655fd0e3f2d63074c85c2",
   "execution_id": "reliable-edition-20261004-run8",
   "edition_id": "dab-edition-2026-10-04",
   "branch": "reliable-edition/dab-edition-2026-10-04-run8",
   "task_id": "11",
-  "request_key": "cd1146d6d2bd732bb4409ba16ca113afabdba8e5659655fd0e3f2d63074c85c2",
   "repair_epoch": 2,
-  "epochs_completed": 2,
-  "status": "PASS",
-  "required_proofs": [
-    "fresh_single_story_worker_isolation",
-    "no_people_or_humanoid_visual_primitives",
-    "small_png_exact_byte_transport_preflight_pass",
-    "protected_ci_pass",
-    "operational_learning_updated"
-  ],
+  "status": "passed",
+  "completed_at": "2026-10-04T08:11:54.461Z",
   "required_proofs_passed": true,
   "proofs": {
     "fresh_single_story_worker_isolation": {
@@ -50,9 +43,5 @@
       ]
     }
   },
-  "consumer_version": "repository-repair-consumer-v2",
-  "consumer_writer_generation": 28,
-  "completed_at": "2026-10-04T08:11:54.461Z",
-  "post_repair_attempts": 0,
-  "repair_digest": "sha256:19414d6c920316dd2636da90379d1abc5cc198c6708e95b37d96914aa2d66937"
+  "repair_epoch_ref": "_records/edition-execution/repair-epochs/reliable-edition-20261004-run8/11.json"
 }
