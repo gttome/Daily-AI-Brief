@@ -1,9 +1,23 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "github-actions-37193396610-1",
-  "generation": 51,
-  "acquired_at": "2026-10-04T09:50:08.713Z",
-  "last_heartbeat_at": "2026-10-04T09:50:08.713Z",
-  "expires_at": "2026-10-04T09:55:08.713Z"
+  "owner_id": "watchdog-E:wd-335f455b1d5d15d5171759260d6dadf:task-18:recovery",
+  "generation": 52,
+  "task_id": "18",
+  "capability": "repository",
+  "operation_key": "35c632fcde29b0b026ec0a2d2ea7f29d4697ee45397f789d76aaf60604c63232",
+  "acquired_at": "2026-10-04T09:52:20.000Z",
+  "last_heartbeat_at": "2026-10-04T09:52:20.000Z",
+  "expires_at": "2026-10-04T10:07:20.000Z",
+  "state": "ACTIVE",
+  "released": false,
+  "transfer_from": {
+    "owner_id": "github-actions-37193396610-1",
+    "generation": 51,
+    "reason": "PROVEN_DEAD_OWNER_TAKEOVER",
+    "dead_writer_proof": "_records/edition-execution/dead-writer-proofs/reliable-edition-20261004-run8/20261004T095200000Z-generation-51.json",
+    "workflow_run_id": 37193396610,
+    "conclusion": "failure",
+    "at": "2026-10-04T09:52:20.000Z"
+  }
 }
