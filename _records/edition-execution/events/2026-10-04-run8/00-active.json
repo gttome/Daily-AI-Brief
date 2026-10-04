@@ -1,0 +1,15 @@
+{
+  "task_id": "00",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-04T01:32:36.576Z",
+  "reason_code": "MISSED_START_RECOVERY_ALLOCATION",
+  "operation": "production_readiness_validation",
+  "reason": "October 4 Run 8 allocated after the 19:00 controller missed startup; Task 00 must complete current readiness validation before content production.",
+  "proof": {
+    "protected_main_sha": "3e64dc69f6fcda7a97b2c9f6c33f67c121e2607f",
+    "bootstrap_receipt": "_records/edition-execution/bootstrap/2026-10-04-run8.json",
+    "prior_terminal_execution": "reliable-edition-20261003-run7",
+    "start_scope": "pending_task00_readiness"
+  }
+}
