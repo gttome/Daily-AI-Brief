@@ -615,6 +615,32 @@
         "CI #37186217728",
         "docs/operations/PROTECTED-REPAIR-AUTONOMY-IMPLEMENTATION-REPORT-2026-10-04.md"
       ]
+    },
+    {
+      "id": "DAB-KB-033",
+      "lane": "backlog",
+      "priority": "P0",
+      "category": "Meta-Diagnostic Autonomy",
+      "title": "Trigger Strategy Interrupt when recovery activity is not producing progress",
+      "summary": "Replicate the beneficial effect of owner questions such as “Task 23 is taking way too long” by automatically escalating from local retry to method-level diagnosis when failure signatures repeat, recovery churn produces no substantive delta, or task elapsed time materially exceeds its operating envelope.",
+      "acceptance": [
+        "Two consecutive identical normalized failure signatures trigger Strategy Interrupt before a third blind rerun.",
+        "Two recovery/takeover cycles without substantive durable progress trigger Strategy Interrupt.",
+        "A successful corrective action followed by the same failure signature triggers Strategy Interrupt.",
+        "Strategy Interrupt compares recent action → delta → validation history and explicitly identifies whether the tactic itself is failing.",
+        "After Strategy Interrupt, an identical retry is prohibited unless new evidence changes the failure hypothesis.",
+        "The next action must be materially different in repair target, dependency, evidence binding, promotion path, validator path or execution method.",
+        "Already-green protected repair or completed work that is not connected to the active path is discovered and consumed before new rework is authorized.",
+        "Owner strategy-interrupt language triggers immediate meta-diagnostic escalation but is not required for autonomous detection.",
+        "One-writer, protected-main, terminal-run, no-rework and accepted_locked invariants remain enforced.",
+        "Non-production regression tests prove automatic and owner-triggered behavior."
+      ],
+      "sources": [
+        "DAB-OPS-20261004-002",
+        "docs/operations/OCT4-USAGE-EFFICIENCY-AUDIT-AND-POST-CLOSE-HARDENING-2026-10-04.md",
+        "Run 8 Task 23",
+        "PR #444"
+      ]
     }
   ],
   "reconciliation_contract": {
