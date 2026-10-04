@@ -429,6 +429,14 @@ test('Supervisor workflow contains the one-minute loop, single concurrency lane 
 });
 
 
+test('Supervisor dead-writer proof path avoids indented shell heredocs',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  const acquire=y.slice(y.indexOf('Acquire fenced writer authority for this exact execution'),y.indexOf('Persistent approximately one-minute supervision loop'));
+  assert.match(acquire,/proof_rel="\$\(node -e '/);
+  assert.doesNotMatch(acquire,/node - <<'NODE'/);
+  assert.match(acquire,/dead-writer-proof-final\.json/);
+});
+
 test('Supervisor delegates only when the newest unfinished Tasks 11-16 request is queued for the scheduled image consumer',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
   assert.match(y,/Yield while a scheduled image consumer owns the next operation/);
