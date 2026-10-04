@@ -1,9 +1,14 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "github-actions-37169348459-6",
-  "generation": 15,
-  "acquired_at": "2026-10-04T03:32:59.848Z",
-  "last_heartbeat_at": "2026-10-04T03:32:59.848Z",
-  "expires_at": "2026-10-04T09:32:59.848Z"
+  "owner_id": "scheduled-chatgpt-run8-watchlist-recovery",
+  "generation": 16,
+  "acquired_at": "2026-10-04T03:37:10.000Z",
+  "last_heartbeat_at": "2026-10-04T03:37:10.000Z",
+  "expires_at": "2026-10-04T03:52:10.000Z",
+  "supersedes": {
+    "owner_id": "github-actions-37169348459-6",
+    "generation": 15,
+    "reason": "orchestration-only supervisor lease with persisted repository_consumer_unclaimed liveness fault; no substantive Task 08 progress"
+  }
 }
