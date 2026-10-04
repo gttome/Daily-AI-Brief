@@ -268,6 +268,27 @@ export function validateTaskRecoveryContracts(contract = {}) {
       if (typeof repair.post_repair_operation !== 'string' || !repair.post_repair_operation.trim()) errors.push(`engineering_repair_post_operation:${id}`);
     }
   }
+  const autonomy=contract.protected_repair_autonomy;
+  if(!autonomy||autonomy.schema_version!=='protected-repair-autonomy-contract-v1'||autonomy.enabled!==true)
+    errors.push('protected_repair_autonomy_contract');
+  else{
+    if(autonomy.executor_workflow!=='.github/workflows/protected-repair-executor.yml')errors.push('protected_repair_executor_workflow');
+    if(autonomy.exact_one_pr_per_repair_key!==true)errors.push('protected_repair_one_pr');
+    if(autonomy.exact_head_ci_required!==true)errors.push('protected_repair_exact_head_ci');
+    if(autonomy.active_execution_and_task_revalidation_before_merge!==true)errors.push('protected_repair_revalidation');
+    if(autonomy.direct_main_write_allowed!==false)errors.push('protected_repair_no_direct_main');
+    if(autonomy.merge_is_recovery_success!==false)errors.push('protected_repair_merge_not_success');
+    if(autonomy.same_execution_resume_required!==true||autonomy.same_task_resume_required!==true)errors.push('protected_repair_same_task_resume');
+    if(autonomy.real_executor_required_for_success!==true||autonomy.substantive_durable_progress_required_for_success!==true)errors.push('protected_repair_progress_semantics');
+    if(autonomy.invariant!=='actionable_recovery_must_not_terminate_at_owner_prompt_boundary')errors.push('protected_repair_owner_boundary_invariant');
+    const dead=autonomy.dead_writer_cleanup||{};
+    if(dead.live_writer_takeover_allowed!==false||dead.terminal_workflow_status_required!=='completed')errors.push('dead_writer_takeover_contract');
+    if(JSON.stringify(dead.terminal_conclusions)!==JSON.stringify(['failure','cancelled']))errors.push('dead_writer_terminal_conclusions');
+    if(dead.workflow_run_identity_must_match_owner!==true||dead.child_worker_live_forbids_takeover!==true||dead.post_terminal_substantive_write_forbids_takeover!==true)
+      errors.push('dead_writer_evidence_contract');
+    for(const key of ['chatgpt_work','codex','paid_apis','paid_external_services','new_credentials','alternate_accounts','browser_automation'])
+      if(autonomy.cost_boundary?.[key]!==false)errors.push('protected_repair_cost_boundary:'+key);
+  }
   return uniq(errors);
 }
 
