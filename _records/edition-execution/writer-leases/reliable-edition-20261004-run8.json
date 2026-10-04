@@ -1,22 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "watchdog-F:wd-2cce2bdf9b238e7c5f473f42b4b43d03:task-17:ci-pass-record",
-  "generation": 43,
-  "task_id": "17",
-  "capability": "repository",
-  "operation_key": "repair-818233a7f4bb0a3684ed04efba57e4cc62a4115f",
-  "acquired_at": "2026-10-04T09:12:57.346Z",
-  "last_heartbeat_at": "2026-10-04T09:12:57.346Z",
-  "expires_at": "2026-10-04T09:12:57.346Z",
-  "state": "RELEASED",
-  "released": true,
-  "transfer_from": {
-    "owner_id": "watchdog-F:wd-2cce2bdf9b238e7c5f473f42b4b43d03:task-17:repair-record-refresh",
-    "generation": 42,
-    "reason": "PROTECTED_REPAIR_CI_PASS_RECORD",
-    "at": "2026-10-04T09:12:57.346Z"
-  },
-  "released_at": "2026-10-04T09:12:57.346Z",
-  "release_reason": "PROTECTED_REPAIR_CI_PASS_HANDOFF_TO_PROTECTED_MERGE"
+  "owner_id": "github-actions-37191442205-1",
+  "generation": 44,
+  "acquired_at": "2026-10-04T09:13:28.774Z",
+  "last_heartbeat_at": "2026-10-04T09:13:28.774Z",
+  "expires_at": "2026-10-04T09:18:28.774Z"
 }
