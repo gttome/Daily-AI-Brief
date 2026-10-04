@@ -2,12 +2,12 @@
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
   "incident_id": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch",
-  "owner_slot": "F",
-  "generation": 28,
+  "owner_slot": "E",
+  "generation": 29,
   "state": "ACTIVE",
-  "acquired_at": "2026-10-04T09:49:24.517Z",
-  "last_heartbeat_at": "2026-10-04T09:49:24.517Z",
-  "expires_at": "2026-10-04T10:04:24.517Z",
-  "action_key": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch:reconcile-task17-done-handoff:g28",
+  "acquired_at": "2026-10-04T09:47:27.000Z",
+  "last_heartbeat_at": "2026-10-04T09:47:27.000Z",
+  "expires_at": "2026-10-04T10:02:27.000Z",
+  "action_key": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch:protected-handoff-repair-resume:g28",
   "released": false
 }
