@@ -7,8 +7,10 @@
   "operation_key": "consume-815988263cea8b4ca83db091aa9f950d6d1a8221b504014b81c79a4f37ba3f5b",
   "capability": "native_chatgpt",
   "acquired_at": "2026-10-04T06:41:15.000Z",
-  "last_heartbeat_at": "2026-10-04T06:41:15.000Z",
-  "expires_at": "2026-10-04T06:56:15.000Z",
-  "state": "ACTIVE",
-  "released": false
+  "last_heartbeat_at": "2026-10-04T06:44:30.000Z",
+  "expires_at": "2026-10-04T06:44:30.000Z",
+  "state": "RELEASED",
+  "released_at": "2026-10-04T06:44:30.000Z",
+  "release_reason": "TASK_11_BLOCKED_HANDOFF_TO_SUPERVISOR",
+  "released": true
 }
