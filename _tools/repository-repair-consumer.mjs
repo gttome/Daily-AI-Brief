@@ -4,7 +4,8 @@ import path from 'node:path';
 import {
   REPOSITORY_REPAIR_CONSUMER_VERSION,
   queuedRepositoryRepairDecision,
-  buildImageEngineeringRepairReceipt
+  buildImageEngineeringRepairReceipt,
+  resolveRegisteredTransportProof
 } from '../_generator/lib/repository-repair-consumer.mjs';
 
 const argv=process.argv.slice(2),command=argv.shift(),args={};
@@ -49,7 +50,10 @@ try{
 
   const contracts=readJson(path.join(controlRoot,'docs/operations/task-recovery-contracts.json'));
   const taskContract=contracts.tasks?.[incoming.task_id];
-  const transportPath=path.join(runRoot,'_records/image-attempts',executionKey,'m03-attempt-2.json');
+  const hostRegistration=readJson(path.join(controlRoot,'docs/operations/unattended-image-host.json'));
+  const registeredTransport=resolveRegisteredTransportProof(hostRegistration);
+  if(!registeredTransport.ok) throw Error('known_good_transport_proof_registration_invalid:'+registeredTransport.errors.join(','));
+  const transportPath=path.join(controlRoot,registeredTransport.path);
   if(!fs.existsSync(transportPath)) throw Error('known_good_transport_proof_missing');
   const transportAttempt=readJson(transportPath);
   const ledgerPath=path.join(controlRoot,'data/operations/production-continuous-improvement-ledger.jsonl');
