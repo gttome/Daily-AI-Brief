@@ -6,6 +6,18 @@ const catalog = JSON.parse(fs.readFileSync(new URL('../../_data/book-reading.jso
 const html = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const SERIES_SEPARATION_DATE='2026-09-16';
 const MULTI_PODCAST_DATE='2026-09-18';
+const FROZEN_READER_MIGRATION_CUTOFF='2026-10-04';
+function frozenReaderMigration(data,date){
+  const m=data?.frozen_migrations?.[date];
+  return date<=FROZEN_READER_MIGRATION_CUTOFF&&m?.contract_transition==='pre-2026-10-05-frozen-reader-recovery'?m:null;
+}
+function readFrozenRepoJson(relative){
+  if(typeof relative!=='string'||!/^_records\/[A-Za-z0-9_./-]+\.json$/.test(relative)||relative.includes('..'))throw Error('Invalid frozen migration evidence path');
+  return JSON.parse(fs.readFileSync(new URL('../../'+relative,import.meta.url),'utf8'));
+}
+function canonicalBookRows(rows=[]){
+  return JSON.stringify([...rows].sort((a,b)=>a.item_id.localeCompare(b.item_id)).map(({item_id,reference_id,why})=>({item_id,reference_id,why})));
+}
 export const readerRelease = date => date >= '2026-09-12';
 export const readerAddition = content => content ? `<!-- reader-release:start -->\n${content}\n<!-- reader-release:end -->` : '';
 const runtimeLabel=value=>{
@@ -35,13 +47,22 @@ export function validateBookReading(edition, data = catalog) {
     if(s.practice&&!r.practice_title)throw Error('Practice recommendation requires a verified exercise or checklist');
   }
   if(edition.brief_date>=BOOK_COVERAGE_DATE){
-    const result=selectBookReferences(edition,data,data.selection_reviews?.[edition.brief_date]);
-    const canonical=rows=>JSON.stringify([...rows].sort((a,b)=>a.item_id.localeCompare(b.item_id)).map(({item_id,reference_id,why})=>({item_id,reference_id,why})));
-    if(canonical(result.selections)!==canonical(selections))throw Error('Book mappings must match the full-catalog semantic selection');
+    const migration=frozenReaderMigration(data,edition.brief_date);
+    if(migration?.book_mapping_source){
+      const artifact=readFrozenRepoJson(migration.book_mapping_source);
+      const review=readFrozenRepoJson(artifact.source_review_path);
+      const expected=artifact?.editions?.[edition.brief_date]||[];
+      if(artifact?.edition_id!==edition.edition_id||review?.edition_id!==edition.edition_id||review?.result!=='PASS')throw Error('Frozen book migration evidence is not bound to the current edition');
+      if(canonicalBookRows(expected)!==canonicalBookRows(selections))throw Error('Book mappings must match frozen Task 09 mapping evidence');
+    }else{
+      const result=selectBookReferences(edition,data,data.selection_reviews?.[edition.brief_date]);
+      if(canonicalBookRows(result.selections)!==canonicalBookRows(selections))throw Error('Book mappings must match the full-catalog semantic selection');
+    }
   }
 }
 export function renderBookReading(itemId,date){
   if(!readerRelease(date))return '';
+  if(frozenReaderMigration(catalog,date)?.suppress_reader_book_bridges===true)return '';
   const s=(catalog.editions[date]||[]).find(x=>x.item_id===itemId);
   if(!s)return '';
   const r=catalog.references[s.reference_id];
@@ -51,6 +72,7 @@ export function renderBookReading(itemId,date){
 }
 export function renderSeriesInvitation(date){
   if(!readerRelease(date))return '';
+  if(frozenReaderMigration(catalog,date)?.suppress_reader_book_bridges===true)return '';
   if(date<SERIES_SEPARATION_DATE)return readerAddition(`<aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning. Explore George Tome’s books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Written by the curator of this brief. Buying a book supports his work.</p></aside>`);
   return readerAddition(`<aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning with books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Purchasing a book supports continued development of the series and the Daily Generative AI Brief.</p></aside>`);
 }
