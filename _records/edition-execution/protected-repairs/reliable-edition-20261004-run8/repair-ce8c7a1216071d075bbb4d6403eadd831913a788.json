@@ -17,5 +17,17 @@
   "created_at": "2026-10-04T09:20:31.674Z",
   "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
   "diagnosis": "The Task 17 consumer required accepted_locked/status fields embedded in image-attempt receipts. The current protected image contract instead records immutable acceptance locks that reference repair-epoch attempt receipts and separate saved-Git reviews; it also permits accepted professional PNG transport dimensions other than one hard-coded size. All six accepted assets remain valid and immutable.",
-  "next_stage": "Open exactly one protected repair PR for the bounded consumer/test change, require exact-head pull_request validate PASS, merge to protected main, and resume the SAME queued Task 17 request."
+  "next_stage": "Merge PR #441 only at exact head ce8c7a1216071d075bbb4d6403eadd831913a788, then resume the same queued Task 17 request and require durable Task 17 completion.",
+  "last_recovery_stage": {
+    "state": "REPAIR_PR_VALIDATE_PASS",
+    "pr_number": 441,
+    "repair_head": "ce8c7a1216071d075bbb4d6403eadd831913a788",
+    "ci_run_id": 37191854627,
+    "ci_conclusion": "success",
+    "pull_request_validate_attached": true,
+    "same_execution_revalidated": true,
+    "same_task_revalidated": "17",
+    "repair_key_preserved": true,
+    "scope_digest_preserved": true
+  }
 }
