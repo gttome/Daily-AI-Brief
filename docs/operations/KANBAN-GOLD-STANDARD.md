@@ -27,3 +27,17 @@ Task 00 loads this specification before a Kanban/status rendering and verifies t
 Kanban metrics and projections are **observability only**. They measure and display the production system; they never control, gate, block, pause, retry, stop, authorize, consume retry budget, create a worker, or change production task state.
 
 A stale, missing or contradictory Kanban is a telemetry defect only. Authoritative task state comes from execution contracts and append-only transition evidence. Reproject the Kanban separately while production continues from authoritative state.
+
+<!-- oct4-timing-integrity -->
+## October 4 timing integrity amendment
+
+Run 8 exposed a timing-projection defect: recovered/bulk-closeout Tasks 23–29 were shown as `0s`, while Task 17 was effectively near-zero/unavailable despite meaningful orchestration around those boundaries.
+
+The gold standard therefore requires:
+
+- never infer `0s` merely because `entered_backlog_at` and `done_at` were written by the same terminal-closeout reconciliation;
+- when authoritative start evidence is missing, display **unavailable**, not zero;
+- where recovery events provide a trustworthy active/recovery interval, preserve that elapsed evidence rather than replacing it with closeout bookkeeping;
+- timing defects remain observability-only and never reopen a completed production task.
+
+Tracked by DAB-OPS-20261002-021 recurrence / DAB-KB-038.

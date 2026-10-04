@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:67cb336e672c97c698d5129b760f6e2f8765583c5fe762fc9a1dc93b74b190c1`
+Ledger digest: `sha256:a533f451459519b7b6c3e0e7e52968da9f1def03ac567d4c7b59783c5699b6a5`
 
-Problems: 52 · Events: 97
+Problems: 62 · Events: 112
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -118,18 +118,18 @@ Problems: 52 · Events: 97
 
 - **Status:** permanently_fixed
 - **First observed run:** reliable-edition-20261001-run3
-- **Task(s):** unknown
+- **Task(s):** 07
 - **Symptom:** A task remained Active after its executor stopped
 - **Root cause:** Task state and executor liveness were recorded independently but no persistent authority reconciled them automatically.
 - **Operational impact:** The Kanban could show work as Active while no executor was actually advancing it.
 - **Timing impact:** unknown / not safely inferable
 - **Attempted fixes:** Historical production evidence was reviewed; prior temporary/ad hoc recovery was treated as insufficient until the permanent control below was installed.
 - **Actual fix:** Supervisor classifies stale Active state from durable progress and executor evidence and resumes/reconciles the same task under a fenced writer.
-- **Fix outcome:** Permanent control encoded in protected production code/contract with regression coverage.
+- **Fix outcome:** Watchdog F reused the existing evidence, recorded Done, advanced the task pointer and restarted supervision; editorial work was not repeated.
 - **Permanent implementation:** _generator/lib/run-supervisor.mjs#classifyRunHealth
 - **Regression tests:** _generator/test/run-supervisor.test.mjs
-- **Production invariants:** stale-active-must-auto-recover, single-writer-fence-v1
-- **Recurrences:** none recorded
+- **Production invariants:** stale-active-must-auto-recover, single-writer-fence-v1, known_durable_outcome_with_incomplete_bookkeeping_must_be_reconciled_not_regenerated, stale_active_requires_executor_and_substantive_progress_evidence
+- **Recurrences:** Task 07 had complete saved podcast evidence, but no Done transition was recorded and its writer lease expired without handoff.
 - **Future validation:** Task 00 must prove stale-active-must-auto-recover | Task 00 must prove single-writer-fence-v1
 
 ## DAB-OPS-20261001-005 — Run 3 regressed to basic SVG imagery instead of the proven professional image path
@@ -350,21 +350,21 @@ Problems: 52 · Events: 97
 
 ## DAB-OPS-20261001-017 — Long-running orchestration context contaminated repeated m08 story-image generations
 
-- **Status:** permanently_fixed
+- **Status:** mitigated
 - **First observed run:** reliable-edition-20261001-run4
 - **Task(s):** 15, 11
 - **Symptom:** m01 attempts 1-3 all ignored the sealed MAI-Transcribe-2-Streaming mechanism and rendered unrelated general-AI visuals; no invalid pixels were persisted.
 - **Root cause:** The Supervisor recovery decision counted context-mismatch attempts like ordinary candidate-quality rejections, allowing alternate recovery inside the same execution context instead of immediately invoking the engineering-repair epoch.
 - **Operational impact:** Two bounded image attempts were spent on the wrong subject and Task 15 was delayed.
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Run attempt 4 from a fresh context containing only the sealed Business Skill image specification.
-- **Actual fix:** Normalize targeted_next_action as recoverable image evidence; detect wrong-subject, sealed-prompt displacement and execution-context contamination; force the image engineering-repair epoch immediately; document that a fresh one-story worker is the only permitted post-repair generator.
+- **Attempted fixes:** Run attempt 4 from a fresh context containing only the sealed Business Skill image specification. | Reject contaminated attempts before transport, prohibit same-context blind repetition, rotate writer authority and continue the same Task 11 in a fresh isolated story-only context.
+- **Actual fix:** A later isolated repair epoch generated the correct m02 image and it was accepted_locked without regenerating any previously accepted image.
 - **Fix outcome:** Same-context retries are now structurally bypassed after the first context mismatch. Run 7 Task 11 remains the same blocked candidate and completed Tasks 00-10 are preserved.
 - **Permanent implementation:** docs/operations/task-recovery-contracts.json, _generator/lib/repository-repair-consumer.mjs, _generator/lib/run-supervisor.mjs, docs/operations/LIVING-SYSTEM-OPERATIONS.md
 - **Regression tests:** _generator/test/repository-repair-consumer.test.mjs, _generator/test/run-supervisor.test.mjs
 - **Production invariants:** fresh_single_story_image_worker_after_context_mismatch, context_mismatch_bypasses_same_context_retry, same_execution_continues_without_rework
-- **Recurrences:** none recorded
-- **Future validation:** Task 00 must prove fresh_single_story_image_worker_after_context_mismatch | A future context-mismatch attempt must produce engineering_repair on the next Supervisor decision even when recovery_attempts is below retry_limit.
+- **Recurrences:** Two native generations returned Watchdog operational dashboards instead of the sealed backend-state verification diagram; a later repair-epoch attempt also failed subject/context isolation.
+- **Future validation:** Task 00 must prove fresh_single_story_image_worker_after_context_mismatch | A future context-mismatch attempt must produce engineering_repair on the next Supervisor decision even when recovery_attempts is below retry_limit. | Native image generation must receive only the sealed single-story visual packet and image-quality instructions, never Watchdog/Supervisor/Kanban recovery prose. | Measure first-attempt subject/context isolation on the next production image set.
 
 ## DAB-OPS-20261001-018 — Repository engineering-repair request was queued without any active consumer
 
@@ -663,14 +663,14 @@ Problems: 52 · Events: 97
 - **Root cause:** The earlier repository-explicit handoff repair covered run-supervisor dispatch but no direct regression test protected the separate frozen-publication dispatcher. Its publish-candidate and existing-merge delta-validation branches both omitted -R repo.
 - **Operational impact:** The run preserved all accepted images and completed evidence but stalled at the Task 16 to Task 17 boundary until status inspection.
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Convert fence transfer into a graceful Supervisor yield, immediately restart failed/cancelled Supervisors via workflow_run, add an explicit writer-release handoff workflow for reliable-edition branches, and refresh the protected active-run pointer to Task 17. | Tighten the event-driven handoff workflow so only an exact released Task 11-16 lease for the active same execution can resume supervision. | Exercise the real event-driven writer-handoff workflow from an explicit synthetic Task 11 release and require same-execution Supervisor dispatch with no rework.
-- **Actual fix:** Pass -R repo on both workflow dispatches and add direct regression coverage that fails if either dispatch returns to repository inference.
+- **Attempted fixes:** Convert fence transfer into a graceful Supervisor yield, immediately restart failed/cancelled Supervisors via workflow_run, add an explicit writer-release handoff workflow for reliable-edition branches, and refresh the protected active-run pointer to Task 17. | Tighten the event-driven handoff workflow so only an exact released Task 11-16 lease for the active same execution can resume supervision. | Exercise the real event-driven writer-handoff workflow from an explicit synthetic Task 11 release and require same-execution Supervisor dispatch with no rework. | Make Task 17 repository dispatch explicit and resume the same execution/task after protected CI.
+- **Actual fix:** Protected repair PR #440 made repository identity explicit for the Task 17 dispatch path and the same task resumed.
 - **Fix outcome:** Implementation prepared for protected CI; Run 7 remains frozen at the exact candidate SHA, Tasks 00-22 and all six accepted_locked images remain unchanged, and publication is not bypassed.
 - **Permanent implementation:** .github/workflows/run-supervisor.yml, .github/workflows/run-supervisor-watchdog.yml, .github/workflows/run-supervisor-handoff.yml, data/operations/active-production-run.json, _generator/lib/run-supervisor.mjs, _tools/run-supervisor.mjs, _generator/lib/pre-next-run-rehearsal.mjs, _records/hardening/pre-next-run-five-change-2026-10-02/synthetic-handoff-result.json, _tools/dispatch-frozen-publication.mjs
 - **Regression tests:** protected deterministic CI workflow syntax/contracts, same-run restart must acquire a fresh writer generation and advance from Task 17 without touching Tasks 00-16, _generator/test/run-supervisor.test.mjs, _generator/test/pre-next-run-rehearsal.test.mjs, _generator/test/dispatch-frozen-publication.test.mjs
 - **Production invariants:** writer_fence_transfer_is_a_handoff_not_a_production_failure, explicit_worker_release_resumes_same_execution, completed_tasks_are_never_redone_during_handoff, cron_is_not_the_only_run_liveness_mechanism, active_pointer_matches_durable_run_boundary, ambiguous_release_never_dispatches_supervisor, handoff_dispatch_is_repository_explicit, completed_tasks_are_not_redone, terminal_rehearsal_supervisor_is_noop, nonproduction_rehearsal_never_allocates_production, all_gh_workflow_dispatches_from_workspace_root_are_repository_explicit, frozen_candidate_resumes_same_execution, publication_requires_protected_executor, accepted_images_are_immutable
-- **Recurrences:** none recorded
-- **Future validation:** Verify merge triggers the existing Run 5 Supervisor through the refreshed active-run pointer. | Verify the same execution acquires a fresh writer generation after released generation 9. | Verify Task 17 is the next task and Tasks 00-16 remain Done. | On the next native-image worker release, verify the writer-handoff workflow resumes the Supervisor without owner/status intervention. | Bounded rehearsal must prove worker release advances the same synthetic Supervisor execution and preserves already-completed synthetic tasks. | Confirm a real Task 11-16 release dispatches the same production execution and continues with the first incomplete dependent task. | After protected merge, confirm the same Run 7 Supervisor dispatches publish-candidate.yml and the exact frozen candidate advances through protected publication.
+- **Recurrences:** The Supervisor invoked gh workflow run from a workflow root that was not a Git repository; repository discovery failed before the Task 17 consumer started.
+- **Future validation:** Verify merge triggers the existing Run 5 Supervisor through the refreshed active-run pointer. | Verify the same execution acquires a fresh writer generation after released generation 9. | Verify Task 17 is the next task and Tasks 00-16 remain Done. | On the next native-image worker release, verify the writer-handoff workflow resumes the Supervisor without owner/status intervention. | Bounded rehearsal must prove worker release advances the same synthetic Supervisor execution and preserves already-completed synthetic tasks. | Confirm a real Task 11-16 release dispatches the same production execution and continues with the first incomplete dependent task. | After protected merge, confirm the same Run 7 Supervisor dispatches publish-candidate.yml and the exact frozen candidate advances through protected publication. | Audit every gh workflow dispatch path for explicit repository identity instead of current-working-directory inference. | Require path-level regression coverage for every new dispatcher.
 
 ## DAB-OPS-20261002-017 — Recovery-only scheduled image-host qualification passed after binding exact completed scheduler evidence and exact PNG-header metadata corrections.
 
@@ -746,21 +746,21 @@ Problems: 52 · Events: 97
 
 ## DAB-OPS-20261002-021 — Kanban presentation must use Backlog, WIP and Done in that left-to-right order, with task-level durations and total Brief elapsed time.
 
-- **Status:** permanently_fixed
+- **Status:** mitigated
 - **First observed run:** unknown
-- **Task(s):** 22
+- **Task(s):** 22, 23
 - **Symptom:** A Run 5 Kanban used reversed/redundant workflow columns, included a separate Current column, replaced some durations with state words, and omitted total Brief elapsed time.
 - **Root cause:** The Kanban projection contract defined event-derived state but did not define a canonical visual column order or mandatory timing presentation.
 - **Operational impact:** The board was harder to scan and could not reliably support bottleneck or end-to-end speed comparison across runs.
 - **Timing impact:** 0 seconds
-- **Attempted fixes:** Record the owner correction as durable learning without regenerating the already-completed Run 5 board. | Promote the owner-approved reporting rules from prose into the canonical projection and validator. | Validate the owner-approved Kanban projection against synthetic append-only evidence and the five required failing fixtures before next production authorization.
-- **Actual fix:** Protected CI verified exactly Backlog/WIP/Done, no Current, active-to-WIP, Tasks 00-29, per-task duration or unavailable, total Brief elapsed and stale-digest rejection; durable proof was sealed in the rehearsal closeout.
+- **Attempted fixes:** Record the owner correction as durable learning without regenerating the already-completed Run 5 board. | Promote the owner-approved reporting rules from prose into the canonical projection and validator. | Validate the owner-approved Kanban projection against synthetic append-only evidence and the five required failing fixtures before next production authorization. | Preserve terminal task truth but treat timing as a separate evidence-quality problem rather than infer durations from closeout bookkeeping.
+- **Actual fix:** No historical timing was fabricated; the issue is documented for correction in the timing projection.
 - **Fix outcome:** PASS; the next-run gate no longer depends on prose-only Kanban requirements.
 - **Permanent implementation:** docs/operations/run-learning-readiness-contract.json, docs/operations/LIVING-SYSTEM-OPERATIONS.md, _generator/lib/run-supervisor.mjs, _tools/run-supervisor.mjs, _generator/lib/pre-next-run-rehearsal.mjs, _records/hardening/pre-next-run-five-change-2026-10-02/synthetic-kanban-proof.json
 - **Regression tests:** Pending: reject wrong column order, a separate Current column, missing per-task duration, or missing total Brief elapsed time., _generator/test/run-supervisor.test.mjs, _generator/test/fixtures/kanban-contract-failures.json, _generator/test/pre-next-run-rehearsal.test.mjs
 - **Production invariants:** kanban_columns_are_backlog_wip_done_left_to_right, current_is_not_a_separate_column_active_task_is_wip, every_task_card_displays_duration, missing_duration_is_explicitly_unavailable_not_replaced_by_status, kanban_displays_total_brief_elapsed_time, kanban_timing_comes_from_append_only_transition_evidence, stale_kanban_projection_fails_closed, missing_duration_is_unavailable_not_inferred
-- **Recurrences:** none recorded
-- **Future validation:** Generate the next production Kanban with exactly Backlog, WIP and Done columns in that order. | Verify every Task 00-29 card shows its duration or explicit unavailable. | Verify total Brief elapsed time is shown from run start to observation time while active and frozen at terminal completion. | Bounded rehearsal must generate and validate a 30-task synthetic board using the exact contract before next production allocation. | Render the first real post-hardening Kanban from append-only events and verify task durations plus total elapsed remain present.
+- **Recurrences:** Tasks 23-29 were bulk-closed at the same timestamp and displayed 0s even though Task 23 had consumed substantial real elapsed time; Task 17 also had unusable near-zero timing.
+- **Future validation:** Generate the next production Kanban with exactly Backlog, WIP and Done columns in that order. | Verify every Task 00-29 card shows its duration or explicit unavailable. | Verify total Brief elapsed time is shown from run start to observation time while active and frozen at terminal completion. | Bounded rehearsal must generate and validate a 30-task synthetic board using the exact contract before next production allocation. | Render the first real post-hardening Kanban from append-only events and verify task durations plus total elapsed remain present. | Never synthesize 0s from a closeout timestamp when authoritative active-start evidence is absent. | Use explicit unavailable for missing timing and preserve recovered-task elapsed intervals from append-only task/recovery events.
 
 ## DAB-OPS-20261002-022 — Corrected reader-facing book, coverage, media-duration, and Watchlist transparency copy and hardened future rendering.
 
@@ -928,17 +928,197 @@ Problems: 52 · Events: 97
 
 - **Status:** permanently_fixed
 - **First observed run:** reliable-edition-20261004-run8
-- **Task(s):** 11
+- **Task(s):** 11, 23
 - **Symptom:** Recovery repeatedly reached a safe boundary equivalent to 'protected PR required' without a capable executor crossing PR, exact-head CI, merge and same-task resume.
 - **Root cause:** Protected repair promotion was modeled as an owner handoff rather than an executable durable recovery state machine; writer takeover also depended on lease age/boolean authorization instead of exact terminal workflow evidence.
 - **Operational impact:** A recoverable production defect could remain blocked until the owner asked why progress had stopped, despite diagnosis and a bounded repair already existing.
 - **Timing impact:** unknown / not safely inferable
 - **Attempted fixes:** Add a repository-native Protected Repair Executor that consumes deterministic durable repair records, deduplicates to one PR, requires exact-head deterministic CI, safely merges only the same active execution/task, resumes that same task, and refuses to count merge alone as recovery success. Require exact completed/failure or completed/cancelled workflow evidence before superseding an unexpired GitHub Actions writer.
 - **Actual fix:** Preserve the same repair key, scope, branch and PR; distinguish a merge-authorizing pull_request validate check from workflow-dispatch-only/action_required validation; persist REPAIR_PR_CONTEXT_REFRESH_REQUIRED when GitHub protected merge context is absent; let an equivalent connected Watchdog synchronize current main when needed, refresh the existing PR head through the already-authorized GitHub identity, update the same repair record head, require fresh exact-head pull_request validate PASS, then resume protected merge and same-task recovery.
-- **Fix outcome:** Synthetic PR #433 crossed PR creation/reuse, exact-head PR validation, protected merge and required durable PASS flags with OWNER_PROMPT_REQUIRED=false. Generic hardening PR #436 then made missing PR merge context a durable recoverable stage. All six live Watchdogs were normalized to the same procedure. Separately, the existing Run 8 Task 11 repair PR #431 was reused, synchronized without repair-scope drift, passed fresh exact-head pull_request CI and merged.
+- **Fix outcome:** The same publication PR and repair PR identities were reused, exact-head checks passed, protected merges completed and the same execution reached live_verified.
 - **Permanent implementation:** _generator/lib/protected-repair-executor.mjs, _tools/protected-repair-executor.mjs, .github/workflows/protected-repair-executor.yml, _generator/lib/run-supervisor.mjs, .github/workflows/run-supervisor.yml, _generator/lib/chatgpt-watchdog-ring.mjs, docs/operations/task-recovery-contracts.json, _generator/test/protected-repair-executor.test.mjs, docs/operations/CHATGPT-WATCHDOG-RING.md, docs/operations/LIVING-SYSTEM-OPERATIONS.md
 - **Regression tests:** _generator/test/protected-repair-executor.test.mjs, Deterministic publication CI run 37186614579
-- **Production invariants:** actionable_recovery_must_not_terminate_at_owner_prompt_boundary, one_repair_key_one_protected_pr, exact_head_ci_required_before_merge, live_or_unproven_writer_cannot_be_stolen, merge_alone_is_not_recovery_success, same_execution_same_task_resume_required, accepted_locked_assets_immutable, completed_tasks_not_rerun, no_work_codex_paid_api_new_credentials, same_repair_key_same_pr_same_scope, exact_head_pull_request_validate_required_for_protected_merge, no_admin_or_ruleset_bypass, completed_tasks_and_accepted_locked_assets_are_immutable
-- **Recurrences:** none recorded
+- **Production invariants:** actionable_recovery_must_not_terminate_at_owner_prompt_boundary, one_repair_key_one_protected_pr, exact_head_ci_required_before_merge, live_or_unproven_writer_cannot_be_stolen, merge_alone_is_not_recovery_success, same_execution_same_task_resume_required, accepted_locked_assets_immutable, completed_tasks_not_rerun, no_work_codex_paid_api_new_credentials, same_repair_key_same_pr_same_scope, exact_head_pull_request_validate_required_for_protected_merge, no_admin_or_ruleset_bypass, completed_tasks_and_accepted_locked_assets_are_immutable, safe_boundary_handoff_is_not_recovery_success, later_watchdog_resumes_same_incident_stage, no_duplicate_repair_pr_or_publication_pr, no_direct_main_or_protection_bypass
+- **Recurrences:** Task 22 PR creation and a Task 23 protected repair merge/reconciliation were temporarily unavailable in individual Watchdog invocations; later slots resumed the same incident/repair rather than bypassing protection or creating duplicates.
 - **Future validation:** Require deterministic publication CI PASS on the exact final hardening PR head before merge. | After protected merge, trigger the isolated synthetic protected-repair proof branch and verify it autonomously opens exactly one PR, waits for exact-head CI PASS, merges the unchanged head, and records SAME_TASK_RESUMED plus RECOVERY_VERIFIED_PROGRESSING without an owner prompt. | Verify the synthetic proof never mutates the production active pointer, production task events, accepted_locked assets, image requests, or production execution identity. | On the next real actionable protected repair, verify the Watchdog persists one deterministic repair record and a later slot resumes the exact failed stage rather than rediscovering the incident. | On the next failed/cancelled GitHub Actions writer, verify append-only dead-writer proof is persisted and the replacement generation is greater; verify an in-progress writer cannot be stolen.
+
+## DAB-OPS-20261004-002 — Recovery lacked an automatic Strategy Interrupt when repeated activity stopped reducing uncertainty.
+
+- **Status:** open
+- **First observed run:** reliable-edition-20261004-run8
+- **Task(s):** 23
+- **Symptom:** Task 23 cycled through leases, CI attempts, handoffs and reconciliation while the recovery method itself was not challenged quickly enough.
+- **Root cause:** Fix-to-Progress enforces persistence but does not yet force a meta-diagnostic change of tactic when normalized failure signatures repeat or control-plane churn produces no substantive delta.
+- **Operational impact:** The owner question that Task 23 was taking too long triggered a materially better diagnosis; autonomy should reproduce that strategy-level interruption without owner prompting.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** none recorded
+- **Actual fix:** not yet determined
+- **Fix outcome:** not recorded
+- **Permanent implementation:** none
+- **Regression tests:** none
+- **Production invariants:** two_identical_failure_signatures_trigger_strategy_interrupt_before_third_blind_retry, two_recovery_cycles_without_substantive_delta_trigger_strategy_interrupt, identical_retry_prohibited_after_strategy_interrupt_without_new_evidence
+- **Recurrences:** none recorded
+- **Future validation:** Implement and test Strategy Interrupt / Meta-Diagnostic Escalation before relying on repeated autonomous recovery. | Require action -> durable delta -> validation-result comparison and discovery of already-green prerequisite repairs before another retry.
+
+## DAB-OPS-20261004-003 — The six-slot ChatGPT Watchdog Ring coupled frequent health polling to heavyweight semantic recovery.
+
+- **Status:** open
+- **First observed run:** reliable-edition-20261004-run8
+- **Task(s):** unknown
+- **Symptom:** The ring can create up to 1,008 scheduled ChatGPT invocation opportunities per week and Run 8 showed heavy repository rereads, recovery reasoning, leases and orchestration churn.
+- **Root cause:** Detection and repair share the same ChatGPT execution path; routine health determination reloads repair-capable context instead of reading a tiny deterministic health record.
+- **Operational impact:** Autonomy improved, but model usage and control-plane activity became disproportionate to the editorial workload.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** none recorded
+- **Actual fix:** not yet determined
+- **Fix outcome:** not recorded
+- **Permanent implementation:** none
+- **Regression tests:** none
+- **Production invariants:** frequent_health_polling_should_be_deterministic_and_compact, chatgpt_should_be_escalation_layer_not_primary_polling_loop, healthy_check_should_terminate_without_broad_repository_scan
+- **Recurrences:** none recorded
+- **Future validation:** Move frequent health classification to deterministic GitHub logic that emits one compact health/escalation record. | Reduce heavyweight scheduled ChatGPT checks while preserving autonomous escalation latency. | Measure model invocations, control-plane commits and substantive-progress ratio per edition.
+
+## DAB-OPS-20261004-004 — The scheduled 19:00 prior-evening controller did not allocate the October 4 execution.
+
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261004-run8
+- **Task(s):** 00
+- **Symptom:** October 4 entered MISSED_START_RECOVERY rather than normal scheduled allocation.
+- **Root cause:** The normal 19:00 controller allocation did not occur; durable evidence proves the missed start but does not establish one definitive trigger-level root cause.
+- **Operational impact:** Production started later than intended and consumed part of the overnight recovery buffer.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Use the missed-start recovery path only after proving the prior execution terminal and the target edition unallocated.
+- **Actual fix:** Recovery allocated exactly one October 4 execution from protected main and did not reopen October 3.
+- **Fix outcome:** not recorded
+- **Permanent implementation:** none
+- **Regression tests:** none
+- **Production invariants:** none
+- **Recurrences:** none recorded
+- **Future validation:** Verify the next 19:00 America/Chicago controller invocation allocates or resumes the correct next-day edition without fallback. | Emit an explicit missed-start alert/receipt when the normal controller fails to allocate within the startup envelope.
+
+## DAB-OPS-20261004-005 — Recovery routing did not always match queued tasks to an executor with the required capability.
+
+- **Status:** open
+- **First observed run:** reliable-edition-20261004-run8
+- **Task(s):** 03
+- **Symptom:** Task 03 and Task 08 requests remained queued while some Watchdog invocations were GitHub-only and could not safely perform fresh external research.
+- **Root cause:** The recovery layer reasons about task liveness before it has a compact capability-to-task routing contract for research-capable versus repository-only executors.
+- **Operational impact:** Requests can be correctly diagnosed yet remain unclaimed until a later slot with the necessary capability arrives.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** none recorded
+- **Actual fix:** not yet determined
+- **Fix outcome:** not recorded
+- **Permanent implementation:** none
+- **Regression tests:** none
+- **Production invariants:** recovery_owner_must_be_capable_of_the_next_authorized_action, capability_mismatch_is_not_task_progress, queued_research_work_requires_explicit_research_capable_consumer
+- **Recurrences:** none recorded
+- **Future validation:** Add capability-aware executor routing for discovery/Watchlist/repository/image/publication task classes. | A Watchdog that cannot perform the next authorized action should hand off immediately without broad repair reasoning.
+
+## DAB-OPS-20261004-006 — Supervisor embedded shell/Node heredoc syntax defects caused repeated recovery workflow failures.
+
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261004-run8
+- **Task(s):** 11
+- **Symptom:** One dead-writer heredoc and then two additional indented Node heredocs caused Supervisor workflow failures before same-task recovery could advance.
+- **Root cause:** Embedded scripts in workflow YAML were not protected by pattern-level parse/lint tests for heredoc terminators and command-substitution boundaries.
+- **Operational impact:** A repair to one heredoc exposed two more instances and prolonged Task 11 recovery.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Repair the failing heredocs in bounded protected PRs and revalidate exact-head CI.
+- **Actual fix:** The specific Run 8 heredoc defects were corrected and Task 11 resumed; no completed task or accepted asset was redone.
+- **Fix outcome:** not recorded
+- **Permanent implementation:** none
+- **Regression tests:** none
+- **Production invariants:** none
+- **Recurrences:** none recorded
+- **Future validation:** Add a workflow-level parser/lint test covering all embedded shell and Node heredocs, not only previously failing lines. | Require workflow scripts to parse before a protected repair can be treated as complete.
+
+## DAB-OPS-20261004-007 — Frozen Run 8 artifacts were incorrectly reinterpreted under newer publication/shadow contracts.
+
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261004-run8
+- **Task(s):** 23
+- **Symptom:** Task 23 protected CI rejected already-Done video, Watchlist, image and reader evidence because newer validators required fields/representations not present in the sealed pre-October-5 bundle.
+- **Root cause:** Historical sealed artifacts lacked an explicit versioned migration boundary, so current generic validators treated old evidence as if it had been produced under the newer contract.
+- **Operational impact:** Task 23 spent hours in deterministic failure even though completed editorial work and six accepted images were valid and immutable.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Do not rerun Done editorial/image work; introduce a narrow pre-2026-10-05 migration allowed only when sealed evidence identities are verified.
+- **Actual fix:** Protected migration and shadow compatibility paths now honor the frozen Run 8 contract while preserving accepted_locked image bytes and requiring exact sealed evidence.
+- **Fix outcome:** Publication PR #442 passed exact-head CI, merged, deployed and reached live_verified without reopening completed work.
+- **Permanent implementation:** _generator/lib/frozen-contract-migration.mjs, _generator/lib/publication-manifest.mjs, _generator/lib/integrity.mjs
+- **Regression tests:** _generator/test/frozen-contract-migration.test.mjs, _generator/test/run8-task26-frozen-live-validation.test.mjs
+- **Production invariants:** historical_sealed_artifacts_use_bound_versioned_contract, accepted_locked_image_bytes_are_not_replaced_to_satisfy_newer_validator_shape, migration_requires_exact_frozen_evidence_identity, future_editions_remain_on_current_strict_contract
+- **Recurrences:** none recorded
+- **Future validation:** none
+
+## DAB-OPS-20261004-008 — Writer Handoff depended on accepted prose-like release reasons and failed to dispatch Task 18.
+
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261004-run8
+- **Task(s):** 18
+- **Symptom:** Task 17 was canonically Done but the recovery-verification release reason was outside Writer Handoff accepted patterns, so no Supervisor dispatched Task 18.
+- **Root cause:** A consequential state transition depended on string-pattern interpretation of a release reason instead of a typed canonical handoff state.
+- **Operational impact:** Completed Task 17 remained stranded until a later Watchdog reconciled the release boundary.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Rewrite only the boundary reason to the truthful canonical TASK_17_DONE_HANDOFF_TO_SUPERVISOR value.
+- **Actual fix:** The same execution was redispatched and Task 18 proceeded without changing Task 17 evidence or assets.
+- **Fix outcome:** not recorded
+- **Permanent implementation:** none
+- **Regression tests:** none
+- **Production invariants:** none
+- **Recurrences:** none recorded
+- **Future validation:** Replace prose/reason-pattern routing with typed handoff enums or canonical transition fields. | Verify every Done->next-task handoff is dispatchable from canonical state alone.
+
+## DAB-OPS-20261004-009 — Task 29 learning certification reconciled only one problem despite many durable Run 8 incident records.
+
+- **Status:** open
+- **First observed run:** reliable-edition-20261004-run8
+- **Task(s):** 29
+- **Symptom:** The terminal certification reports reconciled_problem_count=1 while Run 8 has multiple liveness faults, protected repairs, Watchdog incidents and post-close reader defects.
+- **Root cause:** Task 29 derives its problem set only from events already present in the canonical operational-learning ledger; it does not first enumerate run-scoped incident/protected-repair/liveness sources and prove each has a ledger disposition.
+- **Operational impact:** Task 29 can report PASS while substantial run learning remains outside the canonical ledger, creating a false sense of readiness.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** none recorded
+- **Actual fix:** not yet determined
+- **Fix outcome:** not recorded
+- **Permanent implementation:** none
+- **Regression tests:** none
+- **Production invariants:** task29_must_inventory_all_run_scoped_incident_sources_before_certification, every_incident_must_map_to_existing_problem_recurrence_or_new_problem, historical_certification_is_immutable_and_post_close_learning_uses_append_only_supplement
+- **Recurrences:** none recorded
+- **Future validation:** Extend Task 29 reconciliation to inventory Watchdog events, liveness faults, blocked transitions, protected repairs, qualification repairs and post-close corrections. | Fail certification if any material incident lacks a ledger mapping/disposition.
+
+## DAB-OPS-20261004-010 — PUBLIC_CLOSED validation proved routes and assets but missed major reader-semantic incompleteness.
+
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261004-run8
+- **Task(s):** 29
+- **Symptom:** The October 4 dated Brief and six permanent article pages were published with abbreviated reader presentation.
+- **Root cause:** Closure checks emphasized SHA, route, asset and structural validity; an October 4 frozen-compatibility path and book-bridge suppression were allowed without a semantic reader-parity gate across homepage, dated Brief and permanent pages.
+- **Operational impact:** The run was terminal and publicly reachable but not reader-complete relative to the documented reader contract.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Repair only reader presentation from locked canonical Run 8 data after PUBLIC_CLOSED, preserving all story/media/watchlist decisions and accepted image bytes.
+- **Actual fix:** PR #452 restored the dated/home/latest reader structure and PR #453 restored all six permanent article pages; exact image locks and historical Task 19 evidence were preserved through a post-close correction receipt.
+- **Fix outcome:** not recorded
+- **Permanent implementation:** none
+- **Regression tests:** none
+- **Production invariants:** none
+- **Recurrences:** none recorded
+- **Future validation:** Before PUBLIC_CLOSED, validate required reader sections/counts on homepage, dated edition and every permanent story page. | Route existence is not sufficient evidence of reader completeness. | Temporary frozen-reader suppressions must be explicitly retired or surfaced as blocking before terminal close.
+
+## DAB-OPS-20261004-011 — Permanent-story projection discarded verified source reading metadata before rendering.
+
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261004-run8
+- **Task(s):** 29
+- **Symptom:** The canonical permanent-story renderer produced source reading time unavailable because canonicalStory flattened source fields but dropped the source object containing reading_evidence and publication_date.
+- **Root cause:** The reader projection did not preserve the canonical source object even though the dated Brief renderer consumed it directly.
+- **Operational impact:** Permanent pages could diverge from the dated Brief and lose verified reading/freshness context.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Preserve the existing canonical source object in the permanent-story projection and compare saved October 4 pages with generator output.
+- **Actual fix:** PR #453 added source preservation in _generator/lib/reader.mjs and permanent-story parity regression coverage.
+- **Fix outcome:** All six October 4 permanent pages match canonical output, retain verified reading metadata and deploy successfully.
+- **Permanent implementation:** _generator/lib/reader.mjs, _records/publication/2026-10-04/reader-correction.json
+- **Regression tests:** _generator/test/oct4-reader-parity.test.mjs
+- **Production invariants:** permanent_story_projection_preserves_canonical_source_evidence, saved_permanent_story_pages_match_canonical_renderer, post_close_reader_correction_preserves_accepted_image_bytes
+- **Recurrences:** none recorded
+- **Future validation:** none
 

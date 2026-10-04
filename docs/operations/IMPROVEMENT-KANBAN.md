@@ -22,3 +22,17 @@ The canonical repository JSON is the source for future visual editing. A browser
 ## Production boundary
 
 This board records improvements. It cannot block publication, change a task state, consume retry budget, authorize a worker, or reopen a terminal execution.
+
+<!-- oct4-improvement-cards -->
+## October 4 post-close reconciliation
+
+Run 8 added Improvement Kanban cards **DAB-KB-033 through DAB-KB-043**. The highest-priority open items are:
+
+- DAB-KB-033 — automatic Strategy Interrupt / meta-diagnostic escalation;
+- DAB-KB-034 — deterministic compact health polling instead of heavyweight ChatGPT polling;
+- DAB-KB-035 — isolated story-only native-image generation context;
+- DAB-KB-036 — complete Task 29 incident inventory before learning certification;
+- DAB-KB-037 — semantic reader parity before PUBLIC_CLOSED;
+- DAB-KB-040 — prove normal 19:00 controller start and alert on missed allocation.
+
+DAB-KB-042 and DAB-KB-043 are Done because the frozen-contract migration and October 4 reader repairs are already protected and deployed. Open cards must not be marked Done merely because Run 8 eventually closed.

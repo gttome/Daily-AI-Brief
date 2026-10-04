@@ -249,3 +249,29 @@ The reliable controller now has two explicit image-handoff admission modes. `nat
 Direct-capture admission is deliberately **not** a capability receipt. It records no native result ID, asserts no recovery callback, proves no image generation and proves no bytes. It only allows bounded discovery/editorial/media work to proceed. The image stage must generate one story at a time and persist the returned bytes before yielding, then perform the unchanged subject/factual/structural/editorial review and exact Git content-identity checks. Six distinct accepted/locked images, the full publication manifest, protected CI, deployment and live exact-byte verification remain mandatory.
 
 An invoked result that becomes genuinely unobservable is handled only by the existing bounded `TASK_RESULT_UNRECOVERABLE` evidence: observed invocation, exhaustive supported search, unobservable outcome and real check time. That disposition consumes one of the same four attempts. It is never rewritten as success and never grants a fifth attempt. No deterministic/low-quality fallback is enabled by this admission mode.
+
+<!-- oct4-run8-reliability-amendment -->
+## October 4 reliability amendment
+
+Run 8 adds four reliability rules to the execution model.
+
+### Strategy Interrupt
+
+The self-healing ladder must not repeat an equivalent tactic indefinitely. Before a third equivalent attempt, invoke a bounded meta-diagnostic pass when either:
+
+- the same normalized failure signature appears twice in succession; or
+- two recovery/takeover cycles occur without substantive durable delta.
+
+The pass must compare `action -> durable delta -> validation result`, search for already-green prerequisites or unpromoted repairs, and require a materially different next tactic unless new evidence changes the failure hypothesis.
+
+### Capability-aware recovery ownership
+
+A recovery owner must be able to perform the next authorized action. Repository-only contexts should immediately hand off research work; image generation, repository mutation, research and publication promotion are separate capability classes.
+
+### Versioned frozen-contract interpretation
+
+A sealed historical bundle is validated under its bound contract version. Newer validators may use a narrow migration only when exact frozen evidence identities are verified. Never rerun completed editorial/image work or replace accepted_locked bytes merely to satisfy a later schema.
+
+### Semantic terminal validation
+
+PUBLIC_CLOSED is not established by routes/SHA/assets alone. The homepage, dated edition and permanent story pages must satisfy the current reader-semantic contract before terminal close. Post-close corrections remain append-only historical corrections, not evidence that the original close gate was sufficient.

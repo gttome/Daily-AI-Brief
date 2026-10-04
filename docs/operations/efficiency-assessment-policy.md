@@ -64,3 +64,22 @@ Preserve the publication quality gates while optimizing: six stories, 2/2/2 allo
 5. Maintain an append-only assessment history so future reviews can reconstruct both gains and regressions.
 
 Targets are experiment goals, not quality overrides. A run that misses a speed/credit target but passes quality must be reported truthfully rather than repaired solely to improve the metric.
+
+<!-- oct4-control-plane-efficiency -->
+## October 4 control-plane efficiency amendment
+
+Future efficiency assessments must measure recovery/control-plane overhead separately from editorial production. Record when observable:
+
+- scheduled ChatGPT Watchdog invocation count;
+- healthy/no-op versus actionable escalation count;
+- recovery lease generations and writer takeovers;
+- Watchdog/Supervisor/reconciliation commits;
+- protected-repair attempts and exact-head CI reruns;
+- number of recovery cycles that produced no substantive durable delta;
+- time from first fault observation to first materially different recovery tactic;
+- image attempts attributable to context contamination versus genuine visual-quality rejection;
+- substantive-progress events divided by control-plane events.
+
+The six-slot Watchdog Ring creates up to 1,008 scheduled invocation opportunities per week; that figure is scheduling capacity, **not** platform billing telemetry. Continue to label account usage as unavailable unless the platform or owner provides trustworthy attributable measurements.
+
+The optimization target is coordination overhead. Editorial/source/image quality gates remain unchanged.

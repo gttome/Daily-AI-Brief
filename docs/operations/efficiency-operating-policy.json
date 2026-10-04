@@ -294,7 +294,14 @@
       "codex": 0,
       "paid_model_api": 0
     },
-    "scheduled_live_proof_required": true
+    "scheduled_live_proof_required": true,
+    "october_4_context_isolation_requirement": {
+      "required": true,
+      "mechanical_proof_status": "pending_hardening",
+      "rule": "Native generation must receive only the sealed single-story visual packet and image-quality constraints. Watchdog, Supervisor, Kanban, lease, repair and unrelated-task context must remain outside the generation context.",
+      "first_context_mismatch_action": "leave_current_generation_context_and_enter_engineering_repair; do_not_spend_an_ordinary_same_context_retry",
+      "reference": "DAB-KB-035"
+    }
   },
   "execution_reliability": {
     "profile": "reliable-edition-v1",
@@ -308,6 +315,33 @@
     "historical_results_immutable": true,
     "legacy_execution_not_silently_migrated": true,
     "native_host_operational_proof": "not_established_by_code_release",
-    "reference": "docs/operations/reliable-edition-execution.md"
+    "reference": "docs/operations/reliable-edition-execution.md",
+    "october_4_strategy_interrupt": {
+      "required": true,
+      "implementation_status": "pending_hardening",
+      "trigger_summary": "Repeated normalized failure signatures or recovery cycles without substantive durable delta require method-level diagnosis before another equivalent retry.",
+      "reference": "DAB-KB-033"
+    }
+  },
+  "october_4_field_evidence": {
+    "observed_execution": "reliable-edition-20261004-run8",
+    "status": "hardening_required",
+    "policy_interpretation": "The numeric under80 targets remain desired steady-state targets. Run 8 proved the current six-slot ChatGPT Watchdog Ring is a temporary liveness mechanism that is not usage-optimal and must not be treated as satisfying the zero-AI-polling design goal.",
+    "observed_usage_amplifiers": [
+      "six_staggered_full_chatgpt_watchdog_schedules",
+      "heavy_recovery_context_on_routine_checks",
+      "repeated_repository_rereads_and_control_plane_reasoning",
+      "task11_image_context_contamination",
+      "task23_recovery_tactic_churn"
+    ],
+    "required_hardening": [
+      "deterministic_compact_health_record",
+      "chatgpt_semantic_escalation_only",
+      "strategy_interrupt_before_repeated_equivalent_retry",
+      "story_only_native_image_generation_context",
+      "control_plane_efficiency_measurement"
+    ],
+    "quality_gates_unchanged": true,
+    "reference": "docs/operations/OCT4-USAGE-EFFICIENCY-AUDIT-AND-POST-CLOSE-HARDENING-2026-10-04.md"
   }
 }

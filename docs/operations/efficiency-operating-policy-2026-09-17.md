@@ -49,3 +49,17 @@ The link-accessible dashboard is a read-only projection of canonical edition/dep
 Failures stop cheaply. Preserve the last valid edition and all completed checkpoints. Retry only a permitted transient network failure once. Never broaden research indefinitely, regenerate unchanged accepted images, start an autonomous semantic repair, hide a cost in another session, or restore the old two-Work-task architecture as a cost workaround.
 
 The full image standard, editorial contract, privacy rules, stable URLs, ratings/sharing behavior, archive/feed/calendar parity, append-only corrections, and protected-main rules remain mandatory.
+
+<!-- oct4-efficiency-field-evidence -->
+## October 4, 2026 field evidence
+
+Run 8 demonstrated that the current six-slot ChatGPT Watchdog Ring conflicts with the intended under80 principle of **zero AI polling of healthy CI/execution state**. The Ring improved liveness, but routine polling and recovery-capable context created excessive model-driven coordination.
+
+The long-term policy target remains:
+
+- deterministic GitHub health checks for frequent polling;
+- one compact durable health/escalation record;
+- ChatGPT invoked only when a real semantic recovery/escalation is required;
+- healthy checks terminate without broad repository scans or recovery reasoning.
+
+Until the replacement is implemented and protected, do not disable proven liveness solely to improve a usage metric. Treat the six-slot Ring as a temporary liveness mechanism with an open P0 efficiency hardening item (DAB-KB-034), not as the desired steady-state architecture.

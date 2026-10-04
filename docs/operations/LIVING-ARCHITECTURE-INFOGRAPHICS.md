@@ -6,6 +6,20 @@
 > [!IMPORTANT]
 > These diagrams explain the durable Daily AI Brief system architecture. They are **not run-status dashboards**. Machine evidence remains authoritative for live state.
 
+<!-- oct4-field-validation-note -->
+## October 4 field-validation note
+
+The Watchdog Ring v1.1 diagram remains an accurate **as-implemented liveness architecture** for the six equivalent slots, but Run 8 proved that it is not yet the desired steady-state efficiency architecture. A future living-architecture revision should be generated **after** the pending hardening is implemented and verified, showing:
+
+- deterministic compact health polling;
+- ChatGPT as semantic escalation rather than routine polling;
+- Strategy Interrupt / meta-diagnostic escalation;
+- story-only native-image generation context separated from recovery reasoning;
+- complete Task 29 incident inventory;
+- semantic reader parity before PUBLIC_CLOSED.
+
+Do not redraw the living diagram to imply these controls already exist. Until implementation, DAB-KB-033 through DAB-KB-037 are the authoritative pending changes.
+
 ## Current architecture amendment
 
 **Protected Repair Autonomy:** the Watchdog Ring now has a repository-native Protected Repair Executor for bounded repair promotion through one PR, exact-head CI, safe merge and same-task resume. Dead GitHub Actions writers require exact terminal evidence before supersession. Recovery success still requires a real executor plus substantive durable progress.

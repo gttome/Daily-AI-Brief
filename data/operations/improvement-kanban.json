@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-04T07:47:11.088993Z",
+  "observed_at": "2026-10-05T04:50:00Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -614,6 +614,209 @@
         "PR #431",
         "CI #37186217728",
         "docs/operations/PROTECTED-REPAIR-AUTONOMY-IMPLEMENTATION-REPORT-2026-10-04.md"
+      ]
+    },
+    {
+      "id": "DAB-KB-033",
+      "lane": "backlog",
+      "priority": "P0",
+      "category": "Meta-Diagnostic Autonomy",
+      "title": "Trigger Strategy Interrupt when recovery activity is not producing progress",
+      "summary": "Automatically escalate from local retry to method-level diagnosis when failure signatures repeat, recovery churn produces no substantive delta, or elapsed time is anomalous.",
+      "acceptance": [
+        "Two consecutive identical normalized failure signatures trigger Strategy Interrupt before a third blind rerun.",
+        "Two recovery/takeover cycles without substantive durable progress trigger Strategy Interrupt.",
+        "After Strategy Interrupt, an identical retry is prohibited without new evidence.",
+        "Already-green protected repairs or completed prerequisites are consumed before new rework."
+      ],
+      "sources": [
+        "DAB-OPS-20261004-002",
+        "docs/operations/OCT4-RUN-INCIDENT-RECONCILIATION-2026-10-04.md",
+        "Run 8 Task 23",
+        "PR #444"
+      ]
+    },
+    {
+      "id": "DAB-KB-034",
+      "lane": "backlog",
+      "priority": "P0",
+      "category": "Usage Efficiency",
+      "title": "Move frequent health polling out of heavyweight ChatGPT recovery sessions",
+      "summary": "Use deterministic GitHub logic to publish a compact health/escalation record; invoke ChatGPT primarily for real semantic repair.",
+      "acceptance": [
+        "Healthy checks terminate without broad repository scans.",
+        "Frequent health classification is deterministic and compact.",
+        "ChatGPT escalation receives bounded incident evidence only.",
+        "Measure model invocations, control-plane commits and substantive-progress ratio per edition."
+      ],
+      "sources": [
+        "DAB-OPS-20261004-003",
+        "docs/operations/OCT4-USAGE-EFFICIENCY-AUDIT-AND-POST-CLOSE-HARDENING-2026-10-04.md"
+      ]
+    },
+    {
+      "id": "DAB-KB-035",
+      "lane": "backlog",
+      "priority": "P0",
+      "category": "Image Architecture",
+      "title": "Enforce isolated story-only context for native image generation",
+      "summary": "October 4 generated Watchdog dashboards instead of the story diagram. Recovery reasoning and native image generation must be separate contexts.",
+      "acceptance": [
+        "Generation input contains only the sealed single-story visual packet and image-quality constraints.",
+        "Watchdog/Supervisor/Kanban/repair prose is excluded.",
+        "First context mismatch immediately leaves the contaminated context.",
+        "No accepted_locked image is regenerated."
+      ],
+      "sources": [
+        "DAB-OPS-20261001-017",
+        "_records/image-recovery/2026-10-04-run8/m02-watchdog-A-context-contamination.json"
+      ]
+    },
+    {
+      "id": "DAB-KB-036",
+      "lane": "backlog",
+      "priority": "P0",
+      "category": "Learning Integrity",
+      "title": "Make Task 29 inventory every material run incident before certification",
+      "summary": "Run 8 Task 29 certified one reconciled problem although durable evidence showed many more.",
+      "acceptance": [
+        "Inventory Watchdog events, liveness faults, blocked transitions, protected repairs, qualification repairs and post-close corrections.",
+        "Every material incident maps to a recurrence or new problem.",
+        "Certification fails when a material incident lacks a ledger disposition.",
+        "Historical certifications remain immutable; late findings use a supplement."
+      ],
+      "sources": [
+        "DAB-OPS-20261004-009",
+        "_records/run-learning/supplements/reliable-edition-20261004-run8-post-close.json"
+      ]
+    },
+    {
+      "id": "DAB-KB-037",
+      "lane": "backlog",
+      "priority": "P0",
+      "category": "Reader Quality",
+      "title": "Require semantic reader parity before PUBLIC_CLOSED",
+      "summary": "A route/SHA/assets PASS is insufficient if the homepage, dated Brief or permanent pages are missing required reader sections.",
+      "acceptance": [
+        "Homepage and dated Brief include all required reader sections.",
+        "All six permanent article pages match canonical renderer output.",
+        "Temporary frozen-reader suppressions cannot survive terminal close silently.",
+        "Reader-semantic validation runs before PUBLIC_CLOSED."
+      ],
+      "sources": [
+        "DAB-OPS-20261004-010",
+        "PR #452",
+        "PR #453"
+      ]
+    },
+    {
+      "id": "DAB-KB-038",
+      "lane": "backlog",
+      "priority": "P1",
+      "category": "Telemetry",
+      "title": "Eliminate false zero durations for recovered and bulk-closeout tasks",
+      "summary": "Run 8 projected Task 23-29 as 0s and Task 17 near zero despite substantial real work.",
+      "acceptance": [
+        "Missing authoritative timing renders unavailable, never inferred 0s.",
+        "Recovered-task timing derives from append-only active/recovery/done evidence.",
+        "Bulk terminal closeout cannot overwrite real elapsed timing.",
+        "Kanban and timing JSON agree."
+      ],
+      "sources": [
+        "DAB-OPS-20261002-021",
+        "_records/edition-execution/timing/2026-10-04-run8.json"
+      ]
+    },
+    {
+      "id": "DAB-KB-039",
+      "lane": "backlog",
+      "priority": "P1",
+      "category": "Orchestration Contracts",
+      "title": "Replace fragile workflow scripting and prose handoff matching",
+      "summary": "Run 8 exposed heredoc syntax failures, repository-context inference and handoff dispatch dependent on release-reason strings.",
+      "acceptance": [
+        "All gh workflow dispatches use explicit repository identity.",
+        "All embedded shell/Node scripts pass parser/lint coverage.",
+        "Handoff routing uses typed canonical states rather than prose-pattern matching.",
+        "New dispatch paths require targeted regression coverage."
+      ],
+      "sources": [
+        "DAB-OPS-20261004-006",
+        "DAB-OPS-20261004-008",
+        "DAB-OPS-20261002-016"
+      ]
+    },
+    {
+      "id": "DAB-KB-040",
+      "lane": "backlog",
+      "priority": "P0",
+      "category": "Scheduling",
+      "title": "Prove normal 19:00 controller start and alert on missed allocation",
+      "summary": "October 4 required MISSED_START_RECOVERY because the prior-evening controller did not allocate the edition.",
+      "acceptance": [
+        "Next edition is allocated/resumed by the 19:00 America/Chicago controller.",
+        "Missed allocation produces a durable alert/receipt within the startup envelope.",
+        "Fallback allocates exactly one execution only after terminal/prior-state proof."
+      ],
+      "sources": [
+        "DAB-OPS-20261004-004",
+        "_records/edition-execution/bootstrap/2026-10-04-run8.json"
+      ]
+    },
+    {
+      "id": "DAB-KB-041",
+      "lane": "backlog",
+      "priority": "P1",
+      "category": "Executor Routing",
+      "title": "Route queued recovery work only to capable executors",
+      "summary": "Tasks 03 and 08 could be diagnosed by GitHub-only Watchdogs that could not perform current research.",
+      "acceptance": [
+        "Task classes declare required execution capabilities.",
+        "An incapable recovery owner immediately hands off.",
+        "Research, repository, image and publication actions are routed explicitly."
+      ],
+      "sources": [
+        "DAB-OPS-20261004-005",
+        "Run 8 Tasks 03 and 08"
+      ]
+    },
+    {
+      "id": "DAB-KB-042",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Contract Versioning",
+      "title": "Add bounded frozen-contract migration for sealed historical production artifacts",
+      "summary": "Run 8 publication now honors a bound pre-October-5 contract only when sealed evidence identity is proven; future editions stay strict.",
+      "acceptance": [
+        "Migration is edition/identity bound.",
+        "Accepted image bytes are preserved.",
+        "Exact sealed evidence is required.",
+        "Protected CI and live verification pass."
+      ],
+      "sources": [
+        "DAB-OPS-20261004-007",
+        "PR #444",
+        "_generator/lib/frozen-contract-migration.mjs"
+      ]
+    },
+    {
+      "id": "DAB-KB-043",
+      "lane": "done",
+      "priority": "P1",
+      "category": "Reader Quality",
+      "title": "Repair October 4 dated and permanent reader parity",
+      "summary": "PR #452 restored dated/home reader structure and PR #453 restored six permanent story pages plus source-evidence preservation.",
+      "acceptance": [
+        "Dated Brief/home render full reader contract from locked data.",
+        "Six permanent pages match canonical renderer output.",
+        "Accepted image bytes remain unchanged.",
+        "Pages deployment and deterministic CI pass."
+      ],
+      "sources": [
+        "DAB-OPS-20261004-010",
+        "DAB-OPS-20261004-011",
+        "PR #452",
+        "PR #453"
       ]
     }
   ],

@@ -1519,3 +1519,17 @@ Recovery completes only when the repair is integrated when needed, the same prod
 
 Invariant: \`actionable_recovery_must_not_terminate_at_owner_prompt_boundary\`.
 
+<!-- oct4-post-close-operating-requirements -->
+## October 4 post-close operating requirements
+
+Run 8 adds the following living requirements:
+
+- **Progress means substantive durable delta.** Active state, lease renewal, handoff commits and status projections alone are not progress.
+- **Strategy Interrupt is required when recovery stalls at the method level.** Two repeated normalized failure signatures, or two recovery cycles without substantive durable delta, require a bounded meta-diagnostic pass before another equivalent retry.
+- **Executor capability must match the next authorized action.** A repository-only context must not retain ownership of research work it cannot perform.
+- **Native image generation is a separate story-only context.** Do not pass Watchdog, Supervisor, Kanban, protected-repair or unrelated task narrative into the image generation context.
+- **Historical sealed evidence uses an explicit versioned contract.** Never rerun completed editorial/image work merely to satisfy a later validator schema.
+- **Reader semantics are terminal evidence.** PUBLIC_CLOSED requires the required homepage/dated/permanent-page reader structure, not merely successful routes and assets.
+- **Timing is evidence, not decoration.** Missing recovered-task timestamps render unavailable; closeout must not fabricate 0-second durations.
+- **Task 29 must inventory incident sources before certifying learning reconciliation.** Late findings use an append-only post-close supplement rather than rewriting historical certification.
+- **The 19:00 normal start must be observed, not assumed.** A missed scheduled allocation must emit a durable missed-start receipt/alert and use the existing single-execution recovery guard.

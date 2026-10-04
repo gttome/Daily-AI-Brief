@@ -1,0 +1,335 @@
+{
+  "schema_version": "run-learning-post-close-supplement-v1",
+  "run_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "recorded_at": "2026-10-05T04:50:00Z",
+  "original_task29_certification": "_records/run-learning/certification/reliable-edition-20261004-run8.json",
+  "original_certification_reconciled_problem_count": 1,
+  "supplement_reason": "Post-close reconciliation found material Run 8 incidents not represented in the canonical operational-learning ledger when Task 29 certified. Historical Task 29 evidence remains immutable; this supplement is append-only follow-up evidence.",
+  "issue_count": 34,
+  "issues": [
+    {
+      "issue_id": "OCT4-001",
+      "name": "Missed 19:00 controller start",
+      "tasks": "00",
+      "classification": "Scheduling",
+      "description": "MISSED_START_RECOVERY allocated one exact execution after proving the prior execution terminal.",
+      "status": "Mitigated",
+      "ledger_problem_id": "DAB-OPS-20261004-004"
+    },
+    {
+      "issue_id": "OCT4-002",
+      "name": "Task 00 Active without a real executor",
+      "tasks": "00",
+      "classification": "Liveness",
+      "description": "Watchdog E ran readiness, recorded Done and advanced the pointer.",
+      "status": "Recovered",
+      "ledger_problem_id": "DAB-OPS-20261001-004"
+    },
+    {
+      "issue_id": "OCT4-003",
+      "name": "Task 03 discovery request unclaimed",
+      "tasks": "03",
+      "classification": "Executor routing",
+      "description": "A later research-capable Watchdog consumed the exact request.",
+      "status": "Recovered",
+      "ledger_problem_id": "DAB-OPS-20261004-005"
+    },
+    {
+      "issue_id": "OCT4-004",
+      "name": "Task 07 stale Active / missing Done transition",
+      "tasks": "07",
+      "classification": "State reconciliation",
+      "description": "Existing podcast evidence was reconciled; no editorial work repeated.",
+      "status": "Recovered",
+      "ledger_problem_id": "DAB-OPS-20261001-004"
+    },
+    {
+      "issue_id": "OCT4-005",
+      "name": "Task 08 research consumer unclaimed",
+      "tasks": "08",
+      "classification": "Executor routing",
+      "description": "Request exceeded idle threshold until a capable consumer claimed it.",
+      "status": "Recovered",
+      "ledger_problem_id": "DAB-OPS-20261004-005"
+    },
+    {
+      "issue_id": "OCT4-006",
+      "name": "Task 11 image context contamination",
+      "tasks": "11",
+      "classification": "Image context isolation",
+      "description": "Watchdog dashboards were generated instead of the story mechanism; isolated repair context eventually passed.",
+      "status": "Mitigated",
+      "ledger_problem_id": "DAB-OPS-20261001-017"
+    },
+    {
+      "issue_id": "OCT4-007",
+      "name": "Task 11 four m02 image attempts",
+      "tasks": "11",
+      "classification": "Image efficiency",
+      "description": "Three subject/context failures preceded one accepted_locked image.",
+      "status": "Recovered",
+      "ledger_problem_id": "DAB-OPS-20261001-017"
+    },
+    {
+      "issue_id": "OCT4-008",
+      "name": "Task 11 ~4h24m elapsed",
+      "tasks": "11",
+      "classification": "Recovery overhead",
+      "description": "Task 11 recorded 15,817.836 seconds; later image tasks were far shorter.",
+      "status": "Observed",
+      "ledger_problem_id": "DAB-OPS-20261001-017"
+    },
+    {
+      "issue_id": "OCT4-009",
+      "name": "Supervisor dead-writer heredoc defect",
+      "tasks": "11",
+      "classification": "Workflow scripting",
+      "description": "Indented shell heredoc broke recovery; bounded protected repair corrected it.",
+      "status": "Mitigated",
+      "ledger_problem_id": "DAB-OPS-20261004-006"
+    },
+    {
+      "issue_id": "OCT4-010",
+      "name": "Two additional Supervisor heredoc failures",
+      "tasks": "11",
+      "classification": "Workflow scripting",
+      "description": "Additional Node heredocs failed after the first repair; bounded repairs corrected them.",
+      "status": "Mitigated",
+      "ledger_problem_id": "DAB-OPS-20261004-006"
+    },
+    {
+      "issue_id": "OCT4-011",
+      "name": "Post-repair generation repeated contamination",
+      "tasks": "11",
+      "classification": "Recovery strategy",
+      "description": "Same root failure repeated before a fresh isolated repair epoch succeeded.",
+      "status": "Recovered",
+      "ledger_problem_id": "DAB-OPS-20261001-017"
+    },
+    {
+      "issue_id": "OCT4-012",
+      "name": "Task 17 gh dispatch ran outside a Git repository",
+      "tasks": "17",
+      "classification": "Repository dispatch",
+      "description": "PR #440 made repository identity explicit for that path.",
+      "status": "Mitigated",
+      "ledger_problem_id": "DAB-OPS-20261002-016"
+    },
+    {
+      "issue_id": "OCT4-013",
+      "name": "Task 17 acceptance-lock schema mismatch",
+      "tasks": "17",
+      "classification": "Contract drift",
+      "description": "Consumer assumptions differed from immutable lock/review model; protected repair reconciled the contract.",
+      "status": "Fixed",
+      "ledger_problem_id": "DAB-OPS-20261004-007"
+    },
+    {
+      "issue_id": "OCT4-014",
+      "name": "Task 18 handoff not dispatched",
+      "tasks": "18",
+      "classification": "Handoff contract",
+      "description": "Release-reason pattern mismatch was reconciled to a canonical handoff.",
+      "status": "Mitigated",
+      "ledger_problem_id": "DAB-OPS-20261004-008"
+    },
+    {
+      "issue_id": "OCT4-015",
+      "name": "Task 18 ~58m elapsed",
+      "tasks": "18",
+      "classification": "Orchestration overhead",
+      "description": "Assembly recorded 3,490 seconds with handoff/recovery churn.",
+      "status": "Observed",
+      "ledger_problem_id": "DAB-OPS-20261004-003"
+    },
+    {
+      "issue_id": "OCT4-016",
+      "name": "Qualification found incomplete publication projection",
+      "tasks": "20",
+      "classification": "Qualification",
+      "description": "Task 21 rebuilt only missing deterministic projections from sealed evidence.",
+      "status": "Recovered",
+      "ledger_problem_id": "DAB-OPS-20261004-007"
+    },
+    {
+      "issue_id": "OCT4-017",
+      "name": "Task 21 focused repair ~57m",
+      "tasks": "21",
+      "classification": "Orchestration efficiency",
+      "description": "A bounded projection repair recorded 3,426.247 seconds.",
+      "status": "Observed",
+      "ledger_problem_id": "DAB-OPS-20261004-003"
+    },
+    {
+      "issue_id": "OCT4-018",
+      "name": "Task 22 Supervisor died with PR request queued",
+      "tasks": "22",
+      "classification": "Liveness",
+      "description": "Dead-writer proof and later Watchdog preserved the exact Task 22 request.",
+      "status": "Recovered",
+      "ledger_problem_id": "DAB-OPS-20261004-001"
+    },
+    {
+      "issue_id": "OCT4-019",
+      "name": "Task 22 PR creation mutation rejected twice",
+      "tasks": "22",
+      "classification": "Action surface",
+      "description": "Later Watchdog created exactly one publication PR #442.",
+      "status": "Recovered",
+      "ledger_problem_id": "DAB-OPS-20261004-001"
+    },
+    {
+      "issue_id": "OCT4-020",
+      "name": "Task 23 stale handoff identity",
+      "tasks": "23",
+      "classification": "Publication CI",
+      "description": "Bounded same-task repair corrected deterministic identity.",
+      "status": "Recovered",
+      "ledger_problem_id": "DAB-OPS-20261004-007"
+    },
+    {
+      "issue_id": "OCT4-021",
+      "name": "Task 23 frozen contract mismatch",
+      "tasks": "23",
+      "classification": "Contract versioning",
+      "description": "PR #444 added a sealed pre-October-5 migration without redoing Done work.",
+      "status": "Fixed",
+      "ledger_problem_id": "DAB-OPS-20261004-007"
+    },
+    {
+      "issue_id": "OCT4-022",
+      "name": "Green protected repair not immediately promoted",
+      "tasks": "23",
+      "classification": "Meta-diagnostic autonomy",
+      "description": "Already-green repair was not connected to active path quickly enough.",
+      "status": "Open hardening",
+      "ledger_problem_id": "DAB-OPS-20261004-002"
+    },
+    {
+      "issue_id": "OCT4-023",
+      "name": "Task 23 mutation surface blocked repair merge",
+      "tasks": "23",
+      "classification": "Action surface",
+      "description": "Later slot resumed the same repair; no bypass or duplicate PR.",
+      "status": "Recovered",
+      "ledger_problem_id": "DAB-OPS-20261004-001"
+    },
+    {
+      "issue_id": "OCT4-024",
+      "name": "Shadow validator reinterpreted frozen evidence",
+      "tasks": "23",
+      "classification": "Contract versioning",
+      "description": "Bound migration/shadow compatibility fixed this without changing frozen bytes.",
+      "status": "Fixed",
+      "ledger_problem_id": "DAB-OPS-20261004-007"
+    },
+    {
+      "issue_id": "OCT4-025",
+      "name": "Task 23 strategy-loop blindness",
+      "tasks": "23",
+      "classification": "Meta-diagnostic autonomy",
+      "description": "Owner latency language triggered better method-level diagnosis; automation still needs this behavior.",
+      "status": "Open",
+      "ledger_problem_id": "DAB-OPS-20261004-002"
+    },
+    {
+      "issue_id": "OCT4-026",
+      "name": "Watchdog Ring usage amplification",
+      "tasks": "multiple",
+      "classification": "Usage architecture",
+      "description": "Six staggered heavyweight ChatGPT schedules can create 1,008 invocation opportunities/week.",
+      "status": "Open",
+      "ledger_problem_id": "DAB-OPS-20261004-003"
+    },
+    {
+      "issue_id": "OCT4-027",
+      "name": "Excessive control-plane churn",
+      "tasks": "multiple",
+      "classification": "Orchestration efficiency",
+      "description": "Lease/fence/handoff/reconciliation activity dominated a substantial part of run overhead.",
+      "status": "Open",
+      "ledger_problem_id": "DAB-OPS-20261004-003"
+    },
+    {
+      "issue_id": "OCT4-028",
+      "name": "Timing/Kanban false zeroes",
+      "tasks": "17,23-29",
+      "classification": "Telemetry",
+      "description": "Bulk closeout produced 0s/near-zero durations unsupported by real elapsed work.",
+      "status": "Mitigated",
+      "ledger_problem_id": "DAB-OPS-20261002-021"
+    },
+    {
+      "issue_id": "OCT4-029",
+      "name": "Task 29 learning reconciliation undercount",
+      "tasks": "29",
+      "classification": "Learning integrity",
+      "description": "Certification reconciled one problem despite many durable incident sources.",
+      "status": "Open",
+      "ledger_problem_id": "DAB-OPS-20261004-009"
+    },
+    {
+      "issue_id": "OCT4-030",
+      "name": "Dated Brief missing reader sections after PUBLIC_CLOSED",
+      "tasks": "post-close",
+      "classification": "Reader quality",
+      "description": "PR #452 restored full dated/home reader presentation from locked data.",
+      "status": "Fixed for Oct 4",
+      "ledger_problem_id": "DAB-OPS-20261004-010"
+    },
+    {
+      "issue_id": "OCT4-031",
+      "name": "Book bridges suppressed by frozen migration",
+      "tasks": "post-close",
+      "classification": "Reader quality",
+      "description": "PR #452 retired the suppression after close and restored all six mappings.",
+      "status": "Fixed for Oct 4",
+      "ledger_problem_id": "DAB-OPS-20261004-010"
+    },
+    {
+      "issue_id": "OCT4-032",
+      "name": "Six permanent article pages incomplete",
+      "tasks": "post-close",
+      "classification": "Reader quality",
+      "description": "PR #453 restored all six permanent pages from canonical renderer output.",
+      "status": "Fixed",
+      "ledger_problem_id": "DAB-OPS-20261004-010"
+    },
+    {
+      "issue_id": "OCT4-033",
+      "name": "Permanent-story projection dropped reading evidence",
+      "tasks": "post-close",
+      "classification": "Reader generator",
+      "description": "PR #453 preserved the canonical source object and added parity regression coverage.",
+      "status": "Fixed",
+      "ledger_problem_id": "DAB-OPS-20261004-011"
+    },
+    {
+      "issue_id": "OCT4-034",
+      "name": "PUBLIC_CLOSED gate was structural, not semantic",
+      "tasks": "29/post-close",
+      "classification": "Publication quality",
+      "description": "Future closure must prove required reader semantics, not just routes/SHA/assets.",
+      "status": "Open hardening",
+      "ledger_problem_id": "DAB-OPS-20261004-010"
+    }
+  ],
+  "systemic_clusters": [
+    "startup_and_executor_liveness",
+    "image_context_isolation",
+    "workflow_and_handoff_contracts",
+    "publication_contract_versioning",
+    "meta_diagnostic_autonomy",
+    "usage_and_control_plane_efficiency",
+    "timing_telemetry_integrity",
+    "run_learning_completeness",
+    "reader_semantic_completeness"
+  ],
+  "preservation": {
+    "historical_task29_certification_modified": false,
+    "completed_editorial_work_redone": false,
+    "accepted_locked_images_regenerated": false,
+    "production_identity_reopened": false
+  }
+}
