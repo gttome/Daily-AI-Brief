@@ -1,0 +1,27 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "PROTECTED_REPAIR_REQUIRED",
+  "repair_key": "repair-be62fc6860a0e5550e26d833c9643c8ea893a67f",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "production_branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "23",
+  "incident_id": "wd-task23-manifest-contract-37205934438",
+  "repair_branch": "repair/task23-frozen-publication-contract-migration-2026-10-04",
+  "repair_branch_head_sha": "87040d737c9e0954e4105860ef093ddac89d4e67",
+  "repair_scope_digest": "sha256:bfc463b16fefcf7766ce50bec98de366411b449c52f0ca17200bc780bd24421e",
+  "required_checks": ["validate"],
+  "created_at": "2026-10-04T14:08:00.000Z",
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+  "diagnosis": "Task 23 exact-head publication CI rejects sealed Run 8 artifacts because the frozen publication validator requires evidence/detail contracts that the already-Done Task 06, Task 08 and accepted_locked image path did not persist. Re-running Done editorial/image work or replacing accepted_locked bytes is prohibited.",
+  "bounded_scope": {
+    "purpose": "Add an explicit pre-2026-10-05 frozen-contract migration path that preserves accepted_locked image bytes, requires sealed verified video exception evidence, and validates aggregate Task 08 Watchlist evidence from its durable worker/refresh/source records. Future editions remain on the strict contract.",
+    "files": [
+      "_generator/lib/frozen-contract-migration.mjs",
+      "_generator/lib/publication-manifest.mjs",
+      "_generator/test/frozen-contract-migration.test.mjs"
+    ]
+  },
+  "next_stage": "Open or reuse exactly one protected repair PR for the recorded branch/head, require exact-head pull_request validate PASS, merge without bypass only if the same execution remains on Task 23, then resume the same Task 23 and repair only manifest/evidence metadata from sealed Run 8 sources."
+}
