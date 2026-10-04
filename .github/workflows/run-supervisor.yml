@@ -260,14 +260,7 @@ jobs:
           echo "acquired=true" >> "$GITHUB_OUTPUT"
 
           if [ -f /tmp/dead-writer-proof.json ]; then
-            proof_rel="$(node - <<'NODE'
-            const fs=require('fs'),x=require('/tmp/dead-writer-proof.json'),lease=require('/tmp/writer-lease.json');
-            x.replacement_generation=lease.generation;
-            const rel='_records/edition-execution/dead-writer-recovery/'+x.execution_id+'/'+x.dead_generation+'-to-'+x.replacement_generation+'-'+x.workflow_run_id+'.json';
-            fs.writeFileSync('/tmp/dead-writer-proof-final.json',JSON.stringify(x,null,2)+'\n');
-            process.stdout.write(rel);
-            NODE
-            )"
+            proof_rel="$(node -e 'const fs=require("fs"),x=require("/tmp/dead-writer-proof.json"),lease=require("/tmp/writer-lease.json");x.replacement_generation=lease.generation;const rel="_records/edition-execution/dead-writer-recovery/"+x.execution_id+"/"+x.dead_generation+"-to-"+x.replacement_generation+"-"+x.workflow_run_id+".json";fs.writeFileSync("/tmp/dead-writer-proof-final.json",JSON.stringify(x,null,2)+"\\n");process.stdout.write(rel)')"
             mkdir -p "run/$(dirname "$proof_rel")"
             cp /tmp/dead-writer-proof-final.json "run/$proof_rel"
             git -C run add "$proof_rel"
