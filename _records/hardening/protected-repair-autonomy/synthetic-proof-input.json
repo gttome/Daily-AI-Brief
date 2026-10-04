@@ -11,5 +11,7 @@
   "accepted_locked_asset_mutation_allowed": false,
   "production_execution_allocation_allowed": false,
   "owner_prompt_required": false,
-  "note": "Isolated acceptance proof for Protected Repair Autonomy. No production identity or asset is authoritative from this record."
+  "note": "Isolated acceptance proof for Protected Repair Autonomy. No production identity or asset is authoritative from this record.",
+  "trigger_attempt": 2,
+  "trigger_reason": "retry_same_isolated_push_after_no_workflow_evidence_from_first_commit"
 }
