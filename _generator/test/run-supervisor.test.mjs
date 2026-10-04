@@ -57,6 +57,24 @@ function contract(){
       real_executor_required_for_success:true,
       substantive_durable_progress_required_for_success:true,
       invariant:'actionable_recovery_must_not_terminate_at_owner_prompt_boundary',
+      protected_pr_authority:'scheduled_chatgpt_connected_github',
+      repository_executor_pr_creation_allowed:false,
+      repository_executor_protected_merge_allowed:false,
+      repository_executor_exact_head_ci_dispatch_allowed:true,
+      connected_watchdog_pr_creation_required:true,
+      connected_watchdog_protected_merge_required:true,
+      connected_watchdog_merge_must_use_expected_head:true,
+      connected_watchdog_merge_bypass_allowed:false,
+      bot_authored_protected_pr_allowed:false,
+      bot_authored_protected_merge_allowed:false,
+      protection_policy_must_remain_enforced:true,
+      base_sync_policy:{
+        allowed:true,
+        actor:'scheduled_chatgpt_connected_github',
+        repair_scope_digest_must_remain_identical:true,
+        updated_head_must_be_persisted_before_ci:true,
+        exact_head_ci_must_run_after_sync:true
+      },
       dead_writer_cleanup:{
         live_writer_takeover_allowed:false,
         terminal_workflow_status_required:'completed',
@@ -232,6 +250,16 @@ test('image retry budget exhaustion produces terminal failure instead of a fifth
   const classification=classifyRunHealth({task_state:override.task_state,blocked_recoverable:override.blocked_recoverable});
   const decision=taskRecoveryDecision({classification,taskContract:c.tasks['15'],recoveryAttempts:override.recovery_attempts});
   assert.equal(decision.action,'terminal_failure');
+});
+
+test('protected repair contract forbids repository-bot PR and merge authority',()=>{
+  const c=contract();
+  assert.deepEqual(validateTaskRecoveryContracts(c),[]);
+  c.protected_repair_autonomy.bot_authored_protected_pr_allowed=true;
+  assert.ok(validateTaskRecoveryContracts(c).includes('protected_repair_bot_pr_forbidden'));
+  c.protected_repair_autonomy.bot_authored_protected_pr_allowed=false;
+  c.protected_repair_autonomy.repository_executor_protected_merge_allowed=true;
+  assert.ok(validateTaskRecoveryContracts(c).includes('protected_repair_repository_executor_boundary'));
 });
 
 test('all Tasks 00 through 29 require recovery contracts',()=>{
