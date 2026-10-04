@@ -551,3 +551,29 @@ test('production writer handoff resumes the same execution for any Task 00-29 du
   assert.match(y,/Supervisor already queued\/running/);
   assert.match(y,/gh workflow run run-supervisor\.yml/);
 });
+
+
+test('repeated post-repair context failure enters the next bounded repair epoch',()=>{
+  const c=contract();
+  const repair=c.tasks['11'].engineering_repair;
+  assert.equal(repair.max_epochs,2);
+  assert.equal(repair.post_repair_attempt_limit,1);
+  assert.match(repair.instruction,/remains internal and actionable/i);
+  assert.match(repair.post_repair_operation,/only the sealed prompt/i);
+  const classification=classifyRunHealth({task_state:'Blocked',blocked_recoverable:true});
+  const next=taskRecoveryDecision({
+    classification,
+    taskContract:c.tasks['11'],
+    recoveryAttempts:4,
+    repairEpochs:1,
+    repairReady:true,
+    postRepairAttempts:1,
+    forceEngineeringRepair:true
+  });
+  assert.equal(next.action,'engineering_repair');
+  assert.equal(next.repair_epoch,2);
+  for(const id of ['11','12','13','14','15','16']){
+    assert.equal(c.tasks[id].engineering_repair.max_epochs,2,id);
+    assert.equal(c.tasks[id].engineering_repair.post_repair_attempt_limit,1,id);
+  }
+});
