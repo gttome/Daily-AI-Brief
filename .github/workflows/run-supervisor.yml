@@ -208,22 +208,71 @@ jobs:
       - name: Acquire fenced writer authority for this exact execution
         if: steps.boundary.outputs.write_allowed == 'true' && steps.image_delegation.outputs.delegated != 'true'
         id: fence
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           lease_rel="_records/edition-execution/writer-leases/${EXECUTION_ID}.json"
           mkdir -p "run/$(dirname "$lease_rel")"
           current_args=()
-          if [ -f "run/$lease_rel" ]; then current_args=(--current "run/$lease_rel"); fi
+          dead_proof_args=()
+          if [ -f "run/$lease_rel" ]; then
+            current_args=(--current "run/$lease_rel")
+            current_owner="$(node -e "const x=require('./run/' + process.argv[1]);process.stdout.write(String(x.owner_id||''))" "$lease_rel")"
+            if [ "$current_owner" != "$SUPERVISOR_OWNER" ] && [ "$TAKEOVER_DEAD_OWNER" = "true" ]; then
+              dead_run_id="$(node -e "const x=require('./run/' + process.argv[1]);const m=/^github-actions-(\\d+)-(\\d+)$/.exec(String(x.owner_id||''));process.stdout.write(m?m[1]:'')" "$lease_rel")"
+              if [ -n "$dead_run_id" ]; then
+                if gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${dead_run_id}" > /tmp/prior-writer-run.json 2>/dev/null; then
+                  prior_state="$(node -e "const x=require('/tmp/prior-writer-run.json');process.stdout.write(String(x.status||'')+':'+String(x.conclusion||''))")"
+                  if [ "$prior_state" = "completed:failure" ] || [ "$prior_state" = "completed:cancelled" ]; then
+                    node control/_tools/protected-repair-executor.mjs dead-writer-proof \
+                      --lease "run/$lease_rel" \
+                      --workflow-run /tmp/prior-writer-run.json \
+                      --output /tmp/dead-writer-proof.json >/tmp/dead-writer-proof.stdout
+                    cat /tmp/dead-writer-proof.stdout
+                    dead_proof_args=(--dead-owner-proof /tmp/dead-writer-proof.json)
+                  fi
+                fi
+              fi
+            fi
+          fi
+
+          set +e
           node control/_tools/run-supervisor.mjs writer-lease \
             --execution-id "$EXECUTION_ID" \
             --owner-id "$SUPERVISOR_OWNER" \
-            --ttl-ms 21600000 \
+            --ttl-ms 300000 \
             --takeover-dead-owner "$TAKEOVER_DEAD_OWNER" \
-            "${current_args[@]}" \
+            "${current_args[@]}" "${dead_proof_args[@]}" \
             --output /tmp/writer-lease.json > /tmp/writer-result.json
+          rc=$?
+          set -e
+          cat /tmp/writer-result.json
+          if [ "$rc" -ne 0 ]; then
+            echo "A live or unproven writer still owns the exact execution; Supervisor yields without stealing authority."
+            echo "acquired=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
           cp /tmp/writer-lease.json "run/$lease_rel"
           generation="$(node -e "const x=require('/tmp/writer-lease.json');process.stdout.write(String(x.generation))")"
           echo "generation=$generation" >> "$GITHUB_OUTPUT"
+          echo "acquired=true" >> "$GITHUB_OUTPUT"
+
+          if [ -f /tmp/dead-writer-proof.json ]; then
+            proof_rel="$(node - <<'NODE'
+            const fs=require('fs'),x=require('/tmp/dead-writer-proof.json'),lease=require('/tmp/writer-lease.json');
+            x.replacement_generation=lease.generation;
+            const rel='_records/edition-execution/dead-writer-recovery/'+x.execution_id+'/'+x.dead_generation+'-to-'+x.replacement_generation+'-'+x.workflow_run_id+'.json';
+            fs.writeFileSync('/tmp/dead-writer-proof-final.json',JSON.stringify(x,null,2)+'\n');
+            process.stdout.write(rel);
+            NODE
+            )"
+            mkdir -p "run/$(dirname "$proof_rel")"
+            cp /tmp/dead-writer-proof-final.json "run/$proof_rel"
+            git -C run add "$proof_rel"
+          fi
+
           git -C run add "$lease_rel"
           if ! git -C run diff --cached --quiet; then
             git -C run commit -m "Supervisor acquire writer fence for ${EXECUTION_ID}"
@@ -232,7 +281,7 @@ jobs:
           fi
 
       - name: Persistent approximately one-minute supervision loop
-        if: steps.boundary.outputs.write_allowed == 'true' && steps.image_delegation.outputs.delegated != 'true'
+        if: steps.boundary.outputs.write_allowed == 'true' && steps.image_delegation.outputs.delegated != 'true' && steps.fence.outputs.acquired == 'true'
         env:
           WRITER_GENERATION: ${{ steps.fence.outputs.generation }}
           GH_TOKEN: ${{ github.token }}
@@ -267,7 +316,7 @@ jobs:
             if ! node control/_tools/run-supervisor.mjs writer-lease \
               --execution-id "$EXECUTION_ID" \
               --owner-id "$SUPERVISOR_OWNER" \
-              --ttl-ms 21600000 \
+              --ttl-ms 300000 \
               --current "run/$lease_rel" \
               --output /tmp/writer-lease.json > /tmp/writer-renewal.json 2>/tmp/writer-renewal.err; then
               echo "Writer fence changed during renewal; Supervisor yields without treating the handoff as a production failure."
