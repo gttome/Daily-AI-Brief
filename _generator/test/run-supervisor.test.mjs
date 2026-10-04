@@ -40,7 +40,37 @@ function contract(){
       simplification_rule:'Preserve valid prior work and repair only the affected task'
     };
   }
-  return {schema_version:'task-recovery-contracts-v1',tasks};
+  return {
+    schema_version:'task-recovery-contracts-v1',
+    tasks,
+    protected_repair_autonomy:{
+      schema_version:'protected-repair-autonomy-contract-v1',
+      enabled:true,
+      executor_workflow:'.github/workflows/protected-repair-executor.yml',
+      exact_one_pr_per_repair_key:true,
+      exact_head_ci_required:true,
+      active_execution_and_task_revalidation_before_merge:true,
+      direct_main_write_allowed:false,
+      merge_is_recovery_success:false,
+      same_execution_resume_required:true,
+      same_task_resume_required:true,
+      real_executor_required_for_success:true,
+      substantive_durable_progress_required_for_success:true,
+      invariant:'actionable_recovery_must_not_terminate_at_owner_prompt_boundary',
+      dead_writer_cleanup:{
+        live_writer_takeover_allowed:false,
+        terminal_workflow_status_required:'completed',
+        terminal_conclusions:['failure','cancelled'],
+        workflow_run_identity_must_match_owner:true,
+        child_worker_live_forbids_takeover:true,
+        post_terminal_substantive_write_forbids_takeover:true
+      },
+      cost_boundary:{
+        chatgpt_work:false,codex:false,paid_apis:false,paid_external_services:false,
+        new_credentials:false,alternate_accounts:false,browser_automation:false
+      }
+    }
+  };
 }
 
 test('task event normalization accepts safe from_state/to_state aliases without overriding canonical fields',()=>{
