@@ -1,0 +1,57 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "14",
+  "candidate_id": "m07",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "request_key": "f7ea3586f43b8793f89b06b7df0b998e61311b0bf31601db54c1c1a9ffbdaa9a",
+  "writer_generation": 35,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-04T08:49:28.215Z",
+  "generated_at": "2026-10-04T08:52:40.872Z",
+  "native_capture": {
+    "format": "PNG",
+    "width": 1774,
+    "height": 887,
+    "bytes": 1487459,
+    "sha256": "7566a1087c6db8dcbcbdc08c0d150bac7e911068bfdab77da9aa93048620483d",
+    "persisted": false,
+    "reason": "Native payload exceeded the connected Git blob transport envelope; bounded same-visual professional PNG transport representation used."
+  },
+  "normalization": {
+    "path": "briefs/images/2026-10-04/dab-edition-2026-10-04-m07.png",
+    "format": "PNG",
+    "width": 1200,
+    "height": 600,
+    "bytes": 164707,
+    "sha256": "0305fe28dc181ca350226a21249ede1ed2227b1183c7f86ebe6e075c83304cda",
+    "git_blob_sha": "d2f71a72c61107656606d680d6e309ef52f8d129",
+    "normalized_at": "2026-10-04T08:52:40.872Z",
+    "method": "same-visual resized 256-color professional PNG transport representation",
+    "same_visual": true,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Image edit",
+      "Sheets canvas",
+      "Source data",
+      "Synchronized",
+      "Cross-app work",
+      "Workspace"
+    ],
+    "extra_visible_text": [],
+    "note": "Image-editing and spreadsheet workspaces synchronize bidirectionally through shared source data and a cross-app work layer."
+  },
+  "disposition": "ACCEPTED_LOCKED"
+}

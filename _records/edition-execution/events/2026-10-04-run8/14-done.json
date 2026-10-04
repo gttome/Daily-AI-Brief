@@ -1,0 +1,40 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "execution_key": "2026-10-04-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "14",
+  "candidate_id": "m07",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-04T08:52:40.872Z",
+  "writer_generation": 35,
+  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261004-run8:task-14:generation-35:f7ea3586",
+  "reason_code": "IMAGE_ACCEPTED_LOCKED",
+  "proof": {
+    "request_key": "f7ea3586f43b8793f89b06b7df0b998e61311b0bf31601db54c1c1a9ffbdaa9a",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261004-run8/14-f7ea3586f43b8793f89b06b7df0b998e61311b0bf31601db54c1c1a9ffbdaa9a.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-04-run8/m07.json",
+    "saved_git_review": "_records/image-reviews/2026-10-04-run8/m07-attempt-1-saved-git-review.json",
+    "final_sha256": "0305fe28dc181ca350226a21249ede1ed2227b1183c7f86ebe6e075c83304cda",
+    "final_git_blob_sha": "d2f71a72c61107656606d680d6e309ef52f8d129",
+    "saved_git_commit": "bb5bfa48b6faf273bbbb41f816ec0b6a486b97b2"
+  },
+  "completed_tasks_preserved": [
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13"
+  ],
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}
