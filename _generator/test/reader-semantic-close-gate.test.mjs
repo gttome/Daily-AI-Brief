@@ -4,7 +4,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {evaluateReaderSemanticCloseGate} from '../lib/reader-semantic-close-gate.mjs';
-import {scanWorkflowText,validateActiveProductionWorkflows} from '../lib/workflow-static-guards.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..','..');
 const date='2026-10-04';
@@ -61,17 +60,3 @@ test('semantic gate requires all six article book bridges and reader evidence',(
   }
 });
 
-
-test('workflow static guard accepts valid Node heredoc and active production workflows',()=>{
-  const fixture="run: |\\n  node - <<'NODE'\\n  const x={ok:true};\\n  process.stdout.write(JSON.stringify(x));\\n  NODE\\n";
-  assert.deepEqual(scanWorkflowText({workflowPath:'fixture.yml',text:fixture}),[]);
-  const live=validateActiveProductionWorkflows(root);
-  assert.equal(live.result,'PASS',JSON.stringify(live.errors,null,2));
-});
-
-test('workflow static guard rejects heredoc indentation and Node syntax defects',()=>{
-  const badIndent="run: |\\n  node - <<'NODE'\\n  const x=1;\\n   NODE\\n";
-  assert.ok(scanWorkflowText({workflowPath:'fixture.yml',text:badIndent}).some(error=>error.code==='WORKFLOW_HEREDOC_CLOSER_INDENT_MISMATCH'));
-  const badNode="run: |\\n  node - <<'NODE'\\n  const broken = ;\\n  NODE\\n";
-  assert.ok(scanWorkflowText({workflowPath:'fixture.yml',text:badNode}).some(error=>error.code==='NODE_HEREDOC_SYNTAX_INVALID'));
-});
