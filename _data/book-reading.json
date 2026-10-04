@@ -14025,8 +14025,8 @@
     "2026-10-04": {
       "contract_transition": "pre-2026-10-05-frozen-reader-recovery",
       "book_mapping_source": "_records/editorial-handoff/book-mappings-2026-10-04.json",
-      "suppress_reader_book_bridges": true,
-      "reason": "Run 8 Task 09 completed and persisted verified mapping evidence after the frozen reader pages were assembled; preserve Task 19 reader bytes while validating the durable mapping artifact."
+      "suppress_reader_book_bridges": false,
+      "reason": "Run 8 is PUBLIC_CLOSED. Historical reader-parity correction restores the persisted Task 09 book bridges and full reader presentation without changing locked editorial selections or accepted assets."
     }
   }
 }
