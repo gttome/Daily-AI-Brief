@@ -1,0 +1,19 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "c15e8e3cdda37d885fc3751886b0ae459ca1eff17c4e17198e7eded8e8889fe1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "01",
+  "request_writer_generation": 3,
+  "writer_generation": 4,
+  "status": "passed",
+  "completed_at": "2026-10-04T01:51:12.247Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "binding_path": "_records/edition-execution/bindings/dab-edition-2026-10-04-run8.json",
+    "research_cutoff": "2026-10-04T01:32:36.576Z",
+    "duplicate_execution_rejected": true
+  },
+  "result": "PASS"
+}
