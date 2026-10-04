@@ -1,0 +1,27 @@
+{
+  "schema_version": "image-recovery-reconciliation-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "request_key": "46f01a3962c8c3386e7f6475e137168cc0f18f35bc06a3244bec7f18d736e21a",
+  "writer_generation": 18,
+  "attempt": 2,
+  "status": "rejected",
+  "rejected_at": "2026-10-04T04:43:26.189Z",
+  "review": {
+    "rejection_code": "EXECUTION_CONTEXT_CONTAMINATION",
+    "rejection_reason": "Two bounded native generations from Watchdog Slot A returned Watchdog operational dashboards instead of the sealed m02 backend-state verification mechanism; subject and visible-text gates failed before transport."
+  },
+  "recovery_action": "Run the protected image engineering-repair path, then permit exactly one post-repair attempt in a fresh isolated single-story image-only context bound only to _records/image-context/2026-10-04/m02.json. Never retry generation in a mixed Watchdog/orchestration conversation.",
+  "targeted_next_action": "Run the protected image engineering-repair path, then permit exactly one post-repair attempt in a fresh isolated single-story image-only context bound only to _records/image-context/2026-10-04/m02.json. Never retry generation in a mixed Watchdog/orchestration conversation.",
+  "evidence": [
+    "_records/image-attempts/2026-10-04-run8/m02-attempt-1.json",
+    "_records/image-attempts/2026-10-04-run8/m02-attempt-2.json",
+    "_records/image-recovery/2026-10-04-run8/m02-watchdog-A-context-contamination.json",
+    "_records/image-recovery/2026-10-04-run8/m02-watchdog-A-safe-boundary-handoff.json"
+  ],
+  "external_blocker": false,
+  "accepted_locked": false,
+  "same_context_retry_prohibited": true
+}
