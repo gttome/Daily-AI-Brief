@@ -4,6 +4,9 @@
   "owner_id": "github-actions-37168529235-1",
   "generation": 1,
   "acquired_at": "2026-10-04T01:37:00.851Z",
-  "last_heartbeat_at": "2026-10-04T01:37:00.851Z",
-  "expires_at": "2026-10-04T07:37:00.851Z"
+  "last_heartbeat_at": "2026-10-04T01:46:45.186Z",
+  "expires_at": "2026-10-04T01:46:45.186Z",
+  "released_at": "2026-10-04T01:46:45.186Z",
+  "released": true,
+  "release_reason": "TASK_00_HANDOFF_TO_CHATGPT_WORKER"
 }
