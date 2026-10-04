@@ -5,10 +5,10 @@
   "generation": 71,
   "task_id": "23",
   "capability": "protected_ci",
-  "operation_key": "task23-post-pr447-exact-head-ci-g71",
+  "operation_key": "task23-post-pr448-exact-head-ci-g71",
   "acquired_at": "2026-10-04T15:56:31.000Z",
-  "last_heartbeat_at": "2026-10-04T16:03:45.000Z",
-  "expires_at": "2026-10-04T16:18:45.000Z",
+  "last_heartbeat_at": "2026-10-04T16:08:21.000Z",
+  "expires_at": "2026-10-04T16:23:21.000Z",
   "state": "ACTIVE",
   "released": false,
   "transfer_from": {
