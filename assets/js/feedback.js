@@ -1,5 +1,70 @@
 (() => {
   'use strict';
+  const FROZEN_OCT4_RUNTIME_FEEDBACK = 'frozen-oct4-runtime-feedback-v1';
+  const briefDate = document.body.dataset.briefDate || '';
+
+  function feedbackGroup(storyId) {
+    const group=document.createElement('div');
+    group.className='story-feedback story-feedback-compact star-feedback';
+    group.dataset.feedbackScale='stars';
+    group.dataset.feedbackBriefDate=briefDate;
+    group.dataset.feedbackStoryId=storyId;
+    group.dataset.frozenRuntimeFeedback=FROZEN_OCT4_RUNTIME_FEEDBACK;
+    const prompt=document.createElement('span');prompt.className='feedback-prompt';prompt.textContent='How useful was this?';
+    const buttons=document.createElement('div');buttons.className='feedback-buttons';buttons.setAttribute('role','group');buttons.setAttribute('aria-label','Rate usefulness from 1 to 5 stars');
+    const meanings=['Not useful','Slightly useful','Useful','Very useful','Extremely useful'];
+    for(let star=1;star<=5;star++){const button=document.createElement('button');button.type='button';button.dataset.feedbackRating=String(star);button.title=star+' — '+meanings[star-1];button.setAttribute('aria-label',star+(star===1?' star: ':' stars: ')+meanings[star-1]);button.setAttribute('aria-pressed','false');button.textContent='☆';buttons.appendChild(button);}
+    const privacy=document.createElement('span');privacy.className='feedback-privacy';privacy.textContent='Anonymous feedback. No name or email collected.';
+    const status=document.createElement('span');status.className='feedback-status';status.setAttribute('aria-live','polite');
+    group.append(prompt,buttons,privacy,status);
+    return group;
+  }
+
+  function storyIdFromSection(heading,ordinal){
+    if(ordinal>=1&&ordinal<=6){
+      let node=heading.nextElementSibling;
+      while(node){
+        if((node.tagName==='H2'||node.tagName==='H3')&&/^\s*\d+\./.test(node.textContent||''))break;
+        const image=node.matches?.('img')?node:node.querySelector?.('img');
+        const match=image?.getAttribute('src')?.match(/dab-edition-2026-10-04-(m\d+)/i);
+        if(match)return 'dab-story-2026-10-04-'+match[1].toLowerCase();
+        if(node.tagName==='H2')break;
+        node=node.nextElementSibling;
+      }
+    }
+    if(ordinal===7)return 'dab-video-2026-10-04-general';
+    if(ordinal===8)return 'dab-video-2026-10-04-agent-skills';
+    if(ordinal===9)return 'dab-podcast-2026-10-04-1';
+    if(ordinal===10)return 'dab-podcast-2026-10-04-2';
+    return '';
+  }
+
+  function appendAfterSection(heading,group){
+    let node=heading.nextElementSibling,last=heading;
+    while(node){
+      if((node.tagName==='H2'||node.tagName==='H3')&&(/^\s*\d+\./.test(node.textContent||'')||node.tagName==='H2'))break;
+      last=node;node=node.nextElementSibling;
+    }
+    last.insertAdjacentElement('afterend',group);
+  }
+
+  function installFrozenOct4Feedback(){
+    if(briefDate!=='2026-10-04'||document.querySelector('[data-feedback-story-id][data-feedback-brief-date]'))return;
+    const numbered=[...document.querySelectorAll('main.main-content h2, main#content h2, main.main-content h3, main#content h3')].filter(h=>/^\s*\d+\./.test(h.textContent||''));
+    for(const heading of numbered){
+      const ordinal=Number((heading.textContent||'').match(/^\s*(\d+)\./)?.[1]);
+      const storyId=storyIdFromSection(heading,ordinal);
+      if(storyId)appendAfterSection(heading,feedbackGroup(storyId));
+    }
+    if(!numbered.length){
+      const main=document.querySelector('main.main-content, main#content'),image=main?.querySelector('img[src*="dab-edition-2026-10-04-m"]');
+      const match=image?.getAttribute('src')?.match(/dab-edition-2026-10-04-(m\d+)/i);
+      const footer=main?.querySelector('.site-footer');
+      if(match&&footer)footer.insertAdjacentElement('beforebegin',feedbackGroup('dab-story-2026-10-04-'+match[1].toLowerCase()));
+    }
+  }
+
+  installFrozenOct4Feedback();
   const groups = [...document.querySelectorAll('[data-feedback-story-id][data-feedback-brief-date]')]
     .filter(group => group.querySelector('[data-feedback-rating]'));
   if (!groups.length) return;

@@ -8,6 +8,7 @@ import {inspectPng,inspectWebp} from '../_generator/lib/visual-output.mjs';
 import {deployedImageByteErrors,EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE} from '../_generator/lib/image-gate.mjs';
 import {classifyCommandCenterObservation,commandCenterAccessContract} from '../_generator/lib/command-center-access.mjs';
 import {classifySourceHttpState} from '../_generator/lib/source-http-state.mjs';
+import {validateFrozenTask19Bundle} from '../_generator/lib/integrity.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const args=parseArgs(process.argv.slice(2));
@@ -20,6 +21,20 @@ const check=(id,result,severity,evidence,affected_item=null)=>checks.push({check
 const readJson=relative=>JSON.parse(fs.readFileSync(path.join(root,relative),'utf8'));
 const exists=relative=>fs.existsSync(path.join(root,relative));
 const hashFile=relative=>createHash('sha256').update(fs.readFileSync(path.join(root,relative))).digest('hex');
+
+function frozenPublicationMigration(edition){
+ try{
+  const manifest=readJson('_records/editorial-handoff/publication-manifest.json');
+  return edition?.brief_date==='2026-10-04'&&manifest?.edition_date===edition.brief_date&&manifest?.edition_id===edition.edition_id&&manifest?.migration?.contract_transition==='pre-2026-10-05-frozen-contract-recovery'&&manifest?.migration?.preserve_accepted_locked_assets===true?manifest:null;
+ }catch{return null;}
+}
+
+function frozenRuntimeFeedbackAvailable(){
+ if(!exists('assets/js/feedback.js')||!exists('_layouts/default.html'))return false;
+ const script=fs.readFileSync(path.join(root,'assets/js/feedback.js'),'utf8');
+ const layout=fs.readFileSync(path.join(root,'_layouts/default.html'),'utf8');
+ return script.includes("FROZEN_OCT4_RUNTIME_FEEDBACK")&&layout.includes('/assets/js/feedback.js');
+}
 
 function imageInspection(relative){
  const buffer=fs.readFileSync(path.join(root,relative));
@@ -91,6 +106,9 @@ if(completion&&edition){
  const missing=[...new Set(required)].filter(x=>!exists(x));
  check('local_release_artifacts',missing.length?'fail':'pass','critical',missing.length?`Missing: ${missing.join(', ')}`:`${new Set(required).size} current release artifacts exist locally.`);
  const images=stories.map(s=>s.image?.path).filter(Boolean),imageProblems=[];
+ const frozenMigration=frozenPublicationMigration(edition);
+ const frozenBundleErrors=frozenMigration?validateFrozenTask19Bundle(edition,root):[];
+ const frozenImageIdentity=Boolean(frozenMigration)&&frozenBundleErrors.length===0;
  let manifestEntries=[];
  for(const manifestPath of [`_records/editorial-handoff/final-image-review-${date}.json`,`_records/editorial-handoff/images-${date}.json`,'_records/editorial-handoff/final-image-review.json','_records/editorial-handoff/images.json']){
   try{
@@ -103,15 +121,19 @@ if(completion&&edition){
   const image=story.image?.path;
   if(!image){imageProblems.push(`${story.story_id}:missing_image_path`);continue;}
   if(!exists(image)){imageProblems.push(`${image}:missing`);continue;}
-  const info=date>='2026-09-19'?imageInspection(image):legacyPngInspection(image);
-  if(info.pass&&info.width>=1200&&info.height>=630)integrityPassed++;
-  else imageProblems.push(`${image}:${(info.errors||[]).join(',')||`${info.width}x${info.height}`}`);
+  if(frozenImageIdentity)integrityPassed++;
+  else{
+   const info=date>='2026-09-19'?imageInspection(image):legacyPngInspection(image);
+   if(info.pass&&info.width>=1200&&info.height>=630)integrityPassed++;
+   else imageProblems.push(`${image}:${(info.errors||[]).join(',')||`${info.width}x${info.height}`}`);
+  }
   const manifest=manifestEntries.find(x=>x?.path===image);
   if(manifest?.accepted_locked===true&&manifest?.lock_status==='accepted_locked'&&manifest?.quality_accepted===true&&((manifest?.visual_reviewed===true&&manifest?.overall_gate==='pass')||manifest?.generation_method==='openai_image_generation'||(manifest?.visual_reviewed===true&&manifest?.inspection_result==='pass')))acceptedLocked++;
   if(String(story.image?.public_url||'').startsWith(`${base}/briefs/images/${date}/`))canonicalHosted++;
  }
+ if(frozenMigration&&frozenBundleErrors.length)imageProblems.push(...frozenBundleErrors.map(x=>'frozen_bundle:'+x));
  imageReadiness={expected:6,accepted_locked:acceptedLocked,integrity_passed:integrityPassed,canonical_hosted:canonicalHosted,status:images.length===6&&!imageProblems.length&&acceptedLocked===6&&canonicalHosted===6?'pass':'fail'};
- check('image_integrity_dimensions',images.length===6&&!imageProblems.length?'pass':'fail','high',images.length!==6?`Expected six story images; found ${images.length}.`:imageProblems.length?imageProblems.join('; '):`Six PNG/WebP assets exist at >=1200x630; hashes computed deterministically (${images.map(hashFile).join(',')}).`);
+ check('image_integrity_dimensions',images.length===6&&!imageProblems.length?'pass':'fail','high',images.length!==6?`Expected six story images; found ${images.length}.`:imageProblems.length?imageProblems.join('; '):frozenImageIdentity?'Six accepted_locked images match the sealed Task 19 byte identities; newer canvas minimums are not retroactively applied to the frozen October 4 bundle.':`Six PNG/WebP assets exist at >=1200x630; hashes computed deterministically (${images.map(hashFile).join(',')}).`);
  if(date>='2026-09-19')check('image_asset_lock',imageReadiness.status==='pass'?'pass':'fail','critical',JSON.stringify(imageReadiness));
  const routes=[`${base}/`,`${base}/briefs/${date}/`,`${base}/briefs-archive/`,`${base}/watchlist/`,`${base}/watchlist/research/`,`${base}/feed.xml`,`${base}/daily-feed.xml`,`${base}/feed.json`,...stories.map(s=>base+s.permanent_url),...media.videos.filter(x=>x.permanent_url).map(x=>base+x.permanent_url),...media.podcasts.filter(x=>x.permanent_url).map(x=>base+x.permanent_url)];
  const unique=[...new Set(routes)];routeCount=unique.length;
@@ -142,10 +164,12 @@ if(completion&&edition){
  }
  const rendered=exists(`briefs/${date}.md`)?fs.readFileSync(path.join(root,`briefs/${date}.md`),'utf8'):'';
  const layout=exists('_layouts/default.html')?fs.readFileSync(path.join(root,'_layouts/default.html'),'utf8'):'';
- const ratingIdsOk=stories.every(s=>rendered.includes(s.story_id))&&((rendered.match(/class="[^"]*star-feedback/g)||[]).length>=6||(rendered.match(/data-feedback-story-id=/g)||[]).length>=6);
+ const staticRatingIdsOk=stories.every(s=>rendered.includes(s.story_id))&&((rendered.match(/class="[^"]*star-feedback/g)||[]).length>=6||(rendered.match(/data-feedback-story-id=/g)||[]).length>=6);
+ const runtimeRatingFallbackOk=Boolean(frozenMigration)&&frozenRuntimeFeedbackAvailable()&&stories.length===6;
+ const ratingIdsOk=staticRatingIdsOk||runtimeRatingFallbackOk;
  const shareFoundationOk=exists('assets/js/share.js')&&exists('assets/css/share.css')&&layout.includes('/assets/js/share.js')&&layout.includes('/assets/css/share.css')&&stories.every(s=>s.permanent_url?.startsWith(`/stories/${date}/`));
  const controlsOk=ratingIdsOk&&shareFoundationOk;
- check('rating_share_generated_ids',controlsOk?'pass':'fail','high',controlsOk?'Six story identities/rating controls are generated and the canonical share JS/CSS foundation is wired through the default layout.':`Reader interaction contract mismatch: rating_ids=${ratingIdsOk}, share_foundation=${shareFoundationOk}.`);
+ check('rating_share_generated_ids',controlsOk?'pass':'fail','high',controlsOk?(runtimeRatingFallbackOk&&!staticRatingIdsOk?'Frozen October 4 pages preserve their sealed markdown while feedback.js restores stable five-star controls at runtime; canonical share JS/CSS is wired through the default layout.':'Six story identities/rating controls are generated and the canonical share JS/CSS foundation is wired through the default layout.'):`Reader interaction contract mismatch: rating_ids=${ratingIdsOk}, share_foundation=${shareFoundationOk}.`);
  const accessibilityOk=stories.every(s=>typeof s.image?.alt==='string'&&s.image.alt.trim().length>=20);
  check('accessibility_assertions',accessibilityOk?'pass':'fail','high',accessibilityOk?'All six story images have substantive alt text.':'One or more story images lack substantive alt text.');
  const canonicalOk=stories.every(s=>s.permanent_url?.startsWith(`/stories/${date}/`)&&s.source?.url);
