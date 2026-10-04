@@ -1012,10 +1012,12 @@
         "worker_claim",
         "worker_result",
         "accepted_locked_asset",
-        "bounded_repair_completion",
         "protected_executor_state_advance",
         "first_incomplete_task_advance",
-        "publication_or_verification_evidence"
+        "publication_or_verification_evidence",
+        "protected_repair_state_advance",
+        "same_task_resume",
+        "protected_repair_same_task_substantive_progress"
       ],
       "does_not_count": [
         "supervisor_lease",
@@ -1027,7 +1029,12 @@
         "queue_rewrite",
         "status_only_commit",
         "orchestration_only_commit",
-        "dispatch_without_executor_activation"
+        "dispatch_without_executor_activation",
+        "repair_branch_creation",
+        "protected_pr_creation",
+        "protected_ci_dispatch",
+        "protected_ci_pass_without_resume",
+        "protected_repair_merge_without_same_task_resume"
       ],
       "active_executor_required_for_recovery_success": true,
       "active_and_progressing_chain": [
@@ -1062,7 +1069,23 @@
         "real_executor_confirmed",
         "durable_progress_confirmed"
       ],
-      "minimum_action_semantics": "minimum_sufficient_action_that_restores_active_and_progressing_state"
+      "minimum_action_semantics": "minimum_sufficient_action_that_restores_active_and_progressing_state",
+      "protected_repair_executor_required": true,
+      "protected_repair_record_path_pattern": "_records/edition-execution/protected-repairs/<execution-id>/<task-id>-<repair-key>.json",
+      "protected_repair_handoff_is_terminal": false,
+      "owner_prompt_boundary_allowed": false,
+      "actionable_recovery_must_not_terminate_at_owner_prompt_boundary": true,
+      "protected_repair_failure_is_recoverable_unless_external": true,
+      "repair_continuation_stages": [
+        "PROTECTED_REPAIR_REQUIRED",
+        "REPAIR_PR_OPENED",
+        "REPAIR_CI_RUNNING",
+        "REPAIR_CI_PASS",
+        "REPAIR_MERGED",
+        "SAME_TASK_RESUME_REQUIRED",
+        "SAME_TASK_RESUMED",
+        "RECOVERY_VERIFIED_PROGRESSING"
+      ]
     },
     "protections": {
       "terminal_reopen_allowed": false,
@@ -1111,6 +1134,81 @@
       "event_triggered_work_tasks": false,
       "browser_automation": false,
       "new_credentials": false
+    }
+  },
+  "protected_repair_autonomy": {
+    "schema_version": "protected-repair-autonomy-contract-v1",
+    "enabled": true,
+    "executor_workflow": ".github/workflows/protected-repair-executor.yml",
+    "library": "_generator/lib/protected-repair-executor.mjs",
+    "cli": "_tools/protected-repair-executor.mjs",
+    "record_schema": "protected-repair-required-v1",
+    "record_path_pattern": "_records/edition-execution/protected-repairs/<execution-id>/<task-id>-<repair-key>.json",
+    "repair_key_fields": [
+      "execution_id",
+      "task_id",
+      "incident_id",
+      "repair_scope_digest"
+    ],
+    "state_machine": [
+      "PROTECTED_REPAIR_REQUIRED",
+      "REPAIR_PR_OPENED",
+      "REPAIR_CI_RUNNING",
+      "REPAIR_CI_PASS",
+      "REPAIR_MERGED",
+      "SAME_TASK_RESUME_REQUIRED",
+      "SAME_TASK_RESUMED",
+      "RECOVERY_VERIFIED_PROGRESSING"
+    ],
+    "recoverable_failure_states": [
+      "REPAIR_CI_FAIL",
+      "REPAIR_HEAD_CHANGED",
+      "REPAIR_EXECUTION_MISMATCH",
+      "REPAIR_MERGE_CONFLICT",
+      "REPAIR_RESUME_FAILED"
+    ],
+    "exact_one_pr_per_repair_key": true,
+    "exact_head_ci_required": true,
+    "active_execution_and_task_revalidation_before_merge": true,
+    "direct_main_write_allowed": false,
+    "bounded_scope_required": true,
+    "same_execution_resume_required": true,
+    "same_task_resume_required": true,
+    "merge_is_recovery_success": false,
+    "real_executor_required_for_success": true,
+    "substantive_durable_progress_required_for_success": true,
+    "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+    "routine_owner_pr_or_retry_required": false,
+    "dead_writer_cleanup": {
+      "schema_version": "dead-writer-recovery-v1",
+      "live_writer_takeover_allowed": false,
+      "terminal_workflow_status_required": "completed",
+      "terminal_conclusions": [
+        "failure",
+        "cancelled"
+      ],
+      "workflow_run_identity_must_match_owner": true,
+      "child_worker_live_forbids_takeover": true,
+      "post_terminal_substantive_write_forbids_takeover": true,
+      "append_only_proof_path_pattern": "_records/edition-execution/dead-writer-recovery/<execution-id>/",
+      "optimistic_concurrency_required": true,
+      "replacement_generation_required": true
+    },
+    "protections": {
+      "terminal_execution_reopen_allowed": false,
+      "completed_task_rerun_allowed": false,
+      "accepted_locked_regeneration_allowed": false,
+      "duplicate_image_generation_allowed": false,
+      "post_repair_attempt_limit": 1
+    },
+    "cost_boundary": {
+      "chatgpt_work": false,
+      "codex": false,
+      "paid_apis": false,
+      "paid_external_services": false,
+      "new_credentials": false,
+      "alternate_accounts": false,
+      "browser_automation": false
     }
   }
 }
