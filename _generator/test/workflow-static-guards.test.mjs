@@ -37,6 +37,14 @@ test('direct repository dispatch is repository scoped',()=>{
 test('unsupported YAML run forms fail closed',()=>{
   assert.ok(checkWorkflow('run: >\n  gh workflow run a.yml').length);
 });
+test('GitHub script dispatch proves repository binding and rejects overrides',()=>{
+  const script=s=>'jobs:\n  test:\n    steps:\n      - uses: actions/github-script@v7\n        with:\n          script: |\n'+s.split('\n').map(l=>'            '+l).join('\n');
+  const call="await github.rest.actions.createWorkflowDispatch({...context.repo,workflow_id:'ci.yml',ref:'main'});";
+  assert.deepEqual(checkWorkflow(script(call)),[]);
+  assert.deepEqual(checkWorkflow(script('const repo={...context.repo};\n'+call.replace('...context.repo','...repo'))),[]);
+  for(const bad of [call.replace('...context.repo,',''),call.replace('...context.repo','...unknown'),call.replace("workflow_id:","owner:'other',workflow_id:"),call.replace('...context.repo','...repo')])assert.ok(checkWorkflow(script(bad)).some(x=>x.includes('implicit_programmatic_dispatch')));
+  assert.ok(checkWorkflow(script('const repo={...context.repo};\nrepo.owner="other";\n'+call.replace('...context.repo','...repo'))).length);
+});
 test('historical defects independently reintroduced in real workflow fail',()=>{
   const actual=fs.readFileSync(root+'/.github/workflows/protected-repair-executor.yml','utf8');
   assert.deepEqual(checkWorkflow(actual),[]);
