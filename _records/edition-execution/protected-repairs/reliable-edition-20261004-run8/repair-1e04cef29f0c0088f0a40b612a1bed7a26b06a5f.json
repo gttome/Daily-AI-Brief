@@ -17,12 +17,17 @@
   "created_at": "2026-10-04T06:55:29.997Z",
   "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
   "diagnosis": "The first bounded post-repair native image attempt repeated the internal subject/context-isolation failure. A consumed prior repair epoch is not an external blocker.",
-  "next_stage": "Protected repair branch is synchronized with current protected main and conflict-resolved. Require deterministic CI on exact head 6e874106ac991de54600cf327738fbeb8bce8dfb; after PASS, revalidate the same active execution/Task 11, merge exactly that head, and dispatch same-task resume.",
+  "next_stage": "Exact-head deterministic CI is PASS on synchronized head 6e874106ac991de54600cf327738fbeb8bce8dfb (run 37185263592). PR #431 is mergeable and still targets the same active Task 11. Continue from REPAIR_CI_PASS: protected repair executor must merge exactly this head after revalidation and dispatch the same execution/Task 11. Do not rediscover or create another repair PR.",
   "last_recovery_stage": {
-    "state": "REPAIR_BRANCH_SYNCHRONIZED",
-    "prior_failed_ci_run_id": 37184298503,
-    "corrected_test_head": "70078fb4c8c83b5fb0e97d41cb178a445df0cdb1",
-    "synchronized_head": "6e874106ac991de54600cf327738fbeb8bce8dfb",
-    "synchronized_main": "d90c174810af54b29e1074c8b282ec4bb3e7c97a"
+    "state": "REPAIR_CI_PASS",
+    "pr_number": 431,
+    "repair_head": "6e874106ac991de54600cf327738fbeb8bce8dfb",
+    "ci_run_id": 37185263592,
+    "ci_conclusion": "success",
+    "same_execution_revalidated": true,
+    "same_task_revalidated": "11",
+    "mergeable_observed": true,
+    "merge_attempt_via_connected_github": "blocked_by_runtime_safety_gate",
+    "protected_executor_run_observed": false
   }
 }
