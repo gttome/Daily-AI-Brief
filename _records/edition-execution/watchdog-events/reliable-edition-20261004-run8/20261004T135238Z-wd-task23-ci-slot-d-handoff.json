@@ -1,0 +1,30 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "23",
+  "incident_id": "wd-task23-manifest-contract-37205934438",
+  "slot_id": "D",
+  "classification": "BLOCKED_ACTIONABLE",
+  "lease_generation": 37,
+  "action_key": "wd-task23-manifest-contract-37205934438:exact-head-ci-diagnosis:slot-d:g37",
+  "attempted_actions": [
+    "Re-read PR 442 and exact-head protected CI failure 37205934438.",
+    "Confirmed the earlier handoff-identity defect was repaired before that CI run.",
+    "Inspected current sealed media, image, Watchlist and publication-manifest evidence.",
+    "Rejected blind CI retry because the remaining failure is deterministic.",
+    "Rejected policy relaxation, evidence fabrication, accepted_locked byte replacement and duplicate PR creation."
+  ],
+  "blocker": "Protected CI still rejects the frozen candidate for substantive publication-contract mismatches: accepted image canvases do not match the required final 1200x630 contract and lack required publication identity bindings; video freshness/date evidence is invalid or incomplete; the bound Watchlist v2 sweep omits required full discovery/disposition telemetry. These cannot all be corrected safely by a status-only or metadata-only retry.",
+  "next_authorized_action": "Resume the same Task 23 and PR 442. Preserve accepted_locked source bytes. Repair only validator-legitimate publication representations/evidence from sealed sources; if no existing contract permits a separate exact-1200x630 representation, prepare the smallest protected code/config repair defining that separation without weakening the professional image gate. Rebuild Watchlist v2 only from sealed Task 08 evidence. Use only verified fresh video evidence; never invent dates or relax freshness. Rerun exact-head pull_request validate only after the deterministic blockers are cleared.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "recovery_required": true,
+  "blocked_external": false,
+  "exact_ci": {
+    "run_id": 37205934438,
+    "head_sha": "1a69d3fe9d59301ca683aafa91a6b9057e635433",
+    "conclusion": "failure"
+  },
+  "occurred_at": "2026-10-04T13:52:38.236Z"
+}
