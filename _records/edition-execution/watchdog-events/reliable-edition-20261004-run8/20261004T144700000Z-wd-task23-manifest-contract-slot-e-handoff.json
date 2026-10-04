@@ -1,0 +1,34 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "23",
+  "incident_id": "wd-task23-manifest-contract-37205934438",
+  "slot_id": "E",
+  "classification": "BLOCKED_ACTIONABLE",
+  "lease_generation": 39,
+  "action_key": "wd-task23-manifest-contract-37205934438:continue-protected-repair-pr444:slot-e:g39",
+  "attempted_actions": [
+    "Acquired the released execution recovery lease under generation 39.",
+    "Revalidated Task 22 durable Done evidence and confirmed Task 23 remains the first incomplete task.",
+    "Reconciled the stale completed Task 11 protected-repair record so the executor will not replay it.",
+    "Verified PR #444 is the single bounded Task 23 repair PR at exact head 87040d737c9e0954e4105860ef093ddac89d4e67.",
+    "Verified PR-attached deterministic validate run 37208316215 completed successfully on that exact head.",
+    "Attempted the protected merge through the authorized connected GitHub mutation surface without bypass."
+  ],
+  "blocker": "The authorized connected GitHub mutation surface rejected both the exact-head PR #444 merge and reconciliation of the remaining stale completed Task 17 repair record during this invocation. No branch-protection bypass, alternate credential, direct-main write, or duplicate repair PR is permitted.",
+  "next_authorized_action": "Re-read the same execution and Task 23. Reuse PR #444 unchanged. First reconcile the stale Task 17 repair record if the connected mutation surface permits it; otherwise proceed with the same already-validated PR #444 through the protected merge path when the authorized surface permits. After merge, resume the same Task 23 and require substantive durable progress before recovery success.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "recovery_required": true,
+  "blocked_external": false,
+  "exact_repair": {
+    "repair_key": "repair-be62fc6860a0e5550e26d833c9643c8ea893a67f",
+    "pr_number": 444,
+    "repair_head": "87040d737c9e0954e4105860ef093ddac89d4e67",
+    "validate_run_id": 37208316215,
+    "validate_conclusion": "success",
+    "mergeable_observed": true
+  },
+  "occurred_at": "2026-10-04T14:47:00.000Z"
+}
