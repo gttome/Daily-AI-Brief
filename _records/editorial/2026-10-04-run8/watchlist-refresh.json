@@ -1,0 +1,12 @@
+{
+  "schema_version": "run8-watchlist-refresh-v1",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_id": "reliable-edition-20261004-run8",
+  "observed_at": "2026-10-04T03:38:35.000Z",
+  "checks_completed": 14,
+  "new_topics": [],
+  "updated_topic_ids": ["dab-topic-harness-engineering", "dab-topic-adaptive-agent-safeguards", "dab-topic-agentic-edge-inference"],
+  "carried_forward_count": 17,
+  "zero_new_certified": true,
+  "result": "PASS"
+}
