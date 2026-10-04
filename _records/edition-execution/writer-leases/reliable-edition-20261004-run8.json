@@ -7,10 +7,10 @@
   "capability": "repository",
   "operation_key": "35c632fcde29b0b026ec0a2d2ea7f29d4697ee45397f789d76aaf60604c63232",
   "acquired_at": "2026-10-04T09:52:20.000Z",
-  "last_heartbeat_at": "2026-10-04T09:52:20.000Z",
-  "expires_at": "2026-10-04T10:07:20.000Z",
-  "state": "ACTIVE",
-  "released": false,
+  "last_heartbeat_at": "2026-10-04T10:11:23Z",
+  "expires_at": "2026-10-04T10:11:23Z",
+  "state": "RELEASED",
+  "released": true,
   "transfer_from": {
     "owner_id": "github-actions-37193396610-1",
     "generation": 51,
@@ -19,5 +19,14 @@
     "workflow_run_id": 37193396610,
     "conclusion": "failure",
     "at": "2026-10-04T09:52:20.000Z"
+  },
+  "released_at": "2026-10-04T10:11:23Z",
+  "release_reason": "SAFE_BOUNDARY_REACHED",
+  "handoff": {
+    "incident_id": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch",
+    "task_id": "18",
+    "request_key": "35c632fcde29b0b026ec0a2d2ea7f29d4697ee45397f789d76aaf60604c63232",
+    "recovery_required": true,
+    "next_action": "Resume the same queued Task 18 request from current durable state without rerunning Tasks 00-17."
   }
 }
