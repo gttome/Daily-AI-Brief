@@ -427,7 +427,7 @@ jobs:
                     --jq '[.workflow_runs[] | select(.status=="queued" or .status=="in_progress")] | length')"
                   if [ "$active_repository_consumers" = "0" ]; then
                     echo "Dispatching Task 17 repository consumer explicitly via workflow_dispatch; pushes created by GITHUB_TOKEN do not recursively trigger workflows."
-                    gh workflow run repository-task-consumer.yml --ref "$RUN_BRANCH"
+                    gh workflow run repository-task-consumer.yml --repo "$GITHUB_REPOSITORY" --ref "$RUN_BRANCH"
                   else
                     echo "Task 17 repository consumer already queued/in progress; no duplicate dispatch."
                   fi
