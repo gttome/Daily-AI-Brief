@@ -158,6 +158,13 @@ No production pointer, execution, Done task, accepted_locked asset, or image req
           set -euo pipefail
           pr="${{ steps.pr.outputs.number }}"
           head="${{ steps.pr.outputs.head }}"
+          target="${{ steps.target.outputs.target_branch }}"
+          state="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json state --jq '.state')"
+          if [ "$state" = "MERGED" ]; then
+            echo "Synthetic proof PR is already merged; idempotent scheduled retry will only remove the isolated trigger branch if it still exists."
+            gh api --method DELETE "repos/${GITHUB_REPOSITORY}/git/refs/heads/${target}" >/dev/null 2>&1 || true
+            exit 0
+          fi
           current="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq '.headRefOid')"
           [ "$current" = "$head" ] || { echo "::error::Synthetic PR head moved after CI."; exit 1; }
           gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --merge --match-head-commit "$head"
@@ -171,3 +178,4 @@ REAL_EXECUTOR_ACTIVE=true
 SUBSTANTIVE_DURABLE_PROGRESS=true
 RECOVERY_VERIFIED_PROGRESSING=true
 OWNER_PROMPT_REQUIRED=false"
+          gh api --method DELETE "repos/${GITHUB_REPOSITORY}/git/refs/heads/${target}" >/dev/null 2>&1 || true
