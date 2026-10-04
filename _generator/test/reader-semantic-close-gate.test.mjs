@@ -31,8 +31,8 @@ test('removing one required Brief block fails the close gate',()=>{
     fileOverrides:{[relative]:altered}
   });
   assert.equal(gate.result,'FAIL');
-  assert.ok(gate.errors.some(error=>error.includes('dated_brief_canonical')));
-  assert.ok(gate.errors.includes('continue_learning_or_archive_navigation_missing')||gate.checks.continue_learning_and_archive===true);
+  assert.ok(gate.errors.includes('dated:continue_learning_missing'));
+  assert.ok(gate.errors.includes('continue_learning_or_archive_navigation_missing'));
 });
 
 test('altering one permanent story page fails the close gate',()=>{
