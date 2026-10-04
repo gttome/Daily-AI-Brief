@@ -41,7 +41,10 @@ test('Run 8 frozen live validation reuses sealed images while permitting the exp
     const correction=JSON.parse(fs.readFileSync('_records/publication/2026-10-04/reader-correction.json','utf8'));
     assert.equal(correction.state,'POST_CLOSE_READER_CORRECTION');
     assert.equal(correction.preserve_accepted_locked_images,true);
-    assert.deepEqual(correction.reader_digest_overrides,[['briefs/2026-10-04.md','f528f0314893d8849d61b9a33fe7d3dc0f381016']]);
+    assert.equal(correction.reader_digest_overrides.length,7);
+    const correctedPaths=new Set(correction.reader_digest_overrides.map(([relative])=>relative));
+    assert.ok(correctedPaths.has('briefs/2026-10-04.md'));
+    for(const story of edition.stories)assert.ok(correctedPaths.has(`stories/2026-10-04/${story.slug}.md`));
   } finally {
     fs.rmSync(temp,{recursive:true,force:true});
   }

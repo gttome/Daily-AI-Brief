@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
 import {fileURLToPath} from 'node:url';
-import {renderDated,renderIndex,renderLatest} from '../lib/render.mjs';
+import {generatedFiles,renderDated,renderIndex,renderLatest} from '../lib/render.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..','..');
 const edition=JSON.parse(fs.readFileSync(path.join(root,'_data/editions/2026-10-04.json'),'utf8'));
@@ -25,4 +25,20 @@ test('October 4 historical correction preserves the complete reader contract',()
     assert.match(output,/CONTINUE LEARNING/);
   }
   assert.match(outputs[0],/View Briefs Archive/);
+});
+
+
+test('October 4 permanent article pages match the canonical reader renderer',()=>{
+  const files=generatedFiles(edition,root,{watchlist});
+  for(const story of edition.stories){
+    const relative=`stories/2026-10-04/${story.slug}.md`;
+    const expected=files.get(relative);
+    const actual=fs.readFileSync(path.join(root,relative),'utf8');
+    assert.equal(actual,expected,`${relative}: saved page must match the canonical permanent-story renderer`);
+    assert.match(actual,/class="reading-context"/);
+    assert.match(actual,/class="book-bridge"/);
+    assert.match(actual,/class="story-feedback story-feedback-compact star-feedback"/);
+    assert.match(actual,/\*\*Evidence:\*\* Publisher Authored/);
+    assert.match(actual,/\*\*Availability:\*\* Available/);
+  }
 });

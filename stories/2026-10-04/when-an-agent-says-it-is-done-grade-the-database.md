@@ -1,18 +1,29 @@
 ---
 layout: default
 title: "When an agent says it is done, grade the database"
+description: "ThinkingBox grades terminal backend state and side effects, not only generated text. repeated-run reliability is an explicit evaluation target."
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m02.png?v=4ba1ac627b51"
 permalink: /stories/2026-10-04/when-an-agent-says-it-is-done-grade-the-database/
 brief_date: 2026-10-04
+story_id: dab-story-2026-10-04-m02
 reader_release: true
 ---
 
-[← Home]({{ '/' | relative_url }}) · [Back to October 4 Brief]({{ '/briefs/2026-10-04/' | relative_url }})
+[← Daily Brief for October 4, 2026]({{ '/briefs/2026-10-04/' | relative_url }})
 
 # When an agent says it is done, grade the database
 
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 17 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 03 Oct 2026</p></aside>
+<!-- reader-release:end -->
+
+<span class="story-data" data-story-id="dab-story-2026-10-04-m02" hidden></span>
+
 **Focus:** Technical AI Engineering  
-**Date:** 2026-10-03  
-**Source article:** about 17 min read
+**Date:** October 3, 2026  
+**Topics:** technical ai engineering  
+**Evidence:** Publisher Authored  
+**Availability:** Available
 
 ![Textbook mechanism diagram for Backend-state verification: Claim rail plus database-state rail converge at an evidence gate.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m02.png?v=4ba1ac627b51)
 
@@ -20,8 +31,19 @@ reader_release: true
 
 **Why it matters:** For engineering teams, the key shift is from trusting a model response to designing the surrounding system so state, permissions, actions, and verification are explicit and inspectable.
 
-**What to watch:** publisher-authored Microsoft article hosted on Hugging Face.
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Connect conversational completion claims to durable-state verification, repeatable regression checks, explicit evaluation and a reusable checking workflow.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
-**Source:** [The Agent Said It Was Done. The Database Disagreed.](https://huggingface.co/blog/microsoft/thinkingbox)
+**Source:** <a href="https://huggingface.co/blog/microsoft/thinkingbox" data-item-id="dab-story-2026-10-04-m02" data-edition-date="2026-10-04" data-action="source_clicks">The Agent Said It Was Done. The Database Disagreed.</a>
 
-[← Back to October 4 Brief]({{ '/briefs/2026-10-04/' | relative_url }})
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-04" data-feedback-story-id="dab-story-2026-10-04-m02">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+---
+
+[← Daily Brief for October 4, 2026]({{ '/briefs/2026-10-04/' | relative_url }})

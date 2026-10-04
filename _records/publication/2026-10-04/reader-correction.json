@@ -3,7 +3,7 @@
   "edition_id": "dab-edition-2026-10-04",
   "execution_id": "reliable-edition-20261004-run8",
   "state": "POST_CLOSE_READER_CORRECTION",
-  "scope": "reader_presentation_parity_only",
+  "scope": "reader_presentation_and_permanent_story_parity_only",
   "public_closed_evidence": "_records/edition-execution/public-closed/2026-10-04-run8.json",
   "task19_seal": "_records/editorial/2026-10-04-run8/task19-bundle-seal.json",
   "preserve_accepted_locked_images": true,
@@ -11,6 +11,30 @@
     [
       "briefs/2026-10-04.md",
       "f528f0314893d8849d61b9a33fe7d3dc0f381016"
+    ],
+    [
+      "stories/2026-10-04/when-an-agent-says-it-is-done-grade-the-database.md",
+      "cd2bad02c8f5d45eb0922a8f50b2560865616245"
+    ],
+    [
+      "stories/2026-10-04/copilot-steps-beyond-apis-into-desktop-apps.md",
+      "f8369482bbf9cdbdafffa192746c978ca81e9d43"
+    ],
+    [
+      "stories/2026-10-04/gemini-puts-study-workflows-in-one-hub.md",
+      "4ef05a5ec5a715b7ef097ffda5f5661c1ca4743f"
+    ],
+    [
+      "stories/2026-10-04/workspace-turns-prompts-into-images-mini-apps-and-cross-app-work.md",
+      "3c8b186928478cd477aa007e795138eedadeab5a"
+    ],
+    [
+      "stories/2026-10-04/nvidia-gives-agents-a-verified-doca-skill-set.md",
+      "ad11a9814b294d5e3f54c1735e6b829f87d7d64f"
+    ],
+    [
+      "stories/2026-10-04/ambient-agents-wake-up-on-events-and-know-when-to-ask-a-human.md",
+      "f650d0d29096db9293ca74acb1085a252253a974"
     ]
   ],
   "projection_digests": [
@@ -37,7 +61,8 @@
     "watchlist_daily_groups",
     "series_invitation",
     "standard_archive_footer",
-    "standard_reader_focus_order"
+    "standard_reader_focus_order",
+    "six_permanent_article_pages_full_reader_contract"
   ],
   "excluded_scope": [
     "story_selection",
@@ -47,5 +72,31 @@
     "accepted_locked_images",
     "production_run_state"
   ],
-  "reason": "Authorized historical reader-parity correction after PUBLIC_CLOSED. The original Task 19 reader hash remains historical evidence; this receipt binds the corrected reader projection while preserving exact accepted image locks."
+  "reason": "Authorized historical reader-parity correction after PUBLIC_CLOSED. The original Task 19 reader hashes remain historical evidence; this receipt binds the corrected dated Brief and six permanent article pages while preserving exact accepted image locks.",
+  "permanent_story_digests": [
+    [
+      "stories/2026-10-04/when-an-agent-says-it-is-done-grade-the-database.md",
+      "cd2bad02c8f5d45eb0922a8f50b2560865616245"
+    ],
+    [
+      "stories/2026-10-04/copilot-steps-beyond-apis-into-desktop-apps.md",
+      "f8369482bbf9cdbdafffa192746c978ca81e9d43"
+    ],
+    [
+      "stories/2026-10-04/gemini-puts-study-workflows-in-one-hub.md",
+      "4ef05a5ec5a715b7ef097ffda5f5661c1ca4743f"
+    ],
+    [
+      "stories/2026-10-04/workspace-turns-prompts-into-images-mini-apps-and-cross-app-work.md",
+      "3c8b186928478cd477aa007e795138eedadeab5a"
+    ],
+    [
+      "stories/2026-10-04/nvidia-gives-agents-a-verified-doca-skill-set.md",
+      "ad11a9814b294d5e3f54c1735e6b829f87d7d64f"
+    ],
+    [
+      "stories/2026-10-04/ambient-agents-wake-up-on-events-and-know-when-to-ask-a-human.md",
+      "f650d0d29096db9293ca74acb1085a252253a974"
+    ]
+  ]
 }
