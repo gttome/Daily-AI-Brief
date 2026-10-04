@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {WATCHDOG_SLOTS,WATCHDOG_NATIVE_IMAGE_TASKS,WATCHDOG_MINIMUM_ACTION_LADDER,buildWatchdogIncidentId,buildWatchdogActionKey,acquireWatchdogRecoveryLease,releaseWatchdogRecoveryLease,watchdogLeaseActive,watchdogLeaseWritePlan,selectAuthoritativeRequest,watchdogNativeImageRequestEligible,watchdogDecision,nextWatchdogCorrectiveAction,verifyWatchdogRecoveryProgress,watchdogRecoveryContinuation,buildWatchdogEvent,validateWatchdogRingContract} from '../lib/chatgpt-watchdog-ring.mjs';
+import {WATCHDOG_SLOTS,WATCHDOG_NATIVE_IMAGE_TASKS,WATCHDOG_MINIMUM_ACTION_LADDER,buildWatchdogIncidentId,buildWatchdogActionKey,acquireWatchdogRecoveryLease,releaseWatchdogRecoveryLease,watchdogLeaseActive,watchdogLeaseWritePlan,selectAuthoritativeRequest,watchdogNativeImageRequestEligible,watchdogDecision,nextWatchdogCorrectiveAction,verifyWatchdogRecoveryProgress,watchdogRecoveryContinuation,buildWatchdogEvent,buildWatchdogProtectedRepairRequirement,validateWatchdogRingContract} from '../lib/chatgpt-watchdog-ring.mjs';
 import {classifyRunHealth} from '../lib/run-supervisor.mjs';
 
 const active={active:true,terminal:false,execution_id:'synthetic-watchdog-execution',edition_id:'dab-edition-2099-01-01',branch:'synthetic/watchdog'};
@@ -91,14 +91,33 @@ test('unclaimed repository request consumes exact request',()=>{
   const x=nextWatchdogCorrectiveAction({classification:'STALE_ACTIVE',authoritative_request:r});
   assert.equal(x.action,'CONSUME_EXACT_QUEUED_REQUEST'); assert.equal(x.target,'repo-current');
 });
-test('newest exact native request wins over historical contamination',()=>{
+test('highest repair epoch wins before timestamp so stale generic requests cannot supersede bounded recovery',()=>{
   const rs=[
-    {execution_id:active.execution_id,task_id:'11',request_key:'old',created_at:'2026-10-03T19:00:00Z'},
-    {execution_id:active.execution_id,task_id:'11',request_key:'current',created_at:'2026-10-03T19:01:00Z'},
-    {execution_id:'history',task_id:'11',request_key:'wrong',created_at:'2026-10-03T19:02:00Z'}
+    {execution_id:active.execution_id,task_id:'11',request_key:'old',repair_epoch:0,post_repair_attempt:0,created_at:'2026-10-03T19:00:00Z'},
+    {execution_id:active.execution_id,task_id:'11',request_key:'bounded-post-repair',repair_epoch:1,post_repair_attempt:1,created_at:'2026-10-03T19:01:00Z'},
+    {execution_id:active.execution_id,task_id:'11',request_key:'later-generic',repair_epoch:0,post_repair_attempt:0,created_at:'2026-10-03T19:02:00Z'},
+    {execution_id:'history',task_id:'11',request_key:'wrong',repair_epoch:9,post_repair_attempt:9,created_at:'2026-10-03T19:03:00Z'}
   ];
-  assert.equal(selectAuthoritativeRequest(rs,{execution_id:active.execution_id,task_id:'11'}).request_key,'current');
+  assert.equal(selectAuthoritativeRequest(rs,{execution_id:active.execution_id,task_id:'11'}).request_key,'bounded-post-repair');
 });
+test('Watchdog can persist a deterministic protected repair requirement instead of an owner handoff',()=>{
+  const r=buildWatchdogProtectedRepairRequirement({
+    execution_id:active.execution_id,
+    edition_id:active.edition_id,
+    execution_key:'2099-01-01-run1',
+    production_branch:active.branch,
+    task_id:'11',
+    incident_id:'wd-repair-incident',
+    repair_branch:'repair/synthetic',
+    repair_branch_head_sha:'a'.repeat(40),
+    repair_scope_digest:'sha256:bounded-scope',
+    created_at:'2026-10-03T19:01:00Z'
+  });
+  assert.equal(r.state,'PROTECTED_REPAIR_REQUIRED');
+  assert.equal(r.invariant,'actionable_recovery_must_not_terminate_at_owner_prompt_boundary');
+  assert.equal(r.task_id,'11');
+});
+
 test('actionable blocker selects smallest repair',()=>assert.equal(nextWatchdogCorrectiveAction({classification:'BLOCKED_ACTIONABLE',stale_derived_state:true,same_executor_missing:true}).action,'RECONCILE_AUTHORITATIVE_STATE'));
 test('external blocker is not bypassed',()=>assert.equal(watchdogDecision({active_pointer:active,classification:{state:'BLOCKED_EXTERNAL'},owner_slot:'C',now:'2026-10-03T19:01:00Z'}).action,'WAIT_EXTERNAL'));
 test('stale Kanban cannot override authoritative real progress',()=>assert.equal(watchdogDecision({active_pointer:active,classification:{state:'HEALTHY_ACTIVE'},owner_slot:'D',substantive_worker_active:true,now:'2026-10-03T19:01:00Z'}).action,'NO_ACTION'));

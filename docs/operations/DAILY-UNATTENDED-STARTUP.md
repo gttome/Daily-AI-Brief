@@ -171,3 +171,16 @@ Closeout repairs preserve accepted reader content unless a separate explicit rea
 Watchdog Slots A–F are six equivalent generic hourly members at minutes 03, 13, 23, 33, 43 and 53. These identities form one reusable service pool. Their instructions must remain generic and must never name a particular production run.
 
 Configuration is not completion evidence. Only durable task/publication evidence establishes progress or closure.
+
+---
+
+## Protected Repair Executor — unattended recovery boundary
+
+The unattended system includes the repository-native \`Daily AI Brief Protected Repair Executor\` workflow. Its purpose is to cross protected PR/CI/merge boundaries for an already-diagnosed bounded repair without owner intervention.
+
+The executor runs on the protected control plane, consumes durable \`protected-repair-required-v1\` records from the active nonterminal execution, revalidates the exact active execution and first incomplete task, opens or reuses exactly one repair PR, requires deterministic CI on the recorded repair head, merges only that head, and dispatches the **same** production execution for **same-task** resume.
+
+The Supervisor must release its production writer at the protected-repair safe boundary rather than holding a broad six-hour lease while another control-plane executor works. Supervisor writer leases use short renewable authority; an unexpired different owner can be superseded only from exact terminal GitHub Actions evidence (\`completed/failure\` or \`completed/cancelled\`). A boolean takeover request by itself is never sufficient.
+
+**Startup/recovery invariant:** an actionable incident cannot terminate because “PR required,” “CI required,” “owner retry required,” “dead writer still leased,” or “resume task required.” Those are internal recovery stages. The system must continue until the same task has a real executor and substantive durable progress, or an exact external blocker is proved.
+

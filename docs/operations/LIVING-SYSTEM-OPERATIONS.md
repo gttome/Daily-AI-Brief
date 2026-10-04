@@ -1484,3 +1484,38 @@ A separate execution-scoped recovery coordination lease at `_records/edition-exe
 Recovery success requires **both a real active executor and verified durable forward progress**, not merely dispatching a workflow, changing a lease, refreshing a queue/Kanban, writing a status, or trying one repair. For an actionable incident, the ring must keep escalating through the remaining safe authorized Fix-to-Progress actions until that condition is proven. If an invocation reaches a safe boundary first, it persists an unresolved continuation handoff so the next slot resumes the same incident. Exhausted internal attempts do not automatically become `BLOCKED_EXTERNAL`; that classification requires current verified external evidence. The ring never reopens terminal executions, redoes completed tasks, regenerates accepted_locked images, steals a live writer, or bypasses protected CI/deploy/verification.
 
 The former hourly Daily Brief Recovery automation remains as Watchdog Slot F at minute :53 only as historical identity continuity. It no longer has a unique production role. Slots A–F are equivalent and collectively form the reusable scheduled native-image consumer pool. Any slot may consume the exact next queued unclaimed Tasks 11–16 request without waiting for a stall; exact-request selection plus the current writer fence prevents duplicate generation. There is no standalone :48 Recovery task after cutover. See `docs/operations/CHATGPT-WATCHDOG-RING.md` for the executable contract.
+
+---
+
+## Protected Repair Autonomy
+
+### Why it exists
+
+The production system can detect and diagnose an actionable defect yet still fail operationally if recovery stops at “protected PR required.” The control plane therefore models protected repair promotion as an executable state machine, not an owner handoff.
+
+### State machine
+
+\`PROTECTED_REPAIR_REQUIRED → REPAIR_PR_OPENED → REPAIR_CI_RUNNING → REPAIR_CI_PASS → REPAIR_MERGED → SAME_TASK_RESUME_REQUIRED → SAME_TASK_RESUMED → RECOVERY_VERIFIED_PROGRESSING\`
+
+Failure states (\`REPAIR_CI_FAIL\`, \`REPAIR_HEAD_CHANGED\`, \`REPAIR_EXECUTION_MISMATCH\`, \`REPAIR_MERGE_CONFLICT\`, \`REPAIR_RESUME_FAILED\`) are continuation points unless an external blocker is proven.
+
+### Authority split
+
+- **Production writer:** mutates the current production task only.
+- **Protected Repair Executor:** promotes a bounded control-plane repair through protected PR/CI/merge.
+- **Watchdog recovery lease:** coordinates recovery ownership; it does not replace the production writer fence.
+
+At a protected-repair boundary the Supervisor releases production writer authority. The protected executor validates the recorded repair key/head and exact current execution/task. After merge the same execution is resumed and must prove a real executor plus substantive durable progress.
+
+### Dead writer cleanup
+
+For GitHub Actions owners, wall-clock expiry is not the primary liveness proof. A writer is immediately supersedable only when the exact workflow run is terminal \`completed/failure\` or \`completed/cancelled\`, no child/subworker remains live, and no substantive write follows terminal time. An append-only \`dead-writer-recovery-v1\` record binds workflow run ID, conclusion, old generation and replacement generation. A live/unproven writer cannot be stolen.
+
+### Recovery success semantics
+
+The following do **not** complete recovery: writer/recovery lease acquisition, heartbeat, queue rewrite, Kanban refresh, repair branch creation, PR creation, CI dispatch, CI PASS, or merge alone.
+
+Recovery completes only when the repair is integrated when needed, the same production task resumes, a real executor is active, and substantive durable production movement is proven.
+
+Invariant: \`actionable_recovery_must_not_terminate_at_owner_prompt_boundary\`.
+

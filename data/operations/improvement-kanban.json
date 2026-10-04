@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-03T22:50:00Z",
+  "observed_at": "2026-10-04T06:22:01Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -575,6 +575,35 @@
         "DAB-OPS-E-000091",
         "docs/images/living-architecture/Daily-AI-Brief-Watchdog-Ring-Architecture-v1.0.svg",
         "DAB-OPS-E-000092"
+      ]
+    },
+    {
+      "id": "DAB-KB-032",
+      "lane": "wip",
+      "priority": "P0",
+      "category": "Recovery Autonomy",
+      "title": "Complete protected repairs without owner intervention",
+      "summary": "Implement a durable Protected Repair Executor and dead-writer cleanup so actionable incidents cross bounded repair branch → one protected PR → exact-head CI → safe merge → same-task resume → substantive progress without waiting for an owner prompt.",
+      "acceptance": [
+        "A durable protected-repair record deterministically binds execution, task, incident, repair branch/head and repair scope.",
+        "Exactly one PR is opened or reused for a repair key; duplicate Watchdogs cannot create duplicates.",
+        "Only exact-head deterministic CI PASS permits merge, with execution/task revalidated immediately before merge.",
+        "Failed/cancelled GitHub Actions writer owners can be superseded immediately from exact terminal evidence; live/unproven writers cannot be stolen.",
+        "Supervisor releases production writer authority at a protected-repair boundary.",
+        "Merge alone never completes recovery; the same task must resume with a real executor and substantive durable progress.",
+        "No terminal execution, Done task or accepted_locked image is reopened/regenerated.",
+        "No Work, Codex, paid API/service, browser automation or new credential route is introduced.",
+        "Protected CI passes and a non-production synthetic proof crosses repair → PR → CI → merge → same-task progress with no owner prompt.",
+        "Living operations, learning ledger, Improvement Kanban and Watchdog architecture are synchronized."
+      ],
+      "sources": [
+        "DAB-OPS-20261004-001",
+        "DAB-OPS-E-000093",
+        "DAB-OPS-E-000094",
+        "PR #428",
+        ".github/workflows/protected-repair-executor.yml",
+        "_generator/lib/protected-repair-executor.mjs",
+        "docs/operations/task-recovery-contracts.json"
       ]
     }
   ],

@@ -295,3 +295,36 @@ The detailed implementation-reference infographic for the Watchdog Ring is:
 This PNG is the professional, color, detailed implementation-reference view of the ring: six identical staggered Watchdogs, GitHub durable state, recovery lease coordination, Fix-to-Progress flow, escalation ladder, testing, reporting and deployment checklist.
 
 Because the graphic is explicitly a dated **Implementation Handoff**, it is supporting implementation documentation rather than the evergreen architecture authority. The evergreen system contract remains the generic architecture diagram and this document's current production rules.
+
+---
+
+## Protected Repair Autonomy — mandatory control-plane behavior
+
+The Watchdog Ring MUST NOT stop at a protected-repository boundary. **Diagnosis without completion is not autonomous recovery.**
+
+Invariant:
+
+\`actionable_recovery_must_not_terminate_at_owner_prompt_boundary\`
+
+When any equivalent Watchdog A–F proves an actionable incident requires a bounded protected repair, it must continue the same incident through this durable sequence:
+
+\`actionable incident → bounded repair branch → PROTECTED_REPAIR_REQUIRED → exactly one protected PR → exact-head deterministic CI → safe merge → SAME_TASK_RESUME_REQUIRED → same execution/task resumes → real executor active → substantive durable progress\`
+
+Mandatory rules:
+
+- A–F remain functionally equivalent. No slot owns a special repair role.
+- The Watchdog persists a \`protected-repair-required-v1\` record under \`_records/edition-execution/protected-repairs/<execution-id>/\` after the bounded repair branch/head and repair scope digest are known.
+- The repair identity is deterministic over execution, task, incident and repair-scope digest. Duplicate Watchdogs reuse the exact same repair identity and may not open duplicate PRs.
+- \`.github/workflows/protected-repair-executor.yml\` is the repository-native promotion path. A Watchdog that has prepared the bounded repair must invoke or rely on this executor instead of handing the owner “PR needed.”
+- If the executor is genuinely advancing the same repair, later Watchdogs yield. If it has failed, a later Watchdog continues from the exact failed stage rather than rediscovering the incident.
+- PR creation, CI dispatch, CI PASS, merge, queue rewrite, lease acquisition, heartbeat, and Kanban refresh are **intermediate states**, not recovery success.
+- Recovery success requires the same production task to resume, a real executor to be active, and substantive durable production movement to be proven.
+- \`REPAIR_CI_FAIL\`, \`REPAIR_HEAD_CHANGED\`, \`REPAIR_EXECUTION_MISMATCH\`, \`REPAIR_MERGE_CONFLICT\`, and \`REPAIR_RESUME_FAILED\` remain recoverable unless an exact external blocker is proved.
+- Routine PR creation, CI retry, dead-writer cleanup, merge and same-task resume are not owner dependencies when the already-authorized GitHub connection can perform them safely.
+
+### Dead-writer rule
+
+A long wall-clock writer lease does not keep a failed GitHub Actions owner alive. An unexpired writer may be superseded only when the exact owner maps to a GitHub Actions run that is \`completed\` with conclusion \`failure\` or \`cancelled\`, no child/subworker remains live under that generation, and no substantive write occurred after terminal time. The supersession persists append-only \`dead-writer-recovery-v1\` evidence with the old and replacement generations.
+
+A healthy or unproven writer is never stolen. Native-image task handoff remains an explicit exact-task authority transfer, not dead-writer takeover.
+

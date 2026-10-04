@@ -5,6 +5,7 @@ import {
   activeRunDecision,
   acquireWriterLease,
   assertWriterFence,
+  releaseWriterLease,
   classifyRunHealth,
   applyImmediateImageRecovery,
   normalizeTaskEvent,
@@ -39,7 +40,37 @@ function contract(){
       simplification_rule:'Preserve valid prior work and repair only the affected task'
     };
   }
-  return {schema_version:'task-recovery-contracts-v1',tasks};
+  return {
+    schema_version:'task-recovery-contracts-v1',
+    tasks,
+    protected_repair_autonomy:{
+      schema_version:'protected-repair-autonomy-contract-v1',
+      enabled:true,
+      executor_workflow:'.github/workflows/protected-repair-executor.yml',
+      exact_one_pr_per_repair_key:true,
+      exact_head_ci_required:true,
+      active_execution_and_task_revalidation_before_merge:true,
+      direct_main_write_allowed:false,
+      merge_is_recovery_success:false,
+      same_execution_resume_required:true,
+      same_task_resume_required:true,
+      real_executor_required_for_success:true,
+      substantive_durable_progress_required_for_success:true,
+      invariant:'actionable_recovery_must_not_terminate_at_owner_prompt_boundary',
+      dead_writer_cleanup:{
+        live_writer_takeover_allowed:false,
+        terminal_workflow_status_required:'completed',
+        terminal_conclusions:['failure','cancelled'],
+        workflow_run_identity_must_match_owner:true,
+        child_worker_live_forbids_takeover:true,
+        post_terminal_substantive_write_forbids_takeover:true
+      },
+      cost_boundary:{
+        chatgpt_work:false,codex:false,paid_apis:false,paid_external_services:false,
+        new_credentials:false,alternate_accounts:false,browser_automation:false
+      }
+    }
+  };
 }
 
 test('task event normalization accepts safe from_state/to_state aliases without overriding canonical fields',()=>{
@@ -65,10 +96,25 @@ test('writer lease fences stale executors and permits takeover only after expiry
   const takeover=acquireWriterLease(first.lease,{execution_id:'run4',owner_id:'supervisor-b',now:'2026-10-01T20:03:00Z',ttl_ms:120000});
   assert.equal(takeover.acquired,true);
   assert.ok(takeover.lease.generation>first.lease.generation);
-  const forced=acquireWriterLease(first.lease,{execution_id:'run4',owner_id:'supervisor-c',now:'2026-10-01T20:01:30Z',ttl_ms:120000,takeover_dead_owner:true});
-  assert.equal(forced.acquired,true);
-  assert.ok(forced.lease.generation>first.lease.generation);
+  const unprovenForced=acquireWriterLease(first.lease,{execution_id:'run4',owner_id:'supervisor-c',now:'2026-10-01T20:01:30Z',ttl_ms:120000,takeover_dead_owner:true});
+  assert.equal(unprovenForced.acquired,false);
+  assert.equal(unprovenForced.reason,'live_or_unproven_writer_cannot_be_stolen');
   assert.throws(()=>assertWriterFence(first.lease,{execution_id:'run4',owner_id:'supervisor-a',generation:first.lease.generation,now:'2026-10-01T20:03:01Z'}),/WRITER_LEASE_EXPIRED/);
+});
+
+test('generic writer release ends authority at a protected repair boundary',()=>{
+  const first=acquireWriterLease(null,{execution_id:'run4',owner_id:'supervisor-a',now:'2026-10-01T20:00:00Z',ttl_ms:120000});
+  const released=releaseWriterLease(first.lease,{
+    execution_id:'run4',owner_id:'supervisor-a',generation:first.lease.generation,
+    reason:'PROTECTED_REPAIR_IN_PROGRESS',now:'2026-10-01T20:00:30Z'
+  });
+  assert.equal(released.state,'RELEASED');
+  assert.equal(released.expires_at,'2026-10-01T20:00:30Z');
+  const replacement=acquireWriterLease(released,{
+    execution_id:'run4',owner_id:'supervisor-b',now:'2026-10-01T20:00:31Z',ttl_ms:120000
+  });
+  assert.equal(replacement.acquired,true);
+  assert.ok(replacement.lease.generation>first.lease.generation);
 });
 
 test('same-owner lease renewal never shortens an existing fence',()=>{

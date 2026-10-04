@@ -1,4 +1,5 @@
 import {createHash} from 'node:crypto';
+import {buildProtectedRepairRecord} from './protected-repair-executor.mjs';
 
 export const WATCHDOG_RING_VERSION='chatgpt-watchdog-ring-v1';
 export const WATCHDOG_RECOVERY_LEASE_VERSION='chatgpt-watchdog-recovery-lease-v1';
@@ -59,10 +60,25 @@ export function selectAuthoritativeRequest(requests=[],{execution_id,task_id}={}
   if(!execution_id||!tid(task_id))throw Error('watchdog_request_scope_required');
   const id=tid(task_id);
   return [...requests].filter(x=>x?.execution_id===execution_id&&tid(x?.task_id)===id).sort((a,b)=>{
+    const ae=Number(a?.repair_epoch||0),be=Number(b?.repair_epoch||0);
+    if(ae!==be)return ae-be;
+    const ap=Number(a?.post_repair_attempt||0),bp=Number(b?.post_repair_attempt||0);
+    if(ap!==bp)return ap-bp;
     const at=stamp(a.created_at)?Date.parse(a.created_at):0,bt=stamp(b.created_at)?Date.parse(b.created_at):0;
     if(at!==bt)return at-bt;
     return String(a._file||a.request_key||'').localeCompare(String(b._file||b.request_key||''));
   }).at(-1)||null;
+}
+
+export function buildWatchdogProtectedRepairRequirement({
+  execution_id,edition_id,execution_key,production_branch,task_id,incident_id,
+  repair_branch,repair_branch_head_sha,repair_scope_digest,required_checks=['validate'],
+  created_at=new Date().toISOString()
+}={}){
+  return buildProtectedRepairRecord({
+    execution_id,edition_id,execution_key,production_branch,task_id,incident_id,
+    repair_branch,repair_branch_head_sha,repair_scope_digest,required_checks,created_at
+  });
 }
 export function watchdogNativeImageRequestEligible(request,{execution_id}={}){
   const state=String(request?.status||request?.state||'').toLowerCase();
@@ -154,6 +170,11 @@ export function validateWatchdogRingContract(contract={}){
   if(contract.recovery?.one_failed_attempt_may_end_recovery!==false)e.push('watchdog_ring_one_attempt_not_terminal');
   if(contract.recovery?.safe_boundary_is_handoff_not_success!==true)e.push('watchdog_ring_safe_boundary_handoff');
   if(contract.recovery?.blocked_external_requires_verified_external_condition!==true)e.push('watchdog_ring_external_verification');
+  if(contract.recovery?.protected_repair_executor_required!==true)e.push('watchdog_ring_protected_repair_executor');
+  if(contract.recovery?.protected_repair_handoff_is_terminal!==false)e.push('watchdog_ring_protected_repair_not_terminal');
+  if(contract.recovery?.owner_prompt_boundary_allowed!==false)e.push('watchdog_ring_owner_prompt_boundary_forbidden');
+  if(contract.recovery?.actionable_recovery_must_not_terminate_at_owner_prompt_boundary!==true)e.push('watchdog_ring_no_owner_dependency_invariant');
+  if(contract.recovery?.protected_repair_failure_is_recoverable_unless_external!==true)e.push('watchdog_ring_protected_repair_failure_recoverable');
   if(contract.native_image_consumer?.all_slots_equivalent!==true)e.push('watchdog_ring_image_slots_equivalent');
   if(JSON.stringify(contract.native_image_consumer?.eligible_slots)!==JSON.stringify(Object.keys(WATCHDOG_SLOTS)))e.push('watchdog_ring_image_eligible_slots');
   if(contract.native_image_consumer?.normal_queued_request_consumption!==true)e.push('watchdog_ring_image_normal_consumption');

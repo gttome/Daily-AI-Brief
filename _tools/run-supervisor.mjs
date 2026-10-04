@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {
-  activeRunDecision, acquireWriterLease, assertWriterFence, classifyRunHealth, applyImmediateImageRecovery,
+  activeRunDecision, acquireWriterLease, assertWriterFence, releaseWriterLease, classifyRunHealth, applyImmediateImageRecovery,
   normalizeTaskEvent, recoverableBlockerEvidence, refreshScheduledWorkerFence, buildTaskWriterHandoffRelease,
   validateTaskRecoveryContracts, taskRecoveryDecision, buildWorkerRequest, buildEngineeringRepairRequest,
   projectKanbanFromEvents, validateKanbanContract, kanbanProjectionFresh, publicationWriteBoundary, latestRecoverableImage,
@@ -124,15 +124,28 @@ try{
   }else if(command==='writer-lease'){
     if(!args['execution-id']||!args['owner-id']) throw Error('execution_and_owner_required');
     const current=args.current && fs.existsSync(path.resolve(args.current))?readJson(args.current):null;
+    const deadProof=args['dead-owner-proof']&&fs.existsSync(path.resolve(args['dead-owner-proof']))?readJson(args['dead-owner-proof']):null;
     const result=acquireWriterLease(current,{
       execution_id:args['execution-id'],owner_id:args['owner-id'],
       now:args.now||new Date().toISOString(),
-      ttl_ms:Number(args['ttl-ms']||21600000),
-      takeover_dead_owner:args['takeover-dead-owner']===true||args['takeover-dead-owner']==='true'
+      ttl_ms:Number(args['ttl-ms']||300000),
+      takeover_dead_owner:args['takeover-dead-owner']===true||args['takeover-dead-owner']==='true',
+      dead_owner_proof:deadProof
     });
     if(result.acquired && args.output) writeJson(args.output,result.lease);
     emit(result);
     if(!result.acquired) process.exitCode=2;
+  }else if(command==='release-writer-lease'){
+    if(!args.lease||!args['execution-id']||!args['owner-id']||!args.generation) throw Error('writer_lease_release_fields_required');
+    const released=releaseWriterLease(readJson(args.lease),{
+      execution_id:args['execution-id'],
+      owner_id:args['owner-id'],
+      generation:Number(args.generation),
+      reason:args.reason||'SAFE_RECOVERY_BOUNDARY',
+      now:args.now||new Date().toISOString()
+    });
+    if(args.output) writeJson(args.output,released);
+    emit(released);
   }else if(command==='assert-fence'){
     const lease=readJson(args.lease);
     emit({result:assertWriterFence(lease,{

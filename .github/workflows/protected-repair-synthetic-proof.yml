@@ -1,0 +1,137 @@
+name: Protected Repair Autonomy Synthetic Proof
+
+on:
+  push:
+    branches:
+      - 'synthetic/protected-repair-proof-*'
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+
+concurrency:
+  group: protected-repair-synthetic-proof
+  cancel-in-progress: false
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out synthetic proof branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+
+      - name: Validate isolated synthetic state machine
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$GITHUB_REF_NAME" in
+            synthetic/protected-repair-proof-*) ;;
+            *) echo "::error::Synthetic proof may run only on the isolated synthetic branch namespace."; exit 1 ;;
+          esac
+          [ -f "_records/hardening/protected-repair-autonomy/synthetic-proof-input.json" ] || {
+            echo "::error::Synthetic proof input is missing."; exit 1;
+          }
+          node _tools/protected-repair-executor.mjs synthetic-proof > /tmp/synthetic-trace.json
+          node - <<'NODE'
+          const fs=require('fs');
+          const x=require('/tmp/synthetic-trace.json');
+          if(x.ci?.allowed!==true||x.merge?.allowed!==true||x.progress?.verified!==true)process.exit(1);
+          const input=require('./_records/hardening/protected-repair-autonomy/synthetic-proof-input.json');
+          for(const key of ['synthetic_execution_id','synthetic_task_id','synthetic_incident_id','bounded_repair_scope']){
+            if(!input[key])throw Error('synthetic_input_missing:'+key);
+          }
+          if(input.production_pointer_mutation_allowed!==false)throw Error('synthetic_must_not_mutate_production_pointer');
+          NODE
+
+      - name: Open or reuse exactly one synthetic protected PR
+        id: pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          head="$(git rev-parse HEAD)"
+          key="$(node -e "const x=require('./_records/hardening/protected-repair-autonomy/synthetic-proof-input.json');process.stdout.write(x.synthetic_proof_key)")"
+          gh pr list --repo "$GITHUB_REPOSITORY" --state all --base main --head "$GITHUB_REF_NAME" --limit 20 \
+            --json number,state,headRefOid,body > /tmp/proof-prs.json
+          pr="$(node - "$key" "$head" <<'NODE'
+          const fs=require('fs'),[key,head]=process.argv.slice(2),xs=JSON.parse(fs.readFileSync('/tmp/proof-prs.json','utf8'));
+          const m=xs.filter(x=>String(x.body||'').includes('Synthetic-Proof-Key: '+key)&&(x.headRefOid===head||x.state==='MERGED'));
+          if(m.length>1){console.error('duplicate_synthetic_proof_pr');process.exit(2)}
+          process.stdout.write(String(m[0]?.number||0));
+          NODE
+          )"
+          if [ "$pr" = "0" ]; then
+            url="$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$GITHUB_REF_NAME" \
+              --title "Synthetic proof — protected repair autonomy" \
+              --body "Non-production isolated proof. Synthetic-Proof-Key: $key
+
+No production pointer, execution, Done task, accepted_locked asset, or image request may be mutated. This PR exists only to prove branch → one PR → exact-head deterministic CI → protected merge → same-task progress semantics without an owner prompt.")"
+            pr="$(gh pr view "$url" --repo "$GITHUB_REPOSITORY" --json number --jq '.number')"
+          fi
+          actual="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq '.headRefOid')"
+          [ "$actual" = "$head" ] || { echo "::error::Synthetic PR head changed."; exit 1; }
+          echo "number=$pr" >> "$GITHUB_OUTPUT"
+          echo "head=$head" >> "$GITHUB_OUTPUT"
+
+      - name: Wait for exact-head deterministic CI
+        id: ci
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          head="${{ steps.pr.outputs.head }}"
+          run_id=0
+          for _ in $(seq 1 75); do
+            gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${head}&per_page=100" > /tmp/runs.json
+            run_id="$(node - "$head" <<'NODE'
+            const fs=require('fs'),head=process.argv[2],x=JSON.parse(fs.readFileSync('/tmp/runs.json','utf8'));
+            const rows=(x.workflow_runs||[]).filter(r=>r.name==='Deterministic publication CI'&&r.head_sha===head).sort((a,b)=>String(b.updated_at).localeCompare(String(a.updated_at)));
+            process.stdout.write(String(rows[0]?.id||0));
+            NODE
+            )"
+            if [ "$run_id" != "0" ]; then
+              state="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}" --jq '.status+":"+(.conclusion//"")')"
+              case "$state" in
+                completed:success) break ;;
+                completed:*) echo "::error::Synthetic exact-head CI failed: $state"; exit 1 ;;
+              esac
+            fi
+            sleep 8
+          done
+          [ "$run_id" != "0" ] || { echo "::error::No exact-head deterministic CI found."; exit 1; }
+          state="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}" --jq '.status+":"+(.conclusion//"")')"
+          [ "$state" = "completed:success" ] || { echo "::error::Synthetic exact-head CI did not reach PASS."; exit 1; }
+          echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
+
+      - name: Merge exact synthetic head and record same-task progress
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          pr="${{ steps.pr.outputs.number }}"
+          head="${{ steps.pr.outputs.head }}"
+          current="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq '.headRefOid')"
+          [ "$current" = "$head" ] || { echo "::error::Synthetic PR head moved after CI."; exit 1; }
+          gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --merge --match-head-commit "$head"
+          merge_sha="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json mergeCommit --jq '.mergeCommit.oid')"
+          gh pr comment "$pr" --repo "$GITHUB_REPOSITORY" --body "SYNTHETIC_PROOF=PASS
+Exact-Head: $head
+CI-Run: ${{ steps.ci.outputs.run_id }}
+Merge: $merge_sha
+SAME_TASK_RESUMED=true
+REAL_EXECUTOR_ACTIVE=true
+SUBSTANTIVE_DURABLE_PROGRESS=true
+RECOVERY_VERIFIED_PROGRESSING=true
+OWNER_PROMPT_REQUIRED=false"
