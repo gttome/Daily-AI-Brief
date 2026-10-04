@@ -1,5 +1,6 @@
 import {createHash} from 'node:crypto';
 import {imageExecutionHash, validateImageGenerationExecution} from './image-execution.mjs';
+import {compileImageRenderSpec} from './image-story-packet.mjs';
 
 export const NATIVE_IMAGE_DELIVERY_POLICY = 'visual-only-task-delivery-v1';
 export const NATIVE_IMAGE_RESULT_HANDOFF_CAPABILITY_VERSION = '1.0.0';
@@ -51,26 +52,22 @@ function assertExecution(execution) {
 export function buildNativeImageDelivery(execution) {
   assertExecution(execution);
   const p = execution.sealed_story_packet;
-  const taskPrompt = [
-    'Create exactly one NEW professional textbook illustration of this subject:',
-    p.headline,
-    '', 'Visual composition:', p.visual_brief,
-    '', 'Verified factual scope:', ...p.verified_visual_facts,
-    '', 'Conceptual explanatory elements:', ...p.generic_conceptual_elements,
-    '', 'Essential readable labels; include every label verbatim:',
-    ...p.allowed_image_text.map(label => `- ${label}`),
-    '', 'Factual and visual restrictions:', ...p.prohibited_specifics,
-    '', 'Use only the subject, facts, concepts and restrictions above as image content.',
-    'Create the illustration itself, not a scene about producing or reviewing illustrations.',
-    'Return only the single finished illustration.'
-  ].join('\n');
+  const taskPrompt = execution.generation_instruction;
+  const renderSpec = compileImageRenderSpec(p);
   return {
     schema_version: '1.0.0', policy_id: NATIVE_IMAGE_DELIVERY_POLICY,
     request_sha256: imageExecutionHash(execution),
     story_id: p.story_id, candidate_id: p.candidate_id,
     task_prompt: taskPrompt, task_prompt_sha256: sha(taskPrompt),
-    runtime_context_isolation: 'not_asserted', manual_intervention_allowed: false,
-    // This is the native tool's actual interface, NOT a text prompt carrier.
+    runtime_context_isolation: 'generator_visible_story_only_projection_v1',
+    hidden_platform_context_isolation: 'not_asserted',
+    generator_visible_context: {
+      schema_version:'story-only-generator-context-v1',
+      policy_id:renderSpec.policy_id,
+      render_spec:renderSpec,
+      submitted_instruction_sha256:sha(taskPrompt)
+    },
+    manual_intervention_allowed: false,
     native_tool_arguments: {prompt: null, size: '1536x1024', n: 1,
       transparent_background: false, is_style_transfer: false,
       referenced_image_ids: null}
@@ -104,7 +101,7 @@ export function assertNativeImageTaskPrompt(submittedPrompt, delivery, execution
     request_sha256: delivery.request_sha256,
     task_prompt_sha256: sha(submittedPrompt),
     native_image_generation_started: false,
-    scope: 'task_instruction_binding_only_not_generation_or_acceptance'};
+    scope: 'generator_visible_story_only_binding_not_hidden_platform_context_or_acceptance'};
 }
 
 /** Fail-closed plan for the supervisor. A pending call is never silently replaced;
@@ -112,7 +109,7 @@ export function assertNativeImageTaskPrompt(submittedPrompt, delivery, execution
  * an image. Existing accepted receipts must be revalidated by the V2 byte gate.
  * Input entries are a small normalized projection of durable attempt records.
  */
-export function planNativeImageContinuation(execution, attempts, resultHandoffCapability = null, {handoffMode = 'native-result-recovery-v1'} = {}) {
+export function planNativeImageContinuation(execution, attempts, resultHandoffCapability = null, {handoffMode = 'native-result-recovery-v1', engineeringRepairReady = false} = {}) {
   assertExecution(execution);
   if (!Array.isArray(attempts)) throw Error('durable_attempt_array_required');
   const requestHash = imageExecutionHash(execution);
@@ -150,6 +147,19 @@ export function planNativeImageContinuation(execution, attempts, resultHandoffCa
     if (a.disposition !== 'rejected' || !a.review?.rejection_record_path ||
         a.review.raw_sha256 !== a.generation.raw_sha256)
       return {...base, next_action: 'REVIEW_EXISTING_RAW', attempt: a.attempt};
+  }
+  const latest=attempts.at(-1);
+  if(latest?.disposition==='rejected'){
+    const contaminationText=[
+      latest.review?.rejection_code,latest.review?.rejection_reason,
+      latest.rejection_code,latest.rejection_reason,
+      latest.recovery?.reason_code,latest.recovery_action,latest.targeted_next_action
+    ].filter(Boolean).join(' ').toLowerCase();
+    const contaminated=/context[_ -]?contamination|wrong[_ -]?subject|sealed[_ -]?prompt[_ -]?displaced|execution[_ -]?context|orchestration|watchdog|supervisor|kanban|dashboard/.test(contaminationText);
+    if(contaminated&&engineeringRepairReady!==true)
+      return {...base,next_action:'ENGINEERING_REPAIR_REQUIRED',attempt:latest.attempt,
+        reason_code:'IMAGE_GENERATOR_CONTEXT_CONTAMINATION',same_context_retry_allowed:false,
+        required_next_context:'fresh_story_only_generator_visible_context'};
   }
   if (attempts.length === 4) return {...base, next_action: 'ATTEMPT_LIMIT_EXHAUSTED', attempt: 4};
   return prepareImageTaskOrBlock(base, attempts.length + 1, resultHandoffCapability, handoffMode);
