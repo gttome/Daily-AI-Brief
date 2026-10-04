@@ -5,10 +5,10 @@ import {spawnSync} from 'node:child_process';
 
 // Deliberately dependency-free: realize the literal run scalars used by this
 // repository. Unsupported scalar forms fail closed instead of escaping checks.
-export function workflowRunBlocks(yaml) {
+export function workflowRunBlocks(yaml,key='run') {
   const lines=yaml.split(/\r?\n/), blocks=[];
   for(let i=0;i<lines.length;i++) {
-    const m=/^(\s*)(?:-\s+)?run:\s*(.*)$/.exec(lines[i]);
+    const m=new RegExp('^(\\s*)(?:-\\s+)?'+key+':\\s*(.*)$').exec(lines[i]);
     if(!m)continue;
     const indent=m[1].length+(lines[i].trimStart().startsWith('- ')?2:0);
     if(/^[|>]/.test(m[2])) {
@@ -75,9 +75,23 @@ export function checkShell(script) {
 
 export function checkWorkflow(yaml) {
   const errors=[];
-  if(/\b(?:createDispatchEvent|createWorkflowDispatch)\b/.test(yaml))errors.push('unreviewed_programmatic_dispatch');
   try {for(const block of workflowRunBlocks(yaml))errors.push(...checkShell(block.script).map(e=>`line_${block.line}:${e}`));}
   catch(error){errors.push(error.message);}
+  try {
+    for(const block of workflowRunBlocks(yaml,'script')) {
+      try {new vm.Script('(async function(){\n'+block.script.replace(/\$\{\{[\s\S]*?\}\}/g,'EXPRESSION')+'\n})');}
+      catch(error){errors.push('action_script_syntax:'+error.message);}
+      const calls=block.script.match(/[^\n]*(?:createDispatchEvent|createWorkflowDispatch)[^\n]*/g)||[];
+      for(const call of calls) {
+        // Accept context.repo directly or the corpus's immutable local alias.
+        // Reject owner/repo overrides and additional spreads in the argument.
+        const alias=/\bconst\s+repo\s*=\s*(?:context\.repo|\{\s*\.\.\.context\.repo\s*\})\s*;/.test(block.script)&&!/(?:repo\.(?:owner|repo)\s*=|repo\s*\[|Object\.assign\(repo)/.test(block.script);
+        const args=/\b(?:createDispatchEvent|createWorkflowDispatch)\(\{\s*\.\.\.(context\.repo|repo)\s*,(.*)\}\)/.exec(call);
+        if(!args||(args[1]==='repo'&&!alias)||/(?:\b(?:owner|repo)\s*:|\.\.\.)/.test(args?.[2]||''))errors.push('implicit_programmatic_dispatch:'+call.trim());
+      }
+      for(const line of block.script.split('\n'))if(/\/dispatches/.test(line))errors.push('unreviewed_raw_programmatic_dispatch:'+line.trim());
+    }
+  } catch(error){errors.push(error.message);}
   // Third-party dispatch actions must receive a separate reviewed guard before
   // introduction. Event listeners named repository_dispatch are not launches.
   if(/uses:.*(?:repository-dispatch|workflow-dispatch)/i.test(yaml))errors.push('unreviewed_dispatch_action');
