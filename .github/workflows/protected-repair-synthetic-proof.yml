@@ -152,7 +152,7 @@ jobs:
         run: |
           set -euo pipefail
           pr="${{ steps.pr.outputs.number }}"
-          head="${{ steps.pr.outputs.head }}"
+          head="${{ steps.ci.outputs.head }}"
           target="${{ steps.target.outputs.target_branch }}"
           state="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json state --jq '.state')"
           if [ "$state" = "MERGED" ]; then
