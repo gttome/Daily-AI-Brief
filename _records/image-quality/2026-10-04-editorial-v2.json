@@ -1,0 +1,335 @@
+{
+  "schema_version": "2.0.0",
+  "record_kind": "editorial_image_quality",
+  "edition_date": "2026-10-04",
+  "edition_id": "dab-edition-2026-10-04",
+  "reviewed_at": "2026-10-04T09:24:45.444Z",
+  "review_method": "Deterministic set review over six accepted_locked, exact-Git-read-back, saved-Git-reviewed production PNGs.",
+  "review_status": "complete",
+  "image_gate": "pass",
+  "asset_policy": "accepted_locked_reuse_only",
+  "accepted_locked": 6,
+  "set_review": {
+    "result": "PASS",
+    "composition_differentiation": "PASS",
+    "layout_differentiation": "PASS",
+    "mechanism_differentiation": "PASS",
+    "story_specificity": "PASS",
+    "accessibility": "PASS",
+    "basis": "Six distinct sealed subjects/mechanisms and production paths; every saved Git asset independently passed structural/editorial/text/factual/no-people gates and now has story-specific alt text."
+  },
+  "images": [
+    {
+      "story_id": "dab-story-2026-10-04-m02",
+      "candidate_id": "m02",
+      "asset": "briefs/images/2026-10-04/dab-edition-2026-10-04-m02.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Backend-state verification",
+      "mechanism": "Claim rail plus database-state rail converge at an evidence gate.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Backend-state verification: Claim rail plus database-state rail converge at an evidence gate.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-04-m04",
+      "candidate_id": "m04",
+      "asset": "briefs/images/2026-10-04/dab-edition-2026-10-04-m04.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Desktop computer use",
+      "mechanism": "Visual and accessibility context feed a controlled desktop-action rail across abstract app boundaries.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Desktop computer use: Visual and accessibility context feed a controlled desktop-action rail across abstract app boundaries.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-04-m06",
+      "candidate_id": "m06",
+      "asset": "briefs/images/2026-10-04/dab-edition-2026-10-04-m06.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Study workflow hub",
+      "mechanism": "Study materials flow into a central hub and branch to flashcards and practice quizzes.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Study workflow hub: Study materials flow into a central hub and branch to flashcards and practice quizzes.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-04-m07",
+      "candidate_id": "m07",
+      "asset": "briefs/images/2026-10-04/dab-edition-2026-10-04-m07.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Synchronized cross-app work",
+      "mechanism": "Image editing, Sheets canvas and cross-app work connect to one shared source-data backbone.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Synchronized cross-app work: Image editing, Sheets canvas and cross-app work connect to one shared source-data backbone.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-04-m01",
+      "candidate_id": "m01",
+      "asset": "briefs/images/2026-10-04/dab-edition-2026-10-04-m01.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Verified DOCA Agent Skills",
+      "mechanism": "A sealed skill package passes through API, hardware and build checks before execution.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Verified DOCA Agent Skills: A sealed skill package passes through API, hardware and build checks before execution.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-04-m09",
+      "candidate_id": "m09",
+      "asset": "briefs/images/2026-10-04/dab-edition-2026-10-04-m09.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Event-driven ambient agents",
+      "mechanism": "An event bus starts a trackable job that branches to bounded action or an ask-human path.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Event-driven ambient agents: An event bus starts a trackable job that branches to bounded action or an ask-human path.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    }
+  ]
+}
