@@ -32,12 +32,7 @@ jobs:
             target="$GITHUB_REF_NAME"
           else
             gh api "repos/${GITHUB_REPOSITORY}/git/matching-refs/heads/synthetic/protected-repair-proof-" > /tmp/synthetic-refs.json
-            target="$(node - <<'NODE'
-            const fs=require('fs'),xs=JSON.parse(fs.readFileSync('/tmp/synthetic-refs.json','utf8'));
-            const names=xs.map(x=>String(x.ref||'').replace(/^refs\/heads\//,'')).filter(x=>x.startsWith('synthetic/protected-repair-proof-')).sort();
-            process.stdout.write(names.at(-1)||'');
-            NODE
-            )"
+            target="$(node -e 'const fs=require("fs"),xs=JSON.parse(fs.readFileSync("/tmp/synthetic-refs.json","utf8"));const names=xs.map(x=>String(x.ref||"").replace(/^refs\\/heads\\//,"")).filter(x=>x.startsWith("synthetic/protected-repair-proof-")).sort();process.stdout.write(names.at(-1)||"");')"
           fi
           if [ -z "$target" ]; then
             echo "should_run=false" >> "$GITHUB_OUTPUT"
@@ -74,16 +69,7 @@ jobs:
             echo "::error::Synthetic proof input is missing."; exit 1;
           }
           node _tools/protected-repair-executor.mjs synthetic-proof > /tmp/synthetic-trace.json
-          node - <<'NODE'
-          const fs=require('fs');
-          const x=require('/tmp/synthetic-trace.json');
-          if(x.ci?.allowed!==true||x.merge?.allowed!==true||x.progress?.verified!==true)process.exit(1);
-          const input=require('./_records/hardening/protected-repair-autonomy/synthetic-proof-input.json');
-          for(const key of ['synthetic_execution_id','synthetic_task_id','synthetic_incident_id','bounded_repair_scope']){
-            if(!input[key])throw Error('synthetic_input_missing:'+key);
-          }
-          if(input.production_pointer_mutation_allowed!==false)throw Error('synthetic_must_not_mutate_production_pointer');
-          NODE
+          node -e 'const x=require("/tmp/synthetic-trace.json");if(x.ci?.allowed!==true||x.merge?.allowed!==true||x.progress?.verified!==true)process.exit(1);const input=require("./_records/hardening/protected-repair-autonomy/synthetic-proof-input.json");for(const key of ["synthetic_execution_id","synthetic_task_id","synthetic_incident_id","bounded_repair_scope"]){if(!input[key])throw Error("synthetic_input_missing:"+key)}if(input.production_pointer_mutation_allowed!==false)throw Error("synthetic_must_not_mutate_production_pointer");'
 
       - name: Open or reuse exactly one synthetic protected PR
         if: steps.target.outputs.should_run == 'true'
@@ -97,13 +83,7 @@ jobs:
           key="$(node -e "const x=require('./_records/hardening/protected-repair-autonomy/synthetic-proof-input.json');process.stdout.write(x.synthetic_proof_key)")"
           gh pr list --repo "$GITHUB_REPOSITORY" --state all --base main --head "${{ steps.target.outputs.target_branch }}" --limit 20 \
             --json number,state,headRefOid,body > /tmp/proof-prs.json
-          pr="$(node - "$key" "$head" <<'NODE'
-          const fs=require('fs'),[key,head]=process.argv.slice(2),xs=JSON.parse(fs.readFileSync('/tmp/proof-prs.json','utf8'));
-          const m=xs.filter(x=>String(x.body||'').includes('Synthetic-Proof-Key: '+key)&&(x.headRefOid===head||x.state==='MERGED'));
-          if(m.length>1){console.error('duplicate_synthetic_proof_pr');process.exit(2)}
-          process.stdout.write(String(m[0]?.number||0));
-          NODE
-          )"
+          pr="$(node -e 'const fs=require("fs"),key=process.argv[1],head=process.argv[2],xs=JSON.parse(fs.readFileSync("/tmp/proof-prs.json","utf8"));const m=xs.filter(x=>String(x.body||"").includes("Synthetic-Proof-Key: "+key)&&(x.headRefOid===head||x.state==="MERGED"));if(m.length>1){console.error("duplicate_synthetic_proof_pr");process.exit(2)}process.stdout.write(String(m[0]?.number||0));' "$key" "$head")"
           if [ "$pr" = "0" ]; then
             printf '%s\n\n%s\n' \
               "Non-production isolated proof. Synthetic-Proof-Key: $key" \
@@ -131,12 +111,7 @@ jobs:
           run_id=0
           for _ in $(seq 1 75); do
             gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${head}&per_page=100" > /tmp/runs.json
-            run_id="$(node - "$head" <<'NODE'
-            const fs=require('fs'),head=process.argv[2],x=JSON.parse(fs.readFileSync('/tmp/runs.json','utf8'));
-            const rows=(x.workflow_runs||[]).filter(r=>r.name==='Deterministic publication CI'&&r.head_sha===head).sort((a,b)=>String(b.updated_at).localeCompare(String(a.updated_at)));
-            process.stdout.write(String(rows[0]?.id||0));
-            NODE
-            )"
+            run_id="$(node -e 'const fs=require("fs"),head=process.argv[1],x=JSON.parse(fs.readFileSync("/tmp/runs.json","utf8"));const rows=(x.workflow_runs||[]).filter(r=>r.name==="Deterministic publication CI"&&r.head_sha===head).sort((a,b)=>String(b.updated_at).localeCompare(String(a.updated_at)));process.stdout.write(String(rows[0]?.id||0));' "$head")"
             if [ "$run_id" != "0" ]; then
               state="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}" --jq '.status+":"+(.conclusion//"")')"
               case "$state" in
