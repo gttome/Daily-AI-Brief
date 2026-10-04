@@ -10,6 +10,24 @@ export const REQUIRED_IMAGE_REPAIR_PROOFS = Object.freeze([
   'operational_learning_updated'
 ]);
 
+export function resolveRegisteredTransportProof(registration={}) {
+  const proof=registration?.engineering_repair_transport_proof;
+  const errors=[];
+  if(registration?.schema_version!=='unattended-image-host-registration-v2'||registration?.status!=='READY')
+    errors.push('image_host_registration_not_ready');
+  if(!proof||proof.status!=='READY') errors.push('engineering_repair_transport_proof_not_ready');
+  const proofPath=String(proof?.path||'');
+  if(!proofPath||proofPath.startsWith('/')||proofPath.split('/').includes('..'))
+    errors.push('engineering_repair_transport_proof_path_invalid');
+  if(!/^[0-9a-f]{40}$/.test(String(proof?.git_blob_sha||'')))
+    errors.push('engineering_repair_transport_proof_blob_sha_invalid');
+  if(proof?.purpose!=='protected_known_good_small_png_exact_byte_transport_preflight')
+    errors.push('engineering_repair_transport_proof_purpose_invalid');
+  return errors.length
+    ? {ok:false,errors}
+    : {ok:true,path:proofPath,git_blob_sha:proof.git_blob_sha,purpose:proof.purpose};
+}
+
 const stamp=value=>typeof value==='string'&&Number.isFinite(Date.parse(value));
 const hash=value=>createHash('sha256').update(typeof value==='string'?value:JSON.stringify(value)).digest('hex');
 const hasAll=(haystack,needles)=>needles.every(x=>haystack.includes(x));
