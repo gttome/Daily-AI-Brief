@@ -281,6 +281,21 @@ export function validateTaskRecoveryContracts(contract = {}) {
     if(autonomy.same_execution_resume_required!==true||autonomy.same_task_resume_required!==true)errors.push('protected_repair_same_task_resume');
     if(autonomy.real_executor_required_for_success!==true||autonomy.substantive_durable_progress_required_for_success!==true)errors.push('protected_repair_progress_semantics');
     if(autonomy.invariant!=='actionable_recovery_must_not_terminate_at_owner_prompt_boundary')errors.push('protected_repair_owner_boundary_invariant');
+    if(autonomy.protected_pr_authority!=='scheduled_chatgpt_connected_github')errors.push('protected_repair_pr_authority');
+    if(autonomy.repository_executor_pr_creation_allowed!==false||autonomy.repository_executor_protected_merge_allowed!==false)
+      errors.push('protected_repair_repository_executor_boundary');
+    if(autonomy.repository_executor_exact_head_ci_dispatch_allowed!==true)errors.push('protected_repair_executor_ci_dispatch');
+    if(autonomy.connected_watchdog_pr_creation_required!==true||autonomy.connected_watchdog_protected_merge_required!==true)
+      errors.push('protected_repair_connected_watchdog_authority');
+    if(autonomy.connected_watchdog_merge_must_use_expected_head!==true||autonomy.connected_watchdog_merge_bypass_allowed!==false)
+      errors.push('protected_repair_connected_watchdog_merge_safety');
+    if(autonomy.bot_authored_protected_pr_allowed!==false||autonomy.bot_authored_protected_merge_allowed!==false)
+      errors.push('protected_repair_bot_pr_forbidden');
+    if(autonomy.protection_policy_must_remain_enforced!==true)errors.push('protected_repair_policy_enforcement');
+    const sync=autonomy.base_sync_policy||{};
+    if(sync.allowed!==true||sync.actor!=='scheduled_chatgpt_connected_github'||sync.repair_scope_digest_must_remain_identical!==true||
+       sync.updated_head_must_be_persisted_before_ci!==true||sync.exact_head_ci_must_run_after_sync!==true)
+      errors.push('protected_repair_base_sync_contract');
     const dead=autonomy.dead_writer_cleanup||{};
     if(dead.live_writer_takeover_allowed!==false||dead.terminal_workflow_status_required!=='completed')errors.push('dead_writer_takeover_contract');
     if(JSON.stringify(dead.terminal_conclusions)!==JSON.stringify(['failure','cancelled']))errors.push('dead_writer_terminal_conclusions');
