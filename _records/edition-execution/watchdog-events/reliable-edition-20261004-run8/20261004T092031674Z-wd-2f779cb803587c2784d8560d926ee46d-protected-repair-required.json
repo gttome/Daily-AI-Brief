@@ -1,0 +1,22 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "17",
+  "incident_id": "wd-2f779cb803587c2784d8560d926ee46d",
+  "owner_slot": "F",
+  "at": "2026-10-04T09:20:31.674Z",
+  "type": "PROTECTED_REPAIR_REQUIRED",
+  "classification": "BLOCKED_ACTIONABLE",
+  "diagnosis": "Task 17 consumer is incompatible with the authoritative acceptance-lock plus linked repair-epoch evidence schema and aborted before set review.",
+  "failed_action_keys": [
+    "wd-2f779cb803587c2784d8560d926ee46d:consume-task17:run-37191461578"
+  ],
+  "repair_key": "repair-ce8c7a1216071d075bbb4d6403eadd831913a788",
+  "repair_branch": "repair/run8-task17-acceptance-lock-schema",
+  "repair_head": "ce8c7a1216071d075bbb4d6403eadd831913a788",
+  "repair_scope_digest": "sha256:ef26b89aa5cde227de21254ff4ebb6dbfc94f6cab464c6d1dd6dfbd9818e31ba",
+  "next_authorized_action": "Open/reuse exact repair PR, require pull_request validate PASS, merge, and resume the same queued Task 17 request.",
+  "recovery_required": true
+}

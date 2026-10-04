@@ -1,0 +1,24 @@
+{
+  "schema_version": "dead-writer-proof-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "17",
+  "proved_at": "2026-10-04T09:20:31.674Z",
+  "workflow_run_id": 37191461578,
+  "workflow_job_id": 111404350977,
+  "owner_id": "github-actions-repository-task-37191461578-1",
+  "conclusion": "failure",
+  "completed_at": "2026-10-04T09:13:56Z",
+  "old_generation": 45,
+  "replacement_generation": 46,
+  "child_or_subworker_live": false,
+  "repository_consumer_started": true,
+  "last_substantive_write": {
+    "commit": "ebd1ee99e2524b3e559750a95b017565310a1054",
+    "at": "2026-10-04T09:13:52Z",
+    "kind": "writer_fence_only",
+    "substantive_progress": false
+  },
+  "substantive_write_after_terminal": false,
+  "reason": "Task 17 repository consumer rejected authoritative image evidence because it only recognized a superseded embedded accepted-attempt schema and ignored immutable acceptance locks with linked repair-epoch receipts and saved-Git reviews."
+}

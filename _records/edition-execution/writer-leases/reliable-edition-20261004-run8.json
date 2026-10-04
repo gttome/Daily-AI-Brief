@@ -1,9 +1,22 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "github-actions-repository-task-37191461578-1",
-  "generation": 45,
-  "acquired_at": "2026-10-04T09:13:52.122Z",
-  "last_heartbeat_at": "2026-10-04T09:13:52.122Z",
-  "expires_at": "2026-10-04T09:28:52.122Z"
+  "owner_id": "watchdog-F:wd-2f779cb803587c2784d8560d926ee46d:task-17:protected-repair-handoff",
+  "generation": 46,
+  "task_id": "17",
+  "capability": "repository",
+  "operation_key": "repair-ce8c7a1216071d075bbb4d6403eadd831913a788",
+  "acquired_at": "2026-10-04T09:20:31.674Z",
+  "last_heartbeat_at": "2026-10-04T09:20:31.674Z",
+  "expires_at": "2026-10-04T09:20:31.674Z",
+  "state": "RELEASED",
+  "released": true,
+  "transfer_from": {
+    "owner_id": "github-actions-repository-task-37191461578-1",
+    "generation": 45,
+    "reason": "PROVEN_DEAD_WORKFLOW_RUN_37191461578",
+    "at": "2026-10-04T09:20:31.674Z"
+  },
+  "released_at": "2026-10-04T09:20:31.674Z",
+  "release_reason": "TASK_17_ACCEPTANCE_SCHEMA_REPAIR_HANDOFF_TO_PROTECTED_REPAIR_EXECUTOR"
 }

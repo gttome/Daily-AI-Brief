@@ -1,0 +1,21 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "PROTECTED_REPAIR_REQUIRED",
+  "repair_key": "repair-ce8c7a1216071d075bbb4d6403eadd831913a788",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "production_branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "17",
+  "incident_id": "wd-2f779cb803587c2784d8560d926ee46d",
+  "repair_branch": "repair/run8-task17-acceptance-lock-schema",
+  "repair_branch_head_sha": "ce8c7a1216071d075bbb4d6403eadd831913a788",
+  "repair_scope_digest": "sha256:ef26b89aa5cde227de21254ff4ebb6dbfc94f6cab464c6d1dd6dfbd9818e31ba",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-04T09:20:31.674Z",
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+  "diagnosis": "The Task 17 consumer required accepted_locked/status fields embedded in image-attempt receipts. The current protected image contract instead records immutable acceptance locks that reference repair-epoch attempt receipts and separate saved-Git reviews; it also permits accepted professional PNG transport dimensions other than one hard-coded size. All six accepted assets remain valid and immutable.",
+  "next_stage": "Open exactly one protected repair PR for the bounded consumer/test change, require exact-head pull_request validate PASS, merge to protected main, and resume the SAME queued Task 17 request."
+}
