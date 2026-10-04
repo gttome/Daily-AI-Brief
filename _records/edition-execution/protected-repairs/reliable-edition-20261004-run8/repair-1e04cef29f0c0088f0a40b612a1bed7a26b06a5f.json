@@ -1,0 +1,21 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "PROTECTED_REPAIR_REQUIRED",
+  "repair_key": "repair-1e04cef29f0c0088f0a40b612a1bed7a26b06a5f",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "production_branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "11",
+  "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
+  "repair_branch": "repair/task11-context-epoch-continuation-20261004",
+  "repair_branch_head_sha": "dd62fe9e6e1f735954466ba00936ad614afd4d65",
+  "repair_scope_digest": "sha256:2dd30c8d3314b1e41b9d04adbf6bd61253c96dd1a1ddf83bca6c9d637b916b78",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-04T06:55:29.997Z",
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+  "diagnosis": "The first bounded post-repair native image attempt repeated the internal subject/context-isolation failure. A consumed prior repair epoch is not an external blocker.",
+  "next_stage": "Protected repair executor must open/reuse one PR, require exact-head CI, merge after same-execution/task revalidation, and resume Task 11 into repair epoch 2."
+}
