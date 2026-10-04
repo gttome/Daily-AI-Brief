@@ -4,7 +4,7 @@ import path from 'node:path';
 import {
   activeRunDecision, acquireWriterLease, assertWriterFence, releaseWriterLease, classifyRunHealth, applyImmediateImageRecovery,
   normalizeTaskEvent, recoverableBlockerEvidence, refreshScheduledWorkerFence, buildTaskWriterHandoffRelease,
-  validateTaskRecoveryContracts, taskRecoveryDecision, buildWorkerRequest, buildEngineeringRepairRequest,
+  validateTaskRecoveryContracts, taskRecoveryDecision, strategyInterruptDecision, buildWorkerRequest, buildEngineeringRepairRequest,
   projectKanbanFromEvents, validateKanbanContract, kanbanProjectionFresh, publicationWriteBoundary, latestRecoverableImage,
   classifyRepositoryQueueLiveness
 } from '../_generator/lib/run-supervisor.mjs';
@@ -101,6 +101,53 @@ function workerState(runRoot,executionId){
     return {state:value.state||value.executor_state||'Unknown',file,value};
   }catch{return {state:'Unknown',file};}
 }
+function watchdogStrategyAttempts(runRoot,executionId,taskId){
+  const dir=path.join(runRoot,'_records/edition-execution/watchdog-events',executionId);
+  if(!fs.existsSync(dir))return [];
+  const rows=[];
+  for(const name of fs.readdirSync(dir).sort()){
+    if(!name.endsWith('.json'))continue;
+    try{
+      const value=readJson(path.join(dir,name));
+      if(String(value.task_id||'').padStart(2,'0')!==taskId)continue;
+      const at=value.occurred_at||value.observed_at||value.at||null;
+      rows.push({value,at:at&&Number.isFinite(Date.parse(at))?Date.parse(at):0});
+    }catch{}
+  }
+  return rows.sort((a,b)=>a.at-b.at).slice(-4).map(({value})=>{
+    const durable=value.verification_evidence?.durable_progress===true||
+      value.verification_evidence?.verified===true||
+      value.final_outcome==='RECOVERY_VERIFIED_PROGRESSING';
+    const signature=String(
+      value.normalized_failure_signature||
+      value.blocker?.reason_code||
+      value.reason_code||
+      value.classification||
+      'unknown_failure'
+    );
+    return {
+      normalized_failure_signature:signature,
+      action:value.action_taken||value.action_key||'unknown',
+      durable_delta:durable,
+      validation_result:value.final_outcome||'unknown',
+      corrective_action_completed:Boolean(value.action_taken)&&!['NO_ACTION','WAIT_EXTERNAL'].includes(value.action_taken),
+      root_failure_remains:!durable
+    };
+  });
+}
+function greenProtectedRepairAvailable(runRoot,executionId,taskId){
+  const dir=path.join(runRoot,'_records/edition-execution/protected-repairs',executionId);
+  if(!fs.existsSync(dir))return false;
+  for(const name of fs.readdirSync(dir).filter(name=>name.endsWith('.json'))){
+    try{
+      const value=readJson(path.join(dir,name));
+      if(String(value.task_id||'').padStart(2,'0')!==taskId)continue;
+      if(['REPAIR_CI_PASS','REPAIR_MERGED','SAME_TASK_RESUME_REQUIRED'].includes(String(value.state||'')))return true;
+    }catch{}
+  }
+  return false;
+}
+
 function existingKanban(runRoot,executionKey){
   const file=path.join(runRoot,'_records/edition-execution/kanban',executionKey+'.json');
   if(!fs.existsSync(file)) return {file,value:null};
@@ -243,12 +290,20 @@ try{
       stale_threshold_ms:(taskContract?.stale_after_seconds||900)*1000
     });
     const repairState=repairEpochState(runRoot,args['execution-id'],taskId);
+    const strategyAttempts=watchdogStrategyAttempts(runRoot,args['execution-id'],taskId);
+    const strategyInterrupt=strategyInterruptDecision({
+      recent_attempts:strategyAttempts,
+      already_green_repair:greenProtectedRepairAvailable(runRoot,args['execution-id'],taskId),
+      task_age_anomalous:classification.state==='STALE_ACTIVE'&&Number(classification.age_ms||0)>=(taskContract?.stale_after_seconds||900)*2000,
+      control_plane_churn:strategyAttempts.length>=2&&strategyAttempts.slice(-2).every(attempt=>attempt.durable_delta!==true)
+    });
     const decision=taskRecoveryDecision({
       classification,taskContract,
       attempts:Number(args.attempts||0),recoveryAttempts:imageOverride.recovery_attempts,
       repairEpochs:repairState.epochs_completed,repairReady:repairState.repair_ready,
       postRepairAttempts:repairState.post_repair_attempts,
-      forceEngineeringRepair:imageOverride.force_engineering_repair === true
+      forceEngineeringRepair:imageOverride.force_engineering_repair === true,
+      strategyInterrupt
     });
     let request=null;
     if(decision.action==='engineering_repair'){
@@ -269,7 +324,7 @@ try{
         post_repair_attempt:decision.post_repair_attempt,
         created_at:args.now||new Date().toISOString()
       });
-    }else if(['dispatch_normal','first_recovery','alternate_recovery'].includes(decision.action)){
+    }else if(['dispatch_normal','first_recovery','alternate_recovery','strategy_interrupt'].includes(decision.action)){
       let instruction=decision.instruction;
       let recoveryAttempt=imageOverride.recovery_attempts;
       if(image?.recovery_action){
@@ -289,7 +344,7 @@ try{
       schema_version:'run-supervisor-tick-v1',
       execution_id:args['execution-id'],execution_key:executionKey,edition_id:args['edition-id'],branch:args.branch,
       current_task:current,latest_task_event:latest,latest_blocker_evidence:blockerEvidence,executor_state:executorState,
-      immediate_image_recovery:imageOverride,repair_epoch_state:repairState,classification,
+      immediate_image_recovery:imageOverride,repair_epoch_state:repairState,strategy_interrupt:strategyInterrupt,classification,
       decision:publication.write_allowed?decision:{action:publication.action},
       worker_request:publication.write_allowed?request:null,publication,
       kanban:{fresh:fresh.fresh,reason:fresh.reason,expected_digest:fresh.expected_digest,observed_digest:fresh.observed_digest,file:path.relative(runRoot,kanban.file)},
