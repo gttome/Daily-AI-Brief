@@ -1,4 +1,5 @@
 import {createHash} from 'node:crypto';
+import {buildProtectedRepairRecord} from './protected-repair-executor.mjs';
 
 export const WATCHDOG_RING_VERSION='chatgpt-watchdog-ring-v1';
 export const WATCHDOG_RECOVERY_LEASE_VERSION='chatgpt-watchdog-recovery-lease-v1';
@@ -59,10 +60,25 @@ export function selectAuthoritativeRequest(requests=[],{execution_id,task_id}={}
   if(!execution_id||!tid(task_id))throw Error('watchdog_request_scope_required');
   const id=tid(task_id);
   return [...requests].filter(x=>x?.execution_id===execution_id&&tid(x?.task_id)===id).sort((a,b)=>{
+    const ae=Number(a?.repair_epoch||0),be=Number(b?.repair_epoch||0);
+    if(ae!==be)return ae-be;
+    const ap=Number(a?.post_repair_attempt||0),bp=Number(b?.post_repair_attempt||0);
+    if(ap!==bp)return ap-bp;
     const at=stamp(a.created_at)?Date.parse(a.created_at):0,bt=stamp(b.created_at)?Date.parse(b.created_at):0;
     if(at!==bt)return at-bt;
     return String(a._file||a.request_key||'').localeCompare(String(b._file||b.request_key||''));
   }).at(-1)||null;
+}
+
+export function buildWatchdogProtectedRepairRequirement({
+  execution_id,edition_id,execution_key,production_branch,task_id,incident_id,
+  repair_branch,repair_branch_head_sha,repair_scope_digest,required_checks=['validate'],
+  created_at=new Date().toISOString()
+}={}){
+  return buildProtectedRepairRecord({
+    execution_id,edition_id,execution_key,production_branch,task_id,incident_id,
+    repair_branch,repair_branch_head_sha,repair_scope_digest,required_checks,created_at
+  });
 }
 export function watchdogNativeImageRequestEligible(request,{execution_id}={}){
   const state=String(request?.status||request?.state||'').toLowerCase();
