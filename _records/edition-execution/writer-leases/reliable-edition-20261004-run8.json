@@ -1,16 +1,14 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "scheduled-consumer:watchdog-D:reliable-edition-20261004-run8:task-11:generation-24:reconcile-terminal-request",
-  "generation": 24,
+  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261004-run8:task-11:generation-25:reconcile-terminal-requests",
+  "generation": 25,
   "task_id": "11",
-  "operation_key": "reconcile-815988263cea8b4ca83db091aa9f950d6d1a8221b504014b81c79a4f37ba3f5b",
+  "operation_key": "reconcile-terminal-native-requests",
   "capability": "repository",
-  "acquired_at": "2026-10-04T07:45:20.000Z",
-  "last_heartbeat_at": "2026-10-04T07:49:05.000Z",
-  "expires_at": "2026-10-04T07:49:05.000Z",
-  "state": "RELEASED",
-  "released_at": "2026-10-04T07:49:05.000Z",
-  "release_reason": "SAFE_BOUNDARY_REACHED",
-  "released": true
+  "acquired_at": "2026-10-04T07:56:52.292Z",
+  "last_heartbeat_at": "2026-10-04T07:56:52.292Z",
+  "expires_at": "2026-10-04T08:11:52.292Z",
+  "state": "ACTIVE",
+  "released": false
 }
