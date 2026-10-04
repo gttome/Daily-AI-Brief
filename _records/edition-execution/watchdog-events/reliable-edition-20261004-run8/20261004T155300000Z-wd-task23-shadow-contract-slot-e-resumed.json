@@ -1,0 +1,30 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "23",
+  "incident_id": "wd-task23-manifest-contract-37205934438",
+  "slot_id": "E",
+  "classification": "BLOCKED_ACTIONABLE",
+  "lease_generation": 41,
+  "action_key": "wd-task23-manifest-contract-37205934438:shadow-frozen-contract-repair:slot-e:g41",
+  "attempted_actions": [
+    "Revalidated the same Run 8 Task 23 after the prior writer generation expired.",
+    "Confirmed protected repair PR #444 is merged and the production publication PR #442 remains open.",
+    "Read the exact-head PR-attached validate failure on head 22f04b3d84016466d424f34d1efb3a3a43cb50c7.",
+    "Diagnosed the remaining failure as frozen-reader/video shadow compatibility: sealed official video exceptions pass the protected publication-manifest migration but generic shadow validation still enforces current freshness; current renderer additions also differ from sealed Task 19 reader bytes."
+  ],
+  "blocker": "Task 23 exact-head CI still fails baseline shadow because frozen Run 8 reader/media evidence is being reinterpreted by the current generic shadow/edition contract. Changing Done Task 06 media selection or frozen Task 19 reader bytes is prohibited.",
+  "next_authorized_action": "Prepare one bounded protected repair that teaches shadow validation to honor the already-merged pre-2026-10-05 migration only when sealed media evidence and exact frozen reader blob identities are verified; merge only after exact-head protected CI, then add bound migration metadata to the same Task 23 candidate and rerun PR #442 validation.",
+  "final_outcome": "RECOVERY_ACTIVE",
+  "recovery_required": true,
+  "blocked_external": false,
+  "observed_failed_ci": {
+    "run_id": 37214287451,
+    "head_sha": "22f04b3d84016466d424f34d1efb3a3a43cb50c7",
+    "conclusion": "failure",
+    "failing_test": "baseline shadow check passes"
+  },
+  "occurred_at": "2026-10-04T15:53:00.000Z"
+}
