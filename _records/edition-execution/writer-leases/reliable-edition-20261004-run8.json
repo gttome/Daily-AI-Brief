@@ -1,13 +1,14 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "github-actions-37178305599-2",
-  "generation": 21,
-  "acquired_at": "2026-10-04T05:50:35.907Z",
-  "last_heartbeat_at": "2026-10-04T06:35:29.745Z",
-  "expires_at": "2026-10-04T06:35:29.745Z",
-  "state": "RELEASED",
-  "released_at": "2026-10-04T06:35:29.745Z",
-  "release_reason": "DEAD_WRITER_PROVEN_CANCELLED_HANDOFF_TO_WATCHDOG",
+  "owner_id": "scheduled-consumer:6ac1594249d081918df3145cca65dd91:reliable-edition-20261004-run8:task-11:generation-22:invocation-20261004T063621952Z",
+  "generation": 22,
+  "task_id": "11",
+  "operation_key": "consume-815988263cea8b4ca83db091aa9f950d6d1a8221b504014b81c79a4f37ba3f5b",
+  "capability": "native_chatgpt",
+  "acquired_at": "2026-10-04T06:36:21.952Z",
+  "last_heartbeat_at": "2026-10-04T06:36:21.952Z",
+  "expires_at": "2026-10-04T06:51:21.952Z",
+  "takeover_reason": "conclusively_dead_writer",
   "dead_writer_proof": "_records/edition-execution/dead-writer-recovery/reliable-edition-20261004-run8/20261004T0635Z-generation-21.json"
 }
