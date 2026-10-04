@@ -7,11 +7,11 @@
   "execution_key": "2026-10-04-run8",
   "branch": "reliable-edition/dab-edition-2026-10-04-run8",
   "updated_at": "2026-10-04T01:32:36.576Z",
-  "start_scope": "pending_task00_readiness",
+  "start_scope": "full_production",
   "image_tasks_authorized": false,
   "publication_authorized": false,
   "deferred_blocker": null,
   "current_task": "00",
   "current_task_state": "Active",
-  "note": "October 4 Run 8 allocated by missed-start recovery from protected main. Task 00 readiness is Active; no readiness, image, or publication authorization is claimed until Task 00 passes."
+  "note": "October 4 Run 8 allocated by missed-start recovery from protected main. Task 00 readiness is Active; image and publication authorization remain false until current readiness validation passes."
 }
