@@ -1,0 +1,54 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "16",
+  "candidate_id": "m09",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-04T09:05:07.673Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 39,
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "saved_git_commit": "d5d0c5850ad5a3578833503ecf0c1f76f7d91e6f",
+  "source_lineage": {
+    "native_sha256": "fcd4a5c50b79cb9996d6d84ed148319766f5877c410db8d774288dc872478458",
+    "native_bytes": 1235343,
+    "native_width": 1730,
+    "native_height": 909,
+    "transport_method": "same-visual resized 256-color professional PNG representation"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-04/dab-edition-2026-10-04-m09.png",
+    "git_blob_sha": "3b9cb7aaaf8feb5e6197b412c3abd3ddecaad605",
+    "sha256": "535cff947344bf4717acac41d53b03d9963397b919a9e3bbfa58cd5ee7ae2e08",
+    "bytes": 116196,
+    "width": 1199,
+    "height": 630,
+    "exact_readback": "PASS_EXACT_BASE64_AND_GIT_OBJECT_SHA_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "An event feeds an ambient-agent core and trackable job-state node, then splits into blue bounded action and amber ask-human/escalation paths that converge on an audit trail.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Event",
+      "Ambient agent",
+      "Job state",
+      "Action",
+      "Ask human",
+      "Escalation",
+      "Audit trail"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-discovery-handoff-v1",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_id": "reliable-edition-20261004-run8",
+  "source_branch": "discovery-preflight/daily/2026-10-04",
+  "source_commit": "40f6886953ff79aed0d7dbb6d68ac4ea5f2e5482",
+  "receipt_path": "_records/discovery-preflight/result/receipt.json",
+  "metadata_candidates_path": "_records/discovery-preflight/result/metadata-candidates.json",
+  "article_evidence_path": "_records/discovery-preflight/result/article-evidence.json",
+  "article_evidence_receipt_path": "_records/discovery-preflight/result/article-evidence-receipt.json",
+  "candidate_count": 20,
+  "article_evidence_count": 9,
+  "coverage_ready": true,
+  "article_evidence_ready": true,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_calls": 0,
+  "recorded_at": "2026-10-04T02:23:00.000Z"
+}

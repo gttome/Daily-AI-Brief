@@ -1,0 +1,29 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "03",
+  "incident_id": "wd-73cec405a0bae31734051e1ed785acf6",
+  "slot_id": "B",
+  "classification": "BLOCKED_ACTIONABLE",
+  "observed_substantive_progress_at": "2026-10-04T02:07:56.833Z",
+  "authoritative_request_key": "dffc6b82e4ad726a1aa6d6a1ff62bf5cda68d7ba3d841ae31143731e87dd8631",
+  "blocker": "The Task 03 repository request remained unclaimed after the Supervisor failed and the prior Watchdog handed the incident forward.",
+  "lease_generation": 4,
+  "action_key": "wa-task03-discovery-preflight-b-01",
+  "action_taken": "CONSUME_EXACT_QUEUED_REQUEST",
+  "verification_evidence": {
+    "real_executor": "chatgpt-watchdog-B",
+    "writer_generation": 10,
+    "discovery_workflow_run_id": 37170719957,
+    "discovery_workflow_conclusion": "success",
+    "task03_result_status": "passed",
+    "task03_transition": "Done",
+    "first_incomplete_task_advanced": true,
+    "candidate_count": 20,
+    "article_evidence_count": 9,
+    "model_calls": 0
+  },
+  "final_outcome": "RECOVERY_VERIFIED_PROGRESSING",
+  "occurred_at": "2026-10-04T02:23:00.000Z"
+}

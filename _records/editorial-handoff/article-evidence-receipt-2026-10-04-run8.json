@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_text_version": "article-body-v1",
+  "profile_id": "under80-v1",
+  "stage": "deterministic_article_evidence_preflight",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "network_retrievals": 9,
+  "retrieved": 9,
+  "focus_counts": {
+    "technical_ai_engineering": 3,
+    "applied_genai_knowledge_workers": 3,
+    "agents_non_technical_people": 3
+  },
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 10028,
+  "evidence_sha256": "1095adfc0c70f54dd38761f83a5364c4db002f92ae3b9c4201667c3133be920c",
+  "ready": true,
+  "failures": [],
+  "extraction_methods": [
+    {
+      "candidate_id": "m02",
+      "method": "html.main",
+      "source_word_count": 3391
+    },
+    {
+      "candidate_id": "m03",
+      "method": "html.article",
+      "source_word_count": 203
+    },
+    {
+      "candidate_id": "m04",
+      "method": "html.article",
+      "source_word_count": 244
+    },
+    {
+      "candidate_id": "m05",
+      "method": "html.article",
+      "source_word_count": 3753
+    },
+    {
+      "candidate_id": "m06",
+      "method": "html.article",
+      "source_word_count": 226
+    },
+    {
+      "candidate_id": "m07",
+      "method": "html.article",
+      "source_word_count": 936
+    },
+    {
+      "candidate_id": "m01",
+      "method": "html.main",
+      "source_word_count": 2094
+    },
+    {
+      "candidate_id": "m08",
+      "method": "html.article",
+      "source_word_count": 2149
+    },
+    {
+      "candidate_id": "m09",
+      "method": "html.article",
+      "source_word_count": 6491
+    }
+  ]
+}

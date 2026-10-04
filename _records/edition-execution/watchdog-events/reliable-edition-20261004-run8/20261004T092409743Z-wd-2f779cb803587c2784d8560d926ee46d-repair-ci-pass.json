@@ -1,0 +1,20 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "17",
+  "incident_id": "wd-2f779cb803587c2784d8560d926ee46d",
+  "owner_slot": "F",
+  "at": "2026-10-04T09:24:09.743Z",
+  "type": "PROTECTED_REPAIR_CI_PASS",
+  "classification": "BLOCKED_ACTIONABLE",
+  "repair_key": "repair-ce8c7a1216071d075bbb4d6403eadd831913a788",
+  "pr_number": 441,
+  "repair_head": "ce8c7a1216071d075bbb4d6403eadd831913a788",
+  "ci_run_id": 37191854627,
+  "ci_conclusion": "success",
+  "pull_request_validate_attached": true,
+  "next_authorized_action": "Merge exact PR head, then resume same Task 17.",
+  "recovery_required": true
+}

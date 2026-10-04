@@ -1,0 +1,33 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
+  "slot_id": "C",
+  "classification": "BLOCKED_ACTIONABLE",
+  "authoritative_request_key": "815988263cea8b4ca83db091aa9f950d6d1a8221b504014b81c79a4f37ba3f5b",
+  "lease_generation": 13,
+  "action_key": "wc-task11-dead-writer-resume-g13",
+  "action_taken": "Proved the stale generation-21 GitHub Actions writer terminal-cancelled, persisted append-only dead-writer evidence, released generation 21, acquired and safely released generation 22 for the exact Task 11 request, and preserved the queued bounded post-repair attempt without generating it in a mixed Watchdog/orchestration context.",
+  "verification_evidence": {
+    "dead_writer_proof": "_records/edition-execution/dead-writer-recovery/reliable-edition-20261004-run8/20261004T0635Z-generation-21.json",
+    "dead_workflow_run_id": 37178305599,
+    "dead_workflow_conclusion": "cancelled",
+    "prior_writer_generation": 21,
+    "recovery_writer_generation": 22,
+    "authoritative_repair_epoch": 1,
+    "authoritative_post_repair_attempt": 1,
+    "repair_epoch_status": "PASS",
+    "image_generation_attempted": false,
+    "reason_no_generation": "The authoritative request requires one fresh isolated single-story image-only context. This Watchdog invocation contains orchestration/recovery context, so generating here would violate the bounded post-repair isolation rule and risk consuming the only post-repair attempt incorrectly.",
+    "protected_repair_autonomy_pr": 428,
+    "protected_repair_head": "0b76d75586fa9830735f190e926a142d58a2b25c",
+    "protected_repair_ci_run": 37182974267,
+    "protected_repair_ci_conclusion": "success",
+    "protected_repair_merged": false
+  },
+  "next_authorized_action": "A genuinely isolated native-image consumer must refresh current writer authority and consume exactly request 815988263cea8b4ca83db091aa9f950d6d1a8221b504014b81c79a4f37ba3f5b using only _records/image-context/2026-10-04/m02.json. Do not let the later repair_epoch=0 generic request supersede it. If no isolated native context is available, resume the protected-repair autonomy stage rather than generating in a mixed Watchdog context.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "occurred_at": "2026-10-04T06:37:41.193Z"
+}

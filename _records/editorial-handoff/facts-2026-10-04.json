@@ -1,0 +1,50 @@
+{
+  "m02": {
+    "headline": "When an agent says it is done, grade the database",
+    "summary": "ThinkingBox grades terminal backend state and side effects, not only generated text. repeated-run reliability is an explicit evaluation target.",
+    "why_it_matters": "For engineering teams, the key shift is from trusting a model response to designing the surrounding system so state, permissions, actions, and verification are explicit and inspectable.",
+    "source_url": "https://huggingface.co/blog/microsoft/thinkingbox",
+    "source_published_at": "2026-10-03T00:00:00Z",
+    "focus": "technical_ai_engineering"
+  },
+  "m04": {
+    "headline": "Copilot steps beyond APIs into desktop apps",
+    "summary": "GitHub Copilot computer use is in public preview in CLI and desktop app. it can read visual/accessibility context and operate desktop controls across applications.",
+    "why_it_matters": "For engineering teams, the key shift is from trusting a model response to designing the surrounding system so state, permissions, actions, and verification are explicit and inspectable.",
+    "source_url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
+    "source_published_at": "2026-10-01T00:00:00Z",
+    "focus": "technical_ai_engineering"
+  },
+  "m06": {
+    "headline": "Gemini puts study workflows in one hub",
+    "summary": "Gemini student hub centralizes study notebooks, flashcards and practice quizzes. Workspace administrators control access through existing Generative AI settings.",
+    "why_it_matters": "For knowledge workers, the practical value comes from turning isolated prompting into a repeatable workflow that keeps context, source material, and outputs connected to the work.",
+    "source_url": "https://workspaceupdates.googleblog.com/2026/10/find-your-learning-tools-all-in-one-place-with-the-student-hub-in-Gemini.html",
+    "source_published_at": "2026-10-01T00:00:00Z",
+    "focus": "applied_genai_knowledge_workers"
+  },
+  "m07": {
+    "headline": "Workspace turns prompts into images, mini-apps and cross-app work",
+    "summary": "Google Workspace added AI image editing, Sheets canvas mini-apps and cross-app AI assistance. Sheets canvas stays synchronized with source spreadsheet data.",
+    "why_it_matters": "For knowledge workers, the practical value comes from turning isolated prompting into a repeatable workflow that keeps context, source material, and outputs connected to the work.",
+    "source_url": "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop",
+    "source_published_at": "2026-10-01T00:00:00Z",
+    "focus": "applied_genai_knowledge_workers"
+  },
+  "m01": {
+    "headline": "NVIDIA gives agents a verified DOCA skill set",
+    "summary": "DOCA Agent Skills provide verified API, hardware and build constraints. NVIDIA reports a 65-prompt evaluation with stronger checklist completion and fewer handwritten-code/hardware-command steps when skills are used.",
+    "why_it_matters": "For nontechnical users, useful agents need reusable operating knowledge, bounded access, and a clear human review path when the system reaches uncertainty or a consequential action.",
+    "source_url": "https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/",
+    "source_published_at": "2026-10-01T00:00:00Z",
+    "focus": "agents_non_technical_people"
+  },
+  "m09": {
+    "headline": "Ambient agents wake up on events — and know when to ask a human",
+    "summary": "ambient agents react to events rather than waiting for a chat prompt. the reference architecture includes a human-in-the-loop ask_human path and trackable jobs.",
+    "why_it_matters": "For nontechnical users, useful agents need reusable operating knowledge, bounded access, and a clear human review path when the system reaches uncertainty or a consequential action.",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+    "source_published_at": "2026-10-01T00:00:00Z",
+    "focus": "agents_non_technical_people"
+  }
+}

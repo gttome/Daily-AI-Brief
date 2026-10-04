@@ -1,0 +1,23 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "23",
+  "incident_id": "wd-task23-manifest-contract-37205934438",
+  "slot_id": "E",
+  "classification": "BLOCKED_ACTIONABLE",
+  "lease_generation": 39,
+  "action_key": "wd-task23-manifest-contract-37205934438:lease-release-continuation:slot-e:g39",
+  "attempted_actions": [
+    "Persisted the unresolved Task 23 continuation event.",
+    "Attempted to release recovery generation 39 at SAFE_BOUNDARY_REACHED through the authorized connected GitHub mutation surface."
+  ],
+  "blocker": "The connected mutation surface rejected the recovery-lease release update. The existing lease remains bounded by its previously persisted expiry 2026-10-04T14:58:00.000Z; no forceful or alternate-credential release was attempted.",
+  "next_authorized_action": "After generation 39 expires, the next eligible Watchdog may acquire a new generation under optimistic concurrency and continue the same Task 23 / PR #444 recovery.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED_PENDING_LEASE_EXPIRY",
+  "recovery_required": true,
+  "blocked_external": false,
+  "lease_expires_at": "2026-10-04T14:58:00.000Z",
+  "occurred_at": "2026-10-04T14:48:00.000Z"
+}

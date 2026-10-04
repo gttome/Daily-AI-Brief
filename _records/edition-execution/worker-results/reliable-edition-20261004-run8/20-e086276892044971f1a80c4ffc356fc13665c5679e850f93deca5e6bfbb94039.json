@@ -1,0 +1,23 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "e086276892044971f1a80c4ffc356fc13665c5679e850f93deca5e6bfbb94039",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "20",
+  "request_writer_generation": 59,
+  "authority_generation": 60,
+  "status": "passed",
+  "completed_at": "2026-10-04T11:19:53.814Z",
+  "qualification": {
+    "path": "_records/qualification/2026-10-04-run8/result.json",
+    "result": "fail",
+    "repair_required": true,
+    "defect_id": "RUN8_INCOMPLETE_DETERMINISTIC_PUBLICATION_PROJECTION"
+  },
+  "preserved": {
+    "completed_tasks": "00-19",
+    "accepted_locked_images": 6
+  },
+  "task_outcome": "Done"
+}

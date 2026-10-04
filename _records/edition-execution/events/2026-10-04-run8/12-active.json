@@ -1,0 +1,33 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "execution_key": "2026-10-04-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "12",
+  "candidate_id": "m04",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-04T08:24:40.496Z",
+  "writer_generation": 31,
+  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261004-run8:task-12:generation-31:888f5ecd",
+  "reason_code": "NATIVE_IMAGE_REQUEST_CLAIMED",
+  "operation": "Consume exact authoritative Task 12 native_chatgpt request under refreshed task-specific fenced writer authority.",
+  "proof": {
+    "request_key": "888f5ecd4e752f516e5837c0b3b61d9a66f5ac994b5256844fc0b2b393627161",
+    "writer_lease": "_records/edition-execution/writer-leases/reliable-edition-20261004-run8.json"
+  },
+  "completed_tasks_preserved": [
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11"
+  ]
+}

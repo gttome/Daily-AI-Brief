@@ -1,0 +1,31 @@
+{
+  "schema_version": "2.0.0",
+  "edition_date": "2026-10-04",
+  "method": "independent_watchlist",
+  "checked_at": "2026-10-04T03:38:35.000Z",
+  "primary_lookback_days": 7,
+  "missed_signal_check": {
+    "completed": true,
+    "lookback_days": 14
+  },
+  "required_surfaces_complete": 6,
+  "focused_checks_executed": 14,
+  "candidates_reviewed_count": 4,
+  "new_topic_ids": [],
+  "updated_topic_ids": [
+    "dab-topic-harness-engineering",
+    "dab-topic-adaptive-agent-safeguards",
+    "dab-topic-agentic-edge-inference"
+  ],
+  "zero_new_certified": true,
+  "result": "PASS",
+  "migration": {
+    "contract_transition": "pre-2026-10-05-frozen-contract-recovery",
+    "aggregate_watchlist_task08": {
+      "enabled": true,
+      "worker_result_path": "_records/edition-execution/worker-results/reliable-edition-20261004-run8/08-6380c67cd6da13f927255082cf7a3bdf2a2187dbc8151964e44f90e1166bacb8.json",
+      "watchlist_refresh_path": "_records/editorial/2026-10-04-run8/watchlist-refresh.json"
+    },
+    "reason": "Task 08 completed seven domains, fourteen focused checks and four candidate dispositions, but the frozen receipt persisted aggregate rather than strict v2 detail."
+  }
+}

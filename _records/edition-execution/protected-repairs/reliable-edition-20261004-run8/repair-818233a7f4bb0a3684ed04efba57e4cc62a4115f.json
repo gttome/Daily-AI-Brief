@@ -1,0 +1,34 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "PROTECTED_REPAIR_REQUIRED",
+  "repair_key": "repair-818233a7f4bb0a3684ed04efba57e4cc62a4115f",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "production_branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "17",
+  "incident_id": "wd-2cce2bdf9b238e7c5f473f42b4b43d03",
+  "repair_branch": "repair/run8-task17-repository-dispatch-context",
+  "repair_branch_head_sha": "2530edb6ef0ca804a81bfad78b38279366fcf1bc",
+  "repair_scope_digest": "sha256:1f883071c50f34b57580d5b7f7160244cca0e60494270a44fa9b898a7a1c2cd5",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-04T09:09:18.505Z",
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+  "diagnosis": "The Supervisor generated the exact Task 17 repository request, then `gh workflow run repository-task-consumer.yml --ref \"$RUN_BRANCH\"` executed from the workflow root, which is not a Git repository. GitHub CLI repository discovery failed before the request was committed or the repository consumer started.",
+  "next_stage": "Protected repair PR #440 merged at e41e733636ae68701c4d2566b1ee1fbae1243e54 after exact-head PR validate PASS. Dispatch the SAME execution and Task 17; recovery remains incomplete until a real repository executor produces substantive durable progress.",
+  "last_recovery_stage": {
+    "state": "REPAIR_MERGED_AWAITING_SAME_TASK_PROGRESS",
+    "pr_number": 440,
+    "repair_head": "2530edb6ef0ca804a81bfad78b38279366fcf1bc",
+    "merge_sha": "e41e733636ae68701c4d2566b1ee1fbae1243e54",
+    "ci_run_id": 37191323370,
+    "ci_conclusion": "success",
+    "pull_request_validate_attached": true,
+    "same_execution_revalidated": true,
+    "same_task_revalidated": "17",
+    "repair_key_preserved": true,
+    "scope_digest_preserved": true
+  }
+}

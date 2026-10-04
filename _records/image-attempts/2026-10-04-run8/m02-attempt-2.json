@@ -1,0 +1,28 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "request_key": "46f01a3962c8c3386e7f6475e137168cc0f18f35bc06a3244bec7f18d736e21a",
+  "writer_generation": 18,
+  "consumer_slot": "A",
+  "attempt": 2,
+  "generated_at": null,
+  "generation_time_status": "unavailable_from_native_tool_response",
+  "native_generation_id": "ef6ee630-9b96-4e80-8149-3af7de5fdf97",
+  "native_capture": {
+    "format": "PNG",
+    "persisted": false,
+    "persistence_skipped_by_pretransport_guard": true
+  },
+  "pretransport_review": {
+    "passed": false,
+    "subject_correct": false,
+    "context_contamination": true,
+    "visible_text_guard": "FAIL",
+    "reason": "A second native generation, after an explicit fresh-image instruction containing only the sealed m02 specification, again returned a Watchdog operational dashboard rather than the backend-state verification mechanism."
+  },
+  "disposition": "REJECTED_PRETRANSPORT_CONTEXT_CONTAMINATION",
+  "targeted_retry": "Do not blind-repeat in this Watchdog conversation. Use a fresh isolated image-only execution context bound only to the sealed m02 specification."
+}

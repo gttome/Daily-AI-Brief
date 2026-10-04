@@ -1,0 +1,115 @@
+{
+  "schema_version": "run8-image-specs-v1",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_id": "reliable-edition-20261004-run8",
+  "sealed_at": "2026-10-04T03:47:20.000Z",
+  "common": {
+    "canvas": "1200x630 landscape",
+    "quality": "professional high-detail textbook/editorial mechanism illustration",
+    "background": "clean white or near-white",
+    "no_people": true,
+    "no_basic_fallback": true,
+    "no_svg_fallback": true,
+    "visible_text_whitelist_only": true
+  },
+  "specs": [
+    {
+      "task_id": "11",
+      "candidate_id": "m02",
+      "subject": "Backend-state verification",
+      "composition": "Claim rail plus database-state rail converge at an evidence gate.",
+      "allowed_text": [
+        "Agent claim",
+        "Database state",
+        "Side effects",
+        "Repeated run",
+        "Verification gate",
+        "Evidence ledger"
+      ]
+    },
+    {
+      "task_id": "12",
+      "candidate_id": "m04",
+      "subject": "Desktop computer use",
+      "composition": "Visual and accessibility context feed a controlled desktop-action rail across abstract app boundaries.",
+      "allowed_text": [
+        "Visual context",
+        "Accessibility context",
+        "Approval",
+        "Desktop action",
+        "Application boundary",
+        "Audit"
+      ]
+    },
+    {
+      "task_id": "13",
+      "candidate_id": "m06",
+      "subject": "Study workflow hub",
+      "composition": "Study materials flow into a central hub and branch to flashcards and practice quizzes.",
+      "allowed_text": [
+        "Study hub",
+        "Notebook",
+        "Source material",
+        "Flashcards",
+        "Practice quiz",
+        "Admin controls",
+        "Gemini"
+      ]
+    },
+    {
+      "task_id": "14",
+      "candidate_id": "m07",
+      "subject": "Synchronized cross-app work",
+      "composition": "Image editing, Sheets canvas and cross-app work connect to one shared source-data backbone.",
+      "allowed_text": [
+        "Image edit",
+        "Sheets canvas",
+        "Source data",
+        "Synchronized",
+        "Cross-app work",
+        "Workspace"
+      ]
+    },
+    {
+      "task_id": "15",
+      "candidate_id": "m01",
+      "subject": "Verified DOCA Agent Skills",
+      "composition": "A sealed skill package passes through API, hardware and build checks before execution.",
+      "allowed_text": [
+        "DOCA Agent Skill",
+        "Instructions",
+        "References",
+        "Scripts",
+        "API check",
+        "Hardware check",
+        "Build check",
+        "Preflight"
+      ]
+    },
+    {
+      "task_id": "16",
+      "candidate_id": "m09",
+      "subject": "Event-driven ambient agents",
+      "composition": "An event bus starts a trackable job that branches to bounded action or an ask-human path.",
+      "allowed_text": [
+        "Event",
+        "Ambient agent",
+        "Job state",
+        "Action",
+        "Ask human",
+        "Escalation",
+        "Audit trail"
+      ]
+    }
+  ],
+  "checks": {
+    "exact_spec_count": 6,
+    "distinct_compositions": true,
+    "professional_detail_required": true,
+    "people_prohibited": true,
+    "basic_fallback_prohibited": true,
+    "svg_fallback_prohibited": true,
+    "visible_text_guard": true,
+    "result": "PASS"
+  }
+}

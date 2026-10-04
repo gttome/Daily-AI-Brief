@@ -1,0 +1,37 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "22",
+  "incident_id": "wd-ab3751043af0e78612a67cb4e1b96de7",
+  "slot_id": "F",
+  "classification": "RECOVERY_VERIFIED_PROGRESSING",
+  "lease_generation": 35,
+  "action_key": "wd-ab3751043af0e78612a67cb4e1b96de7:resume-task22-open-publication-pr:slot-f:g35",
+  "problem": "Task 22 remained queued after the prior recovery owner could not execute the publication PR mutation and released an unresolved safe-boundary handoff.",
+  "cause_fixed": "Created exactly one protected publication PR for the same production branch through the authorized GitHub connection.",
+  "executor": {
+    "type": "github_actions",
+    "workflow": "validate",
+    "run_id": 37204064754,
+    "check_run_id": 111441481200,
+    "state": "in_progress",
+    "head_sha": "5df89668cb910421ad51973c3b1359e74775e67a"
+  },
+  "durable_progress": {
+    "task_transition": "22 Active -> Done",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261004-run8/22-da712bd08c14843dec29cc7e457c9d0f9da91c7865b4828b1892d113d27028f9.json",
+    "publication_pr": 442,
+    "first_incomplete_advanced_expected": "23"
+  },
+  "preserved": {
+    "completed_tasks": "00-21",
+    "accepted_locked_images": 6,
+    "duplicate_execution": false,
+    "duplicate_pr": false
+  },
+  "final_outcome": "RECOVERY_VERIFIED_PROGRESSING",
+  "recovery_required": false,
+  "occurred_at": "2026-10-04T13:01:30.000Z"
+}

@@ -1,0 +1,8 @@
+{
+  "task_id": "09",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-04T03:44:58.000Z",
+  "reason": "Begin all-four-book relevance review for the six locked Run 8 stories.",
+  "proof": {"catalog_path":"_data/book-reading.json","writer_generation":16}
+}

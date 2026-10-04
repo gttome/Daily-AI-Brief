@@ -1,0 +1,20 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "17",
+  "incident_id": "wd-2cce2bdf9b238e7c5f473f42b4b43d03",
+  "owner_slot": "F",
+  "at": "2026-10-04T09:11:37.035Z",
+  "type": "PROTECTED_REPAIR_HEAD_REFRESHED",
+  "classification": "BLOCKED_ACTIONABLE",
+  "attempted_action_key": "wd-2cce2bdf9b238e7c5f473f42b4b43d03:pr-440-validate:818233a7",
+  "result": "FAILED_BOUNDED_ASSERTION_MISMATCH",
+  "repair_key": "repair-818233a7f4bb0a3684ed04efba57e4cc62a4115f",
+  "repair_branch": "repair/run8-task17-repository-dispatch-context",
+  "repair_head": "2530edb6ef0ca804a81bfad78b38279366fcf1bc",
+  "repair_scope_digest": "sha256:1f883071c50f34b57580d5b7f7160244cca0e60494270a44fa9b898a7a1c2cd5",
+  "next_authorized_action": "Require fresh PR-attached validate PASS on refreshed head 2530edb6, then merge and resume Task 17.",
+  "recovery_required": true
+}

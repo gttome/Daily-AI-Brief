@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-10-03",
-  "updated_at": "2026-10-03T06:29:22.781Z",
+  "edition_date": "2026-10-04",
+  "updated_at": "2026-10-04T03:38:35.000Z",
   "verification_observed_at": "2026-10-03T06:29:22.781Z",
-  "baseline_note": "Independent Run 7 seven-domain sweep completed 14 focused checks: 2 new topics, 1 existing topic updated, and all remaining active topics carried forward.",
+  "baseline_note": "Independent Run 8 seven-domain sweep completed 14 focused checks: 0 new topics, 3 existing topics updated, and 17 active topics carried forward.",
   "topics": [
     {
       "topic_id": "dab-topic-collaborative-vibe-coding",
@@ -238,13 +238,13 @@
       "name": "Agent safeguards tailored to the task",
       "audience": "Agent builders and consultants",
       "summary": "Generate and evaluate protective rules and executable checks for a particular agent deployment.",
-      "why_now": "New first-party evidence strengthens limiting frontier-agent use through staged access, identity boundaries and environment-specific controls.",
+      "why_now": "Gemini 4 Argon adds a current staged-access example to the existing safeguards topic, with limited early access and feedback before broader release.",
       "practical_value": "Could improve how training materials explain agent permissions, checks and deployment-specific evaluation.",
       "limitations": "First-party technical evidence does not establish complete containment or independent assurance across every agent and runtime.",
       "next_action": "Review policy-prover assumptions, default-deny coverage, audit exports, bypass testing, and independent deployment evidence.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-10-01T20:08:38Z",
-      "verification_observed_at": "2026-10-01T20:08:38Z",
+      "updated_at": "2026-10-04T03:38:35.000Z",
+      "verification_observed_at": "2026-10-04T03:38:35.000Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -1097,12 +1097,12 @@
       "name": "AI harness engineering becomes a first-class layer",
       "audience": "Agent builders and AI engineering teams",
       "summary": "Treat the harness around a model—repository structure, tools, constraints, state, validation, and control loops—as an engineering system in its own right.",
-      "why_now": "AWS Dogwood introduced execution-time temporal governance for sequences of agent actions, moving policy enforcement deeper into the agent runtime.",
+      "why_now": "BootLoops 1.0 adds certified computation tools, reusable working protocols, acceptance tests and provenance to the existing harness-engineering layer.",
       "practical_value": "Helps teams separate model capability from the surrounding controls that determine what an agent can observe, access, execute, and verify.",
       "limitations": "Vendor implementations differ; workflow-specific evaluation is still required.",
       "next_action": "Make observability, permission boundaries, tool/data interfaces, and completion verification explicit in the harness and test them independently.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-10-02T13:29:44Z",
+      "updated_at": "2026-10-04T03:38:35.000Z",
       "status": "gaining_evidence",
       "confidence": "strong",
       "evidence": [
@@ -1267,7 +1267,7 @@
         }
       },
       "trial_story_ids": [],
-      "verification_observed_at": "2026-10-02T13:29:44Z",
+      "verification_observed_at": "2026-10-04T03:38:35.000Z",
       "research_score": 89
     },
     {
@@ -1275,12 +1275,12 @@
       "name": "Agentic workloads move toward measured edge inference",
       "audience": "AI engineers and technical leaders",
       "summary": "Benchmark model and agent workloads with workload-specific measurements, including deployment on constrained edge hardware.",
-      "why_now": "NVIDIA published AIPerf guidance for LLM inference and a separate MLPerf Edge Agentic benchmark result on Jetson AGX Thor.",
+      "why_now": "The 64GB DGX Spark and Sync Cluster Assistant add a local-to-two-node scaling path for private local AI workloads.",
       "practical_value": "Encourages teams to measure latency, throughput, and agent workload behavior rather than relying on generic model-speed claims.",
       "limitations": "Vendor benchmarks do not establish equivalent performance across other hardware, models, or production workloads.",
       "next_action": "Define a representative workload and benchmark it on the actual deployment target before making infrastructure decisions.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-19T17:09:07.447Z",
+      "updated_at": "2026-10-04T03:38:35.000Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -1345,7 +1345,8 @@
         }
       },
       "trial_story_ids": [],
-      "research_score": 71
+      "research_score": 71,
+      "verification_observed_at": "2026-10-04T03:38:35.000Z"
     },
     {
       "topic_id": "dab-topic-model-lifecycle-governance",

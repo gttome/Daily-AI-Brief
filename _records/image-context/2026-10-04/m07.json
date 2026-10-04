@@ -1,0 +1,19 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-04-m07"
+  ],
+  "candidate_id": "m07",
+  "task_id": "14",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-04T03:49:00.000Z",
+  "allowed_text": [
+    "Image edit",
+    "Sheets canvas",
+    "Source data",
+    "Synchronized",
+    "Cross-app work",
+    "Workspace"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: synchronized cross-app Workspace generation. Composition: three distinct lanes for image editing, a Sheets canvas mini-app and cross-app assistance all connect to one shared source-data backbone, with a synchronization loop showing that interactive work remains tied to current data. Make the three mechanisms visually different but clearly coordinated. No people or humanoid figures, no decorative filler, no product-screen imitation, no unsupported metrics, no overlapping text, no sparse/basic box-and-arrow fallback. Only these visible labels: Image edit, Sheets canvas, Source data, Synchronized, Cross-app work, Workspace."
+}

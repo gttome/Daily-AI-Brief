@@ -1,0 +1,37 @@
+{
+  "schema_version": "run8-podcast-selection-v1",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_id": "reliable-edition-20261004-run8",
+  "research_cutoff": "2026-10-04T01:32:36.576Z",
+  "verified_at": "2026-10-04T02:42:20.000Z",
+  "result": "PASS",
+  "podcasts": [
+    {
+      "ordinal": 1,
+      "show": "Hard Fork",
+      "publisher": "The New York Times",
+      "episode_key": "hard-fork-2026-10-02-ai-agents",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 3182,
+      "connection": "Current discussion of personal assistants, agent incidents and privacy trade-offs.",
+      "verification": "Current Apple Podcasts listing confirms the episode and publisher; independent episode metadata reports 53:02."
+    },
+    {
+      "ordinal": 2,
+      "show": "The a16z Show",
+      "publisher": "a16z",
+      "episode_key": "a16z-2026-10-02-ai-agents-incumbents",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 3588,
+      "connection": "Multi-agent procurement workflows and human-in-the-loop trust escalation.",
+      "verification": "Current Apple Podcasts listing confirms the episode; independent episode metadata reports 59:48."
+    }
+  ],
+  "checks": {
+    "count": 2,
+    "source_diverse": true,
+    "publication_before_cutoff": true,
+    "runtime_verified": true,
+    "prior_edition_exact_podcast_repeat": false
+  }
+}

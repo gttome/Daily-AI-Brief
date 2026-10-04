@@ -1,0 +1,13 @@
+{
+  "task_id": "17",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-04T09:24:45.445Z",
+  "proof": {
+    "six_images": true,
+    "differentiation": "PASS",
+    "accessibility": "PASS",
+    "image_manifest": "_records/editorial-handoff/images-2026-10-04.json",
+    "quality_evidence": "_records/image-quality/2026-10-04-editorial-v2.json"
+  }
+}

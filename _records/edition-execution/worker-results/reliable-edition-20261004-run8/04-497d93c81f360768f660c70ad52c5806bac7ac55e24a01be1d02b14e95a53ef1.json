@@ -1,0 +1,27 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "497d93c81f360768f660c70ad52c5806bac7ac55e24a01be1d02b14e95a53ef1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "04",
+  "request_writer_generation": 11,
+  "writer_generation": 12,
+  "status": "passed",
+  "completed_at": "2026-10-04T02:34:16.000Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "evidence_artifact": "_records/discovery/2026-10-04-run8/evidence.json",
+    "source_preflight_sha": "40f6886953ff79aed0d7dbb6d68ac4ea5f2e5482",
+    "full_source_reviews": 9,
+    "eligible_after_freshness_verification": 8,
+    "source_date_conflicts": 1,
+    "category_coverage": {
+      "technical_ai_engineering": 3,
+      "applied_genai_knowledge_workers": 2,
+      "agents_non_technical_people": 3
+    },
+    "agent_skill_candidate_id": "m01"
+  },
+  "result": "PASS"
+}

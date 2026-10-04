@@ -1,0 +1,55 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "15",
+  "candidate_id": "m01",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-04T09:00:00.236Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 37,
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "saved_git_commit": "09aa45277e24aae65d116dcb34bb6c30fa90b861",
+  "source_lineage": {
+    "native_sha256": "45e1f2fe2f4c66155348a279d86fd8a0854fd8013650343e224e51db896db8aa",
+    "native_bytes": 1468725,
+    "native_width": 1730,
+    "native_height": 909,
+    "transport_method": "same-visual resized 256-color professional PNG representation"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-04/dab-edition-2026-10-04-m01.png",
+    "git_blob_sha": "ab3cc2a213bfd56fe1c5476fac6bc67de03c85b4",
+    "sha256": "24659b69ce845c0c58ad9769d014bc832843d75f767b36ee40303d461352fd5e",
+    "bytes": 194949,
+    "width": 1199,
+    "height": 630,
+    "exact_readback": "PASS_EXACT_BASE64_AND_GIT_OBJECT_SHA_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "A sealed modular skill package with three internal components feeds a three-stage API, hardware and build verification rail before a controlled execution-ready boundary.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "DOCA Agent Skill",
+      "Instructions",
+      "References",
+      "Scripts",
+      "API check",
+      "Hardware check",
+      "Build check",
+      "Preflight"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

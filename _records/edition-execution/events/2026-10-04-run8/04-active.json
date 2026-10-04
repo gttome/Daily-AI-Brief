@@ -1,0 +1,11 @@
+{
+  "task_id": "04",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-04T02:32:07.000Z",
+  "reason": "Begin Task 04 evidence and freshness verification from the authoritative queued request.",
+  "proof": {
+    "request_key": "497d93c81f360768f660c70ad52c5806bac7ac55e24a01be1d02b14e95a53ef1",
+    "writer_generation": 12
+  }
+}

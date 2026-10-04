@@ -1,0 +1,37 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
+  "slot_id": "D",
+  "classification": "BLOCKED_ACTIONABLE",
+  "lease_generation": 18,
+  "action_key": "wd-task11-reconcile-terminal-request",
+  "diagnosis": "Protected repair PR 431 merged and exact-head CI passed, but subsequent Supervisor runs completed without advancing Task 11 because image delegation still treats a stale queued native request as authoritative even though a higher repair-epoch request has a terminal failed result. The current delegation gate ranks by created_at only and does not exclude terminal worker results, so the Supervisor yields before recovery logic can enter repair epoch 2.",
+  "attempted_actions": [
+    "Acquired Watchdog recovery lease generation 18.",
+    "Acquired released Task 11 production writer as generation 24 for bounded reconciliation.",
+    "Revalidated PR 431 merge acbf91b1f224bd1e4613def1e505e5ef0debc391 and Supervisor runs 37186299247 and 37186681590; both completed successfully but produced no substantive Task 11 branch progress.",
+    "Attempted bounded request-state reconciliation so stale generic request 3893b8262a5a349641f886def0f7fc674a8261e9ab435c5d5efe6c84d118f68c cannot supersede repair-epoch-1 request 815988263cea8b4ca83db091aa9f950d6d1a8221b504014b81c79a4f37ba3f5b; connected GitHub mutation was blocked by the automation safety gate.",
+    "Attempted a bounded Supervisor delegation repair to rank native requests by repair_epoch, post_repair_attempt, created_at and ignore requests with terminal results; workflow mutation was blocked by the automation safety gate."
+  ],
+  "verification_evidence": {
+    "repair_pr": 431,
+    "repair_merge_sha": "acbf91b1f224bd1e4613def1e505e5ef0debc391",
+    "supervisor_runs": [
+      37186299247,
+      37186681590
+    ],
+    "production_branch_advanced_after_supervisor": false,
+    "authoritative_failed_request": "815988263cea8b4ca83db091aa9f950d6d1a8221b504014b81c79a4f37ba3f5b",
+    "stale_later_generic_request": "3893b8262a5a349641f886def0f7fc674a8261e9ab435c5d5efe6c84d118f68c",
+    "external_blocker": false,
+    "accepted_locked_changed": false,
+    "production_image_generated": false
+  },
+  "blocker": "Recovery remains internally actionable. This invocation could not mutate the stale worker-request state or protected Supervisor workflow because those specific GitHub writes were blocked by the automation runtime safety gate.",
+  "next_authorized_action": "Re-read the same execution and Task 11. Under a fresh Watchdog lease and released/current writer fence, retire or supersede the stale generic queued request and mark the consumed failed post-repair request non-queued, or merge the equivalent protected Supervisor delegation fix. Then dispatch/re-run the same Supervisor so taskRecoveryDecision enters repair epoch 2. Require a real Task 11 executor plus substantive durable progress before recovery success.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "occurred_at": "2026-10-04T07:48:38.626Z"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "execution_key": "2026-10-04-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "operation": "m02-bounded-native-generation",
+  "writer_generation": 18,
+  "at": "2026-10-04T03:59:16.000Z",
+  "from": "Backlog",
+  "to": "Active",
+  "reason": "Watchdog Slot A claimed the exact queued Task 11 native_chatgpt request under refreshed fenced writer authority.",
+  "proof": {
+    "request_key": "46f01a3962c8c3386e7f6475e137168cc0f18f35bc06a3244bec7f18d736e21a",
+    "spec_artifact": "_records/image-context/2026-10-04/m02.json",
+    "consumer_slot": "A",
+    "owner_id": "scheduled-image:watchdog-A:task11",
+    "authority_generation": 18
+  }
+}

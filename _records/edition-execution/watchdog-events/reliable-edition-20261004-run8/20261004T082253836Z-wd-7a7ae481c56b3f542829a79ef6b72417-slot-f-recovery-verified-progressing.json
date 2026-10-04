@@ -1,0 +1,44 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
+  "owner_slot": "F",
+  "at": "2026-10-04T08:22:53.836Z",
+  "classification": "BLOCKED_ACTIONABLE",
+  "outcome": "RECOVERY_VERIFIED_PROGRESSING",
+  "diagnosis": "Supervisor request ranking and shell parsing defects prevented the bounded epoch-2 Task 11 image continuation; after protected repairs, the Supervisor still selected a stale generic request and failed, so the admitted scheduled consumer claimed the higher-ranked authoritative epoch-2 request.",
+  "action_keys": [
+    "wf-task11-reconcile-terminal-requests-g19",
+    "wf-task11-protected-repair-pr438-g19",
+    "wf-task11-protected-repair-pr439-g19",
+    "wf-task11-accepted-locked-g19"
+  ],
+  "protected_repairs": [
+    {
+      "pr_number": 438,
+      "merge_sha": "7b7e8002d79fca0d680d37b784af70444c9adf7f",
+      "ci_run_id": 37187768823
+    },
+    {
+      "pr_number": 439,
+      "merge_sha": "74fead228ce984702137de37014fdb1538bf4b69",
+      "ci_run_id": 37188037671
+    }
+  ],
+  "executor": {
+    "kind": "scheduled_native_image_consumer",
+    "slot": "F",
+    "writer_generation": 29,
+    "request_key": "fd28043122d9f47d251f01f4e0ffaa587a4103be22f40537e6d5a68b1774fc48"
+  },
+  "substantive_progress": {
+    "task_transition": "11 Blocked -> Done",
+    "accepted_locked": true,
+    "artifact_path": "briefs/images/2026-10-04/dab-edition-2026-10-04-m02.png",
+    "artifact_git_blob_sha": "47c1d8c3866fa26362a0de820196f3a06209f72b",
+    "first_incomplete_task_advanced_to": "12"
+  },
+  "release_reason": "RECOVERY_VERIFIED_PROGRESSING"
+}

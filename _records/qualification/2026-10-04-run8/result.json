@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-10-04-run8",
+  "execution_mode": "production_release_qualification",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "result": "fail",
+  "final_stage": "FOCUSED_REPAIR_REQUIRED",
+  "qualified_at": "2026-10-04T11:19:53.814Z",
+  "preserved": {
+    "tasks": "00-19",
+    "accepted_locked_images": 6,
+    "selection_changed": false,
+    "image_regeneration": false
+  },
+  "passed": [
+    "Task 18 canonical Brief and ten permanent pages exist",
+    "Task 19 immutable digest bundle is sealed",
+    "Six story allocation remains exact 2/2/2",
+    "Exactly one reusable Agent Skills story remains selected",
+    "All four Professional Series books were reviewed",
+    "Six accepted_locked images remain unchanged",
+    "_data/editions/2026-10-04.json exists for the staged edition"
+  ],
+  "blocking_defect": {
+    "id": "RUN8_INCOMPLETE_DETERMINISTIC_PUBLICATION_PROJECTION",
+    "root_cause": "The October 4 Brief and immutable bundle exist, but deterministic same-edition publication projections remain mixed with October 3 derived state.",
+    "evidence": [
+      "latest.md still identifies October 3, 2026",
+      "index.md still identifies October 3, 2026",
+      "feed.xml and feed.json still identify October 3, 2026",
+      "_records/editorial-handoff/publication-manifest.json still identifies October 3 Run 7",
+      "_data/watchlist.json and data/watchlist.json still identify October 3, 2026",
+      "same-edition kernel/facts/media/book publication handoff artifacts are missing"
+    ],
+    "repair_scope": "Rebuild only the deterministic October 4 publication projection and required handoff artifacts from already-locked Run 8 evidence. Do not change story selection, media selection, book review, Watchlist decisions, Task 19 sealed source artifacts, or accepted image bytes."
+  }
+}

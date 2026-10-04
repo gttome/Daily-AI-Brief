@@ -6,6 +6,122 @@
   "description": "Six AI articles, up to two videos, and up to two podcasts selected daily.",
   "items": [
     {
+      "id": "dab-story-2026-10-04-m02",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-04/when-an-agent-says-it-is-done-grade-the-database/",
+      "title": "When an agent says it is done, grade the database",
+      "summary": "ThinkingBox grades terminal backend state and side effects, not only generated text. repeated-run reliability is an explicit evaluation target.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m02.png?v=4ba1ac627b51",
+      "date_published": "2026-10-04T13:00:00-05:00",
+      "tags": [
+        "technical ai engineering",
+        "Hugging Face"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-04-m04",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-04/copilot-steps-beyond-apis-into-desktop-apps/",
+      "title": "Copilot steps beyond APIs into desktop apps",
+      "summary": "GitHub Copilot computer use is in public preview in CLI and desktop app. it can read visual/accessibility context and operate desktop controls across applications.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m04.png?v=05cae8a2dd3d",
+      "date_published": "2026-10-04T13:00:00-05:00",
+      "tags": [
+        "technical ai engineering",
+        "GitHub Changelog"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-04-m06",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-04/gemini-puts-study-workflows-in-one-hub/",
+      "title": "Gemini puts study workflows in one hub",
+      "summary": "Gemini student hub centralizes study notebooks, flashcards and practice quizzes. Workspace administrators control access through existing Generative AI settings.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m06.png?v=d91ed6e4d8ed",
+      "date_published": "2026-10-04T13:00:00-05:00",
+      "tags": [
+        "applied genai knowledge workers",
+        "Google Workspace"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-04-m07",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-04/workspace-turns-prompts-into-images-mini-apps-and-cross-app-work/",
+      "title": "Workspace turns prompts into images, mini-apps and cross-app work",
+      "summary": "Google Workspace added AI image editing, Sheets canvas mini-apps and cross-app AI assistance. Sheets canvas stays synchronized with source spreadsheet data.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m07.png?v=0305fe28dc18",
+      "date_published": "2026-10-04T13:00:00-05:00",
+      "tags": [
+        "applied genai knowledge workers",
+        "Google Workspace"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-04-m01",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-04/nvidia-gives-agents-a-verified-doca-skill-set/",
+      "title": "NVIDIA gives agents a verified DOCA skill set",
+      "summary": "DOCA Agent Skills provide verified API, hardware and build constraints. NVIDIA reports a 65-prompt evaluation with stronger checklist completion and fewer handwritten-code/hardware-command steps when skills are used.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m01.png?v=24659b69ce84",
+      "date_published": "2026-10-04T13:00:00-05:00",
+      "tags": [
+        "agents non technical people",
+        "NVIDIA Developer"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-04-m09",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-04/ambient-agents-wake-up-on-events-and-know-when-to-ask-a-human/",
+      "title": "Ambient agents wake up on events — and know when to ask a human",
+      "summary": "ambient agents react to events rather than waiting for a chat prompt. the reference architecture includes a human-in-the-loop ask_human path and trackable jobs.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m09.png?v=535cff947344",
+      "date_published": "2026-10-04T13:00:00-05:00",
+      "tags": [
+        "agents non technical people",
+        "AWS Machine Learning"
+      ]
+    },
+    {
+      "id": "dab-video-2026-10-04-general",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-10-04/general/",
+      "title": "Meet the GitHub Copilot app: Your new AI desktop assistant",
+      "summary": "Official tour of the Copilot desktop agent surface relevant to the selected computer-use story.",
+      "date_published": "2026-10-04T13:00:00-05:00",
+      "tags": [
+        "GitHub"
+      ]
+    },
+    {
+      "id": "dab-video-2026-10-04-agent-skills",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-10-04/agent-skills/",
+      "title": "The My work tab: your mission control in the GitHub Copilot app",
+      "summary": "Shows work items launching agent sessions and complements the Brief's governed agent workflow coverage.",
+      "date_published": "2026-10-04T13:00:00-05:00",
+      "tags": [
+        "GitHub"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-10-04-1",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-04/hard-fork-2026-10-02-ai-agents/",
+      "title": "Hard Fork — October 2, 2026 episode",
+      "summary": "Current discussion of personal assistants, agent incidents and privacy trade-offs.",
+      "date_published": "2026-10-04T13:00:00-05:00",
+      "tags": [
+        "agents",
+        "AI workflows",
+        "Hard Fork"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-10-04-2",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-04/a16z-2026-10-02-ai-agents-incumbents/",
+      "title": "The a16z Show — October 2, 2026 episode",
+      "summary": "Multi-agent procurement workflows and human-in-the-loop trust escalation.",
+      "date_published": "2026-10-04T13:00:00-05:00",
+      "tags": [
+        "agents",
+        "AI workflows",
+        "The a16z Show"
+      ]
+    },
+    {
       "id": "dab-story-2026-10-03-m01",
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-03/voice-agents-get-a-100-millisecond-head-start/",
       "title": "Voice agents get a 100-millisecond head start",

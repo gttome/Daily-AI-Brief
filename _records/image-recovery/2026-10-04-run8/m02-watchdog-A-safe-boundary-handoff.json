@@ -1,0 +1,24 @@
+{
+  "schema_version": "native-image-safe-boundary-handoff-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "request_key": "46f01a3962c8c3386e7f6475e137168cc0f18f35bc06a3244bec7f18d736e21a",
+  "slot_id": "A",
+  "writer_generation": 18,
+  "classification": "BLOCKED_ACTIONABLE",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "blocker_evidence": "_records/image-recovery/2026-10-04-run8/m02-watchdog-A-context-contamination.json",
+  "attempt_evidence": [
+    "_records/image-attempts/2026-10-04-run8/m02-attempt-1.json",
+    "_records/image-attempts/2026-10-04-run8/m02-attempt-2.json"
+  ],
+  "writer_lease_release_attempt": "blocked_by_connector_safety",
+  "writer_lease_path": "_records/edition-execution/writer-leases/reliable-edition-20261004-run8.json",
+  "writer_lease_expires_at": "2026-10-04T04:29:16.000Z",
+  "next_authorized_action": "After the current writer authority is expired or otherwise safely released, continue the same Task 11 request in a fresh isolated image-only native generation context bound only to _records/image-context/2026-10-04/m02.json. Do not blind-repeat the contaminated Watchdog-context generation and do not allocate another execution.",
+  "completed_work_preserved": true,
+  "accepted_locked_assets_modified": false,
+  "duplicate_execution_created": false
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "RECOVERY_VERIFIED_PROGRESSING",
+  "repair_key": "repair-eb4bc75a22cdb24301935cb834fe4ac0bcbcf1b9",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "production_branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "11",
+  "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
+  "repair_branch": "repair/run8-task11-supervisor-dead-writer-heredoc",
+  "repair_branch_head_sha": "c8b30516bbe84864d614dfd9affb9bbdf358de53",
+  "repair_scope_digest": "sha256:fa0a6a9d79eb4e8ba94af151662725715e2863b17db70cb04a9be3bbb2db93ff",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-04T08:04:40.864Z",
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+  "diagnosis": "The Run Supervisor dead-writer evidence path contains an indented shell heredoc terminator. The workflow acquires a replacement lease in memory, then bash exits with an unmatched command substitution before persisting the lease or starting the same Task 11 recovery.",
+  "next_stage": "Recovery verified by durable Task 11 Done evidence. Current first incomplete task is 23; do not select or replay this historical repair.",
+  "last_recovery_stage": {
+    "state": "RECOVERY_VERIFIED_PROGRESSING",
+    "pr_number": 438,
+    "repair_head": "c8b30516bbe84864d614dfd9affb9bbdf358de53",
+    "merge_sha": "7b7e8002d79fca0d680d37b784af70444c9adf7f",
+    "same_execution_revalidated": true,
+    "same_task_completed": "11",
+    "target_task_done_at": "2026-10-04T08:22:53.836Z",
+    "first_incomplete_task_after": "23",
+    "repair_key_preserved": true,
+    "scope_digest_preserved": true
+  },
+  "resolved_at": "2026-10-04T14:15:42.000Z",
+  "resolution_reason": "TARGET_TASK_ALREADY_DONE_AND_EXECUTION_ADVANCED"
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "repair_epoch": 2,
+  "post_repair_attempt": 1,
+  "reviewed_at": "2026-10-04T08:22:53.836Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 29,
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "saved_git_commit": "6dd7d3259d3b94238687db74c642d290d78398ff",
+  "source_lineage": {
+    "native_sha256": "49c0d4ab1abdd8bff28e0becda952df285de5627c2f8b4bbf4a0ad061da9fc88",
+    "native_bytes": 1675853,
+    "native_width": 1730,
+    "native_height": 909,
+    "transport_method": "same-visual 256-color professional PNG representation"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-04/dab-edition-2026-10-04-m02.png",
+    "git_blob_sha": "47c1d8c3866fa26362a0de820196f3a06209f72b",
+    "sha256": "4ba1ac627b51ba33bde8ee690f8f10427ebe089e5b1f4f2b78a91d45e73ad104",
+    "bytes": 384015,
+    "width": 1730,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_MATCHES_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "Upper agent-claim rail and lower database/side-effect evidence rail converge at a central verification gate; repeated-run evidence feeds a distinct ledger.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Agent claim",
+      "Database state",
+      "Side effects",
+      "Repeated run",
+      "Verification gate",
+      "Evidence ledger"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The reviewed local PNG hashes to the exact Git blob persisted on the run branch; content-address identity makes the saved-Git asset byte-identical to the inspected representation."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

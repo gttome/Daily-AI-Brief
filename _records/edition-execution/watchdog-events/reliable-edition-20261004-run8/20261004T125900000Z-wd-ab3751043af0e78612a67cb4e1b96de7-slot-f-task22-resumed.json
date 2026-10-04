@@ -1,0 +1,16 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "22",
+  "incident_id": "wd-ab3751043af0e78612a67cb4e1b96de7",
+  "slot_id": "F",
+  "classification": "BLOCKED_ACTIONABLE",
+  "lease_generation": 35,
+  "action_key": "wd-ab3751043af0e78612a67cb4e1b96de7:resume-task22-open-publication-pr:slot-f:g35",
+  "diagnosis": "Task 22 remained queued with no matching publication PR after the prior recovery owner released an unresolved safe-boundary continuation and both prior leases expired.",
+  "action": "Acquired the exact Task 22 continuation under recovery generation 35 and writer generation 65; publication PR creation is the next authorized mutation.",
+  "recovery_required": true,
+  "occurred_at": "2026-10-04T12:59:00.000Z"
+}

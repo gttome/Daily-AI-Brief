@@ -1,0 +1,24 @@
+{
+  "schema_version": "dead-writer-proof-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "18",
+  "proved_at": "2026-10-04T09:52:00.000Z",
+  "workflow_run_id": 37193396610,
+  "workflow_job_id": 111410138344,
+  "owner_id": "github-actions-37193396610-1",
+  "conclusion": "failure",
+  "completed_at": "2026-10-04T09:51:17Z",
+  "old_generation": 51,
+  "replacement_generation": 52,
+  "child_or_subworker_live": false,
+  "repository_consumer_started": false,
+  "last_substantive_write": {
+    "commit": "a8aa9a695eb9cd7767553d22c82c055daabd364f",
+    "at": "2026-10-04T09:50:12Z",
+    "kind": "task18_request_queue_and_supervisor_bookkeeping",
+    "substantive_progress": false
+  },
+  "substantive_write_after_terminal": false,
+  "reason": "Run Supervisor queued the exact Task 18 repository request but no repository consumer claimed it; the Supervisor then failed after recording repository_consumer_unclaimed because git pull --rebase encountered an unstaged renewed writer lease. No Task 18 worker result or transition followed."
+}

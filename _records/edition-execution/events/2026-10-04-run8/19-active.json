@@ -1,0 +1,22 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "19",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-04T10:56:20.000Z",
+  "writer_generation": 58,
+  "owner_id": "watchdog-D:wd-335f455b1d5d15d5171759260d6dadf:task-19:recovery",
+  "reason_code": "TASK19_WATCHDOG_RECOVERY_WORKER_ACQUIRED",
+  "operation": "refresh_digests_and_seal_immutable_bundle",
+  "proof": {
+    "request_key": "eab6c1749bdd9dec9fcadc21ffef5080d6510686777730dbbbc4949999ca46b1",
+    "request_generation": 57,
+    "refreshed_authority_generation": 58,
+    "preserved_tasks": "00-18",
+    "accepted_locked_images": 6,
+    "dead_writer_proof": "_records/edition-execution/dead-writer-proofs/reliable-edition-20261004-run8/20261004T105610000Z-generation-57.json"
+  }
+}

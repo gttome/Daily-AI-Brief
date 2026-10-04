@@ -1,0 +1,25 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "20",
+  "incident_id": "wd-e086276892044971f1a80c4ffc356fc1-task20-unclaimed",
+  "owner_slot": "D",
+  "at": "2026-10-04T11:19:53.814Z",
+  "type": "RECOVERY_VERIFIED_PROGRESSING",
+  "classification": "HEALTHY_ACTIVE",
+  "proof": {
+    "real_executor_active": true,
+    "executor": "scheduled_chatgpt_watchdog_D",
+    "worker_result_status": "passed",
+    "canonical_done_event": true,
+    "qualification_completed": true,
+    "qualification_result": "fail",
+    "focused_repair_required": true,
+    "accepted_locked_images": 6,
+    "first_incomplete_task_advanced_to": "21"
+  },
+  "recovery_required": false,
+  "release_reason": "RECOVERY_VERIFIED_PROGRESSING"
+}

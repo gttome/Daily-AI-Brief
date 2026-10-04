@@ -1,0 +1,18 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "18",
+  "incident_id": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch",
+  "owner_slot": "C",
+  "at": "2026-10-04T09:30:16.000Z",
+  "type": "RECOVERY_ACTION",
+  "classification": "STALE_ACTIVE",
+  "action_key": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch:redispatch-writer-handoff:37192151895:g27",
+  "diagnosis": "Task 17 completed durably and first incomplete task advanced to 18, but the successful Writer Handoff run 37192151895 produced no observable queued or in-progress Run Supervisor and no Task 18 request/event. The production writer is released.",
+  "attempted_action": "Re-run the same Writer Handoff job to re-dispatch the same Supervisor.",
+  "attempted_action_result": "Connector write action for job re-run was not permitted in this invocation; no duplicate Supervisor or production writer was created.",
+  "recovery_required": true,
+  "next_authorized_action": "Re-dispatch the same current-main Run Supervisor for this execution, then require a real Task 18 request/worker and substantive durable Task 18 progress."
+}
