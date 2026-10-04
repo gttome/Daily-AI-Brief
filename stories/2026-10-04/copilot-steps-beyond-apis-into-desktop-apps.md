@@ -22,6 +22,6 @@ reader_release: true
 
 **What to watch:** preview feature; approval and organization policy controls remain relevant.
 
-**Source:** GitHub Copilot can now interact with desktop apps with computer use
+**Source:** [GitHub Copilot can now interact with desktop apps with computer use](https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps)
 
 [← Back to October 4 Brief]({{ '/briefs/2026-10-04/' | relative_url }})
