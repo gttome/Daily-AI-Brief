@@ -1,0 +1,17 @@
+{
+  "schema_version": "run8-live-validation-repair-scope-v1",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_id": "reliable-edition-20261004-run8",
+  "task_id": "26",
+  "incident_id": "wd-task26-live-validation-37217564023",
+  "diagnosis": [
+    "Published October 4 reader projection omitted stable story IDs and inline rating controls from the dated Brief and several permanent pages.",
+    "Post-deployment delta validation does not reuse the already-protected frozen-contract migration for four accepted_locked image canvases."
+  ],
+  "invariants": [
+    "preserve_all_accepted_locked_image_bytes",
+    "do_not_redo_done_tasks",
+    "protected_ci_required",
+    "same_execution_same_task_resume_required"
+  ]
+}
