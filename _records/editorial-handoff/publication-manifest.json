@@ -42,13 +42,13 @@
     "image_manifest": {
       "path": "_records/editorial-handoff/images-2026-10-04.json",
       "schema_version": "legacy-unversioned",
-      "digest": "git_blob_sha1:462d6e891fec19aaeebe8e2aeb09c278682a3d2e",
+      "digest": "git_blob_sha1:cf61bd2af78b58071fc419194bc2f9f5c91fe097",
       "adapter": "accepted-images-map-v1"
     },
     "image_review": {
       "path": "_records/editorial-handoff/images-2026-10-04.json",
       "schema_version": "legacy-unversioned",
-      "digest": "git_blob_sha1:462d6e891fec19aaeebe8e2aeb09c278682a3d2e",
+      "digest": "git_blob_sha1:cf61bd2af78b58071fc419194bc2f9f5c91fe097",
       "adapter": "accepted-images-map-v1"
     },
     "watchlist": {
@@ -69,7 +69,7 @@
     "image_quality_evidence": {
       "path": "_records/image-quality/2026-10-04-editorial-v2.json",
       "schema_version": "2.0.0",
-      "digest": "git_blob_sha1:8d4fa7a6e11acb7a85f232aee48eb1904f86ebfb"
+      "digest": "git_blob_sha1:61453d8b4c50ca910aa8324835971c0dbe2cf125"
     }
   },
   "freeze": {
@@ -95,7 +95,7 @@
         "carried_forward": 17
       },
       "public_projection_path": "data/watchlist.json",
-      "public_projection_digest": "git_blob_sha1:ef82b70005b0260eff8a01bcc19fd4dddce8c974",
+      "public_projection_digest": "git_blob_sha1:710f4a1cc8a74a8d38a096c54f79b737d82d9f12",
       "repair_allowed_downstream": false
     }
   },
@@ -137,7 +137,9 @@
     "immutable_artifact_digests": true,
     "selection_changed": false,
     "repaired_contracts": [
-      "run8_incomplete_deterministic_publication_projection"
+      "run8_incomplete_deterministic_publication_projection",
+      "run8_frozen_image_identity_metadata",
+      "run8_watchlist_projection_digest"
     ]
   },
   "migration": {
