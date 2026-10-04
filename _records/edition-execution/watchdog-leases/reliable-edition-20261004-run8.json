@@ -4,9 +4,11 @@
   "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
   "owner_slot": "F",
   "generation": 15,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-04T06:54:30.155Z",
-  "last_heartbeat_at": "2026-10-04T06:54:30.155Z",
-  "expires_at": "2026-10-04T07:09:30.155Z",
-  "action_key": "wf-task11-protected-repair-epoch2-g15"
+  "last_heartbeat_at": "2026-10-04T06:57:21.418Z",
+  "expires_at": "2026-10-04T06:57:21.418Z",
+  "action_key": "wf-task11-protected-repair-epoch2-g15",
+  "released_at": "2026-10-04T06:57:21.418Z",
+  "release_reason": "WAITING_ON_PROTECTED_EXTERNAL_EXECUTOR"
 }
