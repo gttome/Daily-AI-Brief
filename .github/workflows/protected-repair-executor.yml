@@ -72,18 +72,7 @@ jobs:
             exit 0
           fi
 
-          record="$(node - "$dir" <<'NODE'
-          const fs=require('fs'),p=require('path'),d=process.argv[2];
-          const rows=[];
-          for(const name of fs.readdirSync(d).filter(x=>x.endsWith('.json')).sort()){
-            const file=p.join(d,name),x=JSON.parse(fs.readFileSync(file,'utf8'));
-            if(!['PROTECTED_REPAIR_REQUIRED','REPAIR_CI_FAIL','REPAIR_MERGE_CONFLICT','REPAIR_RESUME_FAILED'].includes(String(x.state||''))) continue;
-            rows.push({file,x,t:Date.parse(x.created_at||0)||0});
-          }
-          rows.sort((a,b)=>a.t-b.t||a.file.localeCompare(b.file));
-          process.stdout.write(rows[0]?.file||'');
-          NODE
-          )"
+          record="$(node -e 'const fs=require("fs"),p=require("path"),d=process.argv[1];const rows=[];for(const name of fs.readdirSync(d).filter(x=>x.endsWith(".json")).sort()){const file=p.join(d,name),x=JSON.parse(fs.readFileSync(file,"utf8"));if(!["PROTECTED_REPAIR_REQUIRED","REPAIR_CI_FAIL","REPAIR_MERGE_CONFLICT","REPAIR_RESUME_FAILED"].includes(String(x.state||"")))continue;rows.push({file,t:Date.parse(x.created_at||0)||0})}rows.sort((a,b)=>a.t-b.t||a.file.localeCompare(b.file));process.stdout.write(rows[0]?.file||"");' "$dir")"
 
           if [ -z "$record" ]; then
             echo "found=false" >> "$GITHUB_OUTPUT"
@@ -102,15 +91,7 @@ jobs:
             --contracts control/docs/operations/task-recovery-contracts.json \
             --output /tmp/current-kanban.json >/dev/null
 
-          current_task="$(node - <<'NODE'
-          const x=require('/tmp/current-kanban.json');
-          for(let n=0;n<=29;n++){
-            const id=String(n).padStart(2,'0'),t=x.tasks[id];
-            if(!t||t.state!=='Done'){process.stdout.write(id);process.exit(0)}
-          }
-          process.stdout.write('terminal');
-          NODE
-          )"
+          current_task="$(node -e 'const x=require("/tmp/current-kanban.json");for(let n=0;n<=29;n++){const id=String(n).padStart(2,"0"),t=x.tasks[id];if(!t||t.state!=="Done"){process.stdout.write(id);process.exit(0)}}process.stdout.write("terminal");')"
           record_task="$(node -e "const x=require('/tmp/protected-repair.json');process.stdout.write(x.task_id)")"
           if [ "$current_task" != "$record_task" ]; then
             echo "Protected repair is stale: current task is $current_task, repair targets $record_task. No PR or production mutation will occur."
@@ -129,7 +110,7 @@ jobs:
             echo "expected_head=$expected_head"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Open or reuse exactly one protected repair PR
+      - name: Observe connected-Watchdog protected repair PR
         if: steps.repair.outputs.found == 'true'
         id: pr
         env:
@@ -147,34 +128,20 @@ jobs:
             exit 1
           }
 
-          gh pr list --repo "$GITHUB_REPOSITORY" --state all --base main --head "$repair_branch" --limit 20 \
-            --json number,state,headRefOid,body > /tmp/repair-prs.json
-          pr_number="$(node - "$repair_key" "$expected_head" <<'NODE'
-          const fs=require('fs');
-          const [key,head]=process.argv.slice(2);
-          const xs=JSON.parse(fs.readFileSync('/tmp/repair-prs.json','utf8'));
-          const matches=xs.filter(x=>String(x.body||'').includes('Repair-Key: '+key)&&(x.headRefOid===head||x.state==='MERGED'));
-          if(matches.length>1){console.error('duplicate_protected_repair_pr');process.exit(2)}
-          process.stdout.write(String(matches[0]?.number||0));
-          NODE
-          )"
+          gh pr list --repo "$GITHUB_REPOSITORY" --state all --base main --head "$repair_branch" --limit 20             --json number,state,headRefOid,body,author > /tmp/repair-prs.json
+          pr_number="$(node -e 'const fs=require("fs"),key=process.argv[1],head=process.argv[2],xs=JSON.parse(fs.readFileSync("/tmp/repair-prs.json","utf8"));const m=xs.filter(x=>String(x.body||"").includes("Repair-Key: "+key)&&(x.headRefOid===head||x.state==="MERGED"));if(m.length>1){console.error("duplicate_protected_repair_pr");process.exit(2)}process.stdout.write(String(m[0]?.number||0));' "$repair_key" "$expected_head")"
 
           if [ "$pr_number" = "0" ]; then
-            title="Protected repair Task ${{ steps.repair.outputs.task_id }} — $repair_key"
-            body="$(cat <<EOF
-          Automated bounded protected repair promotion.
+            echo "No connected-Watchdog protected PR exists yet for Repair-Key=$repair_key Head=$expected_head."
+            echo "state=waiting_for_connected_watchdog_pr" >> "$GITHUB_OUTPUT"
+            echo "number=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
 
-          Repair-Key: $repair_key
-          Execution: $EXECUTION_ID
-          Task: ${{ steps.repair.outputs.task_id }}
-          Expected-Head: $expected_head
-
-          The Protected Repair Executor may merge only after exact-head deterministic CI passes and the same active execution/task still requires this repair.
-          EOF
-          )"
-            url="$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$repair_branch" --title "$title" --body "$body")"
-            pr_number="$(gh pr view "$url" --repo "$GITHUB_REPOSITORY" --json number --jq '.number')"
-            gh pr comment "$pr_number" --repo "$GITHUB_REPOSITORY" --body "PROTECTED_REPAIR_STATE=REPAIR_PR_OPENED Repair-Key=$repair_key Head=$expected_head"
+          author="$(node -e 'const fs=require("fs"),n=Number(process.argv[1]),xs=JSON.parse(fs.readFileSync("/tmp/repair-prs.json","utf8"));const x=xs.find(v=>v.number===n);process.stdout.write(String(x?.author?.login||""));' "$pr_number")"
+          if [ "$author" = "github-actions" ] || [ "$author" = "github-actions[bot]" ]; then
+            echo "::error title=Protected repair PR authority mismatch::Protected repair PR #$pr_number was authored by GitHub Actions. Connected Watchdog identity is required."
+            exit 1
           fi
 
           actual_head="$(gh pr view "$pr_number" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq '.headRefOid')"
@@ -182,10 +149,11 @@ jobs:
             echo "::error title=Protected repair PR head mismatch::PR #$pr_number moved from the recorded repair head."
             exit 1
           }
+          echo "state=connected_watchdog_pr_ready" >> "$GITHUB_OUTPUT"
           echo "number=$pr_number" >> "$GITHUB_OUTPUT"
 
-      - name: Evaluate exact-head protected CI
-        if: steps.repair.outputs.found == 'true'
+      - name: Evaluate or dispatch exact-head protected CI
+        if: steps.repair.outputs.found == 'true' && steps.pr.outputs.number != '0'
         id: ci
         env:
           GH_TOKEN: ${{ github.token }}
@@ -194,89 +162,46 @@ jobs:
           set -euo pipefail
           pr="${{ steps.pr.outputs.number }}"
           head="${{ steps.repair.outputs.expected_head }}"
+          repair_branch="${{ steps.repair.outputs.repair_branch }}"
           pr_state="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json state --jq '.state')"
           if [ "$pr_state" = "MERGED" ]; then
             echo "state=merged" >> "$GITHUB_OUTPUT"
+            merge_sha="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json mergeCommit --jq '.mergeCommit.oid')"
+            echo "merge_sha=$merge_sha" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          row="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${head}&per_page=100" \
-            --jq '[.workflow_runs[] | select(.name=="Deterministic publication CI")] | sort_by(.updated_at) | reverse | .[0] // {}')"
-          printf '%s' "$row" > /tmp/repair-ci-run.json
-          run_id="$(node -e "const x=require('/tmp/repair-ci-run.json');process.stdout.write(String(x.id||0))")"
-          status="$(node -e "const x=require('/tmp/repair-ci-run.json');process.stdout.write(String(x.status||''))")"
-          conclusion="$(node -e "const x=require('/tmp/repair-ci-run.json');process.stdout.write(String(x.conclusion||''))")"
+          gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${head}&event=workflow_dispatch&per_page=100" > /tmp/repair-ci-runs.json
+          run_id="$(node -e 'const fs=require("fs"),head=process.argv[1],x=JSON.parse(fs.readFileSync("/tmp/repair-ci-runs.json","utf8"));const rows=(x.workflow_runs||[]).filter(r=>r.name==="Deterministic publication CI"&&r.head_sha===head&&r.event==="workflow_dispatch").sort((a,b)=>String(b.updated_at).localeCompare(String(a.updated_at)));process.stdout.write(String(rows[0]?.id||0));' "$head")"
 
-          if [ "$run_id" = "0" ] || [ "$status" != "completed" ]; then
-            echo "Protected repair PR #$pr exact-head CI is not complete; this is an intermediate recovery state, not a terminal outcome."
+          if [ "$run_id" = "0" ]; then
+            gh workflow run ci.yml --repo "$GITHUB_REPOSITORY" --ref "$repair_branch"
+            gh pr comment "$pr" --repo "$GITHUB_REPOSITORY" --body "PROTECTED_REPAIR_STATE=REPAIR_CI_RUNNING Repair-Key=${{ steps.repair.outputs.repair_key }} Head=$head. Exact-head deterministic CI dispatched by the repository-native executor; connected Watchdog retains protected PR/merge authority."
             echo "state=running" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          if [ "$conclusion" != "success" ]; then
-            gh pr comment "$pr" --repo "$GITHUB_REPOSITORY" --body "PROTECTED_REPAIR_STATE=REPAIR_CI_FAIL Repair-Key=${{ steps.repair.outputs.repair_key }} Head=$head CI=$run_id Conclusion=$conclusion. Recovery remains actionable; continue from this exact failed stage."
-            echo "state=failed" >> "$GITHUB_OUTPUT"
-            echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
 
-          gh pr comment "$pr" --repo "$GITHUB_REPOSITORY" --body "PROTECTED_REPAIR_STATE=REPAIR_CI_PASS Repair-Key=${{ steps.repair.outputs.repair_key }} Head=$head CI=$run_id"
-          echo "state=pass" >> "$GITHUB_OUTPUT"
-          echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
-
-      - name: Revalidate same execution and task then merge
-        if: steps.repair.outputs.found == 'true' && steps.ci.outputs.state == 'pass'
-        id: merge
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          git -C control fetch --no-tags origin main
-          git -C control reset --hard origin/main
-          pointer_exec="$(node -e "const x=require('./control/data/operations/active-production-run.json');process.stdout.write(String(x.active===true&&x.terminal!==true?x.execution_id:''))")"
-          [ "$pointer_exec" = "$EXECUTION_ID" ] || {
-            echo "::error title=Protected repair execution changed::Active production identity changed before merge."
-            exit 1
-          }
-
-          git -C run fetch --no-tags origin "$RUN_BRANCH"
-          git -C run reset --hard "origin/$RUN_BRANCH"
-          node control/_tools/run-supervisor.mjs project-kanban \
-            --run-root run \
-            --execution-key "$EXECUTION_KEY" \
-            --execution-id "$EXECUTION_ID" \
-            --edition-id "$EDITION_ID" \
-            --contracts control/docs/operations/task-recovery-contracts.json \
-            --output /tmp/current-kanban-before-merge.json >/dev/null
-          current_task="$(node - <<'NODE'
-          const x=require('/tmp/current-kanban-before-merge.json');
-          for(let n=0;n<=29;n++){
-            const id=String(n).padStart(2,'0'),t=x.tasks[id];
-            if(!t||t.state!=='Done'){process.stdout.write(id);process.exit(0)}
-          }
-          process.stdout.write('terminal');
-          NODE
-          )"
-          [ "$current_task" = "${{ steps.repair.outputs.task_id }}" ] || {
-            echo "::error title=Protected repair task changed::Current task is $current_task; repair target is ${{ steps.repair.outputs.task_id }}."
-            exit 1
-          }
-
-          pr="${{ steps.pr.outputs.number }}"
-          head="${{ steps.repair.outputs.expected_head }}"
-          current_head="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq '.headRefOid')"
-          [ "$current_head" = "$head" ] || {
-            echo "::error title=Protected repair head changed::PR head moved after exact-head CI."
-            exit 1
-          }
-
-          gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --merge --match-head-commit "$head"
-          merge_sha="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json mergeCommit --jq '.mergeCommit.oid')"
-          gh pr comment "$pr" --repo "$GITHUB_REPOSITORY" --body "PROTECTED_REPAIR_STATE=REPAIR_MERGED Repair-Key=${{ steps.repair.outputs.repair_key }} Head=$head CI=${{ steps.ci.outputs.run_id }} Merge=$merge_sha. Merge alone is not recovery success; same-task resume and substantive durable progress are still required."
-          echo "merge_sha=$merge_sha" >> "$GITHUB_OUTPUT"
+          state="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}" --jq '.status+":"+(.conclusion//"")')"
+          case "$state" in
+            completed:success)
+              gh pr comment "$pr" --repo "$GITHUB_REPOSITORY" --body "PROTECTED_REPAIR_STATE=REPAIR_CI_PASS Repair-Key=${{ steps.repair.outputs.repair_key }} Head=$head CI=$run_id CONNECTED_WATCHDOG_MERGE_REQUIRED=true"
+              echo "state=pass_waiting_for_connected_watchdog_merge" >> "$GITHUB_OUTPUT"
+              echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
+              ;;
+            completed:*)
+              gh pr comment "$pr" --repo "$GITHUB_REPOSITORY" --body "PROTECTED_REPAIR_STATE=REPAIR_CI_FAIL Repair-Key=${{ steps.repair.outputs.repair_key }} Head=$head CI=$run_id Conclusion=${state#completed:}. Recovery remains actionable; continue from this exact failed stage."
+              echo "state=failed" >> "$GITHUB_OUTPUT"
+              echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "Protected repair exact-head CI $run_id is $state; this is an intermediate state."
+              echo "state=running" >> "$GITHUB_OUTPUT"
+              echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
+              ;;
+          esac
 
       - name: Resume same production execution exactly once
-        if: steps.repair.outputs.found == 'true' && (steps.ci.outputs.state == 'merged' || steps.merge.outputs.merge_sha != '')
+        if: steps.repair.outputs.found == 'true' && steps.ci.outputs.state == 'merged'
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -285,11 +210,7 @@ jobs:
           pr="${{ steps.pr.outputs.number }}"
           marker="PROTECTED_REPAIR_STATE=SAME_TASK_RESUME_REQUIRED Repair-Key=${{ steps.repair.outputs.repair_key }}"
           gh api "repos/${GITHUB_REPOSITORY}/issues/${pr}/comments?per_page=100" --paginate > /tmp/repair-comments.json
-          already="$(node - "$marker" <<'NODE'
-          const fs=require('fs'),marker=process.argv[2],xs=JSON.parse(fs.readFileSync('/tmp/repair-comments.json','utf8'));
-          process.stdout.write(String(xs.filter(x=>String(x.body||'').includes(marker)).length));
-          NODE
-          )"
+          already="$(node -e 'const fs=require("fs"),marker=process.argv[1],xs=JSON.parse(fs.readFileSync("/tmp/repair-comments.json","utf8"));process.stdout.write(String(xs.filter(x=>String(x.body||"").includes(marker)).length));' "$marker")"
           if [ "$already" = "0" ]; then
             gh pr comment "$pr" --repo "$GITHUB_REPOSITORY" --body "$marker Execution=$EXECUTION_ID Task=${{ steps.repair.outputs.task_id }}"
             gh workflow run run-supervisor.yml --repo "$GITHUB_REPOSITORY" --ref main \
