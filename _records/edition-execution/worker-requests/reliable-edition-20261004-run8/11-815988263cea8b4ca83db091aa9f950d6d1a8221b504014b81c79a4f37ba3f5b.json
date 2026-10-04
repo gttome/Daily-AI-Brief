@@ -14,10 +14,10 @@
   "created_at": "2026-10-04T05:50:42.577Z",
   "writer_generation_is_provenance": true,
   "authority_refresh_required_at_invocation": true,
-  "status": "queued_for_scheduled_consumer",
+  "status": "failed",
   "dispatch": {
     "schema_version": "scheduled-image-dispatch-v3",
-    "status": "QUEUED_FOR_SCHEDULED_CONSUMER",
+    "status": "FAILED_TERMINAL",
     "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
     "consumer_kind": "chatgpt_watchdog_ring",
     "consumer_pool_ids": [
@@ -41,10 +41,14 @@
     "consumer_id": null,
     "execution_id": "reliable-edition-20261004-run8",
     "task_id": "11",
-    "generation_started": false,
+    "generation_started": true,
     "accepted_locked": false,
     "writer_generation_is_provenance": true,
     "authority_refresh_required_at_invocation": true,
-    "next_action": "Next eligible admitted scheduled consumer refreshes current fenced authority at invocation and consumes this exact request; overlapping consumers yield to the current task writer."
-  }
+    "next_action": "Do not consume this request again. The failed bounded post-repair attempt is terminal for repair epoch 1; Supervisor must enter protected engineering repair epoch 2."
+  },
+  "completed_at": "2026-10-04T06:44:30.000Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261004-run8/11-815988263cea8b4ca83db091aa9f950d6d1a8221b504014b81c79a4f37ba3f5b.json",
+  "reconciled_at": "2026-10-04T07:57:23.542Z",
+  "reconciled_by_writer_generation": 25
 }
