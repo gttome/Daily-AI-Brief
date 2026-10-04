@@ -1,0 +1,31 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "08",
+  "incident_id": "wd-6380c67cd6da13f927255082cf7a3bdf",
+  "slot_id": "B",
+  "classification": "BLOCKED_ACTIONABLE",
+  "authoritative_request_key": "6380c67cd6da13f927255082cf7a3bdf2a2187dbc8151964e44f90e1166bacb8",
+  "blocker": "Task 08 remains queued without a real consumer. Supervisor run 37169348459 attempt 5 ended in failure after reporting repository_consumer_unclaimed. The prior writer owner is proven dead because that GitHub Actions attempt is terminal. This invocation cannot safely complete the required fresh independent Watchlist research through the connected GitHub capability alone.",
+  "lease_generation": 6,
+  "action_key": "wa-08-6380c67cd6da13f927255082cf7a3bdf",
+  "attempted_action_keys": [
+    "reconcile-authoritative-task08-state",
+    "redispatch-same-supervisor",
+    "restore-authority-and-consume-exact-request"
+  ],
+  "verification_evidence": {
+    "tasks_preserved": "00-07 Done",
+    "request_status": "queued",
+    "queued_at": "2026-10-04T02:59:32.254Z",
+    "supervisor_run_id": 37169348459,
+    "supervisor_attempt": 5,
+    "supervisor_conclusion": "failure",
+    "liveness_fault": "repository_consumer_unclaimed",
+    "accepted_locked_assets_regenerated": 0
+  },
+  "next_authorized_action": "An authorized ordinary-ChatGPT repository/editorial consumer with current external research capability must claim the SAME Task 08 request and complete the bounded Watchlist sweep. Preserve Tasks 00-07 and do not allocate another execution.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "occurred_at": "2026-10-04T03:16:17.253Z"
+}
