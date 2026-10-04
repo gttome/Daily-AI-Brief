@@ -9,7 +9,7 @@
   "task_id": "11",
   "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
   "repair_branch": "repair/task11-context-epoch-continuation-20261004",
-  "repair_branch_head_sha": "dd62fe9e6e1f735954466ba00936ad614afd4d65",
+  "repair_branch_head_sha": "70078fb4c8c83b5fb0e97d41cb178a445df0cdb1",
   "repair_scope_digest": "sha256:2dd30c8d3314b1e41b9d04adbf6bd61253c96dd1a1ddf83bca6c9d637b916b78",
   "required_checks": [
     "validate"
@@ -17,5 +17,11 @@
   "created_at": "2026-10-04T06:55:29.997Z",
   "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
   "diagnosis": "The first bounded post-repair native image attempt repeated the internal subject/context-isolation failure. A consumed prior repair epoch is not an external blocker.",
-  "next_stage": "Protected repair executor must open/reuse one PR, require exact-head CI, merge after same-execution/task revalidation, and resume Task 11 into repair epoch 2."
+  "next_stage": "Protected repair exact-head CI previously failed at run 37184298503 because the new regression test read a synthetic helper contract without engineering_repair. The bounded test-only fix is now on the same repair branch; executor must evaluate CI on exact head 70078fb4c8c83b5fb0e97d41cb178a445df0cdb1, then revalidate/merge/resume the same Task 11.",
+  "last_recovery_stage": {
+    "state": "REPAIR_CI_FAIL",
+    "failed_ci_run_id": 37184298503,
+    "failure": "new regression test used synthetic contract() without engineering_repair",
+    "corrected_head": "70078fb4c8c83b5fb0e97d41cb178a445df0cdb1"
+  }
 }
