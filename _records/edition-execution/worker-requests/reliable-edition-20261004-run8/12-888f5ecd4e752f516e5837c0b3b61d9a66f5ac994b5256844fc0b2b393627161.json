@@ -14,10 +14,10 @@
   "created_at": "2026-10-04T08:23:48.295Z",
   "writer_generation_is_provenance": true,
   "authority_refresh_required_at_invocation": true,
-  "status": "queued_for_scheduled_consumer",
+  "status": "claimed",
   "dispatch": {
     "schema_version": "scheduled-image-dispatch-v3",
-    "status": "QUEUED_FOR_SCHEDULED_CONSUMER",
+    "status": "CLAIMED",
     "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
     "consumer_kind": "chatgpt_watchdog_ring",
     "consumer_pool_ids": [
@@ -38,13 +38,17 @@
     ],
     "all_slots_equivalent": true,
     "nominal_pickup_minutes": 10,
-    "consumer_id": null,
+    "consumer_id": "watchdog-F",
     "execution_id": "reliable-edition-20261004-run8",
     "task_id": "12",
-    "generation_started": false,
+    "generation_started": true,
     "accepted_locked": false,
     "writer_generation_is_provenance": true,
     "authority_refresh_required_at_invocation": true,
-    "next_action": "Next eligible admitted scheduled consumer refreshes current fenced authority at invocation and consumes this exact request; overlapping consumers yield to the current task writer."
-  }
+    "next_action": "Next eligible admitted scheduled consumer refreshes current fenced authority at invocation and consumes this exact request; overlapping consumers yield to the current task writer.",
+    "claimed_at": "2026-10-04T08:24:40.496Z"
+  },
+  "claimed_at": "2026-10-04T08:24:40.496Z",
+  "consumer_id": "watchdog-F",
+  "consumer_writer_generation": 31
 }
