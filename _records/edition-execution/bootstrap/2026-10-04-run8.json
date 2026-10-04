@@ -1,0 +1,30 @@
+{
+  "schema_version": "daily-run-bootstrap-receipt-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "run_number": 8,
+  "brief_date": "2026-10-04",
+  "observed_at": "2026-10-04T01:32:36.576Z",
+  "timezone": "America/Chicago",
+  "protected_main_sha": "3e64dc69f6fcda7a97b2c9f6c33f67c121e2607f",
+  "startup_mode": "MISSED_START_RECOVERY",
+  "mandatory_bootstrap_complete": false,
+  "task_00_status": "ACTIVE",
+  "reason": "The scheduled 19:00 America/Chicago controller did not allocate the October 4 execution. Recovery allocated exactly one new execution from current protected main without reopening the terminal October 3 execution.",
+  "prior_execution": {
+    "execution_id": "reliable-edition-20261003-run7",
+    "terminal": true,
+    "active": false,
+    "current_task": "29",
+    "current_task_state": "Done"
+  },
+  "cost_boundary": {
+    "chatgpt_work": false,
+    "codex": false,
+    "paid_apis": false,
+    "billable_overage": false,
+    "alternate_accounts": false,
+    "new_credentials": false
+  }
+}

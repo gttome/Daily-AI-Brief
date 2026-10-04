@@ -12,9 +12,11 @@ test('non-production admission proof is bound to protected main and performs no 
   assert.notEqual(receipt.protected_main_sha,'0'.repeat(40));
   assert.equal(receipt.mode,'NON_PRODUCTION_ADMISSION_PROOF');
   assert.equal(receipt.production_allocation_performed,false);
-  const active=JSON.parse(fs.readFileSync('data/operations/active-production-run.json','utf8'));
-  assert.equal(active.active,false);
-  assert.equal(active.terminal,true);
+  // Historical admission proof is immutable evidence of the pre-allocation state.
+  // Do not bind this regression test to the repository's current live production pointer,
+  // which legitimately becomes active after the scheduled controller allocates the edition.
+  assert.equal(receipt.active_nonterminal_execution,false);
+  assert.equal(receipt.prior_terminal_execution_immutable,true);
 });
 
 test('actual Task 00 readiness input passes full-production admission',()=>{
