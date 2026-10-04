@@ -1,0 +1,15 @@
+{
+  "schema_version": "protected-repair-synthetic-proof-input-v1",
+  "synthetic_proof_key": "protected-repair-autonomy-2026-10-04-r1",
+  "synthetic_execution_id": "synthetic-protected-repair-execution-20261004-r1",
+  "synthetic_task_id": "11",
+  "synthetic_incident_id": "synthetic-protected-repair-incident-20261004-r1",
+  "bounded_repair_scope": "non-production control-plane state-machine proof only",
+  "production_pointer_mutation_allowed": false,
+  "production_task_event_mutation_allowed": false,
+  "production_image_request_mutation_allowed": false,
+  "accepted_locked_asset_mutation_allowed": false,
+  "production_execution_allocation_allowed": false,
+  "owner_prompt_required": false,
+  "note": "Isolated acceptance proof for Protected Repair Autonomy. No production identity or asset is authoritative from this record."
+}
