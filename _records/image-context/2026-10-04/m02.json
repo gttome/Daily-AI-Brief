@@ -1,0 +1,19 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-04-m02"
+  ],
+  "candidate_id": "m02",
+  "task_id": "11",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-04T03:49:00.000Z",
+  "allowed_text": [
+    "Agent claim",
+    "Database state",
+    "Side effects",
+    "Repeated run",
+    "Verification gate",
+    "Evidence ledger"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: backend-state verification for agents. Composition: a forensic dual-plane evaluator with an agent-completion claim on the upper rail and durable database-state plus side-effect evidence on the lower rail, converging at a verification gate; repeated-run evidence feeds a final evidence ledger. Explain visually why completion is graded against terminal state and side effects rather than the agent's own claim. No people or humanoid figures, no decorative filler, no product-screen imitation, no unsupported metrics, no overlapping text, no sparse/basic box-and-arrow fallback. Only these visible labels: Agent claim, Database state, Side effects, Repeated run, Verification gate, Evidence ledger."
+}
