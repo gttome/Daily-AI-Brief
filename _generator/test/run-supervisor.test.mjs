@@ -54,7 +54,8 @@ function contract(){
     capability_routing:{
       schema_version:'capability-routing-v1',enabled:true,
       tasks:{'03':'research_chatgpt','08':'research_chatgpt'},
-      recovery_owner_without_required_capability_must_handoff:true
+      recovery_owner_without_required_capability_must_handoff:true,
+      fallback_research_consumer_required:true
     },
     protected_repair_autonomy:{
       schema_version:'protected-repair-autonomy-contract-v1',
