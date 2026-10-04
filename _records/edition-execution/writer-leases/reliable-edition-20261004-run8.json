@@ -4,6 +4,9 @@
   "owner_id": "watchdog-E:recovery:task11",
   "generation": 19,
   "acquired_at": "2026-10-04T04:49:25.000Z",
-  "last_heartbeat_at": "2026-10-04T04:49:25.000Z",
-  "expires_at": "2026-10-04T05:04:25.000Z"
+  "last_heartbeat_at": "2026-10-04T04:49:35.000Z",
+  "expires_at": "2026-10-04T04:49:35.000Z",
+  "released": true,
+  "released_at": "2026-10-04T04:49:35.000Z",
+  "release_reason": "TASK_11_BLOCKED_HANDOFF_TO_SUPERVISOR"
 }
