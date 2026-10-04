@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "35c632fcde29b0b026ec0a2d2ea7f29d4697ee45397f789d76aaf60604c63232",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "18",
+  "capability": "repository",
+  "instruction": "Execute Task 18 (Assemble canonical Brief and permanent pages) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 51,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-04T09:50:11.842Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
