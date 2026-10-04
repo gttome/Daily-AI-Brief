@@ -1,0 +1,19 @@
+{
+  "task_id": "02",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-04T02:07:06.282Z",
+  "reason": "Watchdog A took over Task 02 after both bound Supervisor attempts ended in failure and the exact repository request remained unclaimed.",
+  "proof": {
+    "request_key": "3be7d5b30e940b8645aa1d2e3623c2424fe14439172e4478bdcd823fa3993552",
+    "prior_supervisor_run_id": 37169348459,
+    "prior_supervisor_attempts_failed": [
+      1,
+      2
+    ],
+    "prior_writer_generation": 6,
+    "recovery_writer_generation": 7,
+    "watchdog_incident_id": "wd-df90e7ca681c9a160bf7ceb68693c575",
+    "same_execution_only": true
+  }
+}
