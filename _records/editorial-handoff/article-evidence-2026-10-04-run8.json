@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_text_version": "article-body-v1",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "profile_id": "under80-v1",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "review_plan_count": 9,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 10028,
+  "model_visible": [
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "The Agent Said It Was Done. The Database Disagreed.",
+      "canonical_url": "https://huggingface.co/blog/microsoft/thinkingbox",
+      "publisher": "Hugging Face",
+      "published_at": "2026-10-03T22:56:48.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 3391,
+      "excerpt": "Back to Articles a]:hidden\"> The Agent Said It Was Done. Enterprise Article Published October 3, 2026 Upvote 2 Tuhin Kundu tuhink Follow microsoft :last-child]:mb-0\"> Microsoft ThinkingBox grades AI agents on the records they leave behind, not the sentences they generate, and then asks whether they can do it twenty times in a row. Figure 1: ThinkingBox runs an agent against isolated MCP tool sessions, then grades the terminal backend state and side effects it leaves behind. The grader checking whether the agent wrote to the database would see that too. For requirements with no clean database value (\"did the agent disclose this is not…"
+    },
+    {
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "headline": "Selected models in GitHub Copilot deprecated",
+      "canonical_url": "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-10-02T18:24:19.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 203,
+      "excerpt": "Back to changelog As of today, October 2, 2026, we have deprecated the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). Copilot Enterprise administrators may need to enable access to alternative models through their model policies in Copilot settings. Once enabled, you&rsquo;ll see the model in the Copilot Chat model selector in VS Code and on github.com. No action is required to remove the deprecated models. Share your feedback To learn more about the models available in Copilot, see our documentation on models and get started with Copilot today."
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub Copilot can now interact with desktop apps with computer use",
+      "canonical_url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-10-01T19:11:26.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 244,
+      "excerpt": "Back to changelog Computer use is now available in public preview in GitHub Copilot CLI and the GitHub Copilot app on macOS and Windows. Copilot can interact with desktop applications on your behalf (e.g., reading accessible app content and visual context, clicking controls, entering and editing text, pressing keys, scrolling, dragging, and navigating workflows across applications). Copilot uses computer-use tools to navigate an expense-report workflow in Safari. In the GitHub Copilot app, open Settings , select Computer Use , and turn on Enable Computer Use . Learn more about computer use in GitHub Copilot CLI and the GitHub Copilot app"
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Scaling cloud migrations with agentic AI on Amazon Bedrock AgentCore",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/scaling-cloud-migrations-with-agentic-ai-on-amazon-bedrock-agentcore/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-10-01T22:06:14.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 3753,
+      "excerpt": "Scaling cloud migrations with agentic AI on Amazon Bedrock AgentCore October 2026: This post was reviewed and updated for accuracy. Scaling cloud migrations with agentic AI on Amazon Bedrock AgentCore raises a practical question. The agents use the Strands Agents SDK and run on Amazon Bedrock AgentCore, a platform to build, connect, and optimize agents at scale, with any framework or model. Amazon Bedrock AgentCore runtime hosts them in a serverless environment with session isolation and multi-agent orchestration. For current rates, refer to Amazon Bedrock pricing , Amazon Bedrock AgentCore pricing , AWS Transform pricing , Amazon CloudWatch…"
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Find your learning tools all in one place with the student hub in Gemini",
+      "canonical_url": "https://workspaceupdates.googleblog.com/2026/10/find-your-learning-tools-all-in-one-place-with-the-student-hub-in-Gemini.html",
+      "publisher": "Google Workspace",
+      "published_at": "2026-10-01T16:22:17.860Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 226,
+      "excerpt": "arrow_back Back October 1, 2026 Find your learning tools all in one place with the student hub in Gemini Gemini Google Workspace for Education Rapid Release Scheduled Release We recently announced a new, dedicated hub in the Gemini app to help get students started with all of Gemini's learning tools. Initially available in personal accounts, the Gemini student hub is now available to Google Workspace for Education users of all ages. As Gemini creates more learning tools, you’ll find them in the student hub. Getting started Admins: The Gemini app and related in-app tools are controlled by the Generative AI settings in the Workspace Admin…"
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Product Announcements Workspace Drops: Pro-level AI image creation and editing, new ways to make your data interactive, and more AI help across your apps By The Google Workspace Team • 3-minute read",
+      "canonical_url": "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop",
+      "publisher": "Google Workspace",
+      "published_at": "2026-10-01T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 936,
+      "excerpt": "Product Announcements Workspace Drops: Pro-level AI image creation and editing, new ways to make your data interactive, and more AI help across your apps October 1, 2026 The Google Workspace Team Try Google Workspace at No Cost Get a business email, all the storage you need, video conferencing, and more. SIGN UP Welcome to the latest Workspace Drop, featuring pro-level image editing with AI, boundless ways to make your data interactive in Google Sheets, and new ways to work across apps in Workspace, along with new productivity and security enhancements. Try pro-level image creation and editing with Google Pics Built on our Nano Banana image…"
+    },
+    {
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "Build Applications on NVIDIA BlueField Faster with NVIDIA DOCA Agent Skills",
+      "canonical_url": "https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/",
+      "publisher": "NVIDIA Developer",
+      "published_at": "2026-10-01T18:13:29.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "source_word_count": 2094,
+      "excerpt": "Agentic AI / Generative AI Build Applications on NVIDIA BlueField Faster with NVIDIA DOCA Agent Skills Oct 01, 2026 By Claudia Martinez , Matan Raz and Tamir Tevet Like Discuss (0) L T F R E AI-Generated Summary NVIDIA DOCA AI agent skills provide verified API signatures, hardware capability requirements, and build constraints so agents can reason like experienced DOCA developers. It includes a side-by-side demo and how to get started using DOCA agent skills to build faster and ship more stable code on BlueField infrastructure. Build faster with real APIs What DOCA AI agent skills address: Misuse of APIs: agents inventing functions, flags,…"
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "headline": "Fine-tune a search agent with multi-turn RL on Amazon SageMaker AI",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/fine-tune-a-search-agent-with-multi-turn-rl-on-amazon-sagemaker-ai/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-10-02T15:44:20.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2149,
+      "excerpt": "Fine-tune a search agent with multi-turn RL on Amazon SageMaker AI Search agents powered by large language models (LLMs) are transforming how enterprises retrieve information. In this post, we describe how we fine-tuned a search agent using Amazon SageMaker AI multi-turn reinforcement learning (MTRL) and share the results we observed in retrieval quality and reliability. With Amazon SageMaker AI MTRL , you can fine-tune LLMs using reinforcement learning in multi-turn interaction settings. Solution overview In this post, we use Amazon SageMaker AI MTRL to fine-tune a Qwen3.6-27B model (supported in the US West (Oregon) Region (us-west-2)) for…"
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "headline": "Building ambient agents with Amazon Bedrock AgentCore: From event-driven signals to human-in-the-loop workflows",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-10-01T16:40:24.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 6491,
+      "excerpt": "Building ambient agents with Amazon Bedrock AgentCore: From event-driven signals to human-in-the-loop workflows Teams that process documents at scale know the routine: files land in storage, someone notices, opens each one, decides what it needs, and routes it for review. Amazon Bedrock AgentCore is a platform to build, connect, and optimize agents at scale, with any framework or model. Understanding ambient agents Before we get into the architecture, it helps to look at what makes an ambient agent different from a typical chatbot and at the building blocks the rest of the post relies on: the event-driven trigger model, the ambient signal…"
+    }
+  ]
+}
