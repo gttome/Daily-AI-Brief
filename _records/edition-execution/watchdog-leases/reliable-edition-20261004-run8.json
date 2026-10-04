@@ -1,15 +1,12 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "incident_id": "normal-image-task13-0ca8ebf3",
+  "incident_id": "normal-image-task14-f7ea3586",
   "owner_slot": "F",
-  "generation": 21,
-  "state": "RELEASED",
-  "acquired_at": "2026-10-04T08:42:22.513Z",
-  "last_heartbeat_at": "2026-10-04T08:47:26.236Z",
-  "expires_at": "2026-10-04T08:47:26.236Z",
-  "action_key": "normal-task13-native-consume-g21",
-  "released": true,
-  "released_at": "2026-10-04T08:47:26.236Z",
-  "release_reason": "RECOVERY_VERIFIED_PROGRESSING"
+  "generation": 22,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-04T08:49:28.215Z",
+  "last_heartbeat_at": "2026-10-04T08:49:28.215Z",
+  "expires_at": "2026-10-04T09:04:28.215Z",
+  "action_key": "normal-task14-native-consume-g22"
 }
