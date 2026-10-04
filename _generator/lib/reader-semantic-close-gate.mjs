@@ -25,7 +25,7 @@ function checkFileExact(root,relative,expected,errors,checks,label,fileOverrides
   if(!ok)errors.push(label+':canonical_mismatch:'+relative);
 }
 
-export function evaluateReaderSemanticCloseGate({root='.',editionDate,observedAt=new Date().toISOString(),fileOverrides={}}={}){
+export function evaluateReaderSemanticCloseGate({root='.',editionDate,executionKey=null,observedAt=new Date().toISOString(),fileOverrides={}}={}){
   if(!date(editionDate))throw Error('reader_semantic_gate_valid_date_required');
   if(!fileOverrides||typeof fileOverrides!=='object'||Array.isArray(fileOverrides))throw Error('reader_semantic_gate_file_overrides_object_required');
   const repoRoot=path.resolve(root);
@@ -52,9 +52,15 @@ export function evaluateReaderSemanticCloseGate({root='.',editionDate,observedAt
   checks.ordered_2_2_2=JSON.stringify(focusOrder)===JSON.stringify(expectedFocus);
   if(!checks.ordered_2_2_2)errors.push('ordered_2_2_2_required');
 
-  const agentSkillStories=stories.filter(story=>/agent skills?/i.test([story.headline,...(story.topics||[])].join(' ')));
-  checks.exactly_one_agent_skill_story=agentSkillStories.length===1;
-  if(!checks.exactly_one_agent_skill_story)errors.push('exactly_one_agent_skills_story_required');
+  const selectionFile=executionKey?path.join(repoRoot,'_records','editorial',executionKey,'story-selection.json'):null;
+  const selection=selectionFile&&fs.existsSync(selectionFile)?readJson(selectionFile):null;
+  const selected=Array.isArray(selection?.selected)?selection.selected:[];
+  const agentSkillsSelections=selected.filter(item=>item?.role==='agent_skills');
+  const agentSkillsOk=selection?.edition_id===edition.edition_id&&selection?.selection_locked===true&&
+    selection?.checks?.exact_one_reusable_agent_skills_story===true&&selected.length===6&&
+    agentSkillsSelections.length===1&&selection?.agent_skills_candidate_id===agentSkillsSelections[0]?.candidate_id;
+  checks.exactly_one_agent_skill_story=agentSkillsOk;
+  if(!agentSkillsOk)errors.push('authoritative_exactly_one_agent_skills_story_required');
 
   const videos=Object.values(edition.worth_watching||{}).filter(item=>item?.status==='included');
   const podcasts=Array.isArray(edition.podcasts)?edition.podcasts.filter(item=>item?.status==='included'):(edition.podcast?.status==='included'?[edition.podcast]:[]);
