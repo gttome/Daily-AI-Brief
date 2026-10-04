@@ -11,17 +11,23 @@ const uniq=values=>[...new Set(values)];
 const count=(text,re)=>(String(text||'').match(re)||[]).length;
 const readJson=file=>JSON.parse(fs.readFileSync(file,'utf8'));
 
-function checkFileExact(root,relative,expected,errors,checks,label){
+function savedText(root,relative,fileOverrides){
+  if(Object.prototype.hasOwnProperty.call(fileOverrides,relative))return fileOverrides[relative];
   const file=path.join(root,relative);
-  if(!fs.existsSync(file)){errors.push(label+':missing:'+relative);checks[label]=false;return;}
-  const actual=fs.readFileSync(file,'utf8');
+  return fs.existsSync(file)?fs.readFileSync(file,'utf8'):null;
+}
+
+function checkFileExact(root,relative,expected,errors,checks,label,fileOverrides){
+  const actual=savedText(root,relative,fileOverrides);
+  if(actual===null){errors.push(label+':missing:'+relative);checks[label]=false;return;}
   const ok=actual===expected;
   checks[label]=ok;
   if(!ok)errors.push(label+':canonical_mismatch:'+relative);
 }
 
-export function evaluateReaderSemanticCloseGate({root='.',editionDate,observedAt=new Date().toISOString()}={}){
+export function evaluateReaderSemanticCloseGate({root='.',editionDate,observedAt=new Date().toISOString(),fileOverrides={}}={}){
   if(!date(editionDate))throw Error('reader_semantic_gate_valid_date_required');
+  if(!fileOverrides||typeof fileOverrides!=='object'||Array.isArray(fileOverrides))throw Error('reader_semantic_gate_file_overrides_object_required');
   const repoRoot=path.resolve(root);
   const errors=[],checks={};
   const editionFile=path.join(repoRoot,'_data/editions',editionDate+'.json');
@@ -95,9 +101,9 @@ export function evaluateReaderSemanticCloseGate({root='.',editionDate,observedAt
   const dated=renderDated(edition,{watchlist});
   const latest=renderLatest(edition,{watchlist});
   const index=renderIndex(edition,{watchlist});
-  checkFileExact(repoRoot,'briefs/'+editionDate+'.md',dated,errors,checks,'dated_brief_canonical');
-  checkFileExact(repoRoot,'latest.md',latest,errors,checks,'latest_canonical');
-  checkFileExact(repoRoot,'index.md',index,errors,checks,'homepage_canonical');
+  checkFileExact(repoRoot,'briefs/'+editionDate+'.md',dated,errors,checks,'dated_brief_canonical',fileOverrides);
+  checkFileExact(repoRoot,'latest.md',latest,errors,checks,'latest_canonical',fileOverrides);
+  checkFileExact(repoRoot,'index.md',index,errors,checks,'homepage_canonical',fileOverrides);
 
   const overviewOk=/IN THIS EDITION · 6 ARTICLES \/ 2 VIDEOS \/ 2 PODCASTS/.test(dated);
   checks.edition_overview=overviewOk;
@@ -126,8 +132,8 @@ export function evaluateReaderSemanticCloseGate({root='.',editionDate,observedAt
     const relative='stories/'+editionDate+'/'+story.slug+'.md';
     const canonical=expected.get(relative);
     if(typeof canonical!=='string'){errors.push('canonical_permanent_story_missing:'+relative);continue;}
-    checkFileExact(repoRoot,relative,canonical,errors,checks,'permanent_story_'+story.ordinal);
-    const actual=fs.existsSync(path.join(repoRoot,relative))?fs.readFileSync(path.join(repoRoot,relative),'utf8'):'';
+    checkFileExact(repoRoot,relative,canonical,errors,checks,'permanent_story_'+story.ordinal,fileOverrides);
+    const actual=savedText(repoRoot,relative,fileOverrides)||'';
     const mapped=mappedIds.has(story.story_id);
     const semantic=
       actual.includes('class="reading-context"')&&
