@@ -1,18 +1,14 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "scheduled-consumer:6ac1594249d081918df3145cca65dd91:reliable-edition-20261004-run8:task-11:generation-22:invocation-20261004T063621952Z",
-  "generation": 22,
+  "owner_id": "scheduled-consumer:6ac1594e974881919639e0c40a2d9da8:reliable-edition-20261004-run8:task-11:generation-23:invocation-20261004T064115000Z",
+  "generation": 23,
   "task_id": "11",
   "operation_key": "consume-815988263cea8b4ca83db091aa9f950d6d1a8221b504014b81c79a4f37ba3f5b",
   "capability": "native_chatgpt",
-  "acquired_at": "2026-10-04T06:36:21.952Z",
-  "last_heartbeat_at": "2026-10-04T06:39:06.121Z",
-  "expires_at": "2026-10-04T06:39:06.121Z",
-  "takeover_reason": "conclusively_dead_writer",
-  "dead_writer_proof": "_records/edition-execution/dead-writer-recovery/reliable-edition-20261004-run8/20261004T0635Z-generation-21.json",
-  "state": "RELEASED",
-  "released_at": "2026-10-04T06:39:06.121Z",
-  "release_reason": "TASK_11_BLOCKED_HANDOFF_TO_SUPERVISOR",
-  "released": true
+  "acquired_at": "2026-10-04T06:41:15.000Z",
+  "last_heartbeat_at": "2026-10-04T06:41:15.000Z",
+  "expires_at": "2026-10-04T06:56:15.000Z",
+  "state": "ACTIVE",
+  "released": false
 }
