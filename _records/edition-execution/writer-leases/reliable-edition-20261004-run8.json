@@ -1,21 +1,21 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "watchdog-E:wd-task23-manifest-contract-37205934438:task-23:recovery",
-  "generation": 70,
+  "owner_id": "chatgpt-normal-chat:strategy-interrupt:task-23:retry",
+  "generation": 71,
   "task_id": "23",
   "capability": "protected_ci",
-  "operation_key": "task23-frozen-shadow-migration-repair-g70",
-  "acquired_at": "2026-10-04T15:53:00.000Z",
-  "last_heartbeat_at": "2026-10-04T15:53:00.000Z",
-  "expires_at": "2026-10-04T16:08:00.000Z",
+  "operation_key": "task23-post-pr446-exact-head-ci-g71",
+  "acquired_at": "2026-10-04T15:56:31.000Z",
+  "last_heartbeat_at": "2026-10-04T15:56:31.000Z",
+  "expires_at": "2026-10-04T16:11:31.000Z",
   "state": "ACTIVE",
   "released": false,
   "transfer_from": {
-    "owner_id": "chatgpt-normal-chat:strategy-interrupt:task-23:recovery",
-    "generation": 69,
-    "reason": "EXPIRED_WRITER_LEASE",
-    "prior_expires_at": "2026-10-04T15:46:24.000Z",
-    "at": "2026-10-04T15:53:00.000Z"
+    "owner_id": "watchdog-E:wd-task23-manifest-contract-37205934438:task-23:recovery",
+    "generation": 70,
+    "reason": "TERMINAL_CI_FAILURE_AND_PROTECTED_REPAIR_MERGED",
+    "prior_expires_at": "2026-10-04T16:08:00.000Z",
+    "at": "2026-10-04T15:56:31.000Z"
   }
 }

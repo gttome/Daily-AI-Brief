@@ -4,10 +4,10 @@
   "incident_id": "wd-task23-manifest-contract-37205934438",
   "owner_slot": "E",
   "generation": 41,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-04T15:53:00.000Z",
-  "last_heartbeat_at": "2026-10-04T15:53:00.000Z",
-  "expires_at": "2026-10-04T16:08:00.000Z",
+  "last_heartbeat_at": "2026-10-04T15:56:31.000Z",
+  "expires_at": "2026-10-04T15:56:31.000Z",
   "action_key": "wd-task23-manifest-contract-37205934438:shadow-frozen-contract-repair:slot-e:g41",
   "takeover_from": {
     "owner_slot": "A",
@@ -15,5 +15,7 @@
     "reason": "PRIOR_RECOVERY_LEASE_EXPIRED",
     "prior_expires_at": "2026-10-04T15:28:00.000Z",
     "observed_at": "2026-10-04T15:53:00.000Z"
-  }
+  },
+  "released_at": "2026-10-04T15:56:31.000Z",
+  "release_reason": "SAFE_BOUNDARY_REACHED"
 }
