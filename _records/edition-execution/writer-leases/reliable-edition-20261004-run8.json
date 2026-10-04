@@ -1,25 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "owner_id": "watchdog-D:wd-335f455b1d5d15d5171759260d6dadf:task-19:recovery",
-  "generation": 58,
-  "task_id": "19",
-  "capability": "repository",
-  "operation_key": "eab6c1749bdd9dec9fcadc21ffef5080d6510686777730dbbbc4949999ca46b1",
-  "acquired_at": "2026-10-04T10:56:20.000Z",
-  "last_heartbeat_at": "2026-10-04T11:09:12.845Z",
-  "expires_at": "2026-10-04T11:09:12.845Z",
-  "state": "ACTIVE",
-  "released": true,
-  "transfer_from": {
-    "owner_id": "github-actions-37196799964-1",
-    "generation": 57,
-    "reason": "PROVEN_DEAD_OWNER_TAKEOVER",
-    "dead_writer_proof": "_records/edition-execution/dead-writer-proofs/reliable-edition-20261004-run8/20261004T105610000Z-generation-57.json",
-    "workflow_run_id": 37196799964,
-    "conclusion": "failure",
-    "at": "2026-10-04T10:56:20.000Z"
-  },
-  "released_at": "2026-10-04T11:09:12.845Z",
-  "release_reason": "TASK_19_DONE_HANDOFF_TO_SUPERVISOR"
+  "owner_id": "github-actions-37197866619-1",
+  "generation": 59,
+  "acquired_at": "2026-10-04T11:11:29.449Z",
+  "last_heartbeat_at": "2026-10-04T11:11:29.449Z",
+  "expires_at": "2026-10-04T11:16:29.449Z"
 }
