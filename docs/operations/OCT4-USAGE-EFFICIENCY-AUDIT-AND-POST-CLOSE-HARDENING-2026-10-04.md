@@ -450,9 +450,9 @@ This forces the system to move one level up:
 
 The system currently has strong liveness and retry doctrine, but it does not yet have an equally strong automatic rule for **tactic-loop blindness**. The owner has been supplying that missing meta-level signal manually.
 
-### Replication goal
+### How we replicate it automatically
 
-The system must reproduce the beneficial effect of the owner's question **without requiring the owner to ask it**.
+The system must reproduce the beneficial effect of the owner's question **without requiring the owner to ask it**. This is the concrete replication mechanism, not merely a design principle.
 
 Add a durable **Strategy Interrupt / Meta-Diagnostic Escalation** state to Supervisor/Watchdog recovery. It should trigger automatically when any of the following are true:
 
