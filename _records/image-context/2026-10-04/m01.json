@@ -1,0 +1,21 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-04-m01"
+  ],
+  "candidate_id": "m01",
+  "task_id": "15",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-04T03:49:00.000Z",
+  "allowed_text": [
+    "DOCA Agent Skill",
+    "Instructions",
+    "References",
+    "Scripts",
+    "API check",
+    "Hardware check",
+    "Build check",
+    "Preflight"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: verified DOCA Agent Skills. Composition: a central versioned skill cartridge contains instructions, references and scripts, then flows through three separate preflight checkpoints for API compatibility, hardware requirements and build constraints before reaching execution. Make the package, checks and dependency relationships visually explicit. No people or humanoid figures, no decorative filler, no product-screen imitation, no unsupported metrics, no overlapping text, no sparse/basic box-and-arrow fallback. Only these visible labels: DOCA Agent Skill, Instructions, References, Scripts, API check, Hardware check, Build check, Preflight."
+}
