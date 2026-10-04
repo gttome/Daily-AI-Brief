@@ -1,0 +1,38 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "execution_key": "2026-10-04-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "from": "Blocked",
+  "to": "Done",
+  "at": "2026-10-04T08:22:53.836Z",
+  "writer_generation": 29,
+  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261004-run8:task-11:generation-29:fd280431",
+  "reason_code": "IMAGE_ACCEPTED_LOCKED",
+  "operation": "Generate one fresh isolated epoch-2 m02 visual, persist the approved PNG representation, verify Git content identity, review saved bytes and lock acceptance.",
+  "proof": {
+    "request_key": "fd28043122d9f47d251f01f4e0ffaa587a4103be22f40537e6d5a68b1774fc48",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261004-run8/11-fd28043122d9f47d251f01f4e0ffaa587a4103be22f40537e6d5a68b1774fc48.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-04-run8/m02.json",
+    "saved_git_review": "_records/image-reviews/2026-10-04-run8/m02-repair-epoch-2-attempt-1-saved-git-review.json",
+    "final_sha256": "4ba1ac627b51ba33bde8ee690f8f10427ebe089e5b1f4f2b78a91d45e73ad104",
+    "final_git_blob_sha": "47c1d8c3866fa26362a0de820196f3a06209f72b",
+    "saved_git_commit": "6dd7d3259d3b94238687db74c642d290d78398ff"
+  },
+  "completed_tasks_preserved": [
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10"
+  ],
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

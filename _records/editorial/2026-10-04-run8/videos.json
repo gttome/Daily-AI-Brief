@@ -1,0 +1,43 @@
+{
+  "schema_version": "run8-video-selection-v1",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_id": "reliable-edition-20261004-run8",
+  "verified_at": "2026-10-04T02:41:00.000Z",
+  "result": "PASS",
+  "videos": [
+    {
+      "ordinal": 1,
+      "title": "Meet the GitHub Copilot app: Your new AI desktop assistant",
+      "channel": "GitHub",
+      "publication_date": "2026-07-21",
+      "runtime_seconds": 462,
+      "playback_provider": "youtube",
+      "video_id": "LsA4vIX_3UY",
+      "connection": "Official tour of the Copilot desktop agent surface relevant to the selected computer-use story.",
+      "verification": "GitHub's current enterprise resource roundup records a 7:42 runtime and identifies the official GitHub video."
+    },
+    {
+      "ordinal": 2,
+      "title": "The My work tab: your mission control in the GitHub Copilot app",
+      "channel": "GitHub",
+      "runtime_seconds": 324,
+      "playback_provider": "youtube",
+      "video_id": "h9g4umRfgn0",
+      "connection": "Shows work items launching agent sessions and complements the Brief's governed agent workflow coverage.",
+      "verification": "GitHub's current enterprise resource roundup records a 5:24 runtime and identifies the official GitHub video."
+    }
+  ],
+  "checks": {
+    "count": 2,
+    "runtime_ladder_seconds": [
+      600,
+      900,
+      1200
+    ],
+    "both_within_target_600": true,
+    "direct_playability_by_provider_id": true,
+    "official_source": true,
+    "prior_edition_exact_video_repeat": false
+  },
+  "freshness_note": "No equally relevant same-window official video with a verified runtime was found in the bounded search, so durable official explainers were preferred over fresh results with unverified runtimes."
+}

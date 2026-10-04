@@ -1,0 +1,86 @@
+{
+  "schema_version": "run8-story-selection-v1",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_id": "reliable-edition-20261004-run8",
+  "research_cutoff": "2026-10-04T01:32:36.576Z",
+  "selected_at": "2026-10-04T02:38:20.000Z",
+  "allocation_policy": "exact-2-2-2",
+  "agent_skills_candidate_id": "m01",
+  "selection_locked": true,
+  "selected": [
+    {
+      "slot": 1,
+      "focus": "technical_ai_engineering",
+      "candidate_id": "m02",
+      "working_title": "When an agent says it is done, grade the database"
+    },
+    {
+      "slot": 2,
+      "focus": "technical_ai_engineering",
+      "candidate_id": "m04",
+      "working_title": "Copilot steps beyond APIs into desktop apps"
+    },
+    {
+      "slot": 3,
+      "focus": "applied_genai_knowledge_workers",
+      "candidate_id": "m06",
+      "working_title": "Gemini puts study workflows in one hub"
+    },
+    {
+      "slot": 4,
+      "focus": "applied_genai_knowledge_workers",
+      "candidate_id": "m07",
+      "working_title": "Workspace turns prompts into images, mini-apps and cross-app work"
+    },
+    {
+      "slot": 5,
+      "focus": "agents_non_technical_people",
+      "candidate_id": "m01",
+      "role": "agent_skills",
+      "working_title": "NVIDIA gives agents a verified DOCA skill set"
+    },
+    {
+      "slot": 6,
+      "focus": "agents_non_technical_people",
+      "candidate_id": "m09",
+      "working_title": "Ambient agents wake up on events — and know when to ask a human"
+    }
+  ],
+  "reserves": [
+    "m03",
+    "m08"
+  ],
+  "excluded": [
+    {
+      "candidate_id": "m05",
+      "reason": "freshness/source-date conflict; original publication is outside the active freshness window and no exact qualifying material-update date was proven"
+    }
+  ],
+  "checks": {
+    "exact_story_count": 6,
+    "category_counts": {
+      "technical_ai_engineering": 2,
+      "applied_genai_knowledge_workers": 2,
+      "agents_non_technical_people": 2
+    },
+    "exact_one_reusable_agent_skills_story": true,
+    "prior_edition_exact_repeat": false,
+    "all_selected_full_source_read": true,
+    "all_selected_within_active_freshness_ladder": true,
+    "extended_fallback_used": [
+      "m07"
+    ],
+    "source_date_conflict_excluded": [
+      "m05"
+    ]
+  },
+  "rationale": {
+    "m02": "The freshest technical candidate adds a strong reliability mechanism: grade durable backend state and repeated outcomes, not conversational claims.",
+    "m04": "Desktop computer use expands the agent execution surface beyond APIs and exposes concrete approval, policy and GUI-control engineering issues.",
+    "m06": "A compact, immediately available knowledge-work workflow that shows Gemini organizing study artifacts under existing administrative controls.",
+    "m07": "Broad knowledge-worker utility across image creation, interactive Sheets canvases and cross-app work; retained via the approved extended freshness rung.",
+    "m01": "The sole Agent Skills-ready candidate; illustrates how a reusable verified skill package can constrain an agent with real APIs, hardware checks and preflight rules.",
+    "m09": "Accessible event-driven agent pattern showing work that begins from signals and retains explicit human-in-the-loop escalation."
+  },
+  "result": "PASS"
+}

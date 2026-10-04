@@ -1,0 +1,10 @@
+{
+  "task_id": "07",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-04T02:42:00.000Z",
+  "reason": "Begin Task 07 podcast selection and runtime verification.",
+  "proof": {
+    "writer_generation": 12
+  }
+}

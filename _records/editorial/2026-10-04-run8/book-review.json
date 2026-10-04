@@ -1,0 +1,102 @@
+{
+  "schema_version": "run8-four-book-review-v1",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_id": "reliable-edition-20261004-run8",
+  "reviewed_at": "2026-10-04T03:46:10.000Z",
+  "catalog_path": "_data/book-reading.json",
+  "books_reviewed": [
+    {
+      "book": "Reliable Generative AI",
+      "anchor_count": 8
+    },
+    {
+      "book": "Reliable Generative AI Context Engineering",
+      "anchor_count": 8
+    },
+    {
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "anchor_count": 8
+    },
+    {
+      "book": "Generative AI Prompt Engineering Learning Ecosystem",
+      "anchor_count": 8
+    }
+  ],
+  "total_anchors_reviewed": 32,
+  "reading_evidence": {
+    "full_text_claimed": false,
+    "note": "Review uses verified public anchors recorded in the catalog."
+  },
+  "item_reviews": [
+    {
+      "candidate_id": "m02",
+      "title": "When an agent says it is done, grade the database",
+      "best_connections": [
+        "reliable-verification",
+        "context-regression",
+        "prompt-evaluation",
+        "ecosystem-workflow"
+      ],
+      "reader_value": "Connect conversational completion claims to durable-state verification, repeatable regression checks, explicit evaluation and a reusable checking workflow."
+    },
+    {
+      "candidate_id": "m04",
+      "title": "Copilot steps beyond APIs into desktop apps",
+      "best_connections": [
+        "reliable-handoffs",
+        "context-envelope",
+        "prompt-clarify",
+        "ecosystem-role-selection"
+      ],
+      "reader_value": "Desktop actions make bounded context, structured handoffs, clarification before ambiguous actions and clear human-versus-agent roles especially useful."
+    },
+    {
+      "candidate_id": "m06",
+      "title": "Gemini puts study workflows in one hub",
+      "best_connections": [
+        "reliable-trust",
+        "context-quality-checklist",
+        "prompt-core-components",
+        "ecosystem-multimedia"
+      ],
+      "reader_value": "A study hub is more useful when learners calibrate trust, supply strong context, frame requests clearly and combine multiple learning resources."
+    },
+    {
+      "candidate_id": "m07",
+      "title": "Workspace turns prompts into images, mini-apps and cross-app work",
+      "best_connections": [
+        "reliable-handoffs",
+        "context-dynamic-facts",
+        "prompt-structure",
+        "ecosystem-template-export"
+      ],
+      "reader_value": "Cross-app work benefits from current-state data, structured handoffs, clear prompts and reusable editable artifacts that preserve intent."
+    },
+    {
+      "candidate_id": "m01",
+      "title": "NVIDIA gives agents a verified DOCA skill set",
+      "best_connections": [
+        "reliable-handoffs",
+        "context-quality-checklist",
+        "prompt-pattern-selection",
+        "ecosystem-template-export"
+      ],
+      "reader_value": "A reusable skill is a structured contract; these sections help readers understand why instructions, references, constraints and reusable templates must stay coherent."
+    },
+    {
+      "candidate_id": "m09",
+      "title": "Ambient agents wake up on events — and know when to ask a human",
+      "best_connections": [
+        "reliable-agent-failures",
+        "context-failure-playbooks",
+        "prompt-clarify",
+        "ecosystem-role-selection"
+      ],
+      "reader_value": "Event-driven autonomy needs clear exception handling, escalation playbooks, clarification paths and role boundaries so a human can take over at the right point."
+    }
+  ],
+  "distribution_check": {
+    "books_with_at_least_one_selected_connection": 4
+  },
+  "result": "PASS"
+}

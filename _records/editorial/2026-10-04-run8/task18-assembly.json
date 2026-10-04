@@ -1,0 +1,59 @@
+{
+  "schema_version": "task18-canonical-assembly-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "assembled_at": "2026-10-04T10:50:30.000Z",
+  "protected_main_sha": "b99313ebebbf789d6eb218231dd13f170d42eac4",
+  "writer_generation": 56,
+  "source_task_range": "00-17",
+  "canonical_brief": "briefs/2026-10-04.md",
+  "story_pages": [
+    "stories/2026-10-04/when-an-agent-says-it-is-done-grade-the-database.md",
+    "stories/2026-10-04/copilot-steps-beyond-apis-into-desktop-apps.md",
+    "stories/2026-10-04/gemini-puts-study-workflows-in-one-hub.md",
+    "stories/2026-10-04/workspace-turns-prompts-into-images-mini-apps-and-cross-app-work.md",
+    "stories/2026-10-04/nvidia-gives-agents-a-verified-doca-skill-set.md",
+    "stories/2026-10-04/ambient-agents-wake-up-on-events-and-know-when-to-ask-a-human.md"
+  ],
+  "media_pages": [
+    "videos/2026-10-04/general.md",
+    "videos/2026-10-04/agent-skills.md",
+    "podcasts/2026-10-04/hard-fork-2026-10-02-ai-agents.md",
+    "podcasts/2026-10-04/a16z-2026-10-02-ai-agents-incumbents.md"
+  ],
+  "image_manifest": "_records/editorial-handoff/images-2026-10-04.json",
+  "image_assets": [
+    "briefs/images/2026-10-04/dab-edition-2026-10-04-m02.png",
+    "briefs/images/2026-10-04/dab-edition-2026-10-04-m04.png",
+    "briefs/images/2026-10-04/dab-edition-2026-10-04-m06.png",
+    "briefs/images/2026-10-04/dab-edition-2026-10-04-m07.png",
+    "briefs/images/2026-10-04/dab-edition-2026-10-04-m01.png",
+    "briefs/images/2026-10-04/dab-edition-2026-10-04-m09.png"
+  ],
+  "counts": {
+    "stories": 6,
+    "videos": 2,
+    "podcasts": 2,
+    "images": 6
+  },
+  "allocation": "2/2/2",
+  "agent_skills_story_count": 1,
+  "watchlist_counts": {
+    "new_today": 0,
+    "updated_today": 3,
+    "carried_forward": 17
+  },
+  "all_four_books_reviewed": true,
+  "reader_guards": {
+    "internal_candidate_ids_in_visible_topics": false,
+    "source_reading_time_verified": true,
+    "story_specific_alt_text": true,
+    "single_duration_field_per_media_page": true
+  },
+  "upstream_preservation": {
+    "completed_tasks": "00-17",
+    "accepted_locked_images": 6
+  },
+  "saved_git_readback": "12/12",
+  "result": "PASS"
+}

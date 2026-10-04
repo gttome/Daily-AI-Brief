@@ -1,0 +1,55 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "13",
+  "candidate_id": "m06",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-04T08:47:26.236Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 33,
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "saved_git_commit": "5f6d0ab077725c439046da0383d16df3cf06f7fd",
+  "source_lineage": {
+    "native_sha256": "b6534c933443c637f8da94175d94560f7996441eb8233e2798d76e5e2e5687bd",
+    "native_bytes": 1543237,
+    "native_width": 1774,
+    "native_height": 887,
+    "transport_method": "same-visual resized 256-color professional PNG representation"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-04/dab-edition-2026-10-04-m06.png",
+    "git_blob_sha": "a3d92c8ecb6582f1e26df076553d5fb6d21f80c2",
+    "sha256": "d91ed6e4d8ed3cdeacfc6a64ab4e3c5adee29073816733c8f343129a2e6ba777",
+    "bytes": 157221,
+    "width": 1200,
+    "height": 600,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_MATCHES_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "Two study-source inputs enter a central hub; green and orange output rails branch to flashcards and a quiz, with separate Gemini and administrative-control rails.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Study hub",
+      "Notebook",
+      "Source material",
+      "Flashcards",
+      "Practice quiz",
+      "Admin controls",
+      "Gemini"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "Local Git hash-object exactly matches the persisted Git blob; the inspected transport representation remains detailed and legible."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

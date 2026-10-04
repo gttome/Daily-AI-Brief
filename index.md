@@ -1,398 +1,144 @@
 ---
 layout: default
 title: Daily Generative AI Brief
-brief_date: 2026-10-03
+brief_date: 2026-10-04
 reader_release: true
 ---
 
-# Daily Generative AI Brief — October 3, 2026
+# Daily Generative AI Brief — October 4, 2026
 
-**Published:** October 3, 2026  
-**Coverage period:** September 30–October 3, 2026
+**Published:** October 4, 2026  
+**Coverage period:** July 21–October 3, 2026
 
-<!-- reader-release:start -->
-<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-10-03-m07">One Agent Skills package, many Copilot workflows</a><span>Article · about 6 min source read</span></li><li><a href="#reading-dab-story-2026-10-03-m08">California tests the legal boundary for rogue agents</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-10-03-m04">Anthropic turns enterprise AI delivery into a profession</a><span>Article · about 6 min source read</span></li><li><a href="#reading-dab-story-2026-10-03-m05">Customer service prepares for agents on both sides</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-10-03-m01">Voice agents get a 100-millisecond head start</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-10-03-m02">Federated learning gets a public privacy proof</a><span>Article · about 7 min source read</span></li><li><a href="#general">Introducing MAI-Transcribe-2-Streaming, MAI-Voice-2.1 and MAI-Voice-2.1-Flash</a><span>Video · 3:00</span></li><li><a href="#agents-for-non-technical-people">Flight Intelligence: The Power of Work IQ | Discover how Work IQ is your business&#39;s secret sauce</a><span>Video · 14:34</span></li><li><a href="#podcast-dab-podcast-2026-10-03-1">Dots get up in Muse’s business</a><span>Podcast · 1:28:30</span></li><li><a href="#podcast-dab-podcast-2026-10-03-2">An Argument Against AI Doom</a><span>Podcast · 56:16</span></li></ol></section>
-<!-- reader-release:end -->
+## 1. When an agent says it is done, grade the database
 
-<span id="reading-dab-story-2026-10-03-m07"></span>
+**Focus: Technical AI Engineering**  
+**Date:** 2026-10-03  
+**Source article:** about 17 min read
 
-## 1. One Agent Skills package, many Copilot workflows
+[Open the permanent story page]({{ '/stories/2026-10-04/when-an-agent-says-it-is-done-grade-the-database/' | relative_url }})
 
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Extended recency fallback</span><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 6 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
-<!-- reader-release:end -->
+![Textbook mechanism diagram for Backend-state verification: Claim rail plus database-state rail converge at an evidence gate.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m02.png?v=4ba1ac627b51)
 
-**Focus: Agents for Everyone**
+**Summary:** ThinkingBox grades terminal backend state and side effects, not only generated text. repeated-run reliability is an explicit evaluation target.
 
-**Date:** September 30, 2026
+**Why it matters:** For engineering teams, the key shift is from trusting a model response to designing the surrounding system so state, permissions, actions, and verification are explicit and inspectable.
 
-**Topics:** agents non technical people
+**Source:** [The Agent Said It Was Done. The Database Disagreed.](https://huggingface.co/blog/microsoft/thinkingbox)
 
-<span class="story-data" data-story-id="dab-story-2026-10-03-m07" data-story-url="/stories/2026-10-03/one-agent-skills-package-many-copilot-workflows/" hidden></span>
+## 2. Copilot steps beyond APIs into desktop apps
 
-<a href="{{ '/stories/2026-10-03/one-agent-skills-package-many-copilot-workflows/' | relative_url }}" data-item-id="dab-story-2026-10-03-m07" data-edition-date="2026-10-03" data-action="permanent_page_clicks">Open the permanent story page</a>
+**Focus: Technical AI Engineering**  
+**Date:** 2026-10-01  
+**Source article:** about 2 min read
 
-**Evidence:** Publisher Authored  
-**Availability:** Available
+[Open the permanent story page]({{ '/stories/2026-10-04/copilot-steps-beyond-apis-into-desktop-apps/' | relative_url }})
 
-![Textbook mechanism diagram showing one versioned Agent Skill package containing instructions, references, and scripts, installed once and reused across four Copilot workflow lanes with a centralized maintenance loop.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m07-attempt-2.png?v=oct3-m07-3557eea83d78)
+![Textbook mechanism diagram for Desktop computer use: Visual and accessibility context feed a controlled desktop-action rail across abstract app boundaries.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m04.png?v=05cae8a2dd3d)
 
-**Summary:** Microsoft’s WIQD tooling can import an Agent Plugins package and help a developer inspect, validate, package and share its skills, MCP connections and agents for Microsoft Copilot workflows. The tooling is in public preview and centers on reusing one maintained package across multiple destinations.
+**Summary:** GitHub Copilot computer use is in public preview in CLI and desktop app. it can read visual/accessibility context and operate desktop controls across applications.
 
-**Why it matters:** A portable skills package turns agent behavior into a reviewable asset instead of a collection of copied prompts. Teams can version the instructions and tool bindings once, validate them and reuse the package while keeping local workflow integration explicit.
+**Why it matters:** For engineering teams, the key shift is from trusting a model response to designing the surrounding system so state, permissions, actions, and verification are explicit and inspectable.
 
-<!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Generative AI Professional Prompt Engineering Guide</h3><p class="chapter">Chapter 1, p. 35 — The Core Components of a Prompt</p><p>Make each reusable skill explicit about task, context, constraints and examples so behavior remains legible across workflows.</p><p><a class="book-cta" href="https://leanpub.com/genaipromptingguide" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
+**Source:** [GitHub Copilot can now interact with desktop apps with computer use](https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps)
 
-**Source:** <a href="https://devblogs.microsoft.com/microsoft365dev/bring-your-plugin-to-microsoft-copilot-with-wiqd/" data-item-id="dab-story-2026-10-03-m07" data-edition-date="2026-10-03" data-action="source_clicks">Bring your plugin to Microsoft Copilot with Work IQ Developer Tools</a>
+## 3. Gemini puts study workflows in one hub
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-03" data-feedback-story-id="dab-story-2026-10-03-m07">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
+**Focus: Applied Generative AI for Knowledge Workers**  
+**Date:** 2026-10-01  
+**Source article:** about 2 min read
 
-<span id="reading-dab-story-2026-10-03-m08"></span>
+[Open the permanent story page]({{ '/stories/2026-10-04/gemini-puts-study-workflows-in-one-hub/' | relative_url }})
 
-## 2. California tests the legal boundary for rogue agents
+![Textbook mechanism diagram for Study workflow hub: Study materials flow into a central hub and branch to flashcards and practice quizzes.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m06.png?v=d91ed6e4d8ed)
 
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 3 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
-<!-- reader-release:end -->
+**Summary:** Gemini student hub centralizes study notebooks, flashcards and practice quizzes. Workspace administrators control access through existing Generative AI settings.
 
-**Focus: Agents for Everyone**
+**Why it matters:** For knowledge workers, the practical value comes from turning isolated prompting into a repeatable workflow that keeps context, source material, and outputs connected to the work.
 
-**Date:** October 1, 2026
+**Source:** [Find your learning tools all in one place with the student hub in Gemini](https://workspaceupdates.googleblog.com/2026/10/find-your-learning-tools-all-in-one-place-with-the-student-hub-in-Gemini.html)
 
-**Topics:** agents non technical people
+## 4. Workspace turns prompts into images, mini-apps and cross-app work
 
-<span class="story-data" data-story-id="dab-story-2026-10-03-m08" data-story-url="/stories/2026-10-03/california-tests-the-legal-boundary-for-rogue-agents/" hidden></span>
+**Focus: Applied Generative AI for Knowledge Workers**  
+**Date:** 2026-10-01  
+**Source article:** about 5 min read
 
-<a href="{{ '/stories/2026-10-03/california-tests-the-legal-boundary-for-rogue-agents/' | relative_url }}" data-item-id="dab-story-2026-10-03-m08" data-edition-date="2026-10-03" data-action="permanent_page_clicks">Open the permanent story page</a>
+[Open the permanent story page]({{ '/stories/2026-10-04/workspace-turns-prompts-into-images-mini-apps-and-cross-app-work/' | relative_url }})
 
-**Evidence:** Publisher Authored  
-**Availability:** Available
+![Textbook mechanism diagram for Synchronized cross-app work: Image editing, Sheets canvas and cross-app work connect to one shared source-data backbone.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m07.png?v=0305fe28dc18)
 
-![Textbook forensic accountability diagram tracing a delegated task through an agent action log into a protected system, then through evidence preservation and legal review to deployer, operator, and provider accountability.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m08-attempt-2.png?v=oct3-m08-3e4b16b1d0fd)
+**Summary:** Google Workspace added AI image editing, Sheets canvas mini-apps and cross-app AI assistance. Sheets canvas stays synchronized with source spreadsheet data.
 
-**Summary:** California Attorney General Rob Bonta announced an investigative subpoena to OpenAI as part of an inquiry into cybersecurity incidents and risks involving AI agents. The action tests what records, safeguards and organizational responsibilities regulators may expect when an agent’s behavior causes or contributes to harm.
+**Why it matters:** For knowledge workers, the practical value comes from turning isolated prompting into a repeatable workflow that keeps context, source material, and outputs connected to the work.
 
-**Why it matters:** Agent autonomy is becoming an evidence problem as well as a product problem. Organizations need durable logs, bounded credentials, human approval points and incident reconstruction before a regulator or customer asks what happened.
+**Source:** [Product Announcements Workspace Drops: Pro-level AI image creation and editing, new ways to make your data interactive, and more AI help across your apps By The Google Workspace Team • 3-minute read](https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop)
 
-<!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 4 — Failure-Mode Playbooks</p><p>Define observable failures, stop conditions, retained evidence and human escalation before an agent incident becomes unreconstructable.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
+## 5. NVIDIA gives agents a verified DOCA skill set
 
-**Source:** <a href="https://www.oag.ca.gov/news/press-releases/part-ongoing-investigation-attorney-general-bonta-serves-investigative-subpoena" data-item-id="dab-story-2026-10-03-m08" data-edition-date="2026-10-03" data-action="source_clicks">Attorney General Bonta serves investigative subpoena on OpenAI over AI cybersecurity incidents</a>
+**Focus: Agents for Everyone**  
+**Date:** 2026-10-01  
+**Source article:** about 11 min read
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-03" data-feedback-story-id="dab-story-2026-10-03-m08">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
+[Open the permanent story page]({{ '/stories/2026-10-04/nvidia-gives-agents-a-verified-doca-skill-set/' | relative_url }})
 
-<span id="reading-dab-story-2026-10-03-m04"></span>
+![Textbook mechanism diagram for Verified DOCA Agent Skills: A sealed skill package passes through API, hardware and build checks before execution.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m01.png?v=24659b69ce84)
 
-## 3. Anthropic turns enterprise AI delivery into a profession
+**Summary:** DOCA Agent Skills provide verified API, hardware and build constraints. NVIDIA reports a 65-prompt evaluation with stronger checklist completion and fewer handwritten-code/hardware-command steps when skills are used.
 
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 6 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 02 Oct 2026</p></aside>
-<!-- reader-release:end -->
+**Why it matters:** For nontechnical users, useful agents need reusable operating knowledge, bounded access, and a clear human review path when the system reaches uncertainty or a consequential action.
 
-**Focus: Applied Generative AI for Knowledge Workers**
+**Source:** [Build Applications on NVIDIA BlueField Faster with NVIDIA DOCA Agent Skills](https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/)
 
-**Date:** October 2, 2026
+## 6. Ambient agents wake up on events — and know when to ask a human
 
-**Topics:** applied genai knowledge workers
+**Focus: Agents for Everyone**  
+**Date:** 2026-10-01  
+**Source article:** about 33 min read
 
-<span class="story-data" data-story-id="dab-story-2026-10-03-m04" data-story-url="/stories/2026-10-03/anthropic-turns-enterprise-ai-delivery-into-a-profession/" hidden></span>
+[Open the permanent story page]({{ '/stories/2026-10-04/ambient-agents-wake-up-on-events-and-know-when-to-ask-a-human/' | relative_url }})
 
-<a href="{{ '/stories/2026-10-03/anthropic-turns-enterprise-ai-delivery-into-a-profession/' | relative_url }}" data-item-id="dab-story-2026-10-03-m04" data-edition-date="2026-10-03" data-action="permanent_page_clicks">Open the permanent story page</a>
+![Textbook mechanism diagram for Event-driven ambient agents: An event bus starts a trackable job that branches to bounded action or an ask-human path.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-04/dab-edition-2026-10-04-m09.png?v=535cff947344)
 
-**Evidence:** Publisher Authored  
-**Availability:** Available
+**Summary:** ambient agents react to events rather than waiting for a chat prompt. the reference architecture includes a human-in-the-loop ask_human path and trackable jobs.
 
-![Textbook delivery blueprint showing business goal, model capability, risk, evaluation, and change management converging through delivery practice toward a governed launch gate associated with Frontier Academy.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m04-attempt-1.png?v=oct3-m04-f5303e8ffead)
+**Why it matters:** For nontechnical users, useful agents need reusable operating knowledge, bounded access, and a clear human review path when the system reaches uncertainty or a consequential action.
 
-**Summary:** Anthropic announced Claude Frontier Academy, a training and deployment program centered on Frontier Deployed Engineers. The company says it is committing $100 million and aims to prepare 10,000 such engineers by the end of 2027 through a multi-day simulation followed by a 12-week residency.
-
-**Why it matters:** Enterprise AI value often fails at the handoff between a capable model and a messy operating environment. Treating deployment as a professional discipline—part product discovery, integration, evaluation and change management—may be as important as another benchmark gain.
-
-<!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Generative AI Prompt Engineering Learning Ecosystem</h3><p class="chapter">Introduction, sample PDF p. 4 — Introduction</p><p>Build practice, feedback and peer support around deployed AI work so professional expertise grows through real projects.</p><p><a class="book-cta" href="https://leanpub.com/GenAILearn" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
-
-**Source:** <a href="https://www.anthropic.com/news/claude-frontier-academy" data-item-id="dab-story-2026-10-03-m04" data-edition-date="2026-10-03" data-action="source_clicks">Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-03" data-feedback-story-id="dab-story-2026-10-03-m04">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-<span id="reading-dab-story-2026-10-03-m05"></span>
-
-## 4. Customer service prepares for agents on both sides
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 5 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
-<!-- reader-release:end -->
-
-**Focus: Applied Generative AI for Knowledge Workers**
-
-**Date:** October 1, 2026
-
-**Topics:** applied genai knowledge workers
-
-<span class="story-data" data-story-id="dab-story-2026-10-03-m05" data-story-url="/stories/2026-10-03/customer-service-prepares-for-agents-on-both-sides/" hidden></span>
-
-<a href="{{ '/stories/2026-10-03/customer-service-prepares-for-agents-on-both-sides/' | relative_url }}" data-item-id="dab-story-2026-10-03-m05" data-edition-date="2026-10-03" data-action="permanent_page_clicks">Open the permanent story page</a>
-
-**Evidence:** Publisher Authored  
-**Availability:** Available
-
-![Textbook mechanism diagram showing a customer software agent and an enterprise software agent meeting at a Personal Agent Gateway that verifies identity, consent, and policy before returning a traceable resolution and audit trail.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m05-attempt-3.png?v=oct3-m05-54d5e81239ef)
-
-**Summary:** At Dialogues 2026, Decagon introduced Voice3, Agent Modules, Duet Apprentice and a Personal Agent Gateway intended to recognize customer-side personal agents and establish a permissioned communication channel with a company’s service agent. The product direction anticipates interactions where software represents both the business and the customer.
-
-**Why it matters:** Agent-to-agent service could remove repetitive authentication, form filling and status checks, but it also moves trust decisions into protocols: who may act, what may be disclosed, which action requires confirmation and how a human takes control.
-
-<!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>Define when either service agent should proceed, ask for confirmation or defer to a person.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
-
-**Source:** <a href="https://decagon.ai/blog/dialogues-2026" data-item-id="dab-story-2026-10-03-m05" data-edition-date="2026-10-03" data-action="source_clicks">The AI concierge for every customer (and their agent)</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-03" data-feedback-story-id="dab-story-2026-10-03-m05">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-<span id="reading-dab-story-2026-10-03-m01"></span>
-
-## 5. Voice agents get a 100-millisecond head start
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 5 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
-<!-- reader-release:end -->
-
-**Focus: Technical AI Engineering**
-
-**Date:** October 1, 2026
-
-**Topics:** technical ai engineering
-
-<span class="story-data" data-story-id="dab-story-2026-10-03-m01" data-story-url="/stories/2026-10-03/voice-agents-get-a-100-millisecond-head-start/" hidden></span>
-
-<a href="{{ '/stories/2026-10-03/voice-agents-get-a-100-millisecond-head-start/' | relative_url }}" data-item-id="dab-story-2026-10-03-m01" data-edition-date="2026-10-03" data-action="permanent_page_clicks">Open the permanent story page</a>
-
-**Evidence:** Publisher Authored  
-**Availability:** Available
-
-![Textbook mechanism diagram showing live audio entering MAI-Transcribe-2-Streaming, progressive partial transcript tokens, a 100 ms latency clock, and a return loop from a voice agent response.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m01-repair-epoch-1-attempt-1.png?v=oct3-m01-8077ced2c944)
-
-**Summary:** Microsoft introduced MAI-Voice-2.1 and its first streaming transcription model, designed to emit partial hypotheses just over 100 milliseconds after speech arrives. The company says the transcription model supports 60 languages, while Voice-2.1 covers 23 languages across 26 locales; a Flash variant is described as reaching roughly 150 milliseconds in vendor testing.
-
-**Why it matters:** In a spoken interface, the useful breakthrough is not merely accurate transcription but early, stable partial text. That gives an agent time to retrieve context, plan a response and interrupt naturally before a full utterance has finished.
-
-<!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the verification gate to test latency, transcript stability and end-to-end conversational response under real operating conditions.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
-
-**Source:** <a href="https://microsoft.ai/news/our-first-streaming-transcription-model/" data-item-id="dab-story-2026-10-03-m01" data-edition-date="2026-10-03" data-action="source_clicks">Our first streaming transcription model</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-03" data-feedback-story-id="dab-story-2026-10-03-m01">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-<span id="reading-dab-story-2026-10-03-m02"></span>
-
-## 6. Federated learning gets a public privacy proof
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Reading time uses verified publisher metadata when available; otherwise it is estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable reading-time estimate has not been verified.">Source article · about 7 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 02 Oct 2026</p></aside>
-<!-- reader-release:end -->
-
-**Focus: Technical AI Engineering**
-
-**Date:** October 2, 2026
-
-**Topics:** technical ai engineering
-
-<span class="story-data" data-story-id="dab-story-2026-10-03-m02" data-story-url="/stories/2026-10-03/federated-learning-gets-a-public-privacy-proof/" hidden></span>
-
-<a href="{{ '/stories/2026-10-03/federated-learning-gets-a-public-privacy-proof/' | relative_url }}" data-item-id="dab-story-2026-10-03-m02" data-edition-date="2026-10-03" data-action="permanent_page_clicks">Open the permanent story page</a>
-
-**Evidence:** Publisher Authored  
-**Availability:** Available
-
-![Textbook mechanism diagram showing separate local-data silos sending encrypted updates into a TEE-secured aggregation chamber with remote attestation and approved code, returning only a privacy-preserving global model.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-03/dab-edition-2026-10-03-m02-attempt-3.png?v=oct3-m02-1b674a86a07c)
-
-**Summary:** Google Research described a federated-learning design that couples trusted execution environments with a public transparency log. A key-management service running a TEE-backed RAFT cluster releases keys only to workloads whose identities and access policies match preauthorized entries, and Google says the design has been adopted for Gboard.
-
-**Why it matters:** Federated learning usually asks outsiders to trust claims about which code handled private updates. A public policy log and hardware-attested execution make those claims more inspectable, shifting privacy from a promise toward evidence that can be independently checked.
-
-<!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 5 — Data Privacy and Compliance in Context Engineering</p><p>Map every context boundary to distinguish cryptographic guarantees, hardware trust and organizational controls in the federated-learning design.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
-
-**Source:** <a href="https://research.google/blog/toward-provably-private-learning-from-federated-data/" data-item-id="dab-story-2026-10-03-m02" data-edition-date="2026-10-03" data-action="source_clicks">Toward provably private learning from federated data</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-03" data-feedback-story-id="dab-story-2026-10-03-m02">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
+**Source:** [Building ambient agents with Amazon Bedrock AgentCore: From event-driven signals to human-in-the-loop workflows](https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/)
 
 ## Worth Watching
 
-<span id="general"></span>
+### 7. General — Meet the GitHub Copilot app: Your new AI desktop assistant
+**Duration:** 7:42  
+[Open permanent video page]({{ '/videos/2026-10-04/general/' | relative_url }})
 
-## 7. General
+### 8. Agents for Everyone — The My work tab: your mission control in the GitHub Copilot app
+**Duration:** 5:24  
+[Open permanent video page]({{ '/videos/2026-10-04/agent-skills/' | relative_url }})
 
-### Introducing MAI-Transcribe-2-Streaming, MAI-Voice-2.1 and MAI-Voice-2.1-Flash
+## Worth Listening
 
-<a href="{{ '/videos/2026-10-03/general/' | relative_url }}" data-item-id="dab-video-2026-10-03-general" data-edition-date="2026-10-03" data-action="permanent_page_clicks">Open the permanent video page</a>  
-**Channel:** Microsoft AI  
-**Date:** October 2, 2026  
-**Duration:** 3:00  
-**Format:** Video
+### 9. Hard Fork — October 2, 2026 episode
+**Duration:** 53:02  
+[Open permanent podcast page]({{ '/podcasts/2026-10-04/hard-fork-2026-10-02-ai-agents/' | relative_url }})
 
-**Summary:** First-party visual summary of the streaming transcription and voice models behind the selected low-latency voice-agent story.
+### 10. The a16z Show — October 2, 2026 episode
+**Duration:** 59:48  
+[Open permanent podcast page]({{ '/podcasts/2026-10-04/a16z-2026-10-02-ai-agents-incumbents/' | relative_url }})
 
-**Why it matters:** The short visual makes the interaction between streaming transcription and speech generation concrete. For practitioners, it shows where latency is gained before an agent has a complete utterance, helping translate the article’s timing claims into interface-design decisions.
+## Emerging AI Watchlist
 
+**0 new today · 3 updated · 17 carried forward.**
 
+**Changed today:** AI harness engineering becomes a first-class layer; Agent safeguards tailored to the task; Agentic workloads move toward measured edge inference
 
-**Source:** <a href="https://www.youtube.com/shorts/UJeR--ao1MA" data-item-id="dab-video-2026-10-03-general" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-03" data-feedback-story-id="dab-video-2026-10-03-general">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-<span id="agents-for-non-technical-people"></span>
-
-## 8. Agents for Everyone
-
-### Flight Intelligence: The Power of Work IQ | Discover how Work IQ is your business's secret sauce
-
-<a href="{{ '/videos/2026-10-03/agent-skills/' | relative_url }}" data-item-id="dab-video-2026-10-03-agent-skills" data-edition-date="2026-10-03" data-action="permanent_page_clicks">Open the permanent video page</a>  
-**Channel:** Microsoft Developer  
-**Date:** October 3, 2026  
-**Duration:** 14:34 · Longer selection today: no suitable video of 10 minutes or less was found.  
-**Format:** Video
-
-**Summary:** Developer demonstration of Work IQ context and workflow grounding, directly supporting the selected reusable Agent Skills packaging story.
-
-**Why it matters:** Seeing Work IQ grounding in a live developer workflow makes the reusable-skills story more concrete: the value is not just packaging instructions once, but connecting those instructions to business context and tools without copying logic into every workflow.
-
-
-
-**Source:** <a href="https://www.youtube.com/watch?v=VpSCu7s4wD4" data-item-id="dab-video-2026-10-03-agent-skills" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-03" data-feedback-story-id="dab-video-2026-10-03-agent-skills">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-## Worth Listening — Podcasts
-
-### 9. Dots get up in Muse’s business
-
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-10-03-1" data-podcast-title="Dots get up in Muse’s business" data-podcast-url="/podcasts/2026-10-03/run7-1/" hidden></span>
-
-<a href="{{ '/podcasts/2026-10-03/run7-1/' | relative_url }}" data-item-id="dab-podcast-2026-10-03-1" data-edition-date="2026-10-03" data-action="permanent_page_clicks">Open the permanent podcast page</a>
-
-**Show:** The Vergecast  
-**Host / guest:** The Vergecast team  
-**Focus:** Agents for Everyone  
-**Date:** October 2, 2026  
-**Duration:** 1:28:30  
-**Topics:** business agents, trust and agentic assistants
-
-**Summary:** Independent technology-news discussion of business agents, trust and the current agentic-assistant market.
-
-**Why it matters:** The episode provides an independent, conversational check on the Brief’s agent stories, especially the tension between convenience and trust when assistants begin acting for users or businesses.
-
-**Connection to the brief:** Use it alongside the customer-service and reusable-skills articles to compare product announcements with broader questions about agent identity, delegation and user trust.
-
-
-
-**Coverage:** Locked October 3 Run 7 media selection.
-
-
-**Listen / watch:** <a href="https://www.theverge.com/podcast/1004059/openai-dots-kindle-homepad-cybercab-vergecast" data-item-id="dab-podcast-2026-10-03-1" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">The Vergecast</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-03" data-feedback-story-id="dab-podcast-2026-10-03-1">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-### 10. An Argument Against AI Doom
-
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-10-03-2" data-podcast-title="An Argument Against AI Doom" data-podcast-url="/podcasts/2026-10-03/run7-2/" hidden></span>
-
-<a href="{{ '/podcasts/2026-10-03/run7-2/' | relative_url }}" data-item-id="dab-podcast-2026-10-03-2" data-edition-date="2026-10-03" data-action="permanent_page_clicks">Open the permanent podcast page</a>
-
-**Show:** Galaxy Brain  
-**Host / guest:** Charlie Warzel  
-**Focus:** Technical AI Engineering  
-**Date:** October 2, 2026  
-**Duration:** 56:16  
-**Topics:** agent accountability, cybersecurity and AI policy
-
-**Summary:** Independent policy and cybersecurity conversation on rogue-agent incidents, monitoring and corporate accountability, directly supporting the California accountability story.
-
-**Why it matters:** The conversation adds a policy lens to the technical controls in the California story: monitoring, evidence retention and corporate accountability matter because agent failures can become governance and legal questions, not just engineering bugs.
-
-**Connection to the brief:** It complements the California accountability article by moving from the specific investigation to the wider debate over how organizations should monitor, explain and govern agent behavior.
-
-
-
-**Coverage:** Locked October 3 Run 7 media selection.
-
-
-**Listen / watch:** <a href="https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/" data-item-id="dab-podcast-2026-10-03-2" data-edition-date="2026-10-03" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Galaxy Brain</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-03" data-feedback-story-id="dab-podcast-2026-10-03-2">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-<!-- reader-release:start -->
-
-
-<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><div class="watchlist-daily-summary" aria-label="Changed today:"><p class="watchlist-daily-counts" aria-label="2 New today · 1 Updated today · 17 Carried forward · 0 Archived / dropped recently"><strong>2 new today · 1 updated · 17 carried forward.</strong></p><p><strong>New today:</strong> </p><ul class="watchlist-daily-items"><li>Full-duplex human interaction models</li><li>Open agent hardware moves from demos to kits</li></ul><p><strong>Updated today:</strong> </p><ul class="watchlist-daily-items"><li>Decision models emerge as a separate AI systems layer</li></ul><p><strong>Carried forward:</strong> 17</p><p><strong>Archived / dropped recently:</strong> None</p></div><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
-
-
-<!-- reader-release:end -->
+[Explore the watchlist and vote →]({{ '/watchlist/' | relative_url }})
 
 ## Editorial takeaway
 
-Today’s strongest pattern is accountable operationalization: fast voice loops, verifiable privacy, professional deployment, two-sided service agents, reusable skills and legal traceability all depend on explicit boundaries and evidence.
+Today’s strongest pattern is operational control: agents and AI-assisted work are becoming more useful when verification, reusable domain knowledge, governed computer actions, connected work artifacts, and explicit human escalation are designed into the workflow.
 
-<!-- reader-release:start -->
-<aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning with books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Purchasing a book supports continued development of the series and the Daily Generative AI Brief.</p></aside>
-<!-- reader-release:end -->
+[← Back to Home]({{ '/' | relative_url }})
 
 <section class="subscription-card subscription-guidance" id="subscribe" aria-labelledby="subscribe-title">
 <h2 id="subscribe-title">Keep up with the Brief</h2>
@@ -412,4 +158,3 @@ Today’s strongest pattern is accountable operationalization: fast voice loops,
 <label for="rss-home-address" class="rss-address-label">Daily-edition feed address</label><input id="rss-home-address" class="rss-address" readonly value="https://gttome.github.io/Daily-AI-Brief/daily-feed.xml"><p><button type="button" class="rss-copy" hidden>Copy daily-edition feed address</button></p><p class="rss-copy-status" role="status"></p>
 <div class="subscription-check"><h3>How do I know it worked?</h3><p>The Brief appears in your reader’s subscriptions, and an available edition opens successfully. If the list is empty, refresh your reader and check the address.</p><p>Your reader controls how often it checks for editions and whether it sends notifications. The Brief cannot confirm that you added the feed.</p></div>
 <h3>If you see technical-looking text</h3><p>You opened the feed itself. Copy its address into your feed reader to see the editions as a reading list.</p><h3>Stop following</h3><p>Remove the Brief from your reader’s subscriptions. No email address or account on this site is required.</p></div></section>
-

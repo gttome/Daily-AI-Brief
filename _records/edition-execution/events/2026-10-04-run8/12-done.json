@@ -1,0 +1,39 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "execution_key": "2026-10-04-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "12",
+  "candidate_id": "m04",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-04T08:35:01.970Z",
+  "writer_generation": 31,
+  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261004-run8:task-12:generation-31:888f5ecd",
+  "reason_code": "IMAGE_ACCEPTED_LOCKED",
+  "operation": "Generate the sealed m04 desktop-action visual, persist the approved PNG representation, verify Git content identity, review saved bytes and lock acceptance.",
+  "proof": {
+    "request_key": "888f5ecd4e752f516e5837c0b3b61d9a66f5ac994b5256844fc0b2b393627161",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261004-run8/12-888f5ecd4e752f516e5837c0b3b61d9a66f5ac994b5256844fc0b2b393627161.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-04-run8/m04.json",
+    "saved_git_review": "_records/image-reviews/2026-10-04-run8/m04-attempt-1-saved-git-review.json",
+    "final_sha256": "05cae8a2dd3dd79dd4d983a320bfa63aedcbd17c8492bd972dac4150b8a35103",
+    "final_git_blob_sha": "69e9a16b8372db0acc76576e3c779987257b2e4c",
+    "saved_git_commit": "a1c8aa8af37db40d8faec73d2a58dfa73752dc25"
+  },
+  "completed_tasks_preserved": [
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11"
+  ],
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

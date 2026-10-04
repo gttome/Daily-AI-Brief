@@ -1,0 +1,22 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "execution_key": "2026-10-04-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "operation": "native-image-context-recovery-reconciliation",
+  "writer_generation": 18,
+  "at": "2026-10-04T04:43:26.189Z",
+  "from": "Active",
+  "to": "Blocked",
+  "reason": "Task 11 is recoverably blocked by repeated execution-context contamination. The expired Slot A writer was released; same-context image retries are prohibited and the protected engineering-repair/fresh-single-story path is required.",
+  "proof": {
+    "request_key": "46f01a3962c8c3386e7f6475e137168cc0f18f35bc06a3244bec7f18d736e21a",
+    "recovery_record": "_records/image-attempts/2026-10-04-run8/m02-context-recovery-20261004T044326189Z.json",
+    "blocker_evidence": "_records/image-recovery/2026-10-04-run8/m02-watchdog-A-context-contamination.json",
+    "safe_boundary_handoff": "_records/image-recovery/2026-10-04-run8/m02-watchdog-A-safe-boundary-handoff.json",
+    "external_blocker": false
+  },
+  "targeted_next_action": "Execute the protected engineering repair and then one fresh isolated single-story post-repair image attempt; do not regenerate in a mixed Watchdog context."
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "RECOVERY_VERIFIED_PROGRESSING",
+  "repair_key": "repair-881f0a7d06f891a811d427efe23704af8c25efe2",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "production_branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "11",
+  "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
+  "repair_branch": "repair/run8-task11-supervisor-loop-heredocs",
+  "repair_branch_head_sha": "782c488b81bbf54d6e5652cb4e4af895b5ed4e6f",
+  "repair_scope_digest": "sha256:4c413069aa6df67ea02cdebb14045d55d73eee1aa0026125d91f35567b10062f",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-04T08:09:34.269Z",
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+  "diagnosis": "After the acquisition heredoc was repaired, the Supervisor reached the persistent loop and failed on two additional indented Node heredocs used to resolve the protected repair record and PR. Workflow runs 37187844346 and 37187877367 completed with failure before same-task progress.",
+  "next_stage": "Historical protected repair reconciled after durable Task 11 completion. Current first incomplete task is 23; do not select or replay this repair.",
+  "last_recovery_stage": {
+    "state": "RECOVERY_VERIFIED_PROGRESSING",
+    "repair_head": "782c488b81bbf54d6e5652cb4e4af895b5ed4e6f",
+    "same_execution_revalidated": true,
+    "same_task_revalidated": "11",
+    "failed_supervisor_run_ids": [
+      37187844346,
+      37187877367
+    ],
+    "dead_writer_generation": 27,
+    "dead_writer_run_id": 37187877367,
+    "dead_writer_conclusion": "failure",
+    "protected_executor_run_observed": false,
+    "pr_number": 439,
+    "ci_run_id": 37188037671,
+    "ci_conclusion": "success",
+    "mergeable_observed": true,
+    "same_task_completed": "11",
+    "first_incomplete_task_after": "23",
+    "repair_key_preserved": true,
+    "scope_digest_preserved": true
+  },
+  "resolved_at": "2026-10-04T14:44:00.000Z",
+  "resolution_reason": "TARGET_TASK_ALREADY_DONE_AND_EXECUTION_ADVANCED"
+}

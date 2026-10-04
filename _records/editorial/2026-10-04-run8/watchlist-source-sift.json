@@ -1,0 +1,8 @@
+{
+  "candidate_id": "w-sift",
+  "source_url": "https://arxiv.org/abs/2609.19526",
+  "publication_date": "2026-09-17",
+  "checked_at": "2026-10-04T03:38:35.000Z",
+  "disposition": "hold_for_research",
+  "reason": "Original development predates the active 14-day missed-signal window."
+}

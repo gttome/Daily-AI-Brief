@@ -1,0 +1,21 @@
+{
+  "schema_version": "run-writer-lease-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "owner_id": "chatgpt-normal-chat:strategy-interrupt:task-23:final-ci",
+  "generation": 72,
+  "task_id": "23",
+  "capability": "protected_ci",
+  "operation_key": "task23-post-pr449-exact-head-ci-g72",
+  "acquired_at": "2026-10-04T16:28:32.000Z",
+  "last_heartbeat_at": "2026-10-04T16:28:32.000Z",
+  "expires_at": "2026-10-04T16:43:32.000Z",
+  "state": "ACTIVE",
+  "released": false,
+  "transfer_from": {
+    "owner_id": "chatgpt-normal-chat:strategy-interrupt:task-23:retry",
+    "generation": 71,
+    "reason": "EXPIRED_WRITER_LEASE",
+    "prior_expires_at": "2026-10-04T16:23:21.000Z",
+    "at": "2026-10-04T16:28:32.000Z"
+  }
+}

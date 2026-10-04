@@ -1,0 +1,50 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "46f01a3962c8c3386e7f6475e137168cc0f18f35bc06a3244bec7f18d736e21a",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "11",
+  "capability": "native_chatgpt",
+  "instruction": "Generate from the sealed story specification with the proven professional native-image path; capture exact PNG bytes immediately; persist via an approved small-PNG route; verify read-back identity; review the saved Git asset; accept_locked or reject only this image.",
+  "writer_generation": 17,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-04T03:51:14.288Z",
+  "writer_generation_is_provenance": true,
+  "authority_refresh_required_at_invocation": true,
+  "status": "queued_for_scheduled_consumer",
+  "dispatch": {
+    "schema_version": "scheduled-image-dispatch-v3",
+    "status": "QUEUED_FOR_SCHEDULED_CONSUMER",
+    "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
+    "consumer_kind": "chatgpt_watchdog_ring",
+    "consumer_pool_ids": [
+      "6ac15929a81c8191956080955da7eaad",
+      "6ac15934c8c88191a33c94b91941d60d",
+      "6ac1594249d081918df3145cca65dd91",
+      "6ac1594e974881919639e0c40a2d9da8",
+      "6ac1595c12fc8191b9a25b42d465692d",
+      "6abeb9a2b8a88191949dc420d5e10feb"
+    ],
+    "eligible_slots": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "all_slots_equivalent": true,
+    "nominal_pickup_minutes": 10,
+    "consumer_id": null,
+    "execution_id": "reliable-edition-20261004-run8",
+    "task_id": "11",
+    "generation_started": false,
+    "accepted_locked": false,
+    "writer_generation_is_provenance": true,
+    "authority_refresh_required_at_invocation": true,
+    "next_action": "Next eligible admitted scheduled consumer refreshes current fenced authority at invocation and consumes this exact request; overlapping consumers yield to the current task writer."
+  }
+}

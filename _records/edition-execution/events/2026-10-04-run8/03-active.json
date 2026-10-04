@@ -1,0 +1,13 @@
+{
+  "task_id": "03",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-04T02:22:10.000Z",
+  "reason": "Watchdog B resumed the unresolved Task 03 incident under current fenced authority and consumed the exact queued discovery request through the existing deterministic GitHub discovery path.",
+  "proof": {
+    "request_key": "dffc6b82e4ad726a1aa6d6a1ff62bf5cda68d7ba3d841ae31143731e87dd8631",
+    "writer_generation": 10,
+    "watchdog_incident_id": "wd-73cec405a0bae31734051e1ed785acf6",
+    "discovery_workflow_run_id": 37170719957
+  }
+}

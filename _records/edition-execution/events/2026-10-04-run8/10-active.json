@@ -1,0 +1,8 @@
+{
+  "task_id": "10",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-04T03:47:00.000Z",
+  "reason": "Begin sealing six story-specific professional image specifications from the locked Run 8 story set.",
+  "proof": {"story_selection":"_records/editorial/2026-10-04-run8/story-selection.json","writer_generation":16}
+}

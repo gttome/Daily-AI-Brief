@@ -1,0 +1,19 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-04-m04"
+  ],
+  "candidate_id": "m04",
+  "task_id": "12",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-04T03:49:00.000Z",
+  "allowed_text": [
+    "Visual context",
+    "Accessibility context",
+    "Approval",
+    "Desktop action",
+    "Application boundary",
+    "Audit"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: desktop computer use beyond APIs. Composition: visual context and accessibility context enter a central interpretation layer, pass through a clear approval checkpoint, then continue along a controlled desktop-action rail crossing several abstract application boundaries with a parallel audit trail. Use distinct layers and rich mechanism detail without imitating a real product interface. No people or humanoid figures, no decorative filler, no unsupported metrics, no overlapping text, no sparse/basic box-and-arrow fallback. Only these visible labels: Visual context, Accessibility context, Approval, Desktop action, Application boundary, Audit."
+}

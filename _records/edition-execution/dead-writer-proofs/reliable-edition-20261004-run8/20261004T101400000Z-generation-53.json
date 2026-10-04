@@ -1,0 +1,24 @@
+{
+  "schema_version": "dead-writer-proof-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "18",
+  "proved_at": "2026-10-04T10:14:00.000Z",
+  "workflow_run_id": 37193396610,
+  "workflow_job_id": 111413696272,
+  "owner_id": "github-actions-37193396610-2",
+  "conclusion": "failure",
+  "completed_at": "2026-10-04T10:13:28Z",
+  "old_generation": 53,
+  "replacement_generation": 54,
+  "child_or_subworker_live": false,
+  "repository_consumer_started": false,
+  "last_substantive_write": {
+    "commit": "0a1c6555b3f519611ad02ab8dc937dfa22ac848d",
+    "at": "2026-10-04T10:12:22Z",
+    "kind": "task18_recovery_request_queue_and_supervisor_bookkeeping",
+    "substantive_progress": false
+  },
+  "substantive_write_after_terminal": false,
+  "reason": "Run Supervisor attempt 2 reconstructed a fresh Task 18 repository request but no repository consumer exists for Task 18 and no worker result was produced. The workflow completed failure after the persistent supervision loop; no child/subworker for Task 18 was live."
+}

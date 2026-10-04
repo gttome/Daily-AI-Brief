@@ -1,0 +1,23 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "eab6c1749bdd9dec9fcadc21ffef5080d6510686777730dbbbc4949999ca46b1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "19",
+  "request_writer_generation": 57,
+  "authority_generation": 58,
+  "status": "passed",
+  "completed_at": "2026-10-04T11:09:12.845Z",
+  "seal": {
+    "receipt": "_records/editorial/2026-10-04-run8/task19-bundle-seal.json",
+    "shard_count": 4,
+    "accepted_locked_images": 6,
+    "exact_artifact_digests": true
+  },
+  "preserved": {
+    "completed_tasks": "00-18",
+    "accepted_locked_images": 6
+  },
+  "task_outcome": "Done"
+}

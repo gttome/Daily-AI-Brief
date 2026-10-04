@@ -1,0 +1,15 @@
+{
+  "state": "fault",
+  "fault_code": "repository_consumer_unclaimed",
+  "task_id": "08",
+  "request_key": "6380c67cd6da13f927255082cf7a3bdf2a2187dbc8151964e44f90e1166bacb8",
+  "execution_id": "reliable-edition-20261004-run8",
+  "request_status": "queued",
+  "queued_at": "2026-10-04T02:59:32.254Z",
+  "substantive_progress_at": null,
+  "observed_at": "2026-10-04T03:26:25.000Z",
+  "idle_seconds": 1612.746,
+  "max_idle_seconds": 60,
+  "supervisor_bookkeeping_is_progress": false,
+  "next_action": "The exact queued Task 08 request requires an authorized current-research repository consumer; preserve Tasks 00-07 and do not skip ahead."
+}

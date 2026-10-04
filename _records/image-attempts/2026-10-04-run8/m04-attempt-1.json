@@ -1,0 +1,58 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "12",
+  "candidate_id": "m04",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "request_key": "888f5ecd4e752f516e5837c0b3b61d9a66f5ac994b5256844fc0b2b393627161",
+  "writer_generation": 31,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-04T08:24:40.496Z",
+  "generated_at": "2026-10-04T08:35:01.970Z",
+  "native_capture": {
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1556151,
+    "sha256": "70f3658b40739cc7d97a1539e703f99388c2e29acddeb0dd67cc67dda1118828",
+    "persisted": false,
+    "reason": "Bounded same-visual professional PNG transport representation selected under the authoritative request because the native payload exceeded the connected Git blob transport envelope."
+  },
+  "normalization": {
+    "path": "briefs/images/2026-10-04/dab-edition-2026-10-04-m04.png",
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 321774,
+    "sha256": "05cae8a2dd3dd79dd4d983a320bfa63aedcbd17c8492bd972dac4150b8a35103",
+    "git_blob_sha": "69e9a16b8372db0acc76576e3c779987257b2e4c",
+    "normalized_at": "2026-10-04T08:35:01.970Z",
+    "method": "same-visual 256-color professional PNG transport representation",
+    "same_visual": true,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Visual context",
+      "Accessibility context",
+      "Approval",
+      "Desktop action",
+      "Application boundary",
+      "Audit"
+    ],
+    "extra_visible_text": [],
+    "pseudo_text_or_faux_document_lines": false,
+    "note": "Professional desktop-action control diagram shows visual and accessibility context entering an approval gate, an audited desktop-action rail crossing application boundaries, and a distinct audit record path."
+  },
+  "disposition": "ACCEPTED_LOCKED"
+}

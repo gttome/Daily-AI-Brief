@@ -1,0 +1,58 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "repair_epoch": 2,
+  "post_repair_attempt": 1,
+  "request_key": "fd28043122d9f47d251f01f4e0ffaa587a4103be22f40537e6d5a68b1774fc48",
+  "writer_generation": 29,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-04T08:14:29.506Z",
+  "generated_at": "2026-10-04T08:22:53.836Z",
+  "native_capture": {
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1675853,
+    "sha256": "49c0d4ab1abdd8bff28e0becda952df285de5627c2f8b4bbf4a0ad061da9fc88",
+    "persisted": false,
+    "reason": "Bounded same-visual professional PNG transport representation selected under the authoritative request because the native payload exceeded the connected Git blob transport envelope."
+  },
+  "normalization": {
+    "path": "briefs/images/2026-10-04/dab-edition-2026-10-04-m02.png",
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 384015,
+    "sha256": "4ba1ac627b51ba33bde8ee690f8f10427ebe089e5b1f4f2b78a91d45e73ad104",
+    "git_blob_sha": "47c1d8c3866fa26362a0de820196f3a06209f72b",
+    "normalized_at": "2026-10-04T08:22:53.836Z",
+    "method": "same-visual 256-color professional PNG transport representation",
+    "same_visual": true,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Agent claim",
+      "Database state",
+      "Side effects",
+      "Repeated run",
+      "Verification gate",
+      "Evidence ledger"
+    ],
+    "extra_visible_text": [],
+    "pseudo_text_or_faux_document_lines": false,
+    "note": "Forensic dual-plane evaluator shows claim and durable state/side-effect evidence converging at a verification gate, with repeated runs feeding the evidence ledger."
+  },
+  "disposition": "ACCEPTED_LOCKED"
+}

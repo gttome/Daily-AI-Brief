@@ -1,0 +1,24 @@
+{
+  "schema_version": "dead-writer-proof-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "22",
+  "proved_at": "2026-10-04T12:30:35.000Z",
+  "workflow_run_id": 37202193747,
+  "workflow_job_id": 111435999359,
+  "owner_id": "github-actions-37202193747-1",
+  "conclusion": "failure",
+  "completed_at": "2026-10-04T12:29:22Z",
+  "old_generation": 63,
+  "replacement_generation": 64,
+  "child_or_subworker_live": false,
+  "repository_consumer_started": false,
+  "last_substantive_write": {
+    "commit": "e091727598af472bf3fabc294b4802c5e9849c73",
+    "at": "2026-10-04T12:28:18Z",
+    "kind": "task22_request_queue_and_supervisor_bookkeeping",
+    "substantive_progress": false
+  },
+  "substantive_write_after_terminal": false,
+  "reason": "The exact owning Supervisor job completed with failure after queuing Task 22. No Task 22 worker result or transition exists, no child/subworker is live, and no substantive write occurred after the terminal workflow time."
+}

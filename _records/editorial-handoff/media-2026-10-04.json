@@ -1,0 +1,100 @@
+{
+  "schema_version": "run8-selected-media-v1",
+  "edition_id": "dab-edition-2026-10-04",
+  "research_cutoff": "2026-10-04T01:32:36.576Z",
+  "verified_at": "2026-10-04T02:42:20.000Z",
+  "worth_watching": {
+    "general": {
+      "status": "included",
+      "title": "Meet the GitHub Copilot app: Your new AI desktop assistant",
+      "channel": "GitHub",
+      "upload_date": "2026-07-21",
+      "runtime_seconds": 462,
+      "why_useful": "Official tour of the Copilot desktop agent surface relevant to the selected computer-use story.",
+      "connection": "Official tour of the Copilot desktop agent surface relevant to the selected computer-use story.",
+      "url": "https://www.youtube.com/watch?v=LsA4vIX_3UY",
+      "duration_tier": "short",
+      "verification_note": "GitHub's current enterprise resource roundup records a 7:42 runtime and identifies the official GitHub video.",
+      "official_source_verified": true,
+      "freshness_exception_reason": "Locked Task 06 evidence verified the official GitHub source and 7:42 runtime; bounded search found no equally relevant same-window official video with a verified runtime.",
+      "verification_evidence": "_records/editorial/2026-10-04-run8/videos.json"
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "The My work tab: your mission control in the GitHub Copilot app",
+      "channel": "GitHub",
+      "upload_date": null,
+      "runtime_seconds": 324,
+      "why_useful": "Shows work items launching agent sessions and complements the Brief's governed agent workflow coverage.",
+      "connection": "Shows work items launching agent sessions and complements the Brief's governed agent workflow coverage.",
+      "url": "https://www.youtube.com/watch?v=h9g4umRfgn0",
+      "duration_tier": "short",
+      "verification_note": "GitHub's current enterprise resource roundup records a 5:24 runtime and identifies the official GitHub video.",
+      "official_source_verified": true,
+      "date_unavailable_reason": "Locked Task 06 and media-preflight evidence verified the official GitHub source and 5:24 runtime; a reliable upload date was unavailable in the sealed evidence.",
+      "verification_evidence": "_records/editorial/2026-10-04-run8/videos.json"
+    }
+  },
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-10-04-1",
+      "title": "Hard Fork — October 2, 2026 episode",
+      "show": "Hard Fork",
+      "host": "The New York Times",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 3182,
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "agents",
+        "AI workflows"
+      ],
+      "url": "https://podcasts.apple.com/us/search?term=Hard%20Fork%20hard-fork-2026-10-02-ai-agents",
+      "summary": "Current discussion of personal assistants, agent incidents and privacy trade-offs.",
+      "why_useful": "Current discussion of personal assistants, agent incidents and privacy trade-offs.",
+      "selection_rationale": "Locked source-diverse current podcast selection with verified date and runtime.",
+      "freshness_tier": "primary_48h",
+      "connection": "Current discussion of personal assistants, agent incidents and privacy trade-offs.",
+      "permanent_url": "/podcasts/2026-10-04/hard-fork-2026-10-02-ai-agents/",
+      "verification_note": "Current Apple Podcasts listing confirms the episode and publisher; independent episode metadata reports 53:02.",
+      "platforms": [
+        {
+          "name": "Apple Podcasts",
+          "url": "https://podcasts.apple.com/us/search?term=Hard%20Fork%20hard-fork-2026-10-02-ai-agents"
+        }
+      ],
+      "coverage_note": "Locked October 4 media selection."
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-10-04-2",
+      "title": "The a16z Show — October 2, 2026 episode",
+      "show": "The a16z Show",
+      "host": "a16z",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 3588,
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agents",
+        "AI workflows"
+      ],
+      "url": "https://podcasts.apple.com/us/search?term=The%20a16z%20Show%20a16z-2026-10-02-ai-agents-incumbents",
+      "summary": "Multi-agent procurement workflows and human-in-the-loop trust escalation.",
+      "why_useful": "Multi-agent procurement workflows and human-in-the-loop trust escalation.",
+      "selection_rationale": "Locked source-diverse current podcast selection with verified date and runtime.",
+      "freshness_tier": "primary_48h",
+      "connection": "Multi-agent procurement workflows and human-in-the-loop trust escalation.",
+      "permanent_url": "/podcasts/2026-10-04/a16z-2026-10-02-ai-agents-incumbents/",
+      "verification_note": "Current Apple Podcasts listing confirms the episode; independent episode metadata reports 59:48.",
+      "platforms": [
+        {
+          "name": "Apple Podcasts",
+          "url": "https://podcasts.apple.com/us/search?term=The%20a16z%20Show%20a16z-2026-10-02-ai-agents-incumbents"
+        }
+      ],
+      "coverage_note": "Locked October 4 media selection."
+    }
+  ]
+}

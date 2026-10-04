@@ -1,0 +1,179 @@
+{
+  "schema_version": "run8-evidence-review-v1",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_id": "reliable-edition-20261004-run8",
+  "verified_at": "2026-10-04T02:34:16.000Z",
+  "sealed_research_cutoff": "2026-10-04T01:32:36.576Z",
+  "article_policy": "article-24-72-168-v1",
+  "source_preflight_sha": "40f6886953ff79aed0d7dbb6d68ac4ea5f2e5482",
+  "candidate_count_reviewed": 9,
+  "full_source_reviews": 9,
+  "evidence_source_ref": "_records/discovery-preflight/result/article-evidence.json@40f6886953ff79aed0d7dbb6d68ac4ea5f2e5482",
+  "source_evidence_sha256": "1095adfc0c70f54dd38761f83a5364c4db002f92ae3b9c4201667c3133be920c",
+  "independent_web_spot_checks_completed": 9,
+  "eligibility_after_source_date_verification": {
+    "eligible_candidate_ids": [
+      "m01",
+      "m02",
+      "m03",
+      "m04",
+      "m06",
+      "m07",
+      "m08",
+      "m09"
+    ],
+    "excluded_candidate_ids": [
+      "m05"
+    ],
+    "category_coverage": {
+      "technical_ai_engineering": 3,
+      "applied_genai_knowledge_workers": 2,
+      "agents_non_technical_people": 3
+    },
+    "agent_skill_story_ready_candidate_id": "m01"
+  },
+  "freshness_review": {
+    "primary_24h": [
+      "m02"
+    ],
+    "normal_fallback_72h": [
+      "m01",
+      "m03",
+      "m04",
+      "m06",
+      "m08",
+      "m09"
+    ],
+    "extended_fallback_168h": [
+      "m07"
+    ],
+    "source_date_conflict": [
+      {
+        "candidate_id": "m05",
+        "issue": "The current official AWS article page identifies the original publication as 2026-08-20 and states only that it was reviewed/updated for accuracy in October 2026, so the preflight 2026-10-01 date is not sufficient to prove a qualifying fresh material update.",
+        "disposition": "Exclude from final story selection unless a qualifying material-update date is independently proven. Remaining category coverage is sufficient."
+      }
+    ]
+  },
+  "review_items": [
+    {
+      "candidate_id": "m02",
+      "status": "verified",
+      "full_source_read": true,
+      "source_word_count": 3391,
+      "claims": [
+        "ThinkingBox grades terminal backend state and side effects, not only generated text",
+        "repeated-run reliability is an explicit evaluation target"
+      ],
+      "limitations": [
+        "publisher-authored Microsoft article hosted on Hugging Face"
+      ]
+    },
+    {
+      "candidate_id": "m03",
+      "status": "verified",
+      "full_source_read": true,
+      "source_word_count": 203,
+      "claims": [
+        "GitHub deprecated four named Copilot model options on 2026-10-02",
+        "enterprise administrators may need to enable replacement models"
+      ],
+      "limitations": [
+        "short operational changelog with limited mechanism depth"
+      ]
+    },
+    {
+      "candidate_id": "m04",
+      "status": "verified",
+      "full_source_read": true,
+      "source_word_count": 244,
+      "claims": [
+        "GitHub Copilot computer use is in public preview in CLI and desktop app",
+        "it can read visual/accessibility context and operate desktop controls across applications"
+      ],
+      "limitations": [
+        "preview feature; approval and organization policy controls remain relevant"
+      ]
+    },
+    {
+      "candidate_id": "m05",
+      "status": "freshness_conflict_excluded",
+      "full_source_read": true,
+      "source_word_count": 3753,
+      "claims": [
+        "AWS describes approval-gated multi-agent cloud-migration workflows and internal project metrics"
+      ],
+      "limitations": [
+        "official original publication is 2026-08-20; exact October material-update date not proven"
+      ]
+    },
+    {
+      "candidate_id": "m06",
+      "status": "verified",
+      "full_source_read": true,
+      "source_word_count": 226,
+      "claims": [
+        "Gemini student hub centralizes study notebooks, flashcards and practice quizzes",
+        "Workspace administrators control access through existing Generative AI settings"
+      ],
+      "limitations": [
+        "education-specific use case"
+      ]
+    },
+    {
+      "candidate_id": "m07",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 936,
+      "claims": [
+        "Google Workspace added AI image editing, Sheets canvas mini-apps and cross-app AI assistance",
+        "Sheets canvas stays synchronized with source spreadsheet data"
+      ],
+      "limitations": [
+        "extended freshness rung required at the sealed cutoff"
+      ]
+    },
+    {
+      "candidate_id": "m01",
+      "status": "verified_agent_skills",
+      "full_source_read": true,
+      "source_word_count": 2094,
+      "claims": [
+        "DOCA Agent Skills provide verified API, hardware and build constraints",
+        "NVIDIA reports a 65-prompt evaluation with stronger checklist completion and fewer handwritten-code/hardware-command steps when skills are used"
+      ],
+      "limitations": [
+        "vendor-reported evaluation in a developer-focused domain"
+      ]
+    },
+    {
+      "candidate_id": "m08",
+      "status": "verified",
+      "full_source_read": true,
+      "source_word_count": 2149,
+      "claims": [
+        "SageMaker multi-turn RL fine-tunes search agents against trajectory-level retrieval rewards",
+        "AWS reports improved retrieval quality on three of four held-out benchmarks and sharply lower BrowseComp-Plus failure rate"
+      ],
+      "limitations": [
+        "vendor-authored implementation; one benchmark regressed slightly"
+      ]
+    },
+    {
+      "candidate_id": "m09",
+      "status": "verified",
+      "full_source_read": true,
+      "source_word_count": 6491,
+      "claims": [
+        "ambient agents react to events rather than waiting for a chat prompt",
+        "the reference architecture includes a human-in-the-loop ask_human path and trackable jobs"
+      ],
+      "limitations": [
+        "reference architecture, not an independent outcome study"
+      ]
+    }
+  ],
+  "novelty_check": "No October 3 locked headline is repeated by the eight freshness-eligible candidates.",
+  "unknowns_preserved": true,
+  "result": "PASS"
+}

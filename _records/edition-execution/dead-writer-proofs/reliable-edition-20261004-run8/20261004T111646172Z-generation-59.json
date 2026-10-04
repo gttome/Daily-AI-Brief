@@ -1,0 +1,24 @@
+{
+  "schema_version": "dead-writer-proof-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "20",
+  "proved_at": "2026-10-04T11:16:46.172Z",
+  "workflow_run_id": 37197866619,
+  "workflow_job_id": 111423359482,
+  "owner_id": "github-actions-37197866619-1",
+  "conclusion": "failure",
+  "completed_at": "2026-10-04T11:12:37Z",
+  "old_generation": 59,
+  "replacement_generation": 60,
+  "child_or_subworker_live": false,
+  "repository_consumer_started": false,
+  "last_substantive_write": {
+    "commit": "ed83517659b5f6cd3dab858c7f1d13fa7e231a9d",
+    "at": "2026-10-04T11:11:32Z",
+    "kind": "task20_request_queue_and_supervisor_bookkeeping",
+    "substantive_progress": false
+  },
+  "substantive_write_after_terminal": false,
+  "reason": "Run Supervisor queued Task 20 but no repository consumer claimed it. The supervise job completed failure after the protected 60-second unclaimed threshold; no Task 20 worker result or task transition was produced."
+}

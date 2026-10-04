@@ -1,0 +1,22 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "17",
+  "incident_id": "wd-2cce2bdf9b238e7c5f473f42b4b43d03",
+  "owner_slot": "F",
+  "at": "2026-10-04T09:09:18.505Z",
+  "type": "PROTECTED_REPAIR_REQUIRED",
+  "classification": "BLOCKED_ACTIONABLE",
+  "diagnosis": "The Supervisor generated the exact Task 17 repository request, then `gh workflow run repository-task-consumer.yml --ref \"$RUN_BRANCH\"` executed from the workflow root, which is not a Git repository. GitHub CLI repository discovery failed before the request was committed or the repository consumer started.",
+  "failed_action_keys": [
+    "wd-2cce2bdf9b238e7c5f473f42b4b43d03:supervisor-dispatch-repository-consumer:run-37191028528"
+  ],
+  "repair_key": "repair-818233a7f4bb0a3684ed04efba57e4cc62a4115f",
+  "repair_branch": "repair/run8-task17-repository-dispatch-context",
+  "repair_head": "818233a7f4bb0a3684ed04efba57e4cc62a4115f",
+  "repair_scope_digest": "sha256:55bc542e581bc066a7541dc6e679a4bf6f730a30c92358835e290300829a01f6",
+  "next_authorized_action": "Open/reuse exact repair PR, require pull_request validate PASS, merge, and resume same Task 17.",
+  "recovery_required": true
+}

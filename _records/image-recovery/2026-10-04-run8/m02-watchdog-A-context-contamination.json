@@ -1,0 +1,28 @@
+{
+  "schema_version": "native-image-context-contamination-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "request_key": "46f01a3962c8c3386e7f6475e137168cc0f18f35bc06a3244bec7f18d736e21a",
+  "writer_generation": 18,
+  "consumer_slot": "A",
+  "observed_at": "2026-10-04T04:07:16.417Z",
+  "generated_outputs": [
+    {
+      "attempt": 1,
+      "native_generation_id": "e170716c-68bb-4d44-b5a3-d00661eef9aa",
+      "disposition": "REJECTED_PRETRANSPORT_CONTEXT_CONTAMINATION"
+    },
+    {
+      "attempt": 2,
+      "native_generation_id": "ef6ee630-9b96-4e80-8149-3af7de5fdf97",
+      "disposition": "REJECTED_PRETRANSPORT_CONTEXT_CONTAMINATION"
+    }
+  ],
+  "blocker_detail": "Both native generations returned Watchdog operational dashboards instead of the sealed backend-state verification mechanism. Subject and visible-text gates failed before transport, so no rejected PNG was persisted or accepted.",
+  "recoverable": true,
+  "external_blocker": false,
+  "recurrence_of": "DAB-OPS-20261001-017",
+  "next_action": "Use a fresh isolated image-only native generation context bound only to _records/image-context/2026-10-04/m02.json under refreshed current writer authority. Do not blind-repeat the contaminated Watchdog-context generation."
+}

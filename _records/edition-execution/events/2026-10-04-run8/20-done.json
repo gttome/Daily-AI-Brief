@@ -1,0 +1,21 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "20",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-04T11:19:53.814Z",
+  "writer_generation": 60,
+  "owner_id": "watchdog-D:wd-e086276892044971f1a80c4ffc356fc1-task20-unclaimed:task-20:recovery",
+  "reason_code": "QUALIFICATION_COMPLETE_FOCUSED_REPAIR_REQUIRED",
+  "proof": {
+    "qualification_receipt": "_records/qualification/2026-10-04-run8/result.json",
+    "result": "fail",
+    "repair_required": true,
+    "defect_id": "RUN8_INCOMPLETE_DETERMINISTIC_PUBLICATION_PROJECTION",
+    "accepted_locked_images": 6
+  },
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

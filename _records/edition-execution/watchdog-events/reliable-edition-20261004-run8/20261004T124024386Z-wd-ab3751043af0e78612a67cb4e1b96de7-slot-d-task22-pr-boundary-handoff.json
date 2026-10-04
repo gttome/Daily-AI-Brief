@@ -1,0 +1,23 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "22",
+  "incident_id": "wd-ab3751043af0e78612a67cb4e1b96de7",
+  "slot_id": "D",
+  "classification": "BLOCKED_ACTIONABLE",
+  "lease_generation": 34,
+  "action_key": "wd-task22-open-publication-pr",
+  "attempted_actions": [
+    "Proved writer generation 63 dead from GitHub Actions run 37202193747 / job 111435999359.",
+    "Acquired Task 22 writer generation 64.",
+    "Verified exact Task 22 request remains queued and no Task 22 result exists.",
+    "Attempted authorized publication PR creation twice; both attempts were rejected before GitHub mutation."
+  ],
+  "blocker": "The Task 22 publication PR mutation is not available in this invocation. Direct main write, bypass merge, alternate credentials, browser automation, and owner-upload workarounds are prohibited.",
+  "next_authorized_action": "Resume the same exact queued Task 22 request and create exactly one publication PR through an authorized protected route. If the PR action remains unavailable, use bounded protected repair to make Task 22 publication-PR creation repository-native, then resume the same execution/task.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "recovery_required": true,
+  "occurred_at": "2026-10-04T12:40:24.386Z"
+}

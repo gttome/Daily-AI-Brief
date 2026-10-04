@@ -1,0 +1,40 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "RECOVERY_VERIFIED_PROGRESSING",
+  "repair_key": "repair-ce8c7a1216071d075bbb4d6403eadd831913a788",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "production_branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "17",
+  "incident_id": "wd-2f779cb803587c2784d8560d926ee46d",
+  "repair_branch": "repair/run8-task17-acceptance-lock-schema",
+  "repair_branch_head_sha": "ce8c7a1216071d075bbb4d6403eadd831913a788",
+  "repair_scope_digest": "sha256:ef26b89aa5cde227de21254ff4ebb6dbfc94f6cab464c6d1dd6dfbd9818e31ba",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-04T09:20:31.674Z",
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+  "diagnosis": "The Task 17 consumer required accepted_locked/status fields embedded in image-attempt receipts. The current protected image contract instead records immutable acceptance locks that reference repair-epoch attempt receipts and separate saved-Git reviews; it also permits accepted professional PNG transport dimensions other than one hard-coded size. All six accepted assets remain valid and immutable.",
+  "next_stage": "Recovery verified: the same Task 17 request completed under repository consumer run 37192041799; canonical Done evidence, six-image manifest, accessibility/quality evidence and writer handoff are durable. First incomplete task advanced to 18.",
+  "last_recovery_stage": {
+    "state": "RECOVERY_VERIFIED_PROGRESSING",
+    "pr_number": 441,
+    "repair_head": "ce8c7a1216071d075bbb4d6403eadd831913a788",
+    "merge_sha": "b99313ebebbf789d6eb218231dd13f170d42eac4",
+    "ci_run_id": 37191854627,
+    "ci_conclusion": "success",
+    "repository_consumer_run_id": 37192041799,
+    "repository_consumer_conclusion": "success",
+    "production_completion_commit": "c0b70b28c836dd545c0cb414787116f66f729b31",
+    "task_17_result": "passed",
+    "canonical_transition": "Active->Done",
+    "accepted_locked_images": 6,
+    "first_incomplete_task_after": "18",
+    "same_execution_revalidated": true,
+    "same_task_completed": "17",
+    "repair_key_preserved": true,
+    "scope_digest_preserved": true
+  }
+}

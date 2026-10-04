@@ -1,0 +1,24 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "815988263cea8b4ca83db091aa9f950d6d1a8221b504014b81c79a4f37ba3f5b",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "11",
+  "request_writer_generation": 21,
+  "writer_generation": 23,
+  "status": "failed",
+  "completed_at": "2026-10-04T06:44:30.000Z",
+  "task_outcome": "Blocked",
+  "evidence": {
+    "candidate_id": "m02",
+    "repair_epoch": 1,
+    "post_repair_attempt": 1,
+    "accepted_locked": false,
+    "generation_id": "7d205e5f-78fb-4248-93cb-4adaa3e63ca9",
+    "subject_guard": "FAIL",
+    "context_isolation": "FAIL",
+    "production_asset_persisted": false
+  },
+  "result": "FAIL"
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "07",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-04T02:58:41.702Z",
+  "reason": "Task 07 podcast selection and verification passed from the existing saved evidence.",
+  "proof": {
+    "artifact": "_records/editorial/2026-10-04-run8/podcasts.json",
+    "evidence_commit": "c83df694a25affd08a4785e4e24ee0b4030d25b4",
+    "count": 2,
+    "source_diverse": true,
+    "publication_before_cutoff": true,
+    "runtime_verified": true,
+    "result": "PASS",
+    "writer_generation": 13
+  }
+}

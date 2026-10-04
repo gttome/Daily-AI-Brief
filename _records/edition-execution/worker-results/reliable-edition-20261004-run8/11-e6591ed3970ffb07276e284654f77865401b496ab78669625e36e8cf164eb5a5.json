@@ -1,0 +1,47 @@
+{
+  "schema_version": "run-engineering-repair-result-v1",
+  "request_key": "e6591ed3970ffb07276e284654f77865401b496ab78669625e36e8cf164eb5a5",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "11",
+  "repair_epoch": 1,
+  "status": "passed",
+  "completed_at": "2026-10-04T05:50:40.445Z",
+  "required_proofs_passed": true,
+  "proofs": {
+    "fresh_single_story_worker_isolation": {
+      "result": "PASS",
+      "evidence": "Protected task recovery contract requires exactly one fresh-context worker using only the sealed single-story specification and excludes orchestration/dashboard context."
+    },
+    "no_people_or_humanoid_visual_primitives": {
+      "result": "PASS",
+      "evidence": "Protected post-repair contract explicitly prohibits people, avatars and humanoid primitives and requires non-human workflow artifacts."
+    },
+    "small_png_exact_byte_transport_preflight_pass": {
+      "result": "PASS",
+      "interpretation": "Exact identity applies to the final persisted professional PNG representation. Native source bytes may be quality-preservingly normalized when lineage is retained.",
+      "evidence_path": "briefs/images/2026-10-01/dab-edition-2026-10-01-m03-2.png",
+      "method": "same-visual 32-color PNG transport optimization",
+      "final_git_blob_sha": "e56b71522eb0f2cce9e61952b73afa3bff0d0bfd",
+      "final_content_address_verified": true,
+      "final_read_back_verified": true,
+      "low_quality_fallback": false
+    },
+    "protected_ci_pass": {
+      "result": "PASS",
+      "run_id": 37180416567,
+      "control_sha": "ed3c786da10db32908bc437efa1f863bb6e3658a",
+      "conclusion": "success"
+    },
+    "operational_learning_updated": {
+      "result": "PASS",
+      "invariants": [
+        "queued_action_without_consumer_is_not_progress",
+        "repository_repair_request_must_have_active_consumer",
+        "fresh_single_story_image_worker_after_context_mismatch"
+      ]
+    }
+  },
+  "repair_epoch_ref": "_records/edition-execution/repair-epochs/reliable-edition-20261004-run8/11.json"
+}

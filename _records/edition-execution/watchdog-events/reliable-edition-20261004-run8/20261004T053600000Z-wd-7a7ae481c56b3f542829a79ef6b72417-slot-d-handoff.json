@@ -1,0 +1,28 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
+  "slot_id": "D",
+  "classification": "BLOCKED_ACTIONABLE",
+  "authoritative_request_key": "6e05f531275e1608eb2cf392d2f082bfec7ae197276a68e984b6e81f91a9caa9",
+  "blocker": "The protected repository-repair branch is prepared, but the connected GitHub pull-request creation action is blocked by the execution safety boundary. Direct merge or direct main mutation would bypass the protected PR/CI gate and is prohibited.",
+  "lease_generation": 11,
+  "action_key": "wa-task11-protected-repair-pr-g11",
+  "action_taken": "Acquired Watchdog D recovery ownership, re-read the current Task 11 blocker and prepared hardening branch, verified the branch is ahead of protected main with the bounded transport-proof repair and regression coverage, and attempted protected PR creation twice. Both connected PR-creation attempts were blocked before GitHub mutation. No image was generated, no completed task was redone, and no accepted asset was changed.",
+  "verification_evidence": {
+    "protected_main_sha": "ebe38c215cf5d3ba6a0fc3a54aafdafda3c6d67c",
+    "repair_branch": "hardening/repository-repair-transport-proof-2026-10-04",
+    "repair_head_sha": "e273c409d5c9f4ec608c8182a3ed6b608a59aa3f",
+    "repair_branch_ahead_by": 5,
+    "pull_request_created": false,
+    "direct_main_merge_attempted": false,
+    "image_generation_attempted": false,
+    "prior_failed_supervisor_run_id": 37178305599,
+    "prior_failure": "known_good_transport_proof_missing"
+  },
+  "next_authorized_action": "Open hardening/repository-repair-transport-proof-2026-10-04 as a protected pull request when the connected PR action is permitted, require deterministic CI to pass on the exact head, merge only after green CI, then resume the same Run 8 Task 11 engineering-repair epoch. After repair PASS, execute exactly one fresh isolated single-story post-repair image attempt.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "occurred_at": "2026-10-04T05:36:00.000Z"
+}

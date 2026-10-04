@@ -1,0 +1,17 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_key": "2026-10-04-run8",
+  "task_id": "18",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-04T09:52:20.000Z",
+  "writer_generation": 52,
+  "owner_id": "watchdog-E:wd-335f455b1d5d15d5171759260d6dadf:task-18:recovery",
+  "reason_code": "WATCHDOG_RECOVERY_CONSUMED_AUTHORITATIVE_TASK18_REQUEST",
+  "proof": {
+    "request_key": "35c632fcde29b0b026ec0a2d2ea7f29d4697ee45397f789d76aaf60604c63232",
+    "dead_writer_proof": "_records/edition-execution/dead-writer-proofs/reliable-edition-20261004-run8/20261004T095200000Z-generation-51.json"
+  }
+}

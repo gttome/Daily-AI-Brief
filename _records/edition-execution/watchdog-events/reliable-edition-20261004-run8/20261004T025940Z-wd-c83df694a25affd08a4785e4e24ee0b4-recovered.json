@@ -1,0 +1,29 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "07",
+  "incident_id": "wd-c83df694a25affd08a4785e4e24ee0b4",
+  "slot_id": "F",
+  "classification": "STALE_ACTIVE",
+  "observed_substantive_progress_at": "2026-10-04T02:44:53.000Z",
+  "authoritative_request_key": null,
+  "blocker": "Task 07 had complete saved podcast evidence, but no Done transition was recorded and its writer lease expired without handoff.",
+  "lease_generation": 5,
+  "action_key": "wa-07-c83df694a25affd08a4785e4e24ee0",
+  "action_taken": "RESTORE_SAME_EXECUTION_AUTHORITY_CLOSE_FROM_EXISTING_EVIDENCE_AND_REDISPATCH_SUPERVISOR",
+  "verification_evidence": {
+    "real_executor": "chatgpt-watchdog-F",
+    "writer_generation": 13,
+    "existing_evidence_commit": "c83df694a25affd08a4785e4e24ee0b4030d25b4",
+    "task07_transition": "Done",
+    "first_incomplete_task_advanced": true,
+    "supervisor_workflow_run_id": 37169348459,
+    "supervisor_run_attempt": 5,
+    "supervisor_status": "in_progress",
+    "accepted_assets_regenerated": 0,
+    "editorial_work_repeated": false
+  },
+  "final_outcome": "RECOVERY_VERIFIED_PROGRESSING",
+  "occurred_at": "2026-10-04T02:59:40.375Z"
+}

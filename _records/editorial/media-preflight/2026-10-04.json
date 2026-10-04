@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-04",
+  "checked_at": "2026-10-04T03:03:55.000Z",
+  "items": [
+    {
+      "item_id": "dab-video-2026-10-04-general",
+      "url": "https://www.youtube.com/watch?v=LsA4vIX_3UY",
+      "observed_date": "2026-07-21",
+      "observed_runtime_seconds": 462,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-04-run8/videos.json",
+      "verification_timestamp": "2026-10-04T02:42:20.000Z"
+    },
+    {
+      "item_id": "dab-video-2026-10-04-agent-skills",
+      "url": "https://www.youtube.com/watch?v=h9g4umRfgn0",
+      "observed_date": null,
+      "observed_runtime_seconds": 324,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-04-run8/videos.json",
+      "verification_timestamp": "2026-10-04T02:42:20.000Z"
+    },
+    {
+      "item_id": "dab-podcast-2026-10-04-1",
+      "url": "https://podcasts.apple.com/us/search?term=Hard%20Fork%20hard-fork-2026-10-02-ai-agents",
+      "observed_date": "2026-10-02",
+      "observed_runtime_seconds": 3182,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-04-run8/podcasts.json",
+      "verification_timestamp": "2026-10-04T03:03:55.000Z"
+    },
+    {
+      "item_id": "dab-podcast-2026-10-04-2",
+      "url": "https://podcasts.apple.com/us/search?term=The%20a16z%20Show%20a16z-2026-10-02-ai-agents-incumbents",
+      "observed_date": "2026-10-02",
+      "observed_runtime_seconds": 3588,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-04-run8/podcasts.json",
+      "verification_timestamp": "2026-10-04T03:03:55.000Z"
+    }
+  ],
+  "editorial_kernel_sha256": "d0b113e7410eb3d454d89a1828f4662639e1fa91cc0da7547c50eb796fd8db13",
+  "podcast_source_diversity": {
+    "pass": true,
+    "shows": [
+      "Hard Fork",
+      "The a16z Show"
+    ]
+  },
+  "basis": "Locked Run 8 Task 06/07 verified selections; no media reselection performed by focused repair."
+}

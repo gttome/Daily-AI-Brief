@@ -1,0 +1,54 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "12",
+  "candidate_id": "m04",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-04T08:35:01.970Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 31,
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "saved_git_commit": "a1c8aa8af37db40d8faec73d2a58dfa73752dc25",
+  "source_lineage": {
+    "native_sha256": "70f3658b40739cc7d97a1539e703f99388c2e29acddeb0dd67cc67dda1118828",
+    "native_bytes": 1556151,
+    "native_width": 1730,
+    "native_height": 909,
+    "transport_method": "same-visual 256-color professional PNG representation"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-04/dab-edition-2026-10-04-m04.png",
+    "git_blob_sha": "69e9a16b8372db0acc76576e3c779987257b2e4c",
+    "sha256": "05cae8a2dd3dd79dd4d983a320bfa63aedcbd17c8492bd972dac4150b8a35103",
+    "bytes": 321774,
+    "width": 1730,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_MATCHES_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "Visual and accessibility context rails converge at a central approval control; the desktop-action path crosses distinct application boundaries while a parallel audit rail terminates in durable evidence.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Visual context",
+      "Accessibility context",
+      "Approval",
+      "Desktop action",
+      "Application boundary",
+      "Audit"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The reviewed local PNG hashes to the exact Git blob persisted on the run branch; content-address identity makes the saved-Git asset byte-identical to the inspected representation."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}
