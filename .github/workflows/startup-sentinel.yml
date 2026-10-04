@@ -1,0 +1,97 @@
+name: Daily Brief Startup Sentinel
+
+on:
+  schedule:
+    - cron: '5 0 * * *'
+    - cron: '5 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-brief-startup-sentinel
+  cancel-in-progress: false
+
+jobs:
+  startup-sentinel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out protected main
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+
+      - name: Evaluate scheduled startup success
+        id: sentinel
+        run: |
+          set -euo pipefail
+          pointer="data/operations/active-production-run.json"
+          test -f "$pointer"
+          run_root=""
+          active="$(node -e "const x=require('./$pointer');process.stdout.write(String(x.active===true && x.terminal!==true))")"
+          if [ "$active" = "true" ]; then
+            run_branch="$(node -e "const x=require('./$pointer');process.stdout.write(String(x.branch||''))")"
+            if [ -n "$run_branch" ]; then
+              git fetch --depth=1 origin "$run_branch"
+              rm -rf /tmp/dab-active-run
+              git worktree add --detach /tmp/dab-active-run FETCH_HEAD
+              run_root="--run-root /tmp/dab-active-run"
+            fi
+          fi
+          node _tools/startup-sentinel.mjs \
+            --pointer "$pointer" \
+            $run_root \
+            --timezone America/Chicago \
+            --scheduled-hour 19 \
+            --minimum-minute 3 \
+            --output /tmp/startup-sentinel.json
+          cat /tmp/startup-sentinel.json
+          status="$(node -e "const x=require('/tmp/startup-sentinel.json');process.stdout.write(x.status)")"
+          fault="$(node -e "const x=require('/tmp/startup-sentinel.json');process.stdout.write(String(x.normalized_fault_code||''))")"
+          if [ "$status" = "OUTSIDE_START_WINDOW" ]; then
+            echo "persist=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "persist=true" >> "$GITHUB_OUTPUT"
+          fi
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          echo "fault=$fault" >> "$GITHUB_OUTPUT"
+
+      - name: Persist machine-readable startup evidence
+        if: steps.sentinel.outputs.persist == 'true'
+        run: |
+          set -euo pipefail
+          git worktree remove /tmp/dab-active-run --force 2>/dev/null || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          runtime_branch="runtime/startup-sentinel"
+          if git ls-remote --exit-code --heads origin "$runtime_branch" >/dev/null 2>&1; then
+            git fetch --depth=1 origin "$runtime_branch"
+            git checkout -B runtime-startup-sentinel FETCH_HEAD
+          else
+            git checkout -b runtime-startup-sentinel
+          fi
+          mkdir -p data/operations
+          cp /tmp/startup-sentinel.json data/operations/startup-sentinel.json
+          git add data/operations/startup-sentinel.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Record startup sentinel evidence"
+            git push origin HEAD:refs/heads/runtime/startup-sentinel
+          fi
+
+      - name: Verify persisted sentinel bytes
+        if: steps.sentinel.outputs.persist == 'true'
+        run: |
+          set -euo pipefail
+          expected="$(sha256sum /tmp/startup-sentinel.json | awk '{print $1}')"
+          git fetch --depth=1 origin runtime/startup-sentinel
+          git show FETCH_HEAD:data/operations/startup-sentinel.json >/tmp/startup-sentinel-readback.json
+          actual="$(sha256sum /tmp/startup-sentinel-readback.json | awk '{print $1}')"
+          test "$expected" = "$actual"
+          echo "startup-sentinel status=$${{ steps.sentinel.outputs.status }} fault=$${{ steps.sentinel.outputs.fault }}"
