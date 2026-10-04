@@ -5,6 +5,7 @@ import {sha256} from './util.mjs';
 import {validateEmergingSignalSweep} from './emerging-signal-sweep.mjs';
 import {publicWatchlist,validateWatchlist,watchlistDailyState,watchlistDailySummary} from './watchlist.mjs';
 import {EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE,reviewedHandoffImages} from './image-gate.mjs';
+import {migrationEnabled,verifiedVideoMigration,lockedCanvasMigrationAllowed,aggregateWatchlistMigrationErrors} from './frozen-contract-migration.mjs';
 
 export const PUBLICATION_MANIFEST_VERSION='1.0.0';
 export const CONTRACT_FREEZE_DATE='2026-09-26';
