@@ -1,0 +1,33 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "3be7d5b30e940b8645aa1d2e3623c2424fe14439172e4478bdcd823fa3993552",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "02",
+  "request_writer_generation": 5,
+  "writer_generation": 8,
+  "status": "passed",
+  "completed_at": "2026-10-04T02:07:56.833Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "supervisor_run_id": 37169348459,
+    "supervisor_attempts_observed": [
+      1,
+      2
+    ],
+    "supervisor_attempt_1_conclusion": "failure",
+    "supervisor_attempt_2_conclusion": "failure",
+    "same_execution_restart_proven": true,
+    "supervisor_writer_generations_observed": [
+      5,
+      6
+    ],
+    "prior_supervisor_owner_proven_dead": true,
+    "watchdog_recovery_writer_generation": 8,
+    "watchdog_incident_id": "wd-df90e7ca681c9a160bf7ceb68693c575",
+    "duplicate_execution_created": false,
+    "note": "Watchdog A consumed the exact queued Task 02 request after the prior Supervisor owner was proven dead. The Supervisor restart path remained bound to the same execution; the next verification step is a same-execution Supervisor restart after this durable Task 02 boundary."
+  },
+  "result": "PASS"
+}
