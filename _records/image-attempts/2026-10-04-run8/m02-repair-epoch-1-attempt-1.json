@@ -1,0 +1,21 @@
+{
+  "schema_version": "native-image-attempt-v1",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "request_key": "815988263cea8b4ca83db091aa9f950d6d1a8221b504014b81c79a4f37ba3f5b",
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "writer_generation": 23,
+  "completed_at": "2026-10-04T06:44:30.000Z",
+  "generation_id": "7d205e5f-78fb-4248-93cb-4adaa3e63ca9",
+  "sealed_context": "_records/image-context/2026-10-04/m02.json",
+  "subject_match": "FAIL",
+  "visible_text_guard": "FAIL",
+  "context_isolation": "FAIL",
+  "persisted_to_production": false,
+  "accepted_locked": false,
+  "retry_allowed": false,
+  "disposition": "REJECTED"
+}
