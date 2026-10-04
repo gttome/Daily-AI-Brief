@@ -1085,7 +1085,11 @@
         "SAME_TASK_RESUME_REQUIRED",
         "SAME_TASK_RESUMED",
         "RECOVERY_VERIFIED_PROGRESSING"
-      ]
+      ],
+      "protected_pr_authority": "scheduled_chatgpt_connected_github",
+      "repository_executor_may_create_or_merge_protected_pr": false,
+      "connected_watchdog_must_create_and_merge_protected_pr": true,
+      "protected_merge_bypass_allowed": false
     },
     "protections": {
       "terminal_reopen_allowed": false,
@@ -1152,9 +1156,11 @@
     ],
     "state_machine": [
       "PROTECTED_REPAIR_REQUIRED",
+      "CONNECTED_WATCHDOG_PR_REQUIRED",
       "REPAIR_PR_OPENED",
       "REPAIR_CI_RUNNING",
       "REPAIR_CI_PASS",
+      "CONNECTED_WATCHDOG_MERGE_REQUIRED",
       "REPAIR_MERGED",
       "SAME_TASK_RESUME_REQUIRED",
       "SAME_TASK_RESUMED",
@@ -1165,7 +1171,9 @@
       "REPAIR_HEAD_CHANGED",
       "REPAIR_EXECUTION_MISMATCH",
       "REPAIR_MERGE_CONFLICT",
-      "REPAIR_RESUME_FAILED"
+      "REPAIR_RESUME_FAILED",
+      "REPAIR_POLICY_BLOCKED",
+      "REPAIR_PR_AUTHORITY_MISMATCH"
     ],
     "exact_one_pr_per_repair_key": true,
     "exact_head_ci_required": true,
@@ -1209,6 +1217,24 @@
       "new_credentials": false,
       "alternate_accounts": false,
       "browser_automation": false
+    },
+    "protected_pr_authority": "scheduled_chatgpt_connected_github",
+    "repository_executor_pr_creation_allowed": false,
+    "repository_executor_protected_merge_allowed": false,
+    "repository_executor_exact_head_ci_dispatch_allowed": true,
+    "connected_watchdog_pr_creation_required": true,
+    "connected_watchdog_protected_merge_required": true,
+    "connected_watchdog_merge_must_use_expected_head": true,
+    "connected_watchdog_merge_bypass_allowed": false,
+    "bot_authored_protected_pr_allowed": false,
+    "bot_authored_protected_merge_allowed": false,
+    "protection_policy_must_remain_enforced": true,
+    "base_sync_policy": {
+      "allowed": true,
+      "actor": "scheduled_chatgpt_connected_github",
+      "repair_scope_digest_must_remain_identical": true,
+      "updated_head_must_be_persisted_before_ci": true,
+      "exact_head_ci_must_run_after_sync": true
     }
   }
 }
