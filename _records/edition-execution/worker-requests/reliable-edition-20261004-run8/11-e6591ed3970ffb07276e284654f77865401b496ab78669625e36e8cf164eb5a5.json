@@ -1,0 +1,28 @@
+{
+  "schema_version": "run-engineering-repair-request-v1",
+  "request_key": "e6591ed3970ffb07276e284654f77865401b496ab78669625e36e8cf164eb5a5",
+  "request_kind": "engineering_repair",
+  "execution_id": "reliable-edition-20261004-run8",
+  "edition_id": "dab-edition-2026-10-04",
+  "branch": "reliable-edition/dab-edition-2026-10-04-run8",
+  "task_id": "11",
+  "capability": "repository",
+  "instruction": "Repair the demonstrated image-production failure mechanism before authorizing another native image attempt. A wrong-subject, sealed-prompt displacement, or execution-context contamination rejection triggers this engineering repair immediately after the first such rejection; never retry image generation in the same contaminated conversation. Preserve every accepted_locked image and all completed upstream tasks. Require a fresh single-story worker using only the sealed image specification and prohibit orchestration/dashboard context leakage. For people/avatar defects, replace people/humanoid visual primitives with non-human artifacts such as documents, checklists, folders, role cards, process tokens or abstract symbols. For exact-PNG persistence defects, prove one approved exact-byte transport route end-to-end before generation. Put the repair through protected CI, record the operational-learning problem/fix/outcome, then create one bounded post-repair epoch for only the blocked candidate.",
+  "writer_generation": 21,
+  "repair_epoch": 1,
+  "required_proofs": [
+    "fresh_single_story_worker_isolation",
+    "no_people_or_humanoid_visual_primitives",
+    "small_png_exact_byte_transport_preflight_pass",
+    "protected_ci_pass",
+    "operational_learning_updated"
+  ],
+  "created_at": "2026-10-04T05:50:38.735Z",
+  "status": "completed_pass",
+  "consumed_at": "2026-10-04T05:50:40.445Z",
+  "completed_at": "2026-10-04T05:50:40.445Z",
+  "consumer_version": "repository-repair-consumer-v2",
+  "consumer_writer_generation": 21,
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261004-run8/11-e6591ed3970ffb07276e284654f77865401b496ab78669625e36e8cf164eb5a5.json",
+  "repair_epoch_ref": "_records/edition-execution/repair-epochs/reliable-edition-20261004-run8/11.json"
+}
