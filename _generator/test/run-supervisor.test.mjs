@@ -496,6 +496,19 @@ test('Supervisor persists an unclaimed repository-worker fault without globally 
   assert.match(y,/route-specific fault is not a global stop/);
 });
 
+test('Supervisor preserves pending loop state before rebasing liveness-fault evidence',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  const start=y.indexOf('liveness_stash=false');
+  const end=y.indexOf('route-specific fault is not a global stop',start);
+  assert.ok(start>=0 && end>start);
+  const block=y.slice(start,end);
+  assert.match(block,/git -C run status --porcelain/);
+  assert.match(block,/git -C run stash push --include-untracked/);
+  assert.match(block,/git -C run pull --rebase origin "\$RUN_BRANCH"/);
+  assert.match(block,/git -C run push origin "HEAD:\$RUN_BRANCH"/);
+  assert.match(block,/git -C run stash pop/);
+});
+
 
 test('production writer handoff resumes the same execution for any Task 00-29 durable boundary',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor-handoff.yml','utf8');
