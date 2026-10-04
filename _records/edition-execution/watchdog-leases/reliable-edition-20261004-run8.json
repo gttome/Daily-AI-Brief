@@ -4,9 +4,11 @@
   "incident_id": "wd-7a7ae481c56b3f542829a79ef6b72417",
   "owner_slot": "A",
   "generation": 16,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-04T07:18:30.000Z",
-  "last_heartbeat_at": "2026-10-04T07:18:30.000Z",
-  "expires_at": "2026-10-04T07:33:30.000Z",
-  "action_key": "wa-task11-protected-repair-ci-pass-merge-resume-g16"
+  "last_heartbeat_at": "2026-10-04T07:22:26.645Z",
+  "expires_at": "2026-10-04T07:22:26.645Z",
+  "action_key": "wa-task11-protected-repair-ci-pass-merge-resume-g16",
+  "released_at": "2026-10-04T07:22:26.645Z",
+  "release_reason": "SAFE_BOUNDARY_REACHED"
 }
