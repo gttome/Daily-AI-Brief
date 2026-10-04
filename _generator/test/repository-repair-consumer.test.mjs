@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import {
   queuedRepositoryRepairDecision,
   buildImageEngineeringRepairReceipt,
+  knownGoodTransportProof,
+  selectKnownGoodTransportProof,
   REQUIRED_IMAGE_REPAIR_PROOFS
 } from '../lib/repository-repair-consumer.mjs';
 
@@ -34,4 +36,18 @@ test('image engineering repair proves isolation, non-human imagery, final PNG id
   assert.equal(r.result,'PASS');assert.equal(r.epoch.required_proofs_passed,true);
   assert.equal(r.epoch.post_repair_attempts,0);
   for(const proof of REQUIRED_IMAGE_REPAIR_PROOFS) assert.equal(r.proofs[proof].result,'PASS');
+});
+
+
+test('known-good transport evidence is selected by proof properties rather than current execution identity',()=>{
+  const valid={...transport,accepted_at:'2026-10-01T21:55:58Z'};
+  const invalid={...transport,status:'rejected',review_status:'rejected'};
+  assert.equal(knownGoodTransportProof(valid),true);
+  assert.equal(knownGoodTransportProof(invalid),false);
+  const selected=selectKnownGoodTransportProof([
+    {path:'older.json',record:{...valid,accepted_at:'2026-09-30T20:00:00Z'}},
+    {path:'newer.json',record:valid},
+    {path:'invalid.json',record:invalid}
+  ]);
+  assert.equal(selected.path,'newer.json');
 });
