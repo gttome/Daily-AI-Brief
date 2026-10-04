@@ -14,10 +14,10 @@
   "created_at": "2026-10-04T05:51:44.925Z",
   "writer_generation_is_provenance": true,
   "authority_refresh_required_at_invocation": true,
-  "status": "queued_for_scheduled_consumer",
+  "status": "superseded",
   "dispatch": {
     "schema_version": "scheduled-image-dispatch-v3",
-    "status": "QUEUED_FOR_SCHEDULED_CONSUMER",
+    "status": "SUPERSEDED",
     "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
     "consumer_kind": "chatgpt_watchdog_ring",
     "consumer_pool_ids": [
@@ -45,6 +45,10 @@
     "accepted_locked": false,
     "writer_generation_is_provenance": true,
     "authority_refresh_required_at_invocation": true,
-    "next_action": "Next eligible admitted scheduled consumer refreshes current fenced authority at invocation and consumes this exact request; overlapping consumers yield to the current task writer."
-  }
+    "next_action": "Ignore this repair_epoch=0 request; the higher repair_epoch=1 terminal result is authoritative and recovery must continue into repair epoch 2."
+  },
+  "superseded_at": "2026-10-04T07:57:23.542Z",
+  "superseded_by_request_key": "815988263cea8b4ca83db091aa9f950d6d1a8221b504014b81c79a4f37ba3f5b",
+  "supersede_reason": "higher_repair_epoch_terminal_result_is_authoritative",
+  "reconciled_by_writer_generation": 25
 }
