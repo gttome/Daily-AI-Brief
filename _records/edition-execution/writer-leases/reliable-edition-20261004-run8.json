@@ -4,6 +4,9 @@
   "owner_id": "chatgpt-task01-recovery-20261004T015037Z",
   "generation": 4,
   "acquired_at": "2026-10-04T01:50:37.332Z",
-  "last_heartbeat_at": "2026-10-04T01:50:37.332Z",
-  "expires_at": "2026-10-04T02:05:37.332Z"
+  "last_heartbeat_at": "2026-10-04T01:52:36.089Z",
+  "expires_at": "2026-10-04T01:52:36.089Z",
+  "released": true,
+  "released_at": "2026-10-04T01:52:36.089Z",
+  "release_reason": "TASK_01_DONE_HANDOFF_TO_SUPERVISOR"
 }
