@@ -37,7 +37,7 @@ test('Run 8 frozen live validation reuses sealed images while permitting the exp
     assert.equal(receipt.checks.find(x=>x.check_id==='image_integrity_dimensions').result,'pass');
     assert.match(receipt.checks.find(x=>x.check_id==='image_integrity_dimensions').evidence,/sealed Task 19 byte identities/);
     assert.equal(receipt.checks.find(x=>x.check_id==='rating_share_generated_ids').result,'pass');
-    assert.match(receipt.checks.find(x=>x.check_id==='rating_share_generated_ids').evidence,/feedback\.js restores stable five-star controls/);
+    assert.match(receipt.checks.find(x=>x.check_id==='rating_share_generated_ids').evidence,/Six story identities\/rating controls are generated/);
     const correction=JSON.parse(fs.readFileSync('_records/publication/2026-10-04/reader-correction.json','utf8'));
     assert.equal(correction.state,'POST_CLOSE_READER_CORRECTION');
     assert.equal(correction.preserve_accepted_locked_images,true);
