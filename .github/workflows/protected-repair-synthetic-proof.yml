@@ -105,11 +105,13 @@ jobs:
           NODE
           )"
           if [ "$pr" = "0" ]; then
+            printf '%s\n\n%s\n' \
+              "Non-production isolated proof. Synthetic-Proof-Key: $key" \
+              "No production pointer, execution, Done task, accepted_locked asset, or image request may be mutated. This PR exists only to prove branch → one PR → exact-head deterministic CI → protected merge → same-task progress semantics without an owner prompt." \
+              > /tmp/synthetic-proof-pr-body.md
             url="$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "${{ steps.target.outputs.target_branch }}" \
               --title "Synthetic proof — protected repair autonomy" \
-              --body "Non-production isolated proof. Synthetic-Proof-Key: $key
-
-No production pointer, execution, Done task, accepted_locked asset, or image request may be mutated. This PR exists only to prove branch → one PR → exact-head deterministic CI → protected merge → same-task progress semantics without an owner prompt.")"
+              --body-file /tmp/synthetic-proof-pr-body.md)"
             pr="$(gh pr view "$url" --repo "$GITHUB_REPOSITORY" --json number --jq '.number')"
           fi
           actual="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json headRefOid --jq '.headRefOid')"
@@ -169,13 +171,16 @@ No production pointer, execution, Done task, accepted_locked asset, or image req
           [ "$current" = "$head" ] || { echo "::error::Synthetic PR head moved after CI."; exit 1; }
           gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --merge --match-head-commit "$head"
           merge_sha="$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json mergeCommit --jq '.mergeCommit.oid')"
-          gh pr comment "$pr" --repo "$GITHUB_REPOSITORY" --body "SYNTHETIC_PROOF=PASS
-Exact-Head: $head
-CI-Run: ${{ steps.ci.outputs.run_id }}
-Merge: $merge_sha
-SAME_TASK_RESUMED=true
-REAL_EXECUTOR_ACTIVE=true
-SUBSTANTIVE_DURABLE_PROGRESS=true
-RECOVERY_VERIFIED_PROGRESSING=true
-OWNER_PROMPT_REQUIRED=false"
+          printf '%s\n' \
+            "SYNTHETIC_PROOF=PASS" \
+            "Exact-Head: $head" \
+            "CI-Run: ${{ steps.ci.outputs.run_id }}" \
+            "Merge: $merge_sha" \
+            "SAME_TASK_RESUMED=true" \
+            "REAL_EXECUTOR_ACTIVE=true" \
+            "SUBSTANTIVE_DURABLE_PROGRESS=true" \
+            "RECOVERY_VERIFIED_PROGRESSING=true" \
+            "OWNER_PROMPT_REQUIRED=false" \
+            > /tmp/synthetic-proof-result.md
+          gh pr comment "$pr" --repo "$GITHUB_REPOSITORY" --body-file /tmp/synthetic-proof-result.md
           gh api --method DELETE "repos/${GITHUB_REPOSITORY}/git/refs/heads/${target}" >/dev/null 2>&1 || true
