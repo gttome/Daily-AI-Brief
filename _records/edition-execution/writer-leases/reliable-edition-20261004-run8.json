@@ -7,15 +7,17 @@
   "operation_key": "native-image-0ca8ebf313da98d96182fec427e66e4539320455d5897b6e2f9bbc8530d93a00",
   "capability": "native_chatgpt",
   "acquired_at": "2026-10-04T08:42:22.513Z",
-  "last_heartbeat_at": "2026-10-04T08:42:22.513Z",
-  "expires_at": "2026-10-04T09:12:22.513Z",
-  "state": "ACTIVE",
-  "released": false,
+  "last_heartbeat_at": "2026-10-04T08:47:26.236Z",
+  "expires_at": "2026-10-04T08:47:26.236Z",
+  "state": "RELEASED",
+  "released": true,
   "transfer_from": {
     "owner_id": "github-actions-37189413960-1",
     "generation": 32,
     "reason": "EXPIRED_SUPERVISOR_QUEUED_NATIVE_IMAGE_HANDOFF",
     "prior_workflow_run_id": 37189413960,
     "prior_workflow_conclusion": "success"
-  }
+  },
+  "released_at": "2026-10-04T08:47:26.236Z",
+  "release_reason": "TASK_13_DONE_HANDOFF_TO_SUPERVISOR"
 }
