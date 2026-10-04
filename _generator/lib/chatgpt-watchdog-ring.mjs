@@ -188,6 +188,13 @@ export function validateWatchdogRingContract(contract={}){
   if(contract.native_image_consumer?.normal_queued_request_consumption!==true)e.push('watchdog_ring_image_normal_consumption');
   if(contract.native_image_consumer?.single_owner_required!==true||contract.native_image_consumer?.writer_fence_required!==true)e.push('watchdog_ring_image_single_owner_fence');
   if(contract.native_image_consumer?.duplicate_generation_prohibited!==true)e.push('watchdog_ring_image_duplicate_generation');
+  if(contract.native_image_consumer?.generator_visible_context_policy!=='story-only-generator-context-v1')e.push('watchdog_ring_image_story_only_context');
+  if(contract.native_image_consumer?.delivery_projection_must_equal_shared_generation_instruction!==true)e.push('watchdog_ring_image_shared_instruction_binding');
+  if(contract.native_image_consumer?.hidden_platform_context_isolation_asserted!==false)e.push('watchdog_ring_image_hidden_context_overclaim');
+  if(contract.native_image_consumer?.first_context_contamination_exits_generation_context!==true||
+     contract.native_image_consumer?.same_context_retry_after_contamination_allowed!==false||
+     contract.native_image_consumer?.context_contamination_requires_engineering_repair!==true||
+     contract.native_image_consumer?.fresh_story_only_context_required_after_repair!==true)e.push('watchdog_ring_image_context_contamination_boundary');
   if(contract.native_image_consumer?.legacy_slot_f_special_role!==false)e.push('watchdog_ring_no_special_f_role');
   if(contract.native_image_consumer?.nominal_pickup_minutes!==10)e.push('watchdog_ring_image_pickup_cadence');
   if(JSON.stringify(contract.recovery?.minimum_action_ladder)!==JSON.stringify(WATCHDOG_MINIMUM_ACTION_LADDER))e.push('watchdog_ring_action_ladder');

@@ -135,3 +135,12 @@ For production Tasks 11–16:
 - already accepted_locked images are never regenerated because another story or recovery context failed.
 
 This requirement strengthens context isolation without lowering the professional image standard or changing the one-owner/exact-request/accepted-byte contracts.
+
+## Generator-visible isolation contract
+
+The sealed story execution remains honest about hidden platform state: `runtime_context_isolation=not_asserted` on the base execution object still means the platform's hidden/ambient context is not independently observable. The native delivery layer now adds a separate, mechanically testable guarantee: the **submitted generator-visible instruction** is exactly the shared strict sealed-story generation instruction.
+
+Production and qualification therefore use the same compiler and the same exact submitted text. Extra outer-envelope fields, Watchdog history, Supervisor state, Kanban data, leases, recovery incidents and unrelated story context are not admitted to that instruction. Tests inject synthetic orchestration contamination into the outer input and prove that it cannot appear in the delivered task text or generator-visible render specification.
+
+Context/subject contamination is no longer a normal quality retry. The first such rejected attempt exits the current generation context and requires bounded engineering repair; another image attempt is permitted only after repair evidence is ready and must use a fresh story-only generator-visible context. Duplicate generation, low-quality fallback and regeneration of accepted_locked assets remain prohibited.
+

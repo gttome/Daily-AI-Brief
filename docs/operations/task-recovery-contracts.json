@@ -83,7 +83,10 @@
         "post_repair_attempt_limit": 1,
         "post_repair_operation": "Execute exactly one fresh-context post-repair image attempt for only this blocked candidate. Use the sealed single-story specification plus the repair directive, no orchestration/dashboard context, and no people/avatar/humanoid primitives. Capture the generated professional visual and full source lineage; persist either the exact native PNG or a bounded same-visual professional PNG transport representation; verify the final persisted Git bytes and independent read-back identity; review the saved Git asset; and accept_locked or record one exact post-repair failure. Do not use SVG/basic/low-quality fallback and do not alter any previously accepted image or completed upstream task. Pass native generation only the sealed prompt plus explicit people and visible-text restrictions; never include Watchdog, Supervisor, recovery, dashboard, Kanban, or unrelated edition context.",
         "context_mismatch_policy": "immediate_engineering_repair_no_same_context_retry",
-        "repeated_context_mismatch_policy": "next_protected_repair_epoch_until_bounded_epochs_exhausted"
+        "repeated_context_mismatch_policy": "next_protected_repair_epoch_until_bounded_epochs_exhausted",
+        "generator_visible_context_policy": "story-only-generator-context-v1",
+        "same_context_retry_after_context_mismatch_allowed": false,
+        "delivery_projection_must_equal_shared_generation_instruction": true
       }
     },
     "12": {
@@ -132,7 +135,10 @@
         "post_repair_attempt_limit": 1,
         "post_repair_operation": "Execute exactly one fresh-context post-repair image attempt for only this blocked candidate. Use the sealed single-story specification plus the repair directive, no orchestration/dashboard context, and no people/avatar/humanoid primitives. Capture the generated professional visual and full source lineage; persist either the exact native PNG or a bounded same-visual professional PNG transport representation; verify the final persisted Git bytes and independent read-back identity; review the saved Git asset; and accept_locked or record one exact post-repair failure. Do not use SVG/basic/low-quality fallback and do not alter any previously accepted image or completed upstream task. Pass native generation only the sealed prompt plus explicit people and visible-text restrictions; never include Watchdog, Supervisor, recovery, dashboard, Kanban, or unrelated edition context.",
         "context_mismatch_policy": "immediate_engineering_repair_no_same_context_retry",
-        "repeated_context_mismatch_policy": "next_protected_repair_epoch_until_bounded_epochs_exhausted"
+        "repeated_context_mismatch_policy": "next_protected_repair_epoch_until_bounded_epochs_exhausted",
+        "generator_visible_context_policy": "story-only-generator-context-v1",
+        "same_context_retry_after_context_mismatch_allowed": false,
+        "delivery_projection_must_equal_shared_generation_instruction": true
       }
     },
     "13": {
@@ -180,7 +186,10 @@
         "post_repair_attempt_limit": 1,
         "post_repair_operation": "Execute exactly one fresh-context post-repair image attempt for only this blocked candidate. Use the sealed single-story specification plus the repair directive, no orchestration/dashboard context, and no people/avatar/humanoid primitives. Capture the generated professional visual and full source lineage; persist either the exact native PNG or a bounded same-visual professional PNG transport representation; verify the final persisted Git bytes and independent read-back identity; review the saved Git asset; and accept_locked or record one exact post-repair failure. Do not use SVG/basic/low-quality fallback and do not alter any previously accepted image or completed upstream task. Pass native generation only the sealed prompt plus explicit people and visible-text restrictions; never include Watchdog, Supervisor, recovery, dashboard, Kanban, or unrelated edition context.",
         "context_mismatch_policy": "immediate_engineering_repair_no_same_context_retry",
-        "repeated_context_mismatch_policy": "next_protected_repair_epoch_until_bounded_epochs_exhausted"
+        "repeated_context_mismatch_policy": "next_protected_repair_epoch_until_bounded_epochs_exhausted",
+        "generator_visible_context_policy": "story-only-generator-context-v1",
+        "same_context_retry_after_context_mismatch_allowed": false,
+        "delivery_projection_must_equal_shared_generation_instruction": true
       }
     },
     "14": {
@@ -227,7 +236,10 @@
         "post_repair_attempt_limit": 1,
         "post_repair_operation": "Execute exactly one fresh-context post-repair image attempt for only this blocked candidate. Use the sealed single-story specification plus the repair directive, no orchestration/dashboard context, and no people/avatar/humanoid primitives. Capture the generated professional visual and full source lineage; persist either the exact native PNG or a bounded same-visual professional PNG transport representation; verify the final persisted Git bytes and independent read-back identity; review the saved Git asset; and accept_locked or record one exact post-repair failure. Do not use SVG/basic/low-quality fallback and do not alter any previously accepted image or completed upstream task. Pass native generation only the sealed prompt plus explicit people and visible-text restrictions; never include Watchdog, Supervisor, recovery, dashboard, Kanban, or unrelated edition context.",
         "context_mismatch_policy": "immediate_engineering_repair_no_same_context_retry",
-        "repeated_context_mismatch_policy": "next_protected_repair_epoch_until_bounded_epochs_exhausted"
+        "repeated_context_mismatch_policy": "next_protected_repair_epoch_until_bounded_epochs_exhausted",
+        "generator_visible_context_policy": "story-only-generator-context-v1",
+        "same_context_retry_after_context_mismatch_allowed": false,
+        "delivery_projection_must_equal_shared_generation_instruction": true
       }
     },
     "15": {
@@ -273,7 +285,10 @@
         "post_repair_attempt_limit": 1,
         "post_repair_operation": "Execute exactly one fresh-context post-repair image attempt for only this blocked candidate. Use the sealed single-story specification plus the repair directive, no orchestration/dashboard context, and no people/avatar/humanoid primitives. Capture the generated professional visual and full source lineage; persist either the exact native PNG or a bounded same-visual professional PNG transport representation; verify the final persisted Git bytes and independent read-back identity; review the saved Git asset; and accept_locked or record one exact post-repair failure. Do not use SVG/basic/low-quality fallback and do not alter any previously accepted image or completed upstream task. Pass native generation only the sealed prompt plus explicit people and visible-text restrictions; never include Watchdog, Supervisor, recovery, dashboard, Kanban, or unrelated edition context.",
         "context_mismatch_policy": "immediate_engineering_repair_no_same_context_retry",
-        "repeated_context_mismatch_policy": "next_protected_repair_epoch_until_bounded_epochs_exhausted"
+        "repeated_context_mismatch_policy": "next_protected_repair_epoch_until_bounded_epochs_exhausted",
+        "generator_visible_context_policy": "story-only-generator-context-v1",
+        "same_context_retry_after_context_mismatch_allowed": false,
+        "delivery_projection_must_equal_shared_generation_instruction": true
       }
     },
     "16": {
@@ -318,7 +333,10 @@
         "post_repair_attempt_limit": 1,
         "post_repair_operation": "Execute exactly one fresh-context post-repair image attempt for only this blocked candidate. Use the sealed single-story specification plus the repair directive, no orchestration/dashboard context, and no people/avatar/humanoid primitives. Capture the generated professional visual and full source lineage; persist either the exact native PNG or a bounded same-visual professional PNG transport representation; verify the final persisted Git bytes and independent read-back identity; review the saved Git asset; and accept_locked or record one exact post-repair failure. Do not use SVG/basic/low-quality fallback and do not alter any previously accepted image or completed upstream task. Pass native generation only the sealed prompt plus explicit people and visible-text restrictions; never include Watchdog, Supervisor, recovery, dashboard, Kanban, or unrelated edition context.",
         "context_mismatch_policy": "immediate_engineering_repair_no_same_context_retry",
-        "repeated_context_mismatch_policy": "next_protected_repair_epoch_until_bounded_epochs_exhausted"
+        "repeated_context_mismatch_policy": "next_protected_repair_epoch_until_bounded_epochs_exhausted",
+        "generator_visible_context_policy": "story-only-generator-context-v1",
+        "same_context_retry_after_context_mismatch_allowed": false,
+        "delivery_projection_must_equal_shared_generation_instruction": true
       }
     },
     "17": {
@@ -1133,7 +1151,14 @@
       "sealed_single_story_spec_required": true,
       "saved_git_review_required": true,
       "supervisor_handoff_required": true,
-      "legacy_slot_f_special_role": false
+      "legacy_slot_f_special_role": false,
+      "generator_visible_context_policy": "story-only-generator-context-v1",
+      "delivery_projection_must_equal_shared_generation_instruction": true,
+      "hidden_platform_context_isolation_asserted": false,
+      "first_context_contamination_exits_generation_context": true,
+      "same_context_retry_after_contamination_allowed": false,
+      "context_contamination_requires_engineering_repair": true,
+      "fresh_story_only_context_required_after_repair": true
     },
     "cost_boundary": {
       "chatgpt_work": false,

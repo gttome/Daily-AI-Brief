@@ -80,3 +80,19 @@ The delivery boundary is now conceptually strict:
 Only the middle story-only handoff is visible to native generation. Operational history is retained durably for recovery but is not part of the generation prompt/context. A context mismatch is an engineering-repair signal, not a normal quality retry.
 
 Implementation hardening remains tracked by DAB-KB-035; this documentation update does not claim that hidden runtime context isolation is already mechanically guaranteed.
+
+## Story-only generator-visible isolation — enforced
+
+The delivery wrapper now mechanically binds the actual submitted native-image task text to the shared sealed-story generation instruction. The generator-visible payload is reconstructed from the strict render-spec compiler and contains only the story mechanism/facts, conceptual elements, composition contract, visible-text allowlist, prohibited specifics/patterns and professional-quality rules.
+
+The delivery record distinguishes what is actually enforced from what is not observable:
+
+- `runtime_context_isolation=generator_visible_story_only_projection_v1` means the submitted image instruction is the exact sealed projection and cannot be replaced by Watchdog/Supervisor prose;
+- `hidden_platform_context_isolation=not_asserted` avoids claiming any hidden platform behavior that cannot be independently proven;
+- `generator_visible_context.schema_version=story-only-generator-context-v1` carries the exact compiler output and submitted-instruction digest;
+- envelope identity, leases, retries, Git transport and review state remain outside the submitted generator instruction.
+
+A first rejection whose normalized evidence indicates context contamination, wrong subject, sealed-prompt displacement, execution-context leakage, Watchdog/Supervisor/Kanban/dashboard content, or equivalent contamination returns `ENGINEERING_REPAIR_REQUIRED`. `same_context_retry_allowed=false`. A later image attempt is allowed only after bounded engineering-repair evidence is ready, and that attempt must use a fresh story-only generator-visible context.
+
+This change preserves the four-attempt ceiling, duplicate-generation prohibition, accepted_locked immutability, exact-byte persistence and saved-Git visual review.
+
