@@ -1,0 +1,51 @@
+{
+  "schema_version": "reader-correction-v1",
+  "edition_id": "dab-edition-2026-10-04",
+  "execution_id": "reliable-edition-20261004-run8",
+  "state": "POST_CLOSE_READER_CORRECTION",
+  "scope": "reader_presentation_parity_only",
+  "public_closed_evidence": "_records/edition-execution/public-closed/2026-10-04-run8.json",
+  "task19_seal": "_records/editorial/2026-10-04-run8/task19-bundle-seal.json",
+  "preserve_accepted_locked_images": true,
+  "reader_digest_overrides": [
+    [
+      "briefs/2026-10-04.md",
+      "f528f0314893d8849d61b9a33fe7d3dc0f381016"
+    ]
+  ],
+  "projection_digests": [
+    [
+      "briefs/2026-10-04.md",
+      "f528f0314893d8849d61b9a33fe7d3dc0f381016"
+    ],
+    [
+      "latest.md",
+      "f82d3308bba6e894cd86aef23621e0af4692492d"
+    ],
+    [
+      "index.md",
+      "ffbec8a82065199f2c7527d024fface5a81f8266"
+    ]
+  ],
+  "restored_reader_contract": [
+    "edition_overview",
+    "source_reading_and_freshness_context",
+    "topics_evidence_availability",
+    "six_persisted_book_bridges",
+    "ten_star_feedback_controls",
+    "full_video_and_podcast_sections",
+    "watchlist_daily_groups",
+    "series_invitation",
+    "standard_archive_footer",
+    "standard_reader_focus_order"
+  ],
+  "excluded_scope": [
+    "story_selection",
+    "source_research",
+    "media_selection",
+    "watchlist_decisions",
+    "accepted_locked_images",
+    "production_run_state"
+  ],
+  "reason": "Authorized historical reader-parity correction after PUBLIC_CLOSED. The original Task 19 reader hash remains historical evidence; this receipt binds the corrected reader projection while preserving exact accepted image locks."
+}

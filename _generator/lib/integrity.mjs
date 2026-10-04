@@ -52,6 +52,28 @@ function validateFrozenDigestRows(repoRoot,rows,{label,accept=()=>true}={}){
   return errors;
 }
 
+function frozenPostCloseReaderCorrection(edition,repoRoot){
+  const receiptPath=path.join(repoRoot,'_records','publication',edition.brief_date,'reader-correction.json');
+  if(!fs.existsSync(receiptPath))return null;
+  try{
+    const receipt=JSON.parse(fs.readFileSync(receiptPath,'utf8'));
+    if(receipt?.schema_version!=='reader-correction-v1'||receipt?.edition_id!==edition.edition_id||receipt?.state!=='POST_CLOSE_READER_CORRECTION'||receipt?.preserve_accepted_locked_images!==true)return null;
+    if(!safeRelative(receipt.public_closed_evidence))return null;
+    const closedPath=path.join(repoRoot,receipt.public_closed_evidence);
+    if(!fs.existsSync(closedPath))return null;
+    const closed=JSON.parse(fs.readFileSync(closedPath,'utf8'));
+    if(closed?.state!=='PUBLIC_CLOSED'||closed?.edition_id!==edition.edition_id)return null;
+    const overrides=receipt.reader_digest_overrides;
+    if(!Array.isArray(overrides)||!overrides.length)return null;
+    for(const row of overrides){
+      if(!Array.isArray(row)||row.length!==2||!safeRelative(row[0])||!/^[a-f0-9]{40}$/.test(String(row[1])))return null;
+      const full=path.join(repoRoot,row[0]);
+      if(!fs.existsSync(full)||gitBlobSha1(fs.readFileSync(full))!==row[1])return null;
+    }
+    return receipt;
+  }catch{return null;}
+}
+
 export function validateFrozenTask19Bundle(edition,repoRoot){
   const errors=[],sealEntry=findFrozenTask19Seal(edition,repoRoot);
   if(!sealEntry)return ['Frozen Task 19 bundle seal missing or ambiguous'];
@@ -69,7 +91,10 @@ export function validateFrozenTask19Bundle(edition,repoRoot){
   const reader=Object.entries(shardData).find(([p,x])=>x?.shard==='reader-pages')?.[1];
   const images=Object.entries(shardData).find(([p,x])=>x?.shard==='accepted-images')?.[1];
   if(!reader||!images)return [...errors,'Frozen Task 19 reader/image shards are required'];
-  errors.push(...validateFrozenDigestRows(repoRoot,reader.digests,{label:'reader'}));
+  const correction=frozenPostCloseReaderCorrection(edition,repoRoot);
+  const overridden=new Set((correction?.reader_digest_overrides||[]).map(([relative])=>relative));
+  errors.push(...validateFrozenDigestRows(repoRoot,reader.digests,{label:'reader',accept:relative=>!overridden.has(relative)}));
+  if(correction)errors.push(...validateFrozenDigestRows(repoRoot,correction.reader_digest_overrides,{label:'reader-correction'}));
   errors.push(...validateFrozenDigestRows(repoRoot,images.digests,{label:'image',accept:p=>String(p).startsWith('briefs/images/'+edition.brief_date+'/')}));
   const imageRows=(images.digests||[]).filter(([p])=>String(p).startsWith('briefs/images/'+edition.brief_date+'/'));
   if(imageRows.length!==6)errors.push('Frozen Task 19 must bind exactly six accepted image byte streams');

@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 
-test('Run 8 frozen live validation reuses sealed images and runtime feedback without reader rework',()=>{
+test('Run 8 frozen live validation reuses sealed images while permitting the explicit post-close reader correction',()=>{
   const temp=fs.mkdtempSync(path.join(os.tmpdir(),'dab-run8-live-'));
   const completionPath=path.join(temp,'completion.json');
   const out=path.join(temp,'validation.json');
@@ -37,7 +37,11 @@ test('Run 8 frozen live validation reuses sealed images and runtime feedback wit
     assert.equal(receipt.checks.find(x=>x.check_id==='image_integrity_dimensions').result,'pass');
     assert.match(receipt.checks.find(x=>x.check_id==='image_integrity_dimensions').evidence,/sealed Task 19 byte identities/);
     assert.equal(receipt.checks.find(x=>x.check_id==='rating_share_generated_ids').result,'pass');
-    assert.match(receipt.checks.find(x=>x.check_id==='rating_share_generated_ids').evidence,/feedback\.js restores stable five-star controls/);
+    assert.match(receipt.checks.find(x=>x.check_id==='rating_share_generated_ids').evidence,/Six story identities\/rating controls are generated/);
+    const correction=JSON.parse(fs.readFileSync('_records/publication/2026-10-04/reader-correction.json','utf8'));
+    assert.equal(correction.state,'POST_CLOSE_READER_CORRECTION');
+    assert.equal(correction.preserve_accepted_locked_images,true);
+    assert.deepEqual(correction.reader_digest_overrides,[['briefs/2026-10-04.md','f528f0314893d8849d61b9a33fe7d3dc0f381016']]);
   } finally {
     fs.rmSync(temp,{recursive:true,force:true});
   }
