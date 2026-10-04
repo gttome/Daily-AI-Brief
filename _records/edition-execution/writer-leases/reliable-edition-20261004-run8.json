@@ -7,10 +7,10 @@
   "capability": "repository",
   "operation_key": "eab6c1749bdd9dec9fcadc21ffef5080d6510686777730dbbbc4949999ca46b1",
   "acquired_at": "2026-10-04T10:56:20.000Z",
-  "last_heartbeat_at": "2026-10-04T10:56:20.000Z",
-  "expires_at": "2026-10-04T11:11:20.000Z",
+  "last_heartbeat_at": "2026-10-04T11:09:12.845Z",
+  "expires_at": "2026-10-04T11:09:12.845Z",
   "state": "ACTIVE",
-  "released": false,
+  "released": true,
   "transfer_from": {
     "owner_id": "github-actions-37196799964-1",
     "generation": 57,
@@ -19,5 +19,7 @@
     "workflow_run_id": 37196799964,
     "conclusion": "failure",
     "at": "2026-10-04T10:56:20.000Z"
-  }
+  },
+  "released_at": "2026-10-04T11:09:12.845Z",
+  "release_reason": "TASK_19_DONE_HANDOFF_TO_SUPERVISOR"
 }

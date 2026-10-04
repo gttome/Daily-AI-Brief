@@ -14,5 +14,12 @@
   "created_at": "2026-10-04T10:53:05.020Z",
   "writer_generation_is_provenance": false,
   "authority_refresh_required_at_invocation": false,
-  "status": "queued"
+  "status": "completed",
+  "started_at": "2026-10-04T10:56:20.000Z",
+  "consumed_at": "2026-10-04T10:56:20.000Z",
+  "active_writer_generation": 58,
+  "active_owner_id": "watchdog-D:wd-335f455b1d5d15d5171759260d6dadf:task-19:recovery",
+  "authority_reconciled_at": "2026-10-04T10:56:20.000Z",
+  "completed_at": "2026-10-04T11:09:12.845Z",
+  "result_path": "_records/edition-execution/worker-results/reliable-edition-20261004-run8/19-eab6c1749bdd9dec9fcadc21ffef5080d6510686777730dbbbc4949999ca46b1.json"
 }
