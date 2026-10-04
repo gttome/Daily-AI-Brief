@@ -54,6 +54,7 @@ export function buildNativeImageDelivery(execution) {
   const p = execution.sealed_story_packet;
   const taskPrompt = execution.generation_instruction;
   const renderSpec = compileImageRenderSpec(p);
+  const {acceptance_order:_acceptanceOrder,wrong_subject_action:_wrongSubjectAction,...generatorRenderSpec}=renderSpec;
   return {
     schema_version: '1.0.0', policy_id: NATIVE_IMAGE_DELIVERY_POLICY,
     request_sha256: imageExecutionHash(execution),
@@ -64,7 +65,7 @@ export function buildNativeImageDelivery(execution) {
     generator_visible_context: {
       schema_version:'story-only-generator-context-v1',
       policy_id:renderSpec.policy_id,
-      render_spec:renderSpec,
+      render_spec:generatorRenderSpec,
       submitted_instruction_sha256:sha(taskPrompt)
     },
     manual_intervention_allowed: false,
