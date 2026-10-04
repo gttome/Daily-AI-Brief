@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import {
   validateProtectedRepairRecord,
   exactHeadCiGate,
+  protectedPrContextGate,
   mergeGate,
   buildDeadWriterProof,
   validateDeadWriterProof,
@@ -36,6 +37,13 @@ try{
       record:read(args.record),
       observed_head_sha:args['head-sha'],
       check_runs:Array.isArray(checks)?checks:(checks.check_runs||[])
+    });
+    emit(out);
+    if(!out.allowed)process.exitCode=2;
+  }else if(command==='pr-context-gate'){
+    const out=protectedPrContextGate({
+      workflow_run:read(args.run),
+      observed_head_sha:args['head-sha']||null
     });
     emit(out);
     if(!out.allowed)process.exitCode=2;
