@@ -215,3 +215,22 @@ The successful September 18 canary showed that 20 metadata candidates, nine deep
 ## September 22, 2026 — emerging Watchlist discovery gate
 
 For editions dated September 23, 2026 or later, the publisher must satisfy `_data/emerging-signal-policy.json` during the same single semantic pass that handles Watchlist/media/book relevance. The compact runtime contract is authoritative. The publisher must create `_records/watchlist-sweeps/YYYY-MM-DD.json` before handoff. Repository tests bind that receipt to the public Watchlist daily delta. Missing receipt, missing broad-web or YouTube creator coverage, or an uncertified zero-new result is a Watchlist discovery defect; do not silently convert it into “0 new today.”
+
+<!-- oct4-reader-semantic-close-gate -->
+## October 4 reader-semantic publication amendment
+
+Run 8 reached PUBLIC_CLOSED while the October 4 dated Brief and permanent story pages were structurally reachable but missing required reader presentation. PR #452 and PR #453 repaired the historical edition from locked canonical data without changing accepted image bytes or editorial selections.
+
+For all future editions, terminal publication validation must verify **reader semantics**, not only route existence:
+
+- homepage and dated Brief expose the required edition overview;
+- article reading/freshness context renders when verified evidence exists;
+- Topics, Evidence and Availability render correctly;
+- all required book bridges render from persisted mappings;
+- article/video/podcast usefulness controls are present;
+- media sections contain the required metadata and source links;
+- Watchlist daily state renders from canonical Watchlist evidence;
+- Continue Learning / archive navigation is present where required;
+- all six permanent article pages equal canonical permanent-story renderer output.
+
+A temporary compatibility suppression or frozen migration that hides required reader sections must be retired before PUBLIC_CLOSED or explicitly block terminal close. Successful HTTP routes alone are not reader-completeness evidence.

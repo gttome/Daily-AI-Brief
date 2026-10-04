@@ -120,3 +120,18 @@ Q24's six-story order is m04, m03, m05, m06, m01, m09. Preserve its original cut
 ## Verification obligations
 
 Test identical production/qualification requests; rejection of manual steps and false isolation claims; sequential generation; wrong-subject/factual/quality rejection; four-attempt exhaustion; exact-byte read-back; accepted checkpoint reuse; changed-byte/request rejection; missing native capability; and exclusion of fixtures from live approval. Preserve full historical benchmark regression tests. Release only through protected pull-request CI.
+
+<!-- oct4-image-context-isolation -->
+## October 4 field amendment — story-only native generation context
+
+Run 8 Task 11 produced native images containing Watchdog operational dashboards instead of the sealed story mechanism. The attempts were correctly rejected before transport, but the incident proves that a valid render specification is insufficient if recovery/orchestration context remains visible to native generation.
+
+For production Tasks 11–16:
+
+- generation context must contain only the exact sealed story visual packet, verified mechanism/facts, allowed visible text and image-quality restrictions;
+- Watchdog, Supervisor, Kanban, lease, incident, protected-repair and unrelated task prose must remain outside the native generation context;
+- a subject/context-isolation mismatch immediately ends that generation context; do not spend another ordinary same-context attempt;
+- recovery reasoning happens in the recovery context, then hands one bounded story-only request to the generator;
+- already accepted_locked images are never regenerated because another story or recovery context failed.
+
+This requirement strengthens context isolation without lowering the professional image standard or changing the one-owner/exact-request/accepted-byte contracts.
