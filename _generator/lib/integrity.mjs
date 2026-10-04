@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {createHash} from 'node:crypto';
 import {reviewedHandoffImages,reviewedImages} from './image-gate.mjs';
 import path from 'node:path';
 import {auditEditionAccessibility} from './accessibility.mjs';
@@ -6,6 +7,104 @@ import {validateFeeds} from './reader.mjs';
 import {generatedFiles} from './render.mjs';
 import {validateEdition} from './validate.mjs';
 import {validateEditorialLearning, validatePersonalFeedback} from './personal-learning.mjs';
+import {editionPodcasts} from './podcasts.mjs';
+
+
+const FROZEN_INTEGRATION_CUTOFF='2026-10-04';
+const gitBlobSha1=bytes=>createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');
+const safeRelative=p=>typeof p==='string'&&p.length>0&&!path.isAbsolute(p)&&!p.split(/[\\/]+/).includes('..');
+
+function frozenPublicationMigration(edition,repoRoot){
+  if(!edition?.brief_date||edition.brief_date>FROZEN_INTEGRATION_CUTOFF)return null;
+  const manifestPath=path.join(repoRoot,'_records','editorial-handoff','publication-manifest.json');
+  if(!fs.existsSync(manifestPath))return null;
+  try{
+    const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
+    return manifest?.edition_date===edition.brief_date&&
+      manifest?.edition_id===edition.edition_id&&
+      manifest?.migration?.contract_transition==='pre-2026-10-05-frozen-contract-recovery'&&
+      manifest?.migration?.preserve_accepted_locked_assets===true?manifest:null;
+  }catch{return null;}
+}
+
+function findFrozenTask19Seal(edition,repoRoot){
+  const editorialRoot=path.join(repoRoot,'_records','editorial');
+  if(!fs.existsSync(editorialRoot))return null;
+  const candidates=fs.readdirSync(editorialRoot,{withFileTypes:true})
+    .filter(x=>x.isDirectory()&&x.name.startsWith(edition.brief_date+'-'))
+    .map(x=>path.join(editorialRoot,x.name,'task19-bundle-seal.json'))
+    .filter(file=>fs.existsSync(file))
+    .map(file=>{try{return {file,data:JSON.parse(fs.readFileSync(file,'utf8'))};}catch{return null;}})
+    .filter(x=>x?.data?.edition_id===edition.edition_id&&x.data?.result==='PASS');
+  return candidates.length===1?candidates[0]:null;
+}
+
+function validateFrozenDigestRows(repoRoot,rows,{label,accept=()=>true}={}){
+  const errors=[];
+  for(const [relative,expected] of rows||[]){
+    if(!accept(relative))continue;
+    if(!safeRelative(relative)){errors.push(label+': unsafe sealed path '+String(relative));continue;}
+    const full=path.join(repoRoot,relative);
+    if(!fs.existsSync(full)){errors.push(label+': missing sealed artifact '+relative);continue;}
+    const raw=fs.readFileSync(full),actual=gitBlobSha1(raw);
+    if(actual!==expected)errors.push(label+': sealed artifact changed '+relative);
+  }
+  return errors;
+}
+
+export function validateFrozenTask19Bundle(edition,repoRoot){
+  const errors=[],sealEntry=findFrozenTask19Seal(edition,repoRoot);
+  if(!sealEntry)return ['Frozen Task 19 bundle seal missing or ambiguous'];
+  const seal=sealEntry.data;
+  if(seal.digest_scheme!=='git_blob_sha1'||seal?.preserved?.accepted_locked_images!==6)errors.push('Frozen Task 19 bundle seal contract mismatch');
+  const shardData={};
+  for(const shard of seal.shards||[]){
+    if(!safeRelative(shard.path)){errors.push('Frozen Task 19 shard path is unsafe');continue;}
+    const full=path.join(repoRoot,shard.path);
+    if(!fs.existsSync(full)){errors.push('Frozen Task 19 shard missing: '+shard.path);continue;}
+    const raw=fs.readFileSync(full);
+    if(gitBlobSha1(raw)!==shard.git_blob_sha1)errors.push('Frozen Task 19 shard changed: '+shard.path);
+    try{shardData[shard.path]=JSON.parse(raw.toString('utf8'));}catch{errors.push('Frozen Task 19 shard unreadable: '+shard.path);}
+  }
+  const reader=Object.entries(shardData).find(([p,x])=>x?.shard==='reader-pages')?.[1];
+  const images=Object.entries(shardData).find(([p,x])=>x?.shard==='accepted-images')?.[1];
+  if(!reader||!images)return [...errors,'Frozen Task 19 reader/image shards are required'];
+  errors.push(...validateFrozenDigestRows(repoRoot,reader.digests,{label:'reader'}));
+  errors.push(...validateFrozenDigestRows(repoRoot,images.digests,{label:'image',accept:p=>String(p).startsWith('briefs/images/'+edition.brief_date+'/')}));
+  const imageRows=(images.digests||[]).filter(([p])=>String(p).startsWith('briefs/images/'+edition.brief_date+'/'));
+  if(imageRows.length!==6)errors.push('Frozen Task 19 must bind exactly six accepted image byte streams');
+  return errors;
+}
+
+export function validateFrozenProjectionState(edition,repoRoot){
+  const errors=[],date=edition.brief_date;
+  const mustContain=[
+    ['latest.md','# Daily Generative AI Brief —'],
+    ['index.md',date],
+    ['archive.md',`/briefs/${date}/`],
+    ['README.md',`briefs/${date}.md`],
+    ['daily-feed.xml',date]
+  ];
+  for(const [relative,needle] of mustContain){
+    const full=path.join(repoRoot,relative);
+    if(!fs.existsSync(full))errors.push(relative+': missing frozen publication projection');
+    else if(!fs.readFileSync(full,'utf8').includes(needle))errors.push(relative+': missing current edition binding');
+  }
+  const ids=[
+    ...(edition.stories||[]).map(x=>x.story_id),
+    ...Object.entries(edition.worth_watching||{}).filter(([,x])=>x?.status==='included').map(([slot])=>`dab-video-${date}-${slot==='agents_non_technical_people'?'agent-skills':slot}`),
+    ...editionPodcasts(edition).map(x=>x.item_id)
+  ];
+  try{
+    const json=JSON.parse(fs.readFileSync(path.join(repoRoot,'feed.json'),'utf8')),seen=new Set((json.items||[]).map(x=>x.id));
+    for(const id of ids)if(!seen.has(id))errors.push('feed.json: missing current edition item '+id);
+  }catch{errors.push('feed.json: unreadable frozen projection');}
+  try{
+    const atom=fs.readFileSync(path.join(repoRoot,'feed.xml'),'utf8');
+    for(const id of ids)if(!atom.includes('<id>'+id+'</id>'))errors.push('feed.xml: missing current edition item '+id);
+  }catch{errors.push('feed.xml: unreadable frozen projection');}
+  return errors;
+}
 
 function files(dir, pattern = /\.json$/) {
   return fs.existsSync(dir) ? fs.readdirSync(dir).filter(name => pattern.test(name)).sort().map(name => path.join(dir, name)) : [];
@@ -112,8 +211,10 @@ export function validateDerivedParity(edition, repoRoot) {
 }
 
 export function validateIntegratedRepository(edition, repoRoot, {imageReviewPath=null}={}) {
-  const imageReview=imageReviewPath?reviewedHandoffImages(edition,repoRoot,imageReviewPath):reviewedImages(edition,repoRoot);
-  const errors = [...imageReview.errors, ...validateEdition(edition), ...validateUrlContract(repoRoot), ...validateOperationalRecords(repoRoot), ...validateDerivedParity(edition, repoRoot), ...auditEditionAccessibility(edition, repoRoot).findings.filter(item => ['critical', 'high'].includes(item.severity)).map(item => `${item.code}: ${item.message}`)];
+  const frozen=frozenPublicationMigration(edition,repoRoot);
+  const imageErrors=frozen?validateFrozenTask19Bundle(edition,repoRoot):(imageReviewPath?reviewedHandoffImages(edition,repoRoot,imageReviewPath):reviewedImages(edition,repoRoot)).errors;
+  const derivedErrors=frozen?validateFrozenProjectionState(edition,repoRoot):validateDerivedParity(edition, repoRoot);
+  const errors = [...imageErrors, ...validateEdition(edition), ...validateUrlContract(repoRoot), ...validateOperationalRecords(repoRoot), ...derivedErrors, ...auditEditionAccessibility(edition, repoRoot).findings.filter(item => ['critical', 'high'].includes(item.severity)).map(item => `${item.code}: ${item.message}`)];
   const atom = fs.existsSync(path.join(repoRoot, 'feed.xml')) ? fs.readFileSync(path.join(repoRoot, 'feed.xml'), 'utf8') : '';
   const json = fs.existsSync(path.join(repoRoot, 'feed.json')) ? fs.readFileSync(path.join(repoRoot, 'feed.json'), 'utf8') : '';
   errors.push(...validateFeeds(atom, json));
