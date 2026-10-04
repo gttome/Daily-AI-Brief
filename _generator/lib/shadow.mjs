@@ -53,7 +53,8 @@ function frozenReaderAllowed(repoRoot,date,manifest){
   if(typeof sealPath!=='string'||typeof shardPath!=='string'||sealPath.includes('..')||shardPath.includes('..')||path.isAbsolute(sealPath)||path.isAbsolute(shardPath))return false;
   try{
     const seal=JSON.parse(fs.readFileSync(path.join(repoRoot,sealPath),'utf8'));
-    const shard=JSON.parse(fs.readFileSync(path.join(repoRoot,shardPath),'utf8'));
+    const shardText=fs.readFileSync(path.join(repoRoot,shardPath),'utf8');
+    const shard=JSON.parse(shardText);
     if(seal?.schema_version!=='task19-immutable-bundle-v1'||seal?.edition_id!==manifest.edition_id||seal?.task_id!=='19'||seal?.exact_artifact_digests!==true||seal?.result!=='PASS')return false;
     if(shard?.schema_version!=='task19-bundle-digest-shard-v1'||shard?.task_id!=='19'||shard?.shard!=='reader-pages'||shard?.digest_scheme!=='git_blob_sha1'||shard?.result!=='PASS')return false;
     const row=(shard?.digests||[]).find(x=>Array.isArray(x)&&x[0]===`briefs/${date}.md`);
