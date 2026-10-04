@@ -1,22 +1,13 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261004-run8",
-  "incident_id": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch",
+  "incident_id": "wd-e086276892044971f1a80c4ffc356fc1-task20-unclaimed",
   "owner_slot": "D",
-  "generation": 31,
+  "generation": 32,
   "state": "ACTIVE",
-  "acquired_at": "2026-10-04T10:33:20.000Z",
-  "last_heartbeat_at": "2026-10-04T11:09:12.845Z",
-  "expires_at": "2026-10-04T11:09:12.845Z",
-  "action_key": "wd-335f455b1d5d15d5171759260d6dadf-task18-dispatch:complete-task19-seal:g31",
-  "released": true,
-  "takeover_from": {
-    "owner_slot": "B",
-    "generation": 30,
-    "reason": "EXPIRED_RECOVERY_LEASE_SAFE_BOUNDARY_CONTINUATION",
-    "prior_expires_at": "2026-10-04T10:24:05.000Z",
-    "observed_at": "2026-10-04T10:33:20.000Z"
-  },
-  "released_at": "2026-10-04T11:09:12.845Z",
-  "release_reason": "RECOVERY_VERIFIED_PROGRESSING"
+  "acquired_at": "2026-10-04T11:16:46.172Z",
+  "last_heartbeat_at": "2026-10-04T11:16:46.172Z",
+  "expires_at": "2026-10-04T11:31:46.172Z",
+  "action_key": "wd-e086276892044971f1a80c4ffc356fc1-task20-unclaimed:consume-exact-task20-request:g32",
+  "released": false
 }
