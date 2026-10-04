@@ -407,6 +407,135 @@ Terminal-run guards must remain mandatory.
 
 ---
 
+## Strategy Interrupt / Meta-Diagnostic Escalation
+
+### October 4 observation — an owner latency question changed the quality of reasoning
+
+During Task 23, the owner asked a simple question equivalent to:
+
+> “Task 23 is taking way too long.”
+
+That question produced a qualitatively better recovery decision than the preceding autonomous loop.
+
+Before the question, the system was operating mostly at the **local execution level**:
+
+- acquire/release recovery authority;
+- retry exact-head CI;
+- reconcile handoffs;
+- renew or transfer leases;
+- preserve the same task;
+- repeat when CI remained red.
+
+After the question, the reasoning changed to the **meta-diagnostic level**:
+
+- Why has this task consumed so much elapsed time?
+- Are retries changing the failure signature?
+- Is the current tactic itself the problem?
+- Is there already a validated repair that has not been promoted?
+- What is the shortest safe path that changes the underlying condition rather than rerunning it?
+
+That reframing exposed the decisive fact: protected-repair PR #444 had already passed its exact-head deterministic CI, but production was continuing to validate against the old contract because the proven repair had not yet reached protected `main`. The better action was to promote the already-green repair and continue the bounded metadata migration—not keep rerunning the same production candidate.
+
+### Why the owner question works
+
+The question is not valuable because it supplies technical information. It is valuable because it acts as an **out-of-band strategy interrupt**.
+
+Normal autonomous recovery is optimized to keep moving within the current recovery plan. A strategy interrupt asks a different class of question:
+
+> **Is the recovery plan itself still rational given the elapsed time, repeated outcomes and available evidence?**
+
+This forces the system to move one level up:
+
+`execute tactic -> evaluate tactic -> replace tactic if it is not reducing uncertainty or failure`
+
+The system currently has strong liveness and retry doctrine, but it does not yet have an equally strong automatic rule for **tactic-loop blindness**. The owner has been supplying that missing meta-level signal manually.
+
+### Replication goal
+
+The system must reproduce the beneficial effect of the owner's question **without requiring the owner to ask it**.
+
+Add a durable **Strategy Interrupt / Meta-Diagnostic Escalation** state to Supervisor/Watchdog recovery. It should trigger automatically when any of the following are true:
+
+1. **Repeated failure signature:** the same normalized failure signature appears in two consecutive completed repair/CI attempts.
+2. **No substantive delta:** two recovery cycles, writer takeovers or lease generations occur without a substantive artifact, validator, configuration or failure-signature change.
+3. **Elapsed-time anomaly:** task elapsed time materially exceeds its historical/declared operating envelope while the task remains nonterminal and substantive progress is absent.
+4. **Ineffective corrective action:** a corrective action completes successfully but the next validation reports the same root failure surface.
+5. **Recovery churn dominates progress:** control-plane events (lease, heartbeat, handoff, fence, reconciliation) continue while content/protected-repair/publication evidence does not advance.
+6. **Owner strategy-interrupt language:** phrases such as “taking way too long,” “why are you waiting,” “why are you still doing this,” “are you stuck,” or equivalent should cause an immediate strategy interrupt. This remains a useful manual override, but must not be required for autonomy.
+
+### Required behavior once triggered
+
+A Strategy Interrupt is **not another retry**. The current tactic is temporarily frozen until the system performs a bounded meta-diagnostic pass:
+
+1. Re-state the exact task objective and non-negotiable invariants.
+2. Summarize the last few recovery attempts as `action -> durable delta -> validation result`.
+3. Normalize and compare failure signatures.
+4. Explicitly answer: **what changed after each attempt?**
+5. If the answer is “nothing material,” prohibit another identical retry.
+6. Search for already-completed or already-validated work that has not been promoted, consumed or connected to the active path.
+7. Inspect whether the blocker is actually one layer above/below the current repair target (validator contract, stale projection, protected repair promotion, dispatch wiring, evidence binding, etc.).
+8. Generate at least one materially different recovery hypothesis.
+9. Choose the smallest safe action that changes the blocking condition.
+10. Run one verification cycle and compare the new failure signature with the prior one.
+11. Persist the strategy change and result so another Watchdog does not rediscover the same diagnosis.
+
+### “Different method required” guard
+
+After the Strategy Interrupt triggers, the next attempted action must demonstrate at least one of these deltas before execution:
+
+- different file/contract being repaired;
+- different validated repair being promoted;
+- different dependency being satisfied;
+- different execution path being invoked;
+- different evidence being bound;
+- different root-cause hypothesis being tested.
+
+A lease renewal, handoff, heartbeat, rerun or identical CI invocation **does not count as a different method**.
+
+If no materially different action can be identified, the incident should be classified as requiring a genuinely external dependency rather than consuming additional internal retries.
+
+### Compact machine-readable trigger proposal
+
+Future deterministic health/escalation state should expose fields such as:
+
+- `task_elapsed_seconds`
+- `task_expected_envelope_seconds`
+- `last_substantive_progress_at`
+- `normalized_failure_signature`
+- `same_failure_count`
+- `recovery_cycles_without_substantive_delta`
+- `control_plane_events_since_progress`
+- `last_corrective_action`
+- `last_corrective_action_changed_failure`
+- `strategy_interrupt_required`
+- `strategy_interrupt_reason`
+- `strategy_generation`
+
+This lets GitHub detect the trigger cheaply and lets ChatGPT receive a compact instruction:
+
+`STRATEGY_INTERRUPT_REQUIRED -> diagnose the method, not merely the task -> choose a materially different bounded recovery action`
+
+### Acceptance tests
+
+Post-close hardening must include non-production tests proving:
+
+- two identical CI failure signatures trigger a Strategy Interrupt before a third blind rerun;
+- two Watchdog takeovers with no substantive delta trigger a Strategy Interrupt;
+- a successful corrective action followed by the same failure signature triggers a Strategy Interrupt;
+- a Strategy Interrupt discovers and promotes an already-green protected repair when that is the missing dependency;
+- a strategy generation cannot repeat the same action key/failure signature combination without new evidence;
+- owner strategy-interrupt language causes immediate meta-diagnostic escalation;
+- the same behavior occurs without owner prompting when deterministic trigger conditions are met;
+- terminal-run, one-writer, protected-main and accepted_locked invariants remain intact.
+
+### Core invariant
+
+> **Persistence is not the same as progress. Repeated execution of a non-improving tactic is a liveness failure.**
+
+The autonomous system must therefore optimize for **verified reduction of the blocker**, not simply continued activity.
+
+---
+
 ## Required post-close implementation sequence
 
 Do **not** begin this sequence until the October 4 production execution is independently verified `PUBLIC_CLOSED` and Task 29 is Done.
