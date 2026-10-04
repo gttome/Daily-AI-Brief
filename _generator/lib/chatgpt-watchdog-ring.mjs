@@ -163,9 +163,17 @@ export function validateWatchdogRingContract(contract={}){
   if(contract.lease?.replaces_writer_fence!==false)e.push('watchdog_ring_writer_fence_separation');
   if(contract.events?.append_only!==true||contract.events?.healthy_noop_writes!==false)e.push('watchdog_ring_event_noise_policy');
   if(contract.no_op?.healthy_no_mutation!==true||contract.no_op?.other_recovery_owner_no_mutation!==true)e.push('watchdog_ring_noop_contract');
+  const compact=contract.compact_health||{};
+  if(compact.schema_version!=='watchdog-health-v1')e.push('watchdog_ring_compact_health_schema');
+  if(compact.runtime_ref!=='runtime/watchdog-health'||compact.path!=='data/operations/watchdog-health.json')e.push('watchdog_ring_compact_health_location');
+  if(!Number.isInteger(compact.maximum_age_minutes)||compact.maximum_age_minutes<5||compact.maximum_age_minutes>15)e.push('watchdog_ring_compact_health_age');
+  if(compact.healthy_active_compact_exit!==true||compact.terminal_compact_exit!==true||compact.progressing_recovery_owner_compact_exit!==true)e.push('watchdog_ring_compact_health_noop_states');
+  if(compact.missing_stale_or_contradictory_must_expand!==true||compact.false_healthy_forbidden!==true)e.push('watchdog_ring_compact_health_fail_safe');
+  if(JSON.stringify(compact.decision_counter_buckets)!==JSON.stringify(['healthy_noop','escalated']))e.push('watchdog_ring_compact_health_counters');
   if(contract.recovery?.verification_required!==true||contract.recovery?.dispatch_only_is_success!==false)e.push('watchdog_ring_verification_contract');
   if(contract.progress?.active_executor_required_for_recovery_success!==true)e.push('watchdog_ring_active_executor_required');
   if(contract.recovery?.continue_until_active_and_progressing!==true)e.push('watchdog_ring_continue_until_progress');
+  if(contract.recovery?.strategy_interrupt_required!==true||contract.recovery?.third_materially_equivalent_blind_retry_allowed!==false)e.push('watchdog_ring_strategy_interrupt');
   if(contract.recovery?.exhaust_safe_authorized_options_before_handoff!==true)e.push('watchdog_ring_exhaust_authorized_options');
   if(contract.recovery?.one_failed_attempt_may_end_recovery!==false)e.push('watchdog_ring_one_attempt_not_terminal');
   if(contract.recovery?.safe_boundary_is_handoff_not_success!==true)e.push('watchdog_ring_safe_boundary_handoff');
