@@ -1,0 +1,14 @@
+{
+  "task_id": "05",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-04T02:37:57.000Z",
+  "reason": "Begin exact 2/2/2 editorial lock from the freshness-verified Task 04 evidence set.",
+  "proof": {
+    "evidence_artifact": "_records/discovery/2026-10-04-run8/evidence.json",
+    "eligible_candidates": 8,
+    "selection_target": 6,
+    "exact_one_agent_skills_story": true,
+    "writer_generation": 12
+  }
+}
