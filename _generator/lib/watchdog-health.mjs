@@ -87,11 +87,11 @@ export function watchdogFastPathDecision(record,{now=new Date().toISOString(),ma
   const errors=validateWatchdogHealthRecord(record);
   if(errors.length)return {action:'EXPAND_RECOVERY',reason:'compact_health_invalid',errors,counter_bucket:'escalated',compact_only:false};
   const age_ms=Math.max(0,Date.parse(now)-Date.parse(record.observed_at));
-  if(age_ms>max_age_ms)return {action:'EXPAND_RECOVERY',reason:'compact_health_stale',age_ms,counter_bucket:'escalated',compact_only:false};
-  if(expected_execution_id&&record.active===true&&record.execution_id!==expected_execution_id)
+  if(expected_execution_id&&record.execution_id!==expected_execution_id)
     return {action:'EXPAND_RECOVERY',reason:'compact_health_execution_mismatch',age_ms,counter_bucket:'escalated',compact_only:false};
   if(record.terminal===true||record.health_state==='TERMINAL')
     return {action:'EXIT_SILENT',reason:'terminal_compact_health',age_ms,counter_bucket:'healthy_noop',compact_only:true};
+  if(age_ms>max_age_ms)return {action:'EXPAND_RECOVERY',reason:'compact_health_stale',age_ms,counter_bucket:'escalated',compact_only:false};
   if(record.watchdog_recovery_owner_progressing===true||record.health_state==='RECOVERY_OWNER_PROGRESSING')
     return {action:'EXIT_SILENT',reason:'valid_recovery_owner_progressing',age_ms,counter_bucket:'healthy_noop',compact_only:true};
   if(record.active===true&&record.health_state==='HEALTHY_ACTIVE'&&record.escalation_required===false)
