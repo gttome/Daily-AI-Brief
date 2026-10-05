@@ -251,7 +251,7 @@ export async function executeImageRequest(execution, options={}) {
   if (options.executionProfile !== 'reliable-edition-v1') return executeLegacyImageRequest(execution, options);
   if (!options.operationStore) return {status:'CAPABILITY_BLOCKED_DURABLE_STORE_REQUIRED',accepted_locked:false,attempts_allocated:0};
   if (!options.resume) {
-    const admission=imageExecutionAdmissionDecision(options.admission,execution,{
+    const admission=imageExecutionAdmissionDecision(options.executionAdmission,execution,{
       execution_id:options.executionId||options.execution_id||null,
       task_id:options.taskId||options.task_id||null,
       request_key:options.requestKey||options.request_key||null
@@ -282,8 +282,8 @@ export async function executeImageBatch(executions,options={}){
   const results=[],hashes=new Set();
   for(const execution of executions){
     const candidateId=execution.sealed_story_packet.candidate_id;
-    const admission=options.admissionByCandidate?.[candidateId]||options.admission||null;
-    const result=await executeImageRequest(execution,{...options,admission,resume:options.resumeByCandidate?.[candidateId]||null});
+    const executionAdmission=options.admissionByCandidate?.[candidateId]||options.executionAdmission||null;
+    const result=await executeImageRequest(execution,{...options,executionAdmission,resume:options.resumeByCandidate?.[candidateId]||null});
     results.push(result);
     if(!['accepted_locked','fixture_pass'].includes(result.status))return {status:result.status,results,unattended_image_stage_evidence_complete:false};
     if(hashes.has(result.persistence.sha256))return {status:'DUPLICATE_STORY_IMAGE_REJECTED',results,unattended_image_stage_evidence_complete:false};
