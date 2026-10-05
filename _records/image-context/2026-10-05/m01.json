@@ -1,0 +1,23 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-05-m01"
+  ],
+  "candidate_id": "m01",
+  "task_id": "15",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-05T02:46:35.246Z",
+  "allowed_text": [
+    "DOCA Agent Skill",
+    "Instructions",
+    "References",
+    "Scripts",
+    "API check",
+    "Hardware check",
+    "Build check",
+    "Preflight",
+    "Bounded execution",
+    "Rollback"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: verified DOCA Agent Skills. Depict a sealed skill package containing instructions, references, and scripts moving through three engineered validation chambers—API signature, hardware compatibility, and build validation—before a preflight gate authorizes bounded execution with rollback. Use technical cutaway detail, schema sheets, hardware topology symbols, build artifacts, check seals, and a reversible execution rail. No people, humanoids, photos, decorative filler, unsupported metrics, overlapping text, or sparse/basic box-and-arrow layout. Only these visible labels: DOCA Agent Skill, Instructions, References, Scripts, API check, Hardware check, Build check, Preflight, Bounded execution, Rollback."
+}

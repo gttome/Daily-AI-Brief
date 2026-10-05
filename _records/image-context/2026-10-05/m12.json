@@ -1,0 +1,23 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-05-m12"
+  ],
+  "candidate_id": "m12",
+  "task_id": "12",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-05T02:46:35.246Z",
+  "allowed_text": [
+    "Pull request",
+    "Review API",
+    "Low effort",
+    "Balanced",
+    "High effort",
+    "Code checks",
+    "Security checks",
+    "Test evidence",
+    "Review comments",
+    "Merge decision"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: API-driven code review with adjustable effort. Show a pull request entering a review API router, three calibrated inspection depths, and parallel code, security, and test analyzers that reconverge into evidence-backed review comments and a merge decision. Use a precise engineering blueprint with diff fragments, dependency traces, test-result tiles, risk heat markers, and an effort dial; make the mechanism readable without imitating a real product screen. No people, humanoids, photos, decorative filler, logos, unsupported performance claims, overlapping text, or sparse/basic box-and-arrow layout. Only these visible labels: Pull request, Review API, Low effort, Balanced, High effort, Code checks, Security checks, Test evidence, Review comments, Merge decision."
+}
