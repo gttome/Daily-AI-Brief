@@ -1,14 +1,12 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "incident_id": "wd-reliable-edition-20261005-run9-task23-publication-manifest-contract-incompatibility",
+  "incident_id": "wd-reliable-edition-20261005-run9-task23-reader-projection-contract-recovery",
   "owner_slot": "F",
-  "generation": 26,
-  "state": "RELEASED",
-  "acquired_at": "2026-10-05T08:25:58.342Z",
-  "last_heartbeat_at": "2026-10-05T08:26:28.585Z",
-  "expires_at": "2026-10-05T08:26:28.585Z",
-  "action_key": "wd-reliable-edition-20261005-run9-task23-publication-manifest-contract-incompatibility:watchlist-projection-repair:slot-f:g26",
-  "released_at": "2026-10-05T08:26:28.585Z",
-  "release_reason": "SAFE_BOUNDARY_EXACT_HEAD_CI_PENDING"
+  "generation": 27,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-05T08:42:17.441Z",
+  "last_heartbeat_at": "2026-10-05T08:42:17.441Z",
+  "expires_at": "2026-10-05T08:57:17.441Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task23-reader-projection-contract-recovery:protected-repair-and-projection:slot-f:g27"
 }
