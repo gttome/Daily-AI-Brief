@@ -1,0 +1,29 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "incident_id": "wd-reliable-edition-20261005-run9-task11-humanoid-contamination-dd4455ae",
+  "owner_slot": "F",
+  "task_id": "11",
+  "event_at": "2026-10-05T03:02:30.000Z",
+  "classification": "BLOCKED_ACTIONABLE",
+  "outcome": "SAFE_BOUNDARY_REACHED",
+  "action_key": "wd-reliable-edition-20261005-run9-task11-humanoid-contamination-dd4455ae:consume-green-repair-contract:slot-f:g6",
+  "attempted_action_keys": [
+    "task11-native-attempt-1-dd4455ae",
+    "persist-rejected-exact-png-561676d8",
+    "consume-protected-subject-control-repair-pr431",
+    "queue-repair-epoch-1-b2a4c8d7"
+  ],
+  "durable_delta": {
+    "rejected_png_sha256": "561676d882970fbbca3570bb39ad877cc0f0f91d9a43c32edc2e396042b9a5cf",
+    "rejected_git_blob_sha": "e9b0a3f32bfc4445b644d44a791f33bf50c4a82d",
+    "repair_epoch": 1,
+    "authoritative_request_key": "b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26",
+    "repair_context_path": "_records/image-context/2026-10-05/m02-repair-epoch-1.json"
+  },
+  "blocker": "The repair contract requires a genuinely fresh story-only native invocation after subject contamination; the current mixed recovery invocation is not eligible for that bounded attempt.",
+  "next_authorized_action": "Acquire current Task 11 writer generation and consume exact request b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26 using only _records/image-context/2026-10-05/m02-repair-epoch-1.json; then persist exact PNG bytes, verify Git read-back, review saved asset and accept_locked or record the exact post-repair failure.",
+  "recovery_required": true,
+  "success": false
+}

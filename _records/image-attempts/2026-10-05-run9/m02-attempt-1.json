@@ -1,0 +1,39 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "request_key": "dd4455aeb62013bdb4fd96647b09acac7d399d0f3eafc53304b98537e19a6fb9",
+  "writer_generation": 27,
+  "consumer_slot": "F",
+  "attempt": 1,
+  "generated_at": null,
+  "generation_time_status": "unavailable_from_native_tool_response",
+  "native_generation_id": "exec-d0d4af03-b6d6-4b04-ac0a-0768869f26a5",
+  "native_capture": {
+    "format": "PNG",
+    "persisted": true,
+    "path": "_records/image-originals/2026-10-05-run9/dab-edition-2026-10-05-m02-attempt-1-native-rejected.png",
+    "byte_count": 1571088,
+    "width": 1731,
+    "height": 909,
+    "sha256": "561676d882970fbbca3570bb39ad877cc0f0f91d9a43c32edc2e396042b9a5cf",
+    "git_blob_sha": "e9b0a3f32bfc4445b644d44a791f33bf50c4a82d",
+    "exact_bytes_preserved": true,
+    "accepted_asset": false
+  },
+  "saved_asset_review": {
+    "reviewed_at": "2026-10-05T03:02:30.000Z",
+    "passed": false,
+    "subject_correct": true,
+    "context_contamination": false,
+    "people_or_humanoid_present": true,
+    "visible_text_guard": "PASS",
+    "reason": "The backend-state verification mechanism is recognizable, but the Agent claim panel contains a humanoid robot head. This violates the sealed no-people/no-humanoids subject-control gate."
+  },
+  "disposition": "REJECTED_SUBJECT_CONTROL_HUMANOID_PRESENT",
+  "accepted_locked": false,
+  "same_context_retry_prohibited": true,
+  "targeted_retry": "Enter engineering repair immediately. Use one fresh story-only repair epoch that renders the agent claim solely as a signed protocol packet or document card; zero characters, faces, heads, robots, avatars or silhouettes."
+}
