@@ -32,8 +32,10 @@
       "evidence_path": "_records/image-originals/2026-10-05-run9/dab-edition-2026-10-05-m02-attempt-1-native-rejected.png",
       "method": "Git Data create_blob Base64",
       "source_sha256": "561676d882970fbbca3570bb39ad877cc0f0f91d9a43c32edc2e396042b9a5cf",
-      "git_blob_sha": "e9b0a3f32bfc4445b644d44a791f33bf50c4a82d",
-      "exact_bytes_preserved": true
+      "git_blob_sha": "eace8b12b008e97d85fd39f91edb54cf19607848",
+      "exact_bytes_preserved": true,
+      "git_readback_size": 1571088,
+      "git_readback_verified": true
     },
     "protected_ci_pass": {
       "result": "PASS",

@@ -17,10 +17,12 @@
   ],
   "durable_delta": {
     "rejected_png_sha256": "561676d882970fbbca3570bb39ad877cc0f0f91d9a43c32edc2e396042b9a5cf",
-    "rejected_git_blob_sha": "e9b0a3f32bfc4445b644d44a791f33bf50c4a82d",
+    "rejected_git_blob_sha": "eace8b12b008e97d85fd39f91edb54cf19607848",
     "repair_epoch": 1,
     "authoritative_request_key": "b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26",
-    "repair_context_path": "_records/image-context/2026-10-05/m02-repair-epoch-1.json"
+    "repair_context_path": "_records/image-context/2026-10-05/m02-repair-epoch-1.json",
+    "rejected_git_readback_size": 1571088,
+    "rejected_git_readback_verified": true
   },
   "blocker": "The repair contract requires a genuinely fresh story-only native invocation after subject contamination; the current mixed recovery invocation is not eligible for that bounded attempt.",
   "next_authorized_action": "Acquire current Task 11 writer generation and consume exact request b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26 using only _records/image-context/2026-10-05/m02-repair-epoch-1.json; then persist exact PNG bytes, verify Git read-back, review saved asset and accept_locked or record the exact post-repair failure.",

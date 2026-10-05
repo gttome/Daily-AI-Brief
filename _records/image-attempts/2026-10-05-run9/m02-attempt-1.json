@@ -19,9 +19,11 @@
     "width": 1731,
     "height": 909,
     "sha256": "561676d882970fbbca3570bb39ad877cc0f0f91d9a43c32edc2e396042b9a5cf",
-    "git_blob_sha": "e9b0a3f32bfc4445b644d44a791f33bf50c4a82d",
+    "git_blob_sha": "eace8b12b008e97d85fd39f91edb54cf19607848",
     "exact_bytes_preserved": true,
-    "accepted_asset": false
+    "accepted_asset": false,
+    "git_readback_size": 1571088,
+    "git_readback_verified": true
   },
   "saved_asset_review": {
     "reviewed_at": "2026-10-05T03:02:30.000Z",
