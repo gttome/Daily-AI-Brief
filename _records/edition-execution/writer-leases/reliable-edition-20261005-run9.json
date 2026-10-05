@@ -4,6 +4,10 @@
   "owner_id": "github-actions-37245967234-1",
   "generation": 1,
   "acquired_at": "2026-10-05T00:03:39.101Z",
-  "last_heartbeat_at": "2026-10-05T00:03:39.101Z",
-  "expires_at": "2026-10-05T00:08:39.101Z"
+  "last_heartbeat_at": "2026-10-05T00:07:59.000Z",
+  "expires_at": "2026-10-05T00:07:59.000Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T00:07:59.000Z",
+  "release_reason": "TASK_00_HANDOFF_TO_CHATGPT_CONTROLLER"
 }
