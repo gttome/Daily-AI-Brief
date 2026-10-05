@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "policy_profile": "under80-v1",
+  "edition_id": "dab-edition-2026-10-05",
+  "brief_date": "2026-10-05",
+  "timezone": "America/Chicago",
+  "title": "Daily Generative AI Brief — October 5, 2026",
+  "published_at": "2026-10-05T05:44:00.000Z",
+  "research_cutoff_at": "2026-10-05T00:00:23.000Z",
+  "coverage_period": "September 18–October 3, 2026",
+  "status": "staged",
+  "stories": [
+    {
+      "story_id": "dab-story-2026-10-05-m02", "ordinal": 1, "slug": "when-an-agent-says-it-is-done-grade-the-database", "permanent_url": "/stories/2026-10-05/when-an-agent-says-it-is-done-grade-the-database/", "focus": "technical_ai_engineering", "headline": "When an agent says it is done, grade the database", "event_date": "2026-10-03",
+      "image": {"path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m02.png", "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-05/dab-edition-2026-10-05-m02.png?v=64f321e34414", "alt": "Backend-state verification for agents.", "width": 1730, "height": 909, "kind": "editorial_explainer"},
+      "summary": "ThinkingBox grades terminal database state and repeated outcomes rather than plausible text.", "why_it_matters": "Durable state, side effects and repeatability become evidence that work actually completed.",
+      "source": {"title": "The Agent Said It Was Done. The Database Disagreed.", "organization": "Hugging Face", "url": "https://huggingface.co/blog/microsoft/thinkingbox", "publication_date": "2026-10-03", "reading_evidence": {"status": "verified", "word_count": 3391, "full_source_read": true}}
+    },
+    {
+      "story_id": "dab-story-2026-10-05-m12", "ordinal": 2, "slug": "copilot-code-review-becomes-an-api-with-adjustable-effort", "permanent_url": "/stories/2026-10-05/copilot-code-review-becomes-an-api-with-adjustable-effort/", "focus": "technical_ai_engineering", "headline": "Copilot code review becomes an API with adjustable effort", "event_date": "2026-10-02",
+      "image": {"path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m12.png", "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-05/dab-edition-2026-10-05-m12.png?v=a3a3f4af31d0", "alt": "API-driven code review.", "width": 1730, "height": 909, "kind": "editorial_explainer"},
+      "summary": "GitHub adds API-triggered Copilot code review with adjustable effort.", "why_it_matters": "Review becomes a programmable pipeline step with explicit depth control.",
+      "source": {"title": "Copilot code review: API support and new default effort level", "organization": "GitHub Changelog", "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level", "publication_date": "2026-10-02", "reading_evidence": {"status": "verified", "word_count": 280, "full_source_read": true}}
+    },
+    {
+      "story_id": "dab-story-2026-10-05-m07", "ordinal": 3, "slug": "workspace-turns-prompts-into-images-mini-apps-and-cross-app-work", "permanent_url": "/stories/2026-10-05/workspace-turns-prompts-into-images-mini-apps-and-cross-app-work/", "focus": "applied_genai_knowledge_workers", "headline": "Workspace turns prompts into images, mini-apps and cross-app work", "event_date": "2026-10-01",
+      "image": {"path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m07.png", "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-05/dab-edition-2026-10-05-m07.png?v=8c1deb379e80", "alt": "Cross-app knowledge work.", "width": 1730, "height": 909, "kind": "editorial_explainer"},
+      "summary": "Workspace adds AI image editing, Sheets canvases and cross-app assistance.", "why_it_matters": "Connected work surfaces can keep outputs tied to source data.",
+      "source": {"title": "September 2026 Workspace feature drop", "organization": "Google Workspace", "url": "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop", "publication_date": "2026-10-01", "reading_evidence": {"status": "verified", "word_count": 936, "full_source_read": true}}
+    },
+    {
+      "story_id": "dab-story-2026-10-05-m13", "ordinal": 4, "slug": "astabrief-opens-a-faster-path-to-citation-grounded-reports", "permanent_url": "/stories/2026-10-05/astabrief-opens-a-faster-path-to-citation-grounded-reports/", "focus": "applied_genai_knowledge_workers", "headline": "AstaBrief opens a faster path to citation-grounded reports", "event_date": "2026-10-02",
+      "image": {"path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m13.png", "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-05/dab-edition-2026-10-05-m13.png?v=821b347ccebd", "alt": "Citation-grounded report generation.", "width": 1730, "height": 909, "kind": "editorial_explainer"},
+      "summary": "Ai2 open-sources AstaBrief 8B and training data for citation-grounded reports.", "why_it_matters": "Evidence provenance stays visible while shortening research loops.",
+      "source": {"title": "Open-sourcing AstaBrief, the fast report-generation model in Asta", "organization": "Hugging Face", "url": "https://huggingface.co/blog/allenai/astabrief", "publication_date": "2026-10-02", "reading_evidence": {"status": "verified", "word_count": 1800, "full_source_read": true}}
+    },
+    {
+      "story_id": "dab-story-2026-10-05-m01", "ordinal": 5, "slug": "nvidia-gives-agents-a-verified-doca-skill-set", "permanent_url": "/stories/2026-10-05/nvidia-gives-agents-a-verified-doca-skill-set/", "focus": "agents_non_technical_people", "headline": "NVIDIA gives agents a verified DOCA skill set", "event_date": "2026-10-01",
+      "image": {"path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m01.png", "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-05/dab-edition-2026-10-05-m01.png?v=37be1cc71adf", "alt": "Verified DOCA Agent Skills.", "width": 1730, "height": 909, "kind": "editorial_explainer"},
+      "summary": "NVIDIA describes reusable DOCA Agent Skills with API, hardware and build checks.", "why_it_matters": "Skills carry instructions, references, constraints and verification together.",
+      "source": {"title": "Build Applications on NVIDIA BlueField Faster with NVIDIA DOCA Agent Skills", "organization": "NVIDIA Developer", "url": "https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/", "publication_date": "2026-10-01", "reading_evidence": {"status": "verified", "word_count": 2094, "full_source_read": true}}
+    },
+    {
+      "story_id": "dab-story-2026-10-05-m09", "ordinal": 6, "slug": "ambient-agents-wake-on-events-and-know-when-to-ask-a-human", "permanent_url": "/stories/2026-10-05/ambient-agents-wake-on-events-and-know-when-to-ask-a-human/", "focus": "agents_non_technical_people", "headline": "Ambient agents wake on events and know when to ask a human", "event_date": "2026-10-01",
+      "image": {"path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m09.png", "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-05/dab-edition-2026-10-05-m09.png?v=6d63bafa1020", "alt": "Ambient agent workflow.", "width": 1730, "height": 909, "kind": "editorial_explainer"},
+      "summary": "AWS shows event-driven agents that pause for human approval and resume.", "why_it_matters": "Durable job state and explicit escalation make autonomy safer.",
+      "source": {"title": "Building ambient agents with Amazon Bedrock AgentCore", "organization": "AWS Machine Learning", "url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/", "publication_date": "2026-10-01", "reading_evidence": {"status": "verified", "word_count": 6491, "full_source_read": true}}
+    }
+  ],
+  "worth_watching": {
+    "general": {"status": "included", "title": "Microsoft Copilot Just Got a Massive Upgrade", "channel": "Kevin Stratvert", "upload_date": "2026-09-29", "runtime_seconds": 564, "url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o"},
+    "agents_non_technical_people": {"status": "included", "title": "Flight Intelligence: The Power of Work IQ", "channel": "Microsoft Developer", "upload_date": "2026-09-18", "runtime_seconds": 874, "url": "https://www.youtube.com/watch?v=VpSCu7s4wD4"}
+  },
+  "podcasts": [
+    {"status": "included", "ordinal": 9, "item_id": "dab-podcast-2026-10-05-1", "title": "An Argument Against AI Doom", "show": "Galaxy Brain", "host": "Charlie Warzel", "publication_date": "2026-10-02", "runtime_seconds": 3376, "url": "https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/", "permanent_url": "/podcasts/2026-10-05/galaxy-brain-2026-10-02-argument-against-ai-doom/"},
+    {"status": "included", "ordinal": 10, "item_id": "dab-podcast-2026-10-05-2", "title": "DX Today AI Daily Brief - Wednesday, September 30, 2026", "show": "DX Today", "host": "Rick Spair", "publication_date": "2026-09-30", "runtime_seconds": 666, "url": "https://www.podscan.fm/podcasts/dx-today-no-hype-podcast-amp-news-about-ai-amp-dx/episodes/dx-today-ai-daily-brief-wednesday-september-30-2026", "permanent_url": "/podcasts/2026-10-05/dx-today-2026-09-30-ai-daily-brief/"}
+  ],
+  "editorial_takeaway": "Verifiable work improves when evidence, constraints and human escalation are explicit."
+}
