@@ -1,0 +1,22 @@
+{
+  "schema_version": "task19-bundle-digest-shard-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "task_id": "19",
+  "shard": "reader-pages",
+  "sealed_at": "2026-10-05T06:15:30.000Z",
+  "digests": [
+    ["briefs/2026-10-05.md","805fb2ea98d35f69a8608e62d0ae20adf7352f33"],
+    ["stories/2026-10-05/when-an-agent-says-it-is-done-grade-the-database.md","afdd8a45e94ad48f5c10bb9672ab5ac44bc81ab7"],
+    ["stories/2026-10-05/copilot-code-review-becomes-an-api-with-adjustable-effort.md","a35592410387b508efc3b6bc6cc492b86d02dc6d"],
+    ["stories/2026-10-05/workspace-turns-prompts-into-images-mini-apps-and-cross-app-work.md","77fb517a4bfaa0d540b986b16dccc2112f60f4f0"],
+    ["stories/2026-10-05/astabrief-opens-a-faster-path-to-citation-grounded-reports.md","f54bde3d14b95a880dca7b751569b31a87a60f12"],
+    ["stories/2026-10-05/nvidia-gives-agents-a-verified-doca-skill-set.md","80e96b03a01be88f03cabba40d42b592eba43645"],
+    ["stories/2026-10-05/ambient-agents-wake-on-events-and-know-when-to-ask-a-human.md","d5e7ab8028fe8aafd357f6477b104b3f76dca08f"],
+    ["videos/2026-10-05/general.md","c889e05b1026dc9bc04fb0966ac0ad325f793b89"],
+    ["videos/2026-10-05/agent-skills.md","cfe7d789bb2343dd10121891e5fa131d74ddcb31"],
+    ["podcasts/2026-10-05/galaxy-brain-2026-10-02-argument-against-ai-doom.md","62e21f5501afd46ceb5493b16e19d181da818768"],
+    ["podcasts/2026-10-05/dx-today-2026-09-30-ai-daily-brief.md","42cdae5c362d4a9a67d75af0c5484c6e718b8954"]
+  ],
+  "digest_scheme": "git_blob_sha1",
+  "result": "PASS"
+}

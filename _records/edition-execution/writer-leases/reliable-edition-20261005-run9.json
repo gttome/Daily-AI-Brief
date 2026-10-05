@@ -4,10 +4,10 @@
   "owner_id": "watchdog-A:task-19",
   "generation": 52,
   "acquired_at": "2026-10-05T06:12:00.000Z",
-  "last_heartbeat_at": "2026-10-05T06:12:00.000Z",
-  "expires_at": "2026-10-05T06:20:00.000Z",
-  "state": "ACTIVE",
-  "released": false,
-  "released_at": null,
-  "release_reason": null
+  "last_heartbeat_at": "2026-10-05T06:16:00.000Z",
+  "expires_at": "2026-10-05T06:16:00.000Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T06:16:00.000Z",
+  "release_reason": "TASK_19_DONE_HANDOFF_TO_SUPERVISOR"
 }

@@ -1,0 +1,20 @@
+{
+  "schema_version": "task19-bundle-digest-shard-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "task_id": "19",
+  "shard": "accepted-images",
+  "sealed_at": "2026-10-05T06:15:30.000Z",
+  "digests": [
+    ["briefs/images/2026-10-05/dab-edition-2026-10-05-m02.png","254c2eac5f5b39f5c2890d7b08b450fdd19ea6bf"],
+    ["briefs/images/2026-10-05/dab-edition-2026-10-05-m12.png","51790b07c6b57128383cf6f701fb24655ee90760"],
+    ["briefs/images/2026-10-05/dab-edition-2026-10-05-m07.png","dc2a56094cf7b03254cd30bf2d3898ed3834ca20"],
+    ["briefs/images/2026-10-05/dab-edition-2026-10-05-m13.png","c2b8ab0bd652f2a79eff372601427bf32473137c"],
+    ["briefs/images/2026-10-05/dab-edition-2026-10-05-m01.png","fe0379aaa6dfa434ab0f2772601133cbca5a1049"],
+    ["briefs/images/2026-10-05/dab-edition-2026-10-05-m09.png","ae75b266170b67e5f7243450a982aeb25b0a98f4"],
+    ["_records/editorial-handoff/images-2026-10-05.json","fbff19427dfa025bd0cbcf9b5c76c6fc287dd0ee"],
+    ["_records/image-quality/2026-10-05-editorial-v2.json","15aabe5a80644c3f0354f7b81a575e5ac82bdfba"]
+  ],
+  "digest_scheme": "git_blob_sha1",
+  "accepted_locked_images": 6,
+  "result": "PASS"
+}

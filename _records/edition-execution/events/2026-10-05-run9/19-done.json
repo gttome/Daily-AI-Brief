@@ -1,0 +1,21 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "task_id": "19",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-05T06:16:00.000Z",
+  "writer_generation": 52,
+  "owner_id": "watchdog-A:task-19",
+  "reason_code": "IMMUTABLE_BUNDLE_SEALED",
+  "operation": "refresh_digests_and_seal_immutable_bundle",
+  "proof": {
+    "bundle_receipt": "_records/editorial/2026-10-05-run9/task19-bundle-seal.json",
+    "accepted_locked_images": 6,
+    "digest_shards": 4,
+    "exact_artifact_digests": true
+  },
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}
