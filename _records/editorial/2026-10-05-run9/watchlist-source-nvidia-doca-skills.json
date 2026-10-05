@@ -1,0 +1,13 @@
+{
+  "schema_version": "watchlist-source-evidence-v1",
+  "candidate_id": "w9-nvidia-doca-skills",
+  "source_url": "https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/",
+  "publisher": "NVIDIA",
+  "publication_date": "2026-10-01",
+  "checked_at": "2026-10-05T02:27:25.000Z",
+  "research_cutoff": "2026-10-05T00:00:23.000Z",
+  "eligible_at_research_cutoff": true,
+  "disposition": "update_existing",
+  "topic_id": "dab-topic-agent-skills-observability",
+  "finding": "DOCA Agent Skills encode verified API signatures, hardware requirements, build constraints and preflight checks; NVIDIA reports 100% checklist satisfaction with skills versus 19% without across 65 prompts."
+}
