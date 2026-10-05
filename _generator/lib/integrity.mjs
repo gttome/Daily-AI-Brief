@@ -8,6 +8,7 @@ import {generatedFiles} from './render.mjs';
 import {validateEdition} from './validate.mjs';
 import {validateEditorialLearning, validatePersonalFeedback} from './personal-learning.mjs';
 import {editionPodcasts} from './podcasts.mjs';
+import {watchlistForEdition} from './watchlist.mjs';
 
 
 const FROZEN_INTEGRATION_CUTOFF='2026-10-04';
@@ -204,15 +205,7 @@ export function validateUrlContract(repoRoot) {
 }
 
 function sameEditionWatchlist(repoRoot,date){
-  for(const relative of ['_data/watchlist.json','data/watchlist.json']){
-    const file=path.join(repoRoot,relative);
-    if(!fs.existsSync(file))continue;
-    try{
-      const data=JSON.parse(fs.readFileSync(file,'utf8'));
-      if(data?.edition_date===date)return data;
-    }catch{}
-  }
-  return null;
+  return watchlistForEdition(repoRoot,date);
 }
 
 function firstDerivedDiff(actual,expected){

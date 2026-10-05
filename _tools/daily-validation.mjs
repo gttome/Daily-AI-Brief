@@ -25,7 +25,12 @@ const hashFile=relative=>createHash('sha256').update(fs.readFileSync(path.join(r
 function frozenPublicationMigration(edition){
  try{
   const manifest=readJson('_records/editorial-handoff/publication-manifest.json');
-  return edition?.brief_date==='2026-10-04'&&manifest?.edition_date===edition.brief_date&&manifest?.edition_id===edition.edition_id&&manifest?.migration?.contract_transition==='pre-2026-10-05-frozen-contract-recovery'&&manifest?.migration?.preserve_accepted_locked_assets===true?manifest:null;
+  if(edition?.brief_date==='2026-10-04'&&manifest?.edition_date===edition.brief_date&&manifest?.edition_id===edition.edition_id&&manifest?.migration?.contract_transition==='pre-2026-10-05-frozen-contract-recovery'&&manifest?.migration?.preserve_accepted_locked_assets===true)return manifest;
+ }catch{}
+ try{
+  const correction=readJson(`_records/publication/${edition?.brief_date}/reader-correction.json`);
+  const closed=readJson(correction?.public_closed_evidence);
+  return edition?.brief_date==='2026-10-04'&&correction?.schema_version==='reader-correction-v1'&&correction?.edition_id===edition.edition_id&&correction?.state==='POST_CLOSE_READER_CORRECTION'&&correction?.preserve_accepted_locked_images===true&&closed?.state==='PUBLIC_CLOSED'&&closed?.edition_id===edition.edition_id?correction:null;
  }catch{return null;}
 }
 
