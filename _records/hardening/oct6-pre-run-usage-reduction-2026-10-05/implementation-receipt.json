@@ -143,5 +143,30 @@
   "rollback_path": "Open a protected revert PR for merge e371a37dae7017115c72346687a6e8167ee2ce1d and restore the last known protected production baseline; do not alter terminal October 5 evidence.",
   "owner_intervention_required": false,
   "production_runtime_paid_dependency_count": 0,
-  "go_no_go": "GO_PENDING_CLOSEOUT_RECEIPT_MERGE"
+  "go_no_go": "GO",
+  "closeout_verified_at": "2026-10-05T16:29:07.015Z",
+  "protected_main_verified_sha": "e371a37dae7017115c72346687a6e8167ee2ce1d",
+  "runtime_health": {
+    "schema_version": "chatgpt-watchdog-health-v1",
+    "branch": "runtime/watchdog-health",
+    "file_sha": "8812d8d99aec9d40bd1a0d4798921321665c85c1",
+    "state": "TERMINAL",
+    "execution_id": "reliable-edition-20261005-run9"
+  },
+  "schedule_verification": {
+    "controller_enabled": true,
+    "controller_start": "19:00 America/Chicago",
+    "watchdogs_enabled": 6,
+    "watchdog_minutes": [
+      3,
+      13,
+      23,
+      33,
+      43,
+      53
+    ],
+    "prompts_equivalent_except_slot_and_minute": true
+  },
+  "october_6_execution_exists_before_scheduled_start": false,
+  "owner_action_required": false
 }
