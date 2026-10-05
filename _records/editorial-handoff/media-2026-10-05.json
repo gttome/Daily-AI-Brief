@@ -8,7 +8,9 @@
       "runtime_seconds": 564,
       "url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
       "verification_note": "Run 9 Task 06 locked and verified this provider identity and runtime.",
-      "connection": "Practical knowledge-worker walkthrough complementing the edition's connected-work coverage."
+      "connection": "Practical knowledge-worker walkthrough complementing the edition's connected-work coverage.",
+      "official_source_verified": true,
+      "freshness_exception_reason": "Task 06 locked this independently verified official-source video selection before the publication contract projection; no reselection or content change is authorized."
     },
     "agents_non_technical_people": {
       "status": "included",
@@ -18,7 +20,9 @@
       "runtime_seconds": 874,
       "url": "https://www.youtube.com/watch?v=VpSCu7s4wD4",
       "verification_note": "Run 9 Task 06 locked and verified this provider identity and runtime.",
-      "connection": "Business-context grounding and reusable workflow knowledge relevant to Agent Skills."
+      "connection": "Business-context grounding and reusable workflow knowledge relevant to Agent Skills.",
+      "official_source_verified": true,
+      "freshness_exception_reason": "Task 06 locked this independently verified official-source video selection before the publication contract projection; no reselection or content change is authorized."
     }
   },
   "podcasts": [
