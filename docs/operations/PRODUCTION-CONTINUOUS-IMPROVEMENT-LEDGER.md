@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:a533f451459519b7b6c3e0e7e52968da9f1def03ac567d4c7b59783c5699b6a5`
+Ledger digest: `sha256:472ae3f6ca1f8126184fc6c53ebc16c4e82468e2493dfd468ba3e1d1d6ec9665`
 
-Problems: 62 · Events: 112
+Problems: 64 · Events: 116
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -1121,4 +1121,40 @@ Problems: 62 · Events: 112
 - **Production invariants:** permanent_story_projection_preserves_canonical_source_evidence, saved_permanent_story_pages_match_canonical_renderer, post_close_reader_correction_preserves_accepted_image_bytes
 - **Recurrences:** none recorded
 - **Future validation:** none
+
+## DAB-OPS-20261005-001 — Queued ordinary/research work could be diagnosed without an unattended consumer actually completing it.
+
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261005-run9
+- **Task(s):** 08
+- **Symptom:** Task 08 remained queued/claimed without substantive progress until owner interaction exposed the stall.
+- **Root cause:** Supervisor retained or rotated writer authority around ordinary/research queueing and Watchdogs treated lease ownership too generously while research-capable consumption was not guaranteed.
+- **Operational impact:** Owner status questions became accidental liveness triggers and Task 08 queue-to-Done exceeded 1h 43m.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Implement owner-independent ordinary/research delegation and Watchdog consumption on PR #462; permanent status waits for protected merge and post-merge verification.
+- **Actual fix:** Supervisor delegates exact ordinary/research requests immediately; A-F consume repository/research requests; lease/heartbeat alone is not progress; ordinary/research task fences are bounded; compatible work drains in the same invocation.
+- **Fix outcome:** not recorded
+- **Permanent implementation:** .github/workflows/run-supervisor.yml, _generator/lib/chatgpt-watchdog-ring.mjs, _generator/test/chatgpt-watchdog-ring.test.mjs, _generator/test/run-supervisor.test.mjs, docs/operations/task-recovery-contracts.json, docs/operations/run-learning-readiness-contract.json
+- **Regression tests:** none
+- **Production invariants:** owner_prompt_is_not_a_liveness_trigger, lease_is_authority_not_progress, exact_request_reuse, ordinary_research_watchdog_consumer_pool, clean_rebase_before_retry
+- **Recurrences:** none recorded
+- **Future validation:** A queued ordinary repository or research request is consumed by an admitted A-F Watchdog without an owner prompt. | Supervisor releases authority immediately after persisting the exact request and does not create a *_consumer_unclaimed delay cycle. | Lease/heartbeat-only state is never accepted as substantive progress. | Compatible dependency-safe repository/research work drains in the same invocation when safe.
+
+## DAB-OPS-20261005-002 — Image generation was allowed before generator-context isolation and exact-byte persistence were proven for the invocation.
+
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261005-run9
+- **Task(s):** 11
+- **Symptom:** Task 11 first produced a humanoid-contaminated image, then a bounded repair attempt rendered GitHub/Watchdog UI and could not use the direct binary Git route.
+- **Root cause:** Image-host READY and sealed render specs were treated as sufficient admission even though per-invocation mixed context and returned-byte transport had not been proven.
+- **Operational impact:** Image attempts were spent diagnosing infrastructure rather than visual quality, delaying production and risking repeated context contamination.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Stop same-context retry and require Strategy Interrupt. | Implement image-execution-admission-v1 on PR #462 and enforce it immediately in A-F live prompts; permanent status waits for protected merge and live invocation proof.
+- **Actual fix:** Require per-invocation proof of dedicated story-only generator context plus exact-byte persistence before every native generation. Direct Git blob and protected Base64 chunk bridge are the only admitted persistence modes. Failed preflight consumes zero attempts and triggers Strategy Interrupt before attempt 1.
+- **Fix outcome:** not recorded
+- **Permanent implementation:** _generator/lib/image-execution-admission.mjs, _generator/test/image-execution-admission.test.mjs, _tools/native-image-worker.py, docs/operations/unattended-image-host.json, docs/operations/task-recovery-contracts.json, docs/operations/run-learning-readiness-contract.json
+- **Regression tests:** none
+- **Production invariants:** execution_path_defects_must_fail_before_generation, image_attempt_budget_starts_after_admission, owner_upload_prohibited, no_low_quality_fallback
+- **Recurrences:** none recorded
+- **Future validation:** Every Tasks 11-16 native invocation has image-execution-admission-v1 PASS before generation begins. | A failed context or byte-persistence preflight consumes zero image attempts. | At least one production invocation proves exact-byte persistence using direct Git blob or the protected Base64 chunk bridge without owner intervention. | No mixed Watchdog/Supervisor/Kanban/recovery context is accepted as generator-visible image context.
 

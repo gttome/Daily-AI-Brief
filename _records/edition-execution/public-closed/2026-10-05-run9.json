@@ -1,0 +1,10 @@
+{
+  "schema_version": "public-closed-v1",
+  "state": "PUBLIC_CLOSED",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_id": "reliable-edition-20261005-run9",
+  "production_sha": "a197fa1b651a6fcf4ab7d26683e00dc22eef0084",
+  "observed_at": "2026-10-05T09:07:08.587Z",
+  "completion": "_records/publication/2026-10-05/completion.json",
+  "reader_semantic_close_gate": "_records/publication/2026-10-05/reader-semantic-close-gate.json"
+}
