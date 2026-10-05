@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-05",
+  "checked_at": "2026-10-05T00:49:36.467Z",
+  "items": [
+    {
+      "item_id": "dab-video-2026-10-05-general",
+      "url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
+      "observed_date": "2026-09-29",
+      "observed_runtime_seconds": 564,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-05-run9/videos.json",
+      "verification_timestamp": "2026-10-05T00:46:27.108Z"
+    },
+    {
+      "item_id": "dab-video-2026-10-05-agent-skills",
+      "url": "https://www.youtube.com/watch?v=VpSCu7s4wD4",
+      "observed_date": "2026-09-18",
+      "observed_runtime_seconds": 874,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-05-run9/videos.json",
+      "verification_timestamp": "2026-10-05T00:46:27.108Z"
+    },
+    {
+      "item_id": "dab-podcast-2026-10-05-1",
+      "url": "https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/",
+      "observed_date": "2026-10-02",
+      "observed_runtime_seconds": 3376,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-05-run9/podcasts.json",
+      "verification_timestamp": "2026-10-05T00:49:36.467Z"
+    },
+    {
+      "item_id": "dab-podcast-2026-10-05-2",
+      "url": "https://www.podscan.fm/podcasts/dx-today-no-hype-podcast-amp-news-about-ai-amp-dx/episodes/dx-today-ai-daily-brief-wednesday-september-30-2026",
+      "observed_date": "2026-09-30",
+      "observed_runtime_seconds": 666,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-05-run9/podcasts.json",
+      "verification_timestamp": "2026-10-05T00:49:36.467Z"
+    }
+  ],
+  "editorial_kernel_sha256": "3615aebe608bf8abc9678de8e1f7a4ef1fc85979f67e6ba74247b4af3dfb805e",
+  "podcast_source_diversity": {
+    "pass": true,
+    "shows": [
+      "Galaxy Brain",
+      "DX Today"
+    ]
+  },
+  "basis": "Locked Run 9 Task 06/07 verified selections; no media reselection performed by focused repair."
+}
