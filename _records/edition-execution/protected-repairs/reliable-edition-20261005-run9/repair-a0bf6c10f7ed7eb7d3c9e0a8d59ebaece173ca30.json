@@ -9,7 +9,7 @@
   "task_id": "23",
   "incident_id": "wd-reliable-edition-20261005-run9-task23-publication-manifest-contract-incompatibility",
   "repair_branch": "repair/run9-task23-oct5-frozen-contract-compat",
-  "repair_branch_head_sha": "7d29826e67d2ccf7b65e83a991c7e0323720705f",
+  "repair_branch_head_sha": "3e076f92f85efdaeb07f5f87e6dfadb4fa0e17b5",
   "repair_scope_digest": "sha256:050ff05bf7ea148cfcd1a17146d56596b3f73c122efbb61d90f0b2c79018bf70",
   "required_checks": [
     "validate"
@@ -17,5 +17,16 @@
   "created_at": "2026-10-05T08:16:50.961Z",
   "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
   "diagnosis": "Exact-head publication CI rejected October 5 locked evidence because the frozen-contract migration cutoff ended on October 4, while the same completed execution also required deterministic metadata projections from its accepted image, media, and Watchlist evidence.",
-  "next_stage": "Reuse one protected repair PR for the exact repair head; after exact-head pull_request validate PASS, merge the bounded cutoff change, resume the same Task 23, and require successful publication validation."
+  "next_stage": "Reuse one protected repair PR for the exact repair head; after exact-head pull_request validate PASS, merge the bounded cutoff change, resume the same Task 23, and require successful publication validation.",
+  "last_recovery_stage": {
+    "state": "REPAIR_CI_FAIL",
+    "pr_number": 468,
+    "ci_run_id": 37282954255,
+    "ci_conclusion": "failure",
+    "failed_check": "validate",
+    "failure": "cutoff regression test still expected October 5 rejection",
+    "strategy_interrupt": "same PR and branch updated with exact boundary test: October 5 admitted, October 6 rejected",
+    "repair_key_preserved": true,
+    "scope_digest_preserved": true
+  }
 }
