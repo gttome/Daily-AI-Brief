@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "f12c5e827ac127ff4e046f8d11c3f6d6d346a60ffeab5a8f1825355fdd0dc96c",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "01",
+  "capability": "repository",
+  "instruction": "Execute Task 01 (Bind edition, execution ID, cutoff and baseline) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 3,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-05T00:11:26.763Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
