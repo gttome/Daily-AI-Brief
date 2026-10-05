@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-export const FROZEN_CONTRACT_MIGRATION_CUTOFF='2026-10-04';
+export const FROZEN_CONTRACT_MIGRATION_CUTOFF='2026-10-05';
 
 const nonempty=value=>typeof value==='string'&&value.trim().length>0;
 const safeRelative=p=>typeof p==='string'&&p.length>0&&!path.isAbsolute(p)&&!p.split(/[\\/]+/).includes('..');
