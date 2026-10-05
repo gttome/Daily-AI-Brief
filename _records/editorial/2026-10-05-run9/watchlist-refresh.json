@@ -1,0 +1,90 @@
+{
+  "schema_version": "run9-watchlist-refresh-v1",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_id": "reliable-edition-20261005-run9",
+  "observed_at": "2026-10-05T02:33:36.000Z",
+  "research_cutoff": "2026-10-05T00:00:23.000Z",
+  "checks_completed": 14,
+  "discovery_domains_checked": 7,
+  "new_topics": [],
+  "updated_topic_ids": [
+    "dab-topic-agent-skills-observability",
+    "dab-topic-adaptive-agent-safeguards",
+    "dab-topic-harness-engineering",
+    "dab-topic-long-horizon-agents",
+    "dab-topic-collaborative-vibe-coding",
+    "dab-topic-source-aware-agent-verification"
+  ],
+  "reactivated_topic_ids": [
+    "dab-topic-source-aware-agent-verification"
+  ],
+  "carried_forward_count": 15,
+  "dropped_topic_ids": [],
+  "dropped_topics": [],
+  "zero_new_certified": true,
+  "drop_review_completed": true,
+  "result": "PASS",
+  "updates": [
+    {
+      "topic_id": "dab-topic-agent-skills-observability",
+      "label": "Updated today",
+      "title": "Reusable agent skills become observable",
+      "what_changed": "NVIDIA DOCA Agent Skills add measured, machine-readable API and hardware constraints plus preflight discipline.",
+      "source_ref": "_records/editorial/2026-10-05-run9/watchlist-source-nvidia-doca-skills.json"
+    },
+    {
+      "topic_id": "dab-topic-adaptive-agent-safeguards",
+      "label": "Updated today",
+      "title": "Agent safeguards tailored to the task",
+      "what_changed": "NVIDIA adds a layered software-and-hardware safety architecture with out-of-band monitoring and verifiable policy.",
+      "source_ref": "_records/editorial/2026-10-05-run9/watchlist-source-nvidia-open-agent-safety.json"
+    },
+    {
+      "topic_id": "dab-topic-harness-engineering",
+      "label": "Updated today",
+      "title": "AI harness engineering becomes a first-class layer",
+      "what_changed": "GitHub makes Copilot code review programmatically invokable through REST/GraphQL with adjustable review effort.",
+      "source_ref": "_records/editorial/2026-10-05-run9/watchlist-source-github-copilot-review-api.json"
+    },
+    {
+      "topic_id": "dab-topic-long-horizon-agents",
+      "label": "Updated today",
+      "title": "Agents that persist across sessions",
+      "what_changed": "AWS shows event-driven ambient agents that wake on signals and gate consequential actions on human approval.",
+      "source_ref": "_records/editorial/2026-10-05-run9/watchlist-source-aws-ambient-agentcore.json"
+    },
+    {
+      "topic_id": "dab-topic-collaborative-vibe-coding",
+      "label": "Updated today",
+      "title": "Collaborative vibe coding",
+      "what_changed": "Google Sheets canvas turns spreadsheet data into prompt-built interactive mini-apps inside Workspace.",
+      "source_ref": "_records/editorial/2026-10-05-run9/watchlist-source-google-workspace-drop.json"
+    },
+    {
+      "topic_id": "dab-topic-source-aware-agent-verification",
+      "label": "Updated today • Reactivated",
+      "title": "Source-aware verification for tool-using agents",
+      "what_changed": "Ai2 AstaBrief adds a new independent open cited-report model designed to preserve what evidence actually supports.",
+      "source_ref": "_records/editorial/2026-10-05-run9/watchlist-source-ai2-astabrief.json"
+    }
+  ],
+  "drops": [],
+  "no_drop_justification": "No active topic crossed the daily archival/drop threshold; each non-updated active topic remains carried forward with its prior evidence and next-action test.",
+  "held_candidates": [
+    {
+      "candidate_id": "w9-anthropic-robot-exposure",
+      "reason": "Useful robot-exposure measurement evidence, but not a distinct deployable AI mechanism for Watchlist admission in this sweep.",
+      "source_ref": "_records/editorial/2026-10-05-run9/watchlist-source-anthropic-robot-exposure.json"
+    }
+  ],
+  "sweep_receipt": "_records/watchlist-sweeps/2026-10-05.json",
+  "source_evidence": [
+    "_records/editorial/2026-10-05-run9/watchlist-source-nvidia-doca-skills.json",
+    "_records/editorial/2026-10-05-run9/watchlist-source-nvidia-open-agent-safety.json",
+    "_records/editorial/2026-10-05-run9/watchlist-source-github-copilot-review-api.json",
+    "_records/editorial/2026-10-05-run9/watchlist-source-aws-ambient-agentcore.json",
+    "_records/editorial/2026-10-05-run9/watchlist-source-google-workspace-drop.json",
+    "_records/editorial/2026-10-05-run9/watchlist-source-ai2-astabrief.json",
+    "_records/editorial/2026-10-05-run9/watchlist-source-anthropic-robot-exposure.json"
+  ]
+}
