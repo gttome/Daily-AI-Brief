@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "900bcb40f4b95b228d4af46f6e77754179a83c1052c99f4e90bdcf06c35ffe6d",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "07",
+  "capability": "repository",
+  "instruction": "Execute Task 07 (Select and verify two source-diverse podcasts) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 16,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-05T00:47:15.992Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
