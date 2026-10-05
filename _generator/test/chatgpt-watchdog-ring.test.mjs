@@ -55,7 +55,7 @@ test('ordinary ChatGPT writer leases are short and lease presence alone never pr
   const d=watchdogDecision({active_pointer:active,classification:{state:'STALE_ACTIVE'},owner_slot:'A',task_writer_active:true,task_writer_substantive_progress:false,task_writer_fence_takeover_safe:false,authoritative_request:{execution_id:active.execution_id,task_id:'08',request_key:'research-08',capability:'research_chatgpt',status:'queued'},now:'2026-10-05T02:03:54Z'});
   assert.equal(d.action,'WAIT_FOR_WRITER_FENCE');
   assert.equal(d.recovery_required,true);
-  const safe=watchdogDecision({active_pointer:active,classification:{state:'STALE_ACTIVE'},owner_slot:'B',task_writer_active:true,task_writer_substantive_progress:false,task_writer_fence_takeover_safe:true,now:'2026-10-05T02:14:00Z'});
+  const safe=watchdogDecision({active_pointer:active,classification:{state:'STALE_ACTIVE'},owner_slot:'B',task_writer_active:true,task_writer_substantive_progress:false,task_writer_fence_takeover_safe:true,authoritative_request:{execution_id:active.execution_id,task_id:'08',request_key:'research-08',capability:'research_chatgpt',status:'queued'},now:'2026-10-05T02:14:00Z'});
   assert.equal(safe.action,'RECOVER');
 });
 
