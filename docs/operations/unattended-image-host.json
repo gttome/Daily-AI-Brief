@@ -37,7 +37,8 @@
     "Nominal scheduled image-consumer coverage improves from one designated hourly consumer opportunity to six staggered opportunities per hour; schedule delivery remains non-real-time.",
     "Exact queued request identity plus current task-specific writer fencing prevents duplicate image generation when slots overlap.",
     "The prior F-specific binding is retained only as historical compatibility evidence.",
-    "October 4 field evidence proved image liveness but also exposed operational-context contamination; READY is not a claim of story-context isolation or usage-optimal polling."
+    "October 4 field evidence proved image liveness but also exposed operational-context contamination; READY is not a claim of story-context isolation or usage-optimal polling.",
+    "For October 6 and later production image work, route readiness alone is insufficient: every Tasks 11-16 invocation must persist a PASS image-execution-admission-v1 before attempt 1; a failed admission consumes zero image attempts."
   ],
   "watchdog_ring": {
     "schema_version": "chatgpt-watchdog-ring-binding-v1",
@@ -78,7 +79,9 @@
     "image_consumer_observation_path": "_records/hardening/chatgpt-watchdog-ring-2026-10-03/equivalent-image-consumer-pool-observation.json",
     "image_consumer_observation_sha256": "21149cbd717b457f00416e9f2ed353085ac29f203e7b39c39c5b45565a9bd674",
     "generator_visible_context_policy": "story-only-generator-context-v1",
-    "context_contamination_exits_current_generation_context": true
+    "context_contamination_exits_current_generation_context": true,
+    "image_execution_admission_required": true,
+    "image_execution_admission_version": "image-execution-admission-v1"
   },
   "legacy_single_consumer_binding": {
     "automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
@@ -142,7 +145,11 @@
     "delivery_projection_must_equal_shared_generation_instruction": true,
     "hidden_platform_context_isolation_asserted": false,
     "context_contamination_same_context_retry_allowed": false,
-    "context_contamination_requires_engineering_repair": true
+    "context_contamination_requires_engineering_repair": true,
+    "image_execution_admission_required": true,
+    "image_execution_admission_version": "image-execution-admission-v1",
+    "pre_generation_persistence_preflight_required": true,
+    "pre_generation_context_isolation_attestation_required": true
   },
   "october_4_field_validation": {
     "execution": "reliable-edition-20261004-run8",
@@ -158,5 +165,21 @@
       "deterministic_health_polling_replacing_routine_heavy_chatgpt_checks"
     ],
     "note": "READY continues to mean route/capability availability, not proof that the six-slot architecture is usage-optimal or that hidden generation context isolation is complete."
+  },
+  "image_execution_admission": {
+    "schema_version": "image-execution-admission-v1",
+    "required_before_every_native_generation": true,
+    "story_only_generator_context_required": true,
+    "orchestration_context_visible_required": false,
+    "submitted_instruction_must_equal_sealed_instruction": true,
+    "exact_byte_persistence_preflight_required": true,
+    "approved_persistence_modes": [
+      "git_data_direct_blob",
+      "protected_base64_chunk_bridge"
+    ],
+    "owner_intervention_required": false,
+    "admission_failure_consumes_attempt": false,
+    "admission_failure_action": "STRATEGY_INTERRUPT_BEFORE_ATTEMPT_1",
+    "accepted_locked_regeneration_prohibited": true
   }
 }
