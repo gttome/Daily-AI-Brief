@@ -4,9 +4,11 @@
   "incident_id": "wd-reliable-edition-20261005-run9-task23-publication-manifest-contract-incompatibility",
   "owner_slot": "A",
   "generation": 25,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-05T08:12:35.297Z",
-  "last_heartbeat_at": "2026-10-05T08:12:35.297Z",
-  "expires_at": "2026-10-05T08:27:35.297Z",
-  "action_key": "wd-reliable-edition-20261005-run9-task23-publication-manifest-contract-incompatibility:repair-publication-projection:slot-a:g25"
+  "last_heartbeat_at": "2026-10-05T08:17:06.950Z",
+  "expires_at": "2026-10-05T08:17:06.950Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task23-publication-manifest-contract-incompatibility:repair-publication-projection:slot-a:g25",
+  "released_at": "2026-10-05T08:17:06.950Z",
+  "release_reason": "SAFE_BOUNDARY_PROTECTED_REPAIR_REQUIRED"
 }
