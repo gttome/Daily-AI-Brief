@@ -4,6 +4,10 @@
   "owner_id": "chatgpt-direct-recovery-task08",
   "generation": 21,
   "acquired_at": "2026-10-05T02:27:25.000Z",
-  "last_heartbeat_at": "2026-10-05T02:27:25.000Z",
-  "expires_at": "2026-10-05T02:47:25.000Z"
+  "last_heartbeat_at": "2026-10-05T02:33:36.000Z",
+  "expires_at": "2026-10-05T02:33:36.000Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T02:33:36.000Z",
+  "release_reason": "TASK_08_DONE_HANDOFF_TO_SUPERVISOR"
 }
