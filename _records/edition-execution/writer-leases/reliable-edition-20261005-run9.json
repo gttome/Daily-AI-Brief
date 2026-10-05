@@ -1,9 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "owner_id": "github-actions-37256034788-1",
-  "generation": 22,
-  "acquired_at": "2026-10-05T02:36:22.302Z",
-  "last_heartbeat_at": "2026-10-05T02:36:22.302Z",
-  "expires_at": "2026-10-05T02:41:22.302Z"
+  "owner_id": "chatgpt-watchdog-F-task09",
+  "generation": 23,
+  "acquired_at": "2026-10-05T02:40:27.780Z",
+  "last_heartbeat_at": "2026-10-05T02:40:27.780Z",
+  "expires_at": "2026-10-05T02:45:27.780Z"
 }
