@@ -1,22 +1,13 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "incident_id": "wd-reliable-edition-20261005-run9-task12-native-aaf4ed68",
+  "incident_id": "wd-reliable-edition-20261005-run9-task13-native-be8022cb",
   "owner_slot": "F",
-  "generation": 8,
-  "state": "RECOVERY_VERIFIED_PROGRESSING",
-  "acquired_at": "2026-10-05T04:01:20.000Z",
-  "last_heartbeat_at": "2026-10-05T04:05:59.000Z",
-  "expires_at": "2026-10-05T04:05:59.000Z",
-  "released_at": "2026-10-05T04:05:59.000Z",
-  "action_key": "wd-reliable-edition-20261005-run9-task12-native-aaf4ed68:consume-exact-request:slot-f:g8",
-  "request_key": "aaf4ed680c8497959353c788d5b4a20c3d8a290e953b4dee09469e107df5e29e",
-  "success_chain": {
-    "problem_diagnosed": true,
-    "cause_fixed": true,
-    "task_or_process_active": true,
-    "real_executor_confirmed": true,
-    "durable_progress_confirmed": true,
-    "evidence": "Task 12 Done plus accepted_locked m12 exact-byte Git asset."
-  }
+  "generation": 9,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-05T04:09:31.000Z",
+  "last_heartbeat_at": "2026-10-05T04:09:31.000Z",
+  "expires_at": "2026-10-05T04:24:31.000Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task13-native-be8022cb:consume-exact-request:slot-f:g9",
+  "request_key": "be8022cbf995b36e236d0140a1fe25fecc062b0dca0c17005099993d38650d9a"
 }
