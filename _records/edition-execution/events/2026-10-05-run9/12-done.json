@@ -1,0 +1,39 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "execution_key": "2026-10-05-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "12",
+  "candidate_id": "m12",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-05T04:05:59.000Z",
+  "writer_generation": 31,
+  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261005-run9:task-12:generation-31:aaf4ed68",
+  "reason_code": "IMAGE_ACCEPTED_LOCKED",
+  "operation": "Generate one isolated artifact-only m12 visual, apply one targeted exact-visible-text cleanup, persist exact PNG bytes, verify Git identity, review the saved asset and lock acceptance.",
+  "proof": {
+    "request_key": "aaf4ed680c8497959353c788d5b4a20c3d8a290e953b4dee09469e107df5e29e",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/12-aaf4ed680c8497959353c788d5b4a20c3d8a290e953b4dee09469e107df5e29e.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-05-run9/m12.json",
+    "saved_git_review": "_records/image-reviews/2026-10-05-run9/m12-attempt-1-saved-git-review.json",
+    "final_sha256": "a3a3f4af31d000191adc9dad9b8754be90b31bf196e19ec2e8d16fbea7009f5d",
+    "final_git_blob_sha": "51790b07c6b57128383cf6f701fb24655ee90760",
+    "saved_git_commit": "0d99f3a549065c550349803e68501aab0220177e"
+  },
+  "completed_tasks_preserved": [
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11"
+  ],
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

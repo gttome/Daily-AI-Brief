@@ -1,0 +1,61 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "12",
+  "candidate_id": "m12",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-05T04:05:59.000Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 31,
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "saved_git_commit": "0d99f3a549065c550349803e68501aab0220177e",
+  "source_lineage": {
+    "base_generation_id": "exec-c060b362-13c7-4e93-9790-da110d5c1bbf",
+    "targeted_edit_generation_id": "exec-7ac70c9c-0216-47d2-a47a-a95eefaa1a4f",
+    "native_sha256": "a3a3f4af31d000191adc9dad9b8754be90b31bf196e19ec2e8d16fbea7009f5d",
+    "native_bytes": 1174682,
+    "native_width": 1730,
+    "native_height": 909,
+    "transport_method": "exact returned PNG via Git Data create_blob Base64"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m12.png",
+    "git_blob_sha": "51790b07c6b57128383cf6f701fb24655ee90760",
+    "sha256": "a3a3f4af31d000191adc9dad9b8754be90b31bf196e19ec2e8d16fbea7009f5d",
+    "bytes": 1174682,
+    "width": 1730,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "An adjustable-effort review API routes one pull request into parallel code, security and test-evidence branches that reconverge into review comments and a merge decision.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Pull request",
+      "Review API",
+      "Low effort",
+      "Balanced",
+      "High effort",
+      "Code checks",
+      "Security checks",
+      "Test evidence",
+      "Review comments",
+      "Merge decision"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The inspected local PNG is byte-identical to the Git blob and satisfies the sealed story-only subject and text controls."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}
