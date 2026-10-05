@@ -6,6 +6,78 @@
   "description": "Six AI articles, up to two videos, and up to two podcasts selected daily.",
   "items": [
     {
+      "id": "dab-story-2026-10-05-m02",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-05/when-an-agent-says-it-is-done-grade-the-database/",
+      "title": "When an agent says it is done, grade the database",
+      "summary": "ThinkingBox grades terminal database state and repeated outcomes rather than plausible text.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-05/dab-edition-2026-10-05-m02.png?v=64f321e34414",
+      "date_published": "2026-10-05T05:44:00.000Z",
+      "tags": [
+        "technical ai engineering",
+        "Hugging Face"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-05-m12",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-05/copilot-code-review-becomes-an-api-with-adjustable-effort/",
+      "title": "Copilot code review becomes an API with adjustable effort",
+      "summary": "GitHub adds API-triggered Copilot code review with adjustable effort.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-05/dab-edition-2026-10-05-m12.png?v=a3a3f4af31d0",
+      "date_published": "2026-10-05T05:44:00.000Z",
+      "tags": [
+        "technical ai engineering",
+        "GitHub Changelog"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-05-m07",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-05/workspace-turns-prompts-into-images-mini-apps-and-cross-app-work/",
+      "title": "Workspace turns prompts into images, mini-apps and cross-app work",
+      "summary": "Workspace adds AI image editing, Sheets canvases and cross-app assistance.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-05/dab-edition-2026-10-05-m07.png?v=8c1deb379e80",
+      "date_published": "2026-10-05T05:44:00.000Z",
+      "tags": [
+        "applied genai knowledge workers",
+        "Google Workspace"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-05-m13",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-05/astabrief-opens-a-faster-path-to-citation-grounded-reports/",
+      "title": "AstaBrief opens a faster path to citation-grounded reports",
+      "summary": "Ai2 open-sources AstaBrief 8B and training data for citation-grounded reports.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-05/dab-edition-2026-10-05-m13.png?v=821b347ccebd",
+      "date_published": "2026-10-05T05:44:00.000Z",
+      "tags": [
+        "applied genai knowledge workers",
+        "Hugging Face"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-05-m01",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-05/nvidia-gives-agents-a-verified-doca-skill-set/",
+      "title": "NVIDIA gives agents a verified DOCA skill set",
+      "summary": "NVIDIA describes reusable DOCA Agent Skills with API, hardware and build checks.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-05/dab-edition-2026-10-05-m01.png?v=37be1cc71adf",
+      "date_published": "2026-10-05T05:44:00.000Z",
+      "tags": [
+        "agents non technical people",
+        "NVIDIA Developer"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-05-m09",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-05/ambient-agents-wake-on-events-and-know-when-to-ask-a-human/",
+      "title": "Ambient agents wake on events and know when to ask a human",
+      "summary": "AWS shows event-driven agents that pause for human approval and resume.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-05/dab-edition-2026-10-05-m09.png?v=6d63bafa1020",
+      "date_published": "2026-10-05T05:44:00.000Z",
+      "tags": [
+        "agents non technical people",
+        "AWS Machine Learning"
+      ]
+    },
+    {
       "id": "dab-story-2026-10-04-m02",
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-04/when-an-agent-says-it-is-done-grade-the-database/",
       "title": "When an agent says it is done, grade the database",
