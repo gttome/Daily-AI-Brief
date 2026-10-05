@@ -5,9 +5,9 @@ const uniq=values=>[...new Set((values||[]).filter(Boolean))];
 
 export function classifyPublicationPreflightError(error=''){
   const value=String(error);
-  if(value.startsWith('publication_manifest_'))return 'publication_manifest_compatibility';
   if(value.includes('frozen')||value.includes('migration'))return 'frozen_contract_migration_boundary';
   if(value.includes('image_')||value.includes('accepted_locked')||value.includes('canvas'))return 'locked_image_canvas_integration';
+  if(value.startsWith('publication_manifest_'))return 'publication_manifest_compatibility';
   if(value.includes('current_edition_pointer')||value.includes('historical')||value.includes('mutable_current'))return 'historical_edition_independence';
   if(value.startsWith('reader:')||value.includes('canonical_mismatch')||value.includes('reader_')||value.includes('permanent_story_semantic'))return 'reader_projection_contract';
   if(value.includes('required_derived_file')||value.includes('required_teaser_surface')||value.includes('projection')||value.includes('route'))
