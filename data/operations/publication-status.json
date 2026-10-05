@@ -1,8 +1,8 @@
 {
   "schema_version": "2.0.0",
   "projection_version": "publication-status-v2",
-  "edition_date": "2026-10-04",
-  "edition_id": "dab-edition-2026-10-04",
+  "edition_date": "2026-10-05",
+  "edition_id": "dab-edition-2026-10-05",
   "lifecycle_stage": "COMPLETED",
   "lifecycle_state": "COMPLETED",
   "operator_state": "COMPLETED",
@@ -26,32 +26,32 @@
   "next_automatic_recovery_step": "Synchronize Command Center from canonical status.",
   "next_legal_recovery_action": "Synchronize Command Center from canonical status.",
   "operator_intervention_required": null,
-  "baseline_sha": "b99313ebebbf789d6eb218231dd13f170d42eac4",
-  "candidate_sha": "83927438851d6697f67edf4d8728ea89b603b267",
-  "production_sha": "0098c607a479e6b75f0e8d456570f033e7b50c20",
-  "publication_merge_sha": "0098c607a479e6b75f0e8d456570f033e7b50c20",
-  "pr_number": 442,
-  "ci_run_id": 37217420793,
+  "baseline_sha": "d6751a6774bcdb9b84bcdec7a3d7dd6714cc3669",
+  "candidate_sha": "85fddb42796254c558e84f259849307464f75e31",
+  "production_sha": "a197fa1b651a6fcf4ab7d26683e00dc22eef0084",
+  "publication_merge_sha": "a197fa1b651a6fcf4ab7d26683e00dc22eef0084",
+  "pr_number": 467,
+  "ci_run_id": 37287580223,
   "ci": {
     "state": "passed",
-    "run_id": 37217420793
+    "run_id": 37287580223
   },
-  "pages_deployment_id": 37217509983,
-  "deployed_sha": "0098c607a479e6b75f0e8d456570f033e7b50c20",
+  "pages_deployment_id": 37287777894,
+  "deployed_sha": "a197fa1b651a6fcf4ab7d26683e00dc22eef0084",
   "pages": {
     "state": "succeeded",
-    "run_id": 37217509983,
-    "deployed_sha": "0098c607a479e6b75f0e8d456570f033e7b50c20"
+    "run_id": 37287777894,
+    "deployed_sha": "a197fa1b651a6fcf4ab7d26683e00dc22eef0084"
   },
-  "live_verification_timestamp": "2026-10-04T16:53:41.913Z",
+  "live_verification_timestamp": "2026-10-05T09:07:01.245Z",
   "live_reader": {
     "state": "verified",
-    "verified_at": "2026-10-04T16:53:41.913Z"
+    "verified_at": "2026-10-05T09:07:01.245Z"
   },
-  "completion_path": "_records/publication/2026-10-04/completion.json",
+  "completion_path": "_records/publication/2026-10-05/completion.json",
   "completion": {
     "state": "verified",
-    "path": "_records/publication/2026-10-04/completion.json"
+    "path": "_records/publication/2026-10-05/completion.json"
   },
   "command_center_sync": "pending",
   "command_center": {
@@ -63,17 +63,17 @@
   },
   "last_authoritative_state_transition": {
     "stage": "COMPLETED",
-    "at": "2026-10-04T16:53:41.913Z"
+    "at": "2026-10-05T09:07:01.245Z"
   },
   "source_evidence": {
-    "lifecycle_path": "_records/publication/2026-10-04/lifecycle.json",
-    "completion_path": "_records/publication/2026-10-04/completion.json",
+    "lifecycle_path": "_records/publication/2026-10-05/lifecycle.json",
+    "completion_path": "_records/publication/2026-10-05/completion.json",
     "current_edition_path": "data/operations/current-edition.json",
-    "run_state_path": "_records/run-state/2026-10-04.json"
+    "run_state_path": "_records/run-state/2026-10-05.json"
   },
   "consistency": {
     "state": "pass",
     "errors": []
   },
-  "updated_at": "2026-10-04T16:53:41.913Z"
+  "updated_at": "2026-10-05T09:07:01.245Z"
 }

@@ -1,0 +1,17 @@
+{
+  "task_id": "29",
+  "from": "Backlog",
+  "to": "Done",
+  "at": "2026-10-05T09:07:08.587Z",
+  "timestamp_scope": "evidence_reconciliation_observed",
+  "proof": {
+    "production_sha": "a197fa1b651a6fcf4ab7d26683e00dc22eef0084",
+    "completion": "_records/publication/2026-10-05/completion.json",
+    "validation": "_records/publication/2026-10-05/delta-validation.json",
+    "pr_number": 467,
+    "ci_run_id": 37287580223,
+    "learning_certification": "_records/run-learning/certification/reliable-edition-20261005-run9.json",
+    "reader_semantic_close_gate": "_records/publication/2026-10-05/reader-semantic-close-gate.json",
+    "result": "PASS"
+  }
+}

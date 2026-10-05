@@ -1,22 +1,7 @@
 {
-  "schema_version": "production-kanban-projection-v3",
+  "schema_version": "run-timing-observations-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "edition_id": "dab-edition-2026-10-05",
   "observed_at": "2026-10-05T09:07:08.587Z",
-  "columns": [
-    "Backlog",
-    "WIP",
-    "Done"
-  ],
-  "current_column_prohibited": true,
-  "active_task_maps_to": "WIP",
-  "authoritative_source": "append_only_transition_events",
-  "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:979867ca07fa7626d060475d00d138058a899fba7d482aaee13f84db2bc4b610",
-  "run_started_at": "2026-10-05T00:00:23.000Z",
-  "terminal_at": "2026-10-05T09:07:08.587Z",
-  "total_brief_elapsed_seconds": 32805.587,
-  "total_brief_elapsed": "32805.587s",
   "tasks": {
     "10": {
       "id": "10",
@@ -468,5 +453,6 @@
       "duration_seconds": 144.777,
       "duration": "144.777s"
     }
-  }
+  },
+  "note": "No missing start time or duration is inferred. Publication source timestamps remain in completion evidence."
 }
