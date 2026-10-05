@@ -2,13 +2,11 @@
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
   "owner_id": "watchdog-F-task23",
-  "generation": 68,
-  "acquired_at": "2026-10-05T09:00:32.377Z",
-  "last_heartbeat_at": "2026-10-05T09:00:59.748Z",
-  "expires_at": "2026-10-05T09:00:59.748Z",
-  "state": "RELEASED",
-  "released": true,
-  "scope": "TASK_23_APPEND_ONLY_LEDGER_RECONCILIATION",
-  "released_at": "2026-10-05T09:00:59.748Z",
-  "release_reason": "LEDGER_RECONCILED_PUBLICATION_EXACT_HEAD_VALIDATION_PENDING"
+  "generation": 69,
+  "acquired_at": "2026-10-05T09:03:21.477Z",
+  "last_heartbeat_at": "2026-10-05T09:03:21.477Z",
+  "expires_at": "2026-10-05T09:11:21.477Z",
+  "state": "ACTIVE",
+  "released": false,
+  "scope": "TASK_23_IMPROVEMENT_BOARD_RECONCILIATION"
 }
