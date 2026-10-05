@@ -4,8 +4,10 @@
   "owner_id": "watchdog-A-task23",
   "generation": 62,
   "acquired_at": "2026-10-05T08:12:35.297Z",
-  "last_heartbeat_at": "2026-10-05T08:12:35.297Z",
-  "expires_at": "2026-10-05T08:20:35.297Z",
-  "state": "ACTIVE",
-  "released": false
+  "last_heartbeat_at": "2026-10-05T08:17:06.950Z",
+  "expires_at": "2026-10-05T08:17:06.950Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T08:17:06.950Z",
+  "release_reason": "PROTECTED_REPAIR_EXECUTOR_OWNS_NEXT_STAGE"
 }
