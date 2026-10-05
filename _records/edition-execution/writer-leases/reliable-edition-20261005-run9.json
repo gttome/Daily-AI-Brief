@@ -4,9 +4,11 @@
   "owner_id": "watchdog-F-task23",
   "generation": 66,
   "acquired_at": "2026-10-05T08:53:30.000Z",
-  "last_heartbeat_at": "2026-10-05T08:53:30.000Z",
-  "expires_at": "2026-10-05T09:01:30.000Z",
-  "state": "ACTIVE",
-  "released": false,
-  "scope": "TASK_23_INTEGRATED_LOCKED_CANVAS_REPAIR"
+  "last_heartbeat_at": "2026-10-05T08:55:00.000Z",
+  "expires_at": "2026-10-05T08:55:00.000Z",
+  "state": "RELEASED",
+  "released": true,
+  "scope": "TASK_23_INTEGRATED_LOCKED_CANVAS_REPAIR",
+  "released_at": "2026-10-05T08:55:00.000Z",
+  "release_reason": "PROTECTED_REPAIR_PR_EXACT_HEAD_VALIDATION_PENDING"
 }
