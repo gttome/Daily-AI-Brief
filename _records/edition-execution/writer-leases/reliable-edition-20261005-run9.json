@@ -1,9 +1,21 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "owner_id": "github-actions-37247991365-1",
-  "generation": 10,
-  "acquired_at": "2026-10-05T00:34:01.228Z",
-  "last_heartbeat_at": "2026-10-05T00:34:01.228Z",
-  "expires_at": "2026-10-05T00:39:01.228Z"
+  "owner_id": "chatgpt-task04-evidence-20261005",
+  "generation": 11,
+  "task_id": "04",
+  "capability": "repository",
+  "operation_key": "task04-evidence-verification-g11",
+  "acquired_at": "2026-10-05T00:37:09.356Z",
+  "last_heartbeat_at": "2026-10-05T00:37:09.356Z",
+  "expires_at": "2026-10-05T00:52:09.356Z",
+  "state": "ACTIVE",
+  "released": false,
+  "transfer_from": {
+    "owner_id": "github-actions-37247991365-1",
+    "generation": 10,
+    "reason": "PROVEN_DEAD_WORKFLOW_FAILURE",
+    "workflow_run_id": 37247991365,
+    "at": "2026-10-05T00:37:09.356Z"
+  }
 }
