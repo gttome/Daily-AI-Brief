@@ -12,5 +12,5 @@
   "state": "RELEASED",
   "released": true,
   "released_at": "2026-10-05T03:57:10.000Z",
-  "release_reason": "TASK_11_ACCEPTED_LOCKED_HANDOFF_TO_SUPERVISOR"
+  "release_reason": "TASK_11_DONE_HANDOFF_TO_SUPERVISOR"
 }
