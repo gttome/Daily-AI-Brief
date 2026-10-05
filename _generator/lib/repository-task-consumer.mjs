@@ -32,6 +32,8 @@ function acceptedFromLock({root,runKey,spec,req}){
   if(!fs.existsSync(attemptPath) || !fs.existsSync(reviewPath)) throw Error(`accepted_evidence_missing:${spec.candidate_id}`);
   const attempt=readJson(attemptPath), review=readJson(reviewPath), final=lock.final||{};
   const persisted=attempt.normalization||attempt.native_capture||{};
+  const nativeFirstPassSameVisual=attempt.native_capture===persisted && persisted.persisted===true &&
+    String(persisted.exact_readback||'').startsWith('PASS_') && attempt.generation_lineage?.targeted_edit_generation_id==null;
   const identity=[lock,attempt,review].every(x=>x.execution_id===req.execution_id && x.edition_id===req.edition_id && x.candidate_id===spec.candidate_id);
   const linked=persisted.path===final.path && review.final?.path===final.path &&
     persisted.sha256===final.sha256 && review.final?.sha256===final.sha256 &&
@@ -52,7 +54,7 @@ function acceptedFromLock({root,runKey,spec,req}){
     no_people:v.no_people_or_humanoids===true,
     no_artifacts:v.artifacts_or_corruption===false,
     no_context_contamination:v.context_contamination===false,
-    same_visual:persisted.same_visual===true || persisted.same_visual_targeted_edit===true,
+    same_visual:persisted.same_visual===true || persisted.same_visual_targeted_edit===true || nativeFirstPassSameVisual,
     no_low_quality_fallback:persisted.low_quality_fallback===false,
     no_svg_fallback:persisted.svg_fallback===false,
     exact_git_readback:String(review.final?.exact_readback||'').startsWith('PASS_')
