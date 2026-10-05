@@ -55,6 +55,19 @@ if(manifestErrors.length===0){
     const pointer=read(pointerPath);
     if(pointer.edition_id===edition.edition_id)executionKey=pointer.execution_key||null;
   }
+  if(!executionKey){
+    const editorialRoot=path.join(root,'_records','editorial');
+    if(fs.existsSync(editorialRoot)){
+      for(const name of fs.readdirSync(editorialRoot).sort().reverse()){
+        const selection=path.join(editorialRoot,name,'story-selection.json');
+        if(!fs.existsSync(selection))continue;
+        try{
+          const value=JSON.parse(fs.readFileSync(selection,'utf8'));
+          if(value.edition_id===edition.edition_id){executionKey=name;break;}
+        }catch{}
+      }
+    }
+  }
   readerResult=evaluateReaderSemanticCloseGate({
     root,editionDate:date,executionKey,
     observedAt:args['observed-at']||new Date().toISOString()
