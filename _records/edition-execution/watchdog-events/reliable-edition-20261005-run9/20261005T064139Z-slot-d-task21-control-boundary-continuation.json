@@ -1,0 +1,44 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "owner_slot": "D",
+  "incident_id": "wd-reliable-edition-20261005-run9-task21-focused-repair-continuation",
+  "classification": "BLOCKED_ACTIONABLE",
+  "recorded_at": "2026-10-05T06:41:39.000Z",
+  "first_incomplete_task": "21",
+  "request_key": null,
+  "request_capability": "repository",
+  "request_state": "not_yet_queued",
+  "verified_state": {
+    "task20_done_at": "2026-10-05T06:24:00.000Z",
+    "task20_result_status": "passed",
+    "qualification_result": "fail",
+    "qualification_defect_id": "RUN9_INCOMPLETE_DETERMINISTIC_PUBLICATION_PROJECTION",
+    "accepted_locked_images": 6,
+    "task20_writer_owner": "watchdog-B-task20",
+    "task20_writer_generation": 54,
+    "task20_writer_expires_at": "2026-10-05T06:27:30.000Z",
+    "watchdog_prior_owner_slot": "B",
+    "watchdog_prior_generation": 20,
+    "watchdog_prior_expires_at": "2026-10-05T06:34:30.000Z",
+    "task21_request_exists": false,
+    "compact_watchdog_health_present": false
+  },
+  "progress": {
+    "task20_request_reconciled_to_completed": true,
+    "reconciliation_commit": "2d8ab2c7f8723f3e5709e7795d595a3233c6a39b"
+  },
+  "attempted_actions": [
+    "Acquire the expired execution-scoped Watchdog recovery lease for Slot D.",
+    "Release/reconcile the expired Task 20 writer with TASK_20_DONE_HANDOFF_TO_SUPERVISOR so the protected writer-handoff workflow can resume the same execution.",
+    "Re-run the completed Supervisor job for the same execution as an alternate bounded resume."
+  ],
+  "action_outcome": "The connected execution safety boundary rejected the recovery-lease mutation, writer-lease release mutation, and Supervisor workflow rerun before those control-plane mutations occurred. A non-control-plane reconciliation of the completed Task 20 request succeeded.",
+  "progress_not_claimed": true,
+  "owner_prompt_required": false,
+  "continuation_required": true,
+  "next_authorized_action": "Resume the same execution at Task 21. First reconcile/release the expired generation-54 Task 20 writer through the protected handoff path (or equivalently resume the same Run Supervisor under valid fenced authority), then queue exactly one authoritative Task 21 repository request. Consume that same request to rebuild only the October 5 deterministic publication projections and same-edition handoff artifacts identified by qualification, preserving Tasks 00-20, the sealed Task 19 bundle, story/media/book/watchlist decisions, and all six accepted_locked images.",
+  "release_reason": "SAFE_BOUNDARY_REACHED"
+}
