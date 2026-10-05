@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "ee18a220db6a99cf1ce93cfb895ca2f58ab6e45b261a38620ae36a03eb456930",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "10",
+  "capability": "repository",
+  "instruction": "Execute Task 10 (Seal six professional image specifications) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 24,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-05T02:43:53.190Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
