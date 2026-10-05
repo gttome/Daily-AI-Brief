@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {WATCHDOG_SLOTS,WATCHDOG_NATIVE_IMAGE_TASKS,WATCHDOG_MINIMUM_ACTION_LADDER,buildWatchdogIncidentId,buildWatchdogActionKey,acquireWatchdogRecoveryLease,releaseWatchdogRecoveryLease,watchdogLeaseActive,watchdogLeaseWritePlan,selectAuthoritativeRequest,watchdogNativeImageRequestEligible,watchdogDecision,nextWatchdogCorrectiveAction,verifyWatchdogRecoveryProgress,watchdogRecoveryContinuation,buildWatchdogEvent,buildWatchdogProtectedRepairRequirement,validateWatchdogRingContract} from '../lib/chatgpt-watchdog-ring.mjs';
+import {WATCHDOG_SLOTS,WATCHDOG_NATIVE_IMAGE_TASKS,WATCHDOG_MINIMUM_ACTION_LADDER,WATCHDOG_ORDINARY_WRITER_LEASE_MS,buildWatchdogIncidentId,buildWatchdogActionKey,acquireWatchdogRecoveryLease,releaseWatchdogRecoveryLease,watchdogLeaseActive,watchdogLeaseWritePlan,selectAuthoritativeRequest,watchdogNativeImageRequestEligible,watchdogQueuedRequestEligible,watchdogOrdinaryWriterPolicy,watchdogDecision,nextWatchdogCorrectiveAction,verifyWatchdogRecoveryProgress,watchdogRecoveryContinuation,buildWatchdogEvent,buildWatchdogProtectedRepairRequirement,validateWatchdogRingContract} from '../lib/chatgpt-watchdog-ring.mjs';
 import {classifyRunHealth} from '../lib/run-supervisor.mjs';
 
 const active={active:true,terminal:false,execution_id:'synthetic-watchdog-execution',edition_id:'dab-edition-2099-01-01',branch:'synthetic/watchdog'};
@@ -27,6 +27,36 @@ test('native-image consumer eligibility is exact-execution and Tasks 11-16 only'
   assert.equal(watchdogNativeImageRequestEligible({execution_id:active.execution_id,task_id:'17',capability:'native_chatgpt',status:'queued'},{execution_id:active.execution_id}),false);
   assert.equal(watchdogNativeImageRequestEligible({execution_id:'other',task_id:'11',capability:'native_chatgpt',status:'queued'},{execution_id:active.execution_id}),false);
   assert.equal(watchdogNativeImageRequestEligible({execution_id:active.execution_id,task_id:'11',capability:'repository',status:'queued'},{execution_id:active.execution_id}),false);
+});
+
+test('ordinary repository and research requests are generic Watchdog-consumer work while Task 17 retains its dedicated consumer',()=>{
+  const repoReq={execution_id:active.execution_id,task_id:'09',request_key:'repo-09',capability:'repository',status:'queued'};
+  const researchReq={execution_id:active.execution_id,task_id:'08',request_key:'research-08',capability:'research_chatgpt',status:'queued'};
+  const dedicated17={execution_id:active.execution_id,task_id:'17',request_key:'repo-17',capability:'repository',status:'queued'};
+  assert.equal(watchdogQueuedRequestEligible(repoReq,{execution_id:active.execution_id}),true);
+  assert.equal(watchdogQueuedRequestEligible(researchReq,{execution_id:active.execution_id}),true);
+  assert.equal(watchdogQueuedRequestEligible(dedicated17,{execution_id:active.execution_id}),false);
+  for(const req of [repoReq,researchReq]){
+    const d=watchdogDecision({active_pointer:active,classification:{state:'READY_IDLE'},owner_slot:'A',authoritative_request:req,now:'2026-10-05T02:00:00Z'});
+    assert.equal(d.action,'CONSUME_QUEUED_REQUEST');
+    assert.equal(d.request_key,req.request_key);
+    assert.equal(d.capability,req.capability);
+  }
+});
+
+test('ordinary ChatGPT writer leases are short and lease presence alone never proves progress',()=>{
+  assert.equal(WATCHDOG_ORDINARY_WRITER_LEASE_MS,8*60*1000);
+  const lease={execution_id:active.execution_id,owner_id:'watchdog-F-task08',generation:20,acquired_at:'2026-10-05T01:53:54Z',last_heartbeat_at:'2026-10-05T01:53:54Z',expires_at:'2026-10-05T02:13:54Z'};
+  const p=watchdogOrdinaryWriterPolicy({lease,capability:'research_chatgpt',substantive_progress_at:null,now:'2026-10-05T02:03:54Z'});
+  assert.equal(p.writer_active,true);
+  assert.equal(p.substantive_progress,false);
+  assert.equal(p.recovery_required,true);
+  assert.equal(p.reason,'writer_lease_without_substantive_progress');
+  const d=watchdogDecision({active_pointer:active,classification:{state:'STALE_ACTIVE'},owner_slot:'A',task_writer_active:true,task_writer_substantive_progress:false,task_writer_fence_takeover_safe:false,authoritative_request:{execution_id:active.execution_id,task_id:'08',request_key:'research-08',capability:'research_chatgpt',status:'queued'},now:'2026-10-05T02:03:54Z'});
+  assert.equal(d.action,'WAIT_FOR_WRITER_FENCE');
+  assert.equal(d.recovery_required,true);
+  const safe=watchdogDecision({active_pointer:active,classification:{state:'STALE_ACTIVE'},owner_slot:'B',task_writer_active:true,task_writer_substantive_progress:false,task_writer_fence_takeover_safe:true,now:'2026-10-05T02:14:00Z'});
+  assert.equal(safe.action,'RECOVER');
 });
 
 test('current task writer prevents duplicate native-image pickup by another slot',()=>{
