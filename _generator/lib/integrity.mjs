@@ -9,6 +9,7 @@ import {validateEdition} from './validate.mjs';
 import {validateEditorialLearning, validatePersonalFeedback} from './personal-learning.mjs';
 import {editionPodcasts} from './podcasts.mjs';
 import {watchlistForEdition} from './watchlist.mjs';
+import {lockedCanvasMigrationAllowed,migrationEnabled} from './frozen-contract-migration.mjs';
 
 
 const FROZEN_INTEGRATION_CUTOFF='2026-10-04';
@@ -228,9 +229,20 @@ export function validateDerivedParity(edition, repoRoot) {
   return errors;
 }
 
+export function migrationHandoffImageErrors(edition,repoRoot,imageReviewPath){
+  const gated=reviewedHandoffImages(edition,repoRoot,imageReviewPath),manifestPath=path.join(repoRoot,'_records','editorial-handoff','publication-manifest.json');
+  if(!fs.existsSync(manifestPath))return gated.errors;
+  try{
+    const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8')),migration=manifest?.migration||{};
+    if(manifest?.edition_date!==edition.brief_date||manifest?.edition_id!==edition.edition_id||!migrationEnabled(edition.brief_date,migration))return gated.errors;
+    const imageReview=JSON.parse(fs.readFileSync(path.join(repoRoot,imageReviewPath),'utf8'));
+    return gated.errors.filter(error=>!lockedCanvasMigrationAllowed({manifest,imageReview},gated,error,edition.brief_date,migration));
+  }catch{return gated.errors;}
+}
+
 export function validateIntegratedRepository(edition, repoRoot, {imageReviewPath=null}={}) {
   const frozen=frozenPublicationMigration(edition,repoRoot);
-  const imageErrors=frozen?validateFrozenTask19Bundle(edition,repoRoot):(imageReviewPath?reviewedHandoffImages(edition,repoRoot,imageReviewPath):reviewedImages(edition,repoRoot)).errors;
+  const imageErrors=frozen?validateFrozenTask19Bundle(edition,repoRoot):(imageReviewPath?migrationHandoffImageErrors(edition,repoRoot,imageReviewPath):reviewedImages(edition,repoRoot).errors);
   const derivedErrors=frozen?validateFrozenProjectionState(edition,repoRoot):validateDerivedParity(edition, repoRoot);
   const errors = [...imageErrors, ...validateEdition(edition), ...validateUrlContract(repoRoot), ...validateOperationalRecords(repoRoot), ...derivedErrors, ...auditEditionAccessibility(edition, repoRoot).findings.filter(item => ['critical', 'high'].includes(item.severity)).map(item => `${item.code}: ${item.message}`)];
   const atom = fs.existsSync(path.join(repoRoot, 'feed.xml')) ? fs.readFileSync(path.join(repoRoot, 'feed.xml'), 'utf8') : '';
