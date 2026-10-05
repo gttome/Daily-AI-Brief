@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-edition-20261005-run9",
   "edition_id": "dab-edition-2026-10-05",
-  "observed_at": "2026-10-05T00:50:23.182Z",
+  "observed_at": "2026-10-05T02:36:25.247Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:31b6893d1b14f37ae4a32ec694033f1cee53ff4fad3f15ce0fcc10a7f6e937ce",
+  "source_event_digest": "sha256:c6574e038cce983ac576d6a78b6e761e0e1c8a4fe50bcfac0d22bb40fc23c9fd",
   "run_started_at": "2026-10-05T00:00:23.000Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 3000.182,
-  "total_brief_elapsed": "3000.182s",
+  "total_brief_elapsed_seconds": 9362.247,
+  "total_brief_elapsed": "9362.247s",
   "tasks": {
     "10": {
       "id": "10",
@@ -441,17 +441,17 @@
     "08": {
       "id": "08",
       "title": "Refresh Emerging AI Watchlist",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "column": "Done",
+      "entered_backlog_at": "2026-10-05T01:53:54.617Z",
+      "active_started_at": "2026-10-05T01:53:54.617Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "done_at": "2026-10-05T02:33:36.000Z",
+      "cycle_seconds": 2381.383,
+      "active_seconds": 2381.383,
+      "duration_seconds": 2381.383,
+      "duration": "2381.383s"
     },
     "09": {
       "id": "09",
