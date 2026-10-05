@@ -1,14 +1,12 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "incident_id": "wd-reliable-edition-20261005-run9-task23-integrated-locked-canvas-migration",
+  "incident_id": "wd-reliable-edition-20261005-run9-task23-append-only-ledger-reconciliation",
   "owner_slot": "F",
-  "generation": 30,
-  "state": "RELEASED",
-  "acquired_at": "2026-10-05T08:56:41.771Z",
-  "last_heartbeat_at": "2026-10-05T08:57:28.165Z",
-  "expires_at": "2026-10-05T08:57:28.165Z",
-  "action_key": "wd-reliable-edition-20261005-run9-task23-integrated-locked-canvas-migration:protected-merge-resume:slot-f:g30",
-  "released_at": "2026-10-05T08:57:28.165Z",
-  "release_reason": "PROTECTED_REPAIR_MERGED_PUBLICATION_EXACT_HEAD_VALIDATION_PENDING"
+  "generation": 31,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-05T09:00:32.377Z",
+  "last_heartbeat_at": "2026-10-05T09:00:32.377Z",
+  "expires_at": "2026-10-05T09:15:32.377Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task23-append-only-ledger-reconciliation:slot-f:g31"
 }
