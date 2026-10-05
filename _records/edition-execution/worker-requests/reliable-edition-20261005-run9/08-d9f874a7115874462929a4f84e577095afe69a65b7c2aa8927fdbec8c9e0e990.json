@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "d9f874a7115874462929a4f84e577095afe69a65b7c2aa8927fdbec8c9e0e990",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "08",
+  "capability": "research_chatgpt",
+  "instruction": "Perform the bounded fresh external research required to refresh the Emerging AI Watchlist, reconcile adds/updates/drops, and persist the exact result without repeating valid completed work.",
+  "writer_generation": 18,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-05T00:50:23.080Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
