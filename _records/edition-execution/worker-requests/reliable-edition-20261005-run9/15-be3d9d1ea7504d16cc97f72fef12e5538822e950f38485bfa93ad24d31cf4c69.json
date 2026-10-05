@@ -14,10 +14,10 @@
   "created_at": "2026-10-05T04:20:47.031Z",
   "writer_generation_is_provenance": true,
   "authority_refresh_required_at_invocation": true,
-  "status": "queued_for_scheduled_consumer",
+  "status": "claimed",
   "dispatch": {
     "schema_version": "scheduled-image-dispatch-v3",
-    "status": "QUEUED_FOR_SCHEDULED_CONSUMER",
+    "status": "GENERATION_STARTED",
     "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
     "consumer_kind": "chatgpt_watchdog_ring",
     "consumer_pool_ids": [
@@ -38,17 +38,17 @@
     ],
     "all_slots_equivalent": true,
     "nominal_pickup_minutes": 10,
-    "consumer_id": null,
+    "consumer_id": "watchdog-F",
     "execution_id": "reliable-edition-20261005-run9",
     "task_id": "15",
-    "generation_started": false,
+    "generation_started": true,
     "accepted_locked": false,
     "writer_generation_is_provenance": true,
     "authority_refresh_required_at_invocation": true,
     "image_execution_admission": {
       "schema_version": "image-execution-admission-v1",
       "required_before_generation": true,
-      "generation_authorized": false,
+      "generation_authorized": true,
       "preflight_failure_consumes_attempt": false,
       "generator_context_requirement": "dedicated_story_only_generation_context",
       "orchestration_context_visible_to_generator": false,
@@ -58,8 +58,15 @@
       ],
       "runtime_generated_bytes_readable_required": true,
       "owner_intervention_required": false,
-      "receipt_path_pattern": "_records/image-admission/2026-10-05-run9/15-be3d9d1ea7504d16cc97f72fef12e5538822e950f38485bfa93ad24d31cf4c69.json"
+      "receipt_path_pattern": "_records/image-admission/2026-10-05-run9/15-be3d9d1ea7504d16cc97f72fef12e5538822e950f38485bfa93ad24d31cf4c69.json",
+      "receipt_path": "_records/image-admission/2026-10-05-run9/15-be3d9d1ea7504d16cc97f72fef12e5538822e950f38485bfa93ad24d31cf4c69.json",
+      "admitted_at": "2026-10-05T04:21:12.000Z",
+      "result": "PASS"
     },
-    "next_action": "Next eligible admitted scheduled consumer refreshes current fenced authority, proves image-execution-admission-v1 before native generation, and consumes this exact request. A mixed Watchdog context or unavailable exact-byte route must fail preflight with zero image attempts; overlapping consumers yield to the current task writer."
-  }
+    "next_action": "Watchdog F consumes the exact Task 15 request under admitted writer generation 37.",
+    "claimed_at": "2026-10-05T04:21:12.000Z"
+  },
+  "claimed_at": "2026-10-05T04:21:12.000Z",
+  "consumer_id": "watchdog-F",
+  "consumer_writer_generation": 37
 }

@@ -1,22 +1,13 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "incident_id": "wd-reliable-edition-20261005-run9-task14-native-01c79631",
+  "incident_id": "wd-reliable-edition-20261005-run9-task15-native-be3d9d1e",
   "owner_slot": "F",
-  "generation": 10,
-  "state": "RECOVERY_VERIFIED_PROGRESSING",
-  "acquired_at": "2026-10-05T04:15:48.000Z",
-  "last_heartbeat_at": "2026-10-05T04:18:32.000Z",
-  "expires_at": "2026-10-05T04:18:32.000Z",
-  "released_at": "2026-10-05T04:18:32.000Z",
-  "action_key": "wd-reliable-edition-20261005-run9-task14-native-01c79631:consume-exact-request:slot-f:g10",
-  "request_key": "01c79631386e213180717f5b7e8c1f0bbc9a611c676c01aa6c099c7e3b2a9e40",
-  "success_chain": {
-    "problem_diagnosed": true,
-    "cause_fixed": true,
-    "task_or_process_active": true,
-    "real_executor_confirmed": true,
-    "durable_progress_confirmed": true,
-    "evidence": "Task 14 Done plus accepted_locked m13 exact-byte Git asset after persisted image-execution admission."
-  }
+  "generation": 11,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-05T04:21:12.000Z",
+  "last_heartbeat_at": "2026-10-05T04:21:12.000Z",
+  "expires_at": "2026-10-05T04:36:12.000Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task15-native-be3d9d1e:consume-exact-request:slot-f:g11",
+  "request_key": "be3d9d1ea7504d16cc97f72fef12e5538822e950f38485bfa93ad24d31cf4c69"
 }

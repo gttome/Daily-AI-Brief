@@ -1,12 +1,21 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "owner_id": "github-actions-37263077799-1",
-  "generation": 36,
-  "acquired_at": "2026-10-05T04:20:43.651Z",
-  "last_heartbeat_at": "2026-10-05T04:20:48.476Z",
-  "expires_at": "2026-10-05T04:20:48.476Z",
-  "state": "RELEASED",
-  "released_at": "2026-10-05T04:20:48.476Z",
-  "release_reason": "TASK_15_QUEUED_FOR_SCHEDULED_CONSUMER_HANDOFF_TO_WATCHDOG"
+  "owner_id": "chatgpt-watchdog-F-task15",
+  "generation": 37,
+  "task_id": "15",
+  "capability": "native_chatgpt",
+  "request_key": "be3d9d1ea7504d16cc97f72fef12e5538822e950f38485bfa93ad24d31cf4c69",
+  "acquired_at": "2026-10-05T04:21:12.000Z",
+  "last_heartbeat_at": "2026-10-05T04:21:12.000Z",
+  "expires_at": "2026-10-05T04:36:12.000Z",
+  "state": "ACTIVE",
+  "released": false,
+  "transfer_from": {
+    "owner_id": "github-actions-37263077799-1",
+    "generation": 36,
+    "reason": "RELEASED_SCHEDULED_IMAGE_HANDOFF",
+    "prior_released_at": "2026-10-05T04:20:48.476Z",
+    "at": "2026-10-05T04:21:12.000Z"
+  }
 }
