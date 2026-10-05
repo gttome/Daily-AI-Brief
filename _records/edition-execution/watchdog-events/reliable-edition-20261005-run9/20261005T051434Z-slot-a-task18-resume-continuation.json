@@ -1,0 +1,23 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "task_id": "18",
+  "incident_id": "wd-reliable-edition-20261005-run9-post-task17-supervisor-resume-gap",
+  "owner_slot": "A",
+  "at": "2026-10-05T05:14:34.997Z",
+  "type": "SAFE_BOUNDARY_HANDOFF",
+  "classification": "BLOCKED_ACTIONABLE",
+  "summary": "Task 17 is Done after successful deterministic consumer retry, but no Task 18 request exists and no Supervisor run has started after the Task 17 handoff.",
+  "prior_progress": {
+    "task17_request_key": "710b8bedeaded7875b60952b3da4798bc2f6b8b0b6bf5d762d42c275ee3667f1",
+    "task17_consumer_run_id": 37265232480,
+    "task17_consumer_attempt": 2,
+    "task17_consumer_conclusion": "success",
+    "task17_state": "Done"
+  },
+  "next_authorized_action": "Resume the same protected Supervisor execution path, then require an exact Task 18 request and substantive durable Task 18 progress. Preserve Task 17 and all accepted_locked images.",
+  "recovery_required": true,
+  "handoff": "SAFE_BOUNDARY_REACHED"
+}
