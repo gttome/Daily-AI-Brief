@@ -1,0 +1,83 @@
+{
+  "schema_version": "run9-story-selection-v1",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_id": "reliable-edition-20261005-run9",
+  "research_cutoff": "2026-10-05T00:00:23.000Z",
+  "selected_at": "2026-10-05T00:41:47.037Z",
+  "allocation_policy": "exact-2-2-2",
+  "agent_skills_candidate_id": "m01",
+  "selection_locked": true,
+  "selected": [
+    {
+      "slot": 1,
+      "focus": "technical_ai_engineering",
+      "candidate_id": "m02",
+      "working_title": "When an agent says it is done, grade the database"
+    },
+    {
+      "slot": 2,
+      "focus": "technical_ai_engineering",
+      "candidate_id": "m12",
+      "working_title": "Copilot code review becomes an API with adjustable effort"
+    },
+    {
+      "slot": 3,
+      "focus": "applied_genai_knowledge_workers",
+      "candidate_id": "m07",
+      "working_title": "Workspace turns prompts into images, mini-apps and cross-app work"
+    },
+    {
+      "slot": 4,
+      "focus": "applied_genai_knowledge_workers",
+      "candidate_id": "m13",
+      "working_title": "AstaBrief opens a faster path to citation-grounded reports"
+    },
+    {
+      "slot": 5,
+      "focus": "agents_non_technical_people",
+      "candidate_id": "m01",
+      "role": "agent_skills",
+      "working_title": "NVIDIA gives agents a verified DOCA skill set"
+    },
+    {
+      "slot": 6,
+      "focus": "agents_non_technical_people",
+      "candidate_id": "m09",
+      "working_title": "Ambient agents wake on events and know when to ask a human"
+    }
+  ],
+  "reserves": [
+    "m03",
+    "m06",
+    "m08"
+  ],
+  "excluded": [],
+  "checks": {
+    "exact_story_count": 6,
+    "category_counts": {
+      "technical_ai_engineering": 2,
+      "applied_genai_knowledge_workers": 2,
+      "agents_non_technical_people": 2
+    },
+    "exact_one_reusable_agent_skills_story": true,
+    "prior_edition_exact_repeat": false,
+    "all_selected_full_source_read": true,
+    "all_selected_within_active_freshness_ladder": true,
+    "extended_fallback_used": [
+      "m01",
+      "m07",
+      "m09",
+      "m13"
+    ],
+    "source_date_conflict_excluded": []
+  },
+  "rationale": {
+    "m02": "The freshest technical candidate adds a strong reliability mechanism: grade durable backend state and repeated outcomes, not conversational claims.",
+    "m12": "API-triggered review and explicit effort controls make automated code review operationally concrete.",
+    "m07": "Broad knowledge-worker utility across image creation, interactive Sheets canvases and cross-app work.",
+    "m13": "An open citation-grounded report model and training data offer a distinct research workflow story.",
+    "m01": "The sole Agent Skills-ready candidate; it shows reusable verified skills constraining agents with real APIs, hardware checks and preflight rules.",
+    "m09": "An accessible event-driven agent pattern with explicit human approval and resumability."
+  },
+  "result": "PASS"
+}

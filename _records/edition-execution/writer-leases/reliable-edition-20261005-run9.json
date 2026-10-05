@@ -7,15 +7,10 @@
   "capability": "repository",
   "operation_key": "task05-lock-six-stories-g13",
   "acquired_at": "2026-10-05T00:41:42.507Z",
-  "last_heartbeat_at": "2026-10-05T00:41:42.507Z",
-  "expires_at": "2026-10-05T00:56:42.507Z",
-  "state": "ACTIVE",
-  "released": false,
-  "transfer_from": {
-    "owner_id": "github-actions-37248304541-1",
-    "generation": 12,
-    "reason": "PROVEN_DEAD_WORKFLOW_FAILURE",
-    "workflow_run_id": 37248304541,
-    "at": "2026-10-05T00:41:42.507Z"
-  }
+  "last_heartbeat_at": "2026-10-05T00:41:47.037Z",
+  "expires_at": "2026-10-05T00:41:47.037Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T00:41:47.037Z",
+  "release_reason": "TASK_05_DONE_HANDOFF_TO_SUPERVISOR"
 }
