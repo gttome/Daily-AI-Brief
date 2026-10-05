@@ -1,0 +1,13 @@
+{
+  "schema_version": "watchlist-source-evidence-v1",
+  "candidate_id": "w9-aws-ambient-agentcore",
+  "source_url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+  "publisher": "AWS",
+  "publication_date": "2026-10-01",
+  "checked_at": "2026-10-05T02:27:25.000Z",
+  "research_cutoff": "2026-10-05T00:00:23.000Z",
+  "eligible_at_research_cutoff": true,
+  "disposition": "update_existing",
+  "topic_id": "dab-topic-long-horizon-agents",
+  "finding": "Bedrock AgentCore demonstrates event-driven ambient agents where the event itself triggers work and human approval gates consequential next steps."
+}
