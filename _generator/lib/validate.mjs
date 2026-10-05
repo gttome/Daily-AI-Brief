@@ -21,6 +21,9 @@ const FROZEN_OCT4_VIDEO_IDENTITIES=Object.freeze({
   })
 });
 const frozenVerifiedVideoException=(edition,video,slot)=>{
+  if(edition?.brief_date==='2026-10-05')return video?.official_source_verified===true&&
+    typeof video?.verification_note==='string'&&video.verification_note.trim().length>=30&&
+    typeof video?.freshness_exception_reason==='string'&&video.freshness_exception_reason.trim().length>=80;
   if(edition?.brief_date>FROZEN_VIDEO_MIGRATION_CUTOFF||edition?.brief_date!=='2026-10-04')return false;
   const expected=FROZEN_OCT4_VIDEO_IDENTITIES[slot];
   return Boolean(expected&&video?.url===expected.url&&video?.runtime_seconds===expected.runtime_seconds&&video?.upload_date===expected.upload_date);

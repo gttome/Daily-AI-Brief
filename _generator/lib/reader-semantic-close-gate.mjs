@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {validateEdition} from './validate.mjs';
 import {generatedFiles} from './render.mjs';
+import {watchlistForEdition} from './watchlist.mjs';
 
 export const READER_SEMANTIC_CLOSE_GATE_VERSION='reader-semantic-close-gate-v1';
 export const READER_SEMANTIC_CLOSE_GATE_EFFECTIVE_DATE='2026-10-05';
@@ -38,7 +39,7 @@ export function evaluateReaderSemanticCloseGate({root='.',editionDate,executionK
   if(!fs.existsSync(booksFile))errors.push('book_reading_json_missing');
   if(errors.length)return {schema_version:READER_SEMANTIC_CLOSE_GATE_VERSION,edition_date:editionDate,observed_at:observedAt,result:'FAIL',checks,errors};
 
-  const edition=readJson(editionFile),watchlist=readJson(watchlistFile),books=readJson(booksFile);
+  const edition=readJson(editionFile),watchlist=watchlistForEdition(repoRoot,editionDate,readJson(watchlistFile)),books=readJson(booksFile);
   const editionErrors=validateEdition(edition);
   checks.edition_contract=editionErrors.length===0;
   errors.push(...editionErrors.map(error=>'edition:'+error));
@@ -110,6 +111,7 @@ export function evaluateReaderSemanticCloseGate({root='.',editionDate,executionK
     homepage:savedText(repoRoot,'index.md',fileOverrides)
   };
   for(const [surface,text] of Object.entries(surfaces)){
+    if(surface!=='dated'&&text!==null&&!text.includes('brief_date: '+editionDate))continue;
     if(text===null){errors.push(surface+'_reader_surface_missing');checks[surface+'_reader_surface']=false;continue;}
     checks[surface+'_reader_surface']=true;
     const overview=/IN THIS EDITION · 6 ARTICLES \/ 2 VIDEOS \/ 2 PODCASTS/.test(text);

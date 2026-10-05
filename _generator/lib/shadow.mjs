@@ -4,17 +4,10 @@ import {importLegacyFile, semanticEditionView} from './import-legacy.mjs';
 import {deepEqualJson, sha256} from './util.mjs';
 import {validateEdition} from './validate.mjs';
 import {renderDated,renderLatest,renderIndex} from './render.mjs';
+import {watchlistForEdition} from './watchlist.mjs';
 
 function sameEditionWatchlist(repoRoot,date){
-  for(const relative of ['_data/watchlist.json','data/watchlist.json']){
-    const file=path.join(repoRoot,relative);
-    if(!fs.existsSync(file))continue;
-    try{
-      const data=JSON.parse(fs.readFileSync(file,'utf8'));
-      if(data?.edition_date===date)return data;
-    }catch{}
-  }
-  return null;
+  return watchlistForEdition(repoRoot,date);
 }
 
 function firstDiff(actual, expected) {

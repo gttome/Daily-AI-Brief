@@ -1,4 +1,6 @@
 import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
 import {renderDailyTopicGroups} from '../../assets/js/watchlist-daily.js';
 import {WEIGHTS} from '../../assets/js/watchlist-evidence.js';
 export {WEIGHTS};
@@ -34,9 +36,19 @@ export function validateWatchlist(data){
 }
 export function publicWatchlist(data){const errors=validateWatchlist(data);if(errors.length)throw Error(errors.join('\n'));return {...data,topics:data.topics.map(t=>({...t,research_score:scoreTopic(t)}))};}
 const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export function watchlistForEdition(repoRoot,date,data=null){
+ for(const candidate of [
+  path.join(repoRoot,'_data','watchlist-history',date+'.json'),
+  path.join(repoRoot,'_data','watchlist.json'),
+  path.join(repoRoot,'data','watchlist.json')
+ ]){
+  if(!fs.existsSync(candidate))continue;
+  try{const loaded=JSON.parse(fs.readFileSync(candidate,'utf8'));if(loaded?.edition_date===date)return loaded;}catch{}
+ }
+ return data?.edition_date===date?data:null;
+}
 function currentWatchlistFor(date,data){
- if(data?.edition_date===date)return data;
- try{const loaded=JSON.parse(fs.readFileSync(new URL('../../_data/watchlist.json',import.meta.url),'utf8'));return loaded.edition_date===date?loaded:null;}catch{return null;}
+ return watchlistForEdition(fileURLToPath(new URL('../../',import.meta.url)),date,data);
 }
 export function watchlistPreview(date,data=null){
  if(date<'2026-09-12')return '';
