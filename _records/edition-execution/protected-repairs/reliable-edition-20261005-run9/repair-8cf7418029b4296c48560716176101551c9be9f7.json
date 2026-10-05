@@ -1,6 +1,6 @@
 {
   "schema_version": "protected-repair-required-v1",
-  "state": "PROTECTED_REPAIR_REQUIRED",
+  "state": "REPAIR_MERGED",
   "repair_key": "repair-8cf7418029b4296c48560716176101551c9be9f7",
   "execution_id": "reliable-edition-20261005-run9",
   "edition_id": "dab-edition-2026-10-05",
@@ -17,26 +17,18 @@
   "created_at": "2026-10-05T08:45:10.000Z",
   "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
   "diagnosis": "Exact-head publication validation exposed deterministic current-reader and historical-close compatibility defects after the prior frozen-contract cutoff repair: the sealed October 5 edition lacked complete evidence projections, current readers used a mismatched Watchlist snapshot, locked verified video exceptions were rejected, and historical October 4 validation incorrectly depended on the mutable current-edition manifest.",
-  "next_stage": "Require exact-head pull_request validate PASS on PR 469, merge without bypass, synchronize the same production branch, persist the already-validated deterministic projections, and rerun the same Task 23 publication validation.",
+  "next_stage": "Persist the locally validated deterministic projection set on the same production branch, require exact-head publication CI PASS, then merge publication PR 467 and continue the same execution through Pages, live verification, PUBLIC_CLOSED, and cleanup.",
   "last_recovery_stage": {
-    "state": "REPAIR_PR_OPEN",
+    "state": "REPAIR_MERGED",
     "pr_number": 469,
+    "ci_run_id": 37285509811,
+    "ci_conclusion": "success",
     "repair_head": "0f40efa61ac22d4eacc453e71c283c59411db18b",
-    "local_validation": {
-      "tests_passed": 977,
-      "tests_failed": 0,
-      "contract_validation": "PASS"
-    },
-    "scope_files": [
-      "_generator/lib/book-reading.mjs",
-      "_generator/lib/integrity.mjs",
-      "_generator/lib/reader-semantic-close-gate.mjs",
-      "_generator/lib/shadow.mjs",
-      "_generator/lib/validate.mjs",
-      "_generator/lib/watchlist.mjs",
-      "_tools/daily-validation.mjs"
-    ],
+    "merge_sha": "ea830c7f315f4b19af19ee51f216bda4a23cc2df",
+    "production_sync_sha": "edca1d41db6b7d6c2fd2d9ec887a2cb373e29c17",
     "same_execution_revalidated": true,
-    "same_task_revalidated": "23"
+    "same_task_revalidated": "23",
+    "repair_key_preserved": true,
+    "scope_digest_preserved": true
   }
 }

@@ -1,0 +1,28 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "task_id": "23",
+  "incident_id": "wd-reliable-edition-20261005-run9-task23-reader-projection-contract-recovery",
+  "owner_slot": "F",
+  "at": "2026-10-05T08:48:00.000Z",
+  "type": "PROTECTED_REPAIR_MERGED_AND_PROJECTION_PREPARED",
+  "classification": "BLOCKED_ACTIONABLE",
+  "repair_key": "repair-8cf7418029b4296c48560716176101551c9be9f7",
+  "pr_number": 469,
+  "repair_head": "0f40efa61ac22d4eacc453e71c283c59411db18b",
+  "merge_sha": "ea830c7f315f4b19af19ee51f216bda4a23cc2df",
+  "ci_run_id": 37285509811,
+  "durable_delta": {
+    "production_sync_sha": "edca1d41db6b7d6c2fd2d9ec887a2cb373e29c17",
+    "local_tests_passed": 977,
+    "contract_validation": "PASS",
+    "projection_files": 29,
+    "accepted_locked_images_preserved": 6,
+    "completed_tasks_preserved_through": "22"
+  },
+  "next_authorized_action": "Commit the deterministic reader and evidence projections to the same production branch, run exact-head publication validation, and merge the existing publication PR only after PASS.",
+  "recovery_required": true,
+  "handoff": "CONTINUE_SAME_INVOCATION"
+}
