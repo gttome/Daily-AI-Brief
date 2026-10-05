@@ -4,9 +4,11 @@
   "incident_id": "wd-reliable-edition-20261005-run9-task23-integrated-locked-canvas-migration",
   "owner_slot": "F",
   "generation": 30,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-05T08:56:41.771Z",
-  "last_heartbeat_at": "2026-10-05T08:56:41.771Z",
-  "expires_at": "2026-10-05T09:11:41.771Z",
-  "action_key": "wd-reliable-edition-20261005-run9-task23-integrated-locked-canvas-migration:protected-merge-resume:slot-f:g30"
+  "last_heartbeat_at": "2026-10-05T08:57:28.165Z",
+  "expires_at": "2026-10-05T08:57:28.165Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task23-integrated-locked-canvas-migration:protected-merge-resume:slot-f:g30",
+  "released_at": "2026-10-05T08:57:28.165Z",
+  "release_reason": "PROTECTED_REPAIR_MERGED_PUBLICATION_EXACT_HEAD_VALIDATION_PENDING"
 }
