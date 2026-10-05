@@ -4,11 +4,12 @@
   "owner_id": "chatgpt-watchdog-A-task11",
   "generation": 28,
   "acquired_at": "2026-10-05T03:05:30.000Z",
-  "last_heartbeat_at": "2026-10-05T03:05:30.000Z",
-  "expires_at": "2026-10-05T03:20:30.000Z",
-  "state": "ACTIVE",
-  "released": false,
+  "last_heartbeat_at": "2026-10-05T03:10:45.000Z",
+  "expires_at": "2026-10-05T03:10:45.000Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T03:10:45.000Z",
+  "release_reason": "TASK_11_POST_REPAIR_ATTEMPT_FAILED_STRATEGY_INTERRUPT_REQUIRED",
   "task_id": "11",
-  "request_key": "b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26",
-  "claim_reason": "TASK_11_REPAIR_EPOCH_1_POST_REPAIR_ATTEMPT_1"
+  "request_key": "b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26"
 }
