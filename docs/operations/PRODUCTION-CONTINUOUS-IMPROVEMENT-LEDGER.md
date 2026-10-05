@@ -2,7 +2,7 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:2d17c8e4951d6c25d98b228c780653eaf76480cade6790788728b8b1a4e99300`
+Ledger digest: `sha256:0ebc37debf39b494d5fe5c0e36e7d5d6f04786d9896fa28ef51a22d25663e8d4`
 
 Problems: 65 · Events: 120
 
@@ -1142,7 +1142,7 @@ Problems: 65 · Events: 120
 
 ## DAB-OPS-20261005-002 — Image generation was allowed before generator-context isolation and exact-byte persistence were proven for the invocation.
 
-- **Status:** permanently_fixed
+- **Status:** mitigated
 - **First observed run:** reliable-edition-20261005-run9
 - **Task(s):** 11
 - **Symptom:** Task 11 first produced a humanoid-contaminated image, then a bounded repair attempt rendered GitHub/Watchdog UI and could not use the direct binary Git route.
@@ -1151,7 +1151,7 @@ Problems: 65 · Events: 120
 - **Timing impact:** unknown / not safely inferable
 - **Attempted fixes:** Stop same-context retry and require Strategy Interrupt. | Implement image-execution-admission-v1 on PR #462 and enforce it immediately in A-F live prompts; permanent status waits for protected merge and live invocation proof.
 - **Actual fix:** Merged image-execution-admission-v1 on PR #473. Reliable-edition generation now fails closed before attempt 1 unless the exact execution/task/request, sealed story instruction, story-only context and approved exact-byte persistence path are all admitted. Admission failure consumes zero image attempts and triggers Strategy Interrupt.
-- **Fix outcome:** Protected exact-head CI PASS, protected merge to main, post-merge CI PASS, six equivalent live Watchdog prompts enabled, and non-production direct Git blob content-address probe PASS without consuming a production image attempt.
+- **Fix outcome:** Protected exact-head CI PASS, protected merge to main, post-merge CI PASS, six equivalent live Watchdog prompts enabled, and non-production direct Git blob content-address probe PASS without consuming a production image attempt. First live production admission proof remains a next-run validation requirement.
 - **Permanent implementation:** _generator/lib/image-execution-admission.mjs, _generator/test/image-execution-admission.test.mjs, _tools/native-image-worker.py, docs/operations/unattended-image-host.json, docs/operations/task-recovery-contracts.json, docs/operations/run-learning-readiness-contract.json, _generator/lib/image-execution.mjs
 - **Regression tests:** _generator/test/image-execution-admission.test.mjs, _generator/test/reliable-execution.test.mjs
 - **Production invariants:** execution_path_defects_must_fail_before_generation, image_attempt_budget_starts_after_admission, owner_upload_prohibited, no_low_quality_fallback, story_only_generator_context, exact_sealed_instruction, exact_byte_persistence_preflight, accepted_locked_immutable
