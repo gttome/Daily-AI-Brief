@@ -1,0 +1,21 @@
+{
+  "task_id": "11",
+  "from": "Active",
+  "to": "Blocked",
+  "at": "2026-10-05T03:10:30.000Z",
+  "reason": "The one bounded repair-epoch native image attempt was consumed and failed the sealed single-story isolation contract: the generator produced a GitHub/watchdog-health screenshot instead of the m02 backend-state-verification mechanism. Exact returned PNG bytes were available only as a conversation-local runtime file and could not be bridged into the approved GitHub binary persistence route without a prohibited workaround. Same-request regeneration is prohibited.",
+  "proof": {
+    "request_key": "b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26",
+    "writer_generation": 28,
+    "repair_epoch": 1,
+    "post_repair_attempt": 1,
+    "native_generation_id": "3189246e-da8c-4294-af4a-c54cd2f97849",
+    "native_sha256": "be41247b0a905edce85bd46f42c98a824438809b9390ffd1ac606b3b5fdd3ac2",
+    "attempt_receipt": "_records/image-attempts/2026-10-05-run9/m02-repair-epoch-1-attempt-1.json",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/11-b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26.json",
+    "accepted_locked": false,
+    "same_request_regeneration_prohibited": true,
+    "strategy_interrupt_required": true,
+    "external_runtime_limitation_verified": true
+  }
+}
