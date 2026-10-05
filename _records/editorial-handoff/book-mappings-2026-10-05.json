@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-05",
+  "reviewed_books": [
+    "Reliable Generative AI",
+    "Reliable Generative AI Context Engineering",
+    "Generative AI Professional Prompt Engineering Guide",
+    "Generative AI Prompt Engineering Learning Ecosystem"
+  ],
+  "editions": {
+    "2026-10-05": [
+      {
+        "item_id": "dab-story-2026-10-05-m02",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Connect conversational completion claims to durable-state verification, regression monitoring, explicit evaluation criteria and a reusable checking workflow."
+      },
+      {
+        "item_id": "dab-story-2026-10-05-m12",
+        "reference_id": "prompt-expert-critic",
+        "label": "READ DEEPER",
+        "why": "API-triggered review is more dependable when review evidence is auditable, context is complete, the model is assigned a critic role and human-versus-agent responsibilities stay explicit."
+      },
+      {
+        "item_id": "dab-story-2026-10-05-m07",
+        "reference_id": "context-dynamic-facts",
+        "label": "READ DEEPER",
+        "why": "Cross-app work benefits from current-state data, structured handoffs, clear prompts and reusable editable artifacts that preserve intent."
+      },
+      {
+        "item_id": "dab-story-2026-10-05-m13",
+        "reference_id": "reliable-rag",
+        "label": "READ DEEPER",
+        "why": "Citation-grounded reports improve when retrieval mixes semantic and exact matching, the research question is defined first, requests specify evidence needs and results feed an iterative learning workflow."
+      },
+      {
+        "item_id": "dab-story-2026-10-05-m01",
+        "reference_id": "ecosystem-template-export",
+        "label": "READ DEEPER",
+        "why": "A reusable skill is a structured contract; these sections show why instructions, references, constraints and reusable templates must stay coherent."
+      },
+      {
+        "item_id": "dab-story-2026-10-05-m09",
+        "reference_id": "reliable-agent-failures",
+        "label": "READ DEEPER",
+        "why": "Event-driven autonomy needs clear exception handling, escalation playbooks, clarification paths and role boundaries so a human can take over at the right point."
+      }
+    ]
+  },
+  "source_review_path": "_records/editorial/2026-10-05-run9/book-review.json"
+}
