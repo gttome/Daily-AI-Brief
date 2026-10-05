@@ -4,9 +4,11 @@
   "incident_id": "wd-reliable-edition-20261005-run9-task08-research-consumer-unclaimed-d9f874a7",
   "owner_slot": "F",
   "generation": 2,
-  "state": "ACTIVE",
-  "acquired_at": "2026-10-05T00:52:52.247Z",
-  "last_heartbeat_at": "2026-10-05T00:52:52.247Z",
-  "expires_at": "2026-10-05T01:07:52.247Z",
-  "action_key": "wd-reliable-edition-20261005-run9-task08-research-consumer-unclaimed-d9f874a7:capability-handoff:slot-f:g2"
+  "state": "RELEASED",
+  "acquired_at": "2026-10-05T00:53:14.715Z",
+  "last_heartbeat_at": "2026-10-05T00:53:34.235Z",
+  "expires_at": "2026-10-05T00:53:34.235Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task08-research-consumer-unclaimed-d9f874a7:capability-handoff:slot-f:g2",
+  "released_at": "2026-10-05T00:53:34.235Z",
+  "release_reason": "SAFE_BOUNDARY_REACHED"
 }
