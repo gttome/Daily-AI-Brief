@@ -1,5 +1,22 @@
 # Daily Generative AI Brief
 
+## October 5, 2026 — Image execution admission before generation
+
+October 5 Task 11 proved that image quality attempts must not be used to discover execution-path defects. A native image call is now prohibited until `image-execution-admission-v1` passes for that exact invocation.
+
+The admission gate is evaluated **before attempt 1 and before every later native generation**:
+
+1. **Story-only generator context.** The submitted generator-visible instruction must exactly equal the sealed story instruction. Watchdog, Supervisor, Kanban, lease, recovery, GitHub-status and unrelated-edition context may not be visible to the generator. A mixed recovery conversation is not an admitted generation context.
+2. **Exact-byte persistence.** The runtime must be able to read the exact returned PNG bytes and must preflight one approved persistence mode: direct Git Data blob or the protected bounded Base64 chunk bridge. The chunk bridge is an approved exact-byte transport, not a low-quality fallback.
+3. **No owner dependency.** Owner upload/manual transfer, new credentials, browser automation, paid APIs, Work and Codex remain prohibited.
+4. **Zero-attempt failure.** Failed admission consumes zero image attempts. Repair the execution path first.
+5. **Strategy Interrupt timing.** Context-isolation or byte-transport defects trigger Strategy Interrupt before generation, not after multiple image failures.
+6. **Quality budget starts after admission.** Only visual/content-quality failures after an admitted invocation consume the normal bounded image-attempt budget.
+7. **Acceptance unchanged.** Exact saved-Git readback, professional visual review, visible-text/no-humanoid/story-specific gates and `accepted_locked` remain mandatory.
+
+Historical successful exact-byte persistence (Run 7 Task 11, commit `256aa7e596e44aa37af96ca456eea6afeccd6677`) is precedent for the approved transport mechanism, but no historical success waives per-invocation admission.
+
+
 ## October 5, 2026 — Owner-independent ordinary/research recovery
 
 Run 9 exposed a false-liveness gap: a writer lease could exist while no semantic work was occurring, so a Watchdog could yield even though the task had no worker result, task delta, or fresh substantive progress. Task 08 also showed that a correctly typed `research_chatgpt` request is not enough unless an unattended consumer actually claims and executes it.
