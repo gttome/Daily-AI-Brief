@@ -1,0 +1,12 @@
+{
+  "schema_version": "chatgpt-watchdog-recovery-lease-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "incident_id": "wd-reliable-edition-20261005-run9-task03-research-consumer-unclaimed-615f55e5",
+  "owner_slot": "B",
+  "generation": 1,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-05T00:21:00.000Z",
+  "last_heartbeat_at": "2026-10-05T00:21:00.000Z",
+  "expires_at": "2026-10-05T00:36:00.000Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task03-research-consumer-unclaimed-615f55e5:capability-handoff:slot-b:g1"
+}
