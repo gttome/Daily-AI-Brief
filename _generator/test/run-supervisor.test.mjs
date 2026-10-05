@@ -470,6 +470,18 @@ test('Supervisor delegates only when the newest unfinished Tasks 11-16 request i
   assert.match(y,/Persistent approximately one-minute supervision loop\n        if: steps\.boundary\.outputs\.write_allowed == 'true' && steps\.image_delegation\.outputs\.delegated != 'true'/);
 });
 
+test('Supervisor releases its writer immediately after queuing a native image request',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.ok(y.includes('scheduled_image_handoff_boundary=false'));
+  assert.ok(y.includes('native_image_state='));
+  assert.ok(y.includes('QUEUED_FOR_SCHEDULED_CONSUMER'));
+  assert.ok(y.includes('TASK_${request_task}_QUEUED_FOR_SCHEDULED_CONSUMER_HANDOFF_TO_WATCHDOG'));
+  assert.ok(y.includes('Release Task ${request_task} writer to scheduled image consumer'));
+  const queue=y.indexOf('native_image_state=');
+  const release=y.indexOf('if [ "$scheduled_image_handoff_boundary" = "true" ]');
+  assert.ok(queue>=0 && release>queue);
+});
+
 test('watchdog runs every five minutes and can only restart the active pointer identity',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
   assert.match(y,/cron: '\*\/5 \* \* \* \*'/);
