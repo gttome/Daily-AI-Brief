@@ -3,11 +3,11 @@
   "execution_id": "reliable-edition-20261005-run9",
   "incident_id": "wd-reliable-edition-20261005-run9-post-task17-supervisor-resume-gap",
   "owner_slot": "D",
-  "generation": 17,
+  "generation": 18,
   "state": "ACTIVE",
-  "acquired_at": "2026-10-05T05:40:42.000Z",
-  "last_heartbeat_at": "2026-10-05T05:40:42.000Z",
-  "expires_at": "2026-10-05T05:52:42.000Z",
-  "action_key": "wd-reliable-edition-20261005-run9-post-task17-supervisor-resume-gap:consume-task18:slot-d:g17",
+  "acquired_at": "2026-10-05T05:53:44.000Z",
+  "last_heartbeat_at": "2026-10-05T05:53:44.000Z",
+  "expires_at": "2026-10-05T06:05:44.000Z",
+  "action_key": "wd-reliable-edition-20261005-run9-post-task17-supervisor-resume-gap:finish-task18:slot-d:g18",
   "request_key": "4201174a6abeb8fc2a9f21fc2b87de8843c37e9ad0137c24be08be607384d351"
 }
