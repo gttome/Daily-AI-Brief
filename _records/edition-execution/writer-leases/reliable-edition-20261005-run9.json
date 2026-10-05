@@ -1,11 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "owner_id": "github-actions-repository-task-37265232480-2",
-  "generation": 46,
-  "acquired_at": "2026-10-05T05:06:39.619Z",
-  "last_heartbeat_at": "2026-10-05T05:06:41.310Z",
-  "expires_at": "2026-10-05T05:06:41.310Z",
-  "released_at": "2026-10-05T05:06:41.310Z",
-  "release_reason": "TASK17_DONE_HANDOFF_TO_SUPERVISOR"
+  "owner_id": "github-actions-37265202291-2",
+  "generation": 47,
+  "acquired_at": "2026-10-05T05:36:06.316Z",
+  "last_heartbeat_at": "2026-10-05T05:36:06.316Z",
+  "expires_at": "2026-10-05T05:41:06.316Z"
 }
