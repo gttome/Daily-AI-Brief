@@ -453,35 +453,23 @@ test('Supervisor shell blocks avoid indented Node heredocs',()=>{
   assert.match(acquire,/dead-writer-proof-final\.json/);
 });
 
-test('Supervisor delegates only when the newest unfinished Tasks 11-16 request is queued for the scheduled image consumer',()=>{
+test('Supervisor startup yields when the newest unfinished request is already delegated to an unattended consumer',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
-  assert.match(y,/Yield while a scheduled image consumer owns the next operation/);
+  assert.match(y,/Yield while an unattended consumer owns the next operation/);
   assert.match(y,/const latest=new Map\(\)/);
   assert.match(y,/Date\.parse\(x\.created_at\|\|0\)/);
   assert.match(y,/ts>pts\|\|\(ts===pts&&n>prior\.n\)/);
   assert.match(y,/eventNames\.some\(n=>n\.startsWith\(t\+"-done"\)&&n\.endsWith\("\.json"\)\)/);
-  assert.match(y,/x\.capability==="native_chatgpt"&&String\(x\.status\|\|""\)==="queued_for_scheduled_consumer"/);
-  assert.match(y,/Supervisor will not acquire or take over the writer fence/);
+  assert.match(y,/\["repository","research_chatgpt"\]\.includes\(cap\)/);
+  assert.match(y,/cap==="native_chatgpt"/);
+  assert.match(y,/t==="17"&&cap==="repository"/);
+  assert.match(y,/Supervisor will not reacquire the writer fence merely to rediscover the same request/);
   const configure=y.indexOf('- name: Configure run-branch writer');
-  const delegation=y.indexOf('- name: Yield while a scheduled image consumer owns the next operation');
+  const delegation=y.indexOf('- name: Yield while an unattended consumer owns the next operation');
   assert.ok(delegation>=0 && configure>delegation);
   assert.match(y,/Configure run-branch writer\n        if: steps\.boundary\.outputs\.write_allowed == 'true' && steps\.image_delegation\.outputs\.delegated != 'true'/);
   assert.match(y,/Acquire fenced writer authority for this exact execution\n        if: steps\.boundary\.outputs\.write_allowed == 'true' && steps\.image_delegation\.outputs\.delegated != 'true'/);
-  assert.match(y,/Persistent approximately one-minute supervision loop\n        if: steps\.boundary\.outputs\.write_allowed == 'true' && steps\.image_delegation\.outputs\.delegated != 'true'/);
 });
-
-test('Supervisor releases its writer immediately after queuing a native image request',()=>{
-  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
-  assert.ok(y.includes('scheduled_image_handoff_boundary=false'));
-  assert.ok(y.includes('native_image_state='));
-  assert.ok(y.includes('QUEUED_FOR_SCHEDULED_CONSUMER'));
-  assert.ok(y.includes('TASK_${request_task}_QUEUED_FOR_SCHEDULED_CONSUMER_HANDOFF_TO_WATCHDOG'));
-  assert.ok(y.includes('Release Task ${request_task} writer to scheduled image consumer'));
-  const queue=y.indexOf('native_image_state=');
-  const release=y.indexOf('if [ "$scheduled_image_handoff_boundary" = "true" ]');
-  assert.ok(queue>=0 && release>queue);
-});
-
 test('watchdog runs every five minutes and can only restart the active pointer identity',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
   assert.match(y,/cron: '\*\/5 \* \* \* \*'/);
@@ -570,15 +558,14 @@ test('repository queue liveness faults after 60 seconds without substantive prog
   assert.equal(fault.supervisor_bookkeeping_is_progress,false);
 });
 
-test('Supervisor persists an unclaimed repository-worker fault without globally stopping the run',()=>{
+test('Supervisor delegates ordinary repository work before it can manufacture an unclaimed-worker fault',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
-  assert.match(y,/repository-liveness/);
-  assert.match(y,/--max-idle-seconds 60/);
-  assert.match(y,/edition-execution\/liveness-faults/);
-  assert.match(y,/route-specific fault is not a global stop/);
+  assert.match(y,/ordinary_consumer_boundary=true/);
+  assert.match(y,/delegated immediately to the unattended ChatGPT consumer pool/);
+  assert.match(y,/SAFE_RECOVERY_BOUNDARY/);
+  assert.doesNotMatch(y,/Record unclaimed Task .* repository-worker liveness fault/);
+  assert.doesNotMatch(y,/exceeded the protected 60-second unclaimed threshold/);
 });
-
-
 test('production writer handoff resumes the same execution for any Task 00-29 durable boundary',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor-handoff.yml','utf8');
   assert.match(y,/TASK_\[0-2\]\[0-9\]_DONE_HANDOFF_TO_SUPERVISOR/);
@@ -660,9 +647,38 @@ test('research-capable queue liveness is explicit for Tasks 03 and 08',()=>{
   assert.match(fault.next_action,/research-capable consumer/i);
 });
 
-test('Supervisor preserves queued research_chatgpt work for a capable ordinary ChatGPT consumer',()=>{
+test('Supervisor preserves queued research_chatgpt work and releases authority to the capable Watchdog pool immediately',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
-  assert.match(y,/request_capability\" = \"research_chatgpt\"/);
-  assert.match(y,/research_consumer_unclaimed|repository-liveness/);
+  assert.match(y,/request_capability" = "research_chatgpt"/);
+  assert.match(y,/ordinary_consumer_boundary=true/);
+  assert.match(y,/Supervisor released the writer immediately after persisting the exact ordinary\/research request/);
+  assert.doesNotMatch(y,/research_consumer_unclaimed/);
+});
+test('Supervisor delegates ordinary ChatGPT requests immediately and never rebases over its own unstaged lease',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.match(y,/already queued for an admitted unattended consumer/);
+  assert.match(y,/ordinary_consumer_boundary=true/);
+  assert.match(y,/SAFE_RECOVERY_BOUNDARY/);
+  assert.match(y,/Supervisor released the writer immediately after persisting the exact ordinary\/research request/);
+  assert.match(y,/git -C run add "\$lease_rel" 2>\/dev\/null \|\| true/);
+  assert.doesNotMatch(y,/exceeded the protected 60-second unclaimed threshold/);
+  const rebasePositions=[...y.matchAll(/git -C run (?:pull --rebase origin "\$RUN_BRANCH"|rebase "origin\/\$RUN_BRANCH")/g)].map(m=>m.index);
+  assert.ok(rebasePositions.length>=2);
+  for(const pos of rebasePositions){
+    const prior=y.slice(Math.max(0,pos-2200),pos);
+    assert.match(prior,/git -C run (?:add|commit)/,'every rebase path must follow reconciliation of Supervisor-owned state');
+  }
 });
 
+
+test('Supervisor releases its writer immediately after queuing a native image request',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.ok(y.includes('scheduled_image_handoff_boundary=false'));
+  assert.ok(y.includes('native_image_state='));
+  assert.ok(y.includes('QUEUED_FOR_SCHEDULED_CONSUMER'));
+  assert.ok(y.includes('TASK_${request_task}_QUEUED_FOR_SCHEDULED_CONSUMER_HANDOFF_TO_WATCHDOG'));
+  assert.ok(y.includes('Release Task ${request_task} writer to scheduled image consumer'));
+  const queue=y.indexOf('native_image_state=');
+  const release=y.indexOf('if [ "$scheduled_image_handoff_boundary" = "true" ]');
+  assert.ok(queue>=0 && release>queue);
+});

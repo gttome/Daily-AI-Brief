@@ -1,5 +1,41 @@
 # Daily Generative AI Brief
 
+## October 5, 2026 — Image execution admission before generation
+
+October 5 Task 11 proved that image quality attempts must not be used to discover execution-path defects. A native image call is now prohibited until `image-execution-admission-v1` passes for that exact invocation.
+
+The admission gate is evaluated **before attempt 1 and before every later native generation**:
+
+1. **Story-only generator context.** The submitted generator-visible instruction must exactly equal the sealed story instruction. Watchdog, Supervisor, Kanban, lease, recovery, GitHub-status and unrelated-edition context may not be visible to the generator. A mixed recovery conversation is not an admitted generation context.
+2. **Exact-byte persistence.** The runtime must be able to read the exact returned PNG bytes and must preflight one approved persistence mode: direct Git Data blob or the protected bounded Base64 chunk bridge. The chunk bridge is an approved exact-byte transport, not a low-quality fallback.
+3. **No owner dependency.** Owner upload/manual transfer, new credentials, browser automation, paid APIs, Work and Codex remain prohibited.
+4. **Zero-attempt failure.** Failed admission consumes zero image attempts. Repair the execution path first.
+5. **Strategy Interrupt timing.** Context-isolation or byte-transport defects trigger Strategy Interrupt before generation, not after multiple image failures.
+6. **Quality budget starts after admission.** Only visual/content-quality failures after an admitted invocation consume the normal bounded image-attempt budget.
+7. **Acceptance unchanged.** Exact saved-Git readback, professional visual review, visible-text/no-humanoid/story-specific gates and `accepted_locked` remain mandatory.
+
+Historical successful exact-byte persistence (Run 7 Task 11, commit `256aa7e596e44aa37af96ca456eea6afeccd6677`) is precedent for the approved transport mechanism, but no historical success waives per-invocation admission.
+
+
+## October 5, 2026 — Owner-independent ordinary/research recovery
+
+Run 9 exposed a false-liveness gap: a writer lease could exist while no semantic work was occurring, so a Watchdog could yield even though the task had no worker result, task delta, or fresh substantive progress. Task 08 also showed that a correctly typed `research_chatgpt` request is not enough unless an unattended consumer actually claims and executes it.
+
+The permanent contract is now:
+
+- **Lease is authority, not progress.** Lease acquisition/renewal and heartbeat alone never satisfy recovery progress.
+- **Supervisor delegates instead of waiting to fail.** After persisting an exact queued `repository` or `research_chatgpt` request that has no dedicated deterministic consumer, the Supervisor releases its writer immediately. It does not hold the fence for a minute merely to emit `*_consumer_unclaimed`.
+- **Restart delegation guard.** If an authoritative ordinary/research request is already queued, a restarted Supervisor yields instead of reacquiring the writer only to rediscover the same request.
+- **Six-slot consumer pool.** Watchdogs A–F may consume exact queued `repository` and `research_chatgpt` work; Task 17 retains its dedicated deterministic consumer. Native Tasks 11–16 retain their sealed-story image path.
+- **Ordinary/research task-writer lease:** 8 minutes. A lease may be renewed only while real work is producing substantive evidence; a lease with no substantive progress keeps recovery open.
+- **Progress grace:** 5 minutes for ordinary/research work. A valid but nonprogressing fence is not a healthy no-op. The next slot must recover the same request as soon as the fence is safe.
+- **Same-invocation drain.** After completing compatible repository/research Task N, continue into dependency-safe Task N+1 when the exact request is available and no competing real worker exists.
+- **Clean rebase invariant.** Supervisor-owned lease state is committed/reconciled with the durable delta before any rebase/push retry; a Supervisor-created dirty working tree may never reach `git pull --rebase`.
+- **Success criterion:** real executor + substantive durable task progress. `OWNER_INTERVENTION_REQUIRED=false` for internally actionable ordinary/research recovery.
+
+This rule exists specifically so an owner status question is never the event that causes the system to start solving an already-actionable stall.
+
+
 > [!IMPORTANT]
 > **Current instruction boundary.** Current production startup is defined by `DAILY-UNATTENDED-STARTUP.md` and the executable readiness contracts. Production instructions are generic and must not depend on a named historical run. Dated sections below are retained as historical learning evidence only; they are not a second controller and may not override current startup, terminal-run protection, cost, schedule, or observability rules. The production controller starts at 19:00 America/Chicago on the evening before the edition date and targets the next local calendar day. Kanban/timing/metrics are observability only and never production control authority.
 

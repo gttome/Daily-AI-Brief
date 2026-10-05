@@ -33,6 +33,11 @@ test('qualified host routes the exact fenced request to the enabled reusable sch
     assert.equal(result.accepted_locked,false);
     assert.equal(result.writer_generation_is_provenance,true);
     assert.equal(result.authority_refresh_required_at_invocation,true);
+    assert.equal(result.image_execution_admission.schema_version,'image-execution-admission-v1');
+    assert.equal(result.image_execution_admission.required_before_generation,true);
+    assert.equal(result.image_execution_admission.generation_authorized,false);
+    assert.equal(result.image_execution_admission.preflight_failure_consumes_attempt,false);
+    assert.deepEqual(result.image_execution_admission.approved_persistence_modes,['git_data_direct_blob','protected_base64_chunk_bridge']);
     const queued=JSON.parse(fs.readFileSync(request));
     assert.equal(queued.request_key,'immutable-key');
     assert.equal(queued.status,'queued_for_scheduled_consumer');
@@ -68,5 +73,22 @@ test('unqualified host remains capability blocked',()=>{
     fs.writeFileSync(registration,JSON.stringify({status:'CAPABILITY_BLOCKED',host_id:null}));
     const args=['_tools/native-image-worker.py','--run-root',root,'--request',request,'--execution-key','next-run','--execution-id','next-run','--edition-id','next-edition','--writer-generation','3','--host-registration',registration];
     assert.equal(JSON.parse(execFileSync('python3',args)).status,'CAPABILITY_BLOCKED');
+  }finally{fs.rmSync(root,{recursive:true,force:true});}
+});
+
+
+test('scheduled dispatch requires admission before generation and explicitly prohibits mixed Watchdog context from consuming attempt budget',()=>{
+  const root=fs.mkdtempSync(path.join(os.tmpdir(),'scheduled-route-'));
+  try{
+    const request=path.join(root,'request.json'),registration=path.join(root,'host.json');
+    fs.writeFileSync(request,JSON.stringify({execution_id:'next-run',writer_generation:3,task_id:'11',capability:'native_chatgpt',status:'queued',request_key:'immutable-key'}));
+    fs.writeFileSync(registration,JSON.stringify(readyRegistration()));
+    const args=['_tools/native-image-worker.py','--run-root',root,'--request',request,'--execution-key','next-run','--execution-id','next-run','--edition-id','next-edition','--writer-generation','3','--host-registration',registration];
+    const result=JSON.parse(execFileSync('python3',args));
+    assert.equal(result.generation_started,false);
+    assert.equal(result.image_execution_admission.generator_context_requirement,'dedicated_story_only_generation_context');
+    assert.equal(result.image_execution_admission.orchestration_context_visible_to_generator,false);
+    assert.equal(result.image_execution_admission.runtime_generated_bytes_readable_required,true);
+    assert.equal(result.image_execution_admission.owner_intervention_required,false);
   }finally{fs.rmSync(root,{recursive:true,force:true});}
 });

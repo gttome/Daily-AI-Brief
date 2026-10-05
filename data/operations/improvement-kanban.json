@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-05T04:50:00Z",
+  "observed_at": "2026-10-05T04:05:00Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -817,6 +817,47 @@
         "DAB-OPS-20261004-011",
         "PR #452",
         "PR #453"
+      ]
+    },
+    {
+      "id": "DAB-KB-044",
+      "lane": "wip",
+      "priority": "P0",
+      "category": "Autonomy",
+      "title": "Eliminate owner-prompt dependency for ordinary and research recovery",
+      "summary": "Run 9 showed that a queued research/repository request could be diagnosed while no real consumer progressed it. Supervisor delegation, Watchdog consumption and writer-liveness rules are being hardened so owner questions never become liveness triggers.",
+      "acceptance": [
+        "Supervisor releases exact ordinary/research work immediately to an admitted unattended consumer.",
+        "A-F consume exact repository/research requests without duplicate allocation.",
+        "Lease/heartbeat alone never counts as progress.",
+        "Ordinary/research fences are bounded and same-invocation draining is preserved.",
+        "OWNER_INTERVENTION_REQUIRED=false after protected merge and live verification."
+      ],
+      "sources": [
+        "DAB-OPS-20261005-001",
+        "Issue #461 R9-003/R9-004",
+        "PR #462"
+      ]
+    },
+    {
+      "id": "DAB-KB-045",
+      "lane": "wip",
+      "priority": "P0",
+      "category": "Image Architecture",
+      "title": "Require image execution admission before generation",
+      "summary": "Task 11 spent image attempts discovering context-isolation and byte-persistence defects. Every native image invocation must now prove story-only generator context and exact-byte persistence before attempt 1.",
+      "acceptance": [
+        "Per-invocation image-execution-admission-v1 passes before native generation.",
+        "Mixed Watchdog/Supervisor/recovery context is not an admitted generator context.",
+        "Direct Git blob or protected Base64 chunk bridge is preflighted before generation.",
+        "Failed preflight consumes zero image attempts and triggers Strategy Interrupt before attempt 1.",
+        "Saved-Git readback/review and accepted_locked remain mandatory."
+      ],
+      "sources": [
+        "DAB-OPS-20261005-002",
+        "_generator/lib/image-execution-admission.mjs",
+        "_tools/image-chunk-bridge.mjs",
+        "PR #462"
       ]
     }
   ],

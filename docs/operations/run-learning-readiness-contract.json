@@ -40,7 +40,11 @@
       "projection_defects_nonblocking",
       "improvement_board_learning_reconciliation",
       "chatgpt_watchdog_ring_enabled",
-      "watchdog_recovery_coordination_lease_enabled"
+      "watchdog_recovery_coordination_lease_enabled",
+      "image_execution_admission_gate",
+      "story_only_generator_context_preflight",
+      "exact_byte_persistence_preflight",
+      "image_preflight_failure_zero_attempts"
     ],
     "deferred_route_gates": {
       "unattended_image_host": {
@@ -129,7 +133,37 @@
       "F"
     ],
     "chatgpt_watchdog_native_image_normal_pickup_minutes": 10,
-    "chatgpt_watchdog_native_image_waits_for_stale": false
+    "chatgpt_watchdog_native_image_waits_for_stale": false,
+    "ordinary_repository_and_research_requests": "Supervisor persists exact request then releases writer immediately to the six-slot unattended ChatGPT consumer pool; startup recognizes existing delegation and does not reacquire merely to rediscover the request.",
+    "ordinary_watchdog_writer_lease_minutes": 8,
+    "writer_lease_or_heartbeat_alone_is_substantive_progress": false,
+    "watchdog_writer_progress_grace_minutes": 5,
+    "same_invocation_repository_research_draining": true,
+    "task_17_dedicated_deterministic_consumer_preserved": true,
+    "owner_intervention_required_for_internal_actionable_recovery": false,
+    "clean_rebase_invariant": "Every Supervisor commit/rebase path must commit or reconcile Supervisor-owned lease state first; rebase over a Supervisor-created dirty tree is prohibited.",
+    "image_execution_admission": {
+      "required_for_tasks": [
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "required_before_generation": true,
+      "per_invocation": true,
+      "story_only_context_required": true,
+      "exact_byte_persistence_required": true,
+      "approved_persistence_modes": [
+        "git_data_direct_blob",
+        "protected_base64_chunk_bridge"
+      ],
+      "preflight_failure_consumes_attempt": false,
+      "owner_intervention_required": false,
+      "mixed_orchestration_context_generation_prohibited": true,
+      "strategy_interrupt_timing": "before_attempt_1_for_execution_path_defect"
+    }
   },
   "task_recovery_contracts": {
     "path": "docs/operations/task-recovery-contracts.json",
