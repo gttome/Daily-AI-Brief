@@ -4,10 +4,17 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
-import {validateFrozenTask19Bundle,validateFrozenProjectionState} from '../lib/integrity.mjs';
+import {migrationHandoffImageErrors,validateFrozenTask19Bundle,validateFrozenProjectionState} from '../lib/integrity.mjs';
 
 const blob=bytes=>createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');
 const write=(root,relative,content)=>{const full=path.join(root,relative);fs.mkdirSync(path.dirname(full),{recursive:true});fs.writeFileSync(full,content);return blob(Buffer.from(content));};
+
+test('integration applies the bounded locked-canvas migration without freezing current reader projections',()=>{
+  const manifest=JSON.parse(fs.readFileSync('_records/editorial-handoff/publication-manifest.json','utf8'));
+  const edition=JSON.parse(fs.readFileSync(`_data/editions/${manifest.edition_date}.json`,'utf8'));
+  const imageReview=manifest.artifacts.image_review.path;
+  assert.deepEqual(migrationHandoffImageErrors(edition,process.cwd(),imageReview),[]);
+});
 
 test('frozen integration validates sealed reader/image bytes instead of newer generator rules',()=>{
   const root=fs.mkdtempSync(path.join(os.tmpdir(),'dab-frozen-int-'));

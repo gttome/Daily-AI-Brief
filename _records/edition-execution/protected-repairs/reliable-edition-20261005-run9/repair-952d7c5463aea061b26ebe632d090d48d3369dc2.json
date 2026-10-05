@@ -1,6 +1,6 @@
 {
   "schema_version": "protected-repair-required-v1",
-  "state": "PROTECTED_REPAIR_REQUIRED",
+  "state": "REPAIR_MERGED",
   "repair_key": "repair-952d7c5463aea061b26ebe632d090d48d3369dc2",
   "execution_id": "reliable-edition-20261005-run9",
   "edition_id": "dab-edition-2026-10-05",
@@ -17,23 +17,17 @@
   "created_at": "2026-10-05T08:54:30.000Z",
   "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
   "diagnosis": "Exact-head publication CI passed tests, contracts, repository state, discovery, and lifecycle, then failed only integrated image validation because that path bypassed the already-authorized locked-canvas migration for six immutable accepted_locked 1730x909 assets.",
-  "next_stage": "Open exactly one protected PR for the two-file integration repair; require exact-head pull_request validate PASS; merge, synchronize the same production branch, and rerun existing publication PR 467.",
+  "next_stage": "Run exact-head publication validation on the same production PR 467; merge only after PASS, then continue the same execution through deployment and independent live verification.",
   "last_recovery_stage": {
-    "state": "REPAIR_BRANCH_PREPARED",
-    "failed_publication_ci_run_id": 37286070906,
-    "failed_head": "f0784dc92cef6529d4ddc2cbba588b03170f9167",
-    "failure": [
-      "Invalid accepted handoff image canvas for six accepted_locked assets"
-    ],
-    "strategy_interrupt": "Apply the existing bounded lockedCanvasMigrationAllowed predicate inside integrated validation rather than freezing current reader projections or changing image bytes.",
-    "repair_head": "73cd13745d7059660621c574b4f3c62339e49255",
-    "local_validation": {
-      "integration_check": "PASS",
-      "tests_passed": 978,
-      "tests_failed": 0,
-      "contract_validation": "PASS"
-    },
+    "state": "REPAIR_MERGED",
+    "pr_number": 470,
+    "exact_head": "73cd13745d7059660621c574b4f3c62339e49255",
+    "validate_run_id": 37286568073,
+    "validate_conclusion": "success",
+    "merge_sha": "df0f30af436ed6cfcc8787daa352f9ee7168ec3c",
+    "merged_at": "2026-10-05T08:57:13.118Z",
     "same_execution_revalidated": true,
-    "same_task_revalidated": "23"
+    "same_task_revalidated": "23",
+    "accepted_locked_images_preserved": 6
   }
 }
