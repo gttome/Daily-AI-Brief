@@ -4,6 +4,9 @@
   "owner_id": "github-actions-37265202291-2",
   "generation": 47,
   "acquired_at": "2026-10-05T05:36:06.316Z",
-  "last_heartbeat_at": "2026-10-05T05:36:09.292Z",
-  "expires_at": "2026-10-05T05:41:09.292Z"
+  "last_heartbeat_at": "2026-10-05T05:36:10.851Z",
+  "expires_at": "2026-10-05T05:36:10.851Z",
+  "state": "RELEASED",
+  "released_at": "2026-10-05T05:36:10.851Z",
+  "release_reason": "SAFE_RECOVERY_BOUNDARY"
 }
