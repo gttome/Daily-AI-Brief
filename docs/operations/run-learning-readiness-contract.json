@@ -40,7 +40,14 @@
       "projection_defects_nonblocking",
       "improvement_board_learning_reconciliation",
       "chatgpt_watchdog_ring_enabled",
-      "watchdog_recovery_coordination_lease_enabled"
+      "watchdog_recovery_coordination_lease_enabled",
+      "chatgpt_watchdog_compact_health_v1",
+      "chatgpt_watchdog_compact_first_read_prompts_all_six",
+      "unchanged_health_commits_suppressed",
+      "image_execution_admission_v1",
+      "one_semantic_editorial_pass_v1",
+      "exact_publication_preflight_v1",
+      "public_safe_budget_v1"
     ],
     "deferred_route_gates": {
       "unattended_image_host": {
@@ -129,7 +136,15 @@
       "F"
     ],
     "chatgpt_watchdog_native_image_normal_pickup_minutes": 10,
-    "chatgpt_watchdog_native_image_waits_for_stale": false
+    "chatgpt_watchdog_native_image_waits_for_stale": false,
+    "chatgpt_watchdog_compact_health": {
+      "schema_version": "chatgpt-watchdog-health-v1",
+      "runtime_branch": "runtime/watchdog-health",
+      "runtime_path": "data/operations/watchdog-health.json",
+      "first_read_only": true,
+      "unchanged_material_state_commits": 0,
+      "broad_expansion_only_when_stale_invalid_or_actionable": true
+    }
   },
   "task_recovery_contracts": {
     "path": "docs/operations/task-recovery-contracts.json",
@@ -321,6 +336,12 @@
       ],
       "raw_report_fallback": "Only non-summary qualification inputs are passed to verifyUnattendedImageQualification.",
       "invariant": "A protected PASS summary must never be reinterpreted as though it were the low-level verifier input schema."
+    },
+    "image_execution_admission": {
+      "schema_version": "image-execution-admission-v1",
+      "required_before_every_native_generation": true,
+      "failed_admission_consumes_attempts": 0,
+      "accepted_locked_regeneration": false
     }
   },
   "kanban": {
@@ -496,5 +517,22 @@
         "bulk_closeout_zero_inference_prohibited": true
       }
     }
+  },
+  "semantic_editorial_pass": {
+    "schema_version": "one-semantic-editorial-pass-v1",
+    "normal_passes": 1,
+    "post_editorial_semantic_validation_passes": 0,
+    "downstream_deterministic_repair_reuses_kernel_when_input_digest_unchanged": true
+  },
+  "publication_preflight": {
+    "schema_version": "exact-publication-preflight-v1",
+    "required_before_task22_publication_pr": true,
+    "model_calls": 0,
+    "protected_ci_is_confirmation": true
+  },
+  "public_safe_budget": {
+    "schema_version": "daily-brief-public-safe-budget-v1",
+    "path_pattern": "_records/edition-execution/budget/<execution-id>.json",
+    "private_account_metrics_in_public_git": false
   }
 }
