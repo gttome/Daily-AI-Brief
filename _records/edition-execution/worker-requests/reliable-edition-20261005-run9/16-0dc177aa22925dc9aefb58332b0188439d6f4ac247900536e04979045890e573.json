@@ -14,10 +14,10 @@
   "created_at": "2026-10-05T04:26:23.412Z",
   "writer_generation_is_provenance": true,
   "authority_refresh_required_at_invocation": true,
-  "status": "claimed",
+  "status": "completed",
   "dispatch": {
     "schema_version": "scheduled-image-dispatch-v3",
-    "status": "GENERATION_STARTED",
+    "status": "COMPLETED",
     "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
     "consumer_kind": "chatgpt_watchdog_ring",
     "consumer_pool_ids": [
@@ -42,7 +42,7 @@
     "execution_id": "reliable-edition-20261005-run9",
     "task_id": "16",
     "generation_started": true,
-    "accepted_locked": false,
+    "accepted_locked": true,
     "writer_generation_is_provenance": true,
     "authority_refresh_required_at_invocation": true,
     "image_execution_admission": {
@@ -63,10 +63,19 @@
       "admitted_at": "2026-10-05T04:26:49.000Z",
       "result": "PASS"
     },
-    "next_action": "Watchdog F consumes the exact Task 16 request under admitted writer generation 39.",
-    "claimed_at": "2026-10-05T04:26:49.000Z"
+    "next_action": "Supervisor resumes the same execution; all native image tasks are accepted_locked and Task 17 uses its dedicated deterministic repository consumer.",
+    "claimed_at": "2026-10-05T04:26:49.000Z",
+    "completed_at": "2026-10-05T04:29:27.000Z"
   },
   "claimed_at": "2026-10-05T04:26:49.000Z",
   "consumer_id": "watchdog-F",
-  "consumer_writer_generation": 39
+  "consumer_writer_generation": 39,
+  "completed_at": "2026-10-05T04:29:27.000Z",
+  "result": "PASSED",
+  "evidence": {
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/16-0dc177aa22925dc9aefb58332b0188439d6f4ac247900536e04979045890e573.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-05-run9/m09.json",
+    "saved_git_review": "_records/image-reviews/2026-10-05-run9/m09-attempt-1-saved-git-review.json",
+    "image_execution_admission": "_records/image-admission/2026-10-05-run9/16-0dc177aa22925dc9aefb58332b0188439d6f4ac247900536e04979045890e573.json"
+  }
 }

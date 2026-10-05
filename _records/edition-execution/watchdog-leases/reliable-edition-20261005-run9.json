@@ -4,10 +4,19 @@
   "incident_id": "wd-reliable-edition-20261005-run9-task16-native-0dc177aa",
   "owner_slot": "F",
   "generation": 12,
-  "state": "ACTIVE",
+  "state": "RECOVERY_VERIFIED_PROGRESSING",
   "acquired_at": "2026-10-05T04:26:49.000Z",
-  "last_heartbeat_at": "2026-10-05T04:26:49.000Z",
-  "expires_at": "2026-10-05T04:41:49.000Z",
+  "last_heartbeat_at": "2026-10-05T04:29:27.000Z",
+  "expires_at": "2026-10-05T04:29:27.000Z",
+  "released_at": "2026-10-05T04:29:27.000Z",
   "action_key": "wd-reliable-edition-20261005-run9-task16-native-0dc177aa:consume-exact-request:slot-f:g12",
-  "request_key": "0dc177aa22925dc9aefb58332b0188439d6f4ac247900536e04979045890e573"
+  "request_key": "0dc177aa22925dc9aefb58332b0188439d6f4ac247900536e04979045890e573",
+  "success_chain": {
+    "problem_diagnosed": true,
+    "cause_fixed": true,
+    "task_or_process_active": true,
+    "real_executor_confirmed": true,
+    "durable_progress_confirmed": true,
+    "evidence": "Task 16 Done plus accepted_locked m09 exact-byte Git asset after persisted image-execution admission; Tasks 11-16 are all accepted_locked."
+  }
 }
