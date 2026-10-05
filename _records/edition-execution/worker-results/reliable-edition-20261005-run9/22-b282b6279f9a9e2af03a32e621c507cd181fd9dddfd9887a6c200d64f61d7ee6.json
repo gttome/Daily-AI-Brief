@@ -1,0 +1,42 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "b282b6279f9a9e2af03a32e621c507cd181fd9dddfd9887a6c200d64f61d7ee6",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "22",
+  "request_writer_generation": 58,
+  "writer_generation": 60,
+  "status": "passed",
+  "completed_at": "2026-10-05T07:45:36.231Z",
+  "publication_pr": {
+    "number": 467,
+    "url": "https://github.com/gttome/Daily-AI-Brief/pull/467",
+    "base": "main",
+    "base_sha": "d6751a6774bcdb9b84bcdec7a3d7dd6714cc3669",
+    "head_branch": "reliable-edition/dab-edition-2026-10-05-run9",
+    "observed_head_sha": "8290c2b44206bff62d5f57e2045da45f200e6c2f",
+    "reused_existing_matching_pr": false,
+    "duplicate_pr_created": false,
+    "mergeable": null,
+    "mergeable_state": "pending",
+    "protected_validate": {
+      "state": "queued"
+    }
+  },
+  "qualification_basis": {
+    "task20_result": "FOCUSED_REPAIR_REQUIRED",
+    "task21_result": "PASS",
+    "task21_receipt": "_records/qualification/2026-10-05-run9/task21-focused-repair.json",
+    "protected_ci_required_next": true
+  },
+  "preserved": {
+    "completed_tasks": "00-21",
+    "accepted_locked_images": 6,
+    "task18_reader_pages": true,
+    "task19_seal": true,
+    "production_content_mutations": 0,
+    "image_mutations": 0
+  },
+  "task_outcome": "Done"
+}
