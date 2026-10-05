@@ -14,10 +14,10 @@
   "created_at": "2026-10-05T04:20:47.031Z",
   "writer_generation_is_provenance": true,
   "authority_refresh_required_at_invocation": true,
-  "status": "claimed",
+  "status": "completed",
   "dispatch": {
     "schema_version": "scheduled-image-dispatch-v3",
-    "status": "GENERATION_STARTED",
+    "status": "COMPLETED",
     "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
     "consumer_kind": "chatgpt_watchdog_ring",
     "consumer_pool_ids": [
@@ -42,7 +42,7 @@
     "execution_id": "reliable-edition-20261005-run9",
     "task_id": "15",
     "generation_started": true,
-    "accepted_locked": false,
+    "accepted_locked": true,
     "writer_generation_is_provenance": true,
     "authority_refresh_required_at_invocation": true,
     "image_execution_admission": {
@@ -63,10 +63,19 @@
       "admitted_at": "2026-10-05T04:21:12.000Z",
       "result": "PASS"
     },
-    "next_action": "Watchdog F consumes the exact Task 15 request under admitted writer generation 37.",
-    "claimed_at": "2026-10-05T04:21:12.000Z"
+    "next_action": "Supervisor resumes the same execution and queues Task 16.",
+    "claimed_at": "2026-10-05T04:21:12.000Z",
+    "completed_at": "2026-10-05T04:23:49.000Z"
   },
   "claimed_at": "2026-10-05T04:21:12.000Z",
   "consumer_id": "watchdog-F",
-  "consumer_writer_generation": 37
+  "consumer_writer_generation": 37,
+  "completed_at": "2026-10-05T04:23:49.000Z",
+  "result": "PASSED",
+  "evidence": {
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/15-be3d9d1ea7504d16cc97f72fef12e5538822e950f38485bfa93ad24d31cf4c69.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-05-run9/m01.json",
+    "saved_git_review": "_records/image-reviews/2026-10-05-run9/m01-attempt-1-saved-git-review.json",
+    "image_execution_admission": "_records/image-admission/2026-10-05-run9/15-be3d9d1ea7504d16cc97f72fef12e5538822e950f38485bfa93ad24d31cf4c69.json"
+  }
 }
