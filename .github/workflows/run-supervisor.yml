@@ -182,20 +182,25 @@ jobs:
             node control/_tools/dispatch-frozen-publication.mjs
           fi
 
-      - name: Yield while a scheduled image consumer owns the next operation
+      - name: Yield while an unattended consumer owns the next operation
         if: steps.boundary.outputs.write_allowed == 'true'
         id: image_delegation
         run: |
           set -euo pipefail
           delegated=false
           delegated_task=""
+          delegated_capability=""
           request_dir="run/_records/edition-execution/worker-requests/${EXECUTION_ID}"
           if [ -d "$request_dir" ]; then
-            delegated_task="$(node -e 'const fs=require("fs"),p=require("path");const d=process.argv[1],events=process.argv[2];const latest=new Map();for(const n of fs.readdirSync(d).sort()){if(!n.endsWith(".json"))continue;const x=JSON.parse(fs.readFileSync(p.join(d,n),"utf8"));const t=String(x.task_id||"").padStart(2,"0");if(!/^1[1-6]$/.test(t))continue;const prior=latest.get(t);const ts=Date.parse(x.created_at||0)||0;const pts=prior?(Date.parse(prior.x.created_at||0)||0):-1;if(!prior||ts>pts||(ts===pts&&n>prior.n))latest.set(t,{n,x})}const eventNames=fs.existsSync(events)?fs.readdirSync(events):[];let found="";for(const t of [...latest.keys()].sort()){if(eventNames.some(n=>n.startsWith(t+"-done")&&n.endsWith(".json")))continue;const x=latest.get(t).x;if(x.capability==="native_chatgpt"&&String(x.status||"")==="queued_for_scheduled_consumer"){found=t;break}}process.stdout.write(found)' "$request_dir" "run/_records/edition-execution/events/${EXECUTION_KEY}")"
+            delegated_pair="$(node -e 'const fs=require("fs"),p=require("path");const d=process.argv[1],events=process.argv[2];const latest=new Map();for(const n of fs.readdirSync(d).sort()){if(!n.endsWith(".json"))continue;const x=JSON.parse(fs.readFileSync(p.join(d,n),"utf8"));const t=String(x.task_id||"").padStart(2,"0");if(!/^\\d{2}$/.test(t))continue;const prior=latest.get(t);const ts=Date.parse(x.created_at||0)||0;const pts=prior?(Date.parse(prior.x.created_at||0)||0):-1;if(!prior||ts>pts||(ts===pts&&n>prior.n))latest.set(t,{n,x})}const eventNames=fs.existsSync(events)?fs.readdirSync(events):[];let found="";for(const t of [...latest.keys()].sort()){if(eventNames.some(n=>n.startsWith(t+"-done")&&n.endsWith(".json")))continue;const x=latest.get(t).x,cap=String(x.capability||""),state=String(x.status||x.state||"").toLowerCase();if(t==="17"&&cap==="repository")continue;const native=/^1[1-6]$/.test(t)&&cap==="native_chatgpt"&&["queued","pending","queued_for_scheduled_consumer"].includes(state);const ordinary=["repository","research_chatgpt"].includes(cap)&&["queued","pending"].includes(state);if(native||ordinary){found=t+"|"+cap;break}}process.stdout.write(found)' "$request_dir" "run/_records/edition-execution/events/${EXECUTION_KEY}")"
+            if [ -n "$delegated_pair" ]; then
+              delegated_task="${delegated_pair%%|*}"
+              delegated_capability="${delegated_pair#*|}"
+            fi
           fi
           if [ -n "$delegated_task" ]; then
             delegated=true
-            echo "Task ${delegated_task} is already queued for the scheduled image consumer; Supervisor will not acquire or take over the writer fence."
+            echo "Task ${delegated_task} (${delegated_capability}) is already queued for an admitted unattended consumer; Supervisor will not reacquire the writer fence merely to rediscover the same request."
           fi
           echo "delegated=$delegated" >> "$GITHUB_OUTPUT"
 
@@ -373,6 +378,7 @@ jobs:
             fi
 
             protected_repair_boundary=false
+            ordinary_consumer_boundary=false
             has_request="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(x.worker_request?'true':'false')")"
             if [ "$has_request" = "true" ]; then
               node -e "const fs=require('fs');const x=require('/tmp/supervisor-tick.json');fs.writeFileSync('/tmp/worker-request.json',JSON.stringify(x.worker_request,null,2)+'\n')"
@@ -384,25 +390,10 @@ jobs:
               request_kind="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_kind||''))")"
               request_capability="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.capability||''))")"
               request_task="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.task_id||''))")"
-              if { [ "$request_capability" = "repository" ] || [ "$request_capability" = "research_chatgpt" ]; } && [ "$request_kind" != "engineering_repair" ]; then
+              if { [ "$request_capability" = "repository" ] || [ "$request_capability" = "research_chatgpt" ]; } && [ "$request_kind" != "engineering_repair" ] && ! { [ "$request_capability" = "repository" ] && [ "$request_task" = "17" ]; }; then
+                ordinary_consumer_boundary=true
                 request_key="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_key))")"
-                request_rel="_records/edition-execution/worker-requests/${EXECUTION_ID}/${request_task}-${request_key}.json"
-                liveness_rel="_records/edition-execution/liveness-faults/${EXECUTION_ID}/${request_task}-${request_key}-unclaimed.json"
-                node control/_tools/run-supervisor.mjs repository-liveness \
-                  --request "run/$request_rel" \
-                  --max-idle-seconds 60 \
-                  --output /tmp/repository-liveness.json >/tmp/repository-liveness.stdout
-                cat /tmp/repository-liveness.stdout
-                repository_liveness_state="$(node -e "const x=require('/tmp/repository-liveness.json');process.stdout.write(String(x.state))")"
-                if [ "$repository_liveness_state" = "fault" ] && [ ! -f "run/$liveness_rel" ]; then
-                  mkdir -p "run/$(dirname "$liveness_rel")"
-                  cp /tmp/repository-liveness.json "run/$liveness_rel"
-                  git -C run add "$liveness_rel"
-                  git -C run commit -m "Record unclaimed Task ${request_task} repository-worker liveness fault"
-                  git -C run pull --rebase origin "$RUN_BRANCH"
-                  git -C run push origin "HEAD:$RUN_BRANCH"
-                  echo "::error title=Bound worker liveness fault::Task ${request_task} ${request_capability} request ${request_key} exceeded the protected 60-second unclaimed threshold. Watchdog recovery remains enabled; this route-specific fault is not a global stop."
-                fi
+                echo "Task ${request_task} ${request_capability} request ${request_key} is delegated immediately to the unattended ChatGPT consumer pool. A queued request is not a reason for the Supervisor to hold the writer or wait 60 seconds for *_consumer_unclaimed."
               fi
               if [ "$request_capability" = "native_chatgpt" ] && [[ "$request_task" =~ ^1[1-6]$ ]]; then
                 request_key="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_key))")"
@@ -491,6 +482,8 @@ jobs:
             fi
 
             progress_before="$(git -C run rev-parse HEAD)"
+            # The locally renewed Supervisor lease is owned state. Whenever this loop commits any durable delta, stage the lease in the same commit so every subsequent rebase starts from a clean tree.
+            git -C run add "$lease_rel" 2>/dev/null || true
             git -C run add "_records/edition-execution/kanban/${EXECUTION_KEY}.json" 2>/dev/null || true
             git -C run add "_records/edition-execution/events/${EXECUTION_KEY}" 2>/dev/null || true
             git -C run add "_records/image-attempts/${EXECUTION_KEY}" 2>/dev/null || true
@@ -512,6 +505,27 @@ jobs:
                 git -C run rebase "origin/$RUN_BRANCH"
                 git -C run push origin "HEAD:$RUN_BRANCH"
               fi
+            fi
+
+            if [ "$ordinary_consumer_boundary" = "true" ]; then
+              node control/_tools/run-supervisor.mjs release-writer-lease \
+                --lease "run/$lease_rel" \
+                --execution-id "$EXECUTION_ID" \
+                --owner-id "$SUPERVISOR_OWNER" \
+                --generation "$WRITER_GENERATION" \
+                --reason SAFE_RECOVERY_BOUNDARY \
+                --output /tmp/released-writer-lease.json >/tmp/release-writer.stdout
+              cat /tmp/release-writer.stdout
+              cp /tmp/released-writer-lease.json "run/$lease_rel"
+              git -C run add "$lease_rel"
+              git -C run commit -m "Delegate Task ${request_task} to unattended consumer pool"
+              if ! git -C run push origin "HEAD:$RUN_BRANCH"; then
+                git -C run fetch --no-tags origin "$RUN_BRANCH"
+                git -C run rebase "origin/$RUN_BRANCH"
+                git -C run push origin "HEAD:$RUN_BRANCH"
+              fi
+              echo "Supervisor released the writer immediately after persisting the exact ordinary/research request; the next admitted Watchdog consumer may claim it without an artificial 60-second failure cycle."
+              break
             fi
 
             if [ "$protected_repair_boundary" = "true" ]; then
