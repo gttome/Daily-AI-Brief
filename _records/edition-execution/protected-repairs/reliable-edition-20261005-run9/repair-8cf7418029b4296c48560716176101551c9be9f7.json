@@ -1,0 +1,41 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "PROTECTED_REPAIR_REQUIRED",
+  "repair_key": "repair-8cf7418029b4296c48560716176101551c9be9f7",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "production_branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "23",
+  "incident_id": "wd-reliable-edition-20261005-run9-task23-reader-projection-contract-recovery",
+  "repair_branch": "repair/run9-task23-reader-projection-compat",
+  "repair_branch_head_sha": "0f40efa61ac22d4eacc453e71c283c59411db18b",
+  "repair_scope_digest": "sha256:8cf7418029b4296c48560716176101551c9be9f798ea2586c4d36026122c37a2",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-05T08:45:10.000Z",
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+  "diagnosis": "Exact-head publication validation exposed deterministic current-reader and historical-close compatibility defects after the prior frozen-contract cutoff repair: the sealed October 5 edition lacked complete evidence projections, current readers used a mismatched Watchlist snapshot, locked verified video exceptions were rejected, and historical October 4 validation incorrectly depended on the mutable current-edition manifest.",
+  "next_stage": "Open exactly one protected repair PR for the bound head, require exact-head pull_request validate PASS, merge without bypass, synchronize the same production branch, persist the already-validated deterministic projections, and rerun the same Task 23 publication validation.",
+  "last_recovery_stage": {
+    "state": "REPAIR_BRANCH_PREPARED",
+    "repair_head": "0f40efa61ac22d4eacc453e71c283c59411db18b",
+    "local_validation": {
+      "tests_passed": 977,
+      "tests_failed": 0,
+      "contract_validation": "PASS"
+    },
+    "scope_files": [
+      "_generator/lib/book-reading.mjs",
+      "_generator/lib/integrity.mjs",
+      "_generator/lib/reader-semantic-close-gate.mjs",
+      "_generator/lib/shadow.mjs",
+      "_generator/lib/validate.mjs",
+      "_generator/lib/watchlist.mjs",
+      "_tools/daily-validation.mjs"
+    ],
+    "same_execution_revalidated": true,
+    "same_task_revalidated": "23"
+  }
+}
