@@ -1,0 +1,37 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "83c4daa6b48d53d603b69524bdb12ab812c9c4ac88095bbc4b9ced6498410e8a",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "02",
+  "request_writer_generation": 5,
+  "writer_generation": 6,
+  "status": "passed",
+  "completed_at": "2026-10-05T00:18:14.561Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "prior_supervisor_run_id": 37246451154,
+    "prior_supervisor_conclusion": "failure",
+    "active_supervisor_run_id": 37246844956,
+    "active_supervisor_status_at_verification": "in_progress",
+    "same_execution_restart_proven": true,
+    "supervisor_writer_generations_observed": [
+      3,
+      5
+    ],
+    "watchdog_ring_slots_verified": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "watchdog_same_execution_only": true,
+    "repository_worker_generation": 6,
+    "duplicate_execution_created": false,
+    "note": "The protected handoff restarted the Run Supervisor on the identical bound execution, acquired a new fenced generation, and queued this exact Task 02 request. The repository worker consumed that request without allocating or reopening any execution."
+  },
+  "result": "PASS"
+}
