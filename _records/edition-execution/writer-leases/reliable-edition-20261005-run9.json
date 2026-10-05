@@ -1,16 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "owner_id": "chatgpt-task05-selection-20261005",
-  "generation": 13,
-  "task_id": "05",
-  "capability": "repository",
-  "operation_key": "task05-lock-six-stories-g13",
-  "acquired_at": "2026-10-05T00:41:42.507Z",
-  "last_heartbeat_at": "2026-10-05T00:41:47.037Z",
-  "expires_at": "2026-10-05T00:41:47.037Z",
-  "state": "RELEASED",
-  "released": true,
-  "released_at": "2026-10-05T00:41:47.037Z",
-  "release_reason": "TASK_05_DONE_HANDOFF_TO_SUPERVISOR"
+  "owner_id": "github-actions-37248536792-1",
+  "generation": 14,
+  "acquired_at": "2026-10-05T00:42:39.962Z",
+  "last_heartbeat_at": "2026-10-05T00:42:39.962Z",
+  "expires_at": "2026-10-05T00:47:39.962Z"
 }
