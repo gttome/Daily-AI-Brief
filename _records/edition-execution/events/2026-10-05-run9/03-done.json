@@ -1,0 +1,17 @@
+{
+  "task_id": "03",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-05T00:33:20.657Z",
+  "reason": "Fresh discovery completed with 20 bounded candidates, required focus coverage, one Agent Skills-ready candidate, and nine article evidence packets.",
+  "proof": {
+    "request_key": "615f55e549ff1fb1676d1324f959b6c9c4c092b5966d0926f28f6a9cf71d11a6",
+    "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/03-615f55e549ff1fb1676d1324f959b6c9c4c092b5966d0926f28f6a9cf71d11a6.json",
+    "discovery_branch_sha": "2e8941aa57d0110607bc0939cbde09d21d83d5db",
+    "candidate_count": 20,
+    "article_evidence_count": 9,
+    "model_calls": 0,
+    "metadata_candidates_sha256": "e33815a25abdbf066f5938ba811a26808041a3db01cdf2c81bcb3c45dca4ec3f",
+    "article_evidence_sha256": "d6d8bda502f7485f7201be3e045d3b91476bc0757cb47655e51aca9e4382951b"
+  }
+}

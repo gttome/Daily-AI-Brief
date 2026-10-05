@@ -3,7 +3,14 @@
   "execution_id": "reliable-edition-20261005-run9",
   "owner_id": "chatgpt-task03-research-20261005",
   "generation": 9,
+  "task_id": "03",
+  "capability": "research_chatgpt",
+  "operation_key": "task03-fresh-discovery-g9",
   "acquired_at": "2026-10-05T00:26:53.873Z",
-  "last_heartbeat_at": "2026-10-05T00:26:53.873Z",
-  "expires_at": "2026-10-05T00:41:53.873Z"
+  "last_heartbeat_at": "2026-10-05T00:33:20.657Z",
+  "expires_at": "2026-10-05T00:33:20.657Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T00:33:20.657Z",
+  "release_reason": "TASK_03_DONE_HANDOFF_TO_SUPERVISOR"
 }
