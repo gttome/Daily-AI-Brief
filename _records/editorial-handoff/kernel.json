@@ -1,204 +1,192 @@
 {
   "schema_version": "1.0.0",
-  "brief_date": "2026-09-30",
-  "edition_id": "dab-edition-2026-09-30",
-  "baseline_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
+  "edition_id": "dab-edition-2026-10-05",
+  "brief_date": "2026-10-05",
+  "baseline_sha": "d6751a6774bcdb9b84bcdec7a3d7dd6714cc3669",
+  "policy_profile": "under80-v1",
   "normal_model_passes": 1,
   "normal_post_editorial_model_passes": 0,
-  "editorial_takeaway": "The strongest pattern in this edition is operationalization: useful generative AI is moving from isolated answers toward governed systems with explicit runtime controls, source-aware verification, reusable skills, human escalation, and role-based memory.",
   "stories": [
     {
       "canonical_ordinal": 1,
-      "story_id": "dab-story-2026-09-30-77eb0ae9",
+      "story_id": "dab-story-2026-10-05-m02",
       "candidate_id": "m02",
       "focus": "technical_ai_engineering",
-      "headline": "OpenShell puts enforceable permissions outside the agent",
-      "summary": "NVIDIA describes OpenShell 0.1.0 as an open-source runtime that can wrap existing agents with sandboxed execution, service controls, credential isolation, network policy, and formal policy analysis. Its examples show the runtime allowing read operations while blocking writes and keeping real credentials outside the agent workload.",
-      "why_it_matters": "Long-running agents become more useful as they gain access to files, services, credentials, and production systems, but that also raises the cost of mistakes. External runtime controls give engineering teams a way to constrain what an agent can actually do without relying on the agent to police itself.",
+      "headline": "When an agent says it is done, grade the database",
+      "summary": "ThinkingBox grades terminal database state and repeated outcomes rather than plausible text.",
+      "why_it_matters": "Durable state, side effects and repeatability become evidence that work actually completed.",
+      "editorial_limitation": "Publisher-authored benchmark evidence; results do not establish reliability across every agent task or backend.",
       "what_to_do_now": {
-        "action": "test",
-        "label": "Put one existing agent behind deny-by-default runtime controls",
-        "rationale": "Choose a bounded coding or operations workflow, allow only the services and actions it needs, log every denial, and review whether the policy blocks unsafe actions without preventing legitimate work."
+        "action": "evaluate",
+        "label": "Grade one agent task by durable state",
+        "rationale": "Add a terminal-state and side-effect check to one agent workflow, then repeat the task to measure whether completion is actually reproducible."
       },
       "topic_labels": [
-        "agent runtime",
-        "permissions",
-        "sandboxing",
-        "credential isolation",
-        "formal policy"
+        "agent verification",
+        "durable state",
+        "repeatability"
       ],
-      "editorial_limitation": "This is NVIDIA’s description of OpenShell and includes NVIDIA-reported experiments. It demonstrates the control architecture and examples, but it does not establish that OpenShell is the best runtime for every agent environment.",
-      "source_url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
+      "source_url": "https://huggingface.co/blog/microsoft/thinkingbox",
       "agent_skill": false,
-      "fallback_reason": "Published about 67 hours before the fixed cutoff; selected under the normal 72-hour fallback because it is the strongest distinct implementation-level runtime-control story not used in the September 29 edition.",
+      "fallback_reason": "Selected from the bounded reviewed fallback window because it adds distinct mechanism-level value while preserving source verification.",
       "visual": {
-        "layout": "external agent runtime control stack",
-        "mechanism": "An agent runs inside a sandbox while an external supervisor enforces filesystem, process, network, service, and credential policy before requests reach approved systems.",
-        "alt_text": "Textbook architecture diagram showing an AI agent inside a sandbox, an external policy supervisor checking network and credential access, and approved services outside the workload."
+        "alt_text": "Backend-state verification for agents.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
       }
     },
     {
       "canonical_ordinal": 2,
-      "story_id": "dab-story-2026-09-30-bb1d40df",
-      "candidate_id": "m03",
+      "story_id": "dab-story-2026-10-05-m12",
+      "candidate_id": "m12",
       "focus": "technical_ai_engineering",
-      "headline": "ProvenanceGuard checks whether an MCP agent cited the right source, not just a true fact",
-      "summary": "A Hugging Face team article presents ProvenanceGuard, a post-generation verification layer for multi-tool MCP agents. It preserves source identity through claim decomposition, source routing, support checks, attribution checks, and allow-or-block decisions instead of collapsing all tool outputs into one anonymous evidence pool.",
-      "why_it_matters": "An agent can state a fact that is present somewhere in its evidence while attributing it to the wrong record or tool. For engineering teams building multi-source agents, claim-to-source verification is a separate release gate from ordinary factuality and can matter in regulated or data-sensitive workflows.",
+      "headline": "Copilot code review becomes an API with adjustable effort",
+      "summary": "GitHub adds API-triggered Copilot code review with adjustable effort.",
+      "why_it_matters": "Review becomes a programmable pipeline step with explicit depth control.",
+      "editorial_limitation": "GitHub product announcement; review quality and API behavior can vary by repository, language and policy configuration.",
       "what_to_do_now": {
-        "action": "evaluate",
-        "label": "Add source identity to one multi-tool agent evaluation",
-        "rationale": "Capture the tool and source ID behind each important claim, then test whether the answer attributes that claim to the same source rather than merely finding support somewhere in the pooled context."
+        "action": "test",
+        "label": "Pilot API-triggered review on one repository",
+        "rationale": "Compare shallow and deeper review effort on the same pull-request class and record which findings are useful enough to keep in the workflow."
       },
       "topic_labels": [
-        "MCP",
-        "provenance",
-        "agent evaluation",
-        "source attribution",
-        "verification"
+        "code review",
+        "API automation",
+        "review effort"
       ],
-      "editorial_limitation": "The reported evaluation is authored by the ProvenanceGuard team and includes a cautious operating point that also blocks some supported claims. The results do not show that this verifier will generalize unchanged to every domain or tool mix.",
-      "source_url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+      "source_url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
       "agent_skill": false,
-      "fallback_reason": "Published about 39 hours before the fixed cutoff; selected under the normal 72-hour fallback because it contributes a distinct source-aware verification mechanism and was not used in the September 29 edition.",
+      "fallback_reason": "Selected from the bounded reviewed fallback window because it adds distinct mechanism-level value while preserving source verification.",
       "visual": {
-        "layout": "claim-to-source verification pipeline",
-        "mechanism": "An MCP agent answer is split into claims; each claim is routed to a source ID, checked for support and attribution, then allowed, blocked, or repaired while source identity remains visible.",
-        "alt_text": "Textbook flow diagram showing an MCP answer decomposed into claims, each matched to a source, checked for factual support and attribution, and then allowed, blocked, or repaired."
+        "alt_text": "API-driven code review.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
       }
     },
     {
       "canonical_ordinal": 3,
-      "story_id": "dab-story-2026-09-30-5d21346f",
-      "candidate_id": "m04",
+      "story_id": "dab-story-2026-10-05-m07",
+      "candidate_id": "m07",
       "focus": "applied_genai_knowledge_workers",
-      "headline": "OpenAI pairs small-business AI workflows with local human coaching",
-      "summary": "OpenAI announced a partnership with America’s SBDC that will train roughly 150 advisors and bring hands-on workshops, follow-up help, and reusable guides to small businesses. A companion report describes owners using AI for finance, supply chain, legal work, marketing, competitive pricing, research, and outreach.",
-      "why_it_matters": "For small teams, the adoption bottleneck is often deciding where AI belongs in the workflow and how to judge whether it helped. Pairing concrete task examples with trusted local advisors turns generative AI adoption into a coached operating change rather than a self-serve software trial.",
+      "headline": "Workspace turns prompts into images, mini-apps and cross-app work",
+      "summary": "Workspace adds AI image editing, Sheets canvases and cross-app assistance.",
+      "why_it_matters": "Connected work surfaces can keep outputs tied to source data.",
+      "editorial_limitation": "Google product announcement; feature availability and behavior vary by account, administrator settings and rollout stage.",
       "what_to_do_now": {
         "action": "adopt",
-        "label": "Choose one weekly workflow and measure it with a human coach",
-        "rationale": "Pick a recurring task such as pricing research, outreach, or compliance preparation, define the expected output and review owner, run the workflow for several cycles, and compare time, quality, and follow-through."
+        "label": "Connect one cross-app workflow to its source data",
+        "rationale": "Choose one recurring spreadsheet or document workflow and keep generated outputs tied to the authoritative source data instead of copying context manually."
       },
       "topic_labels": [
-        "small business",
-        "AI adoption",
-        "workflow coaching",
         "knowledge work",
-        "training"
+        "cross-app workflows",
+        "source data"
       ],
-      "editorial_limitation": "The usage figures and examples come from OpenAI’s report and selected customer stories, not an independent adoption study. The program has been announced; its eventual reach and sustained behavior change remain to be measured.",
-      "source_url": "https://openai.com/index/helping-small-businesses-put-ai-to-work/",
+      "source_url": "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop",
       "agent_skill": false,
-      "fallback_reason": "The publisher exposed a September 30 date without an exact publication time. The gate conservatively treats the start of that date as the freshness timestamp, placing it just outside 24 hours while separate first-seen evidence proves it existed before the fixed cutoff.",
+      "fallback_reason": "Selected from the bounded reviewed fallback window because it adds distinct mechanism-level value while preserving source verification.",
       "visual": {
-        "layout": "coached small-business AI adoption loop",
-        "mechanism": "A small team selects one real workflow, learns it in a hands-on workshop, applies AI with advisor support, reviews the result, measures usefulness, and iterates or stops.",
-        "alt_text": "Textbook workflow showing a small business choosing a recurring task, receiving hands-on AI coaching, testing the workflow, reviewing results, measuring value, and iterating."
+        "alt_text": "Cross-app knowledge work.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
       }
     },
     {
       "canonical_ordinal": 4,
-      "story_id": "dab-story-2026-09-30-9d62316c",
-      "candidate_id": "m05",
+      "story_id": "dab-story-2026-10-05-m13",
+      "candidate_id": "m13",
       "focus": "applied_genai_knowledge_workers",
-      "headline": "Anthropic’s buying agent shifts sales reps toward higher-value conversations",
-      "summary": "Anthropic says its Claude Managed Agents buying agent now handles thousands of inbound conversations a day, answers routine plan and policy questions, and either completes a purchase, hands a complex case to a representative with context, or gives a quick answer. The company reports stronger opportunity conversion and faster closes for escalated leads.",
-      "why_it_matters": "The important pattern is role design rather than chatbot volume. The agent absorbs repetitive questions, preserves a human path for complex work, and turns escalation reasons into a feedback queue, allowing specialists to spend more time where judgment and persuasion matter.",
+      "headline": "AstaBrief opens a faster path to citation-grounded reports",
+      "summary": "Ai2 open-sources AstaBrief 8B and training data for citation-grounded reports.",
+      "why_it_matters": "Evidence provenance stays visible while shortening research loops.",
+      "editorial_limitation": "Project-authored model report; speed and citation quality still require independent validation for a specific research domain.",
       "what_to_do_now": {
         "action": "evaluate",
-        "label": "Treat every human escalation as training data for the workflow",
-        "rationale": "Instrument one customer-facing agent so each handoff records why the agent stopped, then review those reasons weekly to decide whether to improve the agent, change the self-service path, or keep the task human."
+        "label": "Audit citations in one generated research report",
+        "rationale": "Run a bounded report task and verify that each important claim is supported by the cited source before relying on the generated synthesis."
       },
       "topic_labels": [
-        "sales agents",
-        "human escalation",
-        "Claude Managed Agents",
-        "workflow redesign",
-        "feedback loops"
+        "research workflows",
+        "citations",
+        "report generation"
       ],
-      "editorial_limitation": "The conversion and cycle-time results are Anthropic’s own internal measurements and are not an independent controlled study. They illustrate one production sales workflow but should not be assumed to transfer unchanged to another company.",
-      "source_url": "https://claude.com/blog/how-anthropics-sales-team-rebuilt-inbound-with-claude-managed-agents",
+      "source_url": "https://huggingface.co/blog/allenai/astabrief",
       "agent_skill": false,
-      "fallback_reason": "The publisher exposed a September 30 date without an exact publication time. The gate conservatively treats the start of that date as the freshness timestamp, while independent first-seen evidence establishes that the article was available before the fixed cutoff.",
+      "fallback_reason": "Selected from the bounded reviewed fallback window because it adds distinct mechanism-level value while preserving source verification.",
       "visual": {
-        "layout": "sales agent escalation and learning loop",
-        "mechanism": "Inbound questions enter a buying agent and branch to self-service purchase, a quick answer, or a context-rich human handoff; escalation reasons feed a weekly improvement loop.",
-        "alt_text": "Textbook decision flow showing inbound sales questions going to an AI buying agent, then to purchase, quick answer, or human handoff, with escalation reasons feeding a workflow improvement loop."
+        "alt_text": "Citation-grounded report generation.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
       }
     },
     {
       "canonical_ordinal": 5,
-      "story_id": "dab-story-2026-09-30-3b6d7f96",
-      "candidate_id": "m07",
+      "story_id": "dab-story-2026-10-05-m01",
+      "candidate_id": "m01",
       "focus": "agents_non_technical_people",
-      "headline": "Gemini Skills turn repeated instructions into reusable team procedures",
-      "summary": "Google Workspace announced reusable Gemini skills for the Gemini app and Workspace and says they will eventually replace Gems for task-specific instructions. Skills let users save custom instructions for recurring work instead of rebuilding the same prompt each time, with a transition path for existing Gems.",
-      "why_it_matters": "This is a practical Agent Skills pattern for nontechnical teams: capture a repeatable procedure once, maintain it like operating knowledge, and reuse it across similar tasks. The value comes from consistency and ownership, not from making every request longer or more complicated.",
+      "headline": "NVIDIA gives agents a verified DOCA skill set",
+      "summary": "NVIDIA describes reusable DOCA Agent Skills with API, hardware and build checks.",
+      "why_it_matters": "Skills carry instructions, references, constraints and verification together.",
+      "editorial_limitation": "NVIDIA publisher evaluation; reported gains are vendor-measured and specific to the evaluated DOCA tasks and constraints.",
       "what_to_do_now": {
-        "action": "teach",
-        "label": "Package one recurring team task as a maintained Skill",
-        "rationale": "Choose a narrow task such as applying brand voice or preparing a vendor review, write the steps and examples once, assign an owner, and schedule a review whenever the underlying process or policy changes."
+        "action": "adopt",
+        "label": "Package one recurring procedure as a verified skill",
+        "rationale": "Turn one repeated task into maintained instructions, references and checks, then assign an owner to update the skill when the underlying process changes."
       },
       "topic_labels": [
         "Agent Skills",
-        "Gemini",
-        "reusable instructions",
-        "SKILL.md",
-        "operating knowledge"
+        "DOCA",
+        "verified constraints"
       ],
-      "editorial_limitation": "Google’s announcement describes the product direction and rollout schedule rather than measured productivity gains. Availability is staged, and the usefulness of a skill still depends on the quality and maintenance of the instructions it contains.",
-      "source_url": "https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html",
+      "source_url": "https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/",
       "agent_skill": true,
-      "fallback_reason": "The publisher exposed a September 30 date without an exact publication time. The gate uses start-of-day conservatively for freshness and separately records a pre-cutoff first-seen timestamp; this is the edition’s one reusable Agent Skills story.",
+      "fallback_reason": "Selected from the bounded reviewed fallback window because it adds distinct mechanism-level value while preserving source verification.",
       "visual": {
-        "layout": "reusable skill knowledge pipeline",
-        "mechanism": "Repeated ad-hoc prompts are distilled into a maintained Skill with instructions, examples, and an owner; the Skill is then reused across recurring Gemini tasks and revised when the procedure changes.",
-        "alt_text": "Textbook diagram showing repeated prompts becoming a maintained reusable Gemini Skill with instructions, examples, ownership, reuse across tasks, and a versioned update loop."
+        "alt_text": "Verified DOCA Agent Skills.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
       }
     },
     {
       "canonical_ordinal": 6,
-      "story_id": "dab-story-2026-09-30-63e10dfd",
-      "candidate_id": "m08",
+      "story_id": "dab-story-2026-10-05-m09",
+      "candidate_id": "m09",
       "focus": "agents_non_technical_people",
-      "headline": "Asana’s coachable agents make roles, memory, and permissions visible",
-      "summary": "Anthropic’s Asana case study describes AI teammates that work inside Asana’s existing work graph with named roles, visible tasks, scoped permissions, pre-built skills, integrations, and shared memory. Asana separates everyday feedback from permanent memory changes, which are reserved for administrators and editors.",
-      "why_it_matters": "Nontechnical teams need a way to understand what an agent is responsible for, what it can access, and who can change its behavior. Treating an agent like a governed teammate makes role boundaries and durable memory visible instead of burying them in an opaque automation.",
+      "headline": "Ambient agents wake on events and know when to ask a human",
+      "summary": "AWS shows event-driven agents that pause for human approval and resume.",
+      "why_it_matters": "Durable job state and explicit escalation make autonomy safer.",
+      "editorial_limitation": "AWS reference architecture; it demonstrates an implementation pattern rather than measured outcomes across all production environments.",
       "what_to_do_now": {
-        "action": "adopt",
-        "label": "Write a one-page job description for one AI teammate",
-        "rationale": "Define the agent’s role, approved projects and data, actions it may take, who can use it, who can change permanent memory, and where its work will stay visible before expanding it to more people."
+        "action": "test",
+        "label": "Add one explicit human-approval interrupt",
+        "rationale": "Identify one consequential agent action, pause the workflow before it executes, and verify that the job can resume cleanly after a human decision."
       },
       "topic_labels": [
-        "AI teammates",
-        "permissions",
-        "shared memory",
-        "Asana",
-        "human-agent teams"
+        "ambient agents",
+        "human approval",
+        "event-driven workflows"
       ],
-      "editorial_limitation": "The article is an Anthropic-authored case study based on Asana’s own operating practices. It provides a concrete governance pattern but does not independently measure whether these controls improve productivity or safety across organizations.",
-      "source_url": "https://claude.com/blog/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
       "agent_skill": false,
-      "fallback_reason": "Published on September 29 and conservatively normalized to the start of that date; it remains inside the normal 72-hour fallback and adds a distinct role, permission, and memory-governance pattern not used in the September 29 edition.",
+      "fallback_reason": "Selected from the bounded reviewed fallback window because it adds distinct mechanism-level value while preserving source verification.",
       "visual": {
-        "layout": "governed AI teammate operating model",
-        "mechanism": "A visible AI teammate profile defines role, users, administrators, skills, integrations, and permissions; task feedback stays local unless an editor commits it to shared memory.",
-        "alt_text": "Textbook operating model showing an AI teammate profile with role, permissions, skills, users and administrators, plus a task-feedback path separated from editor-controlled permanent memory."
+        "alt_text": "Ambient agent workflow.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
       }
     }
   ],
   "media_decisions": {
     "videos": {
       "target": 2,
-      "status": "pending_bounded_evidence",
-      "decision": "select_after_story_lock"
+      "status": "locked"
     },
     "podcasts": {
       "target": 2,
-      "status": "pending_bounded_evidence",
-      "decision": "select_after_story_lock"
+      "status": "locked"
     }
   },
-  "changed_watchlist_topics": []
+  "changed_watchlist_topics": [
+    "dab-topic-agent-skills-observability",
+    "dab-topic-adaptive-agent-safeguards",
+    "dab-topic-harness-engineering",
+    "dab-topic-long-horizon-agents",
+    "dab-topic-collaborative-vibe-coding",
+    "dab-topic-source-aware-agent-verification"
+  ],
+  "editorial_takeaway": "Verifiable work improves when evidence, constraints and human escalation are explicit."
 }
