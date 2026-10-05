@@ -14,5 +14,8 @@
   "created_at": "2026-10-05T00:47:15.992Z",
   "writer_generation_is_provenance": false,
   "authority_refresh_required_at_invocation": false,
-  "status": "queued"
+  "status": "claimed",
+  "claimed_at": "2026-10-05T00:49:32.709Z",
+  "claimed_by": "chatgpt-task07-podcasts-20261005",
+  "claim_writer_generation": 17
 }
