@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "83c4daa6b48d53d603b69524bdb12ab812c9c4ac88095bbc4b9ced6498410e8a",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "02",
+  "capability": "repository",
+  "instruction": "Attach one persistent Run Supervisor to the bound execution; establish one fenced writer authority; prove the outer watchdog can restart only this same execution.",
+  "writer_generation": 5,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-05T00:16:36.409Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
