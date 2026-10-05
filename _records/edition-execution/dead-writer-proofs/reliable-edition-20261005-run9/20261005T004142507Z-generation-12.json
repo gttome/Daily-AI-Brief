@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-dead-writer-proof-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "task_id": "05",
+  "prior_owner_id": "github-actions-37248304541-1",
+  "prior_generation": 12,
+  "workflow_run_id": 37248304541,
+  "workflow_job_id": 111570540409,
+  "workflow_status": "completed",
+  "workflow_conclusion": "failure",
+  "terminal_at": "2026-10-05T00:39:59.000Z",
+  "child_or_subworker_live": false,
+  "substantive_write_after_terminal": false,
+  "failure_step": "Persistent approximately one-minute supervision loop",
+  "failure_cause": "repository_consumer_unclaimed followed by rebase refusal caused by unstaged changes",
+  "replacement_generation": 13,
+  "proved_at": "2026-10-05T00:41:42.507Z"
+}

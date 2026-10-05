@@ -14,5 +14,8 @@
   "created_at": "2026-10-05T00:38:56.342Z",
   "writer_generation_is_provenance": false,
   "authority_refresh_required_at_invocation": false,
-  "status": "queued"
+  "status": "claimed",
+  "claimed_at": "2026-10-05T00:41:42.507Z",
+  "claimed_by": "chatgpt-task05-selection-20261005",
+  "claim_writer_generation": 13
 }
