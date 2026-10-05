@@ -7,15 +7,10 @@
   "capability": "native_chatgpt",
   "request_key": "6230c14e75e71b73dfd7f832aae70fec4dd7b0c17efa57d2ff26d2e6d07470fe",
   "acquired_at": "2026-10-05T03:52:30.000Z",
-  "last_heartbeat_at": "2026-10-05T03:52:30.000Z",
-  "expires_at": "2026-10-05T04:07:30.000Z",
-  "state": "ACTIVE",
-  "released": false,
-  "transfer_from": {
-    "owner_id": "chatgpt-watchdog-A-task11",
-    "generation": 28,
-    "reason": "RELEASED_POST_REPAIR_ATTEMPT_FAILED",
-    "prior_released_at": "2026-10-05T03:10:45.000Z",
-    "at": "2026-10-05T03:52:30.000Z"
-  }
+  "last_heartbeat_at": "2026-10-05T03:57:10.000Z",
+  "expires_at": "2026-10-05T03:57:10.000Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T03:57:10.000Z",
+  "release_reason": "TASK_11_ACCEPTED_LOCKED_HANDOFF_TO_SUPERVISOR"
 }

@@ -16,13 +16,14 @@
   "created_at": "2026-10-05T03:52:30.000Z",
   "writer_generation_is_provenance": true,
   "authority_refresh_required_at_invocation": true,
-  "status": "claimed",
+  "status": "completed",
   "claimed_at": "2026-10-05T03:52:30.000Z",
   "consumer_id": "watchdog-F",
   "consumer_writer_generation": 29,
+  "completed_at": "2026-10-05T03:57:10.000Z",
   "dispatch": {
     "schema_version": "scheduled-image-dispatch-v3",
-    "status": "GENERATION_STARTED",
+    "status": "PASSED",
     "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
     "consumer_kind": "chatgpt_watchdog_ring",
     "eligible_slots": [
@@ -38,8 +39,16 @@
     "execution_id": "reliable-edition-20261005-run9",
     "task_id": "11",
     "generation_started": true,
-    "accepted_locked": false,
+    "accepted_locked": true,
     "claimed_at": "2026-10-05T03:52:30.000Z",
-    "next_action": "Watchdog F executes the exact repair-epoch-2 request under writer generation 29."
+    "completed_at": "2026-10-05T03:57:10.000Z",
+    "result_path": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/11-6230c14e75e71b73dfd7f832aae70fec4dd7b0c17efa57d2ff26d2e6d07470fe.json",
+    "next_action": "Supervisor advances to Task 12 without modifying the accepted_locked m02 asset."
+  },
+  "resolved_blocker": {
+    "reason_code": "M02_CONTEXT_CONTAMINATION_REPAIRED_EPOCH_2",
+    "resolved_at": "2026-10-05T03:57:10.000Z",
+    "resolution": "Fresh isolated artifact-only context plus one targeted visible-text edit produced the correct subject with no humanoids or orchestration UI; direct Git Data transport preserved exact PNG bytes and saved-Git review passed.",
+    "evidence": "_records/image-reviews/2026-10-05-run9/m02-repair-epoch-2-attempt-1-saved-git-review.json"
   }
 }
