@@ -4,6 +4,8 @@
   "owner_id": "github-actions-repository-task-37265232480-2",
   "generation": 46,
   "acquired_at": "2026-10-05T05:06:39.619Z",
-  "last_heartbeat_at": "2026-10-05T05:06:39.619Z",
-  "expires_at": "2026-10-05T05:21:39.619Z"
+  "last_heartbeat_at": "2026-10-05T05:06:41.310Z",
+  "expires_at": "2026-10-05T05:06:41.310Z",
+  "released_at": "2026-10-05T05:06:41.310Z",
+  "release_reason": "TASK17_DONE_HANDOFF_TO_SUPERVISOR"
 }

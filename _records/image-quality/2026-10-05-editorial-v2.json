@@ -1,0 +1,335 @@
+{
+  "schema_version": "2.0.0",
+  "record_kind": "editorial_image_quality",
+  "edition_date": "2026-10-05",
+  "edition_id": "dab-edition-2026-10-05",
+  "reviewed_at": "2026-10-05T05:06:41.289Z",
+  "review_method": "Deterministic set review over six accepted_locked, exact-Git-read-back, saved-Git-reviewed production PNGs.",
+  "review_status": "complete",
+  "image_gate": "pass",
+  "asset_policy": "accepted_locked_reuse_only",
+  "accepted_locked": 6,
+  "set_review": {
+    "result": "PASS",
+    "composition_differentiation": "PASS",
+    "layout_differentiation": "PASS",
+    "mechanism_differentiation": "PASS",
+    "story_specificity": "PASS",
+    "accessibility": "PASS",
+    "basis": "Six distinct sealed subjects/mechanisms and production paths; every saved Git asset independently passed structural/editorial/text/factual/no-people gates and now has story-specific alt text."
+  },
+  "images": [
+    {
+      "story_id": "dab-story-2026-10-05-m02",
+      "candidate_id": "m02",
+      "asset": "briefs/images/2026-10-05/dab-edition-2026-10-05-m02.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Backend-state verification for agents",
+      "mechanism": "A forensic split-screen architecture: an upper claim channel and a lower durable-state channel with database records, side-effect receipts and repeated-run samples converging on a verification tribunal, then an immutable evidence ledger.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Backend-state verification for agents: A forensic split-screen architecture: an upper claim channel and a lower durable-state channel with database records, side-effect receipts and repeated-run samples converging on a verification tribunal, then an immutable evidence ledger.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-05-m12",
+      "candidate_id": "m12",
+      "asset": "briefs/images/2026-10-05/dab-edition-2026-10-05-m12.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "API-driven Copilot code review with adjustable effort",
+      "mechanism": "A repository change enters a review API router; three calibrated inspection depths fan through code, security and test analyzers, then reconverge into evidence-backed review comments and a merge decision.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for API-driven Copilot code review with adjustable effort: A repository change enters a review API router; three calibrated inspection depths fan through code, security and test analyzers, then reconverge into evidence-backed review comments and a merge decision.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-05-m07",
+      "candidate_id": "m07",
+      "asset": "briefs/images/2026-10-05/dab-edition-2026-10-05-m07.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Synchronized cross-app knowledge work",
+      "mechanism": "A shared data spine feeds three differentiated work surfaces—object-level image editing, an interactive spreadsheet canvas and cross-app task execution—while provenance and synchronization rails maintain consistency.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Synchronized cross-app knowledge work: A shared data spine feeds three differentiated work surfaces—object-level image editing, an interactive spreadsheet canvas and cross-app task execution—while provenance and synchronization rails maintain consistency.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-05-m13",
+      "candidate_id": "m13",
+      "asset": "briefs/images/2026-10-05/dab-edition-2026-10-05-m13.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Citation-grounded report generation",
+      "mechanism": "A research question drives retrieval and evidence filtering; cited source fragments are organized into a compact evidence lattice, then a one-pass report composer emits claims linked back to citations and a verification panel.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Citation-grounded report generation: A research question drives retrieval and evidence filtering; cited source fragments are organized into a compact evidence lattice, then a one-pass report composer emits claims linked back to citations and a verification panel.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-05-m01",
+      "candidate_id": "m01",
+      "asset": "briefs/images/2026-10-05/dab-edition-2026-10-05-m01.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Verified DOCA Agent Skills",
+      "mechanism": "A sealed skill package containing instructions, references and scripts moves through API-signature, hardware-compatibility and build-validation chambers before a preflight gate authorizes bounded execution with rollback.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Verified DOCA Agent Skills: A sealed skill package containing instructions, references and scripts moves through API-signature, hardware-compatibility and build-validation chambers before a preflight gate authorizes bounded execution with rollback.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-05-m09",
+      "candidate_id": "m09",
+      "asset": "briefs/images/2026-10-05/dab-edition-2026-10-05-m09.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Event-driven ambient agents with human approval",
+      "mechanism": "An event bus opens an isolated job state; policy and confidence gates route work either to bounded tool execution or a human-approval interrupt, after which the job resumes and writes a complete audit trail.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Event-driven ambient agents with human approval: An event bus opens an isolated job state; policy and confidence gates route work either to bounded tool execution or a human-approval interrupt, after which the job resumes and writes a complete audit trail.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    }
+  ]
+}
