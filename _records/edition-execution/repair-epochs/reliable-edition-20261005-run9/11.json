@@ -7,7 +7,7 @@
   "request_key": "b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26",
   "repair_epoch": 1,
   "epochs_completed": 1,
-  "status": "PASS",
+  "status": "POST_REPAIR_ATTEMPT_FAILED",
   "required_proofs": [
     "fresh_single_story_worker_isolation",
     "no_people_or_humanoid_visual_primitives",
@@ -59,7 +59,18 @@
   "consumer_version": "watchdog-F-repository-repair-consumer-v1",
   "consumer_writer_generation": 27,
   "completed_at": "2026-10-05T03:02:30.000Z",
-  "post_repair_attempts": 0,
+  "post_repair_attempts": 1,
   "repair_digest": "sha256:4d3d7fa235d220509f8069a822f26fe8646b06aa88f6308f73496523a85b45cf",
-  "post_repair_dispatched_at": "2026-10-05T03:02:30.000Z"
+  "post_repair_dispatched_at": "2026-10-05T03:02:30.000Z",
+  "post_repair_attempt_1": {
+    "request_key": "b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26",
+    "writer_generation": 28,
+    "native_generation_id": "3189246e-da8c-4294-af4a-c54cd2f97849",
+    "result": "FAIL_CONTEXT_CONTAMINATION_AND_RUNTIME_BINARY_BRIDGE",
+    "attempt_receipt": "_records/image-attempts/2026-10-05-run9/m02-repair-epoch-1-attempt-1.json",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/11-b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26.json"
+  },
+  "strategy_interrupt_required": true,
+  "same_request_regeneration_prohibited": true,
+  "next_action": "Strategy Interrupt: establish a genuinely isolated native-image execution context and approved direct exact-byte Git persistence bridge before any further Task 11 generation."
 }
