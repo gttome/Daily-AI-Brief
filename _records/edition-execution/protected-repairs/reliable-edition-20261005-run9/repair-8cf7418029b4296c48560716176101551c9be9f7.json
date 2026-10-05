@@ -17,9 +17,10 @@
   "created_at": "2026-10-05T08:45:10.000Z",
   "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
   "diagnosis": "Exact-head publication validation exposed deterministic current-reader and historical-close compatibility defects after the prior frozen-contract cutoff repair: the sealed October 5 edition lacked complete evidence projections, current readers used a mismatched Watchlist snapshot, locked verified video exceptions were rejected, and historical October 4 validation incorrectly depended on the mutable current-edition manifest.",
-  "next_stage": "Open exactly one protected repair PR for the bound head, require exact-head pull_request validate PASS, merge without bypass, synchronize the same production branch, persist the already-validated deterministic projections, and rerun the same Task 23 publication validation.",
+  "next_stage": "Require exact-head pull_request validate PASS on PR 469, merge without bypass, synchronize the same production branch, persist the already-validated deterministic projections, and rerun the same Task 23 publication validation.",
   "last_recovery_stage": {
-    "state": "REPAIR_BRANCH_PREPARED",
+    "state": "REPAIR_PR_OPEN",
+    "pr_number": 469,
     "repair_head": "0f40efa61ac22d4eacc453e71c283c59411db18b",
     "local_validation": {
       "tests_passed": 977,
