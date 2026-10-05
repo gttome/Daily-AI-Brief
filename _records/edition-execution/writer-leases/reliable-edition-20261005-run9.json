@@ -8,5 +8,6 @@
   "expires_at": "2026-10-05T04:47:41.981Z",
   "state": "RELEASED",
   "released_at": "2026-10-05T04:47:41.981Z",
-  "release_reason": "TASK_17_BLOCKED_HANDOFF_TO_SUPERVISOR"
+  "release_reason": "TASK_17_BLOCKED_HANDOFF_TO_SUPERVISOR",
+  "released": true
 }
