@@ -7,15 +7,10 @@
   "capability": "repository",
   "operation_key": "task04-evidence-verification-g11",
   "acquired_at": "2026-10-05T00:37:09.356Z",
-  "last_heartbeat_at": "2026-10-05T00:37:09.356Z",
-  "expires_at": "2026-10-05T00:52:09.356Z",
-  "state": "ACTIVE",
-  "released": false,
-  "transfer_from": {
-    "owner_id": "github-actions-37247991365-1",
-    "generation": 10,
-    "reason": "PROVEN_DEAD_WORKFLOW_FAILURE",
-    "workflow_run_id": 37247991365,
-    "at": "2026-10-05T00:37:09.356Z"
-  }
+  "last_heartbeat_at": "2026-10-05T00:38:10.318Z",
+  "expires_at": "2026-10-05T00:38:10.318Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T00:38:10.318Z",
+  "release_reason": "TASK_04_DONE_HANDOFF_TO_SUPERVISOR"
 }

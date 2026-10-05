@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_text_version": "article-body-v1",
+  "profile_id": "under80-v1",
+  "stage": "deterministic_article_evidence_preflight",
+  "execution_owner": "chatgpt_research",
+  "model_calls": 0,
+  "network_retrievals": 16,
+  "retrieved": 9,
+  "focus_counts": {
+    "technical_ai_engineering": 3,
+    "applied_genai_knowledge_workers": 3,
+    "agents_non_technical_people": 3
+  },
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 5962,
+  "evidence_sha256": "d6d8bda502f7485f7201be3e045d3b91476bc0757cb47655e51aca9e4382951b",
+  "ready": true,
+  "failures": [],
+  "extraction_methods": [
+    {
+      "candidate_id": "m02",
+      "method": "primary_source_research",
+      "source_word_count": 3391
+    },
+    {
+      "candidate_id": "m03",
+      "method": "primary_source_research",
+      "source_word_count": 203
+    },
+    {
+      "candidate_id": "m12",
+      "method": "primary_source_research",
+      "source_word_count": 280
+    },
+    {
+      "candidate_id": "m06",
+      "method": "primary_source_research",
+      "source_word_count": 226
+    },
+    {
+      "candidate_id": "m07",
+      "method": "primary_source_research",
+      "source_word_count": 936
+    },
+    {
+      "candidate_id": "m13",
+      "method": "primary_source_research",
+      "source_word_count": 1800
+    },
+    {
+      "candidate_id": "m01",
+      "method": "primary_source_research",
+      "source_word_count": 2094
+    },
+    {
+      "candidate_id": "m08",
+      "method": "primary_source_research",
+      "source_word_count": 2149
+    },
+    {
+      "candidate_id": "m09",
+      "method": "primary_source_research",
+      "source_word_count": 6491
+    }
+  ],
+  "verified_at": "2026-10-05T00:30:44.730Z"
+}

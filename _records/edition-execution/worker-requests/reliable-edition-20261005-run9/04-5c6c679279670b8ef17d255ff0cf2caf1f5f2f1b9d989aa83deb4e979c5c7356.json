@@ -14,8 +14,11 @@
   "created_at": "2026-10-05T00:34:04.520Z",
   "writer_generation_is_provenance": false,
   "authority_refresh_required_at_invocation": false,
-  "status": "claimed",
+  "status": "completed_pass",
   "claimed_at": "2026-10-05T00:37:09.356Z",
   "claimed_by": "chatgpt-task04-evidence-20261005",
-  "claim_writer_generation": 11
+  "claim_writer_generation": 11,
+  "consumed_at": "2026-10-05T00:37:09.356Z",
+  "completed_at": "2026-10-05T00:38:10.318Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/04-5c6c679279670b8ef17d255ff0cf2caf1f5f2f1b9d989aa83deb4e979c5c7356.json"
 }
