@@ -37,7 +37,8 @@
     "Nominal scheduled image-consumer coverage improves from one designated hourly consumer opportunity to six staggered opportunities per hour; schedule delivery remains non-real-time.",
     "Exact queued request identity plus current task-specific writer fencing prevents duplicate image generation when slots overlap.",
     "The prior F-specific binding is retained only as historical compatibility evidence.",
-    "October 4 field evidence proved image liveness but also exposed operational-context contamination; READY is not a claim of story-context isolation or usage-optimal polling."
+    "October 4 field evidence proved image liveness but also exposed operational-context contamination; READY is not a claim of story-context isolation or usage-optimal polling.",
+    "October 5 hardening adds image-execution-admission-v1: native generation is prohibited until a per-invocation receipt proves dedicated story-only generator context and an approved exact-byte persistence route. Failed preflight consumes zero image attempts."
   ],
   "watchdog_ring": {
     "schema_version": "chatgpt-watchdog-ring-binding-v1",
@@ -158,5 +159,42 @@
       "deterministic_health_polling_replacing_routine_heavy_chatgpt_checks"
     ],
     "note": "READY continues to mean route/capability availability, not proof that the six-slot architecture is usage-optimal or that hidden generation context isolation is complete."
+  },
+  "image_execution_admission": {
+    "schema_version": "image-execution-admission-v1",
+    "required_before_every_native_generation": true,
+    "generation_attempt_begins_only_after_admission_pass": true,
+    "preflight_failure_consumes_attempt": false,
+    "generator_context_requirement": "dedicated_story_only_generation_context",
+    "mixed_watchdog_or_supervisor_context_generation_allowed": false,
+    "submitted_instruction_must_equal_sealed_story_instruction": true,
+    "orchestration_context_visible_to_generator": false,
+    "exact_byte_persistence_required": true,
+    "approved_persistence_modes": [
+      "git_data_direct_blob",
+      "protected_base64_chunk_bridge"
+    ],
+    "protected_chunk_bridge_path": "_tools/image-chunk-bridge.mjs",
+    "protected_chunk_bridge_documentation": "docs/operations/image-file-transfer.md",
+    "runtime_generated_bytes_readable_required": true,
+    "saved_git_review_required": true,
+    "owner_intervention_required": false,
+    "per_invocation_receipt_pattern": "_records/image-admission/<execution-key>/<task-id>-<request-key>.json",
+    "current_provenance": {
+      "exact_byte_git_persistence_precedent": {
+        "execution_id": "reliable-edition-20261003-run7",
+        "task_id": "11",
+        "commit_sha": "256aa7e596e44aa37af96ca456eea6afeccd6677",
+        "result": "PASS",
+        "note": "Run 7 persisted exact recovered native bytes and a normalized final image without owner intervention."
+      },
+      "story_only_context_precedent": {
+        "execution_id": "reliable-edition-20261003-run7",
+        "task_id": "11",
+        "evidence_path": "_records/image-recovery/2026-10-03-run7/m01-context-isolation-repair.json",
+        "result": "PASS_FOR_THAT_INVOCATION_ONLY",
+        "note": "Historical success is precedent, not permission to skip per-invocation admission."
+      }
+    }
   }
 }
