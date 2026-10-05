@@ -4,6 +4,9 @@
   "owner_id": "github-actions-37262189638-1",
   "generation": 32,
   "acquired_at": "2026-10-05T04:08:29.555Z",
-  "last_heartbeat_at": "2026-10-05T04:08:29.555Z",
-  "expires_at": "2026-10-05T04:13:29.555Z"
+  "last_heartbeat_at": "2026-10-05T04:08:33.914Z",
+  "expires_at": "2026-10-05T04:08:33.914Z",
+  "state": "RELEASED",
+  "released_at": "2026-10-05T04:08:33.914Z",
+  "release_reason": "TASK_13_QUEUED_FOR_SCHEDULED_CONSUMER_HANDOFF_TO_WATCHDOG"
 }
