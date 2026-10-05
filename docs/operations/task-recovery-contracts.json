@@ -985,7 +985,11 @@
       "18-22,24,27-29": "Ordinary-ChatGPT same-invocation consumer; the ChatGPT Watchdog Ring is the outer fallback when that invocation has ended."
     },
     "unsupported_event_wake": "The automation service does not currently admit event-triggered Work wakeups for this route, and no event-triggered Work task is authorized. The outer recovery contract instead uses six ordinary exact-hourly ChatGPT schedules staggered to a nominal ten-minute cadence.",
-    "forbidden_terminal_claim": "AWAITING_SCHEDULED_EXECUTOR is never a healthy or terminal repository-task outcome."
+    "forbidden_terminal_claim": "AWAITING_SCHEDULED_EXECUTOR is never a healthy or terminal repository-task outcome.",
+    "supervisor_may_hold_writer_while_waiting_for_ordinary_consumer": false,
+    "supervisor_delegation": "Persist the exact ordinary repository/research request, release the Supervisor writer immediately, and let the admitted Watchdog consumer pool claim it. Do not wait 60 seconds merely to manufacture *_consumer_unclaimed.",
+    "lease_or_heartbeat_alone_is_substantive_progress": false,
+    "owner_intervention_required": false
   },
   "chatgpt_watchdog_ring": {
     "schema_version": "chatgpt-watchdog-ring-contract-v1",
@@ -1183,6 +1187,24 @@
         "healthy_noop",
         "escalated"
       ]
+    },
+    "ordinary_consumer": {
+      "capabilities": [
+        "repository",
+        "research_chatgpt"
+      ],
+      "all_slots_equivalent": true,
+      "exact_authoritative_request_required": true,
+      "normal_queued_request_consumption": true,
+      "waits_for_stale_before_normal_consumption": false,
+      "task_17_dedicated_deterministic_consumer_preserved": true,
+      "ordinary_writer_lease_minutes": 8,
+      "writer_progress_grace_minutes": 5,
+      "lease_or_heartbeat_alone_is_substantive_progress": false,
+      "no_substantive_progress_keeps_recovery_open": true,
+      "same_invocation_dependency_safe_draining": true,
+      "duplicate_request_prohibited": true,
+      "owner_intervention_required": false
     }
   },
   "protected_repair_autonomy": {
@@ -1368,6 +1390,16 @@
     "recovery_owner_without_required_capability_must_handoff": true,
     "handoff_must_bind_exact_execution_task_and_request": true,
     "incapable_owner_may_not_hold_recovery_lease": true,
-    "fallback_research_consumer_required": true
+    "fallback_research_consumer_required": true,
+    "generic_watchdog_consumer_capabilities": [
+      "repository",
+      "research_chatgpt",
+      "native_chatgpt"
+    ],
+    "supervisor_yields_immediately_after_ordinary_request_persisted": true,
+    "supervisor_restart_recognizes_existing_delegation": true,
+    "same_invocation_dependency_safe_draining": true,
+    "task_17_dedicated_deterministic_consumer_preserved": true,
+    "owner_intervention_required": false
   }
 }
