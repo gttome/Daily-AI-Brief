@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "5c6c679279670b8ef17d255ff0cf2caf1f5f2f1b9d989aa83deb4e979c5c7356",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "04",
+  "capability": "repository",
+  "instruction": "Execute Task 04 (Verify evidence and freshness fallback) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 10,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-05T00:34:04.520Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
