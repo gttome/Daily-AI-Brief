@@ -1,12 +1,13 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "owner_id": "watchdog-D:task-19",
-  "generation": 51,
-  "acquired_at": "2026-10-05T05:56:08.000Z",
-  "last_heartbeat_at": "2026-10-05T05:56:08.000Z",
-  "expires_at": "2026-10-05T06:04:08.000Z",
+  "owner_id": "watchdog-A:task-19",
+  "generation": 52,
+  "acquired_at": "2026-10-05T06:12:00.000Z",
+  "last_heartbeat_at": "2026-10-05T06:12:00.000Z",
+  "expires_at": "2026-10-05T06:20:00.000Z",
   "state": "ACTIVE",
+  "released": false,
   "released_at": null,
   "release_reason": null
 }
