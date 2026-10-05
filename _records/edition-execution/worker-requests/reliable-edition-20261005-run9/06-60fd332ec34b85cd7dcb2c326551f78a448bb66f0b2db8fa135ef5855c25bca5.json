@@ -14,8 +14,11 @@
   "created_at": "2026-10-05T00:42:43.683Z",
   "writer_generation_is_provenance": false,
   "authority_refresh_required_at_invocation": false,
-  "status": "claimed",
+  "status": "completed_pass",
   "claimed_at": "2026-10-05T00:46:23.077Z",
   "claimed_by": "chatgpt-task06-videos-20261005",
-  "claim_writer_generation": 15
+  "claim_writer_generation": 15,
+  "consumed_at": "2026-10-05T00:46:23.077Z",
+  "completed_at": "2026-10-05T00:46:27.108Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/06-60fd332ec34b85cd7dcb2c326551f78a448bb66f0b2db8fa135ef5855c25bca5.json"
 }

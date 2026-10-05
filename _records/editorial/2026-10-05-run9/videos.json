@@ -1,0 +1,44 @@
+{
+  "schema_version": "run9-video-selection-v1",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_id": "reliable-edition-20261005-run9",
+  "verified_at": "2026-10-05T00:46:27.108Z",
+  "result": "PASS",
+  "videos": [
+    {
+      "ordinal": 1,
+      "title": "Flight Intelligence: The Power of Work IQ",
+      "channel": "Microsoft Developer",
+      "publication_date": "2026-09-18",
+      "runtime_seconds": 874,
+      "playback_provider": "youtube",
+      "video_id": "VpSCu7s4wD4",
+      "connection": "Demonstrates business-context grounding and reusable workflow knowledge relevant to the selected Agent Skills and cross-app work stories.",
+      "verification": "First-party Microsoft Developer video; the previously sealed repository record verifies a 14:34 runtime and direct YouTube provider ID."
+    },
+    {
+      "ordinal": 2,
+      "title": "Microsoft Copilot Just Got a Massive Upgrade",
+      "channel": "Kevin Stratvert",
+      "publication_date": "2026-09-29",
+      "runtime_seconds": 564,
+      "playback_provider": "youtube",
+      "video_id": "KJ8Y2Nb9y9o",
+      "connection": "Practical walkthrough of Copilot surfaces for everyday knowledge work, complementing the selected cross-app Workspace story.",
+      "verification": "The previously sealed repository record verifies a 9:24 runtime and direct YouTube provider ID."
+    }
+  ],
+  "checks": {
+    "count": 2,
+    "runtime_ladder_seconds": [
+      600,
+      900,
+      1200
+    ],
+    "within_bounded_runtime": true,
+    "direct_playability_by_provider_id": true,
+    "prior_edition_exact_video_repeat": false,
+    "source_diverse": false
+  },
+  "freshness_note": "No same-window pair with independently verifiable runtimes was available in the bounded search; verified durable explainers were selected without repeating the immediately prior edition."
+}

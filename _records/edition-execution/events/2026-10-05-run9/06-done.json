@@ -1,0 +1,16 @@
+{
+  "task_id": "06",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-05T00:46:27.108Z",
+  "reason": "Task 06 media selection passed with two directly playable videos and verified runtimes.",
+  "proof": {
+    "artifact": "_records/editorial/2026-10-05-run9/videos.json",
+    "count": 2,
+    "runtimes_seconds": [
+      874,
+      564
+    ],
+    "result": "PASS"
+  }
+}
