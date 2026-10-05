@@ -1544,3 +1544,18 @@ The recovery state machine also implements Strategy Interrupt. Two materially eq
 
 Executor routing is capability-aware. Fresh external research is distinct from repository mutation. Tasks 03 and 08 are bound to a research-capable ordinary ChatGPT consumer; a GitHub-only owner persists the exact handoff and releases rather than retaining an action it cannot perform. Native image generation, protected CI, deployment and verification retain their own explicit capability boundaries.
 
+
+
+## 2026-10-05 — Usage-reduction control-plane hardening
+
+For the next production baseline, preserve all reader/editorial quality gates while moving frequent coordination to compact deterministic contracts.
+
+Current contracts:
+
+- Scheduled ChatGPT Watchdogs first-read `chatgpt-watchdog-health-v1` from the runtime health branch. Healthy, terminal, no-active, legitimate ready-idle, and valid-recovery-owner-progressing states exit without broad reconstruction. A timestamp-only refresh with the same `source_digest` creates no health commit.
+- Tasks 11–16 require `image-execution-admission-v1` before native generation. It binds the exact task/request/sealed instruction, story-only generator context, and an already-proven exact-byte persistence path. Admission failure consumes zero attempts.
+- Normal editorial semantics are represented by `one-semantic-editorial-pass-v1`: one semantic pass, zero post-editorial semantic validators, and reuse of the kernel for deterministic downstream repair while the evidence digest is unchanged.
+- Task 22 requires `exact-publication-preflight-v1` before publication PR creation. The preflight uses zero model calls and combines publication-manifest, candidate, reader-projection, image-identity and route checks.
+- Every production execution initializes `daily-brief-public-safe-budget-v1` with process-proxy counters. Private account usage, allowance, balances, billing and platform-credit values remain outside public Git.
+
+This hardening changes control-plane cost and failure timing, not the Brief content contract. Tranche B items that alter writer transaction boundaries or validation-version binding remain on the separate Improvement Kanban until independently implemented and protected-tested.
