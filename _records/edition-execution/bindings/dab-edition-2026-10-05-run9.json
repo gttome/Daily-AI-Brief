@@ -1,0 +1,14 @@
+{
+  "schema_version": "edition-execution-binding-v1",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_id": "reliable-edition-20261005-run9",
+  "execution_key": "2026-10-05-run9",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "research_cutoff": "2026-10-05T00:00:23.000Z",
+  "baseline_main_sha": "eba25216531f777e167a7f7025995de0c0931059",
+  "canonical_pointer_main_sha": "c0421945b9f954ce3cceee25d1ed59a3f7f27081",
+  "bound_at": "2026-10-05T00:15:24.140Z",
+  "start_mode": "SCHEDULED_CONTROLLER",
+  "duplicate_execution_rejected": true,
+  "prior_terminal_execution_preserved": "reliable-edition-20261004-run8"
+}
