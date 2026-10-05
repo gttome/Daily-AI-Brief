@@ -379,6 +379,7 @@ jobs:
 
             protected_repair_boundary=false
             ordinary_consumer_boundary=false
+            scheduled_image_handoff_boundary=false
             has_request="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(x.worker_request?'true':'false')")"
             if [ "$has_request" = "true" ]; then
               node -e "const fs=require('fs');const x=require('/tmp/supervisor-tick.json');fs.writeFileSync('/tmp/worker-request.json',JSON.stringify(x.worker_request,null,2)+'\n')"
@@ -406,6 +407,10 @@ jobs:
                   --edition-id "$EDITION_ID" \
                   --writer-generation "$WRITER_GENERATION" >/tmp/native-image-result.json
                 cat /tmp/native-image-result.json
+                native_image_state="$(node -e "const x=require('/tmp/native-image-result.json');process.stdout.write(String(x.status||''))")"
+                if [ "$native_image_state" = "QUEUED_FOR_SCHEDULED_CONSUMER" ]; then
+                  scheduled_image_handoff_boundary=true
+                fi
               fi
 
               if [ "$request_capability" = "repository" ] && [ "$request_task" = "17" ] && [ "$request_kind" != "engineering_repair" ]; then
@@ -505,6 +510,27 @@ jobs:
                 git -C run rebase "origin/$RUN_BRANCH"
                 git -C run push origin "HEAD:$RUN_BRANCH"
               fi
+            fi
+
+            if [ "$scheduled_image_handoff_boundary" = "true" ]; then
+              node control/_tools/run-supervisor.mjs release-writer-lease \
+                --lease "run/$lease_rel" \
+                --execution-id "$EXECUTION_ID" \
+                --owner-id "$SUPERVISOR_OWNER" \
+                --generation "$WRITER_GENERATION" \
+                --reason "TASK_${request_task}_QUEUED_FOR_SCHEDULED_CONSUMER_HANDOFF_TO_WATCHDOG" \
+                --output /tmp/released-writer-lease.json >/tmp/release-writer.stdout
+              cat /tmp/release-writer.stdout
+              cp /tmp/released-writer-lease.json "run/$lease_rel"
+              git -C run add "$lease_rel"
+              git -C run commit -m "Release Task ${request_task} writer to scheduled image consumer"
+              if ! git -C run push origin "HEAD:$RUN_BRANCH"; then
+                git -C run fetch --no-tags origin "$RUN_BRANCH"
+                git -C run rebase "origin/$RUN_BRANCH"
+                git -C run push origin "HEAD:$RUN_BRANCH"
+              fi
+              echo "Task ${request_task} is durably queued for the scheduled image consumer. Writer authority released immediately."
+              break
             fi
 
             if [ "$ordinary_consumer_boundary" = "true" ]; then
