@@ -1,0 +1,25 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "task_id": "22",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-05T07:45:36.231Z",
+  "writer_generation": 60,
+  "owner_id": "watchdog-F-task22",
+  "reason_code": "PUBLICATION_PR_CREATED",
+  "operation": "open_publication_pr",
+  "proof": {
+    "publication_pr": 467,
+    "url": "https://github.com/gttome/Daily-AI-Brief/pull/467",
+    "base": "main",
+    "head_branch": "reliable-edition/dab-edition-2026-10-05-run9",
+    "observed_head_sha": "8290c2b44206bff62d5f57e2045da45f200e6c2f",
+    "duplicate_pr_created": false,
+    "protected_ci_required_next": true,
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/22-b282b6279f9a9e2af03a32e621c507cd181fd9dddfd9887a6c200d64f61d7ee6.json"
+  },
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}
