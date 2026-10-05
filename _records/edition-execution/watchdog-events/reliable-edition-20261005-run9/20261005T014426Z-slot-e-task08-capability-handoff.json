@@ -1,0 +1,21 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "task_id": "08",
+  "incident_id": "wd-reliable-edition-20261005-run9-task08-research-consumer-unclaimed-d9f874a7",
+  "slot_id": "E",
+  "classification": "BLOCKED_ACTIONABLE",
+  "lease_generation": 3,
+  "action_key": "wd-reliable-edition-20261005-run9-task08-research-consumer-unclaimed-d9f874a7:capability-handoff:slot-e:g3",
+  "request_key": "d9f874a7115874462929a4f84e577095afe69a65b7c2aa8927fdbec8c9e0e990",
+  "request_capability": "research_chatgpt",
+  "durable_delta": "Supervisor run 37249024711 and job 111572647778 are completed/failure; writer generation 18 is expired; Task 08 request remains queued with no result.",
+  "blocker": "Current Watchdog invocation does not have the research_chatgpt capability required by Task 08.",
+  "next_authorized_action": "Route the same Task 08 request to a research_chatgpt-capable ordinary ChatGPT consumer. Before replacing writer generation 18, persist the required dead-writer proof for workflow run 37249024711 and revalidate no live child or post-terminal substantive write.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "recovery_required": true,
+  "blocked_external": false,
+  "occurred_at": "2026-10-05T01:44:26.287Z"
+}
