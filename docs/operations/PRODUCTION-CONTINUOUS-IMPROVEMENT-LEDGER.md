@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:472ae3f6ca1f8126184fc6c53ebc16c4e82468e2493dfd468ba3e1d1d6ec9665`
+Ledger digest: `sha256:0ebc37debf39b494d5fe5c0e36e7d5d6f04786d9896fa28ef51a22d25663e8d4`
 
-Problems: 64 · Events: 116
+Problems: 65 · Events: 120
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -1124,7 +1124,7 @@ Problems: 64 · Events: 116
 
 ## DAB-OPS-20261005-001 — Queued ordinary/research work could be diagnosed without an unattended consumer actually completing it.
 
-- **Status:** mitigated
+- **Status:** permanently_fixed
 - **First observed run:** reliable-edition-20261005-run9
 - **Task(s):** 08
 - **Symptom:** Task 08 remained queued/claimed without substantive progress until owner interaction exposed the stall.
@@ -1132,13 +1132,13 @@ Problems: 64 · Events: 116
 - **Operational impact:** Owner status questions became accidental liveness triggers and Task 08 queue-to-Done exceeded 1h 43m.
 - **Timing impact:** unknown / not safely inferable
 - **Attempted fixes:** Implement owner-independent ordinary/research delegation and Watchdog consumption on PR #462; permanent status waits for protected merge and post-merge verification.
-- **Actual fix:** Supervisor delegates exact ordinary/research requests immediately; A-F consume repository/research requests; lease/heartbeat alone is not progress; ordinary/research task fences are bounded; compatible work drains in the same invocation.
-- **Fix outcome:** not recorded
-- **Permanent implementation:** .github/workflows/run-supervisor.yml, _generator/lib/chatgpt-watchdog-ring.mjs, _generator/test/chatgpt-watchdog-ring.test.mjs, _generator/test/run-supervisor.test.mjs, docs/operations/task-recovery-contracts.json, docs/operations/run-learning-readiness-contract.json
-- **Regression tests:** none
-- **Production invariants:** owner_prompt_is_not_a_liveness_trigger, lease_is_authority_not_progress, exact_request_reuse, ordinary_research_watchdog_consumer_pool, clean_rebase_before_retry
+- **Actual fix:** PR #462 permanently implemented ordinary/research delegation and clean writer handoff; PR #473 compacted the A-F prompts and live schedule reconciliation re-enabled B/C/D so all six slots are active.
+- **Fix outcome:** All six Watchdogs are enabled, use equivalent compact-first logic, can consume exact repository/research requests within capability, and require real executor plus substantive durable progress before recovery succeeds.
+- **Permanent implementation:** .github/workflows/run-supervisor.yml, _generator/lib/chatgpt-watchdog-ring.mjs, _generator/test/chatgpt-watchdog-ring.test.mjs, _generator/test/run-supervisor.test.mjs, docs/operations/task-recovery-contracts.json, docs/operations/run-learning-readiness-contract.json, docs/operations/CHATGPT-WATCHDOG-RING.md, ChatGPT Watchdog schedules A-F
+- **Regression tests:** _generator/test/chatgpt-watchdog-ring.test.mjs, _generator/test/run-supervisor.test.mjs
+- **Production invariants:** owner_prompt_is_not_a_liveness_trigger, lease_is_authority_not_progress, exact_request_reuse, ordinary_research_watchdog_consumer_pool, clean_rebase_before_retry, all_watchdog_slots_enabled_equivalent
 - **Recurrences:** none recorded
-- **Future validation:** A queued ordinary repository or research request is consumed by an admitted A-F Watchdog without an owner prompt. | Supervisor releases authority immediately after persisting the exact request and does not create a *_consumer_unclaimed delay cycle. | Lease/heartbeat-only state is never accepted as substantive progress. | Compatible dependency-safe repository/research work drains in the same invocation when safe.
+- **Future validation:** A queued ordinary repository or research request is consumed by an admitted A-F Watchdog without an owner prompt. | Supervisor releases authority immediately after persisting the exact request and does not create a *_consumer_unclaimed delay cycle. | Lease/heartbeat-only state is never accepted as substantive progress. | Compatible dependency-safe repository/research work drains in the same invocation when safe. | No internally actionable ordinary/research stall requires an owner prompt. | All six Watchdog schedules remain enabled and equivalent throughout the October 6 execution.
 
 ## DAB-OPS-20261005-002 — Image generation was allowed before generator-context isolation and exact-byte persistence were proven for the invocation.
 
@@ -1150,11 +1150,29 @@ Problems: 64 · Events: 116
 - **Operational impact:** Image attempts were spent diagnosing infrastructure rather than visual quality, delaying production and risking repeated context contamination.
 - **Timing impact:** unknown / not safely inferable
 - **Attempted fixes:** Stop same-context retry and require Strategy Interrupt. | Implement image-execution-admission-v1 on PR #462 and enforce it immediately in A-F live prompts; permanent status waits for protected merge and live invocation proof.
-- **Actual fix:** Require per-invocation proof of dedicated story-only generator context plus exact-byte persistence before every native generation. Direct Git blob and protected Base64 chunk bridge are the only admitted persistence modes. Failed preflight consumes zero attempts and triggers Strategy Interrupt before attempt 1.
-- **Fix outcome:** not recorded
-- **Permanent implementation:** _generator/lib/image-execution-admission.mjs, _generator/test/image-execution-admission.test.mjs, _tools/native-image-worker.py, docs/operations/unattended-image-host.json, docs/operations/task-recovery-contracts.json, docs/operations/run-learning-readiness-contract.json
-- **Regression tests:** none
-- **Production invariants:** execution_path_defects_must_fail_before_generation, image_attempt_budget_starts_after_admission, owner_upload_prohibited, no_low_quality_fallback
+- **Actual fix:** Merged image-execution-admission-v1 on PR #473. Reliable-edition generation now fails closed before attempt 1 unless the exact execution/task/request, sealed story instruction, story-only context and approved exact-byte persistence path are all admitted. Admission failure consumes zero image attempts and triggers Strategy Interrupt.
+- **Fix outcome:** Protected exact-head CI PASS, protected merge to main, post-merge CI PASS, six equivalent live Watchdog prompts enabled, and non-production direct Git blob content-address probe PASS without consuming a production image attempt. First live production admission proof remains a next-run validation requirement.
+- **Permanent implementation:** _generator/lib/image-execution-admission.mjs, _generator/test/image-execution-admission.test.mjs, _tools/native-image-worker.py, docs/operations/unattended-image-host.json, docs/operations/task-recovery-contracts.json, docs/operations/run-learning-readiness-contract.json, _generator/lib/image-execution.mjs
+- **Regression tests:** _generator/test/image-execution-admission.test.mjs, _generator/test/reliable-execution.test.mjs
+- **Production invariants:** execution_path_defects_must_fail_before_generation, image_attempt_budget_starts_after_admission, owner_upload_prohibited, no_low_quality_fallback, story_only_generator_context, exact_sealed_instruction, exact_byte_persistence_preflight, accepted_locked_immutable
 - **Recurrences:** none recorded
-- **Future validation:** Every Tasks 11-16 native invocation has image-execution-admission-v1 PASS before generation begins. | A failed context or byte-persistence preflight consumes zero image attempts. | At least one production invocation proves exact-byte persistence using direct Git blob or the protected Base64 chunk bridge without owner intervention. | No mixed Watchdog/Supervisor/Kanban/recovery context is accepted as generator-visible image context.
+- **Future validation:** Every Tasks 11-16 native invocation has image-execution-admission-v1 PASS before generation begins. | A failed context or byte-persistence preflight consumes zero image attempts. | At least one production invocation proves exact-byte persistence using direct Git blob or the protected Base64 chunk bridge without owner intervention. | No mixed Watchdog/Supervisor/Kanban/recovery context is accepted as generator-visible image context. | Tasks 11-16 persist PASS image-execution-admission-v1 before generation. | Admission failure consumes zero attempts. | No mixed orchestration context is accepted for generation. | Exact bytes persist through direct Git blob content identity or protected Base64 chunk bridge without owner intervention.
+
+## DAB-OPS-20261005-003 — October 5 quality-bearing production work was materially smaller than total ChatGPT usage because control-plane polling, repeated semantic rereads, repair churn and late publication defect discovery dominated the run.
+
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261005-run9
+- **Task(s):** unknown
+- **Symptom:** Owner-observed weekly usage fell from 51% remaining to 33% remaining while the run consumed approximately 9.11 hours wall time; a large share was coordination/recovery rather than quality-bearing production.
+- **Root cause:** Heavy Scheduled Watchdog prompts and broad rereads, timestamp-only health commits, repeated semantic/control-plane work, image infrastructure discovery after generation, and publication defects found late in protected CI.
+- **Operational impact:** High weekly usage consumption, long queue/orchestration gaps, unnecessary repair cycles and increased need for owner observation despite preserved Brief quality.
+- **Timing impact:** 20304 seconds
+- **Attempted fixes:** Implement the highest-ROI pre-run usage-reduction tranche before October 6 while preserving all quality and autonomy gates.
+- **Actual fix:** Merged chatgpt-watchdog-health-v1 with stable source_digest and unchanged-health suppression; one-semantic-editorial-pass-v1; exact-publication-preflight-v1 before publication PR creation; daily-brief-public-safe-budget-v1; and compact equivalent A-F schedule prompts.
+- **Fix outcome:** PR #473 exact head b15061ec1329c1582938d306472ed5eac4f95c0b passed CI 37340406166 and merged as e371a37dae7017115c72346687a6e8167ee2ce1d. Post-merge CI 37340995582 passed. Controller remains 19:00 America/Chicago; all six Watchdogs are enabled at 03/13/23/33/43/53.
+- **Permanent implementation:** _generator/lib/watchdog-health.mjs, .github/workflows/run-supervisor-watchdog.yml, _generator/lib/semantic-editorial-pass.mjs, _generator/lib/exact-publication-preflight.mjs, _generator/lib/public-safe-budget.mjs, .github/workflows/post-editorial-kernel.yml, docs/operations/CHATGPT-WATCHDOG-RING.md
+- **Regression tests:** _generator/test/watchdog-health.test.mjs, _generator/test/semantic-editorial-pass.test.mjs, _generator/test/exact-publication-preflight.test.mjs, _generator/test/public-safe-budget.test.mjs
+- **Production invariants:** reduce_control_plane_model_work_not_reader_quality, compact_health_first, one_semantic_pass, pre_generation_image_admission, pre_pr_publication_preflight, private_usage_not_public_git, healthy_watchdog_compact_exit, unchanged_health_zero_commits, normal_semantic_pass_count_one, publication_preflight_zero_model_calls, private_account_usage_outside_public_git, owner_prompt_not_required_for_internal_stall
+- **Recurrences:** none recorded
+- **Future validation:** Measure Watchdog compact-exit versus expanded-read rate. | Editorial semantic passes equals 1 on a clean run. | Image infrastructure failure after generation starts equals 0. | Publication CI defect-discovery loops equals 0. | Task 23 protected repairs equals 0. | Owner liveness prompts required equals 0.
 

@@ -1,0 +1,172 @@
+{
+  "schema_version": "daily-ai-brief-oct6-usage-reduction-hardening-receipt-v1",
+  "prepared_at": "2026-10-05T16:29:07.015Z",
+  "repository": "gttome/Daily-AI-Brief",
+  "implementation_branch": "hardening/2026-10-05-oct6-usage-reduction-tranche-a",
+  "protected_pr": 473,
+  "exact_tested_head_sha": "b15061ec1329c1582938d306472ed5eac4f95c0b",
+  "exact_head_ci": {
+    "workflow": "Deterministic publication CI",
+    "run_id": 37340406166,
+    "result": "PASS"
+  },
+  "merge_sha": "e371a37dae7017115c72346687a6e8167ee2ce1d",
+  "post_merge_ci": {
+    "run_id": 37340995582,
+    "result": "PASS",
+    "head_sha": "e371a37dae7017115c72346687a6e8167ee2ce1d"
+  },
+  "changed_scope": {
+    "production_content_mutated": false,
+    "historical_terminal_run_mutated": false,
+    "october_6_execution_allocated_early": false,
+    "october_5_reopened": false
+  },
+  "tranche_a": {
+    "compact_watchdog_health": {
+      "schema_version": "chatgpt-watchdog-health-v1",
+      "result": "PASS",
+      "runtime_branch": "runtime/watchdog-health",
+      "runtime_path": "data/operations/watchdog-health.json",
+      "runtime_projection_sha": "8812d8d99aec9d40bd1a0d4798921321665c85c1",
+      "unchanged_health_commits_suppressed": true
+    },
+    "image_execution_admission": {
+      "schema_version": "image-execution-admission-v1",
+      "result": "PASS",
+      "preflight_failure_consumes_attempt": false,
+      "accepted_locked_immutable": true
+    },
+    "one_semantic_editorial_pass": {
+      "schema_version": "one-semantic-editorial-pass-v1",
+      "result": "PASS",
+      "normal_semantic_passes": 1,
+      "post_editorial_semantic_validation_passes": 0
+    },
+    "exact_publication_preflight": {
+      "schema_version": "exact-publication-preflight-v1",
+      "result": "PASS",
+      "model_calls": 0,
+      "required_before_publication_pr": true
+    },
+    "public_safe_budget": {
+      "schema_version": "daily-brief-public-safe-budget-v1",
+      "result": "PASS",
+      "private_account_metrics_in_public_git": false
+    }
+  },
+  "exact_byte_persistence_preflight": {
+    "direct_git_blob": {
+      "result": "PASS",
+      "probe_kind": "non-production 1x1 PNG content-address probe",
+      "git_blob_sha": "ca1bbfee98370de3163a998a10e3c1e1d24ddb76",
+      "production_image_attempts_consumed": 0
+    },
+    "connector_raw_binary_fetch": {
+      "result": "UNAVAILABLE",
+      "reason": "GitHub connector fetch_blob path decodes as UTF-8 and cannot return PNG bytes"
+    },
+    "protected_base64_chunk_bridge": {
+      "result": "PASS_BY_PROTECTED_REGRESSION",
+      "implementation": "_generator/lib/image-chunk-bridge.mjs",
+      "test": "_generator/test/image-chunk-bridge.test.mjs"
+    },
+    "admission_policy": "Use direct Git blob content-address verification when available; protected Base64 chunk bridge provides exact-byte reconstruction/readback fallback."
+  },
+  "schedules": {
+    "controller": {
+      "id": "6abeba31fe28819184544abf70874a80",
+      "enabled": true,
+      "timezone": "America/Chicago",
+      "local_start": "19:00",
+      "target": "next local calendar day"
+    },
+    "watchdogs": [
+      {
+        "slot": "A",
+        "minute": 3,
+        "id": "6ac15929a81c8191956080955da7eaad",
+        "enabled": true
+      },
+      {
+        "slot": "B",
+        "minute": 13,
+        "id": "6ac15934c8c88191a33c94b91941d60d",
+        "enabled": true
+      },
+      {
+        "slot": "C",
+        "minute": 23,
+        "id": "6ac1594249d081918df3145cca65dd91",
+        "enabled": true
+      },
+      {
+        "slot": "D",
+        "minute": 33,
+        "id": "6ac1594e974881919639e0c40a2d9da8",
+        "enabled": true
+      },
+      {
+        "slot": "E",
+        "minute": 43,
+        "id": "6ac1595c12fc8191b9a25b42d465692d",
+        "enabled": true
+      },
+      {
+        "slot": "F",
+        "minute": 53,
+        "id": "6abeb9a2b8a88191949dc420d5e10feb",
+        "enabled": true
+      }
+    ],
+    "prompts_equivalent_except_slot_and_minute": true,
+    "compact_first_read_required": true
+  },
+  "tests_added_or_updated": [
+    "_generator/test/watchdog-health.test.mjs",
+    "_generator/test/image-execution-admission.test.mjs",
+    "_generator/test/semantic-editorial-pass.test.mjs",
+    "_generator/test/exact-publication-preflight.test.mjs",
+    "_generator/test/public-safe-budget.test.mjs",
+    "_generator/test/reliable-execution.test.mjs"
+  ],
+  "tranche_b": {
+    "implemented": [
+      "suppress_unchanged_health_commits"
+    ],
+    "deferred": [
+      "atomic_boundary_writer",
+      "bind_validation_contract_version",
+      "separate_hardening_queue_from_production"
+    ]
+  },
+  "rollback_path": "Open a protected revert PR for merge e371a37dae7017115c72346687a6e8167ee2ce1d and restore the last known protected production baseline; do not alter terminal October 5 evidence.",
+  "owner_intervention_required": false,
+  "production_runtime_paid_dependency_count": 0,
+  "go_no_go": "GO",
+  "closeout_verified_at": "2026-10-05T16:29:07.015Z",
+  "protected_main_verified_sha": "e371a37dae7017115c72346687a6e8167ee2ce1d",
+  "runtime_health": {
+    "schema_version": "chatgpt-watchdog-health-v1",
+    "branch": "runtime/watchdog-health",
+    "file_sha": "8812d8d99aec9d40bd1a0d4798921321665c85c1",
+    "state": "TERMINAL",
+    "execution_id": "reliable-edition-20261005-run9"
+  },
+  "schedule_verification": {
+    "controller_enabled": true,
+    "controller_start": "19:00 America/Chicago",
+    "watchdogs_enabled": 6,
+    "watchdog_minutes": [
+      3,
+      13,
+      23,
+      33,
+      43,
+      53
+    ],
+    "prompts_equivalent_except_slot_and_minute": true
+  },
+  "october_6_execution_exists_before_scheduled_start": false,
+  "owner_action_required": false
+}

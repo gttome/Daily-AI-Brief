@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-05T16:30:00.000Z",
+  "observed_at": "2026-10-05T16:29:07.015Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -840,11 +840,11 @@
     },
     {
       "id": "DAB-KB-045",
-      "lane": "wip",
+      "lane": "done",
       "priority": "P0",
       "category": "Image Execution",
       "title": "Enforce pre-generation image execution admission",
-      "summary": "Implemented on the October 6 pre-run hardening branch: every native image attempt must first pass image-execution-admission-v1 proving story-only context, exact sealed instruction, and a runtime-readable exact-byte persistence route; protected CI/merge and live schedule proof remain before Done.",
+      "summary": "Implemented and protected: image-execution-admission-v1 now gates every reliable-edition native image attempt before generation, binds exact task/request/sealed instruction, requires story-only context plus a proven exact-byte route, consumes zero attempts on admission failure, and preserves accepted_locked immutability.",
       "acceptance": [
         "image-execution-admission-v1 is persisted before attempt 1.",
         "Mixed orchestration context is rejected before generation.",
@@ -857,16 +857,20 @@
         "DAB-OPS-E-000116",
         "_generator/lib/image-execution.mjs",
         "_generator/test/image-execution-admission.test.mjs",
-        "docs/operations/unattended-image-host.json"
+        "docs/operations/unattended-image-host.json",
+        "PR #473",
+        "CI run 37340406166",
+        "merge e371a37dae7017115c72346687a6e8167ee2ce1d",
+        "_records/hardening/oct6-pre-run-usage-reduction-2026-10-05/implementation-receipt.json"
       ]
     },
     {
       "id": "DAB-KB-046",
-      "lane": "wip",
+      "lane": "done",
       "priority": "P0",
       "category": "Control Plane",
       "title": "Compact Watchdog health and suppress unchanged commits",
-      "summary": "Implement chatgpt-watchdog-health-v1 as the first/normal Watchdog read, compact A-F prompts, bounded expansion, and timestamp-independent source_digest so unchanged healthy observations create zero Git commits.",
+      "summary": "Implemented and protected: chatgpt-watchdog-health-v1 is the A-F compact first read, all six Watchdogs are enabled/equivalent at 03/13/23/33/43/53, and source_digest suppresses timestamp-only health commits.",
       "acceptance": [
         "All six Watchdogs first-read only the compact packet.",
         "Healthy/terminal/no-active/legitimate-idle checks exit without broad repository reads.",
@@ -877,16 +881,20 @@
       "sources": [
         "docs/operations/CHATGPT-WATCHDOG-RING.md",
         "_generator/lib/watchdog-health.mjs",
-        ".github/workflows/run-supervisor-watchdog.yml"
+        ".github/workflows/run-supervisor-watchdog.yml",
+        "PR #473",
+        "CI run 37340406166",
+        "merge e371a37dae7017115c72346687a6e8167ee2ce1d",
+        "_records/hardening/oct6-pre-run-usage-reduction-2026-10-05/implementation-receipt.json"
       ]
     },
     {
       "id": "DAB-KB-047",
-      "lane": "wip",
+      "lane": "done",
       "priority": "P0",
       "category": "Efficiency",
       "title": "Enforce one semantic pass, exact preflight and public-safe budget",
-      "summary": "Implement one-semantic-editorial-pass-v1, exact-publication-preflight-v1 and daily-brief-public-safe-budget-v1 so semantic work is reused, deterministic defects are caught before PR creation, and process proxies are measurable without publishing private account usage.",
+      "summary": "Implemented and protected: one-semantic-editorial-pass-v1, exact-publication-preflight-v1 and daily-brief-public-safe-budget-v1 are merged; protected CI passed and private account usage remains outside public Git.",
       "acceptance": [
         "Normal semantic editorial pass count is one and post-editorial semantic validator count is zero.",
         "Known October 5 Task 23 deterministic failure classes fail before PR creation.",
@@ -897,7 +905,11 @@
         "_generator/lib/semantic-editorial-pass.mjs",
         "_generator/lib/exact-publication-preflight.mjs",
         "_generator/lib/public-safe-budget.mjs",
-        ".github/workflows/post-editorial-kernel.yml"
+        ".github/workflows/post-editorial-kernel.yml",
+        "PR #473",
+        "CI run 37340406166",
+        "merge e371a37dae7017115c72346687a6e8167ee2ce1d",
+        "_records/hardening/oct6-pre-run-usage-reduction-2026-10-05/implementation-receipt.json"
       ]
     },
     {
