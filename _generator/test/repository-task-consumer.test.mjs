@@ -47,7 +47,10 @@ test('Task 17 consumes immutable acceptance locks that reference repair-epoch at
     const sha=crypto.createHash('sha256').update(bytes).digest('hex'), blob=crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob '+bytes.length+'\0'),bytes])).digest('hex');
     const attemptRel=`_records/image-attempts/${runKey}/${id}-repair-epoch-2-attempt-1.json`, reviewRel=`_records/image-reviews/${runKey}/${id}-repair-epoch-2-attempt-1-saved-git-review.json`;
     specs.specs.push({task_id:task,candidate_id:id,subject:'subject '+id,composition:'distinct composition '+id});
-    j(path.join(root,attemptRel),{execution_id:exec,edition_id:edition,candidate_id:id,disposition:'ACCEPTED_LOCKED',normalization:{path:asset,sha256:sha,git_blob_sha:blob,same_visual:true,low_quality_fallback:false,svg_fallback:false}});
+    const persistenceEvidence=i===1
+      ? {native_capture:{path:asset,sha256:sha,git_blob_sha:blob,same_visual_targeted_edit:true,low_quality_fallback:false,svg_fallback:false}}
+      : {normalization:{path:asset,sha256:sha,git_blob_sha:blob,same_visual:true,low_quality_fallback:false,svg_fallback:false}};
+    j(path.join(root,attemptRel),{execution_id:exec,edition_id:edition,candidate_id:id,disposition:'ACCEPTED_LOCKED',...persistenceEvidence});
     j(path.join(root,reviewRel),{execution_id:exec,edition_id:edition,candidate_id:id,accepted_locked:true,result:'PASS',final:{path:asset,sha256:sha,git_blob_sha:blob,exact_readback:'PASS_EXACT_BYTES'},visual_review:{professional_quality:true,story_specific:true,detailed:true,legibility:'PASS',visible_text_guard:'PASS',extra_visible_text:[],no_people_or_humanoids:true,artifacts_or_corruption:false,context_contamination:false}});
     j(path.join(root,'_records/image-acceptance',runKey,`${id}.json`),{schema_version:'image-acceptance-lock-v1',execution_id:exec,edition_id:edition,candidate_id:id,accepted_locked:true,immutable:true,quality_gate:'PASS',visible_text_guard:'PASS',attempt_receipt:attemptRel,saved_git_review:reviewRel,final:{path:asset,sha256:sha,git_blob_sha:blob,width:1199,height:630}});
   }

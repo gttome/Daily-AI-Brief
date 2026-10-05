@@ -31,10 +31,11 @@ function acceptedFromLock({root,runKey,spec,req}){
   const reviewPath=inside(root,lock.saved_git_review,'saved_git_review');
   if(!fs.existsSync(attemptPath) || !fs.existsSync(reviewPath)) throw Error(`accepted_evidence_missing:${spec.candidate_id}`);
   const attempt=readJson(attemptPath), review=readJson(reviewPath), final=lock.final||{};
+  const persisted=attempt.normalization||attempt.native_capture||{};
   const identity=[lock,attempt,review].every(x=>x.execution_id===req.execution_id && x.edition_id===req.edition_id && x.candidate_id===spec.candidate_id);
-  const linked=attempt.normalization?.path===final.path && review.final?.path===final.path &&
-    attempt.normalization?.sha256===final.sha256 && review.final?.sha256===final.sha256 &&
-    attempt.normalization?.git_blob_sha===final.git_blob_sha && review.final?.git_blob_sha===final.git_blob_sha;
+  const linked=persisted.path===final.path && review.final?.path===final.path &&
+    persisted.sha256===final.sha256 && review.final?.sha256===final.sha256 &&
+    persisted.git_blob_sha===final.git_blob_sha && review.final?.git_blob_sha===final.git_blob_sha;
   const v=review.visual_review||{};
   const evidenceChecks={
     identity,
@@ -51,9 +52,9 @@ function acceptedFromLock({root,runKey,spec,req}){
     no_people:v.no_people_or_humanoids===true,
     no_artifacts:v.artifacts_or_corruption===false,
     no_context_contamination:v.context_contamination===false,
-    same_visual:attempt.normalization?.same_visual===true,
-    no_low_quality_fallback:attempt.normalization?.low_quality_fallback===false,
-    no_svg_fallback:attempt.normalization?.svg_fallback===false,
+    same_visual:persisted.same_visual===true || persisted.same_visual_targeted_edit===true,
+    no_low_quality_fallback:persisted.low_quality_fallback===false,
+    no_svg_fallback:persisted.svg_fallback===false,
     exact_git_readback:String(review.final?.exact_readback||'').startsWith('PASS_')
   };
   const failedEvidence=Object.entries(evidenceChecks).filter(([,ok])=>ok!==true).map(([key])=>key);
