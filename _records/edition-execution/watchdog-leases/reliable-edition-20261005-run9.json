@@ -4,9 +4,11 @@
   "incident_id": "wd-reliable-edition-20261005-run9-task23-append-only-ledger-reconciliation",
   "owner_slot": "F",
   "generation": 31,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-05T09:00:32.377Z",
-  "last_heartbeat_at": "2026-10-05T09:00:32.377Z",
-  "expires_at": "2026-10-05T09:15:32.377Z",
-  "action_key": "wd-reliable-edition-20261005-run9-task23-append-only-ledger-reconciliation:slot-f:g31"
+  "last_heartbeat_at": "2026-10-05T09:00:59.748Z",
+  "expires_at": "2026-10-05T09:00:59.748Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task23-append-only-ledger-reconciliation:slot-f:g31",
+  "released_at": "2026-10-05T09:00:59.748Z",
+  "release_reason": "LEDGER_RECONCILED_PUBLICATION_EXACT_HEAD_VALIDATION_PENDING"
 }
