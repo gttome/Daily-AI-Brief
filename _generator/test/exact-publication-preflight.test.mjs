@@ -29,7 +29,7 @@ const regressions=[
   ['publication manifest compatibility','publication_manifest_media_receipt_invalid','publication_manifest_compatibility'],
   ['reader projection contract','reader:dated:canonical_mismatch:briefs/2099-01-01.md','reader_projection_contract'],
   ['integrated locked image canvas','image_canvas_invalid:dab-story','locked_image_canvas_integration'],
-  ['frozen contract migration boundary','publication_manifest_frozen_migration_boundary_invalid','publication_manifest_compatibility'],
+  ['frozen contract migration boundary','publication_manifest_frozen_migration_boundary_invalid','frozen_contract_migration_boundary'],
   ['historical edition independence','current_edition_pointer_invalid_for_candidate','historical_edition_independence'],
   ['complete deterministic projection set','required_derived_file_missing:feed.xml','deterministic_projection_set']
 ];
