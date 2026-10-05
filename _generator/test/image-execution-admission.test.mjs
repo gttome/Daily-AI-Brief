@@ -53,7 +53,7 @@ test('mixed orchestration context is denied before attempt 1',async()=>{
   assert.ok(a.failure_reasons.includes('story_only_context_not_proven'));
   const result=await executeImageRequest(execution,{
     executionProfile:'reliable-edition-v1',operationStore:{},
-    executionId:ctx.execution_id,taskId:ctx.task_id,requestKey:ctx.request_key,admission:a
+    executionId:ctx.execution_id,taskId:ctx.task_id,requestKey:ctx.request_key,executionAdmission:a
   });
   assert.equal(result.status,'IMAGE_EXECUTION_ADMISSION_BLOCKED');
   assert.equal(result.attempts_allocated,0);
@@ -66,7 +66,7 @@ test('unproven byte persistence is denied and consumes zero image attempts',asyn
   const a=admission(execution,{exact_byte_persistence_verified:false,persistence_mode:null});
   const result=await executeImageRequest(execution,{
     executionProfile:'reliable-edition-v1',operationStore:{},
-    executionId:ctx.execution_id,taskId:ctx.task_id,requestKey:ctx.request_key,admission:a
+    executionId:ctx.execution_id,taskId:ctx.task_id,requestKey:ctx.request_key,executionAdmission:a
   });
   assert.equal(result.status,'IMAGE_EXECUTION_ADMISSION_BLOCKED');
   assert.equal(result.attempts_consumed,0);
