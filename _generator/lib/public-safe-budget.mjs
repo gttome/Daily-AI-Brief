@@ -51,7 +51,7 @@ export function newPublicSafeBudget({
     schema_version:PUBLIC_SAFE_BUDGET_VERSION,
     execution_id,edition_id,execution_key,started_at,updated_at:started_at,
     private_usage_fields_prohibited:true,
-    owner_observed_weekly_usage_storage:'outside_public_git_only',
+    private_account_metrics_storage:'outside_public_git_only',
     counters,budget_level:evaluation.level,budget_alerts:evaluation.reasons
   };
 }
@@ -85,7 +85,7 @@ export function validatePublicSafeBudget(record={}){
   if(!id(record.execution_id)||!/^dab-edition-\d{4}-\d{2}-\d{2}$/.test(record.edition_id||'')||!id(record.execution_key))
     errors.push('public_safe_budget_identity');
   if(!stamp(record.started_at)||!stamp(record.updated_at))errors.push('public_safe_budget_clock');
-  if(record.private_usage_fields_prohibited!==true||record.owner_observed_weekly_usage_storage!=='outside_public_git_only')
+  if(record.private_usage_fields_prohibited!==true||record.private_account_metrics_storage!=='outside_public_git_only')
     errors.push('public_safe_budget_privacy_contract');
   const forbidden=privateKeys(record);
   if(forbidden.length)errors.push(...forbidden.map(key=>'private_usage_field_prohibited:'+key));
