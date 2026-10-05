@@ -3,12 +3,10 @@
   "execution_id": "reliable-edition-20261005-run9",
   "incident_id": "wd-reliable-edition-20261005-run9-task23-reader-projection-contract-recovery",
   "owner_slot": "F",
-  "generation": 27,
-  "state": "RELEASED",
-  "acquired_at": "2026-10-05T08:42:17.441Z",
-  "last_heartbeat_at": "2026-10-05T08:46:45.000Z",
-  "expires_at": "2026-10-05T08:46:45.000Z",
-  "action_key": "wd-reliable-edition-20261005-run9-task23-reader-projection-contract-recovery:protected-repair-and-projection:slot-f:g27",
-  "released_at": "2026-10-05T08:46:45.000Z",
-  "release_reason": "PROTECTED_REPAIR_PR_EXACT_HEAD_VALIDATION_PENDING"
+  "generation": 28,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-05T08:46:00.000Z",
+  "last_heartbeat_at": "2026-10-05T08:46:00.000Z",
+  "expires_at": "2026-10-05T09:01:00.000Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task23-reader-projection-contract-recovery:merge-and-projection:slot-f:g28"
 }
