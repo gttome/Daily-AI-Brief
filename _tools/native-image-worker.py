@@ -57,7 +57,19 @@ def main():
             'execution_id':a.execution_id,'task_id':task,
             'generation_started':False,'accepted_locked':False,
             'writer_generation_is_provenance':True,'authority_refresh_required_at_invocation':True,
-            'next_action':'Next eligible admitted scheduled consumer refreshes current fenced authority at invocation and consumes this exact request; overlapping consumers yield to the current task writer.'}
+            'image_execution_admission':{
+                'schema_version':'image-execution-admission-v1',
+                'required_before_generation':True,
+                'generation_authorized':False,
+                'preflight_failure_consumes_attempt':False,
+                'generator_context_requirement':'dedicated_story_only_generation_context',
+                'orchestration_context_visible_to_generator':False,
+                'approved_persistence_modes':['git_data_direct_blob','protected_base64_chunk_bridge'],
+                'runtime_generated_bytes_readable_required':True,
+                'owner_intervention_required':False,
+                'receipt_path_pattern':'_records/image-admission/'+a.execution_key+'/'+task+'-'+str(req.get('request_key',''))+'.json'
+            },
+            'next_action':'Next eligible admitted scheduled consumer refreshes current fenced authority, proves image-execution-admission-v1 before native generation, and consumes this exact request. A mixed Watchdog context or unavailable exact-byte route must fail preflight with zero image attempts; overlapping consumers yield to the current task writer.'}
         if req.get('status')!='queued_for_scheduled_consumer':
             req.update(status='queued_for_scheduled_consumer',dispatch=result)
             request.write_text(json.dumps(req,indent=2)+'\n')
