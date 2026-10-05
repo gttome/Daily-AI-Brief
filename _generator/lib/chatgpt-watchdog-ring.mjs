@@ -130,10 +130,12 @@ export function watchdogDecision({active_pointer=null,classification=null,recove
   if(classification?.state==='TERMINAL')return terminal_pointer_cleanup_authorized?{action:'RECONCILE_TERMINAL_POINTER_ONLY',reason:'terminal_cleanup_explicitly_authorized'}:{action:'NO_ACTION',reason:'terminal_execution_production_immutable'};
   if(watchdogLeaseActive(recovery_lease,{execution_id:active_pointer.execution_id,now})&&recovery_lease.owner_slot!==owner_slot)return {action:'NO_ACTION',reason:'another_watchdog_recovery_owner_active'};
   if(substantive_worker_active||protected_executor_active)return {action:'NO_ACTION',reason:'real_executor_progressing'};
-  if(task_writer_active&&task_writer_substantive_progress)return {action:'NO_ACTION',reason:'current_task_writer_substantively_progressing'};
-  if(task_writer_active&&!task_writer_substantive_progress&&!task_writer_fence_takeover_safe)
+  const ordinaryWriterRequest=['repository','research_chatgpt'].includes(String(authoritative_request?.capability||''));
+  if(task_writer_active&&!ordinaryWriterRequest)return {action:'NO_ACTION',reason:'current_task_writer_owns_request'};
+  if(task_writer_active&&ordinaryWriterRequest&&task_writer_substantive_progress)return {action:'NO_ACTION',reason:'current_task_writer_substantively_progressing'};
+  if(task_writer_active&&ordinaryWriterRequest&&!task_writer_substantive_progress&&!task_writer_fence_takeover_safe)
     return {action:'WAIT_FOR_WRITER_FENCE',reason:'writer_lease_without_substantive_progress',recovery_required:true,owner_slot,expires_at:null};
-  if(task_writer_active&&!task_writer_substantive_progress&&task_writer_fence_takeover_safe)
+  if(task_writer_active&&ordinaryWriterRequest&&!task_writer_substantive_progress&&task_writer_fence_takeover_safe)
     return {action:'RECOVER',reason:'writer_lease_without_substantive_progress_fence_safe',recovery_required:true,owner_slot};
   if(watchdogQueuedRequestEligible(authoritative_request,{execution_id:active_pointer.execution_id})){
     const native=authoritative_request?.capability==='native_chatgpt';
