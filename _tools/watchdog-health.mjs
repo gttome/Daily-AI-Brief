@@ -32,7 +32,9 @@ const jsonFiles=dir=>{
 };
 const latestBy=(rows,getTime)=>[...rows].sort((a,b)=>getTime(a)-getTime(b)).at(-1)||null;
 const eventTime=row=>Date.parse(row?.value?.at||row?.value?.occurred_at||0)||0;
-const requestTime=row=>Date.parse(row?.value?.created_at||0)||0;
+const state=value=>String(value||'').toLowerCase();
+const activeExecutor=value=>['running','recovering','claimed','active','in_progress'].includes(state(value));
+const progressingExecutor=(value,classification)=>activeExecutor(value)&&classification?.state==='HEALTHY_ACTIVE';
 
 if(!args.pointer||!args.contracts)throw Error('pointer_and_contracts_required');
 const now=args.now||new Date().toISOString();
@@ -46,9 +48,10 @@ if(pointer.terminal===true||pointer.active!==true){
     observed_at:now,active:false,terminal:pointer.terminal===true,
     edition_id:pointer.edition_id||null,execution_id:pointer.execution_id||null,
     execution_key:pointer.execution_key||null,branch:pointer.branch||null,
-    first_incomplete_task:null,first_incomplete_task_state:pointer.current_task_state||null,
-    live_executor_state:'Stopped',classification:{state:pointer.terminal===true?'TERMINAL':'AMBIGUOUS'},
-    normalized_fault_code:pointer.terminal===true?null:'NO_ACTIVE_NONTERMINAL_EXECUTION',
+    first_incomplete_task:null,task_state:pointer.current_task_state||null,
+    live_executor_state:'Stopped',
+    classification:{state:pointer.terminal===true?'TERMINAL':'NO_ACTIVE_EXECUTION'},
+    normalized_fault_code:null,actionable:false,next_legal_action:null,
     evidence_refs:['data/operations/active-production-run.json']
   });
 }else if(!runRoot){
@@ -56,10 +59,10 @@ if(pointer.terminal===true||pointer.active!==true){
     observed_at:now,active:true,terminal:false,
     edition_id:pointer.edition_id,execution_id:pointer.execution_id,
     execution_key:pointer.execution_key,branch:pointer.branch,
-    first_incomplete_task:pointer.current_task||null,
-    first_incomplete_task_state:pointer.current_task_state||null,
+    first_incomplete_task:pointer.current_task||null,task_state:pointer.current_task_state||null,
     live_executor_state:'Unknown',classification:{state:'AMBIGUOUS'},
-    normalized_fault_code:'ACTIVE_RUN_BRANCH_UNAVAILABLE',
+    normalized_fault_code:'ACTIVE_RUN_BRANCH_UNAVAILABLE',actionable:true,
+    next_legal_action:'FETCH_ACTIVE_RUN_BRANCH',
     evidence_refs:['data/operations/active-production-run.json']
   });
 }else{
@@ -88,7 +91,7 @@ if(pointer.terminal===true||pointer.active!==true){
   const blocker=latestEventValue?recoverableBlockerEvidence(latestEventValue):{actionable:false};
   const taskContract=current?contracts.tasks?.[current.id]:null;
   const classification=classifyRunHealth({
-    terminal,task_state:current?.state,executor_state,
+    terminal,task_state:current?.state,executor_state:executorState,
     last_progress_at:latestEventValue?.at||null,
     blocked_recoverable:blocker.actionable,
     blocked_external:latestEventValue?.external_blocker===true,
@@ -102,35 +105,61 @@ if(pointer.terminal===true||pointer.active!==true){
   if(current){
     try{authoritative=selectAuthoritativeRequest(requests,{execution_id:pointer.execution_id,task_id:current.id});}catch{}
   }
-  const leasePath=path.join(runRoot,'_records/edition-execution/watchdog-leases',pointer.execution_id+'.json');
-  let lease=null;
-  if(fs.existsSync(leasePath)){try{lease=read(leasePath);}catch{}}
+  const watchdogLeasePath=path.join(runRoot,'_records/edition-execution/watchdog-leases',pointer.execution_id+'.json');
+  let watchdogLease=null;
+  if(fs.existsSync(watchdogLeasePath)){try{watchdogLease=read(watchdogLeasePath);}catch{}}
+  const writerLeasePath=path.join(runRoot,'_records/edition-execution/writer-leases',pointer.execution_id+'.json');
+  let writerLease=null;
+  if(fs.existsSync(writerLeasePath)){try{writerLease=read(writerLeasePath);}catch{}}
   const latestProgressAt=latestBy(eventRows,eventTime)?.value?.at||null;
-  const recoveryOwnerActive=watchdogLeaseActive(lease,{execution_id:pointer.execution_id,now});
+  const recoveryOwnerActive=watchdogLeaseActive(watchdogLease,{execution_id:pointer.execution_id,now});
   const recoveryOwnerProgressing=Boolean(
-    recoveryOwnerActive&&latestProgressAt&&lease?.acquired_at&&Date.parse(latestProgressAt)>=Date.parse(lease.acquired_at)
+    recoveryOwnerActive&&latestProgressAt&&watchdogLease?.acquired_at&&Date.parse(latestProgressAt)>=Date.parse(watchdogLease.acquired_at)
   );
   const repairDir=path.join(runRoot,'_records/edition-execution/protected-repairs',pointer.execution_id);
   const repairRows=jsonFiles(repairDir);
   const latestRepair=latestBy(repairRows,row=>Date.parse(row.value?.updated_at||row.value?.created_at||0)||0);
+  const resultDir=path.join(runRoot,'_records/edition-execution/worker-results',pointer.execution_id);
+  const acceptedLockedImages=jsonFiles(resultDir).filter(row=>{
+    const task=String(row.value?.task_id||'').padStart(2,'0');
+    return /^1[1-6]$/.test(task)&&row.value?.accepted_locked===true&&String(row.value?.status||'').toLowerCase()==='passed';
+  }).reduce((set,row)=>set.add(String(row.value.task_id).padStart(2,'0')),new Set()).size;
+
   const evidenceRefs=['data/operations/active-production-run.json'];
   if(latestEvent)evidenceRefs.push(path.relative(runRoot,path.join(eventDir,latestEvent._file)).replaceAll('\\','/'));
   if(authoritative)evidenceRefs.push('_records/edition-execution/worker-requests/'+pointer.execution_id+'/'+String(authoritative.task_id).padStart(2,'0')+'-'+authoritative.request_key+'.json');
-  if(lease)evidenceRefs.push(path.relative(runRoot,leasePath).replaceAll('\\','/'));
+  if(watchdogLease)evidenceRefs.push(path.relative(runRoot,watchdogLeasePath).replaceAll('\\','/'));
+  if(writerLease)evidenceRefs.push(path.relative(runRoot,writerLeasePath).replaceAll('\\','/'));
   if(latestRepair)evidenceRefs.push(path.relative(runRoot,path.join(repairDir,latestRepair._file)).replaceAll('\\','/'));
+
+  const hasQueuedRequest=Boolean(authoritative&&['queued','pending','queued_for_scheduled_consumer'].includes(state(authoritative.status||authoritative.state)));
+  const actionable=['STALE_ACTIVE','BLOCKED_ACTIONABLE'].includes(classification.state)||(classification.state==='READY_IDLE'&&hasQueuedRequest);
+  const nextLegalAction=actionable
+    ? hasQueuedRequest?'CONSUME_EXACT_QUEUED_REQUEST':'NARROW_RECOVERY_REQUIRED'
+    : null;
 
   record=buildWatchdogHealthRecord({
     observed_at:now,active:!terminal,terminal,
     edition_id:pointer.edition_id,execution_id:pointer.execution_id,
     execution_key:pointer.execution_key,branch:pointer.branch,
-    first_incomplete_task:current?.id||null,first_incomplete_task_state:current?.state||null,
+    first_incomplete_task:current?.id||null,task_state:current?.state||null,
+    capability:taskContract?.capability||null,
     last_substantive_progress_at:latestProgressAt,
+    last_substantive_progress_type:latestEventValue?.to||latestEventValue?.event_type||null,
     live_executor_state:executorState,
-    queued_authoritative_request_key:authoritative?.request_key||null,
-    watchdog_recovery_owner:recoveryOwnerActive?lease?.owner_slot||null:null,
+    executor_active:activeExecutor(executorState),
+    executor_progressing:progressingExecutor(executorState,classification),
+    request_key:authoritative?.request_key||null,
+    request_status:authoritative?.status||authoritative?.state||null,
+    writer_owner:writerLease?.owner_id||null,
+    writer_generation:Number.isInteger(writerLease?.generation)?writerLease.generation:null,
+    writer_expires_at:writerLease?.expires_at||null,
+    watchdog_owner:recoveryOwnerActive?(watchdogLease?.owner_slot||null):null,
+    watchdog_expires_at:recoveryOwnerActive?(watchdogLease?.expires_at||null):null,
     watchdog_recovery_owner_progressing:recoveryOwnerProgressing,
     protected_repair_stage:latestRepair?.value?.state||null,
-    classification,evidence_refs
+    classification,actionable,next_legal_action:nextLegalAction,
+    accepted_locked_images:acceptedLockedImages,evidence_refs
   });
 }
 if(args.output)write(args.output,record);
