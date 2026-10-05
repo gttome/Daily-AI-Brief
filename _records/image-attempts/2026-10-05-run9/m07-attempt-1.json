@@ -1,0 +1,59 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "13",
+  "candidate_id": "m07",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "request_key": "be8022cbf995b36e236d0140a1fe25fecc062b0dca0c17005099993d38650d9a",
+  "writer_generation": 33,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-05T04:09:31.000Z",
+  "generated_at": "2026-10-05T04:10:20.000Z",
+  "targeted_edit_completed_at": "2026-10-05T04:11:10.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-4479d8e3-921b-449e-9db8-0205cbbcc6b8",
+    "base_review": "Composition and no-humanoid gates passed; photographic mountain and plant thumbnails plus incidental spreadsheet marks failed the sealed no-photo and exact visible-text controls.",
+    "targeted_edit_generation_id": "exec-127998a8-4583-47fe-bc56-6e419308a4e9",
+    "targeted_edit": "Replace all photographic thumbnails with abstract geometric object masks and remove incidental spreadsheet/version markings while preserving the synchronized cross-app mechanism and seven approved labels."
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1381475,
+    "sha256": "8c1deb379e80c07482aaa938412c8adb361140510e4ce4d2fb16b95f8fe18c5a",
+    "persisted": true,
+    "path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m07.png",
+    "git_blob_sha": "dc2a56094cf7b03254cd30bf2d3898ed3834ca20",
+    "saved_git_commit": "aabe514babee2b33d4cc89d365a14193ca7203dc",
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES",
+    "same_visual_targeted_edit": true,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Shared source data",
+      "Image edit",
+      "Sheets canvas",
+      "Cross-app task",
+      "Provenance",
+      "Synchronized",
+      "Review"
+    ],
+    "extra_visible_text": [],
+    "note": "A shared source hub feeds abstract image editing, spreadsheet analysis and cross-app task execution; provenance and synchronization rails return every change to review. The targeted edit removed photographic content and incidental markings without altering the mechanism."
+  },
+  "disposition": "ACCEPTED_LOCKED"
+}

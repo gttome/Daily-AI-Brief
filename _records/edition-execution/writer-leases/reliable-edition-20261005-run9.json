@@ -7,15 +7,10 @@
   "capability": "native_chatgpt",
   "request_key": "be8022cbf995b36e236d0140a1fe25fecc062b0dca0c17005099993d38650d9a",
   "acquired_at": "2026-10-05T04:09:31.000Z",
-  "last_heartbeat_at": "2026-10-05T04:09:31.000Z",
-  "expires_at": "2026-10-05T04:24:31.000Z",
-  "state": "ACTIVE",
-  "released": false,
-  "transfer_from": {
-    "owner_id": "github-actions-37262189638-1",
-    "generation": 32,
-    "reason": "RELEASED_SCHEDULED_IMAGE_HANDOFF",
-    "prior_released_at": "2026-10-05T04:08:33.914Z",
-    "at": "2026-10-05T04:09:31.000Z"
-  }
+  "last_heartbeat_at": "2026-10-05T04:12:44.000Z",
+  "expires_at": "2026-10-05T04:12:44.000Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T04:12:44.000Z",
+  "release_reason": "TASK_13_DONE_HANDOFF_TO_SUPERVISOR"
 }

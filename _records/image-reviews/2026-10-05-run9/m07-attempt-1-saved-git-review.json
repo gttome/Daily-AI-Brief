@@ -1,0 +1,59 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "13",
+  "candidate_id": "m07",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-05T04:12:44.000Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 33,
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "saved_git_commit": "aabe514babee2b33d4cc89d365a14193ca7203dc",
+  "source_lineage": {
+    "base_generation_id": "exec-4479d8e3-921b-449e-9db8-0205cbbcc6b8",
+    "targeted_edit_generation_id": "exec-127998a8-4583-47fe-bc56-6e419308a4e9",
+    "native_sha256": "8c1deb379e80c07482aaa938412c8adb361140510e4ce4d2fb16b95f8fe18c5a",
+    "native_bytes": 1381475,
+    "native_width": 1730,
+    "native_height": 909,
+    "transport_method": "exact returned PNG via Git Data create_blob Base64"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m07.png",
+    "git_blob_sha": "dc2a56094cf7b03254cd30bf2d3898ed3834ca20",
+    "sha256": "8c1deb379e80c07482aaa938412c8adb361140510e4ce4d2fb16b95f8fe18c5a",
+    "bytes": 1381475,
+    "width": 1730,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "A central shared-data hub feeds three application branches; a dense lower provenance spine, synchronization loop and review checkpoint reconcile changes bidirectionally.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Shared source data",
+      "Image edit",
+      "Sheets canvas",
+      "Cross-app task",
+      "Provenance",
+      "Synchronized",
+      "Review"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The inspected local PNG is byte-identical to the Git blob and satisfies the sealed story-only subject, no-photo and exact-text controls."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

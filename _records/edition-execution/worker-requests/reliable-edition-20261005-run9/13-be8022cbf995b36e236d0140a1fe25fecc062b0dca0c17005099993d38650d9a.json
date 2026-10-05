@@ -14,10 +14,10 @@
   "created_at": "2026-10-05T04:08:32.415Z",
   "writer_generation_is_provenance": true,
   "authority_refresh_required_at_invocation": true,
-  "status": "claimed",
+  "status": "completed",
   "dispatch": {
     "schema_version": "scheduled-image-dispatch-v3",
-    "status": "GENERATION_STARTED",
+    "status": "COMPLETED",
     "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
     "consumer_kind": "chatgpt_watchdog_ring",
     "consumer_pool_ids": [
@@ -42,13 +42,21 @@
     "execution_id": "reliable-edition-20261005-run9",
     "task_id": "13",
     "generation_started": true,
-    "accepted_locked": false,
+    "accepted_locked": true,
     "writer_generation_is_provenance": true,
     "authority_refresh_required_at_invocation": true,
-    "next_action": "Watchdog F consumes the exact Task 13 request under writer generation 33.",
-    "claimed_at": "2026-10-05T04:09:31.000Z"
+    "next_action": "Supervisor resumes the same execution and queues Task 14.",
+    "claimed_at": "2026-10-05T04:09:31.000Z",
+    "completed_at": "2026-10-05T04:12:44.000Z"
   },
   "claimed_at": "2026-10-05T04:09:31.000Z",
   "consumer_id": "watchdog-F",
-  "consumer_writer_generation": 33
+  "consumer_writer_generation": 33,
+  "completed_at": "2026-10-05T04:12:44.000Z",
+  "result": "PASSED",
+  "evidence": {
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/13-be8022cbf995b36e236d0140a1fe25fecc062b0dca0c17005099993d38650d9a.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-05-run9/m07.json",
+    "saved_git_review": "_records/image-reviews/2026-10-05-run9/m07-attempt-1-saved-git-review.json"
+  }
 }
