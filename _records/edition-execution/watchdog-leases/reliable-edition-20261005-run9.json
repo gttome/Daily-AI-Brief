@@ -1,13 +1,13 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "incident_id": "wd-reliable-edition-20261005-run9-post-task17-supervisor-resume-gap",
-  "owner_slot": "D",
-  "generation": 18,
+  "incident_id": "wd-reliable-edition-20261005-run9-task19-repository-stall",
+  "owner_slot": "A",
+  "generation": 19,
   "state": "ACTIVE",
-  "acquired_at": "2026-10-05T05:53:44.000Z",
-  "last_heartbeat_at": "2026-10-05T05:53:44.000Z",
-  "expires_at": "2026-10-05T06:05:44.000Z",
-  "action_key": "wd-reliable-edition-20261005-run9-post-task17-supervisor-resume-gap:finish-task18:slot-d:g18",
-  "request_key": "4201174a6abeb8fc2a9f21fc2b87de8843c37e9ad0137c24be08be607384d351"
+  "acquired_at": "2026-10-05T06:08:30.000Z",
+  "last_heartbeat_at": "2026-10-05T06:08:30.000Z",
+  "expires_at": "2026-10-05T06:20:30.000Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task19-repository-stall:consume-same-request:slot-a:g19",
+  "request_key": "135eeb389d393ad06be847c8fa1977db1ae1f0accda8de1d4ca38c93cc172db8"
 }
