@@ -4,7 +4,10 @@
   "owner_id": "watchdog-F-task22",
   "generation": 60,
   "acquired_at": "2026-10-05T07:43:24.894Z",
-  "last_heartbeat_at": "2026-10-05T07:43:24.894Z",
-  "expires_at": "2026-10-05T07:51:24.894Z",
-  "state": "ACTIVE"
+  "last_heartbeat_at": "2026-10-05T07:46:36.611Z",
+  "expires_at": "2026-10-05T07:46:36.611Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T07:46:36.611Z",
+  "release_reason": "TASK_22_DONE_HANDOFF_TO_SUPERVISOR"
 }
