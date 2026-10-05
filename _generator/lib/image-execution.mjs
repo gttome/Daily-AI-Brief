@@ -3,6 +3,8 @@ import {createHash} from 'node:crypto';
 import {buildQualificationImageWorkerPayload,buildQualificationImageGenerationInstruction,validateQualificationImageWorkerPayload} from './image-story-packet.mjs';
 
 export const IMAGE_EXECUTION_POLICY='production-image-execution-v2';
+export const IMAGE_EXECUTION_ADMISSION_VERSION='image-execution-admission-v1';
+export const IMAGE_EXECUTION_PERSISTENCE_MODES=Object.freeze(['git_data_direct_blob','protected_base64_chunk_bridge']);
 export const AUTOMATED_IMAGE_EFFECTIVE_DATE='2026-09-28';
 export const IMAGE_GENERATION_EXECUTION_KEYS=Object.freeze([
   'schema_version','policy_id','mode','story_ids','includes_edition_context',
@@ -18,6 +20,88 @@ const fail=errors=>{if(errors.length)throw Error(errors.join('; '));};
 const zeroUsage=x=>x&&['work_invocations','codex_invocations','paid_model_api_calls'].every(k=>x[k]===0);
 const noOwner=x=>Array.isArray(x)&&x.length===0;
 const safePath=x=>nonempty(x)&&!x.startsWith('/')&&!x.includes('\\')&&!x.split('/').some(p=>p==='..'||p==='.'||!p);
+
+export function buildImageExecutionAdmission(execution,{
+  execution_id,task_id,request_key,submitted_instruction=null,
+  story_only_context_verified=false,orchestration_context_visible=true,
+  exact_byte_persistence_verified=false,persistence_mode=null,
+  owner_intervention_required=false,persistence_proof=null,
+  checked_at=new Date().toISOString()
+}={}){
+  const executionErrors=validateImageGenerationExecution(execution);
+  const task=String(task_id||'').padStart(2,'0');
+  const sealed=execution?.generation_instruction;
+  const submitted=nonempty(submitted_instruction)?submitted_instruction:null;
+  const sealedSha=nonempty(sealed)?digest(sealed):null;
+  const submittedSha=nonempty(submitted)?digest(submitted):null;
+  const identityOK=nonempty(execution_id)&&/^1[1-6]$/.test(task)&&nonempty(request_key)&&execution?.sealed_story_packet?.candidate_id;
+  const persistenceOK=exact_byte_persistence_verified===true&&IMAGE_EXECUTION_PERSISTENCE_MODES.includes(persistence_mode);
+  const contextOK=story_only_context_verified===true&&orchestration_context_visible===false;
+  const instructionOK=Boolean(sealedSha&&submittedSha&&sealedSha===submittedSha);
+  const ownerOK=owner_intervention_required===false;
+  const clockOK=stamp(checked_at);
+  const authorized=executionErrors.length===0&&Boolean(identityOK)&&persistenceOK&&contextOK&&instructionOK&&ownerOK&&clockOK;
+  const failures=[];
+  if(executionErrors.length)failures.push(...executionErrors.map(x=>'execution:'+x));
+  if(!identityOK)failures.push('admission_identity_invalid');
+  if(!contextOK)failures.push('story_only_context_not_proven');
+  if(!instructionOK)failures.push('submitted_instruction_not_exactly_sealed');
+  if(!persistenceOK)failures.push('exact_byte_persistence_not_proven');
+  if(!ownerOK)failures.push('owner_intervention_prohibited');
+  if(!clockOK)failures.push('admission_checked_at_invalid');
+  return {
+    schema_version:IMAGE_EXECUTION_ADMISSION_VERSION,
+    execution_id:execution_id||null,task_id:task,request_key:request_key||null,
+    candidate_id:execution?.sealed_story_packet?.candidate_id||null,
+    sealed_instruction_sha256:sealedSha,submitted_instruction_sha256:submittedSha,
+    story_only_context_verified:story_only_context_verified===true,
+    orchestration_context_visible:orchestration_context_visible===true,
+    exact_byte_persistence_verified:exact_byte_persistence_verified===true,
+    persistence_mode:persistence_mode||null,
+    owner_intervention_required:owner_intervention_required===true,
+    generation_authorized:authorized,
+    preflight_failure_consumes_attempt:false,
+    strategy_interrupt_required:!authorized,
+    checked_at,
+    persistence_proof:persistence_proof||null,
+    failure_reasons:[...new Set(failures)]
+  };
+}
+
+export function validateImageExecutionAdmission(admission,execution,{execution_id=null,task_id=null,request_key=null,require_authorized=true}={}){
+  const errors=[];
+  if(!admission||typeof admission!=='object'||Array.isArray(admission))return ['image_execution_admission_required'];
+  if(admission.schema_version!==IMAGE_EXECUTION_ADMISSION_VERSION)errors.push('image_execution_admission_schema');
+  const task=String(admission.task_id||'').padStart(2,'0');
+  if(!/^1[1-6]$/.test(task))errors.push('image_execution_admission_task');
+  if(execution_id&&admission.execution_id!==execution_id)errors.push('image_execution_admission_execution_mismatch');
+  if(task_id&&task!==String(task_id).padStart(2,'0'))errors.push('image_execution_admission_task_mismatch');
+  if(request_key&&admission.request_key!==request_key)errors.push('image_execution_admission_request_mismatch');
+  if(admission.candidate_id!==execution?.sealed_story_packet?.candidate_id)errors.push('image_execution_admission_candidate_mismatch');
+  const sealedSha=nonempty(execution?.generation_instruction)?digest(execution.generation_instruction):null;
+  if(!sealedSha||admission.sealed_instruction_sha256!==sealedSha||admission.submitted_instruction_sha256!==sealedSha)
+    errors.push('image_execution_admission_instruction_mismatch');
+  if(admission.story_only_context_verified!==true)errors.push('image_execution_admission_story_only_context');
+  if(admission.orchestration_context_visible!==false)errors.push('image_execution_admission_orchestration_context_visible');
+  if(admission.exact_byte_persistence_verified!==true)errors.push('image_execution_admission_persistence_unverified');
+  if(!IMAGE_EXECUTION_PERSISTENCE_MODES.includes(admission.persistence_mode))errors.push('image_execution_admission_persistence_mode');
+  if(admission.owner_intervention_required!==false)errors.push('image_execution_admission_owner_intervention');
+  if(admission.preflight_failure_consumes_attempt!==false)errors.push('image_execution_admission_attempt_accounting');
+  if(!stamp(admission.checked_at))errors.push('image_execution_admission_clock');
+  if(require_authorized&&admission.generation_authorized!==true)errors.push('image_execution_admission_not_authorized');
+  if(admission.generation_authorized===true&&admission.strategy_interrupt_required!==false)errors.push('image_execution_admission_strategy_interrupt_flag');
+  if(!Array.isArray(admission.failure_reasons))errors.push('image_execution_admission_failure_reasons');
+  return [...new Set(errors)];
+}
+
+export function imageExecutionAdmissionDecision(admission,execution,context={}){
+  const errors=validateImageExecutionAdmission(admission,execution,{...context,require_authorized:true});
+  return errors.length
+    ?{authorized:false,status:'IMAGE_EXECUTION_ADMISSION_BLOCKED',attempts_allocated:0,attempts_consumed:0,
+      accepted_locked:false,strategy_interrupt_required:true,errors}
+    :{authorized:true,status:'IMAGE_EXECUTION_ADMISSION_PASS',attempts_allocated:0,attempts_consumed:0,
+      accepted_locked:false,strategy_interrupt_required:false,errors:[]};
+}
 
 /** Request scope is observable; hidden platform context isolation is not asserted. */
 export function buildImageGenerationExecution(packet){
@@ -166,6 +250,14 @@ async function executeLegacyImageRequest(execution,{adapter,eventSink,executionM
 export async function executeImageRequest(execution, options={}) {
   if (options.executionProfile !== 'reliable-edition-v1') return executeLegacyImageRequest(execution, options);
   if (!options.operationStore) return {status:'CAPABILITY_BLOCKED_DURABLE_STORE_REQUIRED',accepted_locked:false,attempts_allocated:0};
+  if (!options.resume) {
+    const admission=imageExecutionAdmissionDecision(options.admission,execution,{
+      execution_id:options.executionId||options.execution_id||null,
+      task_id:options.taskId||options.task_id||null,
+      request_key:options.requestKey||options.request_key||null
+    });
+    if(!admission.authorized)return admission;
+  }
   if (options.resume) {
     fail(validateImageExecutionReceipt(options.resume,execution,{allowFixture:options.evidenceType==='fixture'}));
     if(options.resume.execution_mode!==options.executionMode||options.resume.evidence_type!==(options.evidenceType||'live'))throw Error('image_resume_mode_mismatch');
