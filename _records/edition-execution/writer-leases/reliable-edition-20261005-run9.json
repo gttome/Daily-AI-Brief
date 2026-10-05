@@ -1,12 +1,12 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "owner_id": "github-actions-37265202291-3",
-  "generation": 50,
-  "acquired_at": "2026-10-05T05:56:03.207Z",
-  "last_heartbeat_at": "2026-10-05T05:56:07.499Z",
-  "expires_at": "2026-10-05T05:56:07.499Z",
-  "state": "RELEASED",
-  "released_at": "2026-10-05T05:56:07.499Z",
-  "release_reason": "SAFE_RECOVERY_BOUNDARY"
+  "owner_id": "watchdog-D:task-19",
+  "generation": 51,
+  "acquired_at": "2026-10-05T05:56:08.000Z",
+  "last_heartbeat_at": "2026-10-05T05:56:08.000Z",
+  "expires_at": "2026-10-05T06:04:08.000Z",
+  "state": "ACTIVE",
+  "released_at": null,
+  "release_reason": null
 }
