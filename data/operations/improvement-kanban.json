@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-05T09:03:46.745Z",
+  "observed_at": "2026-10-05T16:30:00.000Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -840,11 +840,11 @@
     },
     {
       "id": "DAB-KB-045",
-      "lane": "backlog",
+      "lane": "wip",
       "priority": "P0",
       "category": "Image Execution",
       "title": "Enforce pre-generation image execution admission",
-      "summary": "Every native image attempt must first prove a dedicated story-only generator context and a runtime-readable exact-byte persistence path.",
+      "summary": "Implemented on the October 6 pre-run hardening branch: every native image attempt must first pass image-execution-admission-v1 proving story-only context, exact sealed instruction, and a runtime-readable exact-byte persistence route; protected CI/merge and live schedule proof remain before Done.",
       "acceptance": [
         "image-execution-admission-v1 is persisted before attempt 1.",
         "Mixed orchestration context is rejected before generation.",
@@ -854,7 +854,104 @@
       "sources": [
         "DAB-OPS-20261005-002",
         "DAB-OPS-E-000115",
-        "DAB-OPS-E-000116"
+        "DAB-OPS-E-000116",
+        "_generator/lib/image-execution.mjs",
+        "_generator/test/image-execution-admission.test.mjs",
+        "docs/operations/unattended-image-host.json"
+      ]
+    },
+    {
+      "id": "DAB-KB-046",
+      "lane": "wip",
+      "priority": "P0",
+      "category": "Control Plane",
+      "title": "Compact Watchdog health and suppress unchanged commits",
+      "summary": "Implement chatgpt-watchdog-health-v1 as the first/normal Watchdog read, compact A-F prompts, bounded expansion, and timestamp-independent source_digest so unchanged healthy observations create zero Git commits.",
+      "acceptance": [
+        "All six Watchdogs first-read only the compact packet.",
+        "Healthy/terminal/no-active/legitimate-idle checks exit without broad repository reads.",
+        "Stale/actionable state expands only to narrow evidence.",
+        "Repeated materially unchanged health produces zero commits.",
+        "All six schedules use equivalent logic and are enabled."
+      ],
+      "sources": [
+        "docs/operations/CHATGPT-WATCHDOG-RING.md",
+        "_generator/lib/watchdog-health.mjs",
+        ".github/workflows/run-supervisor-watchdog.yml"
+      ]
+    },
+    {
+      "id": "DAB-KB-047",
+      "lane": "wip",
+      "priority": "P0",
+      "category": "Efficiency",
+      "title": "Enforce one semantic pass, exact preflight and public-safe budget",
+      "summary": "Implement one-semantic-editorial-pass-v1, exact-publication-preflight-v1 and daily-brief-public-safe-budget-v1 so semantic work is reused, deterministic defects are caught before PR creation, and process proxies are measurable without publishing private account usage.",
+      "acceptance": [
+        "Normal semantic editorial pass count is one and post-editorial semantic validator count is zero.",
+        "Known October 5 Task 23 deterministic failure classes fail before PR creation.",
+        "Exact preflight uses zero model calls.",
+        "Per-run public-safe budget exists and rejects private account usage fields."
+      ],
+      "sources": [
+        "_generator/lib/semantic-editorial-pass.mjs",
+        "_generator/lib/exact-publication-preflight.mjs",
+        "_generator/lib/public-safe-budget.mjs",
+        ".github/workflows/post-editorial-kernel.yml"
+      ]
+    },
+    {
+      "id": "DAB-KB-048",
+      "lane": "backlog",
+      "priority": "P1",
+      "category": "Writer Reliability",
+      "title": "Implement atomic task-boundary writer",
+      "summary": "Commit each logical task boundary atomically so request completion, result, task transition, pointer advance, lease release, compact health and budget update cannot leave a half-completed or dirty-tree state.",
+      "acceptance": [
+        "Crash-before-write leaves prior state authoritative.",
+        "Crash-after-write leaves new state fully authoritative.",
+        "No dirty-tree rebase failure from Supervisor-owned partial state.",
+        "One-writer fencing remains intact."
+      ],
+      "sources": [
+        "October 5 usage-efficiency assessment",
+        "Daily AI Brief October 6 pre-run hardening handoff"
+      ]
+    },
+    {
+      "id": "DAB-KB-049",
+      "lane": "backlog",
+      "priority": "P1",
+      "category": "Validation",
+      "title": "Bind execution to validation contract versions",
+      "summary": "Seal runtime, validation, reader-projection, image-validation and migration versions with each production candidate so completed artifacts are never silently reinterpreted under an incompatible later validator.",
+      "acceptance": [
+        "Historical candidate with matching bound validator passes.",
+        "Incompatible newer validator without migration fails deterministically.",
+        "Approved migration preserves completed content/images.",
+        "Current editions use current strict contracts."
+      ],
+      "sources": [
+        "October 5 Task 23 repairs",
+        "Daily AI Brief October 6 pre-run hardening handoff"
+      ]
+    },
+    {
+      "id": "DAB-KB-050",
+      "lane": "backlog",
+      "priority": "P1",
+      "category": "Architecture",
+      "title": "Separate hardening queue from production execution",
+      "summary": "Keep permanent system development in bounded hardening branches/PRs and leave production run branches dominated by edition content/evidence plus execution evidence required for that run.",
+      "acceptance": [
+        "Clean production run contains no unrelated hardening diffs.",
+        "Publication PR is dominated by edition delta.",
+        "Systemic discoveries create durable improvement cards independent of the run.",
+        "Protected Repair Autonomy remains available only for blocking minimal production repair."
+      ],
+      "sources": [
+        "October 5 usage-efficiency assessment",
+        "Daily AI Brief October 6 pre-run hardening handoff"
       ]
     }
   ],
