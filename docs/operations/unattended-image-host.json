@@ -38,7 +38,8 @@
     "Exact queued request identity plus current task-specific writer fencing prevents duplicate image generation when slots overlap.",
     "The prior F-specific binding is retained only as historical compatibility evidence.",
     "October 4 field evidence proved image liveness but also exposed operational-context contamination; READY is not a claim of story-context isolation or usage-optimal polling.",
-    "For October 6 and later production image work, route readiness alone is insufficient: every Tasks 11-16 invocation must persist a PASS image-execution-admission-v1 before attempt 1; a failed admission consumes zero image attempts."
+    "For October 6 and later production image work, route readiness alone is insufficient: every Tasks 11-16 invocation must persist a PASS image-execution-admission-v1 before attempt 1; a failed admission consumes zero image attempts.",
+    "The pre-generation executionAdmission is separate from the existing durable host-handoff admission proof; both must pass and neither may overwrite the other."
   ],
   "watchdog_ring": {
     "schema_version": "chatgpt-watchdog-ring-binding-v1",
@@ -180,6 +181,9 @@
     "owner_intervention_required": false,
     "admission_failure_consumes_attempt": false,
     "admission_failure_action": "STRATEGY_INTERRUPT_BEFORE_ATTEMPT_1",
-    "accepted_locked_regeneration_prohibited": true
+    "accepted_locked_regeneration_prohibited": true,
+    "option_name": "executionAdmission",
+    "host_handoff_proof_remains_separate": true,
+    "host_handoff_proof_option_name": "admission"
   }
 }
