@@ -1,0 +1,29 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "ee18a220db6a99cf1ce93cfb895ca2f58ab6e45b261a38620ae36a03eb456930",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "10",
+  "request_writer_generation": 24,
+  "writer_generation": 25,
+  "status": "passed",
+  "consumed_at": "2026-10-05T02:45:31.000Z",
+  "completed_at": "2026-10-05T02:47:06.473Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "spec_artifact": "_records/image-specs/2026-10-05-run9.json",
+    "context_directory": "_records/image-context/2026-10-05",
+    "exact_spec_count": 6,
+    "exact_context_count": 6,
+    "distinct_compositions": true,
+    "single_story_contexts": true,
+    "visible_text_guard": true,
+    "no_svg_fallback": true,
+    "basic_fallback_prohibited": true,
+    "git_readback_verified": true,
+    "exact_request_reused": true,
+    "completed_upstream_rework": false
+  },
+  "result": "PASS"
+}
