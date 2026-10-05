@@ -281,7 +281,9 @@ export async function executeImageBatch(executions,options={}){
   if(new Set(executions.map(e=>e.sealed_story_packet.story_id)).size!==6||new Set(executions.map(e=>e.sealed_story_packet.candidate_id)).size!==6)throw Error('unique_image_story_identity_required');
   const results=[],hashes=new Set();
   for(const execution of executions){
-    const result=await executeImageRequest(execution,{...options,resume:options.resumeByCandidate?.[execution.sealed_story_packet.candidate_id]||null});
+    const candidateId=execution.sealed_story_packet.candidate_id;
+    const admission=options.admissionByCandidate?.[candidateId]||options.admission||null;
+    const result=await executeImageRequest(execution,{...options,admission,resume:options.resumeByCandidate?.[candidateId]||null});
     results.push(result);
     if(!['accepted_locked','fixture_pass'].includes(result.status))return {status:result.status,results,unattended_image_stage_evidence_complete:false};
     if(hashes.has(result.persistence.sha256))return {status:'DUPLICATE_STORY_IMAGE_REJECTED',results,unattended_image_stage_evidence_complete:false};
