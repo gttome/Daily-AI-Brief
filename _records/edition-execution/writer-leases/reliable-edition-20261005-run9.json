@@ -1,16 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "owner_id": "chatgpt-watchdog-F-task13",
-  "generation": 33,
-  "task_id": "13",
-  "capability": "native_chatgpt",
-  "request_key": "be8022cbf995b36e236d0140a1fe25fecc062b0dca0c17005099993d38650d9a",
-  "acquired_at": "2026-10-05T04:09:31.000Z",
-  "last_heartbeat_at": "2026-10-05T04:12:44.000Z",
-  "expires_at": "2026-10-05T04:12:44.000Z",
-  "state": "RELEASED",
-  "released": true,
-  "released_at": "2026-10-05T04:12:44.000Z",
-  "release_reason": "TASK_13_DONE_HANDOFF_TO_SUPERVISOR"
+  "owner_id": "github-actions-37262635432-1",
+  "generation": 34,
+  "acquired_at": "2026-10-05T04:14:53.411Z",
+  "last_heartbeat_at": "2026-10-05T04:14:53.411Z",
+  "expires_at": "2026-10-05T04:19:53.411Z"
 }
