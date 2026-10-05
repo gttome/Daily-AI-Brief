@@ -1,0 +1,30 @@
+{
+  "schema_version": "daily-run-bootstrap-receipt-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "run_number": 9,
+  "brief_date": "2026-10-05",
+  "observed_at": "2026-10-05T00:00:23.000Z",
+  "timezone": "America/Chicago",
+  "protected_main_sha": "eba25216531f777e167a7f7025995de0c0931059",
+  "startup_mode": "SCHEDULED_CONTROLLER",
+  "mandatory_bootstrap_complete": false,
+  "task_00_status": "ACTIVE",
+  "reason": "The protected 19:00 America/Chicago controller allocated exactly one next-day production execution from current protected main after proving the prior execution terminal and the target edition unallocated and not PUBLIC_CLOSED.",
+  "prior_execution": {
+    "execution_id": "reliable-edition-20261004-run8",
+    "terminal": true,
+    "active": false,
+    "current_task": "29",
+    "current_task_state": "Done"
+  },
+  "cost_boundary": {
+    "chatgpt_work": false,
+    "codex": false,
+    "paid_apis": false,
+    "billable_overage": false,
+    "alternate_accounts": false,
+    "new_credentials": false
+  }
+}
