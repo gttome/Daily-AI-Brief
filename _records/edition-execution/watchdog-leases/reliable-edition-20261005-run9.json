@@ -4,9 +4,11 @@
   "incident_id": "wd-reliable-edition-20261005-run9-task23-reader-projection-contract-recovery",
   "owner_slot": "F",
   "generation": 28,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-05T08:46:00.000Z",
-  "last_heartbeat_at": "2026-10-05T08:46:00.000Z",
-  "expires_at": "2026-10-05T09:01:00.000Z",
-  "action_key": "wd-reliable-edition-20261005-run9-task23-reader-projection-contract-recovery:merge-and-projection:slot-f:g28"
+  "last_heartbeat_at": "2026-10-05T08:49:30.000Z",
+  "expires_at": "2026-10-05T08:49:30.000Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task23-reader-projection-contract-recovery:merge-and-projection:slot-f:g28",
+  "released_at": "2026-10-05T08:49:30.000Z",
+  "release_reason": "TASK_23_EXACT_HEAD_PUBLICATION_CI_PENDING"
 }

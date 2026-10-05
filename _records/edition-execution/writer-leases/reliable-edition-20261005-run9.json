@@ -4,9 +4,11 @@
   "owner_id": "watchdog-F-task23",
   "generation": 65,
   "acquired_at": "2026-10-05T08:46:15.000Z",
-  "last_heartbeat_at": "2026-10-05T08:46:15.000Z",
-  "expires_at": "2026-10-05T08:54:15.000Z",
-  "state": "ACTIVE",
-  "released": false,
-  "scope": "TASK_23_MERGE_REPAIR_AND_READER_PROJECTION"
+  "last_heartbeat_at": "2026-10-05T08:49:30.000Z",
+  "expires_at": "2026-10-05T08:49:30.000Z",
+  "state": "RELEASED",
+  "released": true,
+  "scope": "TASK_23_MERGE_REPAIR_AND_READER_PROJECTION",
+  "released_at": "2026-10-05T08:49:30.000Z",
+  "release_reason": "TASK_23_EXACT_HEAD_PUBLICATION_CI_PENDING"
 }
