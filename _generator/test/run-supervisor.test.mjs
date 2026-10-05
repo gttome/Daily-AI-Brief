@@ -669,3 +669,16 @@ test('Supervisor delegates ordinary ChatGPT requests immediately and never rebas
     assert.match(prior,/git -C run (?:add|commit)/,'every rebase path must follow reconciliation of Supervisor-owned state');
   }
 });
+
+
+test('Supervisor releases its writer immediately after queuing a native image request',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.ok(y.includes('scheduled_image_handoff_boundary=false'));
+  assert.ok(y.includes('native_image_state='));
+  assert.ok(y.includes('QUEUED_FOR_SCHEDULED_CONSUMER'));
+  assert.ok(y.includes('TASK_${request_task}_QUEUED_FOR_SCHEDULED_CONSUMER_HANDOFF_TO_WATCHDOG'));
+  assert.ok(y.includes('Release Task ${request_task} writer to scheduled image consumer'));
+  const queue=y.indexOf('native_image_state=');
+  const release=y.indexOf('if [ "$scheduled_image_handoff_boundary" = "true" ]');
+  assert.ok(queue>=0 && release>queue);
+});
