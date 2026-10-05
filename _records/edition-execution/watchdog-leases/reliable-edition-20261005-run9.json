@@ -6,7 +6,7 @@
   "generation": 6,
   "state": "ACTIVE",
   "acquired_at": "2026-10-05T02:39:53.823Z",
-  "last_heartbeat_at": "2026-10-05T02:51:53.273Z",
-  "expires_at": "2026-10-05T03:06:53.273Z",
+  "last_heartbeat_at": "2026-10-05T02:59:00.000Z",
+  "expires_at": "2026-10-05T03:14:00.000Z",
   "action_key": "wd-reliable-edition-20261005-run9-task11-native-handoff-writer-retained-dd4455ae:protected-repair-pr463:slot-f:g6"
 }
