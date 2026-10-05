@@ -4,6 +4,10 @@
   "owner_id": "chatgpt-watchdog-F-task09",
   "generation": 23,
   "acquired_at": "2026-10-05T02:40:27.780Z",
-  "last_heartbeat_at": "2026-10-05T02:40:27.780Z",
-  "expires_at": "2026-10-05T02:45:27.780Z"
+  "last_heartbeat_at": "2026-10-05T02:43:22.016Z",
+  "expires_at": "2026-10-05T02:43:22.016Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T02:43:22.016Z",
+  "release_reason": "TASK_09_DONE_HANDOFF_TO_SUPERVISOR"
 }
