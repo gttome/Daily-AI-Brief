@@ -1,0 +1,36 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "11",
+  "request_writer_generation": 27,
+  "writer_generation": 28,
+  "status": "blocked_external",
+  "completed_at": "2026-10-05T03:10:00.000Z",
+  "task_outcome": "Blocked",
+  "request_consumed": true,
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "accepted_locked": false,
+  "evidence": {
+    "attempt_receipt": "_records/image-attempts/2026-10-05-run9/m02-repair-epoch-1-attempt-1.json",
+    "native_generation_id": "3189246e-da8c-4294-af4a-c54cd2f97849",
+    "native_sha256": "be41247b0a905edce85bd46f42c98a824438809b9390ffd1ac606b3b5fdd3ac2",
+    "native_bytes": 1228871,
+    "native_dimensions": "1536x1024",
+    "story_context_contract": "FAIL_CONTEXT_CONTAMINATION",
+    "exact_git_persistence": "BLOCKED_RUNTIME_BINARY_BRIDGE",
+    "saved_git_visual_review": "UNAVAILABLE_BECAUSE_EXACT_BYTES_COULD_NOT_BE_TRANSFERRED",
+    "same_request_regeneration_prohibited": true,
+    "strategy_interrupt_required": true
+  },
+  "blocker": "The scheduled native-image tool did not honor the sealed story-only generator context and produced a GitHub/watchdog-health screenshot. The runtime then exposed the returned PNG only as a local conversation file, while the connected GitHub write surface has no approved binary bridge from that file into create_blob. A second generation would violate the one bounded post-repair attempt contract.",
+  "external_nonactionability_evidence": [
+    "Native generation id 3189246e-da8c-4294-af4a-c54cd2f97849 produced orchestration/repository UI rather than the sealed story subject.",
+    "Exact returned PNG hash be41247b0a905edce85bd46f42c98a824438809b9390ffd1ac606b3b5fdd3ac2 and 1,228,871 bytes are preserved in the current runtime but cannot be supplied to the GitHub create_blob connector without an unsupported byte bridge.",
+    "Owner upload, browser automation, paid API, new credentials and same-request regeneration are all prohibited by the active contract."
+  ],
+  "next_action": "Do not regenerate request b2a4c8d7. Strategy Interrupt must establish an execution path that provides a genuinely isolated native-image generator context plus an approved direct exact-byte Git persistence bridge before Task 11 can resume."
+}
