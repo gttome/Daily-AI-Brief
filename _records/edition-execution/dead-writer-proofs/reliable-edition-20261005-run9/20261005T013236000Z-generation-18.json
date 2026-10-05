@@ -3,7 +3,7 @@
   "execution_id": "reliable-edition-20261005-run9",
   "edition_id": "dab-edition-2026-10-05",
   "task_id": "08",
-  "proved_at": "2026-10-05T01:32:36.000Z",
+  "proved_at": "2026-10-05T01:46:54.000Z",
   "workflow_run_id": 37249024711,
   "workflow_job_id": 111572647778,
   "workflow_attempt": 1,
@@ -15,5 +15,5 @@
   "child_or_subworker_live": false,
   "repository_consumer_started": false,
   "substantive_write_after_terminal": false,
-  "reason": "Supervisor completed with failure after queuing the exact Task 08 research request. No Task 08 result or transition existed, no child worker remained live, and no substantive Task 08 write occurred after terminal time."
+  "reason": "Supervisor completed with failure after queuing the exact Task 08 research request. Watchdog E subsequently revalidated that generation 18 was expired, Task 08 remained queued with no result, and no live child or post-terminal substantive Task 08 write existed."
 }
