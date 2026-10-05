@@ -1,15 +1,12 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "incident_id": "wd-reliable-edition-20261005-run9-task22-publication-pr-unclaimed",
-  "owner_slot": "F",
-  "generation": 23,
-  "state": "RELEASED",
-  "acquired_at": "2026-10-05T07:31:05.942Z",
-  "last_heartbeat_at": "2026-10-05T07:46:36.611Z",
-  "expires_at": "2026-10-05T07:46:36.611Z",
-  "released_at": "2026-10-05T07:46:36.611Z",
-  "release_reason": "RECOVERY_VERIFIED_PROGRESSING_TASK22_DONE",
-  "action_key": "wd-reliable-edition-20261005-run9-task22-publication-pr-unclaimed:consume-exact-request:slot-f:g23",
-  "request_key": "b282b6279f9a9e2af03a32e621c507cd181fd9dddfd9887a6c200d64f61d7ee6"
+  "incident_id": "wd-reliable-edition-20261005-run9-task23-publication-manifest-contract-incompatibility",
+  "owner_slot": "E",
+  "generation": 24,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-05T08:01:59.374Z",
+  "last_heartbeat_at": "2026-10-05T08:01:59.374Z",
+  "expires_at": "2026-10-05T08:16:59.374Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task23-publication-manifest-contract-incompatibility:protected-repair:slot-e:g24"
 }
