@@ -14,5 +14,8 @@
   "created_at": "2026-10-05T00:11:26.763Z",
   "writer_generation_is_provenance": false,
   "authority_refresh_required_at_invocation": false,
-  "status": "queued"
+  "status": "completed_pass",
+  "consumed_at": "2026-10-05T00:14:47.952Z",
+  "completed_at": "2026-10-05T00:15:24.140Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/01-f12c5e827ac127ff4e046f8d11c3f6d6d346a60ffeab5a8f1825355fdd0dc96c.json"
 }
