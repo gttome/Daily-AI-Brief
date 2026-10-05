@@ -3,7 +3,11 @@
   "execution_id": "reliable-edition-20261005-run9",
   "owner_id": "chatgpt-watchdog-F-task10",
   "generation": 25,
-  "acquired_at": "2026-10-05T02:45:38.797Z",
-  "last_heartbeat_at": "2026-10-05T02:45:38.797Z",
-  "expires_at": "2026-10-05T02:50:38.797Z"
+  "acquired_at": "2026-10-05T02:45:31.000Z",
+  "last_heartbeat_at": "2026-10-05T02:47:38.963Z",
+  "expires_at": "2026-10-05T02:47:38.963Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T02:47:38.963Z",
+  "release_reason": "TASK_10_DONE_HANDOFF_TO_SUPERVISOR"
 }
