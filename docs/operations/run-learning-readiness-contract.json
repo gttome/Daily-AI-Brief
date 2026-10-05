@@ -129,7 +129,15 @@
       "F"
     ],
     "chatgpt_watchdog_native_image_normal_pickup_minutes": 10,
-    "chatgpt_watchdog_native_image_waits_for_stale": false
+    "chatgpt_watchdog_native_image_waits_for_stale": false,
+    "ordinary_repository_and_research_requests": "Supervisor persists exact request then releases writer immediately to the six-slot unattended ChatGPT consumer pool; startup recognizes existing delegation and does not reacquire merely to rediscover the request.",
+    "ordinary_watchdog_writer_lease_minutes": 8,
+    "writer_lease_or_heartbeat_alone_is_substantive_progress": false,
+    "watchdog_writer_progress_grace_minutes": 5,
+    "same_invocation_repository_research_draining": true,
+    "task_17_dedicated_deterministic_consumer_preserved": true,
+    "owner_intervention_required_for_internal_actionable_recovery": false,
+    "clean_rebase_invariant": "Every Supervisor commit/rebase path must commit or reconcile Supervisor-owned lease state first; rebase over a Supervisor-created dirty tree is prohibited."
   },
   "task_recovery_contracts": {
     "path": "docs/operations/task-recovery-contracts.json",
