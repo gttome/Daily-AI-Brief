@@ -1,0 +1,52 @@
+{
+  "worth_watching": {
+    "general": {
+      "status": "included",
+      "title": "Microsoft Copilot Just Got a Massive Upgrade",
+      "channel": "Kevin Stratvert",
+      "upload_date": "2026-09-29",
+      "runtime_seconds": 564,
+      "url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
+      "verification_note": "Run 9 Task 06 locked and verified this provider identity and runtime.",
+      "connection": "Practical knowledge-worker walkthrough complementing the edition's connected-work coverage."
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Flight Intelligence: The Power of Work IQ",
+      "channel": "Microsoft Developer",
+      "upload_date": "2026-09-18",
+      "runtime_seconds": 874,
+      "url": "https://www.youtube.com/watch?v=VpSCu7s4wD4",
+      "verification_note": "Run 9 Task 06 locked and verified this provider identity and runtime.",
+      "connection": "Business-context grounding and reusable workflow knowledge relevant to Agent Skills."
+    }
+  },
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-10-05-1",
+      "title": "An Argument Against AI Doom",
+      "show": "Galaxy Brain",
+      "host": "Charlie Warzel",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 3376,
+      "url": "https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/",
+      "permanent_url": "/podcasts/2026-10-05/galaxy-brain-2026-10-02-argument-against-ai-doom/",
+      "freshness_exception_reason": "Locked Run 9 source-diverse podcast selection preserved after bounded verification; no reselection is authorized by this focused projection repair."
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-10-05-2",
+      "title": "DX Today AI Daily Brief - Wednesday, September 30, 2026",
+      "show": "DX Today",
+      "host": "Rick Spair",
+      "publication_date": "2026-09-30",
+      "runtime_seconds": 666,
+      "url": "https://www.podscan.fm/podcasts/dx-today-no-hype-podcast-amp-news-about-ai-amp-dx/episodes/dx-today-ai-daily-brief-wednesday-september-30-2026",
+      "permanent_url": "/podcasts/2026-10-05/dx-today-2026-09-30-ai-daily-brief/",
+      "freshness_exception_reason": "Locked Run 9 source-diverse podcast selection preserved after bounded verification; no reselection is authorized by this focused projection repair."
+    }
+  ]
+}
