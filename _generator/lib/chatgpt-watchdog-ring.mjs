@@ -5,6 +5,8 @@ export const WATCHDOG_RING_VERSION='chatgpt-watchdog-ring-v1';
 export const WATCHDOG_RECOVERY_LEASE_VERSION='chatgpt-watchdog-recovery-lease-v1';
 export const WATCHDOG_EVENT_VERSION='chatgpt-watchdog-event-v1';
 export const DEFAULT_WATCHDOG_LEASE_MS=15*60*1000;
+export const WATCHDOG_ORDINARY_WRITER_LEASE_MS=8*60*1000;
+export const WATCHDOG_WRITER_PROGRESS_GRACE_MS=5*60*1000;
 export const WATCHDOG_SLOTS=Object.freeze({A:3,B:13,C:23,D:33,E:43,F:53});
 export const WATCHDOG_NATIVE_IMAGE_TASKS=Object.freeze(['11','12','13','14','15','16']);
 export const WATCHDOG_RELEASE_REASONS=Object.freeze(['RECOVERY_VERIFIED_PROGRESSING','RECOVERY_NO_LONGER_NEEDED','WAITING_ON_PROTECTED_EXTERNAL_EXECUTOR','BLOCKED_EXTERNAL','TERMINAL_EXECUTION','SAFE_BOUNDARY_REACHED']);
@@ -89,14 +91,54 @@ export function watchdogNativeImageRequestEligible(request,{execution_id}={}){
     ['queued','pending','queued_for_scheduled_consumer'].includes(state)
   );
 }
-export function watchdogDecision({active_pointer=null,classification=null,recovery_lease=null,owner_slot,now=new Date().toISOString(),substantive_worker_active=false,protected_executor_active=false,task_writer_active=false,pending_actionable_request=false,authoritative_request=null,terminal_pointer_cleanup_authorized=false}={}){
+
+export function watchdogQueuedRequestEligible(request,{execution_id}={}){
+  if(!execution_id||request?.execution_id!==execution_id)return false;
+  const task=tid(request?.task_id);
+  const capability=String(request?.capability||'');
+  const state=String(request?.status||request?.state||'').toLowerCase();
+  if(!['queued','pending','queued_for_scheduled_consumer'].includes(state))return false;
+  if(capability==='native_chatgpt')return WATCHDOG_NATIVE_IMAGE_TASKS.includes(task);
+  if(capability==='repository'&&task==='17')return false;
+  return capability==='repository'||capability==='research_chatgpt';
+}
+
+export function watchdogOrdinaryWriterPolicy({lease=null,capability=null,substantive_progress_at=null,now=new Date().toISOString(),progress_grace_ms=WATCHDOG_WRITER_PROGRESS_GRACE_MS}={}){
+  if(!stamp(now)||!Number.isInteger(progress_grace_ms)||progress_grace_ms<1)throw Error('watchdog_writer_progress_clock_required');
+  if(!['repository','research_chatgpt'].includes(String(capability||'')))
+    return {applicable:false,ordinary_writer_lease_ms:null,writer_active:false,substantive_progress:false,recovery_required:false,fence_takeover_safe:false};
+  const nowMs=Date.parse(now);
+  const released=lease?.state==='RELEASED'||Boolean(lease?.released_at);
+  const expiresMs=stamp(lease?.expires_at)?Date.parse(lease.expires_at):0;
+  const writerActive=Boolean(lease&&!released&&expiresMs>nowMs);
+  const progressAt=stamp(substantive_progress_at)?Date.parse(substantive_progress_at):0;
+  const substantive=Boolean(progressAt&&nowMs-progressAt<progress_grace_ms);
+  return {
+    applicable:true,
+    ordinary_writer_lease_ms:WATCHDOG_ORDINARY_WRITER_LEASE_MS,
+    writer_active:writerActive,
+    substantive_progress:substantive,
+    recovery_required:writerActive&&!substantive,
+    fence_takeover_safe:!writerActive,
+    expires_at:stamp(lease?.expires_at)?lease.expires_at:null,
+    reason:writerActive?(substantive?'writer_has_recent_substantive_progress':'writer_lease_without_substantive_progress'):'writer_fence_available'
+  };
+}
+export function watchdogDecision({active_pointer=null,classification=null,recovery_lease=null,owner_slot,now=new Date().toISOString(),substantive_worker_active=false,protected_executor_active=false,task_writer_active=false,task_writer_substantive_progress=false,task_writer_fence_takeover_safe=false,pending_actionable_request=false,authoritative_request=null,terminal_pointer_cleanup_authorized=false}={}){
   if(!validSlot(owner_slot)||!stamp(now))throw Error('watchdog_decision_context_required');
   if(!active_pointer?.active||active_pointer?.terminal===true)return {action:'NO_ACTION',reason:'no_active_nonterminal_production'};
   if(classification?.state==='TERMINAL')return terminal_pointer_cleanup_authorized?{action:'RECONCILE_TERMINAL_POINTER_ONLY',reason:'terminal_cleanup_explicitly_authorized'}:{action:'NO_ACTION',reason:'terminal_execution_production_immutable'};
   if(watchdogLeaseActive(recovery_lease,{execution_id:active_pointer.execution_id,now})&&recovery_lease.owner_slot!==owner_slot)return {action:'NO_ACTION',reason:'another_watchdog_recovery_owner_active'};
   if(substantive_worker_active||protected_executor_active)return {action:'NO_ACTION',reason:'real_executor_progressing'};
-  if(task_writer_active)return {action:'NO_ACTION',reason:'current_task_writer_owns_request'};
-  if(watchdogNativeImageRequestEligible(authoritative_request,{execution_id:active_pointer.execution_id}))return {action:'CONSUME_NATIVE_IMAGE_REQUEST',reason:'unclaimed_native_image_request_ring_consumer',request_key:authoritative_request.request_key||null,task_id:tid(authoritative_request.task_id),owner_slot};
+  if(task_writer_active&&task_writer_substantive_progress)return {action:'NO_ACTION',reason:'current_task_writer_substantively_progressing'};
+  if(task_writer_active&&!task_writer_substantive_progress&&!task_writer_fence_takeover_safe)
+    return {action:'WAIT_FOR_WRITER_FENCE',reason:'writer_lease_without_substantive_progress',recovery_required:true,owner_slot,expires_at:null};
+  if(task_writer_active&&!task_writer_substantive_progress&&task_writer_fence_takeover_safe)
+    return {action:'RECOVER',reason:'writer_lease_without_substantive_progress_fence_safe',recovery_required:true,owner_slot};
+  if(watchdogQueuedRequestEligible(authoritative_request,{execution_id:active_pointer.execution_id})){
+    const native=authoritative_request?.capability==='native_chatgpt';
+    return {action:native?'CONSUME_NATIVE_IMAGE_REQUEST':'CONSUME_QUEUED_REQUEST',reason:native?'unclaimed_native_image_request_ring_consumer':'unclaimed_ordinary_request_ring_consumer',request_key:authoritative_request.request_key||null,task_id:tid(authoritative_request.task_id),capability:authoritative_request.capability,owner_slot};
+  }
   if(classification?.state==='HEALTHY_ACTIVE')return {action:'NO_ACTION',reason:'healthy_active'};
   if(classification?.state==='READY_IDLE'&&!pending_actionable_request)return {action:'NO_ACTION',reason:'legitimate_ready_idle'};
   if(classification?.state==='BLOCKED_EXTERNAL')return {action:'WAIT_EXTERNAL',reason:'external_block_verified_no_bypass'};
