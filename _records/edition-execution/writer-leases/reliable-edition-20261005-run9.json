@@ -1,13 +1,12 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "owner_id": "watchdog-E-task23",
-  "generation": 61,
-  "acquired_at": "2026-10-05T08:01:59.374Z",
-  "last_heartbeat_at": "2026-10-05T08:08:39.049Z",
-  "expires_at": "2026-10-05T08:08:39.049Z",
-  "state": "RELEASED",
-  "released": true,
-  "released_at": "2026-10-05T08:08:39.049Z",
-  "release_reason": "SAFE_BOUNDARY_REACHED"
+  "owner_id": "watchdog-F-task23",
+  "generation": 62,
+  "acquired_at": "2026-10-05T08:12:25.579Z",
+  "last_heartbeat_at": "2026-10-05T08:12:25.579Z",
+  "expires_at": "2026-10-05T08:20:25.579Z",
+  "state": "ACTIVE",
+  "released": false,
+  "scope": "TASK_23_EXACT_HEAD_VALIDATION_REPAIR"
 }
