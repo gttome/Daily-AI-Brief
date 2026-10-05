@@ -95,8 +95,8 @@
         }
       },
       "trial_story_ids": [],
-      "research_score": 75,
-      "verification_observed_at": "2026-10-05T02:33:36.000Z"
+      "verification_observed_at": "2026-10-05T02:33:36.000Z",
+      "research_score": 75
     },
     {
       "topic_id": "dab-topic-repairable-generative-design",
@@ -1422,8 +1422,8 @@
         }
       },
       "trial_story_ids": [],
-      "research_score": 71,
-      "verification_observed_at": "2026-10-04T03:38:35.000Z"
+      "verification_observed_at": "2026-10-04T03:38:35.000Z",
+      "research_score": 71
     },
     {
       "topic_id": "dab-topic-model-lifecycle-governance",
@@ -1763,7 +1763,7 @@
       },
       "trial_story_ids": [],
       "archive_reason": "Not retained as a distinct active mechanism after the October 1 independent sweep.",
-      "research_score": 70
+      "research_score": 77
     },
     {
       "topic_id": "dab-topic-trusted-enterprise-context",
