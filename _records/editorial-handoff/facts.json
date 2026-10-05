@@ -1,122 +1,92 @@
 {
   "m02": {
-    "event_date": "2026-09-28",
+    "event_date": "2026-10-03",
     "source": {
-      "title": "Add Runtime Controls to AI Agents with NVIDIA OpenShell",
-      "organization": "NVIDIA",
-      "url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
-      "publication_date": "2026-09-28",
+      "title": "The Agent Said It Was Done. The Database Disagreed.",
+      "organization": "Hugging Face",
+      "url": "https://huggingface.co/blog/microsoft/thinkingbox",
+      "publication_date": "2026-10-03",
       "evidence_type": "official_primary_source",
       "availability_status": "published"
     },
-    "freshness": {
-      "tier": "normal_fallback"
-    },
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
-    },
-    "selection_rationale": "Implementation-level runtime control architecture with external enforcement and formal policy checks."
+    "source_word_count": 3391,
+    "source_fetched_at": "2026-10-05T00:30:44.730Z",
+    "selection_rationale": "Durable state, side effects and repeatability become evidence that work actually completed.",
+    "focus": "technical_ai_engineering"
   },
-  "m03": {
-    "event_date": "2026-09-29",
+  "m12": {
+    "event_date": "2026-10-02",
     "source": {
-      "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
-      "organization": "Hugging Face / Multiverse Computing",
-      "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
-      "publication_date": "2026-09-29",
+      "title": "Copilot code review: API support and new default effort level",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
+      "publication_date": "2026-10-02",
       "evidence_type": "official_primary_source",
       "availability_status": "published"
     },
-    "freshness": {
-      "tier": "normal_fallback"
-    },
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
-    },
-    "selection_rationale": "Distinct source-aware verification mechanism for multi-tool agent outputs."
-  },
-  "m04": {
-    "event_date": "2026-09-30",
-    "source": {
-      "title": "Helping small businesses put AI to work",
-      "organization": "OpenAI",
-      "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work/",
-      "publication_date": "2026-09-30",
-      "evidence_type": "official_primary_source",
-      "availability_status": "published"
-    },
-    "freshness": {
-      "tier": "normal_fallback_conservative_day_precision"
-    },
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
-    },
-    "selection_rationale": "Practical adoption system combining real workflows, local coaching, follow-up, and outcome assessment."
-  },
-  "m05": {
-    "event_date": "2026-09-30",
-    "source": {
-      "title": "How Anthropic's sales team rebuilt inbound with Claude Managed Agents",
-      "organization": "Anthropic",
-      "url": "https://claude.com/blog/how-anthropics-sales-team-rebuilt-inbound-with-claude-managed-agents",
-      "publication_date": "2026-09-30",
-      "evidence_type": "official_primary_source",
-      "availability_status": "published"
-    },
-    "freshness": {
-      "tier": "normal_fallback_conservative_day_precision"
-    },
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
-    },
-    "selection_rationale": "Production human-agent workflow with measurable publisher-reported results and a clear escalation feedback loop."
+    "source_word_count": 280,
+    "source_fetched_at": "2026-10-05T00:30:44.730Z",
+    "selection_rationale": "Review becomes a programmable pipeline step with explicit depth control.",
+    "focus": "technical_ai_engineering"
   },
   "m07": {
-    "event_date": "2026-09-30",
+    "event_date": "2026-10-01",
     "source": {
-      "title": "Introducing skills in the Gemini app and Workspace, plus what’s next for Gems",
+      "title": "September 2026 Workspace feature drop",
       "organization": "Google Workspace",
-      "url": "https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html",
-      "publication_date": "2026-09-30",
+      "url": "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop",
+      "publication_date": "2026-10-01",
       "evidence_type": "official_primary_source",
       "availability_status": "published"
     },
-    "freshness": {
-      "tier": "normal_fallback_conservative_day_precision"
-    },
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
-    },
-    "selection_rationale": "Current reusable Agent Skills story with maintained instructions and portable operating-knowledge framing."
+    "source_word_count": 936,
+    "source_fetched_at": "2026-10-05T00:30:44.730Z",
+    "selection_rationale": "Connected work surfaces can keep outputs tied to source data.",
+    "focus": "applied_genai_knowledge_workers"
   },
-  "m08": {
-    "event_date": "2026-09-29",
+  "m13": {
+    "event_date": "2026-10-02",
     "source": {
-      "title": "Agents you can coach: how Asana builds human-agent teams with Claude",
-      "organization": "Anthropic / Asana",
-      "url": "https://claude.com/blog/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude",
-      "publication_date": "2026-09-29",
+      "title": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
+      "organization": "Hugging Face",
+      "url": "https://huggingface.co/blog/allenai/astabrief",
+      "publication_date": "2026-10-02",
       "evidence_type": "official_primary_source",
       "availability_status": "published"
     },
-    "freshness": {
-      "tier": "normal_fallback"
+    "source_word_count": 1800,
+    "source_fetched_at": "2026-10-05T00:30:44.730Z",
+    "selection_rationale": "Evidence provenance stays visible while shortening research loops.",
+    "focus": "applied_genai_knowledge_workers"
+  },
+  "m01": {
+    "event_date": "2026-10-01",
+    "source": {
+      "title": "Build Applications on NVIDIA BlueField Faster with NVIDIA DOCA Agent Skills",
+      "organization": "NVIDIA Developer",
+      "url": "https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/",
+      "publication_date": "2026-10-01",
+      "evidence_type": "official_primary_source",
+      "availability_status": "published"
     },
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
+    "source_word_count": 2094,
+    "source_fetched_at": "2026-10-05T00:30:44.730Z",
+    "selection_rationale": "Skills carry instructions, references, constraints and verification together.",
+    "focus": "agents_non_technical_people"
+  },
+  "m09": {
+    "event_date": "2026-10-01",
+    "source": {
+      "title": "Building ambient agents with Amazon Bedrock AgentCore",
+      "organization": "AWS Machine Learning",
+      "url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+      "publication_date": "2026-10-01",
+      "evidence_type": "official_primary_source",
+      "availability_status": "published"
     },
-    "selection_rationale": "Nontechnical governance model combining explicit roles, permissions, visible work, and separately governed durable memory."
+    "source_word_count": 6491,
+    "source_fetched_at": "2026-10-05T00:30:44.730Z",
+    "selection_rationale": "Durable job state and explicit escalation make autonomy safer.",
+    "focus": "agents_non_technical_people"
   }
 }
