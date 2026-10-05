@@ -1,0 +1,21 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "task_id": "17",
+  "incident_id": "wd-reliable-edition-20261005-run9-task17-native-capture-lock-schema",
+  "owner_slot": "F",
+  "at": "2026-10-05T04:47:41.981Z",
+  "type": "PROTECTED_REPAIR_MERGED",
+  "classification": "BLOCKED_ACTIONABLE",
+  "repair_key": "repair-3e09a8294ae9ec61fbd83b1cbb00335a30fe2352",
+  "pr_number": 465,
+  "repair_head": "82f064d28f67b1733d989417692498a14a125f38",
+  "merge_sha": "93d71c46d2a330a29268755909a92d9cd9885af6",
+  "ci_run_id": 37264907226,
+  "dead_writer_proof": "_records/edition-execution/dead-writer-recovery/reliable-edition-20261005-run9/42-to-43-37264394322.json",
+  "next_authorized_action": "Dedicated repository consumer consumes the same queued Task 17 request under merged native_capture lock compatibility.",
+  "recovery_required": true,
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

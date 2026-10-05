@@ -1,22 +1,22 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "incident_id": "wd-reliable-edition-20261005-run9-task16-native-0dc177aa",
+  "incident_id": "wd-reliable-edition-20261005-run9-task17-native-capture-lock-schema",
   "owner_slot": "F",
-  "generation": 12,
-  "state": "RECOVERY_VERIFIED_PROGRESSING",
-  "acquired_at": "2026-10-05T04:26:49.000Z",
-  "last_heartbeat_at": "2026-10-05T04:29:27.000Z",
-  "expires_at": "2026-10-05T04:29:27.000Z",
-  "released_at": "2026-10-05T04:29:27.000Z",
-  "action_key": "wd-reliable-edition-20261005-run9-task16-native-0dc177aa:consume-exact-request:slot-f:g12",
-  "request_key": "0dc177aa22925dc9aefb58332b0188439d6f4ac247900536e04979045890e573",
+  "generation": 13,
+  "state": "SAFE_BOUNDARY_REACHED",
+  "acquired_at": "2026-10-05T04:47:41.981Z",
+  "last_heartbeat_at": "2026-10-05T04:47:41.981Z",
+  "expires_at": "2026-10-05T04:47:41.981Z",
+  "released_at": "2026-10-05T04:47:41.981Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task17-native-capture-lock-schema:dead-writer-recovery-and-protected-repair-merge:slot-f:g13",
+  "request_key": "710b8bedeaded7875b60952b3da4798bc2f6b8b0b6bf5d762d42c275ee3667f1",
   "success_chain": {
     "problem_diagnosed": true,
     "cause_fixed": true,
-    "task_or_process_active": true,
-    "real_executor_confirmed": true,
-    "durable_progress_confirmed": true,
-    "evidence": "Task 16 Done plus accepted_locked m09 exact-byte Git asset after persisted image-execution admission; Tasks 11-16 are all accepted_locked."
+    "task_or_process_active": false,
+    "real_executor_confirmed": false,
+    "durable_progress_confirmed": false,
+    "evidence": "PR 465 exact-head validation passed and merge completed; dead generation 42 was safely superseded, but Task 17 remains queued pending dedicated consumer progress."
   }
 }
