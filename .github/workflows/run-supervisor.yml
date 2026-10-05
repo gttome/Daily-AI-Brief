@@ -428,6 +428,13 @@ jobs:
                     echo "Task 17 repository consumer already queued/in progress; no duplicate dispatch."
                   fi
                 fi
+                # The dedicated Task 17 consumer owns the next repository
+                # operation. Release the Supervisor fence immediately after
+                # dispatch (or after observing an already-live consumer) so
+                # the consumer can acquire its own generation without a
+                # deterministic writer conflict.
+                ordinary_consumer_boundary=true
+                echo "Task 17 repository consumer boundary reached; release Supervisor writer before the dedicated consumer claims."
               fi
               if [ "$request_kind" = "engineering_repair" ] && [ "$request_capability" = "repository" ]; then
                 export GH_TOKEN="${{ github.token }}"
