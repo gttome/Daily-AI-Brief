@@ -654,3 +654,20 @@ test('Supervisor preserves queued research_chatgpt work for a capable ordinary C
   assert.match(y,/research_consumer_unclaimed|repository-liveness/);
 });
 
+
+
+test('Supervisor delegates ordinary ChatGPT requests immediately and never rebases over its own unstaged lease',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.match(y,/already queued for an admitted unattended consumer/);
+  assert.match(y,/ordinary_consumer_boundary=true/);
+  assert.match(y,/SAFE_RECOVERY_BOUNDARY/);
+  assert.match(y,/Supervisor released the writer immediately after persisting the exact ordinary\/research request/);
+  assert.match(y,/git -C run add "\$lease_rel" 2>\/dev\/null \|\| true/);
+  assert.doesNotMatch(y,/exceeded the protected 60-second unclaimed threshold/);
+  const rebasePositions=[...y.matchAll(/git -C run (?:pull --rebase origin "\$RUN_BRANCH"|rebase "origin\/\$RUN_BRANCH")/g)].map(m=>m.index);
+  assert.ok(rebasePositions.length>=2);
+  for(const pos of rebasePositions){
+    const prior=y.slice(Math.max(0,pos-2200),pos);
+    assert.match(prior,/git -C run (?:add|commit)/,'every rebase path must follow reconciliation of Supervisor-owned state');
+  }
+});
