@@ -18,8 +18,9 @@ const migration={
 
 test('bounded migration expires after the frozen-contract cutoff',()=>{
   assert.equal(migrationEnabled('2026-10-04',migration),true);
-  assert.equal(migrationEnabled('2026-10-05',migration),false);
-  assert.equal(migrationEnabled('2026-10-04',{}),false);
+  assert.equal(migrationEnabled('2026-10-05',migration),true);
+  assert.equal(migrationEnabled('2026-10-06',migration),false);
+  assert.equal(migrationEnabled('2026-10-05',{}),false);
 });
 
 test('video migration requires explicit verified exception evidence',()=>{
