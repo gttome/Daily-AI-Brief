@@ -1,0 +1,13 @@
+{
+  "schema_version": "watchlist-source-evidence-v1",
+  "candidate_id": "w9-ai2-astabrief",
+  "source_url": "https://allenai.org/blog/astabrief",
+  "publisher": "Ai2",
+  "publication_date": "2026-10-02",
+  "checked_at": "2026-10-05T02:27:25.000Z",
+  "research_cutoff": "2026-10-05T00:00:23.000Z",
+  "eligible_at_research_cutoff": true,
+  "disposition": "reactivate_existing",
+  "topic_id": "dab-topic-source-aware-agent-verification",
+  "finding": "AstaBrief 8B is open-sourced for cited scientific report generation with citation-focused filtering and explicit emphasis on preserving what evidence actually supports."
+}
