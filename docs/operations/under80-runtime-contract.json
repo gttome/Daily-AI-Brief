@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.10.0",
+  "schema_version": "1.11.0",
   "profile_id": "under80-v1",
   "purpose": "Compact authoritative runtime contract for the single daily AI task. Historical runbook sections remain audit documentation and are not normal Work input.",
   "precedence": "This file plus docs/operations/efficiency-operating-policy.json governs normal daily Work execution where older runbook text conflicts.",
@@ -123,7 +123,11 @@
     "separate_ai_validator": false,
     "automatic_ai_recovery": false,
     "emerging_watchlist_sweep_in_same_pass": true,
-    "emerging_watchlist_assisted_search_budget_max": 20
+    "emerging_watchlist_assisted_search_budget_max": 20,
+    "semantic_pass_receipt_contract": "one-semantic-editorial-pass-v1",
+    "semantic_input_digest_reuse_required": true,
+    "downstream_deterministic_repair_may_rerun_editorial_semantics": false,
+    "additional_semantic_pass_requires_changed_input_digest_and_reason": true
   },
   "images": {
     "required": 6,
@@ -224,6 +228,27 @@
       ],
       "retry_scope": "Only the failed story image; preserve every accepted locked asset.",
       "accepted_asset_persistence": "Persist exact bytes and SHA identities with acceptance; a prose accepted count alone is not a recoverable asset checkpoint."
+    },
+    "execution_admission": {
+      "schema_version": "image-execution-admission-v1",
+      "required_before_tasks": [
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "story_only_context_required": true,
+      "orchestration_context_visible": false,
+      "exact_sealed_instruction_required": true,
+      "exact_byte_persistence_preflight_required": true,
+      "approved_persistence_modes": [
+        "git_data_direct_blob",
+        "protected_base64_chunk_bridge"
+      ],
+      "failed_admission_attempts_consumed": 0,
+      "strategy_interrupt_before_attempt_1": true
     }
   },
   "media": {
@@ -437,7 +462,7 @@
       "create_or_reuse_publication_pr",
       "inspect_ci_and_pages"
     ],
-    "failure": "BLOCKED \u2014 GitHub connection unavailable for scheduled publication.",
+    "failure": "BLOCKED — GitHub connection unavailable for scheduled publication.",
     "record_in_attempt": true
   },
   "image": {
@@ -675,5 +700,21 @@
     "execution": "Score every included article/video/podcast against all 32 verified anchors across four books during the existing semantic pass, using the six dimensions and digests from plan. Save review under catalog.selection_reviews[date] and selected rows under catalog.editions[date]. No extra model pass or paid API. Run selection after canonical item IDs exist, before handoff.",
     "selection": "Relevance first; recent anchor/chapter/book usage breaks equal-score ties only. No quota. One reference per item.",
     "qa": "Protected CI recalculates coverage, rankings, repeated anchors and concentration warnings from the complete review matrix. Historical selections are immutable."
+  },
+  "control_plane_usage_reduction": {
+    "compact_watchdog_health_schema": "chatgpt-watchdog-health-v1",
+    "compact_health_runtime_branch": "runtime/watchdog-health",
+    "compact_health_runtime_path": "data/operations/watchdog-health.json",
+    "unchanged_health_commits_allowed": false,
+    "exact_publication_preflight": "exact-publication-preflight-v1",
+    "public_safe_budget_schema": "daily-brief-public-safe-budget-v1",
+    "private_account_usage_in_public_git": false
+  },
+  "publication_preflight": {
+    "schema_version": "exact-publication-preflight-v1",
+    "model_calls": 0,
+    "required_before_publication_pr": true,
+    "protected_ci_role": "confirmation_not_primary_defect_discovery",
+    "failure_behavior": "repair smallest deterministic defect; preserve unaffected semantic work and accepted_locked assets; rerun preflight before PR"
   }
 }

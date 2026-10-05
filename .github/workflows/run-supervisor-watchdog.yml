@@ -89,13 +89,12 @@ jobs:
           git worktree remove /tmp/dab-watchdog-health-run --force 2>/dev/null || true
           runtime_ref="runtime/watchdog-health"
           old_sha="$(git ls-remote --heads origin "refs/heads/$runtime_ref" | awk '{print $1}')"
-          new_terminal="$(node -e "const x=require('/tmp/watchdog-health.json');process.stdout.write(String(x.health_state==='TERMINAL'))")"
-          if [ -n "$old_sha" ] && [ "$new_terminal" = "true" ]; then
+          if [ -n "$old_sha" ]; then
             git fetch --depth=1 origin "$runtime_ref"
             if git show FETCH_HEAD:data/operations/watchdog-health.json >/tmp/previous-watchdog-health.json 2>/dev/null; then
-              same_terminal="$(node -e "const a=require('/tmp/watchdog-health.json'),b=require('/tmp/previous-watchdog-health.json');process.stdout.write(String(a.execution_id===b.execution_id&&b.health_state==='TERMINAL'))")"
-              if [ "$same_terminal" = "true" ]; then
-                echo "Terminal compact health already published for this execution; skip refresh-only control-state churn."
+              materially_same="$(node -e "const a=require('/tmp/watchdog-health.json'),b=require('/tmp/previous-watchdog-health.json');process.stdout.write(String(a.schema_version==='chatgpt-watchdog-health-v1'&&b.schema_version===a.schema_version&&a.execution_id===b.execution_id&&a.source_digest&&a.source_digest===b.source_digest))")"
+              if [ "$materially_same" = "true" ]; then
+                echo "Compact health decision state is unchanged; skip timestamp-only health commit."
                 exit 0
               fi
             fi

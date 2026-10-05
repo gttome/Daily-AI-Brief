@@ -266,7 +266,18 @@ jobs:
             git -C run add "$proof_rel"
           fi
 
-          git -C run add "$lease_rel"
+          budget_rel="_records/edition-execution/budget/${EXECUTION_ID}.json"
+          if [ ! -f "run/$budget_rel" ]; then
+            mkdir -p "run/$(dirname "$budget_rel")"
+            node control/_tools/public-safe-budget.mjs init \
+              --execution-id "$EXECUTION_ID" \
+              --edition-id "$EDITION_ID" \
+              --execution-key "$EXECUTION_KEY" \
+              --out "run/$budget_rel" >/tmp/public-safe-budget-init.json
+            cat /tmp/public-safe-budget-init.json
+          fi
+
+          git -C run add "$lease_rel" "$budget_rel"
           if ! git -C run diff --cached --quiet; then
             git -C run commit -m "Supervisor acquire writer fence for ${EXECUTION_ID}"
             git -C run pull --rebase origin "$RUN_BRANCH"

@@ -10,7 +10,7 @@ import {executeRecoverableImage,proveImageHandoff} from '../lib/recoverable-imag
 import {connectorImageDelivery} from '../lib/connector-image-delivery.mjs';
 import {editionBinding,executeEdition,canonicalExecutionStatus,pinnedResumeDecision,promotionDecision,sealPublicationBundle,verifyPublicationBundle,verifyAdmissionEvidence,verifyDirectCaptureAdmission,DIRECT_IMAGE_CAPTURE_ADMISSION} from '../lib/edition-execution.mjs';
 import {newRunState,checkpointRunStage} from '../lib/run-state.mjs';
-import {buildImageGenerationExecution,executeImageRequest,validateImageExecutionReceipt} from '../lib/image-execution.mjs';
+import {buildImageGenerationExecution,buildImageExecutionAdmission,executeImageRequest,validateImageExecutionReceipt} from '../lib/image-execution.mjs';
 const temp=()=>fs.mkdtempSync(path.join(os.tmpdir(),'brief-reliable-'));
 const usage=()=>({work_invocations:0,codex_invocations:0,paid_model_api_calls:0});
 const sha='a'.repeat(40), now=()=> '2026-09-29T16:00:00Z';
@@ -22,6 +22,15 @@ const packet=(id='m04')=>({story_id:'story-'+id,candidate_id:id,headline:'Suppor
   visual_brief:'Detailed professional white-background 1200x630 editorial textbook illustration.',reference_policy:'Only source-supported specifics; generic explanatory concepts are explicitly conceptual.',
   acceptance_order:['subject','facts','structure','editorial'],wrong_subject_action:'Discard and generate a new request for this same story.',low_quality_fallback:false,
   allowed_image_text:['Input','Review'],composition_mode:'annotated_system',prohibited_composition_patterns:['generic sparse title card']});
+function admitted(execution,{execution_id='fixture-execution',task_id='11',request_key='fixture-request'}={}){
+  return buildImageExecutionAdmission(execution,{
+    execution_id,task_id,request_key,submitted_instruction:execution.generation_instruction,
+    story_only_context_verified:true,orchestration_context_visible:false,
+    exact_byte_persistence_verified:true,persistence_mode:'git_data_direct_blob',
+    owner_intervention_required:false,persistence_proof:{schema_version:'fixture-persistence-preflight-v1',result:'PASS'},
+    checked_at:'2026-09-29T15:00:00Z'
+  });
+}
 function fixture(){
   const bytes=png(), stored=new Map(), outputs=new Map(), counts={generation:0,review:0,rawWrites:0,finalWrites:0};
   const host={id:'fixture-native-host',async generate(e,{key}){counts.generation++;const result={bytes:Buffer.from(bytes),executor:'native_chatgpt_image_generation',
@@ -55,7 +64,7 @@ test('crash after raw capture resumes remaining phases with original bytes',asyn
 test('quality rejection preserves review and raw without final upload',async()=>{const f=fixture(),review=f.host.review;f.host.review=async(...a)=>({...await review(...a),subject_match:'fail'});const r=await executeRecoverableImage(buildImageGenerationExecution(packet()),f);assert.equal(r.quality_rejected,true);assert.equal(f.counts.finalWrites,0);assert.equal(r.state.results.review.subject_match,'fail');});
 test('missing native recovery capability consumes zero image attempts',async()=>{const f=fixture();delete f.host.recover;const r=await executeRecoverableImage(buildImageGenerationExecution(packet()),f);assert.equal(r.attempts_allocated,0);assert.equal(f.counts.generation,0);});
 test('new shared executor profile cannot silently fall back to volatile execution',async()=>{const r=await executeImageRequest(buildImageGenerationExecution(packet()),{executionProfile:'reliable-edition-v1'});assert.equal(r.status,'CAPABILITY_BLOCKED_DURABLE_STORE_REQUIRED');assert.equal(r.attempts_allocated,0);});
-test('shared executor actually routes admitted jobs through durable phases',async()=>{const f=fixture(),r=await executeImageRequest(buildImageGenerationExecution(packet()),{...f,operationStore:f.store,executionProfile:'reliable-edition-v1'});assert.equal(r.status,'fixture_pass');assert.equal(f.counts.generation,1);});
+test('shared executor actually routes admitted jobs through durable phases',async()=>{const f=fixture(),e=buildImageGenerationExecution(packet()),r=await executeImageRequest(e,{...f,operationStore:f.store,executionProfile:'reliable-edition-v1',executionAdmission:admitted(e)});assert.equal(r.status,'fixture_pass');assert.equal(f.counts.generation,1);});
 test('expired admission does not trigger a fresh generation',async()=>{const f=fixture();f.admission.expires_at='2026-09-29T15:59:00Z';const r=await executeRecoverableImage(buildImageGenerationExecution(packet()),f);assert.equal(r.blocker,'HOST_ADMISSION_EXPIRED');assert.equal(f.counts.generation,0);});
 test('paid provenance is blocked without reviewer or storage calls',async()=>{const f=fixture(),g=f.host.generate;f.host.generate=async(...a)=>({...await g(...a),usage:{...usage(),paid_model_api_calls:1}});const r=await executeRecoverableImage(buildImageGenerationExecution(packet()),f);assert.equal(r.accepted_locked,false);assert.equal(f.counts.rawWrites,0);assert.equal(f.counts.review,0);});
 test('image handoff proof requires actual recovery, matching identity and exact remote bytes',async()=>{const f=fixture(),key='6'.repeat(64),g=await f.host.generate(buildImageGenerationExecution(packet()),{key});const p=await proveImageHandoff({host:f.host,transport:f.transport,probeKey:key,expected:{native_result_id:g.call_id,artifact_id:g.artifact_id,sha256:hashBytes(g.bytes)},releaseSha:sha,now});assert.equal(p.evidence_type,'fixture');assert.equal(p.git_readback_verified,true);assert.equal(f.counts.generation,1);});
@@ -157,7 +166,11 @@ test('six-image unattended control rehearsal resumes a crash, rejects one image 
     if(a[0].startsWith('briefs/')&&ackFailure){ackFailure=false;throw Object.assign(Error('ack lost'),{code:'ECONNRESET'});}
     return r;
   };
-  const options={...f,executionProfile:'reliable-edition-v1',operationStore:f.store,
+  const admissionByCandidate=Object.fromEntries(executions.map((e,index)=>[
+    e.sealed_story_packet.candidate_id,
+    admitted(e,{execution_id:'fixture-batch',task_id:String(11+index),request_key:'fixture-'+e.sealed_story_packet.candidate_id})
+  ]));
+  const options={...f,executionProfile:'reliable-edition-v1',operationStore:f.store,admissionByCandidate,
     afterSave:async v=>{if(crash&&f.counts.finalWrites===3&&v.completed_operations.includes('receipt')){crash=false;throw Error('runner_restart');}}};
   await assert.rejects(executeImageBatch(executions,options),/runner_restart/);
   const result=await executeImageBatch(executions,options);

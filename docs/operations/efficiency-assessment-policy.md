@@ -83,3 +83,16 @@ Future efficiency assessments must measure recovery/control-plane overhead separ
 The six-slot Watchdog Ring creates up to 1,008 scheduled invocation opportunities per week; that figure is scheduling capacity, **not** platform billing telemetry. Continue to label account usage as unavailable unless the platform or owner provides trustworthy attributable measurements.
 
 The optimization target is coordination overhead. Editorial/source/image quality gates remain unchanged.
+
+
+## October 5 pre-run usage-reduction hardening
+
+The normal production target is to preserve full Brief quality while removing avoidable semantic control-plane work. The implementation uses these public-safe process contracts:
+
+- `chatgpt-watchdog-health-v1`: Scheduled Watchdogs read the compact health packet first and broaden only for stale, invalid or actionable state. Timestamp-only healthy observations create no health commits.
+- `image-execution-admission-v1`: Tasks 11–16 cannot generate before story-only context, exact sealed instruction and exact-byte persistence are proven. Admission failure consumes zero image attempts.
+- `one-semantic-editorial-pass-v1`: the normal editorial path records one semantic pass and zero post-editorial semantic validators. Deterministic downstream repairs reuse the semantic kernel while its input digest remains valid.
+- `exact-publication-preflight-v1`: the complete deterministic candidate is checked before a publication PR. The preflight itself uses zero model calls.
+- `daily-brief-public-safe-budget-v1`: per-run counters track process proxies only. Private account allowance, weekly usage, balances, billing values or platform-credit observations are prohibited from public Git.
+
+A clean-run target is one editorial semantic pass, six accepted images from six normal generation attempts except documented visual-quality rejection, zero image-infrastructure failures after generation starts, zero unchanged health commits, one publication PR, zero Task 23 protected repairs, and no owner liveness prompt. The owner may privately compare before/after weekly allowance readings, but those values remain outside public Git.

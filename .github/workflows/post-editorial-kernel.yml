@@ -236,6 +236,25 @@ jobs:
           for(const [key,value] of Object.entries(values)){if(!value)throw new Error('publication_manifest_output_missing:'+key);fs.appendFileSync(outputPath,key+'='+value+'\n');}
           NODE
 
+      - name: Persist one semantic editorial pass receipt
+        env:
+          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
+          FACTS_PATH: ${{ steps.handoff.outputs.facts_path }}
+          METADATA_CANDIDATES_PATH: ${{ steps.handoff.outputs.metadata_candidates_path }}
+          ARTICLE_EVIDENCE_PATH: ${{ steps.handoff.outputs.article_evidence_path }}
+          PUBLICATION_MANIFEST_PATH: ${{ steps.handoff.outputs.publication_manifest_path }}
+        run: |
+          set -euo pipefail
+          execution_id="$(node -e "const fs=require('fs'),k=JSON.parse(fs.readFileSync(process.env.KERNEL_PATH,'utf8'));let id='qualification-post-editorial-'+process.env.GITHUB_RUN_ID;try{const p=JSON.parse(fs.readFileSync('data/operations/active-production-run.json','utf8'));if(p.edition_id===k.edition_id&&p.execution_id)id=p.execution_id;}catch{}process.stdout.write(id)")"
+          node _tools/semantic-editorial-pass.mjs receipt \
+            --kernel "$KERNEL_PATH" \
+            --execution-id "$execution_id" \
+            --evidence "$FACTS_PATH" \
+            --evidence "$METADATA_CANDIDATES_PATH" \
+            --evidence "$ARTICLE_EVIDENCE_PATH" \
+            --evidence "$PUBLICATION_MANIFEST_PATH" \
+            --out /tmp/semantic-editorial-pass.json
+
       - name: Resolve durable recovery checkpoint
         id: recovery
         env:
@@ -322,19 +341,27 @@ jobs:
         run: |
           set -euo pipefail
           cp -a /tmp/publication-stage/. ./
+          mkdir -p _records/editorial-handoff
+          cp /tmp/semantic-editorial-pass.json _records/editorial-handoff/semantic-editorial-pass.json
           node --test _generator/test/publication-manifest.test.mjs _generator/test/under80-handoff-transport.test.mjs
           node _tools/validate-contracts.mjs
           node _generator/cli.mjs validate-repo --commit "$(git rev-parse HEAD)"
           node _generator/cli.mjs integration-check --image-review "$FINAL_IMAGE_REVIEW_PATH"
 
-      - name: Run pre-PR publication-candidate lint
+      - name: Run exact zero-model pre-PR publication preflight
         if: steps.recovery.outputs.reuse_expansion != 'true'
         env:
           STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
         run: |
           set -euo pipefail
-          node _tools/publication-candidate-lint.mjs --date "$(node -e "const k=require('./_records/editorial-handoff/kernel.json');process.stdout.write(k.brief_date)")" --manifest "${{ steps.handoff.outputs.publication_manifest_path }}"
           date="$(node -e "const k=require('./_records/editorial-handoff/kernel.json');process.stdout.write(k.brief_date)")"
+          node _tools/exact-publication-preflight.mjs \
+            --date "$date" \
+            --manifest "${{ steps.handoff.outputs.publication_manifest_path }}" \
+            --out /tmp/exact-publication-preflight.json
+          receipt_dir="_records/edition-execution/publication-preflight"
+          mkdir -p "$receipt_dir"
+          cp /tmp/exact-publication-preflight.json "$receipt_dir/$date.json"
           node _tools/run-state.mjs seed-candidate --date "$date" --baseline "${{ steps.baseline.outputs.sha }}" --current "$(git rev-parse HEAD)" --contract "under80-v1/sep24-reliability-v1"
 
       - name: Commit deterministic outputs to staging only

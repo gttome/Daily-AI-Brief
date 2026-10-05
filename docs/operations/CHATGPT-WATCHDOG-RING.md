@@ -80,6 +80,24 @@ Resolve only current protected durable production state. Exit without mutation w
 
 Healthy checks create no commits, incidents, Kanban refreshes, queue rewrites, worker dispatches, or writer-lease changes.
 
+### Compact first-read contract
+
+Every Scheduled ChatGPT Watchdog must first read only the current compact health packet from branch `runtime/watchdog-health`, path `data/operations/watchdog-health.json`.
+
+The packet schema is `chatgpt-watchdog-health-v1`. It contains only decision-critical identity, first-incomplete task/request, writer/recovery authority, last substantive progress, executor state, accepted-image count, actionability, next legal action, evidence references, and a timestamp-independent `source_digest`.
+
+The fast path is mandatory:
+
+1. validate schema, execution identity, freshness and `source_digest`;
+2. exit silently for terminal, no-active-execution, healthy-active, legitimate ready-idle, or a valid recovery owner that is progressing;
+3. expand only when the packet is missing, stale, contradictory or actionable;
+4. when expansion is required, follow only the narrow `evidence_refs` and the current task recovery contract before reading anything broader.
+
+Repeated healthy observations with the same `source_digest` produce **zero health commits**. Observation timestamp changes alone are not durable progress and must not rewrite the runtime health branch.
+
+The six Scheduled prompts share one logical body. Only slot letter and scheduled minute may vary. Stable runbook detail belongs in this document and the recovery contracts rather than being repeated in every prompt.
+
+
 ## Authority and health
 
 Append-only task events and exact worker requests/results are production authority. Kanban, timing, metrics, heartbeats and status-only commits are observability.
@@ -132,6 +150,7 @@ For Tasks 11–16, a legitimately queued, unclaimed `native_chatgpt` request doe
 
 Normal image-consumer flow:
 
+0. Require a PASS `image-execution-admission-v1` for this exact execution/task/request before attempt 1. Admission proves the submitted instruction exactly matches the sealed single-story instruction, orchestration context is not generator-visible, and one approved exact-byte persistence path (`git_data_direct_blob` or `protected_base64_chunk_bridge`) is already proven. Admission failure consumes zero attempts and triggers Strategy Interrupt.
 1. Read the exact first-incomplete Task 11–16 and its newest authoritative queued request.
 2. Verify no real image worker/current writer already owns or is progressing that exact request.
 3. Acquire current task-specific fenced writer authority. Request-embedded generation is provenance only.
