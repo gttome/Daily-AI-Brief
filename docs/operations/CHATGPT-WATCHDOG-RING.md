@@ -1,5 +1,24 @@
 # ChatGPT Watchdog Ring
 
+## October 5, 2026 — Owner-independent ordinary/research recovery
+
+Run 9 exposed a false-liveness gap: a writer lease could exist while no semantic work was occurring, so a Watchdog could yield even though the task had no worker result, task delta, or fresh substantive progress. Task 08 also showed that a correctly typed `research_chatgpt` request is not enough unless an unattended consumer actually claims and executes it.
+
+The permanent contract is now:
+
+- **Lease is authority, not progress.** Lease acquisition/renewal and heartbeat alone never satisfy recovery progress.
+- **Supervisor delegates instead of waiting to fail.** After persisting an exact queued `repository` or `research_chatgpt` request that has no dedicated deterministic consumer, the Supervisor releases its writer immediately. It does not hold the fence for a minute merely to emit `*_consumer_unclaimed`.
+- **Restart delegation guard.** If an authoritative ordinary/research request is already queued, a restarted Supervisor yields instead of reacquiring the writer only to rediscover the same request.
+- **Six-slot consumer pool.** Watchdogs A–F may consume exact queued `repository` and `research_chatgpt` work; Task 17 retains its dedicated deterministic consumer. Native Tasks 11–16 retain their sealed-story image path.
+- **Ordinary/research task-writer lease:** 8 minutes. A lease may be renewed only while real work is producing substantive evidence; a lease with no substantive progress keeps recovery open.
+- **Progress grace:** 5 minutes for ordinary/research work. A valid but nonprogressing fence is not a healthy no-op. The next slot must recover the same request as soon as the fence is safe.
+- **Same-invocation drain.** After completing compatible repository/research Task N, continue into dependency-safe Task N+1 when the exact request is available and no competing real worker exists.
+- **Clean rebase invariant.** Supervisor-owned lease state is committed/reconciled with the durable delta before any rebase/push retry; a Supervisor-created dirty working tree may never reach `git pull --rebase`.
+- **Success criterion:** real executor + substantive durable task progress. `OWNER_INTERVENTION_REQUIRED=false` for internally actionable ordinary/research recovery.
+
+This rule exists specifically so an owner status question is never the event that causes the system to start solving an already-actionable stall.
+
+
 **Status:** current production liveness contract  
 **Scope:** outer autonomous recovery for `gttome/Daily-AI-Brief`  
 **Timezone:** `America/Chicago`
