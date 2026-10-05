@@ -1,0 +1,192 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-05",
+  "brief_date": "2026-10-05",
+  "baseline_sha": "d6751a6774bcdb9b84bcdec7a3d7dd6714cc3669",
+  "policy_profile": "under80-v1",
+  "normal_model_passes": 1,
+  "normal_post_editorial_model_passes": 0,
+  "stories": [
+    {
+      "canonical_ordinal": 1,
+      "story_id": "dab-story-2026-10-05-m02",
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "When an agent says it is done, grade the database",
+      "summary": "ThinkingBox grades terminal database state and repeated outcomes rather than plausible text.",
+      "why_it_matters": "Durable state, side effects and repeatability become evidence that work actually completed.",
+      "editorial_limitation": "Publisher-authored benchmark evidence; results do not establish reliability across every agent task or backend.",
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Grade one agent task by durable state",
+        "rationale": "Add a terminal-state and side-effect check to one agent workflow, then repeat the task to measure whether completion is actually reproducible."
+      },
+      "topic_labels": [
+        "agent verification",
+        "durable state",
+        "repeatability"
+      ],
+      "source_url": "https://huggingface.co/blog/microsoft/thinkingbox",
+      "agent_skill": false,
+      "fallback_reason": "Selected from the bounded reviewed fallback window because it adds distinct mechanism-level value while preserving source verification.",
+      "visual": {
+        "alt_text": "Backend-state verification for agents.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
+      }
+    },
+    {
+      "canonical_ordinal": 2,
+      "story_id": "dab-story-2026-10-05-m12",
+      "candidate_id": "m12",
+      "focus": "technical_ai_engineering",
+      "headline": "Copilot code review becomes an API with adjustable effort",
+      "summary": "GitHub adds API-triggered Copilot code review with adjustable effort.",
+      "why_it_matters": "Review becomes a programmable pipeline step with explicit depth control.",
+      "editorial_limitation": "GitHub product announcement; review quality and API behavior can vary by repository, language and policy configuration.",
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Pilot API-triggered review on one repository",
+        "rationale": "Compare shallow and deeper review effort on the same pull-request class and record which findings are useful enough to keep in the workflow."
+      },
+      "topic_labels": [
+        "code review",
+        "API automation",
+        "review effort"
+      ],
+      "source_url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
+      "agent_skill": false,
+      "fallback_reason": "Selected from the bounded reviewed fallback window because it adds distinct mechanism-level value while preserving source verification.",
+      "visual": {
+        "alt_text": "API-driven code review.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
+      }
+    },
+    {
+      "canonical_ordinal": 3,
+      "story_id": "dab-story-2026-10-05-m07",
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Workspace turns prompts into images, mini-apps and cross-app work",
+      "summary": "Workspace adds AI image editing, Sheets canvases and cross-app assistance.",
+      "why_it_matters": "Connected work surfaces can keep outputs tied to source data.",
+      "editorial_limitation": "Google product announcement; feature availability and behavior vary by account, administrator settings and rollout stage.",
+      "what_to_do_now": {
+        "action": "adopt",
+        "label": "Connect one cross-app workflow to its source data",
+        "rationale": "Choose one recurring spreadsheet or document workflow and keep generated outputs tied to the authoritative source data instead of copying context manually."
+      },
+      "topic_labels": [
+        "knowledge work",
+        "cross-app workflows",
+        "source data"
+      ],
+      "source_url": "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop",
+      "agent_skill": false,
+      "fallback_reason": "Selected from the bounded reviewed fallback window because it adds distinct mechanism-level value while preserving source verification.",
+      "visual": {
+        "alt_text": "Cross-app knowledge work.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
+      }
+    },
+    {
+      "canonical_ordinal": 4,
+      "story_id": "dab-story-2026-10-05-m13",
+      "candidate_id": "m13",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "AstaBrief opens a faster path to citation-grounded reports",
+      "summary": "Ai2 open-sources AstaBrief 8B and training data for citation-grounded reports.",
+      "why_it_matters": "Evidence provenance stays visible while shortening research loops.",
+      "editorial_limitation": "Project-authored model report; speed and citation quality still require independent validation for a specific research domain.",
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Audit citations in one generated research report",
+        "rationale": "Run a bounded report task and verify that each important claim is supported by the cited source before relying on the generated synthesis."
+      },
+      "topic_labels": [
+        "research workflows",
+        "citations",
+        "report generation"
+      ],
+      "source_url": "https://huggingface.co/blog/allenai/astabrief",
+      "agent_skill": false,
+      "fallback_reason": "Selected from the bounded reviewed fallback window because it adds distinct mechanism-level value while preserving source verification.",
+      "visual": {
+        "alt_text": "Citation-grounded report generation.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
+      }
+    },
+    {
+      "canonical_ordinal": 5,
+      "story_id": "dab-story-2026-10-05-m01",
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "NVIDIA gives agents a verified DOCA skill set",
+      "summary": "NVIDIA describes reusable DOCA Agent Skills with API, hardware and build checks.",
+      "why_it_matters": "Skills carry instructions, references, constraints and verification together.",
+      "editorial_limitation": "NVIDIA publisher evaluation; reported gains are vendor-measured and specific to the evaluated DOCA tasks and constraints.",
+      "what_to_do_now": {
+        "action": "adopt",
+        "label": "Package one recurring procedure as a verified skill",
+        "rationale": "Turn one repeated task into maintained instructions, references and checks, then assign an owner to update the skill when the underlying process changes."
+      },
+      "topic_labels": [
+        "Agent Skills",
+        "DOCA",
+        "verified constraints"
+      ],
+      "source_url": "https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/",
+      "agent_skill": true,
+      "fallback_reason": "Selected from the bounded reviewed fallback window because it adds distinct mechanism-level value while preserving source verification.",
+      "visual": {
+        "alt_text": "Verified DOCA Agent Skills.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
+      }
+    },
+    {
+      "canonical_ordinal": 6,
+      "story_id": "dab-story-2026-10-05-m09",
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "headline": "Ambient agents wake on events and know when to ask a human",
+      "summary": "AWS shows event-driven agents that pause for human approval and resume.",
+      "why_it_matters": "Durable job state and explicit escalation make autonomy safer.",
+      "editorial_limitation": "AWS reference architecture; it demonstrates an implementation pattern rather than measured outcomes across all production environments.",
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Add one explicit human-approval interrupt",
+        "rationale": "Identify one consequential agent action, pause the workflow before it executes, and verify that the job can resume cleanly after a human decision."
+      },
+      "topic_labels": [
+        "ambient agents",
+        "human approval",
+        "event-driven workflows"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+      "agent_skill": false,
+      "fallback_reason": "Selected from the bounded reviewed fallback window because it adds distinct mechanism-level value while preserving source verification.",
+      "visual": {
+        "alt_text": "Ambient agent workflow.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
+      }
+    }
+  ],
+  "media_decisions": {
+    "videos": {
+      "target": 2,
+      "status": "locked"
+    },
+    "podcasts": {
+      "target": 2,
+      "status": "locked"
+    }
+  },
+  "changed_watchlist_topics": [
+    "dab-topic-agent-skills-observability",
+    "dab-topic-adaptive-agent-safeguards",
+    "dab-topic-harness-engineering",
+    "dab-topic-long-horizon-agents",
+    "dab-topic-collaborative-vibe-coding",
+    "dab-topic-source-aware-agent-verification"
+  ],
+  "editorial_takeaway": "Verifiable work improves when evidence, constraints and human escalation are explicit."
+}
