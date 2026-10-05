@@ -4,6 +4,10 @@
   "owner_id": "chatgpt-controller-task00-20261005T000759Z",
   "generation": 2,
   "acquired_at": "2026-10-05T00:08:00.000Z",
-  "last_heartbeat_at": "2026-10-05T00:08:00.000Z",
-  "expires_at": "2026-10-05T00:23:00.000Z"
+  "last_heartbeat_at": "2026-10-05T00:09:07.000Z",
+  "expires_at": "2026-10-05T00:09:07.000Z",
+  "state": "RELEASED",
+  "released": true,
+  "released_at": "2026-10-05T00:09:07.000Z",
+  "release_reason": "TASK_00_DONE_HANDOFF_TO_SUPERVISOR"
 }
