@@ -1,0 +1,65 @@
+{
+  "schema_version": "task21-focused-repair-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "21",
+  "defect_id": "RUN9_INCOMPLETE_DETERMINISTIC_PUBLICATION_PROJECTION",
+  "repaired_at": "2026-10-05T07:26:03.984Z",
+  "result": "PASS",
+  "scope": "Rebuilt only deterministic October 5 publication projections and required same-edition handoff artifacts from locked Run 9 evidence.",
+  "projections": [
+    {
+      "path": "latest.md",
+      "git_blob_sha1": "c8cadd2390d5492e6cf6caa4bf8bcee6fe1cba9d",
+      "edition_date": "2026-10-05"
+    },
+    {
+      "path": "index.md",
+      "git_blob_sha1": "c83df8fe26e534e2fee4484935bdb9e2faa3faca",
+      "edition_date": "2026-10-05"
+    },
+    {
+      "path": "feed.json",
+      "git_blob_sha1": "39a2d1b7913f19391bb4f97b3109fbbfa47b4ab3",
+      "first_item_edition_date": "2026-10-05"
+    },
+    {
+      "path": "_records/editorial-handoff/publication-manifest.json",
+      "git_blob_sha1": "c8e14878cc9c8a2d8b76a173c700707122879cee",
+      "edition_id": "dab-edition-2026-10-05"
+    },
+    {
+      "path": "_records/editorial-handoff/kernel.json",
+      "git_blob_sha1": "5d2a27517e1557aad2b7dad10dba2e03778d1a4",
+      "edition_id": "dab-edition-2026-10-05"
+    },
+    {
+      "path": "_records/editorial-handoff/facts.json",
+      "git_blob_sha1": "28565bcc3280c9fa8ab40e5512fc32604d95bc6e"
+    },
+    {
+      "path": "_records/editorial-handoff/media.json",
+      "git_blob_sha1": "79f352cd06ea3f1cc770b96d58dc16643971b62c"
+    },
+    {
+      "path": "_records/editorial-handoff/handoff.json",
+      "git_blob_sha1": "91819441362011a0f252fa440de6a991fe6907ac",
+      "staging_ref": "reliable-edition/dab-edition-2026-10-05-run9"
+    },
+    {
+      "path": "_records/editorial/media-preflight/2026-10-05.json",
+      "git_blob_sha1": "15485b35da472caed3c5b36f0deb7f50d2db98d4"
+    }
+  ],
+  "preserved": {
+    "completed_tasks": "00-20",
+    "story_selection_unchanged": true,
+    "media_selection_unchanged": true,
+    "book_review_unchanged": true,
+    "watchlist_decisions_unchanged": true,
+    "task19_sealed_artifacts_unchanged": true,
+    "accepted_locked_images": 6,
+    "image_regeneration": false
+  },
+  "next_task": "22"
+}
