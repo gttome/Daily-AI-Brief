@@ -1,0 +1,15 @@
+{
+  "task_id": "00",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-05T00:00:23.000Z",
+  "reason_code": "SCHEDULED_CONTROLLER_ALLOCATION",
+  "operation": "production_readiness_validation",
+  "reason": "The scheduled controller allocated the next-day edition at the protected startup boundary; Task 00 must prove all current readiness invariants before content production.",
+  "proof": {
+    "protected_main_sha": "eba25216531f777e167a7f7025995de0c0931059",
+    "bootstrap_receipt": "_records/edition-execution/bootstrap/2026-10-05-run9.json",
+    "prior_terminal_execution": "reliable-edition-20261004-run8",
+    "start_scope": "pending_task00_readiness"
+  }
+}
