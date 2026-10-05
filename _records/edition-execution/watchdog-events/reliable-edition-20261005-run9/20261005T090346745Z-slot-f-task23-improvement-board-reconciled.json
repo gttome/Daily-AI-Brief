@@ -1,0 +1,30 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "task_id": "23",
+  "incident_id": "wd-reliable-edition-20261005-run9-task23-improvement-board-reconciliation",
+  "owner_slot": "F",
+  "at": "2026-10-05T09:03:46.745Z",
+  "type": "IMPROVEMENT_BOARD_RECONCILED_PUBLICATION_VALIDATION_PENDING",
+  "classification": "BLOCKED_ACTIONABLE",
+  "failed_ci_run_id": 37287289290,
+  "failed_head": "bbeb20d2e7d4445d356ccf8e45b0a1bb00b651df",
+  "durable_delta": {
+    "unrepresented_problem_ids_reconciled": [
+      "DAB-OPS-20261005-001",
+      "DAB-OPS-20261005-002"
+    ],
+    "cards_added": [
+      "DAB-KB-044",
+      "DAB-KB-045"
+    ],
+    "accepted_locked_images_preserved": 6,
+    "completed_tasks_preserved_through": "22"
+  },
+  "strategy_interrupt": "Consume the protected ledger's already-green unresolved problems into the derived Improvement Kanban rather than changing or suppressing the learning events.",
+  "next_authorized_action": "Run exact-head publication validation on existing PR 467 and merge only after PASS.",
+  "recovery_required": true,
+  "handoff": "CONTINUE_SAME_INVOCATION"
+}

@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-05T04:50:00Z",
+  "observed_at": "2026-10-05T09:03:46.745Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -817,6 +817,44 @@
         "DAB-OPS-20261004-011",
         "PR #452",
         "PR #453"
+      ]
+    },
+    {
+      "id": "DAB-KB-044",
+      "lane": "backlog",
+      "priority": "P0",
+      "category": "Unattended Execution",
+      "title": "Complete ordinary and research requests without owner prompts",
+      "summary": "Queued repository and research_chatgpt work must be consumed by an admitted scheduled ChatGPT worker rather than stopping at diagnosis or an unclaimed-request handoff.",
+      "acceptance": [
+        "Repository and research_chatgpt requests declare executable capability.",
+        "A safe queued request is claimed under an at-most-eight-minute writer fence.",
+        "Completion records durable task evidence and cleanly releases authority.",
+        "No owner prompt is required for internally actionable work."
+      ],
+      "sources": [
+        "DAB-OPS-20261005-001",
+        "DAB-OPS-E-000113",
+        "DAB-OPS-E-000114"
+      ]
+    },
+    {
+      "id": "DAB-KB-045",
+      "lane": "backlog",
+      "priority": "P0",
+      "category": "Image Execution",
+      "title": "Enforce pre-generation image execution admission",
+      "summary": "Every native image attempt must first prove a dedicated story-only generator context and a runtime-readable exact-byte persistence path.",
+      "acceptance": [
+        "image-execution-admission-v1 is persisted before attempt 1.",
+        "Mixed orchestration context is rejected before generation.",
+        "Direct Git blob or protected Base64 chunk bridge is proven usable.",
+        "Preflight failure consumes zero image attempts and triggers Strategy Interrupt."
+      ],
+      "sources": [
+        "DAB-OPS-20261005-002",
+        "DAB-OPS-E-000115",
+        "DAB-OPS-E-000116"
       ]
     }
   ],

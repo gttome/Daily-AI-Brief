@@ -4,9 +4,11 @@
   "incident_id": "wd-reliable-edition-20261005-run9-task23-improvement-board-reconciliation",
   "owner_slot": "F",
   "generation": 32,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-05T09:03:21.477Z",
-  "last_heartbeat_at": "2026-10-05T09:03:21.477Z",
-  "expires_at": "2026-10-05T09:18:21.477Z",
-  "action_key": "wd-reliable-edition-20261005-run9-task23-improvement-board-reconciliation:slot-f:g32"
+  "last_heartbeat_at": "2026-10-05T09:03:46.745Z",
+  "expires_at": "2026-10-05T09:03:46.745Z",
+  "action_key": "wd-reliable-edition-20261005-run9-task23-improvement-board-reconciliation:slot-f:g32",
+  "released_at": "2026-10-05T09:03:46.745Z",
+  "release_reason": "IMPROVEMENT_BOARD_RECONCILED_PUBLICATION_EXACT_HEAD_VALIDATION_PENDING"
 }
