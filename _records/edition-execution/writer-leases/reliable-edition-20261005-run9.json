@@ -1,13 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261005-run9",
-  "owner_id": "chatgpt-controller-task00-20261005T000759Z",
-  "generation": 2,
-  "acquired_at": "2026-10-05T00:08:00.000Z",
-  "last_heartbeat_at": "2026-10-05T00:09:07.000Z",
-  "expires_at": "2026-10-05T00:09:07.000Z",
-  "state": "RELEASED",
-  "released": true,
-  "released_at": "2026-10-05T00:09:07.000Z",
-  "release_reason": "TASK_00_DONE_HANDOFF_TO_SUPERVISOR"
+  "owner_id": "github-actions-37246451154-1",
+  "generation": 3,
+  "acquired_at": "2026-10-05T00:11:24.181Z",
+  "last_heartbeat_at": "2026-10-05T00:11:24.181Z",
+  "expires_at": "2026-10-05T00:16:24.181Z"
 }
