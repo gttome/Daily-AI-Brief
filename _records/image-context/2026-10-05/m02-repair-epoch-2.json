@@ -1,0 +1,22 @@
+{
+  "schema_version": "story-only-generator-context-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-05-m02"
+  ],
+  "candidate_id": "m02",
+  "task_id": "11",
+  "repair_epoch": 2,
+  "post_repair_attempt": 1,
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-05T03:52:30.000Z",
+  "allowed_text": [
+    "Claim packet",
+    "Database state",
+    "Side effects",
+    "Repeated run",
+    "Verification gate",
+    "Evidence ledger"
+  ],
+  "prompt": "Professional high-detail scientific educational infographic on a clean white 1200x630 landscape canvas. Explain how a software system verifies a reported result against durable backend evidence. Show only non-anthropomorphic technical artifacts: a signed data packet labeled Claim packet; database rows labeled Database state; transaction receipts labeled Side effects; duplicate execution samples labeled Repeated run. These four evidence streams converge through a precise comparison mechanism labeled Verification gate and finish in an immutable archival ledger labeled Evidence ledger. Use layered document trays, hashes, timestamps, receipt seals, state snapshots, comparison markers, and a clear pass/fail gate. Render no application screenshot and no repository interface. ZERO living beings or character-like subjects: no people, faces, heads, hands, bodies, humanoids, robots, androids, avatars, mascots, silhouettes, portraits, or character icons. No photos, logos, decorative filler, unsupported metrics, overlapping text, or sparse/basic boxes. Only these exact visible labels: Claim packet, Database state, Side effects, Repeated run, Verification gate, Evidence ledger."
+}

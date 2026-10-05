@@ -1,0 +1,16 @@
+{
+  "task_id": "11",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-05T02:54:17.252Z",
+  "reason": "Claimed the exact queued native_chatgpt Task 11 request after the Supervisor writer was proven cancelled and the protected native handoff repair passed and merged.",
+  "proof": {
+    "request_key": "dd4455aeb62013bdb4fd96647b09acac7d399d0f3eafc53304b98537e19a6fb9",
+    "writer_generation": 27,
+    "dead_writer_workflow_run_id": 37256034788,
+    "dead_writer_workflow_attempt": 3,
+    "prior_generation": 26,
+    "protected_repair_pr": 463,
+    "protected_repair_merge_sha": "744277b0e693f90b84764d0fce0acccfffb1716f"
+  }
+}

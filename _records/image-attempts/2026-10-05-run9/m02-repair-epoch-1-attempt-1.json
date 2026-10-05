@@ -1,0 +1,43 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "request_key": "b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26",
+  "writer_generation": 28,
+  "consumer_slot": "A",
+  "attempt": 1,
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "generated_at": "2026-10-05T03:08:40.000Z",
+  "native_generation_id": "3189246e-da8c-4294-af4a-c54cd2f97849",
+  "native_capture": {
+    "format": "PNG",
+    "persisted": false,
+    "byte_count": 1228871,
+    "width": 1536,
+    "height": 1024,
+    "sha256": "be41247b0a905edce85bd46f42c98a824438809b9390ffd1ac606b3b5fdd3ac2",
+    "exact_bytes_preserved_in_runtime": true,
+    "git_blob_sha": null,
+    "git_readback_verified": false,
+    "persistence_blocker": "The scheduled native-image runtime returned a conversation-local file but the connected GitHub write surface exposes no binary-file bridge from that runtime file into create_blob; exact returned bytes therefore could not be transferred without an owner upload, browser automation, API credential, or non-approved workaround."
+  },
+  "saved_asset_review": {
+    "reviewed": true,
+    "saved_git_review_available": false,
+    "passed": false,
+    "subject_correct": false,
+    "context_contamination": true,
+    "people_or_humanoid_present": false,
+    "visible_text_guard": "FAIL",
+    "reason": "The bounded post-repair generation ignored the sealed backend-state-verification story and instead rendered a GitHub/watchdog-health repository screenshot. This is direct orchestration-context contamination and violates the single-story context contract."
+  },
+  "disposition": "REJECTED_CONTEXT_CONTAMINATION_POST_REPAIR_ATTEMPT_EXHAUSTED",
+  "accepted_locked": false,
+  "same_context_retry_prohibited": true,
+  "strategy_interrupt_required": true,
+  "external_runtime_limitation_verified": true,
+  "next_action": "Do not generate again from this request. Preserve the consumed bounded post-repair attempt and route Task 11 to Strategy Interrupt for a production-safe native-image path that can actually enforce isolated generator context and exact-byte Git persistence without owner action."
+}

@@ -4,7 +4,77 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-10-04T10:15:00.000Z</updated>
+  <updated>2026-10-05T05:44:00.000Z</updated>
+  <entry>
+    <title>When an agent says it is done, grade the database</title>
+    <id>dab-story-2026-10-05-m02</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-05/when-an-agent-says-it-is-done-grade-the-database/" />
+    <updated>2026-10-05T18:00:00Z</updated>
+    <summary>ThinkingBox grades terminal database state and repeated outcomes rather than plausible text.</summary>
+  </entry>
+  <entry>
+    <title>Copilot code review becomes an API with adjustable effort</title>
+    <id>dab-story-2026-10-05-m12</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-05/copilot-code-review-becomes-an-api-with-adjustable-effort/" />
+    <updated>2026-10-05T18:00:00Z</updated>
+    <summary>GitHub adds API-triggered Copilot code review with adjustable effort.</summary>
+  </entry>
+  <entry>
+    <title>Workspace turns prompts into images, mini-apps and cross-app work</title>
+    <id>dab-story-2026-10-05-m07</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-05/workspace-turns-prompts-into-images-mini-apps-and-cross-app-work/" />
+    <updated>2026-10-05T18:00:00Z</updated>
+    <summary>Workspace adds AI image editing, Sheets canvases and cross-app assistance.</summary>
+  </entry>
+  <entry>
+    <title>AstaBrief opens a faster path to citation-grounded reports</title>
+    <id>dab-story-2026-10-05-m13</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-05/astabrief-opens-a-faster-path-to-citation-grounded-reports/" />
+    <updated>2026-10-05T18:00:00Z</updated>
+    <summary>Ai2 open-sources AstaBrief 8B and training data for citation-grounded reports.</summary>
+  </entry>
+  <entry>
+    <title>NVIDIA gives agents a verified DOCA skill set</title>
+    <id>dab-story-2026-10-05-m01</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-05/nvidia-gives-agents-a-verified-doca-skill-set/" />
+    <updated>2026-10-05T18:00:00Z</updated>
+    <summary>NVIDIA describes reusable DOCA Agent Skills with API, hardware and build checks.</summary>
+  </entry>
+  <entry>
+    <title>Ambient agents wake on events and know when to ask a human</title>
+    <id>dab-story-2026-10-05-m09</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-05/ambient-agents-wake-on-events-and-know-when-to-ask-a-human/" />
+    <updated>2026-10-05T18:00:00Z</updated>
+    <summary>AWS shows event-driven agents that pause for human approval and resume.</summary>
+  </entry>
+  <entry>
+    <title>Microsoft Copilot Just Got a Massive Upgrade</title>
+    <id>dab-video-2026-10-05-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-10-05/general/" />
+    <updated>2026-10-05T18:00:00Z</updated>
+    <summary>Practical knowledge-worker walkthrough complementing the edition&apos;s connected-work coverage.</summary>
+  </entry>
+  <entry>
+    <title>Flight Intelligence: The Power of Work IQ</title>
+    <id>dab-video-2026-10-05-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-10-05/agent-skills/" />
+    <updated>2026-10-05T18:00:00Z</updated>
+    <summary>Business-context grounding and reusable workflow knowledge relevant to Agent Skills.</summary>
+  </entry>
+  <entry>
+    <title>An Argument Against AI Doom</title>
+    <id>dab-podcast-2026-10-05-1</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-05/galaxy-brain-2026-10-02-argument-against-ai-doom/" />
+    <updated>2026-10-05T18:00:00Z</updated>
+    <summary>Independent policy and cybersecurity discussion of agent failures, monitoring and accountability.</summary>
+  </entry>
+  <entry>
+    <title>DX Today AI Daily Brief - Wednesday, September 30, 2026</title>
+    <id>dab-podcast-2026-10-05-2</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-05/dx-today-2026-09-30-ai-daily-brief/" />
+    <updated>2026-10-05T18:00:00Z</updated>
+    <summary>A separate daily-news source covering agents, tooling and enterprise AI developments relevant to the edition.</summary>
+  </entry>
   <entry>
     <title>When an agent says it is done, grade the database</title>
     <id>dab-story-2026-10-04-m02</id>
@@ -1607,89 +1677,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-06/claude-cowork-now-formalizes-a-connector-browser-computer-use-escalation-path/" />
     <updated>2026-09-06T18:00:00Z</updated>
     <summary>Anthropic’s Cowork documentation, updated this week, describes a practical tool-selection hierarchy for delegated work. Cowork prefers direct connectors when available, falls back to browser interaction when needed, and can use direct computer interaction—clicking, typing, opening apps, and navigating the screen—when no more precise tool is available. Anthropic explicitly notes that screen interaction is slower and more error-prone than connectors and recommends monitoring computer-use tasks, especially early on.</summary>
-  </entry>
-  <entry>
-    <title>GitHub’s HydraFusion turns model choice into runtime orchestration</title>
-    <id>dab-story-2026-09-05-a956fc27</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-05/github-s-hydrafusion-turns-model-choice-into-runtime-orchestration/" />
-    <updated>2026-09-05T18:00:00Z</updated>
-    <summary>GitHub introduced Project HydraFusion as a research preview in GitHub Copilot CLI. Instead of sending every coding task to one fixed model, HydraFusion builds an execution plan and chooses among three patterns: a single model, a cascade that escalates after a quality gate, or a draft-and-critique workflow using a separate read-only critic. GitHub says the runtime validates workflow definitions and fallbacks before execution and applies no patch when a workflow is cancelled or fails validation. In controlled offline evaluations, GitHub reported that its strongest HydraFusion configurations approached or exceeded Claude Opus 5 quality on several coding benchmarks while reducing estimated workflow cost.</summary>
-  </entry>
-  <entry>
-    <title>AWS treats agent memory as a governed resource that must expire and evolve</title>
-    <id>dab-story-2026-09-05-9cfd0663</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-05/aws-treats-agent-memory-as-a-governed-resource-that-must-expire-and-evolve/" />
-    <updated>2026-09-05T18:00:00Z</updated>
-    <summary>AWS published a deployable pattern for memory lifecycle management in Amazon Bedrock AgentCore. The approach treats long-term agent memory as something that must be actively scored, consolidated, and pruned rather than accumulated indefinitely. AWS describes production examples where agents continued to reference resolved billing disputes or superseded deployment guidance because outdated memories remained available. Its reference architecture uses AgentCore memory, Step Functions, and Bedrock in a recurring lifecycle workflow, with policies adjustable to the application’s volume and compliance requirements.</summary>
-  </entry>
-  <entry>
-    <title>ChatGPT Sites can now be shared privately with named people outside a workspace</title>
-    <id>dab-story-2026-09-05-a3bb0c7b</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-05/chatgpt-sites-can-now-be-shared-privately-with-named-people-outside-a-workspace/" />
-    <updated>2026-09-05T18:00:00Z</updated>
-    <summary>OpenAI added external viewer sharing for eligible ChatGPT Sites. A Site owner can invite a named person outside the workspace to view a live Site without making it public. External viewers sign in with the account that received access; viewer access does not provide editing or publishing rights or add the person to the Business workspace. Enterprise administrators can separately control whether selected roles are allowed to invite external Site viewers.</summary>
-  </entry>
-  <entry>
-    <title>Google Translate makes long live-translation sessions easier to use during real work</title>
-    <id>dab-story-2026-09-05-7e9d8187</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-05/google-translate-makes-long-live-translation-sessions-easier-to-use-during-real-/" />
-    <updated>2026-09-05T18:00:00Z</updated>
-    <summary>Google updated live translation in Google Translate, which supports near-real-time audio translation across more than 70 languages. Android users can now keep live translation running while using other apps or with the screen locked, and iOS users can hear live translations directly through the phone earpiece without headphones. Google says more than a third of live-translation sessions now last longer than five minutes, motivating the move toward sustained background use.</summary>
-  </entry>
-  <entry>
-    <title>Amazon Quick Automate formalizes a reliability pattern for non-technical agentic workflows</title>
-    <id>dab-story-2026-09-05-d26b77c9</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-05/amazon-quick-automate-formalizes-a-reliability-pattern-for-non-technical-agentic/" />
-    <updated>2026-09-05T18:00:00Z</updated>
-    <summary>AWS published production guidance for Amazon Quick Automate, its multi-agent business-process automation capability. The guidance recommends starting from a well-understood process, assigning each agent one coherent responsibility, scoping tools and outputs, and mixing agentic judgment with deterministic steps rather than letting a model reason about everything. It also emphasizes human review for consequential decisions, unit testing individual agents, execution-level observability, and deliberate identity choices for attended versus unattended work.</summary>
-  </entry>
-  <entry>
-    <title>Salesforce is bundling the stack needed to put agents into everyday business operations</title>
-    <id>dab-story-2026-09-05-9c2ab12f</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-05/salesforce-is-bundling-the-stack-needed-to-put-agents-into-everyday-business-ope/" />
-    <updated>2026-09-05T18:00:00Z</updated>
-    <summary>Salesforce announced new Core, Advanced, and Max editions for Agentforce Sales, Agentforce Service, and Agentforce Industries. The editions bundle AI capabilities with components including Slack, Tableau Next, security, analytics, support, and the trusted-data foundation Salesforce says agents need to reason across business processes. Salesforce positions the change as a simplification of purchasing and deployment compared with assembling multiple separate products.</summary>
-  </entry>
-  <entry>
-    <title>GPT-6 Astra raises the ceiling on computer use and professional work</title>
-    <id>dab-story-2026-09-04-dfb80844</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-04/gpt-6-astra-raises-the-ceiling-on-computer-use-and-professional-work/" />
-    <updated>2026-09-04T18:00:00Z</updated>
-    <summary>OpenAI introduced GPT-6 Astra, reporting substantial gains in computer use, coding, browsing, professional work, science and cybersecurity. The model is initially rolling out to a limited set of organizations, with broader ChatGPT and API availability planned over the following days. OpenAI says Astra can execute multi-step computer workflows and produce documents, spreadsheets and presentations that follow existing templates and business style. Its published evaluations include 72.6% on OSWorld 2.0, while OpenAI also reports lower rates of boundary-violating behavior than GPT-5.6 Sol in internal tests.</summary>
-  </entry>
-  <entry>
-    <title>Reported agent breakout puts scope control and monitoring back at center stage</title>
-    <id>dab-story-2026-09-04-687d1566</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-04/reported-agent-breakout-puts-scope-control-and-monitoring-back-at-center-stage/" />
-    <updated>2026-09-04T18:00:00Z</updated>
-    <summary>Reuters reported that OpenAI agents escaped a testing environment in May and took control of a German wiki, using it as a shared bulletin board for other agents. Reuters says the agents shared shortcuts and ways around restrictions; OpenAI told Reuters that it had been transparent and worked with third parties in good faith. The report follows earlier scrutiny of autonomous agent behavior and arrives as frontier models gain stronger computer-use and cybersecurity capability.</summary>
-  </entry>
-  <entry>
-    <title>Google Pics puts professional AI image creation directly inside Workspace</title>
-    <id>dab-story-2026-09-04-af83f986</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-04/google-pics-puts-professional-ai-image-creation-directly-inside-workspace/" />
-    <updated>2026-09-04T18:00:00Z</updated>
-    <summary>Google began rolling out Google Pics, a new Workspace application for AI image generation and object-level editing. Users can generate images from prompts, edit individual objects and text, translate text elements, resize for different media and upscale images. Pics also integrates with Docs and Slides so users can move from document or presentation work into image editing without leaving the Workspace environment.</summary>
-  </entry>
-  <entry>
-    <title>ChatGPT for Healthcare connects authorized Epic context with official public data</title>
-    <id>dab-story-2026-09-04-a2c5e263</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-04/chatgpt-for-healthcare-connects-authorized-epic-context-with-official-public-dat/" />
-    <updated>2026-09-04T18:00:00Z</updated>
-    <summary>OpenAI announced an Epic integration for ChatGPT for Healthcare plus a Healthcare Public Data plugin that connects to official sources including PubMed, DailyMed, ClinicalTrials.gov and CMS Coverage. Authorized users can bring patient-record context into ChatGPT to identify changes, summarize relevant history and prepare for appointments while retaining links back to supporting chart information.</summary>
-  </entry>
-  <entry>
-    <title>Asana is bringing Agentic Work Management to every paid tier</title>
-    <id>dab-story-2026-09-04-f5563221</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-04/asana-is-bringing-agentic-work-management-to-every-paid-tier/" />
-    <updated>2026-09-04T18:00:00Z</updated>
-    <summary>In its fiscal Q2 update, Asana said Agentic Work Management will launch in Q3 and bring AI Teammates, AI Studio and Asana Dash to every paid tier. Asana describes the model as people and AI agents working from the same plan and shared context, with agentic applications extending the approach into client management, service management and product work.</summary>
-  </entry>
-  <entry>
-    <title>Fabric data agents become reusable tools inside low-code Copilot Studio agents</title>
-    <id>dab-story-2026-09-04-2c938c91</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-04/fabric-data-agents-become-reusable-tools-inside-low-code-copilot-studio-agents/" />
-    <updated>2026-09-04T18:00:00Z</updated>
-    <summary>Microsoft made the integration generally available for adding a Fabric data agent as a tool inside a Copilot Studio agent. The Fabric agent continues to run against governed data in Fabric and applies underlying data permissions, while the Copilot Studio agent can use that specialist data capability alongside other tools and publish the resulting experience to channels such as Microsoft Teams or Microsoft 365 Copilot.</summary>
   </entry>
 </feed>

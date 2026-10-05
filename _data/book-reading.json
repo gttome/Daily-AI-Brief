@@ -979,6 +979,44 @@
         "label": "READ DEEPER",
         "why": "Event-driven autonomy needs clear exception handling, escalation playbooks, clarification paths and role boundaries so a human can take over at the right point."
       }
+    ],
+    "2026-10-05": [
+      {
+        "item_id": "dab-story-2026-10-05-m02",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Connect conversational completion claims to durable-state verification, regression monitoring, explicit evaluation criteria and a reusable checking workflow."
+      },
+      {
+        "item_id": "dab-story-2026-10-05-m12",
+        "reference_id": "prompt-expert-critic",
+        "label": "READ DEEPER",
+        "why": "API-triggered review is more dependable when review evidence is auditable, context is complete, the model is assigned a critic role and human-versus-agent responsibilities stay explicit."
+      },
+      {
+        "item_id": "dab-story-2026-10-05-m07",
+        "reference_id": "context-dynamic-facts",
+        "label": "READ DEEPER",
+        "why": "Cross-app work benefits from current-state data, structured handoffs, clear prompts and reusable editable artifacts that preserve intent."
+      },
+      {
+        "item_id": "dab-story-2026-10-05-m13",
+        "reference_id": "reliable-rag",
+        "label": "READ DEEPER",
+        "why": "Citation-grounded reports improve when retrieval mixes semantic and exact matching, the research question is defined first, requests specify evidence needs and results feed an iterative learning workflow."
+      },
+      {
+        "item_id": "dab-story-2026-10-05-m01",
+        "reference_id": "ecosystem-template-export",
+        "label": "READ DEEPER",
+        "why": "A reusable skill is a structured contract; these sections show why instructions, references, constraints and reusable templates must stay coherent."
+      },
+      {
+        "item_id": "dab-story-2026-10-05-m09",
+        "reference_id": "reliable-agent-failures",
+        "label": "READ DEEPER",
+        "why": "Event-driven autonomy needs clear exception handling, escalation playbooks, clarification paths and role boundaries so a human can take over at the right point."
+      }
     ]
   },
   "selection_reviews": {
@@ -14027,6 +14065,10 @@
       "book_mapping_source": "_records/editorial-handoff/book-mappings-2026-10-04.json",
       "suppress_reader_book_bridges": false,
       "reason": "Run 8 is PUBLIC_CLOSED. Historical reader-parity correction restores the persisted Task 09 book bridges and full reader presentation without changing locked editorial selections or accepted assets."
+    },
+    "2026-10-05": {
+      "contract_transition": "pre-2026-10-05-frozen-reader-recovery",
+      "book_mapping_source": "_records/editorial-handoff/book-mappings-2026-10-05.json"
     }
   }
 }

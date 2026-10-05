@@ -1,0 +1,27 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "task_id": "03",
+  "incident_id": "wd-reliable-edition-20261005-run9-task03-research-consumer-unclaimed-615f55e5",
+  "slot_id": "B",
+  "classification": "BLOCKED_ACTIONABLE",
+  "lease_generation": 1,
+  "action_key": "wd-reliable-edition-20261005-run9-task03-research-consumer-unclaimed-615f55e5:capability-handoff:slot-b:g1",
+  "request_key": "615f55e549ff1fb1676d1324f959b6c9c4c092b5966d0926f28f6a9cf71d11a6",
+  "request_capability": "research_chatgpt",
+  "attempted_actions": [
+    "Applied the scheduled-start exception after the compact runtime health record still described the prior terminal edition.",
+    "Confirmed the protected active pointer identifies exactly one nonterminal October 5 execution; Tasks 00-02 are Done and Task 03 is first incomplete.",
+    "Re-ran the failed same-execution Run Supervisor job after Task 02 durable completion provided new evidence.",
+    "Confirmed Supervisor attempt 2 queued/reused the exact Task 03 research_chatgpt request and then failed with research_consumer_unclaimed.",
+    "Did not perform fresh external research because this Watchdog invocation is restricted to connected GitHub only."
+  ],
+  "blocker": "The exact authoritative Task 03 request requires capability research_chatgpt. This Watchdog invocation is GitHub-only and therefore cannot truthfully perform the required fresh external article discovery. Supervisor workflow run 37246844956 attempt 2 is completed with conclusion failure; its writer generation 8 remains time-bounded and must not be stolen without the protected dead-writer proof rules.",
+  "next_authorized_action": "A research-capable ordinary ChatGPT consumer must claim the same Task 03 request 615f55e549ff1fb1676d1324f959b6c9c4c092b5966d0926f28f6a9cf71d11a6, preserve Tasks 00-02, and perform the bounded fresh external discovery. If writer generation 8 is still unexpired, supersede it only after proving workflow run 37246844956 attempt 2 is terminal failure, no child/subworker is live, and no substantive write occurred after terminal time; persist the required dead-writer proof before replacement.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "recovery_required": true,
+  "blocked_external": false,
+  "occurred_at": "2026-10-05T00:21:10.000Z"
+}

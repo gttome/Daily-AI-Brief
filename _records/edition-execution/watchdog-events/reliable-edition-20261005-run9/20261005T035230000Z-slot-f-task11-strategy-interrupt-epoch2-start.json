@@ -1,0 +1,17 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "incident_id": "wd-reliable-edition-20261005-run9-task11-strategy-interrupt-epoch2",
+  "owner_slot": "F",
+  "task_id": "11",
+  "event_at": "2026-10-05T03:52:30.000Z",
+  "classification": "BLOCKED_ACTIONABLE",
+  "outcome": "STRATEGY_INTERRUPT_STARTED",
+  "action_key": "wd-reliable-edition-20261005-run9-task11-strategy-interrupt-epoch2:consume-exact-request:slot-f:g7",
+  "prior_request_key": "b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26",
+  "authoritative_request_key": "6230c14e75e71b73dfd7f832aae70fec4dd7b0c17efa57d2ff26d2e6d07470fe",
+  "materially_different_tactic": "Fresh scheduled invocation; simplified artifact-only prompt with no Agent term; no referenced images; proven direct Git Data binary bridge.",
+  "recovery_required": true,
+  "success": false
+}

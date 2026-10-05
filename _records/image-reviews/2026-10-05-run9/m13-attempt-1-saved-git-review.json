@@ -1,0 +1,61 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "14",
+  "candidate_id": "m13",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-05T04:18:32.000Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 35,
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "saved_git_commit": "44aa1c5e79f56a76a1d604c91670eab1d6116cd7",
+  "image_execution_admission": "_records/image-admission/2026-10-05-run9/14-01c79631386e213180717f5b7e8c1f0bbc9a611c676c01aa6c099c7e3b2a9e40.json",
+  "source_lineage": {
+    "base_generation_id": "exec-e0c6a503-5f8e-4a6f-9efd-777abd87e026",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "821b347ccebd930c4dc70d1e0bfe390f98c1a99ed719e9fb61e9be98bfcbda11",
+    "native_bytes": 1068630,
+    "native_width": 1730,
+    "native_height": 909,
+    "transport_method": "exact returned PNG via Git Data create_blob Base64"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m13.png",
+    "git_blob_sha": "c2b8ab0bd652f2a79eff372601427bf32473137c",
+    "sha256": "821b347ccebd930c4dc70d1e0bfe390f98c1a99ed719e9fb61e9be98bfcbda11",
+    "bytes": 1068630,
+    "width": 1730,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "A left-to-right research pipeline filters retrieved sources, maps provenance and contradictions across an evidence lattice, composes claims and connects each claim to verification panels.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Research question",
+      "Retrieval",
+      "Evidence filter",
+      "Source fragment",
+      "Citation map",
+      "Report composer",
+      "Claim",
+      "Verify"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The first admitted render passed; the inspected local PNG is byte-identical to the Git blob and satisfies the sealed story-only controls."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

@@ -1,0 +1,173 @@
+{
+  "schema_version": "run9-evidence-review-v1",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_id": "reliable-edition-20261005-run9",
+  "verified_at": "2026-10-05T00:38:10.318Z",
+  "sealed_research_cutoff": "2026-10-05T00:00:23.000Z",
+  "article_policy": "article-24-72-168-v1",
+  "source_preflight_sha": "2e8941aa57d0110607bc0939cbde09d21d83d5db",
+  "candidate_count_reviewed": 9,
+  "full_source_reviews": 9,
+  "evidence_source_ref": "_records/discovery-preflight/result/article-evidence.json@2e8941aa57d0110607bc0939cbde09d21d83d5db",
+  "source_evidence_sha256": "d6d8bda502f7485f7201be3e045d3b91476bc0757cb47655e51aca9e4382951b",
+  "independent_web_spot_checks_completed": 9,
+  "eligibility_after_source_date_verification": {
+    "eligible_candidate_ids": [
+      "m01",
+      "m02",
+      "m03",
+      "m06",
+      "m07",
+      "m08",
+      "m09",
+      "m12",
+      "m13"
+    ],
+    "excluded_candidate_ids": [],
+    "category_coverage": {
+      "technical_ai_engineering": 3,
+      "applied_genai_knowledge_workers": 3,
+      "agents_non_technical_people": 3
+    },
+    "agent_skill_story_ready_candidate_id": "m01"
+  },
+  "freshness_review": {
+    "primary_24h": [],
+    "normal_fallback_72h": [
+      "m02",
+      "m03",
+      "m08",
+      "m12"
+    ],
+    "extended_fallback_168h": [
+      "m01",
+      "m06",
+      "m07",
+      "m09",
+      "m13"
+    ],
+    "source_date_conflict": []
+  },
+  "review_items": [
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "status": "verified",
+      "full_source_read": true,
+      "source_word_count": 3391,
+      "claims": [
+        "ThinkingBox grades agents by terminal database state and repeated outcomes rather than plausible generated text."
+      ],
+      "limitations": [
+        "Publisher-authored Microsoft article hosted by Hugging Face."
+      ]
+    },
+    {
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "status": "verified",
+      "full_source_read": true,
+      "source_word_count": 203,
+      "claims": [
+        "GitHub deprecated four named Copilot model options and directs organizations toward supported alternatives."
+      ],
+      "limitations": [
+        "Short operational changelog with limited mechanism depth."
+      ]
+    },
+    {
+      "candidate_id": "m12",
+      "focus": "technical_ai_engineering",
+      "status": "verified",
+      "full_source_read": true,
+      "source_word_count": 280,
+      "claims": [
+        "GitHub added REST and GraphQL requests for Copilot code review, per-request effort settings, and Balanced as the default."
+      ],
+      "limitations": [
+        "Product changelog; outcome evidence is not independent."
+      ]
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 226,
+      "claims": [
+        "Gemini student hub centralizes study tools under existing Workspace generative-AI administration controls."
+      ],
+      "limitations": [
+        "Education-specific use case."
+      ]
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 936,
+      "claims": [
+        "Google added object-level AI image editing, prompt-built Sheets canvases, cross-app execution, Vids explainers and AI data classification."
+      ],
+      "limitations": [
+        "Extended freshness rung is required at the sealed cutoff."
+      ]
+    },
+    {
+      "candidate_id": "m13",
+      "focus": "applied_genai_knowledge_workers",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 1800,
+      "claims": [
+        "Ai2 released an open 8B model and training data for fast citation-grounded scientific report generation."
+      ],
+      "limitations": [
+        "Publisher-authored release; independent production outcomes are not established."
+      ]
+    },
+    {
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "status": "verified_agent_skills",
+      "full_source_read": true,
+      "source_word_count": 2094,
+      "claims": [
+        "DOCA Agent Skills encode verified APIs, hardware constraints and build checks; NVIDIA reports improved completion in a 65-prompt evaluation."
+      ],
+      "limitations": [
+        "Vendor-reported evaluation in a specialized infrastructure domain."
+      ]
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "status": "verified",
+      "full_source_read": true,
+      "source_word_count": 2149,
+      "claims": [
+        "AWS demonstrates trajectory-level multi-turn reinforcement learning for a search agent with verifiable retrieval rewards."
+      ],
+      "limitations": [
+        "Vendor-authored implementation and benchmark report."
+      ]
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 6491,
+      "claims": [
+        "AWS details event-driven ambient agents with isolated sessions, human approval and resumable interruption handling."
+      ],
+      "limitations": [
+        "Reference architecture, not an independent outcome study."
+      ]
+    }
+  ],
+  "novelty_check": "No October 4 locked headline is repeated by the nine freshness-eligible candidates.",
+  "unknowns_preserved": true,
+  "result": "PASS"
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "d9f874a7115874462929a4f84e577095afe69a65b7c2aa8927fdbec8c9e0e990",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "08",
+  "request_writer_generation": 18,
+  "writer_generation": 21,
+  "status": "passed",
+  "consumed_at": "2026-10-05T02:27:25.000Z",
+  "completed_at": "2026-10-05T02:33:36.000Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "watchlist_artifact": "_records/editorial/2026-10-05-run9/watchlist-refresh.json",
+    "sweep_receipt": "_records/watchlist-sweeps/2026-10-05.json",
+    "domains_checked": 7,
+    "focused_checks": 14,
+    "new_topics": 0,
+    "updated_topics": 6,
+    "reactivated_topics": 1,
+    "carried_forward": 15,
+    "dropped_topics": 0,
+    "zero_new_certified": true,
+    "exact_request_reused": true,
+    "completed_upstream_rework": false
+  },
+  "result": "PASS"
+}

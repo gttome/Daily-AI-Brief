@@ -1,0 +1,21 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "task_id": "22",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-05T07:44:01.265Z",
+  "writer_generation": 60,
+  "owner_id": "watchdog-F-task22",
+  "reason_code": "TASK22_PUBLICATION_PR_CONTINUATION_ACQUIRED",
+  "operation": "open_publication_pr",
+  "proof": {
+    "request_key": "b282b6279f9a9e2af03a32e621c507cd181fd9dddfd9887a6c200d64f61d7ee6",
+    "request_generation": 58,
+    "refreshed_authority_generation": 60,
+    "completed_tasks": "00-21",
+    "accepted_locked_images": 6
+  }
+}

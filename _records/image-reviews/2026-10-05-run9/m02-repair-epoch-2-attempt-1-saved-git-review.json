@@ -1,0 +1,57 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "repair_epoch": 2,
+  "post_repair_attempt": 1,
+  "reviewed_at": "2026-10-05T03:57:10.000Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 29,
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "saved_git_commit": "2edb869f05d525cbc88b71a1ed9d99766ee8ff08",
+  "source_lineage": {
+    "base_generation_id": "exec-aa748ad8-e1ff-40e9-bd63-ef63090e8fea",
+    "targeted_edit_generation_id": "exec-05cc9c07-d934-4f70-bee2-57a497704eb2",
+    "native_sha256": "64f321e3441432627379fc8edb4f722347231fb8d18ecafb71b85215b5605858",
+    "native_bytes": 1783828,
+    "native_width": 1730,
+    "native_height": 909,
+    "transport_method": "exact returned PNG via Git Data create_blob Base64"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m02.png",
+    "git_blob_sha": "254c2eac5f5b39f5c2890d7b08b450fdd19ea6bf",
+    "sha256": "64f321e3441432627379fc8edb4f722347231fb8d18ecafb71b85215b5605858",
+    "bytes": 1783828,
+    "width": 1730,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "Four color-coded evidence trays feed a central verification gate; the verified result is committed to a chained evidence ledger.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Claim packet",
+      "Database state",
+      "Side effects",
+      "Repeated run",
+      "Verification gate",
+      "Evidence ledger"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The inspected local PNG is byte-identical to the Git blob and satisfies the repaired story-only subject controls."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "incident_id": "wd-reliable-edition-20261005-run9-task11-repair-epoch-1-b2a4c8d7",
+  "owner_slot": "A",
+  "task_id": "11",
+  "event_at": "2026-10-05T03:15:00.000Z",
+  "classification": "BLOCKED_EXTERNAL",
+  "outcome": "BOUNDED_POST_REPAIR_ATTEMPT_CONSUMED",
+  "action_key": "wd-reliable-edition-20261005-run9-task11-repair-epoch-1-b2a4c8d7:post-repair-attempt-1:slot-a",
+  "durable_delta": {
+    "request_key": "b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26",
+    "writer_generation": 28,
+    "native_generation_id": "3189246e-da8c-4294-af4a-c54cd2f97849",
+    "native_sha256": "be41247b0a905edce85bd46f42c98a824438809b9390ffd1ac606b3b5fdd3ac2",
+    "attempt_receipt": "_records/image-attempts/2026-10-05-run9/m02-repair-epoch-1-attempt-1.json",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/11-b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26.json",
+    "task_block_event": "_records/edition-execution/events/2026-10-05-run9/11-blocked-20261005T031030000Z.json",
+    "writer_released": true
+  },
+  "blocker": "The bounded post-repair native generation produced repository/watchdog UI instead of the sealed m02 story mechanism. Exact returned PNG bytes were retained in the execution runtime but could not be transferred through the connected GitHub binary write path. The bounded request must not be generated again.",
+  "strategy_interrupt_applied": true,
+  "next_authorized_action": "Resume Task 11 only on an execution surface that can enforce story-only native generation and direct exact-byte Git persistence.",
+  "recovery_required": false,
+  "success": false
+}

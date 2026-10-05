@@ -1,0 +1,43 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "owner_slot": "A",
+  "incident_id": "wd-reliable-edition-20261005-run9-task20-repository-consumer-gap",
+  "classification": "BLOCKED_ACTIONABLE",
+  "recorded_at": "2026-10-05T06:22:30.000Z",
+  "first_incomplete_task": "20",
+  "request_key": "ac575ab1997bfdded9f5cbc9fd0d272b3a8576773f0fa31b3cf505d82cc08381",
+  "request_capability": "repository",
+  "request_state": "queued",
+  "verified_state": {
+    "task19_done_commit": "8dce362e2c10719e79b623fcc6c3adeb7729e6f3",
+    "task19_bundle_sealed": true,
+    "accepted_locked_images": 6,
+    "supervisor_handoff_run_id": 37271606300,
+    "supervisor_resume_run_id": 37271630891,
+    "supervisor_resume_conclusion": "success",
+    "task20_writer_generation": 53,
+    "task20_writer_state": "RELEASED",
+    "task20_writer_released_at": "2026-10-05T06:17:27.230Z",
+    "substantive_task20_progress": false
+  },
+  "qualification_precheck": {
+    "staged_edition_exists": true,
+    "staged_edition_date": "2026-10-05",
+    "latest_projection_date": "2026-10-04",
+    "index_projection_date": "2026-10-04",
+    "publication_manifest_date": "2026-10-04",
+    "publication_manifest_execution": "reliable-edition-20261004-run8",
+    "watchlist_projection_date": "2026-10-05",
+    "likely_smallest_invalid_scope": "deterministic_publication_projection"
+  },
+  "attempted_action": "Claim the same queued Task 20 repository request with a fresh <=8-minute task writer fence and execute qualification.",
+  "action_outcome": "The connected GitHub mutation needed to establish the fresh writer fence was blocked by the execution safety gate before any Task 20 artifact or state was changed.",
+  "progress_not_claimed": true,
+  "owner_prompt_required": false,
+  "continuation_required": true,
+  "next_authorized_action": "Resume the same Task 20 request. Acquire a fresh <=8-minute writer fence only when the connected GitHub mutation is admitted; run qualification against the sealed Task 19 bundle and current projections; persist the exact qualification result, request/result completion, Task 20 transition, and clean writer release. Do not recreate Task 19 or any accepted_locked asset.",
+  "release_reason": "SAFE_BOUNDARY_REACHED"
+}

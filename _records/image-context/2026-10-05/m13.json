@@ -1,0 +1,21 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-05-m13"
+  ],
+  "candidate_id": "m13",
+  "task_id": "14",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-05T02:46:35.246Z",
+  "allowed_text": [
+    "Research question",
+    "Retrieval",
+    "Evidence filter",
+    "Source fragment",
+    "Citation map",
+    "Report composer",
+    "Claim",
+    "Verify"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: citation-grounded report generation. Create a left-to-right research pipeline in which a research question drives retrieval and evidence filtering; cited source fragments assemble into a dense evidence lattice, then a report composer emits claims connected back through a citation map to verification panels. Show provenance lines, source-quality markers, contradiction flags, and claim-to-citation links while keeping the diagram elegant and legible. No people, humanoids, photos, decorative filler, fabricated paper titles, unsupported metrics, overlapping text, or sparse/basic box-and-arrow layout. Only these visible labels: Research question, Retrieval, Evidence filter, Source fragment, Citation map, Report composer, Claim, Verify."
+}

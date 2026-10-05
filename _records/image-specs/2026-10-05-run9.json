@@ -1,0 +1,131 @@
+{
+  "schema_version": "run9-image-specs-v1",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_id": "reliable-edition-20261005-run9",
+  "sealed_at": "2026-10-05T02:46:35.246Z",
+  "common": {
+    "canvas": "1200x630 landscape",
+    "quality": "professional high-detail textbook/editorial mechanism illustration",
+    "background": "clean white or near-white",
+    "no_people": true,
+    "no_photos": true,
+    "no_decorative_filler": true,
+    "no_basic_fallback": true,
+    "no_svg_fallback": true,
+    "visible_text_whitelist_only": true,
+    "no_overlapping_text": true,
+    "single_story_context_required": true
+  },
+  "specs": [
+    {
+      "task_id": "11",
+      "candidate_id": "m02",
+      "subject": "Backend-state verification for agents",
+      "composition": "A forensic split-screen architecture: an upper claim channel and a lower durable-state channel with database records, side-effect receipts and repeated-run samples converging on a verification tribunal, then an immutable evidence ledger.",
+      "allowed_text": [
+        "Agent claim",
+        "Database state",
+        "Side effects",
+        "Repeated run",
+        "Verification gate",
+        "Evidence ledger"
+      ]
+    },
+    {
+      "task_id": "12",
+      "candidate_id": "m12",
+      "subject": "API-driven Copilot code review with adjustable effort",
+      "composition": "A repository change enters a review API router; three calibrated inspection depths fan through code, security and test analyzers, then reconverge into evidence-backed review comments and a merge decision.",
+      "allowed_text": [
+        "Pull request",
+        "Review API",
+        "Low effort",
+        "Balanced",
+        "High effort",
+        "Code checks",
+        "Security checks",
+        "Test evidence",
+        "Review comments",
+        "Merge decision"
+      ]
+    },
+    {
+      "task_id": "13",
+      "candidate_id": "m07",
+      "subject": "Synchronized cross-app knowledge work",
+      "composition": "A shared data spine feeds three differentiated work surfaces—object-level image editing, an interactive spreadsheet canvas and cross-app task execution—while provenance and synchronization rails maintain consistency.",
+      "allowed_text": [
+        "Shared source data",
+        "Image edit",
+        "Sheets canvas",
+        "Cross-app task",
+        "Provenance",
+        "Synchronized",
+        "Review"
+      ]
+    },
+    {
+      "task_id": "14",
+      "candidate_id": "m13",
+      "subject": "Citation-grounded report generation",
+      "composition": "A research question drives retrieval and evidence filtering; cited source fragments are organized into a compact evidence lattice, then a one-pass report composer emits claims linked back to citations and a verification panel.",
+      "allowed_text": [
+        "Research question",
+        "Retrieval",
+        "Evidence filter",
+        "Source fragment",
+        "Citation map",
+        "Report composer",
+        "Claim",
+        "Verify"
+      ]
+    },
+    {
+      "task_id": "15",
+      "candidate_id": "m01",
+      "subject": "Verified DOCA Agent Skills",
+      "composition": "A sealed skill package containing instructions, references and scripts moves through API-signature, hardware-compatibility and build-validation chambers before a preflight gate authorizes bounded execution with rollback.",
+      "allowed_text": [
+        "DOCA Agent Skill",
+        "Instructions",
+        "References",
+        "Scripts",
+        "API check",
+        "Hardware check",
+        "Build check",
+        "Preflight",
+        "Bounded execution",
+        "Rollback"
+      ]
+    },
+    {
+      "task_id": "16",
+      "candidate_id": "m09",
+      "subject": "Event-driven ambient agents with human approval",
+      "composition": "An event bus opens an isolated job state; policy and confidence gates route work either to bounded tool execution or a human-approval interrupt, after which the job resumes and writes a complete audit trail.",
+      "allowed_text": [
+        "Event",
+        "Ambient agent",
+        "Isolated session",
+        "Job state",
+        "Policy gate",
+        "Bounded action",
+        "Ask human",
+        "Resume",
+        "Audit trail"
+      ]
+    }
+  ],
+  "checks": {
+    "exact_spec_count": 6,
+    "distinct_compositions": true,
+    "professional_detail_required": true,
+    "people_prohibited": true,
+    "photos_prohibited": true,
+    "basic_fallback_prohibited": true,
+    "svg_fallback_prohibited": true,
+    "visible_text_guard": true,
+    "single_story_contexts": true,
+    "result": "PASS"
+  }
+}

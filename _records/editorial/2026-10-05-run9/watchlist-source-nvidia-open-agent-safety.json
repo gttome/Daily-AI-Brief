@@ -1,0 +1,13 @@
+{
+  "schema_version": "watchlist-source-evidence-v1",
+  "candidate_id": "w9-nvidia-open-agent-safety",
+  "source_url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+  "publisher": "NVIDIA",
+  "publication_date": "2026-09-28",
+  "checked_at": "2026-10-05T02:27:25.000Z",
+  "research_cutoff": "2026-10-05T00:00:23.000Z",
+  "eligible_at_research_cutoff": true,
+  "disposition": "update_existing",
+  "topic_id": "dab-topic-adaptive-agent-safeguards",
+  "finding": "Open Agent Safety Platform combines sandboxed runtime isolation with hardware-assisted out-of-band monitoring, verifiable policy and contextual activity records."
+}

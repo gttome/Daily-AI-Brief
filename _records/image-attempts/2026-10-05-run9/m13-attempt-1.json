@@ -1,0 +1,59 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "14",
+  "candidate_id": "m13",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "request_key": "01c79631386e213180717f5b7e8c1f0bbc9a611c676c01aa6c099c7e3b2a9e40",
+  "writer_generation": 35,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-05T04:15:48.000Z",
+  "image_execution_admission": "_records/image-admission/2026-10-05-run9/14-01c79631386e213180717f5b7e8c1f0bbc9a611c676c01aa6c099c7e3b2a9e40.json",
+  "generated_at": "2026-10-05T04:16:45.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-e0c6a503-5f8e-4a6f-9efd-777abd87e026",
+    "targeted_edit_generation_id": null,
+    "targeted_edit": null
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1068630,
+    "sha256": "821b347ccebd930c4dc70d1e0bfe390f98c1a99ed719e9fb61e9be98bfcbda11",
+    "persisted": true,
+    "path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m13.png",
+    "git_blob_sha": "c2b8ab0bd652f2a79eff372601427bf32473137c",
+    "saved_git_commit": "44aa1c5e79f56a76a1d604c91670eab1d6116cd7",
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES",
+    "same_visual_targeted_edit": false,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Research question",
+      "Retrieval",
+      "Evidence filter",
+      "Source fragment",
+      "Citation map",
+      "Report composer",
+      "Claim",
+      "Verify"
+    ],
+    "extra_visible_text": [],
+    "note": "Research question, retrieval and evidence filtering lead into source fragments, a dense citation map, report composition, claims and independent verification panels with provenance, contradiction and claim-link structure."
+  },
+  "disposition": "ACCEPTED_LOCKED"
+}

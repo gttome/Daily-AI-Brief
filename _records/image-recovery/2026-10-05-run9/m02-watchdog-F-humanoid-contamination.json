@@ -1,0 +1,25 @@
+{
+  "schema_version": "native-image-subject-contamination-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "request_key": "dd4455aeb62013bdb4fd96647b09acac7d399d0f3eafc53304b98537e19a6fb9",
+  "writer_generation": 27,
+  "consumer_slot": "F",
+  "observed_at": "2026-10-05T03:02:30.000Z",
+  "generated_outputs": [
+    {
+      "attempt": 1,
+      "native_generation_id": "exec-d0d4af03-b6d6-4b04-ac0a-0768869f26a5",
+      "disposition": "REJECTED_SUBJECT_CONTROL_HUMANOID_PRESENT",
+      "persisted_evidence": "_records/image-originals/2026-10-05-run9/dab-edition-2026-10-05-m02-attempt-1-native-rejected.png",
+      "sha256": "561676d882970fbbca3570bb39ad877cc0f0f91d9a43c32edc2e396042b9a5cf"
+    }
+  ],
+  "blocker_detail": "The first native image depicted a humanoid robot head inside the Agent claim panel despite the sealed prohibition on people and humanoids. Subject control failed; the image was not accepted.",
+  "recoverable": true,
+  "external_blocker": false,
+  "repair_epoch_required": 1,
+  "next_action": "Consume exact request b2a4c8d73fffe30f6efd5646b0f5a17bb700dd5f71bb26cc3bfcd84b5662fc26 in a genuinely fresh story-only native image invocation using only _records/image-context/2026-10-05/m02-repair-epoch-1.json."
+}

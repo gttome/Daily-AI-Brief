@@ -1,0 +1,36 @@
+{
+  "schema_version": "image-acceptance-lock-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "15",
+  "candidate_id": "m01",
+  "accepted_locked": true,
+  "accepted_at": "2026-10-05T04:23:49.000Z",
+  "writer_generation": 37,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "image_execution_admission": "_records/image-admission/2026-10-05-run9/15-be3d9d1ea7504d16cc97f72fef12e5538822e950f38485bfa93ad24d31cf4c69.json",
+  "attempt_receipt": "_records/image-attempts/2026-10-05-run9/m01-attempt-1.json",
+  "saved_git_review": "_records/image-reviews/2026-10-05-run9/m01-attempt-1-saved-git-review.json",
+  "source_lineage": {
+    "base_generation_id": "exec-8e07900a-5bde-4636-86aa-4a2207d21139",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "37be1cc71adf83c809ac14c5feb18585e82f939a76c0408d73f1ffa79128201f",
+    "native_bytes": 1741063,
+    "native_dimensions": "1730x909",
+    "native_persisted": true,
+    "transport_representation_authorized": false
+  },
+  "final": {
+    "path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m01.png",
+    "git_blob_sha": "fe0379aaa6dfa434ab0f2772601133cbca5a1049",
+    "sha256": "37be1cc71adf83c809ac14c5feb18585e82f939a76c0408d73f1ffa79128201f",
+    "bytes": 1741063,
+    "width": 1730,
+    "height": 909
+  },
+  "visible_text_guard": "PASS",
+  "quality_gate": "PASS",
+  "immutable": true
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "task_id": "23",
+  "incident_id": "wd-reliable-edition-20261005-run9-task23-append-only-ledger-reconciliation",
+  "owner_slot": "F",
+  "at": "2026-10-05T09:00:59.748Z",
+  "type": "APPEND_ONLY_LEDGER_RECONCILED_PUBLICATION_VALIDATION_PENDING",
+  "classification": "BLOCKED_ACTIONABLE",
+  "failed_ci_run_id": 37286902637,
+  "failed_head": "ad67208f3e32b15d2a3d14875a4e032db05f8728",
+  "durable_delta": {
+    "integrated_validation": "PASS",
+    "run_learning_events_reencoded": 2,
+    "continuous_ledger_restored_from_protected_main": true,
+    "protected_main_ledger_events": 116,
+    "accepted_locked_images_preserved": 6,
+    "completed_tasks_preserved_through": "22"
+  },
+  "strategy_interrupt": "Consume protected main's already-green append-only ledger as the exact prefix and correct only the new Run 9 delta schema; do not rerun the unchanged failed candidate.",
+  "next_authorized_action": "Run exact-head publication validation on existing PR 467 and merge only after PASS.",
+  "recovery_required": true,
+  "handoff": "CONTINUE_SAME_INVOCATION"
+}

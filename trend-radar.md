@@ -5,18 +5,23 @@ permalink: /trend-radar/
 description: Evidence-linked Generative AI trend signals from the Daily AI Brief.
 ---
 
-# Trend Radar — October 3, 2026
+# Trend Radar — October 5, 2026
 
 Classifications use the stated 30-day evidence window. They describe coverage signals, not market forecasts.
 
 ## Agent reliability and governance
 
-**COOLING · high confidence**
+**STABLE · high confidence**
 
-13 supporting stories appeared in the latest 7 days and 80 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+18 supporting stories appeared in the latest 7 days and 75 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [October 5, 2026]({{ '/stories/2026-10-05/when-an-agent-says-it-is-done-grade-the-database/' | relative_url }})
+- [October 5, 2026]({{ '/stories/2026-10-05/ambient-agents-wake-on-events-and-know-when-to-ask-a-human/' | relative_url }})
+- [October 5, 2026]({{ '/podcasts/2026-10-05/galaxy-brain-2026-10-02-argument-against-ai-doom/' | relative_url }})
+- [October 4, 2026]({{ '/stories/2026-10-04/when-an-agent-says-it-is-done-grade-the-database/' | relative_url }})
+- [October 4, 2026]({{ '/stories/2026-10-04/nvidia-gives-agents-a-verified-doca-skill-set/' | relative_url }})
 - [October 3, 2026]({{ '/stories/2026-10-03/california-tests-the-legal-boundary-for-rogue-agents/' | relative_url }})
 - [October 3, 2026]({{ '/podcasts/2026-10-03/run7-2/' | relative_url }})
 - [October 2, 2026]({{ '/stories/2026-10-02/dogwood-temporal-governance-for-agent-actions/' | relative_url }})
@@ -105,20 +110,19 @@ Supporting stories:
 - [September 6, 2026]({{ '/stories/2026-09-06/anthropic-adds-infrastructure-as-code-discipline-to-agent-deployment-with-ant-ap/' | relative_url }})
 - [September 6, 2026]({{ '/stories/2026-09-06/chatgpt-adds-first-party-zendesk-and-onenote-plugins-for-support-and-knowledge-w/' | relative_url }})
 - [September 6, 2026]({{ '/stories/2026-09-06/claude-fable-5-1-raises-the-bar-for-research-and-difficult-professional-knowledg/' | relative_url }})
-- [September 5, 2026]({{ '/stories/2026-09-05/github-s-hydrafusion-turns-model-choice-into-runtime-orchestration/' | relative_url }})
-- [September 5, 2026]({{ '/stories/2026-09-05/amazon-quick-automate-formalizes-a-reliability-pattern-for-non-technical-agentic/' | relative_url }})
-- [September 5, 2026]({{ '/stories/2026-09-05/salesforce-is-bundling-the-stack-needed-to-put-agents-into-everyday-business-ope/' | relative_url }})
-- [September 4, 2026]({{ '/stories/2026-09-04/gpt-6-astra-raises-the-ceiling-on-computer-use-and-professional-work/' | relative_url }})
-- [September 4, 2026]({{ '/stories/2026-09-04/reported-agent-breakout-puts-scope-control-and-monitoring-back-at-center-stage/' | relative_url }})
 
 ## Agent memory and context
 
-**COOLING · high confidence**
+**STABLE · high confidence**
 
-8 supporting stories appeared in the latest 7 days and 42 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+12 supporting stories appeared in the latest 7 days and 38 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [October 5, 2026]({{ '/videos/2026-10-05/general/' | relative_url }})
+- [October 5, 2026]({{ '/videos/2026-10-05/agent-skills/' | relative_url }})
+- [October 4, 2026]({{ '/stories/2026-10-04/copilot-steps-beyond-apis-into-desktop-apps/' | relative_url }})
+- [October 4, 2026]({{ '/videos/2026-10-04/agent-skills/' | relative_url }})
 - [October 3, 2026]({{ '/videos/2026-10-03/agent-skills/' | relative_url }})
 - [October 2, 2026]({{ '/stories/2026-10-02/cohere-embed-5-shared-space-pro-fast-retrieval/' | relative_url }})
 - [October 2, 2026]({{ '/podcasts/2026-10-02/run5-2/' | relative_url }})
@@ -165,19 +169,22 @@ Supporting stories:
 - [September 7, 2026]({{ '/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/' | relative_url }})
 - [September 6, 2026]({{ '/stories/2026-09-06/gpt-6-astra-is-now-generally-available-inside-github-copilot/' | relative_url }})
 - [September 6, 2026]({{ '/stories/2026-09-06/anthropic-adds-infrastructure-as-code-discipline-to-agent-deployment-with-ant-ap/' | relative_url }})
-- [September 5, 2026]({{ '/stories/2026-09-05/aws-treats-agent-memory-as-a-governed-resource-that-must-expire-and-evolve/' | relative_url }})
-- [September 4, 2026]({{ '/stories/2026-09-04/chatgpt-for-healthcare-connects-authorized-epic-context-with-official-public-dat/' | relative_url }})
-- [September 4, 2026]({{ '/stories/2026-09-04/asana-is-bringing-agentic-work-management-to-every-paid-tier/' | relative_url }})
-- [September 4, 2026]({{ '/stories/2026-09-04/fabric-data-agents-become-reusable-tools-inside-low-code-copilot-studio-agents/' | relative_url }})
 
 ## AI-assisted development
 
-**COOLING · high confidence**
+**STABLE · high confidence**
 
-14 supporting stories appeared in the latest 7 days and 79 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+21 supporting stories appeared in the latest 7 days and 76 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [October 5, 2026]({{ '/stories/2026-10-05/copilot-code-review-becomes-an-api-with-adjustable-effort/' | relative_url }})
+- [October 5, 2026]({{ '/videos/2026-10-05/general/' | relative_url }})
+- [October 5, 2026]({{ '/podcasts/2026-10-05/dx-today-2026-09-30-ai-daily-brief/' | relative_url }})
+- [October 4, 2026]({{ '/stories/2026-10-04/copilot-steps-beyond-apis-into-desktop-apps/' | relative_url }})
+- [October 4, 2026]({{ '/stories/2026-10-04/nvidia-gives-agents-a-verified-doca-skill-set/' | relative_url }})
+- [October 4, 2026]({{ '/videos/2026-10-04/general/' | relative_url }})
+- [October 4, 2026]({{ '/videos/2026-10-04/agent-skills/' | relative_url }})
 - [October 3, 2026]({{ '/stories/2026-10-03/customer-service-prepares-for-agents-on-both-sides/' | relative_url }})
 - [October 3, 2026]({{ '/stories/2026-10-03/one-agent-skills-package-many-copilot-workflows/' | relative_url }})
 - [October 3, 2026]({{ '/videos/2026-10-03/agent-skills/' | relative_url }})
@@ -268,18 +275,32 @@ Supporting stories:
 - [September 6, 2026]({{ '/stories/2026-09-06/anthropic-adds-infrastructure-as-code-discipline-to-agent-deployment-with-ant-ap/' | relative_url }})
 - [September 6, 2026]({{ '/stories/2026-09-06/chatgpt-adds-first-party-zendesk-and-onenote-plugins-for-support-and-knowledge-w/' | relative_url }})
 - [September 6, 2026]({{ '/stories/2026-09-06/claude-fable-5-1-raises-the-bar-for-research-and-difficult-professional-knowledg/' | relative_url }})
-- [September 5, 2026]({{ '/stories/2026-09-05/github-s-hydrafusion-turns-model-choice-into-runtime-orchestration/' | relative_url }})
-- [September 4, 2026]({{ '/stories/2026-09-04/gpt-6-astra-raises-the-ceiling-on-computer-use-and-professional-work/' | relative_url }})
-- [September 4, 2026]({{ '/stories/2026-09-04/fabric-data-agents-become-reusable-tools-inside-low-code-copilot-studio-agents/' | relative_url }})
 
 ## Accessible agents for knowledge work
 
-**STABLE · high confidence**
+**ACCELERATING · high confidence**
 
-43 supporting stories appeared in the latest 7 days and 139 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+60 supporting stories appeared in the latest 7 days and 128 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [October 5, 2026]({{ '/stories/2026-10-05/when-an-agent-says-it-is-done-grade-the-database/' | relative_url }})
+- [October 5, 2026]({{ '/stories/2026-10-05/workspace-turns-prompts-into-images-mini-apps-and-cross-app-work/' | relative_url }})
+- [October 5, 2026]({{ '/stories/2026-10-05/astabrief-opens-a-faster-path-to-citation-grounded-reports/' | relative_url }})
+- [October 5, 2026]({{ '/stories/2026-10-05/nvidia-gives-agents-a-verified-doca-skill-set/' | relative_url }})
+- [October 5, 2026]({{ '/stories/2026-10-05/ambient-agents-wake-on-events-and-know-when-to-ask-a-human/' | relative_url }})
+- [October 5, 2026]({{ '/videos/2026-10-05/agent-skills/' | relative_url }})
+- [October 5, 2026]({{ '/podcasts/2026-10-05/galaxy-brain-2026-10-02-argument-against-ai-doom/' | relative_url }})
+- [October 5, 2026]({{ '/podcasts/2026-10-05/dx-today-2026-09-30-ai-daily-brief/' | relative_url }})
+- [October 4, 2026]({{ '/stories/2026-10-04/when-an-agent-says-it-is-done-grade-the-database/' | relative_url }})
+- [October 4, 2026]({{ '/stories/2026-10-04/gemini-puts-study-workflows-in-one-hub/' | relative_url }})
+- [October 4, 2026]({{ '/stories/2026-10-04/workspace-turns-prompts-into-images-mini-apps-and-cross-app-work/' | relative_url }})
+- [October 4, 2026]({{ '/stories/2026-10-04/nvidia-gives-agents-a-verified-doca-skill-set/' | relative_url }})
+- [October 4, 2026]({{ '/stories/2026-10-04/ambient-agents-wake-up-on-events-and-know-when-to-ask-a-human/' | relative_url }})
+- [October 4, 2026]({{ '/videos/2026-10-04/general/' | relative_url }})
+- [October 4, 2026]({{ '/videos/2026-10-04/agent-skills/' | relative_url }})
+- [October 4, 2026]({{ '/podcasts/2026-10-04/hard-fork-2026-10-02-ai-agents/' | relative_url }})
+- [October 4, 2026]({{ '/podcasts/2026-10-04/a16z-2026-10-02-ai-agents-incumbents/' | relative_url }})
 - [October 3, 2026]({{ '/stories/2026-10-03/voice-agents-get-a-100-millisecond-head-start/' | relative_url }})
 - [October 3, 2026]({{ '/stories/2026-10-03/anthropic-turns-enterprise-ai-delivery-into-a-profession/' | relative_url }})
 - [October 3, 2026]({{ '/stories/2026-10-03/customer-service-prepares-for-agents-on-both-sides/' | relative_url }})
@@ -451,16 +472,5 @@ Supporting stories:
 - [September 6, 2026]({{ '/stories/2026-09-06/claude-fable-5-1-raises-the-bar-for-research-and-difficult-professional-knowledg/' | relative_url }})
 - [September 6, 2026]({{ '/stories/2026-09-06/openai-s-workspace-agent-guidance-emphasizes-reusable-workflows-rather-than-one-/' | relative_url }})
 - [September 6, 2026]({{ '/stories/2026-09-06/claude-cowork-now-formalizes-a-connector-browser-computer-use-escalation-path/' | relative_url }})
-- [September 5, 2026]({{ '/stories/2026-09-05/github-s-hydrafusion-turns-model-choice-into-runtime-orchestration/' | relative_url }})
-- [September 5, 2026]({{ '/stories/2026-09-05/aws-treats-agent-memory-as-a-governed-resource-that-must-expire-and-evolve/' | relative_url }})
-- [September 5, 2026]({{ '/stories/2026-09-05/chatgpt-sites-can-now-be-shared-privately-with-named-people-outside-a-workspace/' | relative_url }})
-- [September 5, 2026]({{ '/stories/2026-09-05/amazon-quick-automate-formalizes-a-reliability-pattern-for-non-technical-agentic/' | relative_url }})
-- [September 5, 2026]({{ '/stories/2026-09-05/salesforce-is-bundling-the-stack-needed-to-put-agents-into-everyday-business-ope/' | relative_url }})
-- [September 4, 2026]({{ '/stories/2026-09-04/gpt-6-astra-raises-the-ceiling-on-computer-use-and-professional-work/' | relative_url }})
-- [September 4, 2026]({{ '/stories/2026-09-04/reported-agent-breakout-puts-scope-control-and-monitoring-back-at-center-stage/' | relative_url }})
-- [September 4, 2026]({{ '/stories/2026-09-04/google-pics-puts-professional-ai-image-creation-directly-inside-workspace/' | relative_url }})
-- [September 4, 2026]({{ '/stories/2026-09-04/chatgpt-for-healthcare-connects-authorized-epic-context-with-official-public-dat/' | relative_url }})
-- [September 4, 2026]({{ '/stories/2026-09-04/asana-is-bringing-agentic-work-management-to-every-paid-tier/' | relative_url }})
-- [September 4, 2026]({{ '/stories/2026-09-04/fabric-data-agents-become-reusable-tools-inside-low-code-copilot-studio-agents/' | relative_url }})
 
 [← Home]({{ '/' | relative_url }})

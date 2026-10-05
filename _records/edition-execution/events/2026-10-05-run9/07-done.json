@@ -1,0 +1,16 @@
+{
+  "task_id": "07",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-05T00:49:36.467Z",
+  "reason": "Task 07 podcast selection and verification passed with two source-diverse episodes and exact verified runtimes.",
+  "proof": {
+    "artifact": "_records/editorial/2026-10-05-run9/podcasts.json",
+    "count": 2,
+    "source_diverse": true,
+    "publication_before_cutoff": true,
+    "runtime_verified": true,
+    "result": "PASS",
+    "writer_generation": 17
+  }
+}

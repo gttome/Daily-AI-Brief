@@ -1,0 +1,47 @@
+{
+  "schema_version": "run9-podcast-selection-v1",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_id": "reliable-edition-20261005-run9",
+  "research_cutoff": "2026-10-05T00:00:23.000Z",
+  "verified_at": "2026-10-05T00:49:36.467Z",
+  "result": "PASS",
+  "podcasts": [
+    {
+      "ordinal": 1,
+      "title": "An Argument Against AI Doom",
+      "show": "Galaxy Brain",
+      "publisher": "The Atlantic",
+      "host": "Charlie Warzel",
+      "episode_key": "galaxy-brain-2026-10-02-argument-against-ai-doom",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 3376,
+      "url": "https://www.theatlantic.com/podcasts/2026/10/an-argument-against-ai-doom/688863/",
+      "connection": "Independent policy and cybersecurity discussion of agent failures, monitoring and accountability.",
+      "verification": "The Atlantic episode page identifies the host, publication date, complete audio controls and an exact 56:16 runtime."
+    },
+    {
+      "ordinal": 2,
+      "title": "DX Today AI Daily Brief - Wednesday, September 30, 2026",
+      "show": "DX Today | No-Hype Podcast & News About AI & DX",
+      "publisher": "DX Today",
+      "host": "Rick Spair",
+      "episode_key": "dx-today-2026-09-30-ai-daily-brief",
+      "publication_date": "2026-09-30",
+      "runtime_seconds": 666,
+      "url": "https://www.podscan.fm/podcasts/dx-today-no-hype-podcast-amp-news-about-ai-amp-dx/episodes/dx-today-ai-daily-brief-wednesday-september-30-2026",
+      "connection": "A separate daily-news source covering agents, tooling and enterprise AI developments relevant to the edition.",
+      "verification": "Podscan reports September 30, 2026 and 11 minutes; an independent Podcast Paradise index records 11:06."
+    }
+  ],
+  "checks": {
+    "count": 2,
+    "source_diverse": true,
+    "publishers": [
+      "The Atlantic",
+      "DX Today"
+    ],
+    "publication_before_cutoff": true,
+    "runtime_verified": true,
+    "prior_edition_exact_podcast_repeat": false
+  }
+}

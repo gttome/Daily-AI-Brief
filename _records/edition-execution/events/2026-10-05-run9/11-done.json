@@ -1,0 +1,38 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "execution_key": "2026-10-05-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "11",
+  "candidate_id": "m02",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-05T03:57:10.000Z",
+  "writer_generation": 29,
+  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261005-run9:task-11:generation-29:6230c14e",
+  "reason_code": "IMAGE_ACCEPTED_LOCKED",
+  "operation": "Strategy Interrupt repair epoch 2: generate one isolated artifact-only m02 visual, apply one targeted visible-text cleanup, persist exact PNG bytes, verify Git identity, review the saved asset and lock acceptance.",
+  "proof": {
+    "request_key": "6230c14e75e71b73dfd7f832aae70fec4dd7b0c17efa57d2ff26d2e6d07470fe",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/11-6230c14e75e71b73dfd7f832aae70fec4dd7b0c17efa57d2ff26d2e6d07470fe.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-05-run9/m02.json",
+    "saved_git_review": "_records/image-reviews/2026-10-05-run9/m02-repair-epoch-2-attempt-1-saved-git-review.json",
+    "final_sha256": "64f321e3441432627379fc8edb4f722347231fb8d18ecafb71b85215b5605858",
+    "final_git_blob_sha": "254c2eac5f5b39f5c2890d7b08b450fdd19ea6bf",
+    "saved_git_commit": "2edb869f05d525cbc88b71a1ed9d99766ee8ff08"
+  },
+  "completed_tasks_preserved": [
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10"
+  ],
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

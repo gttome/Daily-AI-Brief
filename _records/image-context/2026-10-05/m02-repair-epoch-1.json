@@ -1,0 +1,22 @@
+{
+  "schema_version": "story-only-generator-context-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-05-m02"
+  ],
+  "candidate_id": "m02",
+  "task_id": "11",
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-05T03:02:30.000Z",
+  "allowed_text": [
+    "Agent claim",
+    "Database state",
+    "Side effects",
+    "Repeated run",
+    "Verification gate",
+    "Evidence ledger"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 landscape canvas. Subject: backend-state verification for software agents. Show a forensic split-screen architecture: an upper claim channel represented only by a signed protocol packet or document card, and a lower durable-state channel with database records, side-effect receipts, and repeated-run samples converging on a verification tribunal, then an immutable evidence ledger. Use layered evidence trays, hash and receipt motifs, state snapshots, comparison markers, and a final pass/fail gate to explain why terminal state and side effects outrank the claim. ZERO living beings or character-like subjects: no people, faces, heads, bodies, hands, humanoids, robots, androids, avatars, mascots, silhouettes, portraits, or character icons. The words Agent claim label a non-anthropomorphic signed data packet only. No photos, decorative filler, product UI imitation, unsupported metrics, overlapping text, or sparse/basic box-and-arrow layout. Only these visible labels: Agent claim, Database state, Side effects, Repeated run, Verification gate, Evidence ledger."
+}

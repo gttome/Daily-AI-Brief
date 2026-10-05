@@ -1,0 +1,16 @@
+{
+  "task_id": "02",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-05T00:17:51.115Z",
+  "reason": "ChatGPT repository worker consumed the exact Task 02 request after the bound Supervisor queued it; the same-execution restart and fenced writer chain were already proven.",
+  "proof": {
+    "request_key": "83c4daa6b48d53d603b69524bdb12ab812c9c4ac88095bbc4b9ced6498410e8a",
+    "prior_supervisor_run_id": 37246451154,
+    "active_supervisor_run_id": 37246844956,
+    "prior_writer_generation": 3,
+    "active_supervisor_writer_generation": 5,
+    "recovery_writer_generation": 6,
+    "same_execution_only": true
+  }
+}

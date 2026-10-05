@@ -1,0 +1,13 @@
+{
+  "task_id": "09",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-05T02:40:34.156Z",
+  "reason": "Claimed exact queued Task 09 repository request after the owning Supervisor workflow was proven completed with failure and no repository consumer was live.",
+  "proof": {
+    "request_key": "f27d10f03b5d25f1a5366e9e716549baddd556897f601df58f91b806f51a7d03",
+    "writer_generation": 23,
+    "dead_writer_workflow_run_id": 37256034788,
+    "prior_generation": 22
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "watchlist-source-evidence-v1",
+  "candidate_id": "w9-anthropic-robot-exposure",
+  "source_url": "https://www.anthropic.com/research/what-work-can-robots-do",
+  "publisher": "Anthropic",
+  "publication_date": "2026-09-30",
+  "checked_at": "2026-10-05T02:27:25.000Z",
+  "research_cutoff": "2026-10-05T00:00:23.000Z",
+  "eligible_at_research_cutoff": true,
+  "disposition": "hold_for_research",
+  "finding": "Anthropic proposes a current-capability robot exposure index; useful context, but this sweep did not treat it as a distinct deployable mechanism warranting a new Watchlist topic."
+}

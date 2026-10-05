@@ -1,0 +1,20 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-05-m07"
+  ],
+  "candidate_id": "m07",
+  "task_id": "13",
+  "includes_edition_context": false,
+  "sealed_at": "2026-10-05T02:46:35.246Z",
+  "allowed_text": [
+    "Shared source data",
+    "Image edit",
+    "Sheets canvas",
+    "Cross-app task",
+    "Provenance",
+    "Synchronized",
+    "Review"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: synchronized cross-app knowledge work. Build a hub-and-spine composition where shared source data feeds object-level image editing, an interactive spreadsheet canvas, and cross-app task execution; provenance and synchronization rails return every change to a review checkpoint. Use rich but controlled visual grammar: layered data cards, image-object masks, miniature analytical panels, task packets, version markers, and bidirectional sync paths. No people, humanoids, photos, decorative filler, brand logos, unsupported metrics, overlapping text, or sparse/basic box-and-arrow layout. Only these visible labels: Shared source data, Image edit, Sheets canvas, Cross-app task, Provenance, Synchronized, Review."
+}

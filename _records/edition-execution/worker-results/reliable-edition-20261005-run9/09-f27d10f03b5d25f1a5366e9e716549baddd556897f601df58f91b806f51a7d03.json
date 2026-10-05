@@ -1,0 +1,26 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "f27d10f03b5d25f1a5366e9e716549baddd556897f601df58f91b806f51a7d03",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "09",
+  "request_writer_generation": 22,
+  "writer_generation": 23,
+  "status": "passed",
+  "consumed_at": "2026-10-05T02:40:56.000Z",
+  "completed_at": "2026-10-05T02:42:37.289Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "book_review_artifact": "_records/editorial/2026-10-05-run9/book-review.json",
+    "reader_mapping_artifact": "_records/editorial-handoff/book-mappings-2026-10-05.json",
+    "books_reviewed": 4,
+    "anchors_reviewed": 32,
+    "selected_stories_reviewed": 6,
+    "books_with_selected_connections": 4,
+    "full_text_claimed": false,
+    "exact_request_reused": true,
+    "completed_upstream_rework": false
+  },
+  "result": "PASS"
+}

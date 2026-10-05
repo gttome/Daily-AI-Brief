@@ -1,0 +1,26 @@
+{
+  "schema_version": "chatgpt-watchdog-incident-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "task_id": "23",
+  "incident_id": "wd-reliable-edition-20261005-run9-task23-integrated-locked-canvas-migration",
+  "owner_slot": "F",
+  "at": "2026-10-05T08:57:13.118Z",
+  "type": "PROTECTED_REPAIR_MERGED_AND_PRODUCTION_SYNCHRONIZED",
+  "classification": "BLOCKED_ACTIONABLE",
+  "repair_key": "repair-952d7c5463aea061b26ebe632d090d48d3369dc2",
+  "pr_number": 470,
+  "repair_head": "73cd13745d7059660621c574b4f3c62339e49255",
+  "merge_sha": "df0f30af436ed6cfcc8787daa352f9ee7168ec3c",
+  "ci_run_id": 37286568073,
+  "durable_delta": {
+    "local_tests_passed": 978,
+    "contract_validation": "PASS",
+    "accepted_locked_images_preserved": 6,
+    "completed_tasks_preserved_through": "22"
+  },
+  "next_authorized_action": "Run exact-head publication validation on existing PR 467 and merge only after PASS.",
+  "recovery_required": true,
+  "handoff": "CONTINUE_SAME_INVOCATION"
+}

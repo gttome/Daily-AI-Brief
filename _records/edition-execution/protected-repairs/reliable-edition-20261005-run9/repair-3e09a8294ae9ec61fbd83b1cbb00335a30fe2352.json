@@ -1,0 +1,33 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "REPAIR_MERGED",
+  "repair_key": "repair-3e09a8294ae9ec61fbd83b1cbb00335a30fe2352",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "production_branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "17",
+  "incident_id": "wd-reliable-edition-20261005-run9-task17-native-capture-lock-schema",
+  "repair_branch": "repair/reliable-edition-20261005-run9-task17-native-capture-lock-schema",
+  "repair_branch_head_sha": "82f064d28f67b1733d989417692498a14a125f38",
+  "repair_scope_digest": "sha256:3e09a8294ae9ec61fbd83b1cbb00335a30fe2352594decde392d463508e62fd3",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-05T04:47:41.981Z",
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+  "diagnosis": "Task 17 acquired the production writer after the prior repair, then rejected immutable accepted image evidence because the repository consumer recognized only legacy attempt.normalization while the current native-image contract persists exact evidence under attempt.native_capture.",
+  "next_stage": "Consume the same exact queued Task 17 request with the merged native_capture compatibility repair; require a passed worker result and Done transition.",
+  "last_recovery_stage": {
+    "state": "REPAIR_MERGED",
+    "pr_number": 465,
+    "ci_run_id": 37264907226,
+    "ci_conclusion": "success",
+    "repair_head": "82f064d28f67b1733d989417692498a14a125f38",
+    "merge_sha": "93d71c46d2a330a29268755909a92d9cd9885af6",
+    "same_execution_revalidated": true,
+    "same_task_revalidated": "17",
+    "repair_key_preserved": true,
+    "scope_digest_preserved": true
+  }
+}

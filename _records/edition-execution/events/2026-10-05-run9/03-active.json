@@ -1,0 +1,13 @@
+{
+  "task_id": "03",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-05T00:26:53.873Z",
+  "reason": "Claimed the exact queued research_chatgpt request after the failed Supervisor owner was proven terminal and the Watchdog capability handoff was durably released.",
+  "proof": {
+    "request_key": "615f55e549ff1fb1676d1324f959b6c9c4c092b5966d0926f28f6a9cf71d11a6",
+    "writer_generation": 9,
+    "dead_writer_proof": "_records/edition-execution/dead-writer-proofs/reliable-edition-20261005-run9/20261005T002653873Z-generation-8.json",
+    "capability": "research_chatgpt"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "task19-immutable-bundle-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "19",
+  "sealed_at": "2026-10-05T06:16:00.000Z",
+  "protected_main_baseline": "d6751a6774bcdb9b84bcdec7a3d7dd6714cc3669",
+  "source_task18": "_records/editorial/2026-10-05-run9/task18-assembly.json",
+  "digest_scheme": "git_blob_sha1",
+  "shards": [
+    {"path":"_records/editorial/2026-10-05-run9/task19-digests-reader.json","git_blob_sha1":"ad56aed69f99342de762a684e861eceb58c28a83"},
+    {"path":"_records/editorial/2026-10-05-run9/task19-digests-images.json","git_blob_sha1":"813ea74cc58573142b6437c636a6b741292575d7"},
+    {"path":"_records/editorial/2026-10-05-run9/task19-digests-evidence-a.json","git_blob_sha1":"765f6a621e46e3c373519d9b901e0ce4d688e333"},
+    {"path":"_records/editorial/2026-10-05-run9/task19-digests-evidence-b.json","git_blob_sha1":"02e3f90809224e6691c66ee98ae20871c8a91ea5"}
+  ],
+  "counts": {
+    "canonical_brief": 1,
+    "story_pages": 6,
+    "video_pages": 2,
+    "podcast_pages": 2,
+    "accepted_locked_images": 6
+  },
+  "preserved": {
+    "completed_tasks": "00-18",
+    "accepted_locked_images": 6
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,13 @@
+{
+  "task_id": "06",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-05T00:46:23.077Z",
+  "reason": "Claimed exact queued Task 06 request after prior writer workflow was proven completed with failure.",
+  "proof": {
+    "request_key": "60fd332ec34b85cd7dcb2c326551f78a448bb66f0b2db8fa135ef5855c25bca5",
+    "writer_generation": 15,
+    "dead_writer_workflow_run_id": 37248536792,
+    "prior_generation": 14
+  }
+}

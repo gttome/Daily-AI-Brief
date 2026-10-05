@@ -1,0 +1,24 @@
+{
+  "schema_version": "run-dead-writer-proof-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "08",
+  "prior_owner": "chatgpt-watchdog-F-task08",
+  "prior_generation": 20,
+  "request_key": "d9f874a7115874462929a4f84e577095afe69a65b7c2aa8927fdbec8c9e0e990",
+  "proved_at": "2026-10-05T02:27:25.000Z",
+  "prior_acquired_at": "2026-10-05T01:53:54.617Z",
+  "prior_last_heartbeat_at": "2026-10-05T01:53:54.617Z",
+  "prior_expires_at": "2026-10-05T02:13:54.617Z",
+  "terminal_basis": "writer_lease_expired_without_heartbeat_or_substantive_task_delta",
+  "observations": {
+    "lease_expired": true,
+    "heartbeat_after_claim": false,
+    "worker_result_exists": false,
+    "done_event_exists": false,
+    "request_still_queued": true
+  },
+  "failure_cause": "claimed_research_request_without_substantive_progress; lease expired before recovery completed",
+  "replacement_generation": 21,
+  "recovery_rule": "reuse_exact_request_no_duplicate_no_completed_task_rework"
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "16",
+  "candidate_id": "m09",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-05T04:29:27.000Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 39,
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "saved_git_commit": "3cd476b583ab286d1535fc3dcbbe59551d0ce8f7",
+  "image_execution_admission": "_records/image-admission/2026-10-05-run9/16-0dc177aa22925dc9aefb58332b0188439d6f4ac247900536e04979045890e573.json",
+  "source_lineage": {
+    "base_generation_id": "exec-36381f67-f807-4f26-be01-28d424aa37f6",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "6d63bafa1020a559a3ad053e2cd1bafa73b7eb3e111c1ac5adf070c619dd47a5",
+    "native_bytes": 1136616,
+    "native_width": 1730,
+    "native_height": 909,
+    "transport_method": "exact returned PNG via Git Data create_blob Base64"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m09.png",
+    "git_blob_sha": "ae75b266170b67e5f7243450a982aeb25b0a98f4",
+    "sha256": "6d63bafa1020a559a3ad053e2cd1bafa73b7eb3e111c1ac5adf070c619dd47a5",
+    "bytes": 1136616,
+    "width": 1730,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "An upper operational path branches at policy into bounded execution or approval, rejoins at resume and writes an audit scroll; a lower event timeline and state-machine ring preserve durable checkpoints.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Event",
+      "Ambient agent",
+      "Isolated session",
+      "Job state",
+      "Policy gate",
+      "Bounded action",
+      "Ask human",
+      "Resume",
+      "Audit trail"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The first admitted render passed; the inspected local PNG is byte-identical to the Git blob and satisfies the sealed story-only controls."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

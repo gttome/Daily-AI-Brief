@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-10-05-run9",
+  "execution_mode": "production_release_qualification",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "result": "fail",
+  "final_stage": "FOCUSED_REPAIR_REQUIRED",
+  "qualified_at": "2026-10-05T06:24:00.000Z",
+  "preserved": {
+    "tasks": "00-19",
+    "accepted_locked_images": 6,
+    "selection_changed": false,
+    "image_regeneration": false
+  },
+  "passed": [
+    "Task 18 canonical Brief and ten permanent pages exist",
+    "Task 19 immutable digest bundle is sealed",
+    "Six story allocation remains exact 2/2/2",
+    "Exactly one reusable Agent Skills story remains selected",
+    "All four Professional Series books were reviewed",
+    "Six accepted_locked images remain unchanged",
+    "_data/editions/2026-10-05.json exists for the staged edition",
+    "Current Watchlist data is updated through 2026-10-05"
+  ],
+  "blocking_defect": {
+    "id": "RUN9_INCOMPLETE_DETERMINISTIC_PUBLICATION_PROJECTION",
+    "root_cause": "The October 5 canonical Brief and immutable bundle exist, but deterministic publication projections and required publication handoff artifacts still point to prior editions.",
+    "evidence": [
+      "latest.md still identifies October 4, 2026",
+      "index.md still has brief_date 2026-10-04",
+      "feed.json first published item remains dated 2026-10-04",
+      "_records/editorial-handoff/publication-manifest.json still identifies dab-edition-2026-10-04",
+      "_records/editorial-handoff/kernel.json still identifies dab-edition-2026-09-30",
+      "_records/editorial-handoff/media.json still identifies dab-edition-2026-09-30",
+      "dated same-edition kernel/facts/media handoff artifacts for 2026-10-05 are absent"
+    ],
+    "repair_scope": "Rebuild only the deterministic October 5 publication projection and required same-edition handoff artifacts from already-locked Run 9 evidence. Do not change story selection, media selection, book review, Watchlist decisions, Task 19 sealed source artifacts, or accepted image bytes."
+  }
+}

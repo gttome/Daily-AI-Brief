@@ -1,0 +1,63 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "15",
+  "candidate_id": "m01",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-05T04:23:49.000Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 37,
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "saved_git_commit": "0eb739a9f33bc25a1a2a08a787ac93874c4ff1ed",
+  "image_execution_admission": "_records/image-admission/2026-10-05-run9/15-be3d9d1ea7504d16cc97f72fef12e5538822e950f38485bfa93ad24d31cf4c69.json",
+  "source_lineage": {
+    "base_generation_id": "exec-8e07900a-5bde-4636-86aa-4a2207d21139",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "37be1cc71adf83c809ac14c5feb18585e82f939a76c0408d73f1ffa79128201f",
+    "native_bytes": 1741063,
+    "native_width": 1730,
+    "native_height": 909,
+    "transport_method": "exact returned PNG via Git Data create_blob Base64"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m01.png",
+    "git_blob_sha": "fe0379aaa6dfa434ab0f2772601133cbca5a1049",
+    "sha256": "37be1cc71adf83c809ac14c5feb18585e82f939a76c0408d73f1ffa79128201f",
+    "bytes": 1741063,
+    "width": 1730,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "A technical cutaway rail moves a sealed skill package through three color-coded validation chambers, a preflight shield, bounded execution chamber and reversible rollback line.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "DOCA Agent Skill",
+      "Instructions",
+      "References",
+      "Scripts",
+      "API check",
+      "Hardware check",
+      "Build check",
+      "Preflight",
+      "Bounded execution",
+      "Rollback"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The first admitted render passed; the inspected local PNG is byte-identical to the Git blob and satisfies the sealed story-only controls."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

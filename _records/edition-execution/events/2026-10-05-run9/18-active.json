@@ -1,0 +1,17 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "task_id": "18",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-05T05:41:00.000Z",
+  "writer_generation": 48,
+  "owner_id": "watchdog-D:wd-reliable-edition-20261005-run9-post-task17-supervisor-resume-gap:task-18:repository",
+  "reason_code": "WATCHDOG_CONSUMED_AUTHORITATIVE_TASK18_REQUEST",
+  "operation": "assemble_canonical_brief_and_permanent_pages",
+  "proof": {
+    "request_key": "4201174a6abeb8fc2a9f21fc2b87de8843c37e9ad0137c24be08be607384d351"
+  }
+}

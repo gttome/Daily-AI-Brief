@@ -1,21 +1,21 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-10-04",
-  "updated_at": "2026-10-04T03:38:35.000Z",
-  "verification_observed_at": "2026-10-03T06:29:22.781Z",
-  "baseline_note": "Independent Run 8 seven-domain sweep completed 14 focused checks: 0 new topics, 3 existing topics updated, and 17 active topics carried forward.",
+  "edition_date": "2026-10-05",
+  "updated_at": "2026-10-05T02:33:36.000Z",
+  "verification_observed_at": "2026-10-05T02:33:36.000Z",
+  "baseline_note": "Independent Run 9 seven-domain sweep completed 14 focused checks: 0 new topics, 6 existing topics updated (including 1 reactivated), 15 topics carried forward, and 0 topics dropped today.",
   "topics": [
     {
       "topic_id": "dab-topic-collaborative-vibe-coding",
       "name": "Collaborative vibe coding",
       "audience": "Knowledge workers and teams",
       "summary": "Teams building tools together through conversation with AI.",
-      "why_now": "Google Labs lists Play with Putty as a collaborative vibe-coding experiment with a waitlist.",
+      "why_now": "Google Workspace now lets users describe interactive mini-apps such as Kanban boards and scenario planners directly from spreadsheet data with Sheets canvas, while expanding AI creation and cross-app work inside the productivity suite.",
       "practical_value": "Could turn individual prompt-built prototypes into shared team workflows.",
-      "limitations": "A listed experiment is not proof of general availability, adoption, or production readiness.",
-      "next_action": "Check access, collaboration controls and independent hands-on reports.",
+      "limitations": "Product availability and demonstrations do not establish maintainability, governance or production-quality application behavior.",
+      "next_action": "Test how prompt-built Workspace mini-apps handle permissions, collaboration, revisions, complex business rules and exportability.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-09-14T12:15:00Z",
+      "updated_at": "2026-10-05T02:33:36.000Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -38,6 +38,16 @@
           "checked_at": "2026-09-14T12:15:00Z",
           "development_id": "microsoft-conversational-business-apps",
           "review_depth": "full publisher announcement"
+        },
+        {
+          "title": "Workspace Drops: Pro-level AI image creation and editing, new ways to make your data interactive, and more AI help across your apps",
+          "url": "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop",
+          "publisher": "Google Workspace",
+          "kind": "primary",
+          "publication_date": "2026-10-01",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "development_id": "google-workspace-sheets-canvas-2026-10-01",
+          "review_depth": "full product announcement"
         }
       ],
       "external_attention": [],
@@ -49,9 +59,14 @@
             "observed_at": "2026-09-14T12:15:00Z",
             "value": null,
             "source": "Independent new primary development; comparable public attention metric unavailable."
+          },
+          {
+            "observed_at": "2026-10-05T02:33:36.000Z",
+            "value": null,
+            "source": "Current independent primary development reviewed in the October 5 Watchlist sweep."
           }
         ],
-        "reason": "A second independent primary development now supports the underlying capability; comparable popularity metrics remain unavailable."
+        "reason": "A current independent primary development adds evidence to the tracked mechanism."
       },
       "rubric": {
         "novelty": {
@@ -79,7 +94,8 @@
           "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
         }
       },
-      "trial_story_ids": []
+      "trial_story_ids": [],
+      "verification_observed_at": "2026-10-05T02:33:36.000Z"
     },
     {
       "topic_id": "dab-topic-repairable-generative-design",
@@ -235,13 +251,13 @@
       "name": "Agent safeguards tailored to the task",
       "audience": "Agent builders and consultants",
       "summary": "Generate and evaluate protective rules and executable checks for a particular agent deployment.",
-      "why_now": "Gemini 4 Argon adds a current staged-access example to the existing safeguards topic, with limited early access and feedback before broader release.",
+      "why_now": "NVIDIA Open Agent Safety Platform adds a layered software-and-hardware enforcement pattern: sandboxed OpenShell execution, verifiable policy, out-of-band enforcement and contextual monitoring on BlueField.",
       "practical_value": "Could improve how training materials explain agent permissions, checks and deployment-specific evaluation.",
-      "limitations": "First-party technical evidence does not establish complete containment or independent assurance across every agent and runtime.",
-      "next_action": "Review policy-prover assumptions, default-deny coverage, audit exports, bypass testing, and independent deployment evidence.",
+      "limitations": "First-party architecture evidence does not establish complete containment or independent assurance across every agent, runtime and hardware platform.",
+      "next_action": "Compare software-only and hardware-assisted enforcement, policy verification, audit coverage and independent bypass testing.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-10-04T03:38:35.000Z",
-      "verification_observed_at": "2026-10-04T03:38:35.000Z",
+      "updated_at": "2026-10-05T02:33:36.000Z",
+      "verification_observed_at": "2026-10-05T02:33:36.000Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -324,6 +340,16 @@
           "checked_at": "2026-10-01T05:47:00.774Z",
           "development_id": "nvidia-openshell-runtime-controls-2026-09-28",
           "review_depth": "full first-party technical walkthrough"
+        },
+        {
+          "title": "NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring",
+          "url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+          "publisher": "NVIDIA",
+          "kind": "primary",
+          "publication_date": "2026-09-28",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "development_id": "nvidia-open-agent-safety-platform-2026-09-28",
+          "review_depth": "full first-party technical article"
         }
       ],
       "external_attention": [
@@ -353,9 +379,14 @@
             "observed_at": "2026-09-19T17:09:07.447Z",
             "value": null,
             "source": "New primary research adds a measurable agent-verification failure mode; public popularity is not inferred."
+          },
+          {
+            "observed_at": "2026-10-05T02:33:36.000Z",
+            "value": null,
+            "source": "Current independent primary development reviewed in the October 5 Watchlist sweep."
           }
         ],
-        "reason": "New primary research adds measurable agent-verification evidence to the existing safeguard and disclosure signals."
+        "reason": "A current independent primary development adds evidence to the tracked mechanism."
       },
       "rubric": {
         "novelty": {
@@ -752,13 +783,13 @@
       "name": "Reusable agent skills become observable",
       "audience": "AI leaders, admins, and agent builders",
       "summary": "Treat skills, custom agents, MCP servers, commands, and plugins as reusable components whose maintained domain knowledge and actual use can be governed and measured.",
-      "why_now": "Google moved reusable Skills into Gemini chat, making saved instructions and reference files directly invokable and composable for recurring work.",
+      "why_now": "NVIDIA DOCA Agent Skills add measured evidence that reusable skills can encode verified APIs, hardware capability requirements, build constraints, preflight checks and rollback discipline; NVIDIA reports 100% checklist satisfaction with skills versus 19% without across 65 prompts.",
       "practical_value": "Makes reusable agent know-how easier to govern while traces and spans make tool/model behavior easier to inspect.",
-      "limitations": "First-party availability and workflow claims do not yet establish cross-vendor portability, measurable quality gains, or governance consistency.",
-      "next_action": "Compare skill versioning, evaluation, usage telemetry, access control, and portability across Workspace, Firebase, GitHub, and AWS implementations.",
+      "limitations": "The published evaluation is vendor-run on DOCA tasks; independent replication and cross-platform portability remain unverified.",
+      "next_action": "Compare SKILL.md portability, versioning, evaluation, permission boundaries and independent performance across platforms.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-10-02T13:29:44Z",
-      "verification_observed_at": "2026-10-02T13:29:44Z",
+      "updated_at": "2026-10-05T02:33:36.000Z",
+      "verification_observed_at": "2026-10-05T02:33:36.000Z",
       "status": "gaining_evidence",
       "confidence": "strong",
       "evidence": [
@@ -861,14 +892,30 @@
           "checked_at": "2026-10-02T13:29:44Z",
           "development_id": "google-gemini-skills-2026-09-30",
           "review_depth": "full first-party product article"
+        },
+        {
+          "title": "Build Applications on NVIDIA BlueField Faster with NVIDIA DOCA Agent Skills",
+          "url": "https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/",
+          "publisher": "NVIDIA",
+          "kind": "primary",
+          "publication_date": "2026-10-01",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "development_id": "nvidia-doca-agent-skills-2026-10-01",
+          "review_depth": "full first-party technical article and reported 65-prompt evaluation"
         }
       ],
       "external_attention": [],
       "momentum": {
-        "classification": "baseline",
+        "classification": "gaining_evidence",
         "score": null,
-        "observations": [],
-        "reason": "First Watchlist observation; growth cannot yet be measured."
+        "observations": [
+          {
+            "observed_at": "2026-10-05T02:33:36.000Z",
+            "value": null,
+            "source": "Current independent primary development reviewed in the October 5 Watchlist sweep."
+          }
+        ],
+        "reason": "A current independent primary development adds evidence to the tracked mechanism."
       },
       "rubric": {
         "novelty": {
@@ -903,13 +950,13 @@
       "name": "Agents that persist across sessions",
       "audience": "Knowledge workers, consultants, and agent designers",
       "summary": "Design agents around goals that continue over time instead of treating every interaction as a one-shot task.",
-      "why_now": "OpenAI Dots and Meta Muse provide two independent primary examples of agents that keep working across sessions on dedicated cloud computers and return for review or approval.",
+      "why_now": "AWS Bedrock AgentCore adds an event-driven ambient-agent pattern in which external signals start work automatically and human approval gates consequential next steps, extending persistence beyond manually initiated sessions.",
       "practical_value": "Provides a practical model for recurring work: persistent goals, checkpoints, saved context, adaptation, and human review.",
-      "limitations": "Product announcements establish the mechanism, not comparative reliability, sustained adoption, or safe autonomy across high-impact tasks.",
-      "next_action": "Compare approval boundaries, audit trails, cross-session memory behavior, and measured completion quality across deployments.",
+      "limitations": "The source is a first-party implementation pattern; independent reliability, cost and failure-recovery evidence across deployments remains limited.",
+      "next_action": "Test event-trigger accuracy, duplicate suppression, approval boundaries, resumability and audit trails under real interruptions.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-30T23:12:21.330-05:00",
-      "verification_observed_at": "2026-10-01T05:47:00.774Z",
+      "updated_at": "2026-10-05T02:33:36.000Z",
+      "verification_observed_at": "2026-10-05T02:33:36.000Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -942,6 +989,16 @@
           "checked_at": "2026-10-01T05:47:00.774Z",
           "development_id": "meta-muse-2026-09-08",
           "review_depth": "full first-party product announcement"
+        },
+        {
+          "title": "Building ambient agents with Amazon Bedrock AgentCore: From event-driven signals to human-in-the-loop workflows",
+          "url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+          "publisher": "AWS",
+          "kind": "primary",
+          "publication_date": "2026-10-01",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "development_id": "aws-agentcore-ambient-agents-2026-10-01",
+          "review_depth": "full first-party technical walkthrough"
         }
       ],
       "external_attention": [],
@@ -953,9 +1010,14 @@
             "observed_at": "2026-10-01T05:47:00.774Z",
             "value": null,
             "source": "Two distinct primary product implementations reviewed; comparable public growth metric unavailable."
+          },
+          {
+            "observed_at": "2026-10-05T02:33:36.000Z",
+            "value": null,
+            "source": "Current independent primary development reviewed in the October 5 Watchlist sweep."
           }
         ],
-        "reason": "Independent implementations now support the persistent cross-session agent pattern."
+        "reason": "A current independent primary development adds evidence to the tracked mechanism."
       },
       "rubric": {
         "novelty": {
@@ -1086,12 +1148,12 @@
       "name": "AI harness engineering becomes a first-class layer",
       "audience": "Agent builders and AI engineering teams",
       "summary": "Treat the harness around a model—repository structure, tools, constraints, state, validation, and control loops—as an engineering system in its own right.",
-      "why_now": "BootLoops 1.0 adds certified computation tools, reusable working protocols, acceptance tests and provenance to the existing harness-engineering layer.",
+      "why_now": "GitHub now exposes Copilot code review through REST and GraphQL APIs with per-request effort controls, turning AI review into a programmable harness component that can be triggered from existing workflows.",
       "practical_value": "Helps teams separate model capability from the surrounding controls that determine what an agent can observe, access, execute, and verify.",
-      "limitations": "Vendor implementations differ; workflow-specific evaluation is still required.",
-      "next_action": "Make observability, permission boundaries, tool/data interfaces, and completion verification explicit in the harness and test them independently.",
+      "limitations": "API availability does not by itself prove review quality, low false-positive rates or safe autonomous merge decisions.",
+      "next_action": "Measure review quality, latency, cost and false positives when AI review is invoked programmatically inside real CI and approval workflows.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-10-04T03:38:35.000Z",
+      "updated_at": "2026-10-05T02:33:36.000Z",
       "status": "gaining_evidence",
       "confidence": "strong",
       "evidence": [
@@ -1214,6 +1276,16 @@
           "checked_at": "2026-10-02T13:29:44Z",
           "development_id": "aws-dogwood-temporal-governance-2026-10-01",
           "review_depth": "full first-party engineering article"
+        },
+        {
+          "title": "Copilot code review: API support and new default effort level",
+          "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level/",
+          "publisher": "GitHub",
+          "kind": "primary",
+          "publication_date": "2026-10-02",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "development_id": "github-copilot-review-api-2026-10-02",
+          "review_depth": "full product changelog"
         }
       ],
       "external_attention": [],
@@ -1225,9 +1297,14 @@
             "observed_at": "2026-09-19T17:09:07.447Z",
             "value": null,
             "source": "Three current primary developments across applied and research settings."
+          },
+          {
+            "observed_at": "2026-10-05T02:33:36.000Z",
+            "value": null,
+            "source": "Current independent primary development reviewed in the October 5 Watchlist sweep."
           }
         ],
-        "reason": "Multiple current developments make harness design a distinct engineering topic rather than a background implementation detail."
+        "reason": "A current independent primary development adds evidence to the tracked mechanism."
       },
       "rubric": {
         "novelty": {
@@ -1256,7 +1333,7 @@
         }
       },
       "trial_story_ids": [],
-      "verification_observed_at": "2026-10-04T03:38:35.000Z"
+      "verification_observed_at": "2026-10-05T02:33:36.000Z"
     },
     {
       "topic_id": "dab-topic-agentic-edge-inference",
@@ -1598,15 +1675,15 @@
       "name": "Source-aware verification for tool-using agents",
       "audience": "Agent builders, evaluators and governed knowledge-work teams",
       "summary": "Keep each claim tied to the specific tool output or record that supports it instead of pooling all retrieved evidence.",
-      "why_now": "ProvenanceGuard presents a post-generation verification layer for MCP agents that detects cross-source conflation and can block or repair answers whose attribution is wrong.",
+      "why_now": "Ai2 open-sourced AstaBrief 8B for cited scientific report generation, with citation-focused filtering and an explicit requirement to preserve what retrieved evidence actually supports rather than silently broadening claims.",
       "practical_value": "Could make tool-using agent answers easier to audit in healthcare, finance, customer support, and other source-sensitive workflows.",
-      "limitations": "One original research system and a medical evaluation set; independent replication, broader-domain calibration, and production reliability remain unverified.",
-      "next_action": "Inspect the paper, released artifacts, calibration thresholds, and independent evaluations across nonmedical MCP workflows.",
+      "limitations": "The evidence is focused on scientific report generation; transfer to general-purpose tool-using agents and independent evaluation remain open questions.",
+      "next_action": "Compare citation correctness, claim support, abstention and source-conflict handling against general-purpose report and agent workflows.",
       "first_detected": "2026-09-30T23:12:21.330-05:00",
-      "updated_at": "2026-10-01T20:08:38Z",
-      "verification_observed_at": "2026-10-01T05:47:00.774Z",
-      "status": "archived",
-      "confidence": "limited",
+      "updated_at": "2026-10-05T02:33:36.000Z",
+      "verification_observed_at": "2026-10-05T02:33:36.000Z",
+      "status": "gaining_evidence",
+      "confidence": "moderate",
       "evidence": [
         {
           "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
@@ -1617,14 +1694,30 @@
           "checked_at": "2026-10-01T05:47:00.774Z",
           "development_id": "provenanceguard-mcp-source-verification-2026-09-29",
           "review_depth": "full original technical article with method and reported evaluation"
+        },
+        {
+          "title": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
+          "url": "https://allenai.org/blog/astabrief",
+          "publisher": "Ai2",
+          "kind": "primary",
+          "publication_date": "2026-10-02",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "development_id": "ai2-astabrief-2026-10-02",
+          "review_depth": "full original release article"
         }
       ],
       "external_attention": [],
       "momentum": {
-        "classification": "baseline",
+        "classification": "gaining_evidence",
         "score": null,
-        "observations": [],
-        "reason": "First Watchlist observation; growth cannot yet be measured."
+        "observations": [
+          {
+            "observed_at": "2026-10-05T02:33:36.000Z",
+            "value": null,
+            "source": "Current independent primary development reviewed in the October 5 Watchlist sweep."
+          }
+        ],
+        "reason": "A current independent primary development adds evidence to the tracked mechanism."
       },
       "rubric": {
         "novelty": {
@@ -1633,15 +1726,15 @@
         },
         "evidence": {
           "score": 4,
-          "reason": "Original technical source and reported evaluation reviewed; independent replication remains outstanding."
+          "reason": "Multiple original sources now support source-grounded verification and cited-report generation."
         },
         "independence": {
-          "score": 1,
-          "reason": "One underlying research development."
+          "score": 3,
+          "reason": "Independent developments now support provenance-aware verification and citation-grounded report generation."
         },
         "momentum": {
-          "score": null,
-          "reason": "No comparable earlier Watchlist observation."
+          "score": 3,
+          "reason": "A new independent primary development reactivates the topic after archival."
         },
         "relevance": {
           "score": 5,

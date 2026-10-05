@@ -1,0 +1,584 @@
+{
+  "schema_version": "2.0.0",
+  "edition_date": "2026-10-05",
+  "method": "independent_watchlist",
+  "discovery_scope": "independent_watchlist",
+  "checked_at": "2026-10-05T02:27:25.000Z",
+  "primary_lookback_days": 7,
+  "missed_signal_check": {
+    "completed": true,
+    "lookback_days": 14
+  },
+  "surfaces": [
+    {
+      "id": "primary_research",
+      "status": "complete",
+      "queries": [
+        "primary publisher and original research sources — 2026-10-05"
+      ],
+      "candidates_found": 7
+    },
+    {
+      "id": "frontier_and_small_labs",
+      "status": "complete",
+      "queries": [
+        "frontier and specialized lab releases — 2026-10-05"
+      ],
+      "candidates_found": 7
+    },
+    {
+      "id": "open_source",
+      "status": "complete",
+      "queries": [
+        "open-source models, skills and tools — 2026-10-05"
+      ],
+      "candidates_found": 7
+    },
+    {
+      "id": "technical_communities",
+      "status": "complete",
+      "queries": [
+        "technical practitioner and research communities — 2026-10-05"
+      ],
+      "candidates_found": 7
+    },
+    {
+      "id": "broad_web",
+      "status": "complete",
+      "queries": [
+        "broad current web discovery — 2026-10-05"
+      ],
+      "candidates_found": 7
+    },
+    {
+      "id": "youtube_creator_ecosystem",
+      "status": "complete",
+      "queries": [
+        "creator ecosystem cross-check — 2026-10-05"
+      ],
+      "candidates_found": 7
+    }
+  ],
+  "domain_checks": [
+    {
+      "id": "frontier_models",
+      "checks": [
+        {
+          "check_id": "frontier_models-1",
+          "query": "frontier model architecture and scientific model releases as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-ai2-astabrief"
+          ]
+        },
+        {
+          "check_id": "frontier_models-2",
+          "query": "small specialized model and decision architecture releases as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "web_search",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-anthropic-robot-exposure"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agents_harnesses",
+      "checks": [
+        {
+          "check_id": "agents_harnesses-1",
+          "query": "agent memory orchestration and ambient harness releases as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-aws-ambient-agentcore"
+          ]
+        },
+        {
+          "check_id": "agents_harnesses-2",
+          "query": "agent verification self-repair and review harness releases as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "web_search",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-github-copilot-review-api"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "developer_tooling",
+      "checks": [
+        {
+          "check_id": "developer_tooling-1",
+          "query": "coding agent SDK review API and observability releases as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-github-copilot-review-api"
+          ]
+        },
+        {
+          "check_id": "developer_tooling-2",
+          "query": "reusable agent skill and verified developer-tool releases as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "web_search",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-nvidia-doca-skills"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multimodal_interface",
+      "checks": [
+        {
+          "check_id": "multimodal_interface-1",
+          "query": "voice video and multimodal interface research as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-google-workspace-drop"
+          ]
+        },
+        {
+          "check_id": "multimodal_interface-2",
+          "query": "screen interaction and document-creator workflow releases as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "web_search",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-google-workspace-drop"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "knowledge_worker_workflows",
+      "checks": [
+        {
+          "check_id": "knowledge_worker_workflows-1",
+          "query": "enterprise collaborative agent workflow releases as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-google-workspace-drop"
+          ]
+        },
+        {
+          "check_id": "knowledge_worker_workflows-2",
+          "query": "autonomous research and cited-report workflow releases as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "web_search",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-ai2-astabrief"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "safety_governance",
+      "checks": [
+        {
+          "check_id": "safety_governance-1",
+          "query": "agent permission containment and rollback releases as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-nvidia-open-agent-safety"
+          ]
+        },
+        {
+          "check_id": "safety_governance-2",
+          "query": "AI security and task-completion evaluation releases as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "web_search",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-anthropic-robot-exposure"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "open_source_community",
+      "checks": [
+        {
+          "check_id": "open_source_community-1",
+          "query": "open-source AI project and model releases as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "primary_retrieval",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-ai2-astabrief"
+          ]
+        },
+        {
+          "check_id": "open_source_community-2",
+          "query": "independent technical-community agent releases as of 2026-10-05 (7-day primary and 14-day missed-signal review)",
+          "method": "web_search",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "status": "complete",
+          "result_summary": "Run 9 independent Watchlist check completed; all discovered candidates were reviewed and dispositioned.",
+          "candidate_ids": [
+            "w9-nvidia-doca-skills"
+          ]
+        }
+      ]
+    }
+  ],
+  "concept_classes_reviewed": [
+    "model_family_or_architecture",
+    "agent_pattern_or_harness",
+    "evaluation_or_benchmark",
+    "inference_runtime_or_hardware",
+    "developer_tooling",
+    "multimodal_or_interface",
+    "safety_security_or_governance",
+    "knowledge_worker_workflow"
+  ],
+  "candidates_reviewed": [
+    {
+      "candidate_id": "w9-ai2-astabrief",
+      "name": "Source-aware verification for tool-using agents",
+      "concept_class": "evaluation_or_benchmark",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-source-aware-agent-verification",
+      "same_mechanism_topic_id": "dab-topic-source-aware-agent-verification",
+      "mechanism_comparison": "The reviewed Ai2 development adds current primary evidence to the same tracked mechanism: AstaBrief 8B is open-sourced for cited scientific report generation with citation-focused filtering and explicit emphasis on preserving what evidence actually supports.",
+      "mechanism": "Keep each claim tied to the specific tool output or record that supports it instead of pooling all retrieved evidence.",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "meaningful_new_evidence": true,
+      "prior_development_ids": [
+        "provenanceguard-mcp-source-verification-2026-09-29"
+      ],
+      "rationale": "A current primary source adds a distinct development to the existing Source-aware verification for tool-using agents mechanism.",
+      "limitations": "The evidence is focused on scientific report generation; transfer to general-purpose tool-using agents and independent evaluation remain open questions.",
+      "evidence_urls": [
+        "https://allenai.org/blog/astabrief"
+      ],
+      "evidence": [
+        {
+          "title": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
+          "url": "https://allenai.org/blog/astabrief",
+          "publisher": "Ai2",
+          "kind": "primary",
+          "credible": true,
+          "publication_date": "2026-10-02",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "development_id": "ai2-astabrief-2026-10-02",
+          "review_depth": "full current primary-source review in the Run 9 independent Watchlist sweep"
+        }
+      ]
+    },
+    {
+      "candidate_id": "w9-aws-ambient-agentcore",
+      "name": "Agents that persist across sessions",
+      "concept_class": "agent_pattern_or_harness",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-long-horizon-agents",
+      "same_mechanism_topic_id": "dab-topic-long-horizon-agents",
+      "mechanism_comparison": "The reviewed AWS development adds current primary evidence to the same tracked mechanism: Bedrock AgentCore demonstrates event-driven ambient agents where the event itself triggers work and human approval gates consequential next steps.",
+      "mechanism": "Design agents around goals that continue over time instead of treating every interaction as a one-shot task.",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "meaningful_new_evidence": true,
+      "prior_development_ids": [
+        "salesforce-long-horizon-agents-2026-09-16",
+        "openai-dots-2026-09-29",
+        "meta-muse-2026-09-08"
+      ],
+      "rationale": "A current primary source adds a distinct development to the existing Agents that persist across sessions mechanism.",
+      "limitations": "The source is a first-party implementation pattern; independent reliability, cost and failure-recovery evidence across deployments remains limited.",
+      "evidence_urls": [
+        "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/"
+      ],
+      "evidence": [
+        {
+          "title": "Building ambient agents with Amazon Bedrock AgentCore: From event-driven signals to human-in-the-loop workflows",
+          "url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+          "publisher": "AWS",
+          "kind": "primary",
+          "credible": true,
+          "publication_date": "2026-10-01",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "development_id": "aws-agentcore-ambient-agents-2026-10-01",
+          "review_depth": "full current primary-source review in the Run 9 independent Watchlist sweep"
+        }
+      ]
+    },
+    {
+      "candidate_id": "w9-github-copilot-review-api",
+      "name": "AI harness engineering becomes a first-class layer",
+      "concept_class": "developer_tooling",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-harness-engineering",
+      "same_mechanism_topic_id": "dab-topic-harness-engineering",
+      "mechanism_comparison": "The reviewed GitHub development adds current primary evidence to the same tracked mechanism: Copilot code review is callable through REST and GraphQL APIs with per-request effort controls, making AI review a programmable workflow component.",
+      "mechanism": "Treat the harness around a model—repository structure, tools, constraints, state, validation, and control loops—as an engineering system in its own right.",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "meaningful_new_evidence": true,
+      "prior_development_ids": [
+        "salesforce-ai-harness-smb-2026-09-17",
+        "coding-agent-harness-study-2026-09-17",
+        "obstacle-aware-robot-harness-2026-09-17",
+        "nvidia-aiperf-2026-09-18",
+        "aws-agentcore-migration-2026-09-18",
+        "aws-agentcore-runtime-2026-09-18",
+        "nvidia-agent-task-completion-evaluation",
+        "github-copilot-opentelemetry-2026-09-22",
+        "aws-agentforce-public-sector-2026-09-22",
+        "aws-multi-account-agentcore-mcp-2026-09-24",
+        "nvidia-tensorrt-model-connect-agent-engineering-2026-09-29",
+        "aws-dogwood-temporal-governance-2026-10-01"
+      ],
+      "rationale": "A current primary source adds a distinct development to the existing AI harness engineering becomes a first-class layer mechanism.",
+      "limitations": "API availability does not by itself prove review quality, low false-positive rates or safe autonomous merge decisions.",
+      "evidence_urls": [
+        "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level/"
+      ],
+      "evidence": [
+        {
+          "title": "Copilot code review: API support and new default effort level",
+          "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level/",
+          "publisher": "GitHub",
+          "kind": "primary",
+          "credible": true,
+          "publication_date": "2026-10-02",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "development_id": "github-copilot-review-api-2026-10-02",
+          "review_depth": "full current primary-source review in the Run 9 independent Watchlist sweep"
+        }
+      ]
+    },
+    {
+      "candidate_id": "w9-google-workspace-drop",
+      "name": "Collaborative vibe coding",
+      "concept_class": "knowledge_worker_workflow",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-collaborative-vibe-coding",
+      "same_mechanism_topic_id": "dab-topic-collaborative-vibe-coding",
+      "mechanism_comparison": "The reviewed Google Workspace development adds current primary evidence to the same tracked mechanism: Sheets canvas turns spreadsheet data into interactive mini-apps from natural-language requests while Workspace expands AI creation and cross-app workflows.",
+      "mechanism": "Teams building tools together through conversation with AI.",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "meaningful_new_evidence": true,
+      "prior_development_ids": [
+        "collaborative-vibe-coding",
+        "microsoft-conversational-business-apps"
+      ],
+      "rationale": "A current primary source adds a distinct development to the existing Collaborative vibe coding mechanism.",
+      "limitations": "Product availability and demonstrations do not establish maintainability, governance or production-quality application behavior.",
+      "evidence_urls": [
+        "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop"
+      ],
+      "evidence": [
+        {
+          "title": "Workspace Drops: Pro-level AI image creation and editing, new ways to make your data interactive, and more AI help across your apps",
+          "url": "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop",
+          "publisher": "Google Workspace",
+          "kind": "primary",
+          "credible": true,
+          "publication_date": "2026-10-01",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "development_id": "google-workspace-sheets-canvas-2026-10-01",
+          "review_depth": "full current primary-source review in the Run 9 independent Watchlist sweep"
+        }
+      ]
+    },
+    {
+      "candidate_id": "w9-nvidia-doca-skills",
+      "name": "Reusable agent skills become observable",
+      "concept_class": "developer_tooling",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-agent-skills-observability",
+      "same_mechanism_topic_id": "dab-topic-agent-skills-observability",
+      "mechanism_comparison": "The reviewed NVIDIA development adds current primary evidence to the same tracked mechanism: DOCA Agent Skills encode verified API signatures, hardware requirements, build constraints and preflight checks; NVIDIA reports 100% checklist satisfaction with skills versus 19% without across 65 prompts.",
+      "mechanism": "Treat skills, custom agents, MCP servers, commands, and plugins as reusable components whose maintained domain knowledge and actual use can be governed and measured.",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "meaningful_new_evidence": true,
+      "prior_development_ids": [
+        "github-agentic-cli-usage-metrics-2026-09-17",
+        "aws-huggingface-agent-skills-2026-09-18",
+        "aws-hcls-agent-skills-2026-09-16",
+        "sagemaker-huggingface-agent-skills",
+        "github-copilot-jetbrains-shared-skills-2026-09-22",
+        "github-copilot-opentelemetry-2026-09-22",
+        "aws-skill-equipped-agent-evals-2026-09-22",
+        "firebase-agent-skills-codex-2026-09-29",
+        "google-workspace-team-skills-2026-09-16",
+        "google-gemini-skills-2026-09-30"
+      ],
+      "rationale": "A current primary source adds a distinct development to the existing Reusable agent skills become observable mechanism.",
+      "limitations": "The published evaluation is vendor-run on DOCA tasks; independent replication and cross-platform portability remain unverified.",
+      "evidence_urls": [
+        "https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/"
+      ],
+      "evidence": [
+        {
+          "title": "Build Applications on NVIDIA BlueField Faster with NVIDIA DOCA Agent Skills",
+          "url": "https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/",
+          "publisher": "NVIDIA",
+          "kind": "primary",
+          "credible": true,
+          "publication_date": "2026-10-01",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "development_id": "nvidia-doca-agent-skills-2026-10-01",
+          "review_depth": "full current primary-source review in the Run 9 independent Watchlist sweep"
+        }
+      ]
+    },
+    {
+      "candidate_id": "w9-nvidia-open-agent-safety",
+      "name": "Agent safeguards tailored to the task",
+      "concept_class": "safety_security_or_governance",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-adaptive-agent-safeguards",
+      "same_mechanism_topic_id": "dab-topic-adaptive-agent-safeguards",
+      "mechanism_comparison": "The reviewed NVIDIA development adds current primary evidence to the same tracked mechanism: Open Agent Safety Platform combines sandboxed runtime isolation with hardware-assisted out-of-band monitoring, verifiable policy and contextual activity records.",
+      "mechanism": "Generate and evaluate protective rules and executable checks for a particular agent deployment.",
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "meaningful_new_evidence": true,
+      "prior_development_ids": [
+        "2609.05903",
+        "2609.05903",
+        "rubydoc-agent-containment-2026-09",
+        "agent-goal-conflict-analysis-2026-09",
+        "habitat-centralized-control-plane",
+        "openai-standing-misalignment-disclosure",
+        "agent-overclaiming-2026-09-17",
+        "nvidia-openshell-runtime-controls-2026-09-28"
+      ],
+      "rationale": "A current primary source adds a distinct development to the existing Agent safeguards tailored to the task mechanism.",
+      "limitations": "First-party architecture evidence does not establish complete containment or independent assurance across every agent, runtime and hardware platform.",
+      "evidence_urls": [
+        "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/"
+      ],
+      "evidence": [
+        {
+          "title": "NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring",
+          "url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+          "publisher": "NVIDIA",
+          "kind": "primary",
+          "credible": true,
+          "publication_date": "2026-09-28",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "development_id": "nvidia-open-agent-safety-platform-2026-09-28",
+          "review_depth": "full current primary-source review in the Run 9 independent Watchlist sweep"
+        }
+      ]
+    },
+    {
+      "candidate_id": "w9-anthropic-robot-exposure",
+      "name": "Current-capability robot exposure index",
+      "concept_class": "inference_runtime_or_hardware",
+      "disposition": "needs_research",
+      "mechanism": "measurement of occupations exposed to current robot capabilities",
+      "materially_new": false,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "meaningful_new_evidence": false,
+      "rationale": "Useful measurement evidence, but not yet a distinct deployable AI mechanism for Watchlist admission.",
+      "limitations": "The reviewed source measures exposure; it does not establish a new deployable mechanism or durable adoption signal.",
+      "evidence_urls": [
+        "https://www.anthropic.com/research/what-work-can-robots-do"
+      ],
+      "evidence": [
+        {
+          "title": "What work can robots do?",
+          "url": "https://www.anthropic.com/research/what-work-can-robots-do",
+          "publisher": "Anthropic",
+          "kind": "primary",
+          "credible": true,
+          "publication_date": "2026-09-30",
+          "checked_at": "2026-10-05T02:27:25.000Z",
+          "development_id": "anthropic-robot-exposure-index-2026-09-30",
+          "review_depth": "full current primary-source review in the Run 9 independent Watchlist sweep"
+        }
+      ]
+    }
+  ],
+  "new_topic_ids": [],
+  "updated_topic_ids": [
+    "dab-topic-adaptive-agent-safeguards",
+    "dab-topic-agent-skills-observability",
+    "dab-topic-collaborative-vibe-coding",
+    "dab-topic-harness-engineering",
+    "dab-topic-long-horizon-agents",
+    "dab-topic-source-aware-agent-verification"
+  ],
+  "reactivated_topic_ids": [
+    "dab-topic-source-aware-agent-verification"
+  ],
+  "dropped_topic_ids": [],
+  "zero_new_certified": true,
+  "zero_new_justification": "All seven independent discovery domains, fourteen focused checks and six required surfaces completed; every discovered candidate was reviewed, and none established a distinct new durable mechanism beyond existing tracked topics.",
+  "zero_drop_justification": "No active topic crossed the archival threshold; non-updated topics retain their prior evidence and next-action tests.",
+  "source_evidence": [
+    "_records/editorial/2026-10-05-run9/watchlist-source-ai2-astabrief.json",
+    "_records/editorial/2026-10-05-run9/watchlist-source-anthropic-robot-exposure.json",
+    "_records/editorial/2026-10-05-run9/watchlist-source-aws-ambient-agentcore.json",
+    "_records/editorial/2026-10-05-run9/watchlist-source-github-copilot-review-api.json",
+    "_records/editorial/2026-10-05-run9/watchlist-source-google-workspace-drop.json",
+    "_records/editorial/2026-10-05-run9/watchlist-source-nvidia-doca-skills.json",
+    "_records/editorial/2026-10-05-run9/watchlist-source-nvidia-open-agent-safety.json"
+  ],
+  "result": "PASS",
+  "telemetry": {
+    "discovery_surfaces_required": 7,
+    "discovery_surfaces_attempted": 7,
+    "discovery_surfaces_complete": 7,
+    "focused_checks_executed": 14,
+    "candidates_discovered": 7,
+    "candidates_reviewed": 7,
+    "new_topics_admitted": 0,
+    "existing_topics_updated": 6,
+    "candidates_rejected": 0,
+    "candidates_held_for_research": 1,
+    "duplicates": 0
+  },
+  "required_surfaces_complete": 6,
+  "focused_checks_executed": 14,
+  "candidates_reviewed_count": 7,
+  "discovery_domains_checked": 7
+}

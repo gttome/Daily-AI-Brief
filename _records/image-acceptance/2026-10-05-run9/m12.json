@@ -1,0 +1,35 @@
+{
+  "schema_version": "image-acceptance-lock-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "12",
+  "candidate_id": "m12",
+  "accepted_locked": true,
+  "accepted_at": "2026-10-05T04:05:59.000Z",
+  "writer_generation": 31,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "attempt_receipt": "_records/image-attempts/2026-10-05-run9/m12-attempt-1.json",
+  "saved_git_review": "_records/image-reviews/2026-10-05-run9/m12-attempt-1-saved-git-review.json",
+  "source_lineage": {
+    "base_generation_id": "exec-c060b362-13c7-4e93-9790-da110d5c1bbf",
+    "targeted_edit_generation_id": "exec-7ac70c9c-0216-47d2-a47a-a95eefaa1a4f",
+    "native_sha256": "a3a3f4af31d000191adc9dad9b8754be90b31bf196e19ec2e8d16fbea7009f5d",
+    "native_bytes": 1174682,
+    "native_dimensions": "1730x909",
+    "native_persisted": true,
+    "transport_representation_authorized": false
+  },
+  "final": {
+    "path": "briefs/images/2026-10-05/dab-edition-2026-10-05-m12.png",
+    "git_blob_sha": "51790b07c6b57128383cf6f701fb24655ee90760",
+    "sha256": "a3a3f4af31d000191adc9dad9b8754be90b31bf196e19ec2e8d16fbea7009f5d",
+    "bytes": 1174682,
+    "width": 1730,
+    "height": 909
+  },
+  "visible_text_guard": "PASS",
+  "quality_gate": "PASS",
+  "immutable": true
+}

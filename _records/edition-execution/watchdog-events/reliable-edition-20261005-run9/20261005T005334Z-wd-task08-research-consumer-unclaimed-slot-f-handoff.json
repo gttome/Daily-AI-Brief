@@ -1,0 +1,28 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "execution_key": "2026-10-05-run9",
+  "task_id": "08",
+  "incident_id": "wd-reliable-edition-20261005-run9-task08-research-consumer-unclaimed-d9f874a7",
+  "slot_id": "F",
+  "classification": "BLOCKED_ACTIONABLE",
+  "lease_generation": 2,
+  "action_key": "wd-reliable-edition-20261005-run9-task08-research-consumer-unclaimed-d9f874a7:capability-handoff:slot-f:g2",
+  "request_key": "d9f874a7115874462929a4f84e577095afe69a65b7c2aa8927fdbec8c9e0e990",
+  "request_capability": "research_chatgpt",
+  "attempted_actions": [
+    "Applied the scheduled-start exception after the compact runtime health record still described the prior terminal edition.",
+    "Confirmed the protected active pointer identifies exactly one nonterminal October 5 execution and did not allocate or reopen any execution.",
+    "Confirmed Tasks 00-07 are Done and the exact Task 08 research_chatgpt request is queued with no worker result.",
+    "Verified Supervisor workflow run 37249024711 and job 111572647778 completed with failure after research_consumer_unclaimed at 63.295 seconds.",
+    "Verified the single Supervisor job is terminal and performed no substantive Task 08 write.",
+    "Did not claim the production writer or perform fresh external research because this Watchdog invocation is restricted to connected GitHub only."
+  ],
+  "blocker": "The exact authoritative Task 08 request requires capability research_chatgpt. This GitHub-only Watchdog invocation cannot truthfully perform the required fresh independent Watchlist research. Supervisor workflow run 37249024711 is completed with conclusion failure; writer generation 18 remains fenced and must be superseded only under the protected dead-writer proof contract.",
+  "next_authorized_action": "A research-capable ordinary ChatGPT consumer must claim the same Task 08 request d9f874a7115874462929a4f84e577095afe69a65b7c2aa8927fdbec8c9e0e990, preserve Tasks 00-07, and perform the bounded fresh external Watchlist research. If writer generation 18 is still unexpired, supersede it only after persisting dead-writer proof for workflow run 37249024711/job 111572647778, confirming no child/subworker is live and no substantive write occurred after terminal time.",
+  "final_outcome": "SAFE_BOUNDARY_REACHED",
+  "recovery_required": true,
+  "blocked_external": false,
+  "occurred_at": "2026-10-05T00:53:34.235Z"
+}

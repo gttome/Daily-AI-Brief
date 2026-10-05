@@ -1,0 +1,11 @@
+{
+  "task_id": "17",
+  "from": "Blocked",
+  "to": "Active",
+  "at": "2026-10-05T05:06:41.289Z",
+  "reason_code": "AUTHORITATIVE_ACCEPTED_IMAGE_SET_AVAILABLE",
+  "proof": {
+    "accepted_images": 6,
+    "request_key": "710b8bedeaded7875b60952b3da4798bc2f6b8b0b6bf5d762d42c275ee3667f1"
+  }
+}

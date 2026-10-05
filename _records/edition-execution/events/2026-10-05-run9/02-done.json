@@ -1,0 +1,20 @@
+{
+  "task_id": "02",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-05T00:18:14.561Z",
+  "reason": "Verified one persistent Run Supervisor on the bound execution, the one-writer fence, and same-execution-only restart behavior without allocating or reopening another execution.",
+  "proof": {
+    "request_key": "83c4daa6b48d53d603b69524bdb12ab812c9c4ac88095bbc4b9ced6498410e8a",
+    "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261005-run9/02-83c4daa6b48d53d603b69524bdb12ab812c9c4ac88095bbc4b9ced6498410e8a.json",
+    "prior_supervisor_run_id": 37246451154,
+    "active_supervisor_run_id": 37246844956,
+    "same_execution_restart_proven": true,
+    "supervisor_writer_generations_observed": [
+      3,
+      5
+    ],
+    "repository_worker_generation": 6,
+    "no_duplicate_execution": true
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "900bcb40f4b95b228d4af46f6e77754179a83c1052c99f4e90bdcf06c35ffe6d",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "branch": "reliable-edition/dab-edition-2026-10-05-run9",
+  "task_id": "07",
+  "request_writer_generation": 16,
+  "writer_generation": 17,
+  "status": "passed",
+  "completed_at": "2026-10-05T00:49:36.467Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "artifact": "_records/editorial/2026-10-05-run9/podcasts.json",
+    "count": 2,
+    "source_diverse": true,
+    "runtime_verified": true,
+    "runtimes_seconds": [
+      3376,
+      666
+    ]
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "dead-writer-proof-v1",
+  "execution_id": "reliable-edition-20261005-run9",
+  "edition_id": "dab-edition-2026-10-05",
+  "task_id": "03",
+  "proved_at": "2026-10-05T00:26:53.873Z",
+  "workflow_run_id": 37246844956,
+  "workflow_job_id": 111567120651,
+  "workflow_attempt": 2,
+  "owner_id": "github-actions-37246844956-2",
+  "conclusion": "failure",
+  "completed_at": "2026-10-05T00:20:53Z",
+  "old_generation": 8,
+  "replacement_generation": 9,
+  "child_or_subworker_live": false,
+  "repository_consumer_started": false,
+  "last_substantive_write": {
+    "commit": "b3182f9b30c12f181b7107e878083b6cd0ed6b1b",
+    "at": "2026-10-05T00:23:00Z",
+    "kind": "watchdog_safe_boundary_release",
+    "substantive_progress": false
+  },
+  "substantive_write_after_terminal": false,
+  "reason": "Supervisor attempt 2 completed with failure after queuing the exact Task 03 research_chatgpt request. Its only later same-execution writes were watchdog handoff/release evidence; no Task 03 worker result or transition existed and no child or subworker remained live."
+}
