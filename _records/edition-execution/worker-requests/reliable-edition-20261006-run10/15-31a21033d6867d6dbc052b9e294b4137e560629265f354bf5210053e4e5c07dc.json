@@ -14,10 +14,10 @@
   "created_at": "2026-10-06T06:24:27.009Z",
   "writer_generation_is_provenance": true,
   "authority_refresh_required_at_invocation": true,
-  "status": "transport_queued",
+  "status": "completed",
   "dispatch": {
     "schema_version": "scheduled-image-dispatch-v3",
-    "status": "TRANSPORT_QUEUED",
+    "status": "ACCEPTED_LOCKED",
     "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
     "consumer_kind": "chatgpt_watchdog_ring",
     "consumer_pool_ids": [
@@ -42,10 +42,10 @@
     "execution_id": "reliable-edition-20261006-run10",
     "task_id": "15",
     "generation_started": true,
-    "accepted_locked": false,
+    "accepted_locked": true,
     "writer_generation_is_provenance": true,
     "authority_refresh_required_at_invocation": true,
-    "next_action": "Protected Supervisor reconstructs and persists the exact staged PNG, then a scheduled consumer reviews the saved Git asset before accepted_locked.",
+    "next_action": "Supervisor queues the exact Task 16 request without regenerating or reopening Task 15.",
     "image_execution_admission": {
       "schema_version": "image-execution-admission-v1",
       "required_before_generation": true,
@@ -74,10 +74,14 @@
       "height": 907,
       "quality_attempt_consumed": 1
     },
-    "transport_request": "_records/edition-execution/image-transport-requests/reliable-edition-20261006-run10/31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc/manifest.json"
+    "transport_request": "_records/edition-execution/image-transport-requests/reliable-edition-20261006-run10/31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc/manifest.json",
+    "transport_receipt": "_records/edition-execution/image-transport-results/reliable-edition-20261006-run10/31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-06-run10/m12.json"
   },
   "claimed_at": "2026-10-06T08:11:58.872Z",
   "consumer_id": "watchdog-F",
-  "consumer_writer_generation": 48,
-  "substantive_progress_at": "2026-10-06T08:11:58.872Z"
+  "consumer_writer_generation": 50,
+  "substantive_progress_at": "2026-10-06T08:21:45.509Z",
+  "completed_at": "2026-10-06T08:21:45.509Z",
+  "result_path": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/15-31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc.json"
 }
