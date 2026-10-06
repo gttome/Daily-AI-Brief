@@ -1,0 +1,21 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "event_type": "recovery_claimed",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "task_id": "24",
+  "slot": "F",
+  "occurred_at": "2026-10-06T12:02:22.486Z",
+  "incident_id": "wd-reliable-edition-20261006-run10-task24-exact-merge",
+  "state": "ACTIVE",
+  "reason_code": "TASK_23_DONE_EXACT_HEAD_GREEN_TASK_24_DEPENDENCY_SAFE",
+  "proof": {
+    "writer_generation": 81,
+    "recovery_generation": 39,
+    "publication_pr": 491,
+    "approved_head_sha": "39a0f144c1cc718f30768e00902ff51ef127db5d",
+    "protected_ci_run_id": 37460319523,
+    "accepted_locked_images": 6
+  }
+}
