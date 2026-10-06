@@ -328,6 +328,8 @@ jobs:
               break
             fi
             cp /tmp/writer-lease.json "run/$lease_rel"
+            # Include renewal in any intervening liveness commit before pull/rebase.
+            git -C run add "$lease_rel"
 
             # Consume only complete, hash-bound PNG chunk requests left by a
             # prior fenced scheduled image worker. Malformed requests fail
@@ -502,8 +504,6 @@ jobs:
             fi
 
             progress_before="$(git -C run rev-parse HEAD)"
-            # Persist renewal before the next fetch/reset restores the remote lease.
-            git -C run add "$lease_rel"
             git -C run add "_records/edition-execution/kanban/${EXECUTION_KEY}.json" 2>/dev/null || true
             git -C run add "_records/edition-execution/events/${EXECUTION_KEY}" 2>/dev/null || true
             git -C run add "_records/image-attempts/${EXECUTION_KEY}" 2>/dev/null || true
