@@ -1,0 +1,30 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "13",
+  "incident_id": "wd-reliable-edition-20261006-run10-task13-image-transport-handoff-schema",
+  "owner_slot": "F",
+  "event_type": "recovery_action",
+  "classification": "BLOCKED_ACTIONABLE",
+  "occurred_at": "2026-10-06T04:57:45.289Z",
+  "action_key": "wd-reliable-edition-20261006-run10-task13-image-transport-handoff-schema:standard-release-reason",
+  "authoritative_request_key": "6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a",
+  "recovery_actions": [
+    {
+      "action": "inspect_writer_handoff_executor",
+      "durable_delta": "Workflow run 37416075693 succeeded but exited before dispatch because the release reason was outside the allowed standard Task 13 handoff set.",
+      "validation_result": "SCHEMA_MISMATCH"
+    },
+    {
+      "action": "standardize_release_reason",
+      "durable_delta": "Preserved writer generation 33 and exact staged PNG bytes; changed only release_reason to TASK_13_BLOCKED_HANDOFF_TO_SUPERVISOR.",
+      "validation_result": "DISPATCH_RETRIGGER_REQUIRED"
+    }
+  ],
+  "next_authorized_action": "Require a new Writer Handoff run to dispatch the same Supervisor; then require protected chunk reconstruction PASS before saved-Git review.",
+  "owner_action_required": false,
+  "terminal": false
+}
