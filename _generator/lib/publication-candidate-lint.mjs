@@ -5,6 +5,7 @@ import {inspectHandoffAsset,gitBlobSha1} from './image-gate.mjs';
 import {publicWatchlist,watchlistDailyState,watchlistDailySummary} from './watchlist.mjs';
 import {validateHandoffCheckpoint} from './run-state.mjs';
 import {lockedCanvasMigrationAllowed,migrationEnabled} from './frozen-contract-migration.mjs';
+import {validateMediaSemanticDistinctness} from './validate.mjs';
 
 const exists=(root,p)=>typeof p==='string'&&fs.existsSync(path.join(root,p));
 const included=x=>['included','selected'].includes(x?.status);
@@ -57,6 +58,7 @@ export function lintPublicationCandidate({root,edition,kernel,media,imageManifes
  if(videos.length!==2)errors.push('exactly_2_videos_required');
  if(podcasts.length!==2)errors.push('exactly_2_podcasts_required');
  if(new Set(podcasts.map(p=>p.show||p.source||host(p.url)).filter(Boolean)).size!==2)errors.push('podcast_source_diversity_required');
+ errors.push(...validateMediaSemanticDistinctness({brief_date:date,worth_watching:media.worth_watching,podcasts:media.podcasts}));
  if(date>='2026-09-24'){
   if(!mediaReceipt||mediaReceipt.edition_id!==edition.edition_id)errors.push('current_day_media_receipt_required');
   else{
