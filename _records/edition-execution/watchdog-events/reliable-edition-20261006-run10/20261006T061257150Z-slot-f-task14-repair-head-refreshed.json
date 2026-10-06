@@ -1,0 +1,24 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "14",
+  "request_key": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663",
+  "incident_id": "wd-reliable-edition-20261006-run10-task14-bridge-checkpoint",
+  "slot": "F",
+  "state": "CONTINUATION_HANDOFF",
+  "created_at": "2026-10-06T06:12:57.150Z",
+  "action_key": "wd-reliable-edition-20261006-run10-task14-bridge-checkpoint:refresh-exact-head:f3722b361c49219e5130b2fefb2fbf1d50bba17b",
+  "action": "REFRESH_SAME_PROTECTED_REPAIR_HEAD",
+  "durable_delta": {
+    "pull_request": 481,
+    "old_head": "8d623d68509388ace65754ee15c3df0d7f920d98",
+    "new_head": "f3722b361c49219e5130b2fefb2fbf1d50bba17b",
+    "repair_key": "repair-ab96067c94626f1f2e0c9a3bc917a6528caefd68",
+    "repair_scope_digest": "sha256:bce18df99a51afb657071a32a409efb02712635f842c1752332f06a1d95b3dca"
+  },
+  "validation_result": "PENDING_FRESH_EXACT_HEAD_VALIDATE",
+  "same_request_preserved": true,
+  "image_regenerated": false,
+  "next_stage": "require fresh exact-head pull_request validate PASS on f3722b361c49219e5130b2fefb2fbf1d50bba17b, then merge exact approved head and resume same Task 14"
+}

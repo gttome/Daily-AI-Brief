@@ -1,6 +1,6 @@
 {
   "schema_version": "protected-repair-required-v1",
-  "state": "PROTECTED_REPAIR_REQUIRED",
+  "state": "REPAIR_CI_PENDING",
   "repair_key": "repair-ab96067c94626f1f2e0c9a3bc917a6528caefd68",
   "execution_id": "reliable-edition-20261006-run10",
   "edition_id": "dab-edition-2026-10-06",
@@ -9,7 +9,7 @@
   "task_id": "14",
   "incident_id": "wd-reliable-edition-20261006-run10-task14-bridge-checkpoint",
   "repair_branch": "repair/run10-task14-bridge-checkpoint",
-  "repair_branch_head_sha": "8d623d68509388ace65754ee15c3df0d7f920d98",
+  "repair_branch_head_sha": "f3722b361c49219e5130b2fefb2fbf1d50bba17b",
   "repair_scope_digest": "sha256:bce18df99a51afb657071a32a409efb02712635f842c1752332f06a1d95b3dca",
   "required_checks": [
     "validate"
@@ -26,5 +26,18 @@
     "bridge_processed": 1,
     "bridge_failed": 0
   },
-  "next_stage": "require fresh exact-head pull_request validate PASS, merge exact approved head, then resume same Task 14 saved-Git review without regeneration"
+  "next_stage": "require fresh exact-head pull_request validate PASS on f3722b361c49219e5130b2fefb2fbf1d50bba17b, then merge exact approved head and resume same Task 14",
+  "last_updated_at": "2026-10-06T06:12:57.150Z",
+  "repair_attempts": [
+    {
+      "head_sha": "8d623d68509388ace65754ee15c3df0d7f920d98",
+      "validate_run_id": 37422294959,
+      "result": "FAIL",
+      "reason": "regression_assertion_double_escape"
+    },
+    {
+      "head_sha": "f3722b361c49219e5130b2fefb2fbf1d50bba17b",
+      "result": "PENDING"
+    }
+  ]
 }
