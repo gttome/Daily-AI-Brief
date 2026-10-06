@@ -81,7 +81,7 @@ function closeoutBase({date,execution,edition,productionSha,tasks}){
       invariants:['no production mutation'],next_run_validation:['repeat integrated rehearsal']}}
   ;
   return {
-    pointer:{active:true,terminal:false,execution_key:date+'-run1',execution_id:execution,edition_id:edition},
+    pointer:{active:true,terminal:false,execution_key:date+'-run11',execution_id:execution,edition_id:edition},
     completion:{edition_id:edition,production_sha:productionSha,deployed_sha:productionSha,phase:'live_verified',
       pages:{conclusion:'success'},live_verification:{final_result:'pass'},pr_number:9001,ci_run_id:9002,
       live_verified_at:date+'T01:00:00Z'},
@@ -133,7 +133,7 @@ export async function runP1P2IntegratedRehearsal({
     throw Error('verified_protected_main_ci_required');
 
   const date='2099-02-03',edition='dab-edition-'+date,execution='synthetic-p1p2-integrated-rehearsal';
-  const productionBranch='reliable-edition/dab-edition-'+date+'-run1';
+  const productionBranch='reliable-edition/dab-edition-'+date+'-run11';
   const rehearsalBranch='rehearsal/p1p2-integrated-2026-10-06-r1';
   const productionSha='9'.repeat(40),candidateSha='8'.repeat(40);
   const root=fs.mkdtempSync(path.join(os.tmpdir(),'p1p2-integrated-rehearsal-'));
@@ -245,7 +245,7 @@ export async function runP1P2IntegratedRehearsal({
     wake_pr_required:acceptedEvent.wake_pr_required};
 
   // 7. Six-image mixed persistence Task 17 fixture using the real repository consumer.
-  const runKey=date+'-run1',specs={checks:{distinct_compositions:true},specs:[]};
+  const runKey=date+'-run11',specs={checks:{distinct_compositions:true},specs:[]};
   const matrixFixtures={};
   for(let i=0;i<6;i++){
     const candidate='m'+String(i+1).padStart(2,'0'),task=taskId(11+i);
