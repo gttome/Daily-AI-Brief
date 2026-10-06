@@ -94,3 +94,22 @@ test('fast-path counters use public-safe proxy names',()=>{
   counters=updateWatchdogFastPathCounters(counters,{counter_bucket:'compact_exit'});
   assert.deepEqual(counters,{watchdog_invocations:3,watchdog_compact_exits:2,watchdog_expanded_reads:1});
 });
+
+
+test('degraded Watchdog ring membership is actionable even when task state would otherwise compact-exit',()=>{
+  const record=buildWatchdogHealthRecord({
+    ...identity,
+    classification:{state:'HEALTHY_ACTIVE'},
+    watchdog_ring_healthy:false,
+    watchdog_ring_enabled_count:4
+  });
+  assert.equal(record.health_state,'BLOCKED_ACTIONABLE');
+  assert.equal(record.actionable,true);
+  assert.equal(record.reason_code,'WATCHDOG_RING_DEGRADED');
+  assert.equal(record.next_legal_action,'RESTORE_WATCHDOG_RING_MEMBERSHIP');
+  assert.equal(record.watchdog_ring_enabled_count,4);
+  assert.deepEqual(validateWatchdogHealthRecord(record),[]);
+  const d=watchdogFastPathDecision(record,{now:'2099-01-01T01:10:00Z'});
+  assert.equal(d.action,'EXPAND_RECOVERY');
+  assert.equal(d.reason,'degraded_watchdog_ring');
+});
