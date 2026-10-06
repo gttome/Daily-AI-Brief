@@ -115,5 +115,6 @@
     "happy_path_wake_prs": 0
   },
   "final_reconciliation_branch": "hardening/p1p2-final-reconciliation-2026-10-06",
-  "authoritative_when": "Merged to protected main and post-merge deterministic CI passes."
+  "authoritative_when": "Merged to protected main and post-merge deterministic CI passes.",
+  "final_reconciliation_pr": 503
 }
