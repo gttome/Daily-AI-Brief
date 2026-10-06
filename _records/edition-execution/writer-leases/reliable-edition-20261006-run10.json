@@ -4,9 +4,15 @@
   "owner_id": "chatgpt-watchdog-f-task27-completion-persistence",
   "generation": 84,
   "acquired_at": "2026-10-06T12:54:55.473Z",
-  "last_heartbeat_at": "2026-10-06T12:54:55.473Z",
-  "expires_at": "2026-10-06T13:01:55.473Z",
+  "last_heartbeat_at": "2026-10-06T12:59:45.070Z",
+  "expires_at": "2026-10-06T13:06:45.070Z",
   "state": "ACTIVE",
   "task_id": "27",
-  "action_key": "wd-reliable-edition-20261006-run10-task27-completion-persistence:slot-f:g44:writer-g84"
+  "action_key": "wd-reliable-edition-20261006-run10-task27-completion-persistence:slot-f:g44:writer-g84",
+  "progress_evidence": {
+    "pr_number": 492,
+    "head_sha": "d571adaf9569c128af6d982836cf0c4de47cf754",
+    "ci_run_id": 37467295540,
+    "state": "CI_RUNNING"
+  }
 }
