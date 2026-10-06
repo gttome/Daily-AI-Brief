@@ -1,10 +1,11 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "owner_id": "chatgpt-watchdog-B-task18-20261006091928",
-  "generation": 62,
-  "acquired_at": "2026-10-06T09:19:28.215Z",
-  "last_heartbeat_at": "2026-10-06T09:24:00.000Z",
-  "expires_at": "2026-10-06T09:32:00.000Z",
-  "released": false
+  "owner_id": "scheduled-chatgpt-watchdog-f-task18-gen63",
+  "generation": 63,
+  "acquired_at": "2026-10-06T09:32:15.521Z",
+  "last_heartbeat_at": "2026-10-06T09:32:15.521Z",
+  "expires_at": "2026-10-06T09:40:15.521Z",
+  "released": false,
+  "takeover_reason": "expired_nonprogressing_writer"
 }
