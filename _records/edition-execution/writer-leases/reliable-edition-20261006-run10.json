@@ -1,12 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261006-run10:task-15-saved-git-review:generation-50",
-  "generation": 50,
-  "acquired_at": "2026-10-06T08:20:09.384Z",
-  "last_heartbeat_at": "2026-10-06T08:22:04.999Z",
-  "expires_at": "2026-10-06T08:22:04.999Z",
-  "task_id": "15",
-  "consumer_id": "watchdog-F",
-  "continuation_from_generation": 49
+  "owner_id": "github-actions-37435836762-1",
+  "generation": 51,
+  "acquired_at": "2026-10-06T08:24:24.759Z",
+  "last_heartbeat_at": "2026-10-06T08:24:24.759Z",
+  "expires_at": "2026-10-06T08:29:24.759Z"
 }
