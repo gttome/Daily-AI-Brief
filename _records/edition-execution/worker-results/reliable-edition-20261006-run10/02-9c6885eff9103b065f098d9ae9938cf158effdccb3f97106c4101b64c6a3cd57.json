@@ -1,0 +1,37 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "9c6885eff9103b065f098d9ae9938cf158effdccb3f97106c4101b64c6a3cd57",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "02",
+  "request_writer_generation": 10,
+  "writer_generation": 11,
+  "status": "passed",
+  "completed_at": "2026-10-06T00:51:00.000Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "prior_supervisor_run_id": 37394810389,
+    "prior_supervisor_conclusion": "success",
+    "active_supervisor_run_id": 37395923002,
+    "active_supervisor_conclusion": "success",
+    "same_execution_restart_proven": true,
+    "supervisor_writer_generations_observed": [
+      8,
+      10
+    ],
+    "watchdog_ring_slots_verified": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "watchdog_same_execution_only": true,
+    "repository_worker_generation": 11,
+    "duplicate_execution_created": false,
+    "note": "The protected Task 01 handoff restarted the Run Supervisor on the identical bound execution, acquired generation 10, and queued this exact Task 02 request. Watchdog Slot F consumed it under generation 11 without allocating or reopening any execution."
+  },
+  "result": "PASS"
+}
