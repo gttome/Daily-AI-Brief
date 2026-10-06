@@ -11,5 +11,5 @@
   "released_at": "2026-10-06T05:58:54.730Z",
   "task_id": "14",
   "request_key": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663",
-  "release_reason": "TASK_14_IMAGE_CHUNKS_STAGED_FOR_PROTECTED_CONSUMER"
+  "release_reason": "TASK_14_BLOCKED_HANDOFF_TO_SUPERVISOR"
 }
