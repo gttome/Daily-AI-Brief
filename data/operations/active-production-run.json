@@ -6,12 +6,12 @@
   "execution_id": "reliable-edition-20261006-run10",
   "execution_key": "2026-10-06-run10",
   "branch": "reliable-edition/dab-edition-2026-10-06-run10",
-  "updated_at": "2026-10-06T02:57:02.000Z",
+  "updated_at": "2026-10-06T04:51:22.130Z",
   "start_scope": "full_production",
   "image_tasks_authorized": true,
   "publication_authorized": true,
   "deferred_blocker": null,
   "current_task": "13",
-  "current_task_state": "Backlog",
-  "note": "Task 12 accepted_locked the exact saved-Git m02 native PNG after per-invocation admission, exact-byte identity verification and visual review. Task 13 is first incomplete; writer authority is released to the same-execution Supervisor."
+  "current_task_state": "Active",
+  "note": "Task 13 claimed the exact queued native-image request under writer generation 33. Per-invocation image admission PASS is durable before generation; Tasks 11-12 remain accepted_locked."
 }
