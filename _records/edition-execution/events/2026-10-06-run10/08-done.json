@@ -1,0 +1,15 @@
+{
+  "task_id": "08",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-06T01:17:05.017Z",
+  "reason": "Completed bounded fresh Watchlist research across seven discovery domains, updating four existing mechanisms and reactivating one without admitting or dropping unsupported topics.",
+  "proof": {
+    "request_key": "b10f45784d2e55345853976830d8c4d737124a4bbfebf8f5ce350cfc39ae204c",
+    "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/08-b10f45784d2e55345853976830d8c4d737124a4bbfebf8f5ce350cfc39ae204c.json",
+    "watchlist_artifact": "_records/editorial/2026-10-06-run10/watchlist-refresh.json",
+    "sweep_receipt": "_records/watchlist-sweeps/2026-10-06.json",
+    "checks_completed": 14,
+    "result": "PASS"
+  }
+}

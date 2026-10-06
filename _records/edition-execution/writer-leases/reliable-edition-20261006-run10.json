@@ -4,9 +4,12 @@
   "owner_id": "scheduled-chatgpt-watchdog-slot-f",
   "generation": 23,
   "acquired_at": "2026-10-06T01:14:08.030Z",
-  "last_heartbeat_at": "2026-10-06T01:14:08.030Z",
-  "expires_at": "2026-10-06T01:22:08.030Z",
-  "state": "ACTIVE",
+  "last_heartbeat_at": "2026-10-06T01:17:05.017Z",
+  "expires_at": "2026-10-06T01:17:05.017Z",
+  "state": "RELEASED",
   "task_id": "08",
-  "request_key": "b10f45784d2e55345853976830d8c4d737124a4bbfebf8f5ce350cfc39ae204c"
+  "request_key": "b10f45784d2e55345853976830d8c4d737124a4bbfebf8f5ce350cfc39ae204c",
+  "released": true,
+  "released_at": "2026-10-06T01:17:05.017Z",
+  "release_reason": "TASK_08_DONE_HANDOFF_TO_SUPERVISOR"
 }

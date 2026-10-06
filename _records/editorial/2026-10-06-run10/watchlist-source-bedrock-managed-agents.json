@@ -1,0 +1,13 @@
+{
+  "schema_version": "watchlist-source-evidence-v1",
+  "candidate_id": "w10-bedrock-managed-agents",
+  "source_url": "https://aws.amazon.com/bedrock/managed-agents-openai/",
+  "publisher": "AWS",
+  "publication_date": "2026-09-29",
+  "checked_at": "2026-10-06T01:17:05.017Z",
+  "research_cutoff": "2026-10-06T00:02:39.000Z",
+  "eligible_at_research_cutoff": true,
+  "disposition": "update_existing",
+  "topic_id": "dab-topic-long-horizon-agents",
+  "finding": "Amazon Bedrock Managed Agents preview combines a stateful agent harness with memory, skills, specialized-agent coordination, AWS identity and governance, and either AgentCore Runtime or self-hosted execution."
+}

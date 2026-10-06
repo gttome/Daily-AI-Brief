@@ -1,0 +1,73 @@
+{
+  "schema_version": "watchlist-sweep-v1",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_id": "reliable-edition-20261006-run10",
+  "observed_at": "2026-10-06T01:17:05.017Z",
+  "research_cutoff": "2026-10-06T00:02:39.000Z",
+  "discovery_domains": [
+    {
+      "domain": "frontier_models",
+      "checks": [
+        "Official OpenAI product releases",
+        "Official Anthropic newsroom"
+      ]
+    },
+    {
+      "domain": "agents_and_harnesses",
+      "checks": [
+        "AWS Bedrock Managed Agents",
+        "AWS Kiro workflows and long-running agents"
+      ]
+    },
+    {
+      "domain": "developer_tooling",
+      "checks": [
+        "GitHub ReviewBench",
+        "AWS SageMaker aws-ai-ml agent skill"
+      ]
+    },
+    {
+      "domain": "multimodal_and_interfaces",
+      "checks": [
+        "Google AI September update",
+        "Google agent-driven interface releases"
+      ]
+    },
+    {
+      "domain": "knowledge_worker_workflows",
+      "checks": [
+        "Google Workspace agentic workflow changes",
+        "AWS governed enterprise agent workflows"
+      ]
+    },
+    {
+      "domain": "safety_and_governance",
+      "checks": [
+        "GitHub calibrated production-aligned evaluation",
+        "Anthropic agent safety and autonomy updates"
+      ]
+    },
+    {
+      "domain": "open_source_and_community",
+      "checks": [
+        "Strands Decider 2B",
+        "Hugging Face current agent and decision-model releases"
+      ]
+    }
+  ],
+  "checks_completed": 14,
+  "source_evidence": [
+    "_records/editorial/2026-10-06-run10/watchlist-source-github-reviewbench.json",
+    "_records/editorial/2026-10-06-run10/watchlist-source-aws-sagemaker-agent-skill.json",
+    "_records/editorial/2026-10-06-run10/watchlist-source-strands-decider-2b.json",
+    "_records/editorial/2026-10-06-run10/watchlist-source-bedrock-managed-agents.json"
+  ],
+  "dispositions": {
+    "new_topics": 0,
+    "updated_topics": 4,
+    "reactivated_topics": 1,
+    "dropped_topics": 0,
+    "held_candidates": 0
+  },
+  "result": "PASS"
+}

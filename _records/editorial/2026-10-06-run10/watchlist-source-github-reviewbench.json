@@ -1,0 +1,14 @@
+{
+  "schema_version": "watchlist-source-evidence-v1",
+  "candidate_id": "w10-github-reviewbench",
+  "source_url": "https://github.blog/latest/",
+  "publisher": "GitHub",
+  "publication_date": "2026-10-05",
+  "checked_at": "2026-10-06T01:17:05.017Z",
+  "research_cutoff": "2026-10-06T00:02:39.000Z",
+  "eligible_at_research_cutoff": true,
+  "disposition": "update_existing",
+  "topic_id": "dab-topic-source-aware-agent-verification",
+  "finding": "GitHub launched ReviewBench for code-review agents using representative pull requests, multi-source ground truth, calibrated evaluation, and production-aligned metrics.",
+  "reactivation_preserved": true
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "watchlist-source-evidence-v1",
+  "candidate_id": "w10-strands-decider-2b",
+  "source_url": "https://aws.amazon.com/strands",
+  "publisher": "AWS / Strands Agents",
+  "publication_date": "2026-10-05",
+  "checked_at": "2026-10-06T01:17:05.017Z",
+  "research_cutoff": "2026-10-06T00:02:39.000Z",
+  "eligible_at_research_cutoff": true,
+  "disposition": "update_existing",
+  "topic_id": "dab-topic-system-one-decision-models",
+  "finding": "Strands Decider 2B is presented as a small open-source decision model intended for fast local experimentation and executable decision work."
+}

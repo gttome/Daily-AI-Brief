@@ -1,0 +1,13 @@
+{
+  "schema_version": "watchlist-source-evidence-v1",
+  "candidate_id": "w10-aws-sagemaker-agent-skill",
+  "source_url": "https://aws.amazon.com/blogs/machine-learning/new-agent-skill-amazon-sagemaker-optimized-generative-ai-inference-for-your-coding-agent/",
+  "publisher": "AWS",
+  "publication_date": "2026-10-05",
+  "checked_at": "2026-10-06T01:17:05.017Z",
+  "research_cutoff": "2026-10-06T00:02:39.000Z",
+  "eligible_at_research_cutoff": true,
+  "disposition": "update_existing",
+  "topic_id": "dab-topic-agent-skills-observability",
+  "finding": "AWS released the aws-ai-ml reusable agent skill for MCP-compatible coding agents, with endpoint benchmarking, deployment recommendations, comparison of performance runs, and executable SageMaker SDK code."
+}
