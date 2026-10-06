@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "execution_owner": "chatgpt_research",
+  "model_calls": 0,
+  "edition_date": "2026-10-06",
+  "cutoff": "2026-10-06T00:02:39.000Z",
+  "candidate_count": 20,
+  "coverage_counts": {
+    "technical_ai_engineering": 7,
+    "applied_genai_knowledge_workers": 4,
+    "agents_non_technical_people": 9
+  },
+  "agent_skill_signals": 1,
+  "agent_skill_story_ready_signals": 1,
+  "preferred_agent_skill_candidate_id": "m01",
+  "coverage_ready": true,
+  "article_evidence_ready": true,
+  "article_evidence_count": 9,
+  "article_evidence_path": "_records/discovery-preflight/result/article-evidence.json",
+  "metadata_candidates_git_blob": "f0ef8a8880261554b542958eb20f49c829001460",
+  "article_evidence_git_blob": "e9c3c65c0326879f9df0d68df56a97897b6c84d3",
+  "identity_algorithm": "git_blob_sha1",
+  "production_changes": 0,
+  "verified_at": "2026-10-06T00:58:54.708Z"
+}

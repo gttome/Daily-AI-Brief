@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_text_version": "article-body-v1",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "profile_id": "under80-v1",
+  "execution_owner": "chatgpt_research",
+  "model_calls": 0,
+  "research_chatgpt_queries": 5,
+  "review_plan_count": 9,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible": [
+    {
+      "candidate_id": "m01",
+      "focus": "technical_ai_engineering",
+      "headline": "Device Streaming and Android skills — available in Android CLI",
+      "canonical_url": "https://android-developers.googleblog.com/2026/10/android-cli-device-streaming-and-skills.html",
+      "publisher": "Android Developers",
+      "published_at": "2026-10-03T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "source_word_count": 1450,
+      "excerpt": "Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface.",
+      "limitations": [
+        "Publisher post; adoption outcomes are not independently measured."
+      ],
+      "retrieved_at": "2026-10-06T00:58:54.708Z"
+    },
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "The Agent Said It Was Done. The Database Disagreed.",
+      "canonical_url": "https://huggingface.co/blog/microsoft/thinkingbox",
+      "publisher": "Hugging Face / Microsoft",
+      "published_at": "2026-10-03T22:56:48.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 3391,
+      "excerpt": "ThinkingBox grades terminal backend state across 507 stateful workflows and repeated trials.",
+      "limitations": [
+        "Joint publisher-authored benchmark using synthetic workflows."
+      ],
+      "retrieved_at": "2026-10-06T00:58:54.708Z"
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "technical_ai_engineering",
+      "headline": "Copilot code review: API support and new default effort level",
+      "canonical_url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-10-02T19:13:50.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 280,
+      "excerpt": "GitHub adds API-triggered Copilot code review, effort control and Balanced as default.",
+      "limitations": [
+        "Short changelog; outcomes are not independent."
+      ],
+      "retrieved_at": "2026-10-06T00:58:54.708Z"
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Scaling cloud migrations with agentic AI on Amazon Bedrock AgentCore",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/scaling-cloud-migrations-with-agentic-ai-on-amazon-bedrock-agentcore/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-10-01T22:06:14.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2100,
+      "excerpt": "AWS describes multi-agent cloud migration across discovery, IaC, governance and operations.",
+      "limitations": [
+        "Vendor-authored implementation report."
+      ],
+      "retrieved_at": "2026-10-06T00:58:54.708Z"
+    },
+    {
+      "candidate_id": "m10",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Workspace Drops: AI image editing, interactive data and cross-app help",
+      "canonical_url": "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop",
+      "publisher": "Google Workspace",
+      "published_at": "2026-10-01T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 936,
+      "excerpt": "Workspace adds AI image editing, prompt-built Sheets canvases and cross-app execution.",
+      "limitations": [
+        "Product roundup."
+      ],
+      "retrieved_at": "2026-10-06T00:58:54.708Z"
+    },
+    {
+      "candidate_id": "m11",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
+      "canonical_url": "https://huggingface.co/blog/allenai/astabrief",
+      "publisher": "Hugging Face / Ai2",
+      "published_at": "2026-10-02T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1800,
+      "excerpt": "Ai2 releases an open 8B model and data for citation-grounded scientific reports.",
+      "limitations": [
+        "Publisher-authored release."
+      ],
+      "retrieved_at": "2026-10-06T00:58:54.708Z"
+    },
+    {
+      "candidate_id": "m12",
+      "focus": "agents_non_technical_people",
+      "headline": "GitHub Copilot can now interact with desktop apps with computer use",
+      "canonical_url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-10-01T19:11:26.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 430,
+      "excerpt": "GitHub exposes computer use in Copilot CLI and desktop apps.",
+      "limitations": [
+        "Public preview."
+      ],
+      "retrieved_at": "2026-10-06T00:58:54.708Z"
+    },
+    {
+      "candidate_id": "m13",
+      "focus": "agents_non_technical_people",
+      "headline": "Fine-tune a search agent with multi-turn RL on Amazon SageMaker AI",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/fine-tune-a-search-agent-with-multi-turn-rl-on-amazon-sagemaker-ai/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-10-02T15:44:20.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2149,
+      "excerpt": "AWS demonstrates multi-turn RL over full search-agent trajectories with verifiable retrieval rewards.",
+      "limitations": [
+        "Vendor-authored benchmark."
+      ],
+      "retrieved_at": "2026-10-06T00:58:54.708Z"
+    },
+    {
+      "candidate_id": "m14",
+      "focus": "agents_non_technical_people",
+      "headline": "Building ambient agents with Amazon Bedrock AgentCore",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-10-01T16:40:24.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 6491,
+      "excerpt": "AWS details event-driven agents with isolated sessions, human approval and resumable interruptions.",
+      "limitations": [
+        "Reference architecture."
+      ],
+      "retrieved_at": "2026-10-06T00:58:54.708Z"
+    }
+  ]
+}
