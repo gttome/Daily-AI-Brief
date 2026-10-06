@@ -1,0 +1,231 @@
+{
+  "schema_version": "p1-p2-integrated-rehearsal-v1",
+  "rehearsal_id": "p1-p2-integrated-2026-10-06-r1",
+  "mode": "NON_PRODUCTION",
+  "result": "PASS",
+  "observed_at": "2026-10-06T23:13:03.588Z",
+  "rehearsal_run_id": 37545271745,
+  "protected_main_sha": "6f5b1a439d4088af6c284e28c8201842ce3b8468",
+  "protected_main_ci_run_id": 37545132702,
+  "protected_main_ci_conclusion": "success",
+  "execution_id": "synthetic-p1p2-integrated-rehearsal",
+  "edition_id": "dab-edition-2099-02-03",
+  "rehearsal_branch": "rehearsal/p1p2-integrated-2026-10-06-r1",
+  "production_run_reopened": false,
+  "october6_execution": "reliable-edition-20261006-run10",
+  "stages": {
+    "execution_allocation": {
+      "result": "PASS",
+      "mode": "NON_PRODUCTION",
+      "production_allocation": false,
+      "execution_id": "synthetic-p1p2-integrated-rehearsal",
+      "branch": "rehearsal/p1p2-integrated-2026-10-06-r1"
+    },
+    "task00_01_transition": {
+      "result": "PASS",
+      "request_key": "2587d8e14ffb5d09fc3a2873473b9077b740b9ffa6da0c2c23a3302e026b0c2c"
+    },
+    "event_driven_dispatch": {
+      "result": "PASS",
+      "duplicate_action": "ALREADY_CONSUMED"
+    },
+    "watchdog_fallback_only": {
+      "result": "PASS"
+    },
+    "image_admission": {
+      "result": "PASS",
+      "attempts_consumed": 0
+    },
+    "image_exact_byte_persistence": {
+      "result": "PASS",
+      "bytes": 31,
+      "sha256": "c72f8c5fc160d69c65ce41ed1f3e9309ef3082ba1b2163cda9870a4af0c12935",
+      "git_blob_sha": "fa9d6847e9f3df9882b810a774901392f164e7b2"
+    },
+    "automatic_next_image_transition": {
+      "result": "PASS",
+      "wake_pr_required": false
+    },
+    "mixed_mode_task17": {
+      "result": "PASS",
+      "accepted_images": 6,
+      "matrix_result": "PASS",
+      "persistence_modes": [
+        "native_capture",
+        "normalization",
+        "protected_exact_byte_transport",
+        "stable_exact_persistence"
+      ]
+    },
+    "tasks18_22_progression": {
+      "result": "PASS",
+      "dispatches": [
+        {
+          "task_id": "18",
+          "status": "DISPATCHED",
+          "target": "19"
+        },
+        {
+          "task_id": "19",
+          "status": "DISPATCHED",
+          "target": "20"
+        },
+        {
+          "task_id": "20",
+          "status": "DISPATCHED",
+          "target": "21"
+        },
+        {
+          "task_id": "21",
+          "status": "DISPATCHED",
+          "target": "22"
+        },
+        {
+          "task_id": "22",
+          "status": "DISPATCHED",
+          "target": "23"
+        }
+      ]
+    },
+    "task23_pre_pr_gate": {
+      "result": "PASS",
+      "model_calls": 0
+    },
+    "publication_candidate_freeze": {
+      "result": "PASS"
+    },
+    "protected_ci_equivalent": {
+      "result": "PASS",
+      "protected_main_sha": "6f5b1a439d4088af6c284e28c8201842ce3b8468",
+      "protected_main_ci_run_id": 37545132702,
+      "branch_separation_errors": []
+    },
+    "live_verification_fixture": {
+      "result": "PASS",
+      "production_sha": "9999999999999999999999999999999999999999",
+      "deployed_sha": "9999999999999999999999999999999999999999"
+    },
+    "incident_reconciliation": {
+      "result": "PASS",
+      "incident_count": 9
+    },
+    "atomic_tasks27_29_closeout": {
+      "result": "PASS",
+      "transaction_id": "sha256:131db7c07d467476044354ccb3295539d15a7d033d2fcd18b17f306c2f6cf5ab",
+      "file_count": 15,
+      "ai_calls": 0,
+      "owner_prompts": 0
+    },
+    "final_terminal_state": {
+      "result": "PASS",
+      "active": false,
+      "terminal": true
+    },
+    "real_native_image_capability_proof": {
+      "result": "PASS",
+      "source": "protected_historical_live_qualification",
+      "qualification_receipt_path": "_records/image-trials/2026-10-02-scheduled/recovered-six-image/qualification-receipt-complete-1.json",
+      "qualification_source_commit": "a703ebcc21fc05bf3e7f05b7ce2949b6c7109df8",
+      "fresh_generation_in_rehearsal": false,
+      "accepted_historical_images_modified": false
+    }
+  },
+  "fault_injections": {
+    "duplicate_transition_delivery": {
+      "result": "PASS",
+      "recovery": "idempotent_noop_same_event"
+    },
+    "expired_writer": {
+      "result": "PASS",
+      "recovery": "same_execution_new_writer_generation"
+    },
+    "worker_dies_after_output_before_ack": {
+      "result": "PASS",
+      "recovery": "durable_result_reused_without_reexecution"
+    },
+    "image_bytes_persisted_review_delayed": {
+      "result": "PASS",
+      "recovery": "resume_review_on_same_persisted_bytes"
+    },
+    "stale_main_ancestry_before_pr": {
+      "result": "PASS",
+      "recovery": "fail_closed_before_pr"
+    },
+    "watchlist_projection_mismatch": {
+      "result": "PASS",
+      "recovery": "fail_closed_before_pr"
+    },
+    "learning_ledger_mismatch": {
+      "result": "PASS",
+      "recovery": "fail_closed_before_pr"
+    },
+    "closeout_crash_after_each_major_write": {
+      "result": "PASS",
+      "injected_boundaries": 15,
+      "recovery": "atomic_staging_no_partial_visibility"
+    },
+    "duplicate_closeout_invocation": {
+      "result": "PASS",
+      "recovery": "deterministic_already_closed_noop"
+    },
+    "task17_mixed_lock_modes": {
+      "result": "PASS",
+      "recovery": "canonical_persistence_adapter_registry"
+    }
+  },
+  "constraints": {
+    "production_allocation": false,
+    "public_brief_published": false,
+    "october6_terminal_evidence_mutated": false,
+    "accepted_historical_image_mutated": false,
+    "owner_input_required": false,
+    "run_identity_changed_during_recovery": false,
+    "work_dependency": false,
+    "codex_dependency": false,
+    "paid_model_api_dependency": false,
+    "happy_path_wake_pr_required": false
+  },
+  "metrics": {
+    "transition_events": 7,
+    "event_dispatches": 7,
+    "duplicate_dispatch_noops": 1,
+    "watchdog_invocations": 11,
+    "watchdog_compact_exits": 10,
+    "watchdog_expanded_reads": 1,
+    "watchdog_actionable_recoveries": 1,
+    "supervisor_reconcile_loops": 0,
+    "heartbeat_only_commits": 0,
+    "wake_prs": 0,
+    "image_generation_attempts": 1,
+    "image_infrastructure_failures": 0,
+    "image_regenerations": 0,
+    "accepted_images": 6,
+    "task17_runtime_seconds": 0.005,
+    "task17_repairs": 0,
+    "publication_preflight_failures": 3,
+    "publication_ci_runs": 1,
+    "task23_repairs": 0,
+    "closeout_ai_calls": 0,
+    "closeout_runtime_seconds": 0.003,
+    "owner_liveness_prompts": 0,
+    "production_work_invocations": 0,
+    "codex_invocations": 0,
+    "paid_model_api_calls": 0,
+    "watchdog_expanded_read_rate": 0.09090909090909091
+  },
+  "target_checks": {
+    "production_work_invocations": true,
+    "owner_liveness_prompts": true,
+    "happy_path_wake_prs": true,
+    "unchanged_health_commits": true,
+    "watchdog_expanded_read_rate": true,
+    "task17_under_5_minutes": true,
+    "task17_repairs": true,
+    "task23_protected_ci_runs": true,
+    "task23_repairs": true,
+    "closeout_ai_calls": true,
+    "production_runtime_zero_paid_dependencies": true
+  },
+  "evidence_digest": "sha256:9ca96cabbcb99679e38b289a8dc438465aaa8f73fee39141f032a2f673170203",
+  "next_action": "BUILD_FINAL_GO_NO_GO_RECEIPTS"
+}
