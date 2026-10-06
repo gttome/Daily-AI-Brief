@@ -660,3 +660,11 @@ test('Supervisor preserves queued research_chatgpt work for a capable ordinary C
   assert.match(y,/research_consumer_unclaimed|repository-liveness/);
 });
 
+
+
+test('Supervisor workflow encodes event-driven mode as valid YAML environment fields',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.equal(y.includes('SUPERVISOR_OWNER: github-actions-${{ github.run_id }}-${{ github.run_attempt }}\\n'),false);
+  assert.match(y,/^\s{6}SUPERVISOR_OWNER: github-actions-\$\{\{ github\.run_id \}\}-\$\{\{ github\.run_attempt \}\}$/m);
+  assert.match(y,/^\s{6}EVENT_DRIVEN_SUPERVISOR: "true"$/m);
+});
