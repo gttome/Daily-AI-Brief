@@ -1,0 +1,29 @@
+{
+  "schema_version": "native-image-context-contamination-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "15",
+  "candidate_id": "m12",
+  "request_key": "31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc",
+  "writer_generation": 45,
+  "consumer_slot": "E",
+  "observed_at": "2026-10-06T06:50:58.533Z",
+  "generated_outputs": [
+    {
+      "attempt": 1,
+      "native_generation_id": "66cb47c8-5135-4a22-b0e9-6634fd0648fb",
+      "disposition": "REJECTED_PRETRANSPORT_CONTEXT_CONTAMINATION",
+      "attempt_consumed_as_quality_retry": false
+    }
+  ],
+  "pre_generation_admission_receipt": "_records/image-admission/2026-10-06-run10/15-31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc.json",
+  "admission_false_positive_proven": true,
+  "blocker_detail": "Native generation returned a Daily AI Brief city-skyline newsletter cover with unrelated headline/date/category text instead of the sealed m12 observe-plan-act desktop-use mechanism. The subject and exact visible-text allowlist failed before transport. No generated PNG bytes were persisted to Git and no accepted_locked asset was changed.",
+  "recoverable": true,
+  "external_blocker": false,
+  "generated_bytes_persisted": false,
+  "accepted_locked_changed": false,
+  "strategy_interrupt_required": true,
+  "engineering_repair_epoch": 1,
+  "next_action": "Consume the Task 15 engineering-repair request for repair epoch 1. Establish a genuinely fresh single-story generator context bound only to _records/image-context/2026-10-06/m12.json, prove exact-byte transport, pass protected CI, then authorize one bounded post-repair native attempt. Never retry generation in this contaminated context."
+}
