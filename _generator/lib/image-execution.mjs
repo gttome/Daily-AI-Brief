@@ -4,6 +4,7 @@ import {buildQualificationImageWorkerPayload,buildQualificationImageGenerationIn
 
 export const IMAGE_EXECUTION_POLICY='production-image-execution-v2';
 export const IMAGE_EXECUTION_ADMISSION_VERSION='image-execution-admission-v1';
+export const IMAGE_GENERATOR_CONTEXT_RECEIPT_VERSION='image-generation-context-receipt-v1';
 export const IMAGE_EXECUTION_PERSISTENCE_MODES=Object.freeze(['git_data_direct_blob','protected_base64_chunk_bridge']);
 export const AUTOMATED_IMAGE_EFFECTIVE_DATE='2026-09-28';
 export const IMAGE_GENERATION_EXECUTION_KEYS=Object.freeze([
@@ -21,9 +22,49 @@ const zeroUsage=x=>x&&['work_invocations','codex_invocations','paid_model_api_ca
 const noOwner=x=>Array.isArray(x)&&x.length===0;
 const safePath=x=>nonempty(x)&&!x.startsWith('/')&&!x.includes('\\')&&!x.split('/').some(p=>p==='..'||p==='.'||!p);
 
+export function buildImageGeneratorContextReceipt(execution,{
+  execution_id,task_id,request_key,invocation_id,context_id,
+  submitted_instruction=null,created_at=new Date().toISOString()
+}={}){
+  const task=String(task_id||'').padStart(2,'0');
+  const sealed=execution?.generation_instruction;
+  return {
+    schema_version:IMAGE_GENERATOR_CONTEXT_RECEIPT_VERSION,
+    execution_id:execution_id||null,task_id:task,request_key:request_key||null,
+    candidate_id:execution?.sealed_story_packet?.candidate_id||null,
+    invocation_id:invocation_id||null,context_id:context_id||null,
+    context_origin:'fresh_story_only_invocation',
+    dedicated_story_only_context:true,fresh_context:true,
+    orchestration_context_visible:false,
+    submitted_instruction_sha256:nonempty(submitted_instruction)?digest(submitted_instruction):null,
+    created_at
+  };
+}
+
+export function validateImageGeneratorContextReceipt(receipt,execution,{execution_id=null,task_id=null,request_key=null}={}){
+  const errors=[];
+  if(!receipt||typeof receipt!=='object'||Array.isArray(receipt))return ['image_generator_context_receipt_required'];
+  if(receipt.schema_version!==IMAGE_GENERATOR_CONTEXT_RECEIPT_VERSION)errors.push('image_generator_context_receipt_schema');
+  const task=String(receipt.task_id||'').padStart(2,'0');
+  if(!/^1[1-6]$/.test(task))errors.push('image_generator_context_receipt_task');
+  if(execution_id&&receipt.execution_id!==execution_id)errors.push('image_generator_context_receipt_execution_mismatch');
+  if(task_id&&task!==String(task_id).padStart(2,'0'))errors.push('image_generator_context_receipt_task_mismatch');
+  if(request_key&&receipt.request_key!==request_key)errors.push('image_generator_context_receipt_request_mismatch');
+  if(receipt.candidate_id!==execution?.sealed_story_packet?.candidate_id)errors.push('image_generator_context_receipt_candidate_mismatch');
+  if(!nonempty(receipt.invocation_id)||!nonempty(receipt.context_id))errors.push('image_generator_context_receipt_identity');
+  if(receipt.context_origin!=='fresh_story_only_invocation'||receipt.dedicated_story_only_context!==true||receipt.fresh_context!==true)
+    errors.push('image_generator_context_receipt_not_fresh_dedicated');
+  if(receipt.orchestration_context_visible!==false)errors.push('image_generator_context_receipt_orchestration_visible');
+  const sealedSha=nonempty(execution?.generation_instruction)?digest(execution.generation_instruction):null;
+  if(!sealedSha||receipt.submitted_instruction_sha256!==sealedSha)errors.push('image_generator_context_receipt_instruction_mismatch');
+  if(!stamp(receipt.created_at))errors.push('image_generator_context_receipt_clock');
+  return [...new Set(errors)];
+}
+
 export function buildImageExecutionAdmission(execution,{
   execution_id,task_id,request_key,submitted_instruction=null,
   story_only_context_verified=false,orchestration_context_visible=true,
+  generator_context_receipt=null,
   exact_byte_persistence_verified=false,persistence_mode=null,
   owner_intervention_required=false,persistence_proof=null,
   checked_at=new Date().toISOString()
@@ -36,7 +77,8 @@ export function buildImageExecutionAdmission(execution,{
   const submittedSha=nonempty(submitted)?digest(submitted):null;
   const identityOK=nonempty(execution_id)&&/^1[1-6]$/.test(task)&&nonempty(request_key)&&execution?.sealed_story_packet?.candidate_id;
   const persistenceOK=exact_byte_persistence_verified===true&&IMAGE_EXECUTION_PERSISTENCE_MODES.includes(persistence_mode);
-  const contextOK=story_only_context_verified===true&&orchestration_context_visible===false;
+  const contextReceiptErrors=validateImageGeneratorContextReceipt(generator_context_receipt,execution,{execution_id,task_id:task,request_key});
+  const contextOK=story_only_context_verified===true&&orchestration_context_visible===false&&contextReceiptErrors.length===0;
   const instructionOK=Boolean(sealedSha&&submittedSha&&sealedSha===submittedSha);
   const ownerOK=owner_intervention_required===false;
   const clockOK=stamp(checked_at);
@@ -44,7 +86,7 @@ export function buildImageExecutionAdmission(execution,{
   const failures=[];
   if(executionErrors.length)failures.push(...executionErrors.map(x=>'execution:'+x));
   if(!identityOK)failures.push('admission_identity_invalid');
-  if(!contextOK)failures.push('story_only_context_not_proven');
+  if(!contextOK)failures.push('story_only_context_not_proven',...contextReceiptErrors);
   if(!instructionOK)failures.push('submitted_instruction_not_exactly_sealed');
   if(!persistenceOK)failures.push('exact_byte_persistence_not_proven');
   if(!ownerOK)failures.push('owner_intervention_prohibited');
@@ -64,6 +106,7 @@ export function buildImageExecutionAdmission(execution,{
     strategy_interrupt_required:!authorized,
     checked_at,
     persistence_proof:persistence_proof||null,
+    generator_context_receipt:generator_context_receipt?structuredClone(generator_context_receipt):null,
     failure_reasons:[...new Set(failures)]
   };
 }
@@ -83,6 +126,7 @@ export function validateImageExecutionAdmission(admission,execution,{execution_i
     errors.push('image_execution_admission_instruction_mismatch');
   if(admission.story_only_context_verified!==true)errors.push('image_execution_admission_story_only_context');
   if(admission.orchestration_context_visible!==false)errors.push('image_execution_admission_orchestration_context_visible');
+  errors.push(...validateImageGeneratorContextReceipt(admission.generator_context_receipt,execution,{execution_id:admission.execution_id,task_id:task,request_key:admission.request_key}));
   if(admission.exact_byte_persistence_verified!==true)errors.push('image_execution_admission_persistence_unverified');
   if(!IMAGE_EXECUTION_PERSISTENCE_MODES.includes(admission.persistence_mode))errors.push('image_execution_admission_persistence_mode');
   if(admission.owner_intervention_required!==false)errors.push('image_execution_admission_owner_intervention');
@@ -103,7 +147,7 @@ export function imageExecutionAdmissionDecision(admission,execution,context={}){
       accepted_locked:false,strategy_interrupt_required:false,errors:[]};
 }
 
-/** Request scope is observable; hidden platform context isolation is not asserted. */
+/** Generation is admitted only from a fresh dedicated story-only context receipt. */
 export function buildImageGenerationExecution(packet){
   const sealed=structuredClone(buildQualificationImageWorkerPayload(packet));
   fail(validateQualificationImageWorkerPayload(sealed));
@@ -112,8 +156,8 @@ export function buildImageGenerationExecution(packet){
   return {
     schema_version:'2.0.0',policy_id:IMAGE_EXECUTION_POLICY,
     mode:'single_story',story_ids:[sealed.story_id],includes_edition_context:false,
-    request_scope:'sealed_story_payload_only',runtime_context_isolation:'not_asserted',
-    requires_fresh_conversation:false,manual_intervention_allowed:false,
+    request_scope:'sealed_story_payload_only',runtime_context_isolation:'dedicated_story_only_generation_context',
+    requires_fresh_conversation:true,manual_intervention_allowed:false,
     output_count:1,review_phase:'after_generation',sealed_story_packet:sealed,
     generation_instruction:instruction,prompt:instruction
   };
@@ -149,7 +193,7 @@ export function validateImageExecutionReceipt(r,e,{assetSha256=null,gitBlobSha=n
   if(r.evidence_type==='live'&&r.trigger==='fixture')errors.push('fixture_cannot_be_live_evidence');
   if(r.evidence_type==='fixture'&&r.trigger!=='fixture')errors.push('fixture_trigger_required');
   if(!Array.isArray(r.owner_interventions)||r.owner_interventions.length!==0)errors.push('manual_image_intervention_prohibited');
-  if(r.runtime_context_isolation!=='not_asserted')errors.push('unsupported_runtime_isolation_attestation');
+  if(!['not_asserted','dedicated_story_only_generation_context'].includes(r.runtime_context_isolation))errors.push('unsupported_runtime_isolation_attestation');
   if(!Number.isInteger(r.attempt)||r.attempt<1||r.attempt>4)errors.push('image_attempt_out_of_bounds');
   if(r.fallback_used!==false||r.account_billing_observed!==false)errors.push('image_receipt_boundary_invalid');
   for(const key of ['work_invocations','codex_invocations','paid_model_api_calls'])if(r[key]!==0)errors.push('image_cost_boundary:'+key);
@@ -230,7 +274,7 @@ async function executeLegacyImageRequest(execution,{adapter,eventSink,executionM
     if(!Buffer.isBuffer(recovered)||digest(recovered)!==hash||blob(recovered)!==blob(bytes))throw Error('image_persistence_readback_mismatch');
     const receipt={schema_version:'2.0.0',policy_id:IMAGE_EXECUTION_POLICY,request_sha256:requestHash,
       story_id:execution.sealed_story_packet.story_id,candidate_id:candidate,execution_mode:executionMode,
-      evidence_type:evidenceType,trigger,owner_interventions:[],runtime_context_isolation:'not_asserted',attempt,
+      evidence_type:evidenceType,trigger,owner_interventions:[],runtime_context_isolation:execution.runtime_context_isolation,attempt,
       fallback_used:false,work_invocations:0,codex_invocations:0,paid_model_api_calls:0,account_billing_observed:false,
       generation:{executor:'native_chatgpt_image_generation',call_id:generated.call_id,artifact_id:generated.artifact_id,generated_at:generated.generated_at,raw_sha256:rawHash,raw_capture:rawCapture,evidence_type:generated.evidence_type,usage:structuredClone(generated.usage),owner_interventions:structuredClone(generated.owner_interventions)},
       review:structuredClone(review),persistence:{path:stored.path,sha256:hash,git_blob_sha:blob(bytes),persisted_at:stored.persisted_at,read_back_verified:true},

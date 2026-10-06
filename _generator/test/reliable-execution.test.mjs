@@ -10,7 +10,7 @@ import {executeRecoverableImage,proveImageHandoff} from '../lib/recoverable-imag
 import {connectorImageDelivery} from '../lib/connector-image-delivery.mjs';
 import {editionBinding,executeEdition,canonicalExecutionStatus,pinnedResumeDecision,promotionDecision,sealPublicationBundle,verifyPublicationBundle,verifyAdmissionEvidence,verifyDirectCaptureAdmission,DIRECT_IMAGE_CAPTURE_ADMISSION} from '../lib/edition-execution.mjs';
 import {newRunState,checkpointRunStage} from '../lib/run-state.mjs';
-import {buildImageGenerationExecution,buildImageExecutionAdmission,executeImageRequest,validateImageExecutionReceipt} from '../lib/image-execution.mjs';
+import {buildImageGenerationExecution,buildImageGeneratorContextReceipt,buildImageExecutionAdmission,executeImageRequest,validateImageExecutionReceipt} from '../lib/image-execution.mjs';
 const temp=()=>fs.mkdtempSync(path.join(os.tmpdir(),'brief-reliable-'));
 const usage=()=>({work_invocations:0,codex_invocations:0,paid_model_api_calls:0});
 const sha='a'.repeat(40), now=()=> '2026-09-29T16:00:00Z';
@@ -23,8 +23,11 @@ const packet=(id='m04')=>({story_id:'story-'+id,candidate_id:id,headline:'Suppor
   acceptance_order:['subject','facts','structure','editorial'],wrong_subject_action:'Discard and generate a new request for this same story.',low_quality_fallback:false,
   allowed_image_text:['Input','Review'],composition_mode:'annotated_system',prohibited_composition_patterns:['generic sparse title card']});
 function admitted(execution,{execution_id='fixture-execution',task_id='11',request_key='fixture-request'}={}){
+  const generator_context_receipt=buildImageGeneratorContextReceipt(execution,{execution_id,task_id,request_key,
+    invocation_id:'fixture-reliable-invocation',context_id:'fixture-story-only-context',
+    submitted_instruction:execution.generation_instruction,created_at:'2026-09-29T15:00:00Z'});
   return buildImageExecutionAdmission(execution,{
-    execution_id,task_id,request_key,submitted_instruction:execution.generation_instruction,
+    execution_id,task_id,request_key,submitted_instruction:execution.generation_instruction,generator_context_receipt,
     story_only_context_verified:true,orchestration_context_visible:false,
     exact_byte_persistence_verified:true,persistence_mode:'git_data_direct_blob',
     owner_intervention_required:false,persistence_proof:{schema_version:'fixture-persistence-preflight-v1',result:'PASS'},

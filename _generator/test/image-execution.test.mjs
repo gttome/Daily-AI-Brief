@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
-import {buildImageGenerationExecution,buildProductionImageGenerationExecution,validateImageGenerationExecution,validateImageExecutionReceipt,executeImageRequest,executeImageBatch} from '../lib/image-execution.mjs';
+import {buildImageGenerationExecution,buildProductionImageGenerationExecution,buildImageGeneratorContextReceipt,buildImageExecutionAdmission,validateImageGenerationExecution,validateImageExecutionAdmission,validateImageExecutionReceipt,executeImageRequest,executeImageBatch} from '../lib/image-execution.mjs';
 import {buildQualificationImageGenerationExecution} from '../lib/qualification-image-harness.mjs';
 import {compileImageRenderSpec,validateImageRenderSpec} from '../lib/image-story-packet.mjs';
 const hash=b=>createHash('sha256').update(b).digest('hex');
@@ -26,10 +26,10 @@ function fixture({reject=0,readbackBad=false}={}){
 test('production and qualification share the exact function and request bytes',()=>{
  assert.equal(buildQualificationImageGenerationExecution,buildProductionImageGenerationExecution);
  const e=buildQualificationImageGenerationExecution(packet());assert.deepEqual(e,buildProductionImageGenerationExecution(packet()));
- assert.equal(e.requires_fresh_conversation,false);assert.equal(e.manual_intervention_allowed,false);assert.equal(e.runtime_context_isolation,'not_asserted');assert.equal(e.review_phase,'after_generation');
+ assert.equal(e.requires_fresh_conversation,true);assert.equal(e.manual_intervention_allowed,false);assert.equal(e.runtime_context_isolation,'dedicated_story_only_generation_context');assert.equal(e.review_phase,'after_generation');
  assert.deepEqual(validateImageGenerationExecution(e),[]);
 });
-test('request allowlist strips orchestration without claiming hidden platform isolation',()=>{
+test('request allowlist strips orchestration and requires dedicated runtime isolation',()=>{
  const e=buildImageGenerationExecution({...packet(),q_id:'Q24',parent_conversation:'unrelated status',other_story_context:'wrong story'});
  assert.doesNotMatch(e.prompt,/Q24|unrelated status|wrong story/);assert.equal(e.includes_edition_context,false);assert.equal(e.request_scope,'sealed_story_payload_only');
 });
@@ -59,7 +59,7 @@ test('pre-generation render lint rejects positive use of prohibited specifics',(
  const p=packet();p.prohibited_specifics=['GitHub'];p.visual_brief='Detailed GitHub workflow diagram.';
  assert.throws(()=>buildImageGenerationExecution(p),/render_spec_positive_prohibited_conflict:GitHub/);
 });
-for(const [key,value] of [['requires_fresh_conversation',true],['manual_intervention_allowed',true],['runtime_context_isolation','guaranteed'],['output_count',6],['review_phase','before_generation'],['prompt','make a status dashboard']]){
+for(const [key,value] of [['requires_fresh_conversation',false],['manual_intervention_allowed',true],['runtime_context_isolation','not_asserted'],['output_count',6],['review_phase','before_generation'],['prompt','make a status dashboard']]){
  test('reject invalid request '+key,()=>{const e=buildImageGenerationExecution(packet());e[key]=value;assert.ok(validateImageGenerationExecution(e).length);});
 }
 test('reject unknown ambient fields and changed single-story membership',()=>{const e=buildImageGenerationExecution(packet());e.prior_messages=['inherited'];e.story_ids.push('other');assert.ok(validateImageGenerationExecution(e).length>=2);});
@@ -81,6 +81,26 @@ for(const [name,mutate] of [
  ['wrong subject',r=>r.review.subject_match='fail'],['manual review',r=>r.review.mode='owner'],
  ['fixture promoted',r=>{r.status='accepted_locked';r.evidence_type='live';}],['missing exact readback',r=>r.persistence.read_back_verified=false]
 ])test('receipt rejects '+name,async()=>{const f=fixture(),e=buildImageGenerationExecution(packet()),r=await executeImageRequest(e,f);mutate(r);assert.ok(validateImageExecutionReceipt(r,e,{allowFixture:true}).length);});
+
+test('self-attested isolation cannot authorize generation without a context receipt',()=>{
+ const e=buildImageGenerationExecution(packet());
+ const a=buildImageExecutionAdmission(e,{execution_id:'run',task_id:'15',request_key:'req',submitted_instruction:e.generation_instruction,
+   story_only_context_verified:true,orchestration_context_visible:false,exact_byte_persistence_verified:true,
+   persistence_mode:'protected_base64_chunk_bridge',owner_intervention_required:false});
+ assert.equal(a.generation_authorized,false);
+ assert.ok(a.failure_reasons.includes('image_generator_context_receipt_required'));
+ assert.ok(validateImageExecutionAdmission(a,e,{execution_id:'run',task_id:'15',request_key:'req'}).length);
+});
+test('fresh dedicated story-only context receipt authorizes exact sealed instruction',()=>{
+ const e=buildImageGenerationExecution(packet());
+ const receipt=buildImageGeneratorContextReceipt(e,{execution_id:'run',task_id:'15',request_key:'req',
+   invocation_id:'watchdog-F-invocation',context_id:'fresh-context-1',submitted_instruction:e.generation_instruction});
+ const a=buildImageExecutionAdmission(e,{execution_id:'run',task_id:'15',request_key:'req',submitted_instruction:e.generation_instruction,
+   story_only_context_verified:true,orchestration_context_visible:false,generator_context_receipt:receipt,
+   exact_byte_persistence_verified:true,persistence_mode:'protected_base64_chunk_bridge',owner_intervention_required:false});
+ assert.equal(a.generation_authorized,true);
+ assert.deepEqual(validateImageExecutionAdmission(a,e,{execution_id:'run',task_id:'15',request_key:'req'}),[]);
+});
 
 test('raw capture capability is required and no transient-output shortcut is accepted',async()=>{const f=fixture();delete f.adapter.capture;const r=await executeImageRequest(buildImageGenerationExecution(packet()),f);assert.equal(r.status,'CAPABILITY_BLOCKED');assert.equal(f.calls.length,0);});
 test('corrupted raw capture is recorded and rejected before review',async()=>{const f=fixture({readbackBad:true});await assert.rejects(executeImageRequest(buildImageGenerationExecution(packet()),f),/raw_image_capture_readback_mismatch/);assert.equal(f.calls.some(x=>x.startsWith('review:')),false);assert.equal(f.events.at(-1).status,'EXECUTION_FAILED');});
