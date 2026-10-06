@@ -1,0 +1,44 @@
+{
+  "schema_version": "image-execution-admission-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "execution_key": "2026-10-06-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "15",
+  "candidate_id": "m12",
+  "request_key": "31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc",
+  "writer_generation": 45,
+  "consumer_id": "watchdog-E",
+  "consumer_automation_id": "6ac1595c12fc8191b9a25b42d465692d",
+  "admitted_at": "2026-10-06T06:48:02.344Z",
+  "story_only_context_verified": true,
+  "orchestration_context_visible": false,
+  "exact_byte_persistence_verified": true,
+  "persistence_mode": "protected_base64_chunk_bridge",
+  "owner_intervention_required": false,
+  "generation_authorized": true,
+  "preflight_failure_consumes_attempt": false,
+  "generator_context": {
+    "mode": "dedicated_story_only_generation_context",
+    "sealed_context": "_records/image-context/2026-10-06/m12.json",
+    "submitted_instruction_equals_sealed_prompt": true,
+    "orchestration_context_visible_to_generator": false,
+    "includes_other_stories": false
+  },
+  "native_generation": {
+    "available": true,
+    "tool": "built_in_chatgpt_image_generation",
+    "owner_intervention_required": false
+  },
+  "persistence": {
+    "mode": "protected_base64_chunk_bridge",
+    "approved": true,
+    "runtime_generated_bytes_readable": true,
+    "exact_byte_readback_verification_required": true,
+    "small_png_route_proven": true,
+    "bridge_implementation": "_generator/lib/image-chunk-bridge.mjs",
+    "prior_same_execution_proof": "_records/edition-execution/image-transport-results/reliable-edition-20261006-run10/12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663.json",
+    "target_path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m12.png"
+  },
+  "result": "PASS"
+}
