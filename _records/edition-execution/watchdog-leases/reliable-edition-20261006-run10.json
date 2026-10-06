@@ -4,9 +4,11 @@
   "incident_id": "wd-reliable-edition-20261006-run10-task17-dead-writer-resume",
   "owner_slot": "E",
   "generation": 32,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-06T09:08:30.000Z",
-  "last_heartbeat_at": "2026-10-06T09:08:30.000Z",
-  "expires_at": "2026-10-06T09:16:30.000Z",
-  "action_key": "wd-reliable-edition-20261006-run10-task17-dead-writer-resume:slot-e:g32:resume"
+  "last_heartbeat_at": "2026-10-06T09:08:40.000Z",
+  "expires_at": "2026-10-06T09:08:40.000Z",
+  "action_key": "wd-reliable-edition-20261006-run10-task17-dead-writer-resume:slot-e:g32:resume",
+  "released_at": "2026-10-06T09:08:40.000Z",
+  "release_reason": "DEAD_WRITER_PROVED_AND_EXACT_TASK17_REQUEST_REQUEUED"
 }

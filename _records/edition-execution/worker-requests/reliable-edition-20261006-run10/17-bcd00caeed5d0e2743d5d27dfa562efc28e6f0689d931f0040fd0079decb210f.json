@@ -8,11 +8,13 @@
   "capability": "repository",
   "instruction": "Execute Task 17 (Review six-image set, differentiation and accessibility) from authoritative durable inputs, preserving all valid completed upstream evidence.",
   "writer_generation": 55,
-  "recovery_attempt": 0,
+  "recovery_attempt": 1,
   "repair_epoch": 0,
   "post_repair_attempt": 0,
   "created_at": "2026-10-06T08:44:22.644Z",
   "writer_generation_is_provenance": false,
   "authority_refresh_required_at_invocation": false,
-  "status": "queued"
+  "status": "queued",
+  "recovery_reason_code": "DEAD_WRITER_SUPERSEDED_AFTER_PROTECTED_VALIDATOR_REPAIR",
+  "last_recovery_at": "2026-10-06T09:08:40.000Z"
 }
