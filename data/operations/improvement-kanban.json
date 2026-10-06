@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-05T16:29:07.015Z",
+  "observed_at": "2026-10-06T12:59:00.000Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -964,6 +964,24 @@
       "sources": [
         "October 5 usage-efficiency assessment",
         "Daily AI Brief October 6 pre-run hardening handoff"
+      ]
+    },
+    {
+      "id": "DAB-KB-051",
+      "lane": "backlog",
+      "priority": "P1",
+      "category": "Supervisor Liveness",
+      "title": "Eliminate observability-only Task 00 startup stalls",
+      "summary": "Ensure the startup Supervisor reaches a semantic Task 00 executor within the protected liveness window instead of stopping after lease and Kanban observability updates.",
+      "acceptance": [
+        "Task 00 startup produces a readiness receipt or exact worker handoff within the protected liveness window.",
+        "Lease, heartbeat and Kanban-only writes do not satisfy startup progress.",
+        "Same-execution recovery remains fenced and owner-independent.",
+        "A regression test fails when startup completes without a semantic executor delta."
+      ],
+      "sources": [
+        "DAB-OPS-20261006-001",
+        "reliable-edition-20261006-run10 Task 00 recovery evidence"
       ]
     }
   ],
