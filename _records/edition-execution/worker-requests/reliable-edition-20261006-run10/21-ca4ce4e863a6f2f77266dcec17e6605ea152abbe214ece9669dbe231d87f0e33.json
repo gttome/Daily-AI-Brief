@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "ca4ce4e863a6f2f77266dcec17e6605ea152abbe214ece9669dbe231d87f0e33",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "21",
+  "capability": "repository",
+  "instruction": "Execute Task 21 (Perform focused repair only if qualification identifies a defect) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 70,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-06T09:40:09.012Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
