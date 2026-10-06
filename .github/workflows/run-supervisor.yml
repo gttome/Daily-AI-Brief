@@ -412,6 +412,7 @@ jobs:
                   --output /tmp/released-writer-lease.json >/tmp/ordinary-handoff-release.stdout
                 cat /tmp/ordinary-handoff-release.stdout
                 cp /tmp/released-writer-lease.json "run/$lease_rel"
+                git -C run add "$lease_rel"
                 ordinary_handoff_boundary=true
               fi
               if [ "$request_capability" = "native_chatgpt" ] && [[ "$request_task" =~ ^1[1-6]$ ]]; then

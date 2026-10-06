@@ -689,3 +689,14 @@ test('Supervisor releases queued ordinary and research work to the A-F Watchdog 
   assert.match(requestBlock,/request_task" != "17"/);
   assert.match(requestBlock,/writer authority released to the admitted A-F Watchdog consumer pool/);
 });
+
+
+test('ordinary handoff stages the released lease rather than only the prior renewal',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  const start=y.indexOf('--output /tmp/released-writer-lease.json >/tmp/ordinary-handoff-release.stdout');
+  const copy=y.indexOf('cp /tmp/released-writer-lease.json "run/$lease_rel"',start);
+  const stage=y.indexOf('git -C run add "$lease_rel"',copy);
+  const boundary=y.indexOf('ordinary_handoff_boundary=true',stage);
+  assert.ok(start>=0 && copy>start && stage>copy && boundary>stage,
+    'released lease must replace the staged renewal before the handoff commit');
+});
