@@ -4,12 +4,15 @@
   "incident_id": "wd-reliable-edition-20261006-run10-task15-story-only-context-unavailable",
   "owner_slot": "A",
   "generation": 25,
-  "state": "ACTIVE",
-  "released": false,
+  "state": "RELEASED",
+  "released": true,
   "acquired_at": "2026-10-06T07:02:22.000Z",
   "last_heartbeat_at": "2026-10-06T07:02:22.000Z",
-  "expires_at": "2026-10-06T07:17:22.000Z",
+  "expires_at": "2026-10-06T07:02:22.000Z",
+  "released_at": "2026-10-06T07:02:22.000Z",
+  "release_reason": "SAFE_BOUNDARY_REACHED",
   "action_key": "wd-reliable-edition-20261006-run10-task15-story-only-context-unavailable:slot-a:g25:handoff",
   "continuation_from_generation": 24,
-  "authoritative_request_key": "31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc"
+  "authoritative_request_key": "31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc",
+  "completion_evidence": "_records/edition-execution/watchdog-events/reliable-edition-20261006-run10/20261006T070222000Z-slot-a-task15-continuation.json"
 }
