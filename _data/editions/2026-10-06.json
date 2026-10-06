@@ -1,0 +1,195 @@
+{
+  "schema_version": "edition-data-v3",
+  "edition_id": "dab-edition-2026-10-06",
+  "brief_date": "2026-10-06",
+  "title": "Daily Generative AI Brief — October 6, 2026",
+  "published_at": "2026-10-06T09:32:30.092Z",
+  "timezone": "America/Chicago",
+  "status": "candidate",
+  "research_cutoff_at": "2026-10-06T00:02:39.000Z",
+  "coverage_period": {
+    "start": "2026-09-30",
+    "end": "2026-10-03"
+  },
+  "article_freshness_policy": "article-24-72-168-v1",
+  "policy_profile": "under80",
+  "stories": [
+    {
+      "ordinal": 1,
+      "item_id": "dab-story-2026-10-06-m01",
+      "candidate_id": "m01",
+      "title": "Android CLI turns device access into reusable agent skills",
+      "focus": "Technical AI Engineering",
+      "publication_date": "2026-10-03",
+      "source_reading_minutes": 8,
+      "source_url": "https://android-developers.googleblog.com/2026/10/android-cli-device-streaming-and-skills.html",
+      "permanent_url": "/stories/2026-10-06/android-cli-turns-device-access-into-reusable-agent-skills/",
+      "image": "briefs/images/2026-10-06/dab-edition-2026-10-06-m01.png",
+      "summary": "Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface.",
+      "why_it_matters": "A maintained skill can package the commands, device context, checks and result evidence an agent needs to repeat mobile work reliably.",
+      "topics": [
+        "Agent Skills",
+        "Android CLI",
+        "device streaming"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "item_id": "dab-story-2026-10-06-m02",
+      "candidate_id": "m02",
+      "title": "When an agent says it is done, grade the database",
+      "focus": "Technical AI Engineering",
+      "publication_date": "2026-10-03",
+      "source_reading_minutes": 17,
+      "source_url": "https://huggingface.co/blog/microsoft/thinkingbox",
+      "permanent_url": "/stories/2026-10-06/when-an-agent-says-it-is-done-grade-the-database/",
+      "image": "briefs/images/2026-10-06/dab-edition-2026-10-06-m02.png",
+      "summary": "ThinkingBox grades terminal backend state across 507 stateful workflows and repeated trials.",
+      "why_it_matters": "Durable state, side effects and repeatability are stronger completion evidence than a plausible final message.",
+      "topics": [
+        "agent verification",
+        "durable state",
+        "repeatability"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "item_id": "dab-story-2026-10-06-m10",
+      "candidate_id": "m10",
+      "title": "Workspace turns prompts into images, canvases and cross-app work",
+      "focus": "Applied Generative AI for Knowledge Workers",
+      "publication_date": "2026-10-01",
+      "source_reading_minutes": 5,
+      "source_url": "https://workspace.google.com/blog/product-announcements/september-2026-workspace-feature-drop",
+      "permanent_url": "/stories/2026-10-06/workspace-turns-prompts-into-images-canvases-and-cross-app-work/",
+      "image": "briefs/images/2026-10-06/dab-edition-2026-10-06-m10.png",
+      "summary": "Workspace adds AI image editing, prompt-built Sheets canvases and cross-app execution.",
+      "why_it_matters": "Connected work surfaces can keep generated outputs synchronized with the source data and application context that produced them.",
+      "topics": [
+        "knowledge work",
+        "cross-app workflows",
+        "source data"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "item_id": "dab-story-2026-10-06-m11",
+      "candidate_id": "m11",
+      "title": "AstaBrief opens a faster path to citation-grounded reports",
+      "focus": "Applied Generative AI for Knowledge Workers",
+      "publication_date": "2026-10-02",
+      "source_reading_minutes": 9,
+      "source_url": "https://huggingface.co/blog/allenai/astabrief",
+      "permanent_url": "/stories/2026-10-06/astabrief-opens-a-faster-path-to-citation-grounded-reports/",
+      "image": "briefs/images/2026-10-06/dab-edition-2026-10-06-m11.png",
+      "summary": "Ai2 releases an open 8B model and data for citation-grounded scientific reports.",
+      "why_it_matters": "A faster reporting loop is useful only when readers can trace important claims back to the exact supporting evidence.",
+      "topics": [
+        "research workflows",
+        "citations",
+        "report generation"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "item_id": "dab-story-2026-10-06-m12",
+      "candidate_id": "m12",
+      "title": "Copilot moves from chat into desktop computer use",
+      "focus": "Agents for Everyone",
+      "publication_date": "2026-10-01",
+      "source_reading_minutes": 3,
+      "source_url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
+      "permanent_url": "/stories/2026-10-06/copilot-moves-from-chat-into-desktop-computer-use/",
+      "image": "briefs/images/2026-10-06/dab-edition-2026-10-06-m12.png",
+      "summary": "GitHub exposes computer use in Copilot CLI and desktop apps.",
+      "why_it_matters": "Moving from suggestions to clicks and typed actions makes scope, confirmation and auditability central product requirements.",
+      "topics": [
+        "computer use",
+        "desktop agents",
+        "confirmation gates"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "item_id": "dab-story-2026-10-06-m14",
+      "candidate_id": "m14",
+      "title": "Ambient agents wake on events and know when to ask a human",
+      "focus": "Agents for Everyone",
+      "publication_date": "2026-10-01",
+      "source_reading_minutes": 33,
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+      "permanent_url": "/stories/2026-10-06/ambient-agents-wake-on-events-and-know-when-to-ask-a-human/",
+      "image": "briefs/images/2026-10-06/dab-edition-2026-10-06-m14.png",
+      "summary": "AWS details event-driven agents with isolated sessions, human approval and resumable interruptions.",
+      "why_it_matters": "Durable job state and explicit escalation let background automation pause safely and resume without losing its place.",
+      "topics": [
+        "ambient agents",
+        "human approval",
+        "event-driven workflows"
+      ]
+    }
+  ],
+  "worth_watching": [
+    {
+      "slug": "general",
+      "id": "dab-video-2026-10-06-general",
+      "title": "Meet the GitHub Copilot app: Your new AI desktop assistant",
+      "channel": "GitHub",
+      "published": "2026-07-21",
+      "seconds": 462,
+      "url": "https://www.youtube.com/watch?v=LsA4vIX_3UY",
+      "focus": "Agents for Everyone",
+      "summary": "An official tour of the Copilot desktop agent surface supporting the edition’s computer-use story.",
+      "ordinal": 7,
+      "runtime_seconds": 462,
+      "permanent_url": "/videos/2026-10-06/general/"
+    },
+    {
+      "slug": "agent-skills",
+      "id": "dab-video-2026-10-06-agent-skills",
+      "title": "The My work tab: your mission control in the GitHub Copilot app",
+      "channel": "GitHub",
+      "published": "2026-10-06",
+      "seconds": 324,
+      "url": "https://www.youtube.com/watch?v=h9g4umRfgn0",
+      "focus": "Technical AI Engineering",
+      "summary": "Shows work items launching bounded agent sessions and complements governed reusable workflows.",
+      "ordinal": 8,
+      "runtime_seconds": 324,
+      "permanent_url": "/videos/2026-10-06/agent-skills/"
+    }
+  ],
+  "podcasts": [
+    {
+      "slug": "hard-fork-2026-10-02-ai-agents",
+      "id": "dab-podcast-2026-10-06-1",
+      "title": "Hard Fork — October 2, 2026 episode",
+      "show": "Hard Fork",
+      "host": "Kevin Roose and Casey Newton",
+      "published": "2026-10-02",
+      "seconds": 3182,
+      "url": "https://podcasts.apple.com/us/search?term=Hard%20Fork%20hard-fork-2026-10-02-ai-agents",
+      "focus": "Agents for Everyone",
+      "summary": "Current discussion of personal assistants, agent incidents and privacy trade-offs.",
+      "ordinal": 9,
+      "runtime_seconds": 3182,
+      "permanent_url": "/podcasts/2026-10-06/hard-fork-2026-10-02-ai-agents/"
+    },
+    {
+      "slug": "morning-brief-2026-09-30-confidence-drop-agent-payments",
+      "id": "dab-podcast-2026-10-06-2",
+      "title": "Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026",
+      "show": "The Morning Brief",
+      "host": "Jeff Bechtel",
+      "published": "2026-09-30",
+      "seconds": 780,
+      "url": "https://podcasts.apple.com/us/podcast/the-morning-brief/id1889037952",
+      "focus": "Agents for Everyone",
+      "summary": "A separate daily-news publisher adds agent-payment controls and AI workflow context relevant to governed deployment.",
+      "ordinal": 10,
+      "runtime_seconds": 780,
+      "permanent_url": "/podcasts/2026-10-06/morning-brief-2026-09-30-confidence-drop-agent-payments/"
+    }
+  ],
+  "editorial_takeaway": "Reliable agent work depends on reusable procedures, current context, durable-state verification, traceable evidence and explicit human control."
+}

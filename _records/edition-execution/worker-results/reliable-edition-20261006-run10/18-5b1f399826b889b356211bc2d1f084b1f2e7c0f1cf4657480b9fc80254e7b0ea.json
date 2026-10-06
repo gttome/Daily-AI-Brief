@@ -1,0 +1,40 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "5b1f399826b889b356211bc2d1f084b1f2e7c0f1cf4657480b9fc80254e7b0ea",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "18",
+  "request_writer_generation": 60,
+  "authority_generation": 63,
+  "status": "passed",
+  "completed_at": "2026-10-06T09:32:30.092Z",
+  "assembly": {
+    "canonical_brief": "briefs/2026-10-06.md",
+    "edition_data": "_data/editions/2026-10-06.json",
+    "assembly_receipt": "_records/editorial/2026-10-06-run10/task18-assembly.json",
+    "story_pages": 6,
+    "video_pages": 2,
+    "podcast_pages": 2,
+    "permanent_pages": 10,
+    "accepted_locked_images": 6,
+    "allocation": "2/2/2",
+    "agent_skills_story_count": 1,
+    "all_four_books_reviewed": true,
+    "watchlist_new": 0,
+    "watchlist_updated": 4,
+    "watchlist_carried_forward": 17,
+    "watchlist_dropped": 0
+  },
+  "validation": {
+    "visible_internal_candidate_ids_in_topics": 0,
+    "source_reading_time_verified": true,
+    "story_specific_alt_text": "6/6",
+    "single_duration_field_per_media_page": "4/4"
+  },
+  "preserved": {
+    "completed_tasks": "00-17",
+    "accepted_locked_images": 6
+  },
+  "task_outcome": "Done"
+}
