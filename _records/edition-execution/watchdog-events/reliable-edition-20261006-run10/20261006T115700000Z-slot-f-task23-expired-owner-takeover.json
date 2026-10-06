@@ -1,0 +1,23 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "event_type": "expired_owner_takeover",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "task_id": "23",
+  "slot": "F",
+  "occurred_at": "2026-10-06T11:57:00.000Z",
+  "incident_id": "wd-reliable-edition-20261006-run10-task23-green-ci-consumption",
+  "state": "ACTIVE",
+  "reason_code": "PRIOR_RECOVERY_AND_WRITER_LEASES_EXPIRED_WITHOUT_TASK_TRANSITION",
+  "proof": {
+    "prior_recovery_generation": 37,
+    "prior_recovery_expires_at": "2026-10-06T11:52:11.000Z",
+    "prior_writer_generation": 79,
+    "prior_writer_expires_at": "2026-10-06T11:46:00.000Z",
+    "candidate_head_sha": "7067cac453a90b97304c6947a0533276b5e56f24",
+    "protected_ci_run_id": 37457963585,
+    "protected_ci_conclusion": "success",
+    "accepted_locked_images": 6
+  }
+}
