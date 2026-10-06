@@ -1,0 +1,34 @@
+{
+  "schema_version": "task24-exact-merge-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "task_id": "24",
+  "writer_generation": 81,
+  "publication_pr": {
+    "number": 491,
+    "url": "https://github.com/gttome/Daily-AI-Brief/pull/491",
+    "base": "main",
+    "head_branch": "reliable-edition/dab-edition-2026-10-06-run10",
+    "exact_approved_head_sha": "8d8fd45a8e1494d82ddea91eb22f728a9c5cbf5e",
+    "merge_method": "merge",
+    "merge_sha": "9c43360de90cb1c27a83679a2acd1bacdd061432",
+    "merged": true
+  },
+  "protected_ci": {
+    "workflow": "Deterministic publication CI",
+    "workflow_id": 352448493,
+    "run_id": 37460551071,
+    "run_number": 1641,
+    "exact_candidate_sha": "8d8fd45a8e1494d82ddea91eb22f728a9c5cbf5e",
+    "conclusion": "success"
+  },
+  "preserved": {
+    "completed_tasks": "00-23",
+    "accepted_locked_images": 6,
+    "image_mutations": 0,
+    "semantic_reselection": false
+  },
+  "result": "PASS",
+  "observed_at": "2026-10-06T12:04:57.122Z"
+}
