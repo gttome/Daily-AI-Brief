@@ -1,0 +1,19 @@
+{
+  "schema_version": "image-base64-chunk-bridge-result-v1",
+  "status": "PASS",
+  "request_id": "6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a",
+  "execution_id": "reliable-edition-20261006-run10",
+  "task_id": "13",
+  "target_path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m10.png",
+  "source_writer_generation": 33,
+  "consumer_writer_generation": 34,
+  "bytes": 2059473,
+  "sha256": "78647d83c1703eac4beee4452b84a6a60c6f77792b3090fce16134e061a6d66c",
+  "git_blob_sha": "102fe9744d60b0c0f45b872bdb3e43f30562a9e3",
+  "width": 1731,
+  "height": 909,
+  "content_address_verified": true,
+  "read_back_verified": true,
+  "temporary_chunks_removed": true,
+  "consumed_at": "2026-10-06T05:00:00.905Z"
+}
