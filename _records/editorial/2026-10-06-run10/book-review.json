@@ -1,0 +1,109 @@
+{
+  "schema_version": "run10-four-book-review-v1",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_id": "reliable-edition-20261006-run10",
+  "reviewed_at": "2026-10-06T01:19:59.961Z",
+  "catalog_path": "_data/book-reading.json",
+  "books_reviewed": [
+    {
+      "book": "Reliable Generative AI",
+      "anchor_count": 8
+    },
+    {
+      "book": "Reliable Generative AI Context Engineering",
+      "anchor_count": 8
+    },
+    {
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "anchor_count": 8
+    },
+    {
+      "book": "Generative AI Prompt Engineering Learning Ecosystem",
+      "anchor_count": 8
+    }
+  ],
+  "total_anchors_reviewed": 32,
+  "reading_evidence": {
+    "full_text_claimed": false,
+    "note": "Review uses verified public anchors recorded in the repository catalog."
+  },
+  "item_reviews": [
+    {
+      "candidate_id": "m01",
+      "title": "Android CLI turns device access into reusable agent skills",
+      "best_connections": [
+        "reliable-handoffs",
+        "context-quality-checklist",
+        "prompt-pattern-selection",
+        "ecosystem-template-export"
+      ],
+      "reader_value": "A reusable device skill becomes more dependable when its inputs, permissions and outputs form a clear contract, its context is checked, the right prompt pattern is chosen and the result can be reused as an editable template."
+    },
+    {
+      "candidate_id": "m02",
+      "title": "When an agent says it is done, grade the database",
+      "best_connections": [
+        "reliable-verification",
+        "context-regression",
+        "prompt-evaluation",
+        "ecosystem-workflow"
+      ],
+      "reader_value": "Durable-state grading helps readers distinguish a confident answer from a completed job, monitor regressions, define explicit evaluation criteria and turn verification into a repeatable workflow."
+    },
+    {
+      "candidate_id": "m10",
+      "title": "Workspace turns prompts into images, canvases and cross-app work",
+      "best_connections": [
+        "reliable-handoffs",
+        "context-dynamic-facts",
+        "prompt-structure",
+        "ecosystem-template-export"
+      ],
+      "reader_value": "Cross-app work is easier to trust when current facts travel with the task, prompts use a consistent structure and the generated artifact remains editable and reusable."
+    },
+    {
+      "candidate_id": "m11",
+      "title": "AstaBrief opens a faster path to citation-grounded reports",
+      "best_connections": [
+        "reliable-rag",
+        "context-discovery",
+        "prompt-core-components",
+        "ecosystem-practice"
+      ],
+      "reader_value": "Citation-grounded reports improve when retrieval combines semantic and exact matching, the research question is defined first, evidence requirements are explicit and readers practice checking what each citation really supports."
+    },
+    {
+      "candidate_id": "m12",
+      "title": "Copilot moves from chat into desktop computer use",
+      "best_connections": [
+        "reliable-audit",
+        "context-privacy",
+        "prompt-clarify",
+        "ecosystem-role-selection"
+      ],
+      "reader_value": "Desktop action raises the stakes: readers benefit from visible audit trails, privacy-aware context, clarification before consequential clicks and a clear division of responsibility between person and agent."
+    },
+    {
+      "candidate_id": "m14",
+      "title": "Ambient agents wake on events and know when to ask a human",
+      "best_connections": [
+        "reliable-agent-failures",
+        "context-failure-playbooks",
+        "prompt-clarify",
+        "ecosystem-role-selection"
+      ],
+      "reader_value": "Event-driven autonomy becomes safer when failure handling, escalation playbooks, clarification rules and human-versus-agent roles are decided before an agent acts."
+    }
+  ],
+  "distribution_check": {
+    "books_with_at_least_one_selected_connection": 4,
+    "all_six_stories_reviewed": true
+  },
+  "upstream_preservation": {
+    "story_selection_locked": true,
+    "watchlist_task_preserved": true,
+    "semantic_pass_reused": true,
+    "completed_upstream_rework": false
+  },
+  "result": "PASS"
+}
