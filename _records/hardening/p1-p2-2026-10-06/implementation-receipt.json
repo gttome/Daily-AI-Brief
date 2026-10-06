@@ -1,0 +1,119 @@
+{
+  "schema_version": "p1-p2-implementation-receipt-v1",
+  "plan_date": "2026-10-06",
+  "source_execution": "reliable-edition-20261006-run10",
+  "source_terminal_state": "PUBLIC_CLOSED",
+  "production_run_reopened": false,
+  "result": "PASS",
+  "completed_capabilities": [
+    "event-driven Supervisor",
+    "stable no-wake image pipeline",
+    "generalized Task 17 persistence validator",
+    "Task 23 pre-PR prerequisite binding",
+    "hardening/production branch separation",
+    "deterministic atomic Tasks 27-29 closeout"
+  ],
+  "protected_prs": [
+    {
+      "work_package": "WP-01",
+      "capability": "Hardening/production branch separation",
+      "pr": 495,
+      "head_sha": "bdf2c934b30b3193f278aa48d8df217d9333cc31",
+      "ci_run_id": 37537872636,
+      "merge_sha": "a78fd3248609da12ba17b9f089ad2d1725a41407"
+    },
+    {
+      "work_package": "WP-02",
+      "capability": "Event-driven Supervisor",
+      "pr": 496,
+      "head_sha": "c11c9a07aaec07cedf31b3cef44d58856ef3d48b",
+      "ci_run_id": 37538752673,
+      "merge_sha": "744b34deacb6215484e8e428b8f65e3b8bc4eef3"
+    },
+    {
+      "work_package": "WP-02-repair",
+      "capability": "Supervisor YAML startup repair",
+      "pr": 498,
+      "head_sha": "dd1120e54d91027d75dcfeaa00ef17bd3720450a",
+      "ci_run_id": 37540179070,
+      "merge_sha": "fb158509308e68f123a0b305cfd77d8b7a8f8d37"
+    },
+    {
+      "work_package": "WP-03",
+      "capability": "Stable no-wake image pipeline",
+      "pr": 497,
+      "head_sha": "b48a838a7200ed035ed86780f2d8b17fa7f7c597",
+      "ci_run_id": 37539879807,
+      "merge_sha": "e969d067b85dcae84b98ad62ed538207be2e1665"
+    },
+    {
+      "work_package": "WP-04",
+      "capability": "Generalized Task 17 validator",
+      "pr": 499,
+      "head_sha": "a39c26360647b4a7663eff7a3af3a9a0f47a513b",
+      "ci_run_id": 37541051339,
+      "merge_sha": "ec0208dd2fd964e506cf5512e346c5f0468a6f00"
+    },
+    {
+      "work_package": "WP-05",
+      "capability": "Task 23 pre-PR prerequisite binding",
+      "pr": 500,
+      "head_sha": "d95ce5f9de52c95adf426e80f1e76724f915cea6",
+      "ci_run_id": 37541491861,
+      "merge_sha": "a85bd5671fac02b677447766281e05384ba21843"
+    },
+    {
+      "work_package": "WP-06",
+      "capability": "Atomic Tasks 27-29 closeout",
+      "pr": 501,
+      "head_sha": "1a45ed6d03093b2fcc9ff187fc738bd14e4b53bb",
+      "ci_run_id": 37542151088,
+      "merge_sha": "13cbf5449fe411fd199b81ceef3ef1e5bc0dbd0a"
+    },
+    {
+      "work_package": "WP-07",
+      "capability": "Integrated fault-injection rehearsal harness",
+      "pr": 502,
+      "head_sha": "a4182036fb6cc9f5d7aed3b5b3de5ab514fa734f",
+      "ci_run_id": 37544820314,
+      "merge_sha": "6f5b1a439d4088af6c284e28c8201842ce3b8468"
+    }
+  ],
+  "final_code_main_sha": "6f5b1a439d4088af6c284e28c8201842ce3b8468",
+  "final_code_main_ci": {
+    "run_id": 37545132702,
+    "run_number": 1680,
+    "name": "Deterministic publication CI",
+    "conclusion": "success"
+  },
+  "integrated_rehearsal": {
+    "workflow_run_id": 37545271745,
+    "result": "PASS",
+    "branch": "rehearsal/p1p2-integrated-2026-10-06-r1",
+    "evidence_digest": "sha256:9ca96cabbcb99679e38b289a8dc438465aaa8f73fee39141f032a2f673170203"
+  },
+  "real_nonproduction_native_image_proof": {
+    "result": "PASS",
+    "scope": "development_trial",
+    "summary_path": "_records/image-trials/2026-10-02-six-image/summary.json",
+    "sample_capture_path": "_records/image-trials/2026-10-02-six-image/m01/capture.json",
+    "sample_persistence_path": "_records/image-trials/2026-10-02-six-image/m01/persistence.json",
+    "recovery_check_path": "_records/image-trials/2026-10-02-six-image/recovery-check.json",
+    "native_tool": "built-in image_gen",
+    "generation_calls": 7,
+    "exact_git_tree_binding_verified": true,
+    "recovered_from_git_without_regeneration": true,
+    "development_work_or_codex_surface_used": true,
+    "production_dependency": false,
+    "interpretation": "This historical non-production development trial proves real native generation-to-Git byte persistence. Development Work/Codex use is not part of the production runtime dependency graph."
+  },
+  "production_runtime_boundary": {
+    "work_invocations": 0,
+    "codex_invocations": 0,
+    "paid_model_api_calls": 0,
+    "owner_liveness_prompts": 0,
+    "happy_path_wake_prs": 0
+  },
+  "final_reconciliation_branch": "hardening/p1p2-final-reconciliation-2026-10-06",
+  "authoritative_when": "Merged to protected main and post-merge deterministic CI passes."
+}
