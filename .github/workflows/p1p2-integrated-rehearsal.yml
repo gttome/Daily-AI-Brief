@@ -1,0 +1,78 @@
+name: P1 P2 Integrated Non-Production Rehearsal
+
+on:
+  push:
+    branches:
+      - 'rehearsal/p1p2-integrated-*'
+    paths:
+      - '_records/hardening/p1-p2-2026-10-06/rehearsal-trigger.json'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: p1-p2-integrated-rehearsal
+  cancel-in-progress: false
+
+jobs:
+  rehearse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out final protected main
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          path: control
+          fetch-depth: 0
+
+      - name: Check out exact rehearsal branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.ref_name }}
+          path: rehearsal
+          fetch-depth: 2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+
+      - name: Bind rehearsal to final protected-main SHA and successful CI
+        id: bind
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          main_sha="$(git -C control rev-parse HEAD)"
+          trigger_parent="$(git -C rehearsal rev-parse HEAD^)"
+          if [ "$trigger_parent" != "$main_sha" ]; then
+            echo "Rehearsal trigger must be one commit directly above final protected main."
+            exit 1
+          fi
+          ci_run_id="$(gh api "repos/$REPO/actions/runs?head_sha=$main_sha&per_page=100" --jq '[.workflow_runs[] | select(.name=="Deterministic publication CI" and .event=="push" and .conclusion=="success")] | sort_by(.updated_at) | reverse | .[0].id // 0')"
+          if [ "$ci_run_id" -le 0 ]; then
+            echo "No successful final protected-main deterministic CI exists for $main_sha."
+            exit 1
+          fi
+          echo "main_sha=$main_sha" >> "$GITHUB_OUTPUT"
+          echo "ci_run_id=$ci_run_id" >> "$GITHUB_OUTPUT"
+
+      - name: Run integrated fault-injection rehearsal with final main code
+        shell: bash
+        run: |
+          set -euo pipefail
+          node control/_tools/p1p2-integrated-rehearsal.mjs             --repo-root control             --main-sha "${{ steps.bind.outputs.main_sha }}"             --main-ci-run-id "${{ steps.bind.outputs.ci_run_id }}"             --main-ci-conclusion success             --rehearsal-run-id "${{ github.run_id }}"             --out rehearsal/_records/hardening/p1-p2-2026-10-06/rehearsal-receipt.json
+
+      - name: Persist rehearsal receipt on non-production branch only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C rehearsal config user.name "github-actions[bot]"
+          git -C rehearsal config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git -C rehearsal add _records/hardening/p1-p2-2026-10-06/rehearsal-receipt.json
+          git -C rehearsal commit -m "Persist P1 P2 integrated rehearsal PASS"
+          git -C rehearsal push origin "HEAD:${GITHUB_REF_NAME}"
