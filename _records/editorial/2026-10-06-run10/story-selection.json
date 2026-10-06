@@ -1,0 +1,86 @@
+{
+  "schema_version": "run10-story-selection-v1",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_id": "reliable-edition-20261006-run10",
+  "research_cutoff": "2026-10-06T00:02:39.000Z",
+  "selected_at": "2026-10-06T01:05:42.206Z",
+  "allocation_policy": "exact-2-2-2",
+  "semantic_pass_contract": "one-semantic-editorial-pass-v1",
+  "semantic_input_evidence_git_blob": "6dd4f517530973840285877efeec072c2c5ac36a",
+  "agent_skills_candidate_id": "m01",
+  "selection_locked": true,
+  "selected": [
+    {
+      "slot": 1,
+      "focus": "technical_ai_engineering",
+      "candidate_id": "m01",
+      "role": "agent_skills",
+      "working_title": "Android CLI turns device access into reusable agent skills"
+    },
+    {
+      "slot": 2,
+      "focus": "technical_ai_engineering",
+      "candidate_id": "m02",
+      "working_title": "When an agent says it is done, grade the database"
+    },
+    {
+      "slot": 3,
+      "focus": "applied_genai_knowledge_workers",
+      "candidate_id": "m10",
+      "working_title": "Workspace turns prompts into images, canvases and cross-app work"
+    },
+    {
+      "slot": 4,
+      "focus": "applied_genai_knowledge_workers",
+      "candidate_id": "m11",
+      "working_title": "AstaBrief opens a faster path to citation-grounded reports"
+    },
+    {
+      "slot": 5,
+      "focus": "agents_non_technical_people",
+      "candidate_id": "m12",
+      "working_title": "Copilot moves from chat into desktop computer use"
+    },
+    {
+      "slot": 6,
+      "focus": "agents_non_technical_people",
+      "candidate_id": "m14",
+      "working_title": "Ambient agents wake on events and know when to ask a human"
+    }
+  ],
+  "reserves": [
+    "m05",
+    "m08",
+    "m13"
+  ],
+  "excluded": [],
+  "checks": {
+    "exact_story_count": 6,
+    "category_counts": {
+      "technical_ai_engineering": 2,
+      "applied_genai_knowledge_workers": 2,
+      "agents_non_technical_people": 2
+    },
+    "exact_one_reusable_agent_skills_story": true,
+    "prior_edition_exact_repeat": false,
+    "all_selected_full_source_read": true,
+    "all_selected_within_active_freshness_ladder": true,
+    "extended_fallback_used": [
+      "m01",
+      "m10",
+      "m11",
+      "m12",
+      "m14"
+    ],
+    "source_date_conflict_excluded": []
+  },
+  "rationale": {
+    "m01": "The sole Agent Skills-ready candidate and a concrete reusable-skill mechanism tied to a maintained developer workflow.",
+    "m02": "The freshest reliability mechanism grades durable backend state and repeated outcomes rather than conversational claims.",
+    "m10": "Broad knowledge-worker utility across images, interactive data and cross-app work.",
+    "m11": "An open citation-grounded report model and data provide a distinct research workflow.",
+    "m12": "Desktop computer use is an accessible step from chat toward action across applications.",
+    "m14": "An event-driven agent pattern with explicit human approval and resumability."
+  },
+  "result": "PASS"
+}

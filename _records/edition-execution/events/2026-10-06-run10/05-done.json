@@ -1,0 +1,27 @@
+{
+  "task_id": "05",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-06T01:05:42.206Z",
+  "reason": "Locked exactly six fresh stories in 2/2/2 order with exactly one reusable Agent Skills story from the unchanged verified evidence set.",
+  "proof": {
+    "request_key": "eb9e0a269e7faf647957d75f1006c088fe5167a3c27819d89edc3127757ce3ea",
+    "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/05-eb9e0a269e7faf647957d75f1006c088fe5167a3c27819d89edc3127757ce3ea.json",
+    "selection_artifact": "_records/editorial/2026-10-06-run10/story-selection.json",
+    "selected_candidate_ids": [
+      "m01",
+      "m02",
+      "m10",
+      "m11",
+      "m12",
+      "m14"
+    ],
+    "category_counts": {
+      "technical_ai_engineering": 2,
+      "applied_genai_knowledge_workers": 2,
+      "agents_non_technical_people": 2
+    },
+    "agent_skills_candidate_id": "m01",
+    "result": "PASS"
+  }
+}
