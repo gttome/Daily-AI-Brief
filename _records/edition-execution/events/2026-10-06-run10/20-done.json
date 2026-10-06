@@ -1,0 +1,20 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "task_id": "20",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-06T09:39:23.543Z",
+  "writer_generation": 69,
+  "owner_id": "scheduled-chatgpt-watchdog-f-task20-gen69",
+  "reason_code": "QUALIFICATION_COMPLETE",
+  "proof": {
+    "qualification_receipt": "_records/qualification/2026-10-06-run10/result.json",
+    "repair_required": true,
+    "defect_id": "RUN10_INCOMPLETE_DETERMINISTIC_PUBLICATION_PROJECTION",
+    "accepted_locked_images": 6
+  },
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}
