@@ -1,0 +1,57 @@
+{
+  "schema_version": "p1-p2-hardening-program-v1",
+  "plan_date": "2026-10-06",
+  "source_execution": "reliable-edition-20261006-run10",
+  "source_run_terminal_state": "PUBLIC_CLOSED",
+  "production_run_reopened": false,
+  "state": "IN_PROGRESS",
+  "protected_main_baseline": "aee48e20c9d1b1a645a7c9f486c28537ff896d6d",
+  "production_usage_boundary": {
+    "work_invocations": 0,
+    "codex_invocations": 0,
+    "paid_model_api_calls": 0,
+    "owner_liveness_prompts": 0
+  },
+  "work_packages": [
+    {
+      "id": "WP-01",
+      "capability": "hardening/production branch separation",
+      "state": "IN_PROGRESS"
+    },
+    {
+      "id": "WP-02",
+      "capability": "event-driven Supervisor",
+      "state": "QUEUED"
+    },
+    {
+      "id": "WP-03",
+      "capability": "stable no-wake image pipeline",
+      "state": "QUEUED"
+    },
+    {
+      "id": "WP-04",
+      "capability": "generalized Task 17 validator",
+      "state": "QUEUED"
+    },
+    {
+      "id": "WP-05",
+      "capability": "Task 23 pre-PR prerequisite binding",
+      "state": "QUEUED"
+    },
+    {
+      "id": "WP-06",
+      "capability": "deterministic atomic Tasks 27-29 closeout",
+      "state": "QUEUED"
+    },
+    {
+      "id": "WP-07",
+      "capability": "integrated fault-injection rehearsal",
+      "state": "QUEUED"
+    },
+    {
+      "id": "WP-08",
+      "capability": "final receipts and next-run admission",
+      "state": "QUEUED"
+    }
+  ]
+}
