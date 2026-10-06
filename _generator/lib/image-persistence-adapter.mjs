@@ -73,8 +73,11 @@ export function normalizeAcceptedImageEvidence({lock,attempt,review,expected={}}
       exact_readback:String(source.exact_readback||saved.exact_readback||(source.read_back_verified===true?'PASS_READBACK_VERIFIED':'')).startsWith('PASS'),
       quality_gate:lock?.quality_gate==='PASS',
       visible_text_gate:lock?.visible_text_guard==='PASS',
-      review_not_stale:stamp(review?.reviewed_at)&&(!stamp(source.normalized_at)&&!stamp(source.persisted_at)&&!stamp(attempt?.generated_at)||
-        Date.parse(review.reviewed_at)>=Date.parse(source.persisted_at||source.normalized_at||attempt.generated_at)),
+      review_not_stale:(
+        !stamp(source.normalized_at)&&!stamp(source.persisted_at)&&!stamp(attempt?.generated_at)
+      )||(
+        stamp(review?.reviewed_at)&&Date.parse(review.reviewed_at)>=Date.parse(source.persisted_at||source.normalized_at||attempt.generated_at)
+      ),
       professional_quality:review?.visual_review?.professional_quality===true,
       story_specific:review?.visual_review?.story_specific===true,
       detailed:review?.visual_review?.detailed===true,
