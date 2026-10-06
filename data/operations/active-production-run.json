@@ -6,12 +6,12 @@
   "execution_id": "reliable-edition-20261006-run10",
   "execution_key": "2026-10-06-run10",
   "branch": "reliable-edition/dab-edition-2026-10-06-run10",
-  "updated_at": "2026-10-06T08:32:18.529Z",
+  "updated_at": "2026-10-06T08:42:43.093Z",
   "start_scope": "full_production",
   "image_tasks_authorized": true,
   "publication_authorized": false,
   "deferred_blocker": null,
-  "current_task": "16",
-  "current_task_state": "Active",
-  "note": "Task 16 exact native PNG bytes are staged under the authoritative request with writer generation 52 released. Wake the existing Supervisor to reconstruct and verify the protected chunk transport, preserve all five prior accepted_locked assets, and continue the same execution."
+  "current_task": "17",
+  "current_task_state": "Queued",
+  "note": "Task 16 is Done with m14 accepted_locked after exact-byte saved-Git verification. All six images are accepted_locked. Wake the existing Supervisor to dispatch the dedicated deterministic Task 17 image-set reviewer without regenerating any image."
 }
