@@ -6,12 +6,12 @@
   "execution_id": "reliable-edition-20261006-run10",
   "execution_key": "2026-10-06-run10",
   "branch": "reliable-edition/dab-edition-2026-10-06-run10",
-  "updated_at": "2026-10-06T08:42:43.093Z",
+  "updated_at": "2026-10-06T08:58:17.419Z",
   "start_scope": "full_production",
   "image_tasks_authorized": true,
   "publication_authorized": false,
   "deferred_blocker": null,
   "current_task": "17",
-  "current_task_state": "Queued",
-  "note": "Task 16 is Done with m14 accepted_locked after exact-byte saved-Git verification. All six images are accepted_locked. Wake the existing Supervisor to dispatch the dedicated deterministic Task 17 image-set reviewer without regenerating any image."
+  "current_task_state": "Active",
+  "note": "Task 17 retains the same queued exact request and all six accepted_locked images. Protected repair PR #487 merged after exact-head CI so the Supervisor now releases its writer before dispatching the dedicated deterministic Task 17 consumer. Resume the same execution through that repaired handoff."
 }
