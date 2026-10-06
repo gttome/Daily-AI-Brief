@@ -177,7 +177,6 @@ Supporting stories:
 
 - [October 6, 2026]({{ '/stories/2026-10-06/android-cli-turns-device-access-into-reusable-agent-skills/' | relative_url }})
 - [October 6, 2026]({{ '/stories/2026-10-06/copilot-moves-from-chat-into-desktop-computer-use/' | relative_url }})
-- [October 6, 2026]({{ '/videos/2026-10-06/general/' | relative_url }})
 - [October 6, 2026]({{ '/videos/2026-10-06/agent-skills/' | relative_url }})
 - [October 5, 2026]({{ '/stories/2026-10-05/copilot-code-review-becomes-an-api-with-adjustable-effort/' | relative_url }})
 - [October 5, 2026]({{ '/videos/2026-10-05/general/' | relative_url }})
@@ -277,7 +276,7 @@ Supporting stories:
 
 **ACCELERATING · high confidence**
 
-61 supporting stories appeared in the latest 7 days and 131 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+60 supporting stories appeared in the latest 7 days and 131 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
