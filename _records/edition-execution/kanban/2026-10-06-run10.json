@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-edition-20261006-run10",
   "edition_id": "dab-edition-2026-10-06",
-  "observed_at": "2026-10-06T09:51:00.000Z",
+  "observed_at": "2026-10-06T10:05:30.000Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:b33de3abc3a0029264eddc40e33ddb5fdb3e0db6a1588eed6c61d190c501ef03",
+  "source_event_digest": "sha256:be57fd193c70e0a93f675659a18be74f5085c9359898136ed93e41ea9f177645",
   "run_started_at": "2026-10-06T00:02:39.000Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 35301,
-  "total_brief_elapsed": "35301s",
+  "total_brief_elapsed_seconds": 36171,
+  "total_brief_elapsed": "36171s",
   "tasks": {
     "10": {
       "id": "10",
@@ -201,17 +201,17 @@
     "22": {
       "id": "22",
       "title": "Open publication PR",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "column": "Done",
+      "entered_backlog_at": "2026-10-06T09:56:27.000Z",
+      "active_started_at": "2026-10-06T09:56:27.000Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "done_at": "2026-10-06T10:05:30.000Z",
+      "cycle_seconds": 543,
+      "active_seconds": 543,
+      "duration_seconds": 543,
+      "duration": "543s"
     },
     "23": {
       "id": "23",
