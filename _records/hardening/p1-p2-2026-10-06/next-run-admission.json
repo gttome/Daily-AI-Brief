@@ -47,5 +47,6 @@
     "owner_prompt_required_by_rehearsal": false,
     "happy_path_wake_pr_required": false
   },
-  "gate_semantics": "Every field in gates is a positive assertion and must be true for GO; negative observations are recorded separately."
+  "gate_semantics": "Every field in gates is a positive assertion and must be true for GO; negative observations are recorded separately.",
+  "receipt_consistency_repair_pr": 504
 }
