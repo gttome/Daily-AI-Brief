@@ -386,6 +386,7 @@ jobs:
             fi
 
             protected_repair_boundary=false
+            ordinary_handoff_boundary=false
             has_request="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(x.worker_request?'true':'false')")"
             if [ "$has_request" = "true" ]; then
               node -e "const fs=require('fs');const x=require('/tmp/supervisor-tick.json');fs.writeFileSync('/tmp/worker-request.json',JSON.stringify(x.worker_request,null,2)+'\n')"
@@ -397,25 +398,21 @@ jobs:
               request_kind="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_kind||''))")"
               request_capability="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.capability||''))")"
               request_task="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.task_id||''))")"
-              if { [ "$request_capability" = "repository" ] || [ "$request_capability" = "research_chatgpt" ]; } && [ "$request_kind" != "engineering_repair" ]; then
+              if { [ "$request_capability" = "repository" ] || [ "$request_capability" = "research_chatgpt" ]; } \
+                && [ "$request_kind" != "engineering_repair" ] \
+                && { [ "$request_capability" != "repository" ] || [ "$request_task" != "17" ]; }; then
                 request_key="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_key))")"
                 request_rel="_records/edition-execution/worker-requests/${EXECUTION_ID}/${request_task}-${request_key}.json"
-                liveness_rel="_records/edition-execution/liveness-faults/${EXECUTION_ID}/${request_task}-${request_key}-unclaimed.json"
-                node control/_tools/run-supervisor.mjs repository-liveness \
-                  --request "run/$request_rel" \
-                  --max-idle-seconds 60 \
-                  --output /tmp/repository-liveness.json >/tmp/repository-liveness.stdout
-                cat /tmp/repository-liveness.stdout
-                repository_liveness_state="$(node -e "const x=require('/tmp/repository-liveness.json');process.stdout.write(String(x.state))")"
-                if [ "$repository_liveness_state" = "fault" ] && [ ! -f "run/$liveness_rel" ]; then
-                  mkdir -p "run/$(dirname "$liveness_rel")"
-                  cp /tmp/repository-liveness.json "run/$liveness_rel"
-                  git -C run add "$liveness_rel"
-                  git -C run commit -m "Record unclaimed Task ${request_task} repository-worker liveness fault"
-                  git -C run pull --rebase origin "$RUN_BRANCH"
-                  git -C run push origin "HEAD:$RUN_BRANCH"
-                  echo "::error title=Bound worker liveness fault::Task ${request_task} ${request_capability} request ${request_key} exceeded the protected 60-second unclaimed threshold. Watchdog recovery remains enabled; this route-specific fault is not a global stop."
-                fi
+                node control/_tools/run-supervisor.mjs release-writer-lease \
+                  --lease "run/$lease_rel" \
+                  --execution-id "$EXECUTION_ID" \
+                  --owner-id "$SUPERVISOR_OWNER" \
+                  --generation "$WRITER_GENERATION" \
+                  --reason "TASK_${request_task}_QUEUED_HANDOFF_TO_WATCHDOG" \
+                  --output /tmp/released-writer-lease.json >/tmp/ordinary-handoff-release.stdout
+                cat /tmp/ordinary-handoff-release.stdout
+                cp /tmp/released-writer-lease.json "run/$lease_rel"
+                ordinary_handoff_boundary=true
               fi
               if [ "$request_capability" = "native_chatgpt" ] && [[ "$request_task" =~ ^1[1-6]$ ]]; then
                 request_key="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_key))")"
@@ -525,6 +522,11 @@ jobs:
                 git -C run rebase "origin/$RUN_BRANCH"
                 git -C run push origin "HEAD:$RUN_BRANCH"
               fi
+            fi
+
+            if [ "$ordinary_handoff_boundary" = "true" ]; then
+              echo "Queued Task request persisted and writer authority released to the admitted A-F Watchdog consumer pool."
+              break
             fi
 
             if [ "$protected_repair_boundary" = "true" ]; then
