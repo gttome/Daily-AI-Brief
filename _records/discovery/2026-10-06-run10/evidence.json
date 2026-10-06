@@ -1,0 +1,25 @@
+{
+  "schema_version": "run10-evidence-review-v1",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_id": "reliable-edition-20261006-run10",
+  "verified_at": "2026-10-06T00:59:46.971Z",
+  "sealed_research_cutoff": "2026-10-06T00:02:39.000Z",
+  "article_policy": "article-24-72-168-v1",
+  "source_preflight_branch": "discovery-preflight/daily/2026-10-06",
+  "source_preflight_sha": "8fb94e45a6b32c1b8f8303194f0641dbc6a554f2",
+  "candidate_count": 20,
+  "full_source_reviews": 9,
+  "evidence_source_ref": "_records/discovery-preflight/result/article-evidence.json@8fb94e45a6b32c1b8f8303194f0641dbc6a554f2",
+  "candidate_source_ref": "_records/discovery-preflight/result/metadata-candidates.json@8fb94e45a6b32c1b8f8303194f0641dbc6a554f2",
+  "source_evidence_git_blob": "e9c3c65c0326879f9df0d68df56a97897b6c84d3",
+  "metadata_candidates_git_blob": "f0ef8a8880261554b542958eb20f49c829001460",
+  "coverage_counts": {
+    "technical_ai_engineering": 7,
+    "applied_genai_knowledge_workers": 4,
+    "agents_non_technical_people": 9
+  },
+  "agent_skill_story_ready_candidate_id": "m01",
+  "fresh_web_research_completed": true,
+  "unknowns_preserved": true,
+  "result": "PASS"
+}
