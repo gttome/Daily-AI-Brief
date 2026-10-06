@@ -470,6 +470,18 @@ test('Supervisor delegates only when the newest unfinished Tasks 11-16 request i
   assert.match(y,/Persistent approximately one-minute supervision loop\n        if: steps\.boundary\.outputs\.write_allowed == 'true' && steps\.image_delegation\.outputs\.delegated != 'true'/);
 });
 
+test('Supervisor releases its writer immediately after queuing a native image request',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.ok(y.includes('scheduled_image_handoff_boundary=false'));
+  assert.ok(y.includes('native_image_state='));
+  assert.ok(y.includes('QUEUED_FOR_SCHEDULED_CONSUMER'));
+  assert.ok(y.includes('TASK_${request_task}_QUEUED_FOR_SCHEDULED_CONSUMER_HANDOFF_TO_WATCHDOG'));
+  assert.ok(y.includes('Release Task ${request_task} writer to scheduled image consumer'));
+  const queue=y.indexOf('native_image_state=');
+  const release=y.indexOf('if [ "$scheduled_image_handoff_boundary" = "true" ]');
+  assert.ok(queue>=0 && release>queue);
+});
+
 test('watchdog runs every five minutes and can only restart the active pointer identity',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
   assert.match(y,/cron: '\*\/5 \* \* \* \*'/);
@@ -479,11 +491,11 @@ test('watchdog runs every five minutes and can only restart the active pointer i
   assert.doesNotMatch(y,/create.*run/i);
 });
 
-test('watchdog immediately reacts to a failed Supervisor completion',()=>{
+test('watchdog immediately reacts to every Supervisor completion',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
   assert.match(y,/workflow_run:/);
   assert.match(y,/Daily AI Brief Run Supervisor/);
-  assert.match(y,/conclusion != 'success'/);
+  assert.doesNotMatch(y,/conclusion != 'success'/);
 });
 
 test('explicit worker release can hand the same run back to the Supervisor',()=>{
@@ -564,12 +576,13 @@ test('repository queue liveness faults after 60 seconds without substantive prog
   assert.equal(fault.supervisor_bookkeeping_is_progress,false);
 });
 
-test('Supervisor persists an unclaimed repository-worker fault without globally stopping the run',()=>{
+test('Supervisor releases an ordinary queued request without globally stopping the run',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
-  assert.match(y,/repository-liveness/);
-  assert.match(y,/--max-idle-seconds 60/);
-  assert.match(y,/edition-execution\/liveness-faults/);
-  assert.match(y,/route-specific fault is not a global stop/);
+  const requestBlock=y.slice(y.indexOf('request_kind='));
+  assert.match(requestBlock,/release-writer-lease/);
+  assert.match(requestBlock,/TASK_\$\{request_task\}_QUEUED_HANDOFF_TO_WATCHDOG/);
+  assert.match(requestBlock,/ordinary_handoff_boundary=true/);
+  assert.match(requestBlock,/writer authority released to the admitted A-F Watchdog consumer pool/);
 });
 
 
@@ -654,8 +667,54 @@ test('research-capable queue liveness is explicit for Tasks 03 and 08',()=>{
   assert.match(fault.next_action,/research-capable consumer/i);
 });
 
-test('Supervisor preserves queued research_chatgpt work for a capable ordinary ChatGPT consumer',()=>{
+test('Supervisor preserves and releases queued research_chatgpt work for a capable ordinary ChatGPT consumer',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
-  assert.match(y,/request_capability\" = \"research_chatgpt\"/);
-  assert.match(y,/research_consumer_unclaimed|repository-liveness/);
+  const requestBlock=y.slice(y.indexOf('request_kind='));
+  assert.match(requestBlock,/request_capability\" = \"research_chatgpt\"/);
+  assert.match(requestBlock,/release-writer-lease/);
+  assert.match(requestBlock,/TASK_\$\{request_task\}_QUEUED_HANDOFF_TO_WATCHDOG/);
+});
+
+
+test('Supervisor durably stages its renewed writer lease before pushing each loop',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  const loop=y.slice(y.indexOf('while '));
+  const renewal=loop.indexOf('cp /tmp/writer-lease.json "run/$lease_rel"');
+  const stage=loop.indexOf('git -C run add "$lease_rel"',renewal);
+  const commit=loop.indexOf('git -C run commit -m "Supervisor reconcile',renewal);
+  assert.ok(renewal>=0 && stage>renewal && commit>stage,
+    'renewed lease must reach the remote before the next fetch/reset');
+});
+
+test('successful Supervisor completion still checks restart and publishes current health',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
+  const job=y.slice(y.indexOf('  ensure-supervisor:'));
+  assert.doesNotMatch(job.slice(0,job.indexOf('    steps:')),/\n    if:/);
+  assert.match(job,/Supervisor already queued\/running/);
+  assert.match(job,/Publish compact Watchdog health state/);
+  assert.match(job,/source_digest===b.source_digest/);
+});
+
+
+test('Supervisor releases queued ordinary and research work to the A-F Watchdog pool',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  const requestBlock=y.slice(y.indexOf('request_kind='));
+  assert.match(requestBlock,/request_capability" = "repository"/);
+  assert.match(requestBlock,/request_capability" = "research_chatgpt"/);
+  assert.match(requestBlock,/release-writer-lease/);
+  assert.match(requestBlock,/TASK_\$\{request_task\}_QUEUED_HANDOFF_TO_WATCHDOG/);
+  assert.match(requestBlock,/ordinary_handoff_boundary=true/);
+  assert.match(requestBlock,/request_task" != "17"/);
+  assert.match(requestBlock,/writer authority released to the admitted A-F Watchdog consumer pool/);
+});
+
+
+test('ordinary handoff stages the released lease rather than only the prior renewal',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  const start=y.indexOf('--output /tmp/released-writer-lease.json >/tmp/ordinary-handoff-release.stdout');
+  const copy=y.indexOf('cp /tmp/released-writer-lease.json "run/$lease_rel"',start);
+  const stage=y.indexOf('git -C run add "$lease_rel"',copy);
+  const boundary=y.indexOf('ordinary_handoff_boundary=true',stage);
+  assert.ok(start>=0 && copy>start && stage>copy && boundary>stage,
+    'released lease must replace the staged renewal before the handoff commit');
 });
