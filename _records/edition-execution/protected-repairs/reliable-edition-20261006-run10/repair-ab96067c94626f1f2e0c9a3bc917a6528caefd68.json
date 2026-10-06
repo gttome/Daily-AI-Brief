@@ -1,6 +1,6 @@
 {
   "schema_version": "protected-repair-required-v1",
-  "state": "REPAIR_CI_PENDING",
+  "state": "RECOVERY_VERIFIED_PROGRESSING",
   "repair_key": "repair-ab96067c94626f1f2e0c9a3bc917a6528caefd68",
   "execution_id": "reliable-edition-20261006-run10",
   "edition_id": "dab-edition-2026-10-06",
@@ -26,8 +26,7 @@
     "bridge_processed": 1,
     "bridge_failed": 0
   },
-  "next_stage": "require fresh exact-head pull_request validate PASS on f3722b361c49219e5130b2fefb2fbf1d50bba17b, then merge exact approved head and resume same Task 14",
-  "last_updated_at": "2026-10-06T06:12:57.150Z",
+  "last_updated_at": "2026-10-06T06:22:00.000Z",
   "repair_attempts": [
     {
       "head_sha": "8d623d68509388ace65754ee15c3df0d7f920d98",
@@ -37,7 +36,27 @@
     },
     {
       "head_sha": "f3722b361c49219e5130b2fefb2fbf1d50bba17b",
-      "result": "PENDING"
+      "validate_run_id": 37422469404,
+      "result": "PASS"
     }
-  ]
+  ],
+  "merge_sha": "c0526c8f11e085eb9c52776a796e4cbeefa1ebd2",
+  "resume_workflow_run_id": 37422632692,
+  "resumed_at": "2026-10-06T06:14:42.303Z",
+  "verified_at": "2026-10-06T06:22:00.000Z",
+  "same_task_resumed": true,
+  "executor_active": true,
+  "durable_progress": true,
+  "task_done": true,
+  "accepted_locked_changed": true,
+  "post_repair_attempts": 0,
+  "progress_evidence": {
+    "transport_commit": "ffef44f36e37f5f5a29ef3d6c1c5b90b19f6d713",
+    "transport_receipt": "_records/edition-execution/image-transport-results/reliable-edition-20261006-run10/12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663.json",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/14-12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-06-run10/m11.json",
+    "task_done_event": "_records/edition-execution/events/2026-10-06-run10/14-done.json",
+    "first_incomplete_task": "15"
+  },
+  "next_stage": "Task 14 is Done and m11 is accepted_locked; Supervisor may queue Task 15."
 }
