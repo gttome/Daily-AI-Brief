@@ -245,3 +245,25 @@ test('historical single scheduled image consumer remains backward-compatible evi
   assert.equal(receipt.result,'PASS');
   assert.equal(receipt.image_tasks_authorized,true);
 });
+
+
+test('next-edition readiness requires the complete Task 17 persistence matrix',()=>{
+  const x=goodInput();
+  x.run_number=11;
+  x.edition_date='2026-10-07';
+  x.edition_id='dab-edition-2026-10-07';
+  x.execution_id='reliable-edition-20261007-run11';
+  x.control_plane.supervisor_scope=x.execution_id;
+  let receipt=validateRunReadiness(x);
+  assert.ok(receipt.errors.includes('task17_persistence_matrix_pass_required'));
+  x.image_pipeline.persistence_compatibility_matrix={
+    schema_version:'image-persistence-compatibility-matrix-v1',
+    registry_version:'image-persistence-registry-v1',
+    result:'PASS',
+    rows:Object.fromEntries(['native_capture','normalization','protected_exact_byte_transport','stable_exact_persistence']
+      .map(mode=>[mode,{identity:'PASS',exact_bytes:'PASS',saved_git_review:'PASS',quality_evidence:'PASS',task17:'PASS'}]))
+  };
+  receipt=validateRunReadiness(x);
+  assert.equal(receipt.result,'PASS');
+  assert.equal(receipt.image_tasks_authorized,true);
+});

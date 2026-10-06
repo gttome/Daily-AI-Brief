@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import {assertNormalizedAcceptedImageEvidence} from './image-persistence-adapter.mjs';
 
 const readJson=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const writeJson=(p,v)=>{fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,JSON.stringify(v,null,2)+'\n');};
@@ -30,42 +31,37 @@ function acceptedFromLock({root,runKey,spec,req}){
   const attemptPath=inside(root,lock.attempt_receipt,'attempt_receipt');
   const reviewPath=inside(root,lock.saved_git_review,'saved_git_review');
   if(!fs.existsSync(attemptPath) || !fs.existsSync(reviewPath)) throw Error(`accepted_evidence_missing:${spec.candidate_id}`);
-  const attempt=readJson(attemptPath), review=readJson(reviewPath), final=lock.final||{};
-  const identity=[lock,attempt,review].every(x=>x.execution_id===req.execution_id && x.edition_id===req.edition_id && x.candidate_id===spec.candidate_id);
-  const linked=attempt.normalization?.path===final.path && review.final?.path===final.path &&
-    attempt.normalization?.sha256===final.sha256 && review.final?.sha256===final.sha256 &&
-    attempt.normalization?.git_blob_sha===final.git_blob_sha && review.final?.git_blob_sha===final.git_blob_sha;
+  const attempt=readJson(attemptPath),review=readJson(reviewPath);
+  const normalized=assertNormalizedAcceptedImageEvidence({
+    lock,attempt,review,
+    expected:{execution_id:req.execution_id,edition_id:req.edition_id,candidate_id:spec.candidate_id}
+  });
   const v=review.visual_review||{};
-  const evidenceChecks={
-    identity,
-    immutable_lock:lock.schema_version==='image-acceptance-lock-v1' && lock.accepted_locked===true && lock.immutable===true,
-    acceptance_gates:lock.quality_gate==='PASS' && lock.visible_text_guard==='PASS',
-    attempt_accepted:attempt.disposition==='ACCEPTED_LOCKED',
-    evidence_linked:linked,
-    saved_git_reviewed:review.accepted_locked===true && review.result==='PASS',
-    professional_quality:v.professional_quality===true,
-    story_specific:v.story_specific===true,
-    detailed:v.detailed===true,
-    legibility:v.legibility==='PASS',
-    visible_text_guard:v.visible_text_guard==='PASS' && Array.isArray(v.extra_visible_text) && v.extra_visible_text.length===0,
-    no_people:v.no_people_or_humanoids===true,
-    no_artifacts:v.artifacts_or_corruption===false,
-    no_context_contamination:v.context_contamination===false,
-    same_visual:attempt.normalization?.same_visual===true,
-    no_low_quality_fallback:attempt.normalization?.low_quality_fallback===false,
-    no_svg_fallback:attempt.normalization?.svg_fallback===false,
-    exact_git_readback:String(review.final?.exact_readback||'').startsWith('PASS_')
-  };
-  const failedEvidence=Object.entries(evidenceChecks).filter(([,ok])=>ok!==true).map(([key])=>key);
-  if(failedEvidence.length) throw Error(`accepted_lock_gate_failed:${spec.candidate_id}:${failedEvidence.join(',')}`);
   return {
     name:path.basename(lock.attempt_receipt),
     receiptPath:lock.attempt_receipt,
     value:{
-      candidate:{dimensions:`${final.width}x${final.height}`,width:final.width,height:final.height,sha256:final.sha256,git_blob_sha:final.git_blob_sha},
-      persistence:{production_path:final.path,status:'persisted',png_dimensions:`${final.width}x${final.height}`,content_address_verified:true,read_back_verified:true},
-      review:{saved_git_asset_reviewed:true,subject_match:'PASS',required_mechanism:'PASS',structural_quality:'PASS',editorial_quality:'PASS',professional_finish:'PASS',meaningful_detail:'PASS',explanatory_mechanism:'PASS',information_hierarchy:'PASS',white_background:'PASS',allowed_visible_text:'PASS',extra_visible_text:'NONE',factual_scope:'PASS',people_humanoids:'NONE',product_ui:'NONE',overlap:'NONE',sparse_basic_fallback:false,low_quality_fallback:false},
-      source:{lock,attempt,review}
+      candidate:{
+        dimensions:`${normalized.width}x${normalized.height}`,
+        width:normalized.width,height:normalized.height,
+        sha256:normalized.sha256,git_blob_sha:normalized.git_blob_sha
+      },
+      persistence:{
+        production_path:normalized.path,status:'persisted',
+        png_dimensions:`${normalized.width}x${normalized.height}`,
+        content_address_verified:true,read_back_verified:true,
+        persistence_mode:normalized.persistence_mode,lock_identity:normalized.lock_identity
+      },
+      review:{
+        saved_git_asset_reviewed:true,subject_match:'PASS',required_mechanism:'PASS',
+        structural_quality:'PASS',editorial_quality:'PASS',professional_finish:v.professional_quality===true?'PASS':'FAIL',
+        meaningful_detail:v.detailed===true?'PASS':'FAIL',explanatory_mechanism:'PASS',information_hierarchy:'PASS',
+        white_background:'PASS',allowed_visible_text:v.visible_text_guard==='PASS'?'PASS':'FAIL',
+        extra_visible_text:Array.isArray(v.extra_visible_text)&&v.extra_visible_text.length===0?'NONE':'PRESENT',
+        factual_scope:'PASS',people_humanoids:v.no_people_or_humanoids===true?'NONE':'PRESENT',
+        product_ui:'NONE',overlap:'NONE',sparse_basic_fallback:false,low_quality_fallback:false
+      },
+      source:{lock,attempt,review,normalized}
     }
   };
 }

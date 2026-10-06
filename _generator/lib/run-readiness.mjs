@@ -1,4 +1,7 @@
+import {IMAGE_PERSISTENCE_MATRIX_VERSION,IMAGE_PERSISTENCE_REGISTRY_VERSION,IMAGE_PERSISTENCE_MODES} from './image-persistence-adapter.mjs';
+
 export const RUN_READINESS_VERSION = 'run-learning-readiness-v2';
+export const TASK17_PERSISTENCE_MATRIX_EFFECTIVE_DATE = '2026-10-07';
 export const RUN_PROMOTION_VERSION = 'run-promotion-review-v2';
 export const DEFAULT_STALE_ACTIVE_MS = 15 * 60 * 1000;
 export const MAX_SUPERVISOR_HEARTBEAT_SECONDS = 90;
@@ -154,6 +157,14 @@ export function validateRunReadiness(input = {}) {
   required(image.low_quality_fallback_enabled === false, 'low_quality_fallback_must_be_disabled');
   required(SMALL_PNG_ROUTES.includes(image.small_png_persistence_route), 'small_png_persistence_route_required');
   required(bool(image.small_png_readback_identity_verified), 'small_png_readback_identity_required');
+  if(input.edition_date>=TASK17_PERSISTENCE_MATRIX_EFFECTIVE_DATE){
+    const matrix=image.persistence_compatibility_matrix||{};
+    required(matrix.schema_version===IMAGE_PERSISTENCE_MATRIX_VERSION,'task17_persistence_matrix_schema_required');
+    required(matrix.registry_version===IMAGE_PERSISTENCE_REGISTRY_VERSION,'task17_persistence_registry_version_required');
+    required(matrix.result==='PASS','task17_persistence_matrix_pass_required');
+    for(const mode of IMAGE_PERSISTENCE_MODES)
+      required(matrix.rows?.[mode]?.task17==='PASS','task17_persistence_mode_required:'+mode);
+  }
 
   const timing = input.timing || {};
   required(bool(timing.append_only_transition_ledger), 'transition_ledger_required');
