@@ -4,8 +4,8 @@
   "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261006-run10:task-15-saved-git-review:generation-50",
   "generation": 50,
   "acquired_at": "2026-10-06T08:20:09.384Z",
-  "last_heartbeat_at": "2026-10-06T08:20:09.384Z",
-  "expires_at": "2026-10-06T08:28:09.384Z",
+  "last_heartbeat_at": "2026-10-06T08:22:04.999Z",
+  "expires_at": "2026-10-06T08:22:04.999Z",
   "task_id": "15",
   "consumer_id": "watchdog-F",
   "continuation_from_generation": 49
