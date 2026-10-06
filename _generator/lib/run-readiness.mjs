@@ -102,6 +102,14 @@ export function validateRunReadiness(input = {}) {
   required(control.supervisor_scope === input.execution_id, 'supervisor_scope_mismatch');
   required(bool(control.supervisor_until_terminal_cleanup), 'supervisor_terminal_cleanup_binding_required');
   required(bool(control.watchdog_enabled), 'supervisor_watchdog_required');
+  const ringMembership=control.watchdog_ring_membership || {};
+  required(bool(ringMembership.live_observation_verified), 'watchdog_ring_live_observation_required');
+  required(ringMembership.enabled_count === 6, 'watchdog_ring_six_enabled_required');
+  required(JSON.stringify(ringMembership.enabled_slots || []) === JSON.stringify(['A','B','C','D','E','F']), 'watchdog_ring_slot_identity_required');
+  required(bool(ringMembership.all_slots_equivalent), 'watchdog_ring_equivalence_required');
+  required(bool(ringMembership.recurring_cadence_verified), 'watchdog_ring_recurring_cadence_required');
+  required(bool(ringMembership.self_heal_enabled), 'watchdog_ring_self_heal_required');
+  required(ringMembership.maintenance_override_active !== true, 'watchdog_ring_maintenance_override_active');
   required(bool(control.writer_fencing_enabled), 'writer_fencing_required');
   required(Number.isInteger(control.supervisor_interval_seconds) && control.supervisor_interval_seconds > 0 &&
     control.supervisor_interval_seconds <= MAX_SUPERVISOR_HEARTBEAT_SECONDS, 'supervisor_heartbeat_required');
