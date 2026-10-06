@@ -341,6 +341,28 @@ jobs:
               --writer-generation "$WRITER_GENERATION" >/tmp/image-chunk-bridge.json
             cat /tmp/image-chunk-bridge.json
 
+            # A verified chunk-bridge result is substantive durable work. Persist it
+            # before routing the next task so a stale provenance generation cannot
+            # discard already-green exact-byte reconstruction.
+            bridge_processed="$(node -e "const x=require('/tmp/image-chunk-bridge.json');process.stdout.write(String(x.processed||0))")"
+            bridge_failed="$(node -e "const x=require('/tmp/image-chunk-bridge.json');process.stdout.write(String(x.failed||0))")"
+            if [ "$bridge_processed" -gt 0 ] && [ "$bridge_failed" -eq 0 ]; then
+              git -C run add "$lease_rel"
+              git -C run add -A "_records/edition-execution/image-transport-requests/${EXECUTION_ID}"
+              git -C run add -A "_records/edition-execution/image-transport-results/${EXECUTION_ID}"
+              git -C run add "briefs/images/${EXECUTION_KEY%-run*}"
+              if ! git -C run diff --cached --quiet; then
+                git -C run commit -m "Supervisor persist verified image transport for ${EXECUTION_ID}"
+                if ! git -C run push origin "HEAD:$RUN_BRANCH"; then
+                  git -C run fetch --no-tags origin "$RUN_BRANCH"
+                  git -C run rebase "origin/$RUN_BRANCH"
+                  git -C run push origin "HEAD:$RUN_BRANCH"
+                fi
+              fi
+              echo "Verified exact-byte image transport is durably checkpointed; yield for saved-Git review before any next-task routing."
+              break
+            fi
+
             last_progress="$(
               git -C run log -1 --format=%cI -- \
                 "_records/edition-execution/events/${EXECUTION_KEY}" \
