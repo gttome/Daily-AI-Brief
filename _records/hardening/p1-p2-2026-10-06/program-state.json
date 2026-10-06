@@ -86,7 +86,8 @@
       "state": "COMPLETED",
       "evidence": {
         "activation": "protected_main_merge_plus_post_merge_ci",
-        "pr": 503
+        "pr": 503,
+        "receipt_consistency_repair_pr": 504
       }
     }
   ],
@@ -120,5 +121,6 @@
     ]
   },
   "activation_condition": "Authoritative on protected main after this reconciliation merges and post-merge deterministic CI passes.",
-  "final_reconciliation_pr": 503
+  "final_reconciliation_pr": 503,
+  "final_receipt_consistency_repair_pr": 504
 }

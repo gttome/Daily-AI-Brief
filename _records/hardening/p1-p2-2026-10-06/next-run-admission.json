@@ -12,8 +12,8 @@
     "all_six_changes_merged": true,
     "final_main_ci_passed": true,
     "integrated_rehearsal_passed": true,
-    "owner_prompt_required_by_rehearsal": false,
-    "happy_path_wake_pr_required": false,
+    "owner_prompt_free_rehearsal": true,
+    "happy_path_wake_pr_free": true,
     "event_dispatcher_idempotent": true,
     "image_pipeline_completes_automatically": true,
     "real_nonproduction_native_image_persistence_proof": true,
@@ -25,7 +25,7 @@
     "production_paid_model_api_dependency_zero": true,
     "hardening_and_production_structurally_separated": true
   },
-  "all_gates_pass": false,
+  "all_gates_pass": true,
   "production_runtime_boundary": {
     "work_invocations": 0,
     "codex_invocations": 0,
@@ -42,5 +42,11 @@
     "Compare actual production control-plane usage with the October 6 baseline; do not infer account usage from repository counters."
   ],
   "no_go_rule": "If any gate regresses before allocation, decision becomes NO-GO and the exact failed deterministic gate must be repaired before production proceeds.",
-  "final_reconciliation_pr": 503
+  "final_reconciliation_pr": 503,
+  "observations": {
+    "owner_prompt_required_by_rehearsal": false,
+    "happy_path_wake_pr_required": false
+  },
+  "gate_semantics": "Every field in gates is a positive assertion and must be true for GO; negative observations are recorded separately.",
+  "receipt_consistency_repair_pr": 504
 }
