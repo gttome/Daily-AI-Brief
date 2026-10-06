@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import {
   IMAGE_PERSISTENCE_MODES,assertNormalizedAcceptedImageEvidence,buildPersistenceCompatibilityMatrix,
   validatePersistenceCompatibilityMatrix
@@ -58,4 +59,24 @@ test('same accepted set normalizes deterministically across duplicate Task 17 in
   const a=assertNormalizedAcceptedImageEvidence(fixture('protected_exact_byte_transport'));
   const b=assertNormalizedAcceptedImageEvidence(fixture('protected_exact_byte_transport'));
   assert.deepEqual(a,b);
+});
+
+
+test('immutable October 4 normalization and October 6 native/transport locks normalize through one registry',()=>{
+  const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+  const cases=[
+    ['normalization','2026-10-04-run8','m01'],
+    ['native_capture','2026-10-06-run10','m01'],
+    ['protected_exact_byte_transport','2026-10-06-run10','m14']
+  ];
+  for(const [expectedMode,runKey,candidate] of cases){
+    const lock=read(`_records/image-acceptance/${runKey}/${candidate}.json`);
+    const attempt=read(lock.attempt_receipt);
+    const review=read(lock.saved_git_review);
+    const normalized=assertNormalizedAcceptedImageEvidence({
+      lock,attempt,review,
+      expected:{execution_id:lock.execution_id,edition_id:lock.edition_id,candidate_id:candidate}
+    });
+    assert.equal(normalized.persistence_mode,expectedMode);
+  }
 });
