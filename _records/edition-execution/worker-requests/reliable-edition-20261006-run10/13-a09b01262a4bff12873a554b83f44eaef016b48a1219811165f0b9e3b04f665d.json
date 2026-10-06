@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "a09b01262a4bff12873a554b83f44eaef016b48a1219811165f0b9e3b04f665d",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "13",
+  "capability": "repository",
+  "instruction": "Stop the current tactic before a third materially equivalent attempt. Compare action -> durable delta -> validation result, then check for an already-green repair PR, an unconnected completed prerequisite, stale dependency binding, wrong validator or contract version, wrong executor capability, a smaller repair target, or unnecessary repeated CI. Select a materially different recovery before continuing.",
+  "writer_generation": 34,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-06T05:02:05.284Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
