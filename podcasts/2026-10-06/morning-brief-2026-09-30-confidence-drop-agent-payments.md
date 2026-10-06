@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026"
-description: "A separate daily-news publisher adds agent-payment controls and AI workflow context relevant to governed deployment."
+description: "The Morning Brief covers agent payments alongside other daily news, with attention to controls around AI-driven transactions and workflows."
 image: ""
 permalink: /podcasts/2026-10-06/morning-brief-2026-09-30-confidence-drop-agent-payments/
 brief_date: 2026-10-06
@@ -26,11 +26,11 @@ reader_release: true
 **Duration:** 13:00  
 **Topics:** agent payments, controls, AI workflows
 
-**Summary:** A separate daily-news publisher adds agent-payment controls and AI workflow context relevant to governed deployment.
+**Summary:** The Morning Brief covers agent payments alongside other daily news, with attention to controls around AI-driven transactions and workflows.
 
-**Why it matters:** A separate daily-news publisher adds agent-payment controls and AI workflow context relevant to governed deployment.
+**Why it matters:** Agent payments expose a practical governance problem: software that can initiate transactions needs explicit authorization limits, verification and review.
 
-**Connection to the brief:** A separate daily-news publisher adds agent-payment controls and AI workflow context relevant to governed deployment.
+**Connection to the brief:** It extends today’s agent-control theme from desktop actions and background workflows into financial actions, where mistakes can create immediate real-world consequences.
 
 
 
