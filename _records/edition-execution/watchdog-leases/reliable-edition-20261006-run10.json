@@ -4,14 +4,14 @@
   "incident_id": "wd-reliable-edition-20261006-run10-task13-supervisor-resume-gap",
   "owner_slot": "A",
   "generation": 12,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-06T03:07:00.000Z",
-  "last_heartbeat_at": "2026-10-06T03:07:00.000Z",
-  "expires_at": "2026-10-06T03:22:00.000Z",
-  "released_at": null,
-  "release_reason": null,
+  "last_heartbeat_at": "2026-10-06T03:14:00.000Z",
+  "expires_at": "2026-10-06T03:14:00.000Z",
+  "released_at": "2026-10-06T03:14:00.000Z",
+  "release_reason": "SAFE_BOUNDARY_REACHED",
   "action_key": "wd-reliable-edition-20261006-run10-task13-supervisor-resume-gap:slot-a:g12",
   "continuation_from_generation": 11,
   "authoritative_request_key": null,
-  "completion_evidence": null
+  "completion_evidence": "_records/edition-execution/watchdog-events/reliable-edition-20261006-run10/20261006T031330Z-wd-task13-supervisor-dispatch-strategy-interrupt-slot-a.json"
 }
