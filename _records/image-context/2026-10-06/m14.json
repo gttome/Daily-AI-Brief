@@ -1,0 +1,25 @@
+{
+  "schema_version": "sealed-story-image-context-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-06-m14"
+  ],
+  "candidate_id": "m14",
+  "task_id": "16",
+  "includes_edition_context": false,
+  "orchestration_context_visible": false,
+  "generator_visible_field": "prompt",
+  "sealed_at": "2026-10-06T01:26:56.279Z",
+  "allowed_text": [
+    "Event",
+    "Ambient agent",
+    "Isolated session",
+    "Job state",
+    "Policy gate",
+    "Bounded action",
+    "Ask human",
+    "Resume",
+    "Audit trail"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: event-driven ambient agents with human approval and resumable state. Construct an event bus that opens an isolated session around a durable job-state core. Policy and confidence gates inspect each proposed step, routing safe work into bounded tool execution while consequential or uncertain work enters an approval interrupt. Show the exact suspended state being checkpointed, then resumed after approval, with every event, decision, action, and restart written to a complete audit trail. Use event envelopes, session boundaries, state-machine layers, policy tokens, confidence bands, checkpoint snapshots, interrupt latches, resume keys, and audit receipts. No people, humanoids, photos, logos, decorative filler, unsupported autonomy claims, overlapping text, or sparse/basic box-and-arrow layout. Only these visible labels: Event, Ambient agent, Isolated session, Job state, Policy gate, Bounded action, Ask human, Resume, Audit trail."
+}

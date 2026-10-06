@@ -1,0 +1,22 @@
+{
+  "schema_version": "sealed-story-image-context-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-06-m01"
+  ],
+  "candidate_id": "m01",
+  "task_id": "11",
+  "includes_edition_context": false,
+  "orchestration_context_visible": false,
+  "generator_visible_field": "prompt",
+  "sealed_at": "2026-10-06T01:26:56.279Z",
+  "allowed_text": [
+    "Reusable skill",
+    "CLI command",
+    "Device stream",
+    "App state",
+    "Test action",
+    "Result evidence"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: reusable Android CLI agent skills and device streaming. Build a layered mobile-automation workshop: a compact library of sealed reusable skill capsules feeds a single command rail; the rail fans into a detailed device-state cutaway, live screen-stream frames, bounded tap/type/test actions, and signed result evidence that returns to the skill library. Use precise terminal tokens, mobile state layers, stream packets, action receipts, validation seals, and a closed feedback loop so the mechanism—not a product screenshot—is immediately legible. No people, humanoids, photos, logos, decorative filler, unsupported performance claims, overlapping text, or sparse/basic box-and-arrow layout. Only these visible labels: Reusable skill, CLI command, Device stream, App state, Test action, Result evidence."
+}

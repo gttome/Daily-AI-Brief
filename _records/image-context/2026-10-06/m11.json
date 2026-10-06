@@ -1,0 +1,24 @@
+{
+  "schema_version": "sealed-story-image-context-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-06-m11"
+  ],
+  "candidate_id": "m11",
+  "task_id": "14",
+  "includes_edition_context": false,
+  "orchestration_context_visible": false,
+  "generator_visible_field": "prompt",
+  "sealed_at": "2026-10-06T01:26:56.279Z",
+  "allowed_text": [
+    "Research question",
+    "Retrieval",
+    "Evidence filter",
+    "Source fragment",
+    "Citation map",
+    "Report composer",
+    "Claim",
+    "Verify"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: citation-grounded scientific report generation. Build a research observatory in which a research question enters a multi-channel retrieval array; candidate source fragments pass through relevance, support, and contradiction filters into a dense citation lattice. A report composer assembles structured claim blocks whose trace lines terminate at the exact supporting fragments, while an independent verification panel checks coverage and unsupported gaps. Use document cutaways, highlighted evidence spans, citation nodes, provenance threads, claim-to-source tracing, conflict flags, and a compact verification matrix. No people, humanoids, photos, logos, decorative filler, unsupported performance claims, overlapping text, or sparse/basic box-and-arrow layout. Only these visible labels: Research question, Retrieval, Evidence filter, Source fragment, Citation map, Report composer, Claim, Verify."
+}
