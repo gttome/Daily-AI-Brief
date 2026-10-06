@@ -544,6 +544,12 @@ test('Supervisor explicitly dispatches queued Task 17 repository work despite GI
   assert.match(y,/gh workflow run repository-task-consumer\.yml --repo \"\$GITHUB_REPOSITORY\" --ref \"\$RUN_BRANCH\"/);
   assert.match(y,/pushes created by GITHUB_TOKEN do not recursively trigger workflows/);
   assert.match(y,/active_repository_consumers/);
+  assert.match(y,/task17_handoff_boundary=true/);
+  assert.match(y,/TASK17_DEDICATED_CONSUMER_HANDOFF/);
+  assert.match(y,/Release production writer for Task 17 dedicated consumer/);
+  const release=y.indexOf('Release production writer for Task 17 dedicated consumer');
+  const dispatch=y.indexOf('gh workflow run repository-task-consumer.yml');
+  assert.ok(release>=0 && dispatch>release,'Task 17 writer release must precede dedicated consumer dispatch');
 });
 
 

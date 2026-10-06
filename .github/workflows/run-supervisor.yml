@@ -410,6 +410,7 @@ jobs:
             protected_repair_boundary=false
             ordinary_handoff_boundary=false
             scheduled_image_handoff_boundary=false
+            task17_handoff_boundary=false
             has_request="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(x.worker_request?'true':'false')")"
             if [ "$has_request" = "true" ]; then
               node -e "const fs=require('fs');const x=require('/tmp/supervisor-tick.json');fs.writeFileSync('/tmp/worker-request.json',JSON.stringify(x.worker_request,null,2)+'\n')"
@@ -460,15 +461,7 @@ jobs:
                 request_rel="_records/edition-execution/worker-requests/${EXECUTION_ID}/${request_task}-${request_key}.json"
                 request_status="$(node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync('run/'+process.argv[1],'utf8'));process.stdout.write(String(x.status||''))" "$request_rel")"
                 if [ "$request_status" = "queued" ]; then
-                  active_repository_consumers="$(gh api --method GET "repos/${GITHUB_REPOSITORY}/actions/workflows/repository-task-consumer.yml/runs" \
-                    -f branch="$RUN_BRANCH" -f per_page=20 \
-                    --jq '[.workflow_runs[] | select(.status=="queued" or .status=="in_progress")] | length')"
-                  if [ "$active_repository_consumers" = "0" ]; then
-                    echo "Dispatching Task 17 repository consumer explicitly via workflow_dispatch; pushes created by GITHUB_TOKEN do not recursively trigger workflows."
-                    gh workflow run repository-task-consumer.yml --repo "$GITHUB_REPOSITORY" --ref "$RUN_BRANCH"
-                  else
-                    echo "Task 17 repository consumer already queued/in progress; no duplicate dispatch."
-                  fi
+                  task17_handoff_boundary=true
                 fi
               fi
               if [ "$request_kind" = "engineering_repair" ] && [ "$request_capability" = "repository" ]; then
@@ -575,6 +568,36 @@ jobs:
 
             if [ "$ordinary_handoff_boundary" = "true" ]; then
               echo "Queued Task request persisted and writer authority released to the admitted A-F Watchdog consumer pool."
+              break
+            fi
+
+            if [ "$task17_handoff_boundary" = "true" ]; then
+              node control/_tools/run-supervisor.mjs release-writer-lease \
+                --lease "run/$lease_rel" \
+                --execution-id "$EXECUTION_ID" \
+                --owner-id "$SUPERVISOR_OWNER" \
+                --generation "$WRITER_GENERATION" \
+                --reason TASK17_DEDICATED_CONSUMER_HANDOFF \
+                --output /tmp/released-writer-lease.json >/tmp/release-writer.stdout
+              cat /tmp/release-writer.stdout
+              cp /tmp/released-writer-lease.json "run/$lease_rel"
+              git -C run add "$lease_rel"
+              git -C run commit -m "Release production writer for Task 17 dedicated consumer"
+              if ! git -C run push origin "HEAD:$RUN_BRANCH"; then
+                git -C run fetch --no-tags origin "$RUN_BRANCH"
+                git -C run rebase "origin/$RUN_BRANCH"
+                git -C run push origin "HEAD:$RUN_BRANCH"
+              fi
+              active_repository_consumers="$(gh api --method GET "repos/${GITHUB_REPOSITORY}/actions/workflows/repository-task-consumer.yml/runs" \
+                -f branch="$RUN_BRANCH" -f per_page=20 \
+                --jq '[.workflow_runs[] | select(.status=="queued" or .status=="in_progress")] | length')"
+              if [ "$active_repository_consumers" = "0" ]; then
+                echo "Dispatching Task 17 repository consumer explicitly via workflow_dispatch after releasing the writer; pushes created by GITHUB_TOKEN do not recursively trigger workflows."
+                gh workflow run repository-task-consumer.yml --repo "$GITHUB_REPOSITORY" --ref "$RUN_BRANCH"
+              else
+                echo "Task 17 repository consumer already queued/in progress; writer is released and no duplicate dispatch is needed."
+              fi
+              echo "Task 17 has a dedicated deterministic repository consumer. Supervisor released authority and yielded."
               break
             fi
 
