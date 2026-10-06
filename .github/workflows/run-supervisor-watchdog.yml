@@ -1,6 +1,11 @@
 name: Daily AI Brief Run Supervisor Watchdog
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - data/operations/active-production-run.json
+      - .github/workflows/run-supervisor-watchdog.yml
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
@@ -18,7 +23,6 @@ concurrency:
 
 jobs:
   ensure-supervisor:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Check out protected main

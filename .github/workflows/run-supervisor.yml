@@ -502,6 +502,8 @@ jobs:
             fi
 
             progress_before="$(git -C run rev-parse HEAD)"
+            # Persist renewal before the next fetch/reset restores the remote lease.
+            git -C run add "$lease_rel"
             git -C run add "_records/edition-execution/kanban/${EXECUTION_KEY}.json" 2>/dev/null || true
             git -C run add "_records/edition-execution/events/${EXECUTION_KEY}" 2>/dev/null || true
             git -C run add "_records/image-attempts/${EXECUTION_KEY}" 2>/dev/null || true
