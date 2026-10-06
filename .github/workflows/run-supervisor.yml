@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 330
     env:
-      SUPERVISOR_OWNER: github-actions-${{ github.run_id }}-${{ github.run_attempt }}
+      SUPERVISOR_OWNER: github-actions-${{ github.run_id }}-${{ github.run_attempt }}\n      EVENT_DRIVEN_SUPERVISOR: "true"
     steps:
       - name: Check out protected control plane
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
@@ -550,6 +550,14 @@ jobs:
             terminal="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(String(x.terminal))")"
             if [ "$terminal" = "true" ]; then
               echo "All Tasks 00-29 are Done; Supervisor may stop."
+              break
+            fi
+
+            # Event-driven mode persists at most one Supervisor boundary per invocation.
+            # Subsequent substantive task transitions re-enter through the durable
+            # transition-event workflow; Watchdogs are recovery-only fallback.
+            if [ "$EVENT_DRIVEN_SUPERVISOR" = "true" ]; then
+              echo "Event-driven Supervisor boundary complete; yield to durable transition events."
               break
             fi
 

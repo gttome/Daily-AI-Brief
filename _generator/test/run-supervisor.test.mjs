@@ -545,7 +545,13 @@ test('repository recovery contracts enforce the 60-second substantive-progress l
   assert.match(c.repository_liveness_policy.primary_post_image_path,/same invocation/i);
   assert.match(c.repository_liveness_policy.fault_evidence_path,/liveness-faults/);
   assert.match(c.repository_liveness_policy.fault_semantics,/not substantive worker progress/i);
-  assert.match(c.repository_liveness_policy.unsupported_event_wake,/does not currently admit/i);
+  assert.match(c.repository_liveness_policy.unsupported_event_wake,/repository-native and event-driven/i);
+  assert.match(c.repository_liveness_policy.unsupported_event_wake,/zero Work wakeups/i);
+  assert.match(c.repository_liveness_policy.unsupported_event_wake,/Watchdogs remain fallback recovery only/i);
+  assert.equal(c.event_driven_supervisor.enabled,true);
+  assert.equal(c.event_driven_supervisor.semantic_model_call_required_for_routing,false);
+  assert.equal(c.event_driven_supervisor.unchanged_health_commits_allowed,false);
+  assert.equal(c.event_driven_supervisor.pointer_only_wake_prs_allowed,false);
   assert.match(c.repository_liveness_policy.forbidden_terminal_claim,/AWAITING_SCHEDULED_EXECUTOR/);
 });
 

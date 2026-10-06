@@ -1,0 +1,78 @@
+name: Daily AI Brief Event-Driven Supervisor
+
+on:
+  push:
+    branches:
+      - 'reliable-edition/**'
+      - 'rehearsal/**'
+    paths:
+      - '_records/edition-execution/events/**'
+  workflow_dispatch:
+    inputs:
+      run_branch:
+        description: Existing nonterminal run branch
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: event-driven-supervisor-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out protected control plane
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          path: control
+          fetch-depth: 1
+
+      - name: Resolve run branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "RUN_BRANCH=${{ inputs.run_branch }}" >> "$GITHUB_ENV"
+          else
+            echo "RUN_BRANCH=${GITHUB_REF_NAME}" >> "$GITHUB_ENV"
+          fi
+
+      - name: Check out exact run branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.RUN_BRANCH }}
+          path: run
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+
+      - name: Drain unconsumed substantive transitions
+        shell: bash
+        run: |
+          set -euo pipefail
+          node control/_tools/transition-dispatcher.mjs drain             --run-root run             --branch "$RUN_BRANCH"             --contracts control/docs/operations/task-recovery-contracts.json             > /tmp/transition-dispatch.json
+          cat /tmp/transition-dispatch.json
+
+      - name: Persist one atomic transition boundary commit when needed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C run config user.name "github-actions[bot]"
+          git -C run config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git -C run add             _records/edition-execution/transition-events             _records/edition-execution/transition-dispatch             _records/edition-execution/worker-requests 2>/dev/null || true
+          if git -C run diff --cached --quiet; then
+            echo "No unconsumed substantive transition; no commit."
+            exit 0
+          fi
+          git -C run commit -m "Event Supervisor consume durable transition"
+          git -C run pull --rebase origin "$RUN_BRANCH"
+          git -C run push origin "HEAD:$RUN_BRANCH"
