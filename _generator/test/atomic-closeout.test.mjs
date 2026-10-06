@@ -5,7 +5,7 @@ import {buildAtomicCloseoutTransaction,deriveIncidentInventory,simulateAtomicCom
 const date='2099-01-01',execution='run-2099',edition='dab-edition-'+date,prod='a'.repeat(40);
 const tasks=Object.fromEntries(Array.from({length:30},(_,i)=>[String(i).padStart(2,'0'),{title:'Task '+i}]));
 const events=Array.from({length:27},(_,i)=>({task_id:String(i).padStart(2,'0'),from:'Active',to:'Done',at:'2099-01-01T00:'+String(i).padStart(2,'0')+':00Z'}));
-const ledgerEvent={schema_version:'production-operational-learning-event-v1',event_id:'DAB-OPS-E-999901',problem_id:'DAB-OPS-20990101-001',event_type:'incident',occurred_at:'2099-01-01T00:01:00Z',recorded_at:'2099-01-01T00:01:00Z',run_id:execution,edition_id:edition,task_id:'23',status:'permanently_fixed',summary:'fixture incident',data:{symptom:'x',root_cause:'y',operational_impact:'z',timing_impact_seconds:1,attempted_fix:'a',actual_fix:'b',fix_outcome:'PASS',permanent_implementation:['x'],regression_tests:['x'],invariants:['x'],next_run_validation:['x']}};
+const ledgerEvent={schema_version:'production-operational-learning-event-v1',event_id:'DAB-OPS-E-999901',problem_id:'DAB-OPS-20990101-001',event_type:'backfill',occurred_at:'2099-01-01T00:01:00Z',recorded_at:'2099-01-01T00:01:00Z',run_id:execution,edition_id:edition,task_id:'23',status:'permanently_fixed',summary:'fixture incident',data:{symptom:'x',root_cause:'y',operational_impact:'z',timing_impact_seconds:1,attempted_fix:'a',actual_fix:'b',fix_outcome:'PASS',permanent_implementation:['x'],regression_tests:['x'],invariants:['x'],next_run_validation:['x']}};
 const ledger=JSON.stringify(ledgerEvent)+'\n';
 
 function base(){
