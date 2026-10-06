@@ -1,14 +1,12 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "owner_id": "chatgpt-watchdog-f-task26-live-verification",
-  "generation": 83,
-  "acquired_at": "2026-10-06T12:08:28.000Z",
-  "last_heartbeat_at": "2026-10-06T12:08:33.295Z",
-  "expires_at": "2026-10-06T12:08:33.295Z",
-  "state": "RELEASED",
-  "task_id": "26",
-  "action_key": "wd-reliable-edition-20261006-run10-task26-live-verification:slot-f:g41:writer-g83",
-  "released_at": "2026-10-06T12:08:33.295Z",
-  "release_reason": "TASK_26_DONE_HANDOFF_TO_SUPERVISOR"
+  "owner_id": "chatgpt-watchdog-f-task27-completion-persistence",
+  "generation": 84,
+  "acquired_at": "2026-10-06T12:54:55.473Z",
+  "last_heartbeat_at": "2026-10-06T12:54:55.473Z",
+  "expires_at": "2026-10-06T13:01:55.473Z",
+  "state": "ACTIVE",
+  "task_id": "27",
+  "action_key": "wd-reliable-edition-20261006-run10-task27-completion-persistence:slot-f:g44:writer-g84"
 }
