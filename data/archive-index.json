@@ -159,8 +159,7 @@
       "evidence_type": "practitioner_analysis",
       "availability_status": "not_applicable",
       "trends": [
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
+        "AI-assisted development"
       ],
       "summary": "GitHub demonstrates the Copilot desktop app and how users launch, monitor and interact with AI-assisted work from a native desktop surface."
     },
@@ -226,7 +225,6 @@
       "evidence_type": "practitioner_analysis",
       "availability_status": "not_applicable",
       "trends": [
-        "Agent memory and context",
         "Accessible agents for knowledge work"
       ],
       "summary": "The Morning Brief covers agent payments alongside other daily news, with attention to controls around AI-driven transactions and workflows."
