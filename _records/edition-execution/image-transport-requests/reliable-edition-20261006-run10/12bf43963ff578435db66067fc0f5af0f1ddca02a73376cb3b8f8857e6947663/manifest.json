@@ -1,0 +1,124 @@
+{
+  "schema_version": "image-base64-chunk-bridge-v1",
+  "request_id": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663",
+  "execution_id": "reliable-edition-20261006-run10",
+  "execution_key": "2026-10-06-run10",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "14",
+  "source_writer_generation": 38,
+  "target_path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m11.png",
+  "bytes": 1301536,
+  "sha256": "ac8c8d97bd9f8c03998948fe72954c32e26c9de0d6d430197cb5053164785f1c",
+  "git_blob_sha": "45ccbb585b86bb5dfd9db43ec67c758d84b60a2a",
+  "chunks": [
+    {
+      "file": "chunk-0000.b64",
+      "sha256": "3b88fd556d0fd293d958eff9f8ec94ebf9a17c1d0d2aca8b634221b27359816c"
+    },
+    {
+      "file": "chunk-0001.b64",
+      "sha256": "f6595a5c71c1adcebee2a446bfa5a87c959df081637fcc800ace43ddc5b81214"
+    },
+    {
+      "file": "chunk-0002.b64",
+      "sha256": "237abcb87b1ec6ba0e9118e216f1d9edaabab6e8008175b32858043f95017cfa"
+    },
+    {
+      "file": "chunk-0003.b64",
+      "sha256": "7358cb1e7e397ac2ac318b81180fb76ecb83caac063e1415cf73b4bcb87eb26f"
+    },
+    {
+      "file": "chunk-0004.b64",
+      "sha256": "c4808853e2647bb8c295e4773ae68073c7b20cef553b564c6fdf1a80f9b4d28d"
+    },
+    {
+      "file": "chunk-0005.b64",
+      "sha256": "dbddab0d6e6f7b85633ae132a803b3a345851ae9ed0c81c6626b2138a8b1d7bd"
+    },
+    {
+      "file": "chunk-0006.b64",
+      "sha256": "ed4e2c40ebf3287ff3965d30f02b2dce7ebc6d76046fbb5f066b8caa0c62739c"
+    },
+    {
+      "file": "chunk-0007.b64",
+      "sha256": "5c89a8a32fd54b6be41fe233613f230b7c088992b8a5992023f8256c5f8884b4"
+    },
+    {
+      "file": "chunk-0008.b64",
+      "sha256": "55c80a37e5da334c9f4d3ae2243abd0ffdcd8bd75ad0dd24d50dea870b4bb57e"
+    },
+    {
+      "file": "chunk-0009.b64",
+      "sha256": "9cce7ed8d26dbc05ed1b285782eed1ca8417e61863cbbdcf7647443f013ae820"
+    },
+    {
+      "file": "chunk-0010.b64",
+      "sha256": "59620041c385758e8613b3a86ae69d13ec14b511652e26284f2a97113626aee4"
+    },
+    {
+      "file": "chunk-0011.b64",
+      "sha256": "68987a0922a0475d1476774263721609fd05aff7267f49c36b287acd58ff39b2"
+    },
+    {
+      "file": "chunk-0012.b64",
+      "sha256": "ee75269b75209c7be59ad848a9e8407d09fc9b86aadce7425e8d7f79ed3017e9"
+    },
+    {
+      "file": "chunk-0013.b64",
+      "sha256": "c1d3acf59c2f2734e4caa15fa0fb44ee661e5ac9b2884eb4f772ec6f1f0106b7"
+    },
+    {
+      "file": "chunk-0014.b64",
+      "sha256": "3410b36d9c7a319b40e0154fd4f85f3d602d5bc276a3a6aaea9b3381b90bb6a2"
+    },
+    {
+      "file": "chunk-0015.b64",
+      "sha256": "309b5c3432ca2d194c670b6026f6fa22990a946b041dcb5495967c5fe24aa653"
+    },
+    {
+      "file": "chunk-0016.b64",
+      "sha256": "f8debe673e3d8277d1e3683284b1982f8ea491f4fbfbdb613da33c1bd0d88a33"
+    },
+    {
+      "file": "chunk-0017.b64",
+      "sha256": "5e9452f8af50de79ad6a1f172bb2b09ea3cb9f9022257ead3b634031c4e5a3da"
+    },
+    {
+      "file": "chunk-0018.b64",
+      "sha256": "6cdcf9c30be935eadec95b6942dd945a431f23ea02e12f3691cb914faf2e48e3"
+    },
+    {
+      "file": "chunk-0019.b64",
+      "sha256": "b87861d802d24abbe6b0aa53e5142986684dfb539bbf99b8717e2b4c00db5ddc"
+    },
+    {
+      "file": "chunk-0020.b64",
+      "sha256": "0ce326232486e9ff82e50f2ac54bde4f4e78c544e45a736c97a7c66e1122d8d1"
+    },
+    {
+      "file": "chunk-0021.b64",
+      "sha256": "ad92cf37803f9f8f26f63ef244bac57006a782d103d12aa52e85db4ba3539bb0"
+    },
+    {
+      "file": "chunk-0022.b64",
+      "sha256": "6d61fef656b8ab3c227f51333ebeb68ebd8693fb5e90aa3c75423a5cb13e9c25"
+    },
+    {
+      "file": "chunk-0023.b64",
+      "sha256": "9be9ee0278ec6835fa0419019ed6b126f3d42d6b706060d003216f2546c02328"
+    },
+    {
+      "file": "chunk-0024.b64",
+      "sha256": "60e392abb4a8e831b857c17368577bd5ac868abfca71e3146259b600238c04d4"
+    },
+    {
+      "file": "chunk-0025.b64",
+      "sha256": "f26c14d7a4caad9f1ce07950c297528270335ad8edc892cd6373b7107fb8ce2d"
+    },
+    {
+      "file": "chunk-0026.b64",
+      "sha256": "fe7752bf659d68562f362e2e76e33275a0f8a3191316ea053ed49bf8657f8f68"
+    }
+  ],
+  "created_at": "2026-10-06T05:58:54.730Z"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "14",
+  "incident_id": "wd-reliable-edition-20261006-run10-task14-image-generation",
+  "owner_slot": "F",
+  "event_type": "protected_image_transport_handoff",
+  "classification": "BLOCKED_ACTIONABLE",
+  "occurred_at": "2026-10-06T05:58:54.730Z",
+  "action_key": "wd-reliable-edition-20261006-run10-task14-image-generation:chunk-bridge:slot-f:g20",
+  "authoritative_request_key": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663",
+  "generation_attempted": true,
+  "image_attempt": 1,
+  "regeneration": false,
+  "durable_delta": {
+    "admission_pass": true,
+    "exact_generated_bytes_preserved": true,
+    "bytes": 1301536,
+    "sha256": "ac8c8d97bd9f8c03998948fe72954c32e26c9de0d6d430197cb5053164785f1c",
+    "git_blob_sha": "45ccbb585b86bb5dfd9db43ec67c758d84b60a2a",
+    "chunk_count": 27,
+    "transport_request": "_records/edition-execution/image-transport-requests/reliable-edition-20261006-run10/12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663/manifest.json",
+    "writer_generation": 38
+  },
+  "next_authorized_action": "Consume the protected Base64 chunk request, verify exact PNG reconstruction/read-back, then continue the same Task 14 saved-Git visual review without regeneration.",
+  "owner_action_required": false,
+  "terminal": false
+}

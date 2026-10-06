@@ -4,11 +4,15 @@
   "incident_id": "wd-reliable-edition-20261006-run10-task14-image-generation",
   "owner_slot": "F",
   "generation": 20,
-  "state": "ACTIVE",
-  "acquired_at": "2026-10-06T05:54:01.785Z",
-  "last_heartbeat_at": "2026-10-06T05:54:01.785Z",
-  "expires_at": "2026-10-06T06:09:01.785Z",
+  "state": "RELEASED",
+  "released": true,
+  "acquired_at": "2026-10-06T05:54:16.000Z",
+  "last_heartbeat_at": "2026-10-06T05:58:54.730Z",
+  "expires_at": "2026-10-06T05:58:54.730Z",
+  "released_at": "2026-10-06T05:58:54.730Z",
+  "release_reason": "WAITING_ON_PROTECTED_EXTERNAL_EXECUTOR",
   "action_key": "wd-reliable-edition-20261006-run10-task14-image-generation:slot-f:g20",
   "continuation_from_generation": 19,
-  "authoritative_request_key": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663"
+  "authoritative_request_key": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663",
+  "completion_evidence": "_records/edition-execution/watchdog-events/reliable-edition-20261006-run10/20261006T055854730Z-slot-f-task14-image-chunk-consumer-handoff.json"
 }
