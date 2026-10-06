@@ -1,0 +1,30 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "PROTECTED_REPAIR_REQUIRED",
+  "repair_key": "repair-ab96067c94626f1f2e0c9a3bc917a6528caefd68",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "production_branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "14",
+  "incident_id": "wd-reliable-edition-20261006-run10-task14-bridge-checkpoint",
+  "repair_branch": "repair/run10-task14-bridge-checkpoint",
+  "repair_branch_head_sha": "8d623d68509388ace65754ee15c3df0d7f920d98",
+  "repair_scope_digest": "sha256:bce18df99a51afb657071a32a409efb02712635f842c1752332f06a1d95b3dca",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-06T06:10:57.916Z",
+  "invariant": "verified_image_transport_must_be_durable_before_next_task_routing",
+  "repair_pr_number": 481,
+  "exact_request_key": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663",
+  "failure_evidence": {
+    "workflow_run_id": 37421501100,
+    "conclusion": "failure",
+    "error": "stale_or_unbound_image_request",
+    "bridge_result": "PASS",
+    "bridge_processed": 1,
+    "bridge_failed": 0
+  },
+  "next_stage": "require fresh exact-head pull_request validate PASS, merge exact approved head, then resume same Task 14 saved-Git review without regeneration"
+}
