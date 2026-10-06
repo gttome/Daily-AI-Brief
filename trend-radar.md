@@ -114,11 +114,10 @@ Supporting stories:
 
 **STABLE · high confidence**
 
-11 supporting stories appeared in the latest 7 days and 38 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+10 supporting stories appeared in the latest 7 days and 38 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
-- [October 6, 2026]({{ '/podcasts/2026-10-06/morning-brief-2026-09-30-confidence-drop-agent-payments/' | relative_url }})
 - [October 5, 2026]({{ '/videos/2026-10-05/general/' | relative_url }})
 - [October 5, 2026]({{ '/videos/2026-10-05/agent-skills/' | relative_url }})
 - [October 4, 2026]({{ '/stories/2026-10-04/copilot-steps-beyond-apis-into-desktop-apps/' | relative_url }})
@@ -278,7 +277,7 @@ Supporting stories:
 
 **ACCELERATING · high confidence**
 
-61 supporting stories appeared in the latest 7 days and 131 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+60 supporting stories appeared in the latest 7 days and 131 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
@@ -288,7 +287,6 @@ Supporting stories:
 - [October 6, 2026]({{ '/stories/2026-10-06/astabrief-opens-a-faster-path-to-citation-grounded-reports/' | relative_url }})
 - [October 6, 2026]({{ '/stories/2026-10-06/copilot-moves-from-chat-into-desktop-computer-use/' | relative_url }})
 - [October 6, 2026]({{ '/stories/2026-10-06/ambient-agents-wake-on-events-and-know-when-to-ask-a-human/' | relative_url }})
-- [October 6, 2026]({{ '/videos/2026-10-06/general/' | relative_url }})
 - [October 6, 2026]({{ '/videos/2026-10-06/agent-skills/' | relative_url }})
 - [October 6, 2026]({{ '/podcasts/2026-10-06/hard-fork-2026-10-02-ai-agents/' | relative_url }})
 - [October 6, 2026]({{ '/podcasts/2026-10-06/morning-brief-2026-09-30-confidence-drop-agent-payments/' | relative_url }})

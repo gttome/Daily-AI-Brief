@@ -581,14 +581,13 @@
       "name": "Agent memory and context",
       "classification": "stable",
       "confidence": "high",
-      "rationale": "11 supporting stories appeared in the latest 7 days and 38 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "rationale": "10 supporting stories appeared in the latest 7 days and 38 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
       "evidence_counts": {
-        "recent_7_days": 11,
+        "recent_7_days": 10,
         "preceding_days": 38,
-        "total": 49
+        "total": 48
       },
       "supporting_story_ids": [
-        "dab-podcast-2026-10-06-2",
         "dab-video-2026-10-05-general",
         "dab-video-2026-10-05-agent-skills",
         "dab-story-2026-10-04-m04",
@@ -639,11 +638,6 @@
         "dab-story-2026-09-07-968c0cd8"
       ],
       "supporting_stories": [
-        {
-          "story_id": "dab-podcast-2026-10-06-2",
-          "brief_date": "2026-10-06",
-          "url": "/podcasts/2026-10-06/morning-brief-2026-09-30-confidence-drop-agent-payments/"
-        },
         {
           "story_id": "dab-video-2026-10-05-general",
           "brief_date": "2026-10-05",
@@ -1489,11 +1483,11 @@
       "name": "Accessible agents for knowledge work",
       "classification": "accelerating",
       "confidence": "high",
-      "rationale": "61 supporting stories appeared in the latest 7 days and 131 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "rationale": "60 supporting stories appeared in the latest 7 days and 131 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
       "evidence_counts": {
-        "recent_7_days": 61,
+        "recent_7_days": 60,
         "preceding_days": 131,
-        "total": 192
+        "total": 191
       },
       "supporting_story_ids": [
         "dab-story-2026-10-06-m01",
@@ -1502,7 +1496,6 @@
         "dab-story-2026-10-06-m11",
         "dab-story-2026-10-06-m12",
         "dab-story-2026-10-06-m14",
-        "dab-video-2026-10-06-general",
         "dab-video-2026-10-06-agent-skills",
         "dab-podcast-2026-10-06-1",
         "dab-podcast-2026-10-06-2",
@@ -1719,11 +1712,6 @@
           "story_id": "dab-story-2026-10-06-m14",
           "brief_date": "2026-10-06",
           "url": "/stories/2026-10-06/ambient-agents-wake-on-events-and-know-when-to-ask-a-human/"
-        },
-        {
-          "story_id": "dab-video-2026-10-06-general",
-          "brief_date": "2026-10-06",
-          "url": "/videos/2026-10-06/general/"
         },
         {
           "story_id": "dab-video-2026-10-06-agent-skills",

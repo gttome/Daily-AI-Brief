@@ -7,6 +7,38 @@ import {VIDEO_MAX_AGE_HOURS,PODCAST_PRIMARY_AGE_DAYS,PODCAST_FALLBACK_AGE_DAYS,P
 
 const time=value=>typeof value==='string'&&value.trim()?Date.parse(value):NaN;
 const agentSkillsStory=story=>/agent skills?/i.test([story.headline,...(story.topics||[])].join(' '));
+export const MEDIA_SEMANTIC_DISTINCTNESS_EFFECTIVE_DATE='2026-10-07';
+const normalizedMediaCopy=value=>String(value||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+const mediaCopyDuplicate=(left,right)=>{
+  const a=normalizedMediaCopy(left),b=normalizedMediaCopy(right);
+  if(!a||!b)return false;
+  if(a===b)return true;
+  const A=new Set(a.split(/\s+/)),B=new Set(b.split(/\s+/));
+  const min=Math.min(A.size,B.size),max=Math.max(A.size,B.size);
+  if(min<5||max===0)return false;
+  let overlap=0;
+  for(const token of A)if(B.has(token))overlap++;
+  return overlap/min>=0.9&&min/max>=0.75;
+};
+export function validateMediaSemanticDistinctness(edition={}){
+  const errors=[];
+  if(!edition.brief_date||edition.brief_date<MEDIA_SEMANTIC_DISTINCTNESS_EFFECTIVE_DATE)return errors;
+  for(const [slot,video] of Object.entries(edition.worth_watching||{})){
+    if(video?.status!=='included')continue;
+    if(mediaCopyDuplicate(video.why_useful,video.connection))
+      errors.push(`media_semantic_duplicate:video:${slot}:summary_vs_why_it_matters`);
+  }
+  const podcasts=Array.isArray(edition.podcasts)?edition.podcasts:(edition.podcast?[edition.podcast]:[]);
+  for(const [index,podcast] of podcasts.entries()){
+    if(podcast?.status!=='included')continue;
+    const id=podcast.item_id||String(index);
+    const fields=[['summary',podcast.summary],['why_it_matters',podcast.why_useful],['connection_to_brief',podcast.connection]];
+    for(let i=0;i<fields.length;i++)for(let j=i+1;j<fields.length;j++)
+      if(mediaCopyDuplicate(fields[i][1],fields[j][1]))
+        errors.push(`media_semantic_duplicate:podcast:${id}:${fields[i][0]}_vs_${fields[j][0]}`);
+  }
+  return errors;
+}
 const FROZEN_VIDEO_MIGRATION_CUTOFF='2026-10-04';
 const FROZEN_OCT4_VIDEO_IDENTITIES=Object.freeze({
   general:Object.freeze({
@@ -208,6 +240,7 @@ export function validateEdition(edition) {
     }
   };
   podcasts.forEach(validatePodcast);
+  errors.push(...validateMediaSemanticDistinctness(edition));
   if(!multiPodcast&&edition.podcast?.status==='empty')requireText(edition.podcast.exception,'podcast.exception');
   else if(!multiPodcast&&edition.podcast&&!['empty','included'].includes(edition.podcast.status))errors.push('podcast.status is invalid');
   return errors;

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "The My work tab: your mission control in the GitHub Copilot app"
-description: "Shows work items launching bounded agent sessions and complements governed reusable workflows."
+description: "GitHub shows the My work tab as a dashboard for starting, organizing and tracking Copilot work items and agent sessions."
 image: ""
 permalink: /videos/2026-10-06/agent-skills/
 brief_date: 2026-10-06
@@ -22,9 +22,9 @@ reader_release: true
 **Evidence:** Practitioner Analysis  
 **Availability:** Not Applicable
 
-**Summary:** Shows work items launching bounded agent sessions and complements governed reusable workflows.
+**Summary:** GitHub shows the My work tab as a dashboard for starting, organizing and tracking Copilot work items and agent sessions.
 
-**Why it matters:** Shows work items launching bounded agent sessions and complements governed reusable workflows.
+**Why it matters:** A visible mission-control layer makes multi-step agents more practical for non-technical users because they can see what is running, inspect progress and intervene when needed.
 
 
 

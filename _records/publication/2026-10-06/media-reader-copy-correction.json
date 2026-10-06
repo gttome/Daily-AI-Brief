@@ -1,0 +1,96 @@
+{
+  "schema_version": "reader-copy-correction-v1",
+  "edition_date": "2026-10-06",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_id": "reliable-edition-20261006-run10",
+  "state": "POST_CLOSE_READER_CORRECTION",
+  "correction_scope": "media_reader_copy_only",
+  "recorded_at": "2026-10-06T16:59:00Z",
+  "public_closed_preserved": true,
+  "sealed_media_evidence_preserved": {
+    "path": "_records/editorial-handoff/media-2026-10-06.json",
+    "git_blob_sha1": "519a4151d72ff8e50402768bc748c83ad6bd8f2c",
+    "publication_manifest": "_records/editorial-handoff/publication-manifest.json",
+    "rewritten": false
+  },
+  "defect": {
+    "classification": "editorial_semantic_duplication",
+    "symptom": "Video Summary and Why it matters fields repeated the same sentence; podcast Summary, Why it matters and Connection to the brief repeated the same sentence.",
+    "root_cause": [
+      "Tasks 06 and 07 did not require role-specific reader-ready media copy.",
+      "Task 18 assembly was allowed to reuse one upstream connection sentence across multiple reader-facing fields.",
+      "Edition validation and publication preflight checked media completeness, freshness, runtime and source diversity but did not check semantic distinctness."
+    ]
+  },
+  "corrected_items": [
+    {
+      "item_id": "dab-video-2026-10-06-general",
+      "fields": [
+        "summary",
+        "why_it_matters"
+      ]
+    },
+    {
+      "item_id": "dab-video-2026-10-06-agent-skills",
+      "fields": [
+        "summary",
+        "why_it_matters"
+      ]
+    },
+    {
+      "item_id": "dab-podcast-2026-10-06-1",
+      "fields": [
+        "summary",
+        "why_it_matters",
+        "connection_to_brief"
+      ]
+    },
+    {
+      "item_id": "dab-podcast-2026-10-06-2",
+      "fields": [
+        "summary",
+        "why_it_matters",
+        "connection_to_brief"
+      ]
+    }
+  ],
+  "corrected_reader_surfaces": [
+    "_data/editions/2026-10-06.json",
+    "briefs/2026-10-06.md",
+    "latest.md",
+    "index.md",
+    "videos/2026-10-06/general.md",
+    "videos/2026-10-06/agent-skills.md",
+    "podcasts/2026-10-06/hard-fork-2026-10-02-ai-agents.md",
+    "podcasts/2026-10-06/morning-brief-2026-09-30-confidence-drop-agent-payments.md",
+    "archive.md",
+    "data/archive-index.json",
+    "feed.json",
+    "feed.xml",
+    "_records/trends/2026-10-06.json",
+    "trend-radar.md"
+  ],
+  "permanent_prevention": {
+    "task_contracts": "docs/operations/task-recovery-contracts.json",
+    "edition_validator": "_generator/lib/validate.mjs",
+    "publication_preflight": "_generator/lib/publication-candidate-lint.mjs",
+    "regression_test": "_generator/test/media-semantic-distinctness.test.mjs",
+    "effective_edition": "2026-10-07",
+    "policy": "Summary states what the media contains; Why it matters states consequence/value; Connection to the brief states the relation to the edition. Literal and near-literal reuse across roles is publication-blocking."
+  },
+  "preserved": {
+    "story_selection": true,
+    "video_selection": true,
+    "podcast_selection": true,
+    "media_urls": true,
+    "runtimes": true,
+    "accepted_locked_images": true,
+    "original_task_06_07_evidence": true,
+    "public_closed_state": true
+  },
+  "result": "CORRECTED",
+  "protected_delivery": {
+    "required": true,
+    "state": "PENDING_PR_CI_AND_MERGE"
+  }
+}

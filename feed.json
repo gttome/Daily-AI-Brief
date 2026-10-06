@@ -93,7 +93,7 @@
       "id": "dab-video-2026-10-06-general",
       "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-10-06/general/",
       "title": "Meet the GitHub Copilot app: Your new AI desktop assistant",
-      "summary": "An official tour of the Copilot desktop agent surface supporting the edition’s computer-use story.",
+      "summary": "GitHub demonstrates the Copilot desktop app and how users launch, monitor and interact with AI-assisted work from a native desktop surface.",
       "date_published": "2026-10-06T13:00:00-05:00",
       "tags": [
         "GitHub"
@@ -103,7 +103,7 @@
       "id": "dab-video-2026-10-06-agent-skills",
       "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-10-06/agent-skills/",
       "title": "The My work tab: your mission control in the GitHub Copilot app",
-      "summary": "Shows work items launching bounded agent sessions and complements governed reusable workflows.",
+      "summary": "GitHub shows the My work tab as a dashboard for starting, organizing and tracking Copilot work items and agent sessions.",
       "date_published": "2026-10-06T13:00:00-05:00",
       "tags": [
         "GitHub"
@@ -113,7 +113,7 @@
       "id": "dab-podcast-2026-10-06-1",
       "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-06/hard-fork-2026-10-02-ai-agents/",
       "title": "Hard Fork — October 2, 2026 episode",
-      "summary": "Current discussion of personal assistants, agent incidents and privacy trade-offs.",
+      "summary": "Hard Fork discusses personal AI assistants, recent agent incidents and the privacy trade-offs that arise as assistants gain more autonomy.",
       "date_published": "2026-10-06T13:00:00-05:00",
       "tags": [
         "personal assistants",
@@ -126,7 +126,7 @@
       "id": "dab-podcast-2026-10-06-2",
       "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-06/morning-brief-2026-09-30-confidence-drop-agent-payments/",
       "title": "Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026",
-      "summary": "A separate daily-news publisher adds agent-payment controls and AI workflow context relevant to governed deployment.",
+      "summary": "The Morning Brief covers agent payments alongside other daily news, with attention to controls around AI-driven transactions and workflows.",
       "date_published": "2026-10-06T13:00:00-05:00",
       "tags": [
         "agent payments",

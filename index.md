@@ -280,9 +280,9 @@ reader_release: true
 **Duration:** 7:42  
 **Format:** Video
 
-**Summary:** An official tour of the Copilot desktop agent surface supporting the edition’s computer-use story.
+**Summary:** GitHub demonstrates the Copilot desktop app and how users launch, monitor and interact with AI-assisted work from a native desktop surface.
 
-**Why it matters:** An official tour of the Copilot desktop agent surface supporting the edition’s computer-use story.
+**Why it matters:** The walkthrough makes the shift from chat-only assistance to desktop agents concrete: once software can act across applications, visibility, scope and user control matter as much as model quality.
 
 
 
@@ -307,9 +307,9 @@ reader_release: true
 **Duration:** 5:24  
 **Format:** Video
 
-**Summary:** Shows work items launching bounded agent sessions and complements governed reusable workflows.
+**Summary:** GitHub shows the My work tab as a dashboard for starting, organizing and tracking Copilot work items and agent sessions.
 
-**Why it matters:** Shows work items launching bounded agent sessions and complements governed reusable workflows.
+**Why it matters:** A visible mission-control layer makes multi-step agents more practical for non-technical users because they can see what is running, inspect progress and intervene when needed.
 
 
 
@@ -337,11 +337,11 @@ reader_release: true
 **Duration:** 53:02  
 **Topics:** personal assistants, agent incidents, privacy
 
-**Summary:** Current discussion of personal assistants, agent incidents and privacy trade-offs.
+**Summary:** Hard Fork discusses personal AI assistants, recent agent incidents and the privacy trade-offs that arise as assistants gain more autonomy.
 
-**Why it matters:** Current discussion of personal assistants, agent incidents and privacy trade-offs.
+**Why it matters:** It adds a user-centered risk perspective to product announcements by focusing on what can go wrong when agents act with access to personal data and services.
 
-**Connection to the brief:** Current discussion of personal assistants, agent incidents and privacy trade-offs.
+**Connection to the brief:** That risk lens complements today’s desktop-computer-use and ambient-agent stories, where permissions, escalation and auditability determine whether autonomy is trustworthy.
 
 
 
@@ -370,11 +370,11 @@ reader_release: true
 **Duration:** 13:00  
 **Topics:** agent payments, controls, AI workflows
 
-**Summary:** A separate daily-news publisher adds agent-payment controls and AI workflow context relevant to governed deployment.
+**Summary:** The Morning Brief covers agent payments alongside other daily news, with attention to controls around AI-driven transactions and workflows.
 
-**Why it matters:** A separate daily-news publisher adds agent-payment controls and AI workflow context relevant to governed deployment.
+**Why it matters:** Agent payments expose a practical governance problem: software that can initiate transactions needs explicit authorization limits, verification and review.
 
-**Connection to the brief:** A separate daily-news publisher adds agent-payment controls and AI workflow context relevant to governed deployment.
+**Connection to the brief:** It extends today’s agent-control theme from desktop actions and background workflows into financial actions, where mistakes can create immediate real-world consequences.
 
 
 
