@@ -14,5 +14,11 @@
   "created_at": "2026-10-06T09:40:09.012Z",
   "writer_generation_is_provenance": false,
   "authority_refresh_required_at_invocation": false,
-  "status": "queued"
+  "status": "completed_pass",
+  "consumed_at": "2026-10-06T09:44:15.000Z",
+  "completed_at": "2026-10-06T09:51:00.000Z",
+  "consumer_owner_id": "scheduled-chatgpt-watchdog-f-task21",
+  "authority_generation": 72,
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/21-ca4ce4e863a6f2f77266dcec17e6605ea152abbe214ece9669dbe231d87f0e33.json",
+  "result": "PASS"
 }

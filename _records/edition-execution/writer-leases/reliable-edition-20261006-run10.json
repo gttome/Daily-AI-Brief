@@ -4,14 +4,16 @@
   "owner_id": "scheduled-chatgpt-watchdog-f-task21",
   "generation": 72,
   "acquired_at": "2026-10-06T09:44:15.000Z",
-  "last_heartbeat_at": "2026-10-06T09:50:30.000Z",
-  "expires_at": "2026-10-06T09:58:30.000Z",
-  "state": "ACTIVE",
+  "last_heartbeat_at": "2026-10-06T09:51:00.000Z",
+  "expires_at": "2026-10-06T09:51:00.000Z",
+  "state": "RELEASED",
   "task_id": "21",
   "request_key": "ca4ce4e863a6f2f77266dcec17e6605ea152abbe214ece9669dbe231d87f0e33",
+  "released_at": "2026-10-06T09:51:00.000Z",
+  "release_reason": "TASK_21_DONE_HANDOFF_TO_SUPERVISOR",
   "substantive_progress": {
-    "at": "2026-10-06T09:50:23.056Z",
-    "type": "FOCUSED_REPAIR_VALIDATED",
-    "evidence": "publication manifest PASS; deterministic candidate build PASS; targeted tests PASS"
+    "at": "2026-10-06T09:51:00.000Z",
+    "type": "TASK_DONE",
+    "evidence": "_records/qualification/2026-10-06-run10/task21-focused-repair.json"
   }
 }

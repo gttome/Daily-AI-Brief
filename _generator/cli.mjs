@@ -108,9 +108,9 @@ if (command === 'novelty-index' || command === 'novelty-query') {
       ...editionPodcasts(edition).map(x=>x.url)
     ].sort();
     if(JSON.stringify(selectedUrls(ctx.media))!==JSON.stringify(editionUrls))throw new Error('Expanded edition media differs from frozen publication manifest');
-    frozen={mediaPreflight:ctx.mediaReceipt,watchlist:ctx.watchlist,imageReviewPath:publicationArtifactPath(manifest,'image_review')};
+    frozen={mediaPreflight:ctx.mediaReceipt,watchlist:ctx.watchlist,imageReviewPath:publicationArtifactPath(manifest,'image_review'),publicationManifest:manifest};
   }else if(edition.brief_date>=CONTRACT_FREEZE_DATE)throw new Error('generate requires --publication-manifest for frozen-contract editions');
-  const result = buildPublicationStage(edition, repoRoot, path.resolve(args.out), {baselineSha: args['baseline-sha'], observedAt, runId: args['run-id'], telemetryFile:args['telemetry-file'], efficiency:args.efficiency?readJson(path.resolve(args.efficiency)):null, imageReviewPath:args['image-review']||frozen.imageReviewPath||null,mediaPreflight:frozen.mediaPreflight||null,watchlist:frozen.watchlist||null});
+  const result = buildPublicationStage(edition, repoRoot, path.resolve(args.out), {baselineSha: args['baseline-sha'], observedAt, runId:args['run-id'], telemetryFile:args['telemetry-file'], efficiency:args.efficiency?readJson(path.resolve(args.efficiency)):null, imageReviewPath:args['image-review']||frozen.imageReviewPath||null,mediaPreflight:frozen.mediaPreflight||null,watchlist:frozen.watchlist||null,publicationManifest:frozen.publicationManifest||null});
   console.log(JSON.stringify(result, null, 2));
 } else if (command === 'refresh-derived') {
   const date = args.date || latestBriefDate(repoRoot);

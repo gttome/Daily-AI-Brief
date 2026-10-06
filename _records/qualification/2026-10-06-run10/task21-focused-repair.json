@@ -1,0 +1,73 @@
+{
+  "schema_version": "task21-focused-repair-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "21",
+  "defect_id": "RUN10_INCOMPLETE_DETERMINISTIC_PUBLICATION_PROJECTION",
+  "repaired_at": "2026-10-06T09:51:00.000Z",
+  "result": "PASS",
+  "scope": "Rebuilt only deterministic October 6 publication projections and required same-edition handoff artifacts from locked Run 10 evidence.",
+  "validation": {
+    "publication_manifest": "PASS",
+    "deterministic_candidate_build": "PASS",
+    "targeted_tests": {
+      "passed": 21,
+      "failed": 0
+    }
+  },
+  "projections": [
+    {
+      "path": "latest.md",
+      "git_blob_sha1": "ac2fd1544fbbe925637b8e47b3cf05b244cd4cea",
+      "edition_date": "2026-10-06"
+    },
+    {
+      "path": "index.md",
+      "git_blob_sha1": "ae242160f8fe90ae7c82f259224b6357941246f5",
+      "edition_date": "2026-10-06"
+    },
+    {
+      "path": "feed.json",
+      "git_blob_sha1": "cf7f4d3979ec838ceaf1c21dd930d6be50e775a3",
+      "first_item_edition_date": "2026-10-06"
+    },
+    {
+      "path": "_records/editorial-handoff/publication-manifest.json",
+      "git_blob_sha1": "0223b2a284766cc3fcfcc86b2ee8f25cc8b8790f",
+      "edition_id": "dab-edition-2026-10-06"
+    },
+    {
+      "path": "_records/editorial-handoff/kernel.json",
+      "git_blob_sha1": "6d4dad193966bf68610dedafe950b7dc05e2a3dc",
+      "edition_id": "dab-edition-2026-10-06"
+    },
+    {
+      "path": "_records/editorial-handoff/facts.json",
+      "git_blob_sha1": "a41794c9656a18e18786b36144f64ae4cdc15990"
+    },
+    {
+      "path": "_records/editorial-handoff/media.json",
+      "git_blob_sha1": "519a4151d72ff8e50402768bc748c83ad6bd8f2c"
+    },
+    {
+      "path": "_records/editorial-handoff/handoff.json",
+      "git_blob_sha1": "30edbd921338bfee922ccae8a928561ba696c146",
+      "staging_ref": "reliable-edition/dab-edition-2026-10-06-run10"
+    },
+    {
+      "path": "_records/editorial/media-preflight/2026-10-06.json",
+      "git_blob_sha1": "855d49d344981db1e88f8578449ff35c262e8404"
+    }
+  ],
+  "preserved": {
+    "completed_tasks": "00-20",
+    "story_selection_unchanged": true,
+    "media_selection_unchanged": true,
+    "book_review_unchanged": true,
+    "watchlist_decisions_unchanged": true,
+    "task19_sealed_artifacts_unchanged": true,
+    "accepted_locked_images": 6,
+    "image_regeneration": false
+  },
+  "next_task": "22"
+}

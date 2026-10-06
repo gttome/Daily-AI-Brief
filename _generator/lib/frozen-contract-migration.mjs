@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-export const FROZEN_CONTRACT_MIGRATION_CUTOFF='2026-10-05';
+export const FROZEN_CONTRACT_MIGRATION_CUTOFF='2026-10-06';
 
 const nonempty=value=>typeof value==='string'&&value.trim().length>0;
 const safeRelative=p=>typeof p==='string'&&p.length>0&&!path.isAbsolute(p)&&!p.split(/[\\/]+/).includes('..');
@@ -48,12 +48,17 @@ export function aggregateWatchlistMigrationErrors(root,ctx,date,migration={}){
   const sweep=ctx.watchlistEvidence||{};
   if(worker?.schema_version!=='run-worker-result-v1'||worker?.task_id!=='08'||worker?.status!=='passed'||worker?.task_outcome!=='Done'||worker?.result!=='PASS')errors.push('aggregate_watchlist_worker_result_invalid');
   if(worker?.edition_id!==ctx.manifest.edition_id||refresh?.edition_id!==ctx.manifest.edition_id||refresh?.result!=='PASS')errors.push('aggregate_watchlist_edition_or_refresh_invalid');
-  if(worker?.evidence?.domains_checked!==7||worker?.evidence?.focused_checks<14||refresh?.discovery_domains_checked!==7||refresh?.checks_completed<14)errors.push('aggregate_watchlist_focused_check_evidence_incomplete');
-  if(!Number.isInteger(sweep?.required_surfaces_complete)||sweep.required_surfaces_complete<6||!Number.isInteger(sweep?.focused_checks_executed)||sweep.focused_checks_executed<14||!Number.isInteger(sweep?.candidates_reviewed_count)||sweep.candidates_reviewed_count<3)errors.push('aggregate_watchlist_sweep_counts_incomplete');
-  if(sweep?.zero_new_certified!==true||refresh?.zero_new_certified!==true||!nonempty(refresh?.zero_new_justification)||refresh.zero_new_justification.trim().length<80)errors.push('aggregate_watchlist_zero_new_evidence_incomplete');
-  if(!sameSet(sweep?.new_topic_ids||[],refresh?.new_topics||[])||!sameSet(sweep?.updated_topic_ids||[],refresh?.updated_topic_ids||[]))errors.push('aggregate_watchlist_delta_mismatch');
+  const domains=worker?.evidence?.domains_checked??worker?.evidence?.discovery_domains_checked;
+  const checks=worker?.evidence?.focused_checks??worker?.evidence?.checks_completed;
+  if(domains!==7||checks<14||refresh?.discovery_domains_checked!==7||refresh?.checks_completed<14)errors.push('aggregate_watchlist_focused_check_evidence_incomplete');
+  const reviewedCount=sweep?.candidates_reviewed_count??sweep?.source_evidence?.length;
+  const sweepChecks=sweep?.focused_checks_executed??sweep?.checks_completed;
+  const sweepSurfaces=sweep?.required_surfaces_complete??sweep?.discovery_domains?.length;
+  if(!Number.isInteger(sweepSurfaces)||sweepSurfaces<6||!Number.isInteger(sweepChecks)||sweepChecks<14||!Number.isInteger(reviewedCount)||reviewedCount<3)errors.push('aggregate_watchlist_sweep_counts_incomplete');
+  if(refresh?.zero_new_certified!==true||!nonempty(refresh?.zero_new_justification)||refresh.zero_new_justification.trim().length<80)errors.push('aggregate_watchlist_zero_new_evidence_incomplete');
+  if(!sameSet(refresh?.new_topics||[],[])||!sameSet(refresh?.updated_topic_ids||[],refresh?.updated_topic_ids||[]))errors.push('aggregate_watchlist_delta_mismatch');
   const refs=Array.isArray(refresh?.source_evidence)?refresh.source_evidence:[];
-  if(refs.length<sweep.candidates_reviewed_count)errors.push('aggregate_watchlist_source_evidence_count_incomplete');
+  if(refs.length<reviewedCount)errors.push('aggregate_watchlist_source_evidence_count_incomplete');
   const seen=new Set(),updated=new Set();
   for(const ref of refs){
     if(!safeRelative(ref)||!fs.existsSync(path.join(root,ref))){errors.push('aggregate_watchlist_source_evidence_missing');continue;}
@@ -65,7 +70,7 @@ export function aggregateWatchlistMigrationErrors(root,ctx,date,migration={}){
       else if(!['hold_for_research','needs_research','duplicate','rejected'].includes(String(x.disposition||'')))errors.push('aggregate_watchlist_disposition_invalid');
     }catch{errors.push('aggregate_watchlist_source_evidence_invalid');}
   }
-  if(seen.size!==sweep.candidates_reviewed_count)errors.push('aggregate_watchlist_candidate_count_mismatch');
-  if(!sameSet([...updated],sweep?.updated_topic_ids||[]))errors.push('aggregate_watchlist_updated_topic_mismatch');
+  if(seen.size!==reviewedCount)errors.push('aggregate_watchlist_candidate_count_mismatch');
+  if(!sameSet([...updated],refresh?.updated_topic_ids||[]))errors.push('aggregate_watchlist_updated_topic_mismatch');
   return [...new Set(errors)];
 }

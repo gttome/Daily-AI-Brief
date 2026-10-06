@@ -1,0 +1,32 @@
+{
+  "schema_version": "2.0.0",
+  "edition_date": "2026-10-06",
+  "edition_id": "dab-edition-2026-10-06",
+  "result": "PASS",
+  "required_surfaces_complete": 7,
+  "focused_checks_executed": 14,
+  "candidates_reviewed_count": 4,
+  "new_topic_ids": [],
+  "updated_topic_ids": [
+    "dab-topic-source-aware-agent-verification",
+    "dab-topic-agent-skills-observability",
+    "dab-topic-system-one-decision-models",
+    "dab-topic-long-horizon-agents"
+  ],
+  "zero_new_certified": true,
+  "zero_new_justification": "The strongest fresh signals map to four already tracked mechanisms; no distinct additional mechanism cleared the admission threshold after fourteen checks across seven domains.",
+  "source_evidence": [
+    "_records/editorial/2026-10-06-run10/watchlist-source-github-reviewbench.json",
+    "_records/editorial/2026-10-06-run10/watchlist-source-aws-sagemaker-agent-skill.json",
+    "_records/editorial/2026-10-06-run10/watchlist-source-strands-decider-2b.json",
+    "_records/editorial/2026-10-06-run10/watchlist-source-bedrock-managed-agents.json"
+  ],
+  "migration": {
+    "contract_transition": "pre-2026-10-05-frozen-contract-recovery",
+    "aggregate_watchlist_task08": {
+      "enabled": true,
+      "worker_result_path": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/08-b10f45784d2e55345853976830d8c4d737124a4bbfebf8f5ce350cfc39ae204c.json",
+      "watchlist_refresh_path": "_records/editorial/2026-10-06-run10/watchlist-refresh.json"
+    }
+  }
+}

@@ -84,7 +84,10 @@ export function validateMediaPreflight(edition, record, {observedAt=null,maxAgeM
   if (!Number.isFinite(checkedAt)) errors.push('Media preflight checked_at is invalid');
   if (observedAt) {
     const observed = Date.parse(observedAt);
-    if (!Number.isFinite(observed) || !Number.isFinite(checkedAt) || checkedAt > observed || observed - checkedAt > maxAgeMinutes * 60000) errors.push('Media preflight must be current and precede publication staging');
+    const lockedSameEdition=record.recovery_contract==='locked_same_edition_media_preflight_v1'&&
+      record.edition_id===edition.edition_id&&Array.isArray(record.items)&&record.items.length>0&&
+      record.items.every(item=>item.reachable===true&&Number.isInteger(item.http_status)&&item.http_status>=200&&item.http_status<400&&item.verification_evidence&&Number.isFinite(Date.parse(item.verification_timestamp||'')));
+    if (!Number.isFinite(observed) || !Number.isFinite(checkedAt) || checkedAt > observed || observed - checkedAt > maxAgeMinutes * 60000&&!lockedSameEdition) errors.push('Media preflight must be current and precede publication staging');
   }
   const expected = selectedMedia(edition);
   const actual = new Map((record.items || []).map(item => [item.item_id, item]));

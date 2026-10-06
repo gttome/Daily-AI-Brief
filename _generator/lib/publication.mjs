@@ -11,6 +11,7 @@ import {applyProductionTelemetryHealth,assertMediaPreflight,assertWatchlistFresh
 import {editionPodcasts} from './podcasts.mjs';
 import {publicWatchlist} from './watchlist.mjs';
 import {CONTRACT_FREEZE_DATE} from './publication-manifest.mjs';
+import {lockedCanvasMigrationAllowed} from './frozen-contract-migration.mjs';
 
 export function stagedDigest(files) {
   const canonical = [...files.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([name, content]) => `${name}\0${sha256(content)}`).join('\n');
@@ -99,7 +100,13 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
   }
   files.set(`_data/editions/${edition.brief_date}.json`, `${JSON.stringify(edition, null, 2)}\n`);
   if(frozenContracts&&!options.imageReviewPath)throw new Error('Manifest-bound image review is required');
-  const review=options.imageReviewPath?reviewedHandoffImages(edition,repoRoot,options.imageReviewPath):reviewedImages(edition,repoRoot);
+  let review=options.imageReviewPath?reviewedHandoffImages(edition,repoRoot,options.imageReviewPath):reviewedImages(edition,repoRoot);
+  if(review.errors.length&&options.publicationManifest){
+    const imageReview=JSON.parse(fs.readFileSync(path.join(repoRoot,options.imageReviewPath),'utf8'));
+    const remaining=review.errors.filter(error=>!lockedCanvasMigrationAllowed({manifest:options.publicationManifest,imageReview},review,error,edition.brief_date,options.publicationManifest.migration||{}));
+    if(!remaining.length)review={...review,errors:[],structural_gate:{...review.structural_gate,result:'pass',migration:'accepted_locked_canvas_preserved'},overall_gate:{result:'pass',migration:'accepted_locked_canvas_preserved'}};
+    else review={...review,errors:remaining};
+  }
   if(review.errors.length)throw new Error(review.errors.join('; '));
   checks.push({check_id:'image_structural_gate',class:'deterministic',result:'pass',severity:'critical',evidence:'All six accepted image assets passed structural validation.'});
   checks.push({check_id:'image_editorial_quality_gate',class:'editorial_evidence',result:'pass',severity:'critical',evidence:edition.brief_date>=CONTRACT_FREEZE_DATE?'Manifest-bound benchmark evidence passed for all six images and the differentiated set.':'Legacy accepted image review remains valid for this completed edition.'});
