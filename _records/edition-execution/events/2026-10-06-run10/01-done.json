@@ -1,0 +1,16 @@
+{
+  "task_id": "01",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-06T00:46:00.000Z",
+  "reason": "Bound the October 6 edition identity, Run 10 execution ID, immutable research cutoff and protected-main baseline without duplicating or reopening an execution.",
+  "proof": {
+    "edition_id": "dab-edition-2026-10-06",
+    "execution_id": "reliable-edition-20261006-run10",
+    "execution_key": "2026-10-06-run10",
+    "research_cutoff": "2026-10-06T00:02:39.000Z",
+    "baseline_main_sha": "3656674748a067996e965ecd1b2334215437e5fe",
+    "canonical_pointer_main_sha": "1aea959578fba5d20d0115742e6298bcc0a0ef57",
+    "binding_path": "_records/edition-execution/bindings/dab-edition-2026-10-06-run10.json"
+  }
+}
