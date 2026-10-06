@@ -1,0 +1,13 @@
+{
+  "task_id": "04",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-06T01:01:57.730Z",
+  "reason": "Claimed the exact queued Task 04 repository request to verify the just-persisted Task 03 evidence and freshness tiers.",
+  "proof": {
+    "request_key": "d8ba96c0e9086fcb4035eba17d447e41fe59a0d5f3042b8697616300975b5eea",
+    "writer_generation": 15,
+    "watchdog_lease_generation": 3,
+    "capability": "repository"
+  }
+}
