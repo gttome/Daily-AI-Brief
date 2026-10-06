@@ -1,12 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "owner_id": "github-actions-37439561488-3",
-  "generation": 65,
-  "acquired_at": "2026-10-06T09:34:30.556Z",
-  "last_heartbeat_at": "2026-10-06T09:34:34.700Z",
-  "expires_at": "2026-10-06T09:34:34.700Z",
-  "state": "RELEASED",
-  "released_at": "2026-10-06T09:34:34.700Z",
-  "release_reason": "TASK_19_QUEUED_HANDOFF_TO_WATCHDOG"
+  "owner_id": "github-actions-37443948754-1",
+  "generation": 66,
+  "acquired_at": "2026-10-06T09:35:19.502Z",
+  "last_heartbeat_at": "2026-10-06T09:35:19.502Z",
+  "expires_at": "2026-10-06T09:40:19.502Z"
 }
