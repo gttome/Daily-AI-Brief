@@ -4,9 +4,11 @@
   "incident_id": "wd-reliable-edition-20261006-run10-task27-completion-persistence",
   "owner_slot": "E",
   "generation": 43,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-06T12:42:00.000Z",
-  "last_heartbeat_at": "2026-10-06T12:42:00.000Z",
-  "expires_at": "2026-10-06T12:54:00.000Z",
-  "action_key": "wd-reliable-edition-20261006-run10-task27-completion-persistence:slot-e:g43"
+  "last_heartbeat_at": "2026-10-06T12:43:00.000Z",
+  "expires_at": "2026-10-06T12:43:00.000Z",
+  "action_key": "wd-reliable-edition-20261006-run10-task27-completion-persistence:slot-e:g43",
+  "released_at": "2026-10-06T12:43:00.000Z",
+  "release_reason": "SAFE_BOUNDARY_REACHED"
 }
