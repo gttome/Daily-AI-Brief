@@ -1,17 +1,14 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "incident_id": "wd-reliable-edition-20261006-run10-task13-complete-saved-git-review",
-  "owner_slot": "F",
-  "generation": 17,
-  "state": "RELEASED",
-  "acquired_at": "2026-10-06T05:03:56.145Z",
-  "last_heartbeat_at": "2026-10-06T05:03:56.145Z",
-  "expires_at": "2026-10-06T05:03:56.145Z",
-  "released_at": "2026-10-06T05:03:56.145Z",
-  "release_reason": "RECOVERY_VERIFIED_PROGRESSING",
-  "action_key": "wd-reliable-edition-20261006-run10-task13-complete-saved-git-review:slot-f:g17",
-  "continuation_from_generation": 16,
-  "authoritative_request_key": "6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a",
-  "completion_evidence": "_records/edition-execution/watchdog-events/reliable-edition-20261006-run10/20261006T050356145Z-slot-f-task13-recovery-verified-progressing.json"
+  "incident_id": "wd-reliable-edition-20261006-run10-task14-image-admission-context-preflight",
+  "owner_slot": "A",
+  "generation": 18,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-06T05:11:32.197Z",
+  "last_heartbeat_at": "2026-10-06T05:11:32.197Z",
+  "expires_at": "2026-10-06T05:26:32.197Z",
+  "action_key": "wd-reliable-edition-20261006-run10-task14-image-admission-context-preflight:slot-a:g18",
+  "continuation_from_generation": 17,
+  "authoritative_request_key": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663"
 }
