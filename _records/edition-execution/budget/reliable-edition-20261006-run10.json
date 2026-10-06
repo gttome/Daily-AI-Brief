@@ -1,0 +1,32 @@
+{
+  "schema_version": "daily-brief-public-safe-budget-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "started_at": "2026-10-06T00:08:42.116Z",
+  "updated_at": "2026-10-06T00:08:42.116Z",
+  "account_usage_fields_prohibited": true,
+  "private_account_metrics_storage": "outside_public_git_only",
+  "counters": {
+    "watchdog_invocations": 0,
+    "watchdog_compact_exits": 0,
+    "watchdog_expanded_reads": 0,
+    "watchdog_actionable_recoveries": 0,
+    "semantic_editorial_passes": 0,
+    "semantic_repair_passes": 0,
+    "research_task_invocations": 0,
+    "repository_task_invocations": 0,
+    "image_generation_attempts": 0,
+    "image_execution_preflight_failures": 0,
+    "accepted_images": 0,
+    "protected_repair_cycles": 0,
+    "publication_ci_runs": 0,
+    "publication_preflight_failures": 0,
+    "unchanged_health_commits": 0,
+    "substantive_progress_events": 0,
+    "control_plane_events": 0,
+    "run_wall_seconds": 0
+  },
+  "budget_level": "GREEN",
+  "budget_alerts": []
+}
