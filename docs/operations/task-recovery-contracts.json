@@ -972,6 +972,22 @@
       "simplification_rule": "Preserve valid completed evidence; repair only the earliest invalid/currently blocked scope; never redo accepted artifacts without explicit invalidation. Preserve and reuse the semantic kernel when its semantic input digest remains valid."
     }
   },
+  "event_driven_supervisor": {
+    "schema_version": "event-driven-supervisor-v1",
+    "enabled": true,
+    "normal_progression_trigger": "durable_task_transition",
+    "raw_event_path_pattern": "_records/edition-execution/events/<execution-key>/",
+    "canonical_event_path_pattern": "_records/edition-execution/transition-events/<execution-id>/",
+    "dispatch_record_path_pattern": "_records/edition-execution/transition-dispatch/<execution-id>/",
+    "dispatch_target": "durable_worker_request_queue",
+    "one_substantive_commit_per_transition_boundary": true,
+    "unchanged_health_commits_allowed": false,
+    "pointer_only_wake_prs_allowed": false,
+    "semantic_model_call_required_for_routing": false,
+    "watchdog_role": "fallback_recovery_only",
+    "duplicate_delivery": "idempotent_noop",
+    "restart_semantics": "reconstruct_exact_next_transition_from_durable_event"
+  },
   "repository_liveness_policy": {
     "schema_version": "repository-worker-liveness-v1",
     "max_idle_seconds": 60,
@@ -984,7 +1000,7 @@
       "17": "Immediate deterministic GitHub Actions consumer plus ordinary-ChatGPT Watchdog Ring recovery fallback.",
       "18-22,24,27-29": "Ordinary-ChatGPT same-invocation consumer; the ChatGPT Watchdog Ring is the outer fallback when that invocation has ended."
     },
-    "unsupported_event_wake": "The automation service does not currently admit event-triggered Work wakeups for this route, and no event-triggered Work task is authorized. The outer recovery contract instead uses six ordinary exact-hourly ChatGPT schedules staggered to a nominal ten-minute cadence.",
+    "unsupported_event_wake": "Normal progression is repository-native and event-driven from durable task transitions with zero Work wakeups. No event-triggered Work task is authorized. The six staggered ChatGPT Watchdogs remain fallback recovery only when an exact transition is not consumed or worker ownership fails.",
     "forbidden_terminal_claim": "AWAITING_SCHEDULED_EXECUTOR is never a healthy or terminal repository-task outcome."
   },
   "chatgpt_watchdog_ring": {
