@@ -1,0 +1,23 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "task_id": "25",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-06T12:06:49.848Z",
+  "writer_generation": 82,
+  "owner_id": "chatgpt-watchdog-f-task25-pages-deployment",
+  "reason_code": "EXACT_PRODUCTION_SHA_DEPLOYED",
+  "operation": "verify_exact_sha_pages_deployment",
+  "proof": {
+    "production_sha": "9c43360de90cb1c27a83679a2acd1bacdd061432",
+    "pages_run_id": 37460724420,
+    "pages_run_number": 773,
+    "pages_conclusion": "success",
+    "exact_sha_match": true,
+    "receipt": "_records/publication/2026-10-06-run10/task25-pages-deployment.json"
+  },
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "task25-pages-deployment-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "task_id": "25",
+  "writer_generation": 82,
+  "production_sha": "9c43360de90cb1c27a83679a2acd1bacdd061432",
+  "deployment": {
+    "provider": "GitHub Pages",
+    "workflow": "pages build and deployment",
+    "workflow_id": 336353100,
+    "run_id": 37460724420,
+    "run_number": 773,
+    "head_branch": "main",
+    "head_sha": "9c43360de90cb1c27a83679a2acd1bacdd061432",
+    "status": "completed",
+    "conclusion": "success",
+    "run_url": "https://github.com/gttome/Daily-AI-Brief/actions/runs/37460724420"
+  },
+  "exact_sha_match": true,
+  "preserved": {
+    "completed_tasks": "00-24",
+    "accepted_locked_images": 6,
+    "image_mutations": 0
+  },
+  "result": "PASS",
+  "observed_at": "2026-10-06T12:06:49.848Z"
+}
