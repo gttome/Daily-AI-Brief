@@ -1,0 +1,29 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "event_type": "continuation_handoff",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "task_id": "27",
+  "slot": "F",
+  "occurred_at": "2026-10-06T12:08:33.296Z",
+  "state": "UNRESOLVED",
+  "reason_code": "PROTECTED_COMPLETION_PERSISTENCE_IDENTITY_BINDING_FAILED_AFTER_LIVE_VALIDATION_PASS",
+  "proof": {
+    "first_incomplete_task": "27",
+    "production_sha": "9c43360de90cb1c27a83679a2acd1bacdd061432",
+    "validation_run_id": 37460843933,
+    "validation_job_id": 112259863868,
+    "validation_final_result": "pass",
+    "failed_step": "Prepare protected completion persistence",
+    "failure": "Validated publication event must bind exact PR, candidate, merge, and protected CI identities.",
+    "exact_pr": 491,
+    "exact_candidate_sha": "8d8fd45a8e1494d82ddea91eb22f728a9c5cbf5e",
+    "exact_merge_sha": "9c43360de90cb1c27a83679a2acd1bacdd061432",
+    "exact_ci_run_id": 37460551071,
+    "validation_artifact_id": 11413101741
+  },
+  "next_action": "Repair only Task 27 completion persistence by seeding the exact identity-bound completion evidence from existing Task 23-26 receipts and validation artifact; do not republish or rerun completed upstream tasks.",
+  "owner_intervention_required": false,
+  "schedule_membership_preserved": true
+}

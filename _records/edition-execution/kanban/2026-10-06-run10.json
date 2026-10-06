@@ -261,17 +261,17 @@
     "26": {
       "id": "26",
       "title": "Independently verify live edition",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "column": "Done",
+      "entered_backlog_at": "2026-10-06T12:08:28.000Z",
+      "active_started_at": "2026-10-06T12:08:28.000Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "done_at": "2026-10-06T12:08:33.295Z",
+      "cycle_seconds": 5.295,
+      "active_seconds": 5.295,
+      "duration_seconds": 5.295,
+      "duration": "5.295s"
     },
     "27": {
       "id": "27",

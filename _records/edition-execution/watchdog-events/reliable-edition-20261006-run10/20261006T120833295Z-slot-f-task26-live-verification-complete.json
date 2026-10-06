@@ -1,0 +1,21 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "incident_id": "wd-reliable-edition-20261006-run10-task26-live-verification",
+  "slot": "F",
+  "task_id": "26",
+  "at": "2026-10-06T12:08:33.295Z",
+  "event": "RECOVERY_VERIFIED",
+  "result": "TASK_26_DONE",
+  "substantive_progress": {
+    "kind": "task_transition",
+    "task_transition": "Backlog->Done",
+    "production_sha": "9c43360de90cb1c27a83679a2acd1bacdd061432",
+    "validation_run_id": 37460843933,
+    "validation_final_result": "pass"
+  },
+  "writer_generation": 83,
+  "recovery_generation": 41,
+  "next_task": "27",
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

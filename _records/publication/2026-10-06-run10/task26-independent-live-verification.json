@@ -1,0 +1,42 @@
+{
+  "schema_version": "task26-independent-live-verification-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "task_id": "26",
+  "writer_generation": 83,
+  "production_sha": "9c43360de90cb1c27a83679a2acd1bacdd061432",
+  "validator": {
+    "workflow": "Daily AI Brief deterministic delta validation",
+    "workflow_id": 360892727,
+    "run_id": 37460843933,
+    "run_number": 353,
+    "job_id": 112259863868,
+    "validation_started_at": "2026-10-06T12:06:33.732Z",
+    "validation_ended_at": "2026-10-06T12:06:35.487Z",
+    "validation_final_result": "pass",
+    "semantic_escalation_required": false,
+    "uploaded_artifact_id": 11413101741,
+    "overall_workflow_conclusion": "failure",
+    "post_validation_persistence_failure": "generated completion evidence omitted exact PR/candidate/merge/protected-CI identities"
+  },
+  "live_checks": {
+    "route_count": 16,
+    "live_changed_routes": "pass",
+    "live_homepage_edition": "pass",
+    "live_dated_edition": "pass",
+    "live_image_assets": "pass",
+    "live_image_bytes": "pass",
+    "pages_deployment": "pass",
+    "homepage_edition_date": "2026-10-06",
+    "accepted_locked_images": 6,
+    "exact_deployed_sha": true
+  },
+  "nonblocking_warning": {
+    "check": "source_http_state",
+    "classification": "nonblocking_postpublication_reachability_warning",
+    "detail": "One publisher source probe returned transient HTTP 429; canonical source evidence and all prepublication source gates remain valid."
+  },
+  "result": "PASS",
+  "observed_at": "2026-10-06T12:08:33.295Z"
+}
