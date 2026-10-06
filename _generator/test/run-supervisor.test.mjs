@@ -654,3 +654,22 @@ test('Supervisor preserves queued research_chatgpt work for a capable ordinary C
   assert.match(y,/research_consumer_unclaimed|repository-liveness/);
 });
 
+
+test('Supervisor durably stages its renewed writer lease before pushing each loop',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  const loop=y.slice(y.indexOf('while '));
+  const renewal=loop.indexOf('cp /tmp/writer-lease.json "run/$lease_rel"');
+  const stage=loop.indexOf('git -C run add "$lease_rel"',renewal);
+  const commit=loop.indexOf('git -C run commit -m "Supervisor reconcile',renewal);
+  assert.ok(renewal>=0 && stage>renewal && commit>stage,
+    'renewed lease must reach the remote before the next fetch/reset');
+});
+
+test('successful Supervisor completion still checks restart and publishes current health',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
+  const job=y.slice(y.indexOf('  ensure-supervisor:'));
+  assert.doesNotMatch(job.slice(0,job.indexOf('    steps:')),/\n    if:/);
+  assert.match(job,/Supervisor already queued\/running/);
+  assert.match(job,/Publish compact Watchdog health state/);
+  assert.match(job,/source_digest===b.source_digest/);
+});
