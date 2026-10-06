@@ -159,7 +159,7 @@ if(pointer.terminal===true||pointer.active!==true){
     watchdog_recovery_owner_progressing:recoveryOwnerProgressing,
     protected_repair_stage:latestRepair?.value?.state||null,
     classification,actionable,next_legal_action:nextLegalAction,
-    accepted_locked_images:acceptedLockedImages,evidence_refs
+    accepted_locked_images:acceptedLockedImages,evidence_refs:evidenceRefs
   });
 }
 if(args.output)write(args.output,record);
