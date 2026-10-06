@@ -4,7 +4,7 @@
   "source_execution": "reliable-edition-20261006-run10",
   "source_run_terminal_state": "PUBLIC_CLOSED",
   "production_run_reopened": false,
-  "state": "IN_PROGRESS",
+  "state": "COMPLETE",
   "protected_main_baseline": "aee48e20c9d1b1a645a7c9f486c28537ff896d6d",
   "production_usage_boundary": {
     "work_invocations": 0,
@@ -16,42 +16,107 @@
     {
       "id": "WP-01",
       "capability": "hardening/production branch separation",
-      "state": "IN_PROGRESS"
+      "state": "COMPLETED",
+      "evidence": {
+        "pr": 495,
+        "merge_sha": "a78fd3248609da12ba17b9f089ad2d1725a41407"
+      }
     },
     {
       "id": "WP-02",
       "capability": "event-driven Supervisor",
-      "state": "QUEUED"
+      "state": "COMPLETED",
+      "evidence": {
+        "pr": 496,
+        "merge_sha": "744b34deacb6215484e8e428b8f65e3b8bc4eef3",
+        "repair_pr": 498,
+        "repair_merge_sha": "fb158509308e68f123a0b305cfd77d8b7a8f8d37"
+      }
     },
     {
       "id": "WP-03",
       "capability": "stable no-wake image pipeline",
-      "state": "QUEUED"
+      "state": "COMPLETED",
+      "evidence": {
+        "pr": 497,
+        "merge_sha": "e969d067b85dcae84b98ad62ed538207be2e1665"
+      }
     },
     {
       "id": "WP-04",
       "capability": "generalized Task 17 validator",
-      "state": "QUEUED"
+      "state": "COMPLETED",
+      "evidence": {
+        "pr": 499,
+        "merge_sha": "ec0208dd2fd964e506cf5512e346c5f0468a6f00"
+      }
     },
     {
       "id": "WP-05",
       "capability": "Task 23 pre-PR prerequisite binding",
-      "state": "QUEUED"
+      "state": "COMPLETED",
+      "evidence": {
+        "pr": 500,
+        "merge_sha": "a85bd5671fac02b677447766281e05384ba21843"
+      }
     },
     {
       "id": "WP-06",
       "capability": "deterministic atomic Tasks 27-29 closeout",
-      "state": "QUEUED"
+      "state": "COMPLETED",
+      "evidence": {
+        "pr": 501,
+        "merge_sha": "13cbf5449fe411fd199b81ceef3ef1e5bc0dbd0a"
+      }
     },
     {
       "id": "WP-07",
       "capability": "integrated fault-injection rehearsal",
-      "state": "QUEUED"
+      "state": "COMPLETED",
+      "evidence": {
+        "pr": 502,
+        "merge_sha": "6f5b1a439d4088af6c284e28c8201842ce3b8468",
+        "rehearsal_run_id": 37545271745,
+        "rehearsal_result": "PASS"
+      }
     },
     {
       "id": "WP-08",
       "capability": "final receipts and next-run admission",
-      "state": "QUEUED"
+      "state": "COMPLETED",
+      "evidence": {
+        "activation": "protected_main_merge_plus_post_merge_ci"
+      }
     }
-  ]
+  ],
+  "completed_at": "2026-10-06T23:16:00Z",
+  "final_code_main_sha": "6f5b1a439d4088af6c284e28c8201842ce3b8468",
+  "final_code_main_ci_run_id": 37545132702,
+  "integrated_rehearsal": {
+    "result": "PASS",
+    "workflow_run_id": 37545271745,
+    "branch": "rehearsal/p1p2-integrated-2026-10-06-r1",
+    "receipt_commit": "5377b1e39cf53ee5d888d4f2c7592c088b52d4b5",
+    "receipt_path": "_records/hardening/p1-p2-2026-10-06/rehearsal-receipt.json"
+  },
+  "learning": {
+    "new_event_ids": [
+      "DAB-OPS-E-000122",
+      "DAB-OPS-E-000123",
+      "DAB-OPS-E-000124",
+      "DAB-OPS-E-000125",
+      "DAB-OPS-E-000126",
+      "DAB-OPS-E-000127"
+    ],
+    "ledger_digest": "sha256:4559c6a003a1fe95702f2027198d4940cf72486bc90e581a4ae4d09210e53ea3",
+    "improvement_cards": [
+      "DAB-KB-050",
+      "DAB-KB-051",
+      "DAB-KB-052",
+      "DAB-KB-053",
+      "DAB-KB-054",
+      "DAB-KB-055"
+    ]
+  },
+  "activation_condition": "Authoritative on protected main after this reconciliation merges and post-merge deterministic CI passes."
 }
