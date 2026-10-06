@@ -3,9 +3,40 @@
 
 This GitHub runner never renders, visually reviews or accepts an image itself.
 """
-import argparse, json
+import argparse, json, subprocess
 from pathlib import Path
 from datetime import datetime, timezone
+
+def release_current_writer(root, execution_id, writer_generation, reason):
+    lease_rel=Path(f'_records/edition-execution/writer-leases/{execution_id}.json')
+    lease_path=root/lease_rel
+    if not lease_path.exists():
+        raise SystemExit('writer_lease_missing_for_image_handoff')
+    lease=json.loads(lease_path.read_text())
+    if lease.get('execution_id')!=execution_id or int(lease.get('generation',-1))!=int(writer_generation):
+        raise SystemExit('stale_writer_lease_for_image_handoff')
+    if lease.get('state')=='RELEASED':
+        return {'released':True,'already_released':True,'generation':int(writer_generation)}
+    owner_id=str(lease.get('owner_id') or '')
+    if not owner_id:
+        raise SystemExit('writer_owner_missing_for_image_handoff')
+    now=datetime.now(timezone.utc).isoformat().replace('+00:00','Z')
+    lease.update(
+        state='RELEASED',
+        released_at=now,
+        release_reason=reason,
+        last_heartbeat_at=now,
+        expires_at=now
+    )
+    lease_path.write_text(json.dumps(lease,indent=2)+'\n')
+    subprocess.run(
+        ['git','-C',str(root),'add',str(lease_rel)],
+        check=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.PIPE,
+        text=True
+    )
+    return {'released':True,'already_released':False,'generation':int(writer_generation),'owner_id':owner_id,'released_at':now}
 
 def main():
     p=argparse.ArgumentParser()
@@ -61,6 +92,12 @@ def main():
         if req.get('status')!='queued_for_scheduled_consumer':
             req.update(status='queued_for_scheduled_consumer',dispatch=result)
             request.write_text(json.dumps(req,indent=2)+'\n')
+        result['writer_handoff']=release_current_writer(
+            root,
+            a.execution_id,
+            a.writer_generation,
+            f'TASK_{task}_QUEUED_HANDOFF_TO_SCHEDULED_IMAGE_CONSUMER'
+        )
         print(json.dumps(result)); return
     if qualified:
         now=datetime.now(timezone.utc).isoformat()
