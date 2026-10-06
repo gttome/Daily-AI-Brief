@@ -85,7 +85,8 @@
       "capability": "final receipts and next-run admission",
       "state": "COMPLETED",
       "evidence": {
-        "activation": "protected_main_merge_plus_post_merge_ci"
+        "activation": "protected_main_merge_plus_post_merge_ci",
+        "pr": 503
       }
     }
   ],
@@ -118,5 +119,6 @@
       "DAB-KB-055"
     ]
   },
-  "activation_condition": "Authoritative on protected main after this reconciliation merges and post-merge deterministic CI passes."
+  "activation_condition": "Authoritative on protected main after this reconciliation merges and post-merge deterministic CI passes.",
+  "final_reconciliation_pr": 503
 }
