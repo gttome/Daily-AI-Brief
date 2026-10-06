@@ -37,7 +37,7 @@
     "media_receipt": {
       "path": "_records/editorial/media-preflight/2026-10-06.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:855d49d344981db1e88f8578449ff35c262e8404"
+      "digest": "git_blob_sha1:f0028c8dd45a5fee635a6d6f4b0b092194dff9cf"
     },
     "image_manifest": {
       "path": "_records/editorial-handoff/images-2026-10-06-publication.json",

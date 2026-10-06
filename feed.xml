@@ -4,7 +4,77 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-10-05T05:44:00.000Z</updated>
+  <updated>2026-10-06T09:32:30.092Z</updated>
+  <entry>
+    <title>Android CLI turns device access into reusable agent skills</title>
+    <id>dab-story-2026-10-06-m01</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-06/android-cli-turns-device-access-into-reusable-agent-skills/" />
+    <updated>2026-10-06T18:00:00Z</updated>
+    <summary>Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface.</summary>
+  </entry>
+  <entry>
+    <title>When an agent says it is done, grade the database</title>
+    <id>dab-story-2026-10-06-m02</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-06/when-an-agent-says-it-is-done-grade-the-database/" />
+    <updated>2026-10-06T18:00:00Z</updated>
+    <summary>ThinkingBox grades terminal backend state across 507 stateful workflows and repeated trials.</summary>
+  </entry>
+  <entry>
+    <title>Workspace turns prompts into images, canvases and cross-app work</title>
+    <id>dab-story-2026-10-06-m10</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-06/workspace-turns-prompts-into-images-canvases-and-cross-app-work/" />
+    <updated>2026-10-06T18:00:00Z</updated>
+    <summary>Workspace adds AI image editing, prompt-built Sheets canvases and cross-app execution.</summary>
+  </entry>
+  <entry>
+    <title>AstaBrief opens a faster path to citation-grounded reports</title>
+    <id>dab-story-2026-10-06-m11</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-06/astabrief-opens-a-faster-path-to-citation-grounded-reports/" />
+    <updated>2026-10-06T18:00:00Z</updated>
+    <summary>Ai2 releases an open 8B model and data for citation-grounded scientific reports.</summary>
+  </entry>
+  <entry>
+    <title>Copilot moves from chat into desktop computer use</title>
+    <id>dab-story-2026-10-06-m12</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-06/copilot-moves-from-chat-into-desktop-computer-use/" />
+    <updated>2026-10-06T18:00:00Z</updated>
+    <summary>GitHub exposes computer use in Copilot CLI and desktop apps.</summary>
+  </entry>
+  <entry>
+    <title>Ambient agents wake on events and know when to ask a human</title>
+    <id>dab-story-2026-10-06-m14</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-06/ambient-agents-wake-on-events-and-know-when-to-ask-a-human/" />
+    <updated>2026-10-06T18:00:00Z</updated>
+    <summary>AWS details event-driven agents with isolated sessions, human approval and resumable interruptions.</summary>
+  </entry>
+  <entry>
+    <title>Meet the GitHub Copilot app: Your new AI desktop assistant</title>
+    <id>dab-video-2026-10-06-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-10-06/general/" />
+    <updated>2026-10-06T18:00:00Z</updated>
+    <summary>An official tour of the Copilot desktop agent surface supporting the edition’s computer-use story.</summary>
+  </entry>
+  <entry>
+    <title>The My work tab: your mission control in the GitHub Copilot app</title>
+    <id>dab-video-2026-10-06-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-10-06/agent-skills/" />
+    <updated>2026-10-06T18:00:00Z</updated>
+    <summary>Shows work items launching bounded agent sessions and complements governed reusable workflows.</summary>
+  </entry>
+  <entry>
+    <title>Hard Fork — October 2, 2026 episode</title>
+    <id>dab-podcast-2026-10-06-1</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-06/hard-fork-2026-10-02-ai-agents/" />
+    <updated>2026-10-06T18:00:00Z</updated>
+    <summary>Current discussion of personal assistants, agent incidents and privacy trade-offs.</summary>
+  </entry>
+  <entry>
+    <title>Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026</title>
+    <id>dab-podcast-2026-10-06-2</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-06/morning-brief-2026-09-30-confidence-drop-agent-payments/" />
+    <updated>2026-10-06T18:00:00Z</updated>
+    <summary>A separate daily-news publisher adds agent-payment controls and AI workflow context relevant to governed deployment.</summary>
+  </entry>
   <entry>
     <title>When an agent says it is done, grade the database</title>
     <id>dab-story-2026-10-05-m02</id>
@@ -1635,47 +1705,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/" />
     <updated>2026-09-07T18:00:00Z</updated>
     <summary>Microsoft says Fabric Data Agents are generally available for use in Copilot Studio. A Copilot Studio agent can call a Fabric Data Agent as a tool, combine it with other tools and knowledge, and use permissions already applied to the underlying Fabric data.</summary>
-  </entry>
-  <entry>
-    <title>GPT-6 Astra is now generally available inside GitHub Copilot</title>
-    <id>dab-story-2026-09-06-0b55fd52</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-06/gpt-6-astra-is-now-generally-available-inside-github-copilot/" />
-    <updated>2026-09-06T18:00:00Z</updated>
-    <summary>GitHub made OpenAI’s GPT-6 Astra generally available in GitHub Copilot on September 4, extending the new model into Copilot’s coding and agentic workflows. OpenAI describes Astra as improved at coding, research, computer use, and complex multi-step work. Bringing it into Copilot matters because the model is no longer only a standalone capability: it can operate inside an engineering harness with repository context, tools, review flows, and existing developer controls.</summary>
-  </entry>
-  <entry>
-    <title>Anthropic adds infrastructure-as-code discipline to agent deployment with `ant apply`</title>
-    <id>dab-story-2026-09-06-4426ca30</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-06/anthropic-adds-infrastructure-as-code-discipline-to-agent-deployment-with-ant-ap/" />
-    <updated>2026-09-06T18:00:00Z</updated>
-    <summary>Anthropic’s September 3 platform release added `ant apply` to the `ant` CLI. Developers can describe agents, environments, skills, memory stores, and deployments in repository files, generate a proposed change plan, approve it, and commit a lockfile so later runs update the same resources instead of silently creating new ones. The pattern imports familiar infrastructure-as-code ideas into agent engineering.</summary>
-  </entry>
-  <entry>
-    <title>ChatGPT adds first-party Zendesk and OneNote plugins for support and knowledge workflows</title>
-    <id>dab-story-2026-09-06-9839a69b</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-06/chatgpt-adds-first-party-zendesk-and-onenote-plugins-for-support-and-knowledge-w/" />
-    <updated>2026-09-06T18:00:00Z</updated>
-    <summary>OpenAI added Zendesk and OneNote plugins in beta to supported ChatGPT and Codex experiences. Zendesk can help review permitted tickets, customer history, and knowledge and prepare replies. OneNote can find and summarize notes, collect decisions and action items, and perform supported create or update actions. Access remains bounded by the connected account’s permissions, workspace policy, and supported actions.</summary>
-  </entry>
-  <entry>
-    <title>Claude Fable 5.1 raises the bar for research and difficult professional knowledge work</title>
-    <id>dab-story-2026-09-06-3f824b7a</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-06/claude-fable-5-1-raises-the-bar-for-research-and-difficult-professional-knowledg/" />
-    <updated>2026-09-06T18:00:00Z</updated>
-    <summary>Anthropic released Claude Fable 5.1 and Claude Mythos 5.1 on September 1, positioning Fable 5.1 as its most advanced generally usable model for coding and knowledge work. Anthropic emphasizes research capability alongside professional reasoning and coding. For knowledge workers, the important development is not simply a new model name but continuing improvement in tasks that combine reading, synthesis, analysis, and artifact creation.</summary>
-  </entry>
-  <entry>
-    <title>OpenAI’s workspace-agent guidance emphasizes reusable workflows rather than one-off prompting</title>
-    <id>dab-story-2026-09-06-30dde95b</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-06/openai-s-workspace-agent-guidance-emphasizes-reusable-workflows-rather-than-one-/" />
-    <updated>2026-09-06T18:00:00Z</updated>
-    <summary>OpenAI updated its Workspace Agents Academy material on September 4. The guidance frames workspace agents as a way to turn recurring work into repeatable, shared workflows instead of repeatedly explaining the same task in ordinary chat. Workspace agents can be configured around an outcome, instructions, tools, schedules, and safeguards, then reused across a team where available.</summary>
-  </entry>
-  <entry>
-    <title>Claude Cowork now formalizes a connector → browser → computer-use escalation path</title>
-    <id>dab-story-2026-09-06-fcc3f409</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-06/claude-cowork-now-formalizes-a-connector-browser-computer-use-escalation-path/" />
-    <updated>2026-09-06T18:00:00Z</updated>
-    <summary>Anthropic’s Cowork documentation, updated this week, describes a practical tool-selection hierarchy for delegated work. Cowork prefers direct connectors when available, falls back to browser interaction when needed, and can use direct computer interaction—clicking, typing, opening apps, and navigating the screen—when no more precise tool is available. Anthropic explicitly notes that screen interaction is slower and more error-prone than connectors and recommends monitoring computer-use tasks, especially early on.</summary>
   </entry>
 </feed>

@@ -386,7 +386,7 @@
 <!-- reader-release:start -->
 
 
-<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
+<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><div class="watchlist-daily-summary" aria-label="Changed today:"><p class="watchlist-daily-counts" aria-label="0 New today · 4 Updated today · 17 Carried forward · 0 Archived / dropped recently"><strong>0 new today · 4 updated · 17 carried forward.</strong></p><p><strong>New today:</strong> None</p><p><strong>Updated today:</strong> </p><ul class="watchlist-daily-items"><li>Reusable agent skills become observable</li><li>Agents that persist across sessions</li><li>Decision models emerge as a separate AI systems layer</li><li>Source-aware verification for tool-using agents</li></ul><p><strong>Carried forward:</strong> 17</p><p><strong>Archived / dropped recently:</strong> None</p></div><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
 
 
 <!-- reader-release:end -->

@@ -36,17 +36,23 @@ if(manifestErrors.length===0){
   const publicWatchlistData=read('data/watchlist.json');
   let gitEvidence={baselineSha:kernel.baseline_sha,actualStagingRef:handoff.staging_ref};
   if(args['skip-git-evidence']!==true&&root===path.resolve('.')){
+    let baselineIsAncestor=false;
+    try{
+      execFileSync('git',['merge-base','--is-ancestor',kernel.baseline_sha,'HEAD']);
+      baselineIsAncestor=true;
+    }catch{}
     gitEvidence={
       ...gitEvidence,
       handoffHeadSha:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),
-      handoffParentSha:execFileSync('git',['rev-parse','HEAD^'],{encoding:'utf8'}).trim()
+      handoffParentSha:execFileSync('git',['rev-parse','HEAD^'],{encoding:'utf8'}).trim(),
+      baselineIsAncestor
     };
   }else{
     gitEvidence.handoffHeadSha=process.env.DAB_HANDOFF_HEAD_SHA||kernel.baseline_sha.replace(/^./,kernel.baseline_sha[0]==='a'?'b':'a');
     gitEvidence.handoffParentSha=kernel.baseline_sha;
   }
   candidateErrors=lintPublicationCandidate({
-    root,edition,kernel,media,imageManifest,mediaReceipt,canonicalWatchlist,publicWatchlistData,handoff,runtime,gitEvidence
+    root,edition,kernel,media,imageManifest,mediaReceipt,canonicalWatchlist,publicWatchlistData,handoff,runtime,publicationManifest:manifest,gitEvidence
   });
 
   let executionKey=args['execution-key']||null;

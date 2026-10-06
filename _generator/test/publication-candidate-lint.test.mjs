@@ -48,6 +48,25 @@ test('publication candidate lint detects tampered SVG Git blob identity',()=>{
  assert.ok(errors.includes('image_git_blob_mismatch:'+edition.stories[0].story_id));
 });
 
+test('publication candidate lint preserves sealed accepted_locked October 6 canvases only through the bounded migration',()=>{
+ const edition=read('_data/editions/2026-10-06.json');
+ const kernel=read('_records/editorial-handoff/kernel.json');
+ const handoff=read('_records/editorial-handoff/handoff.json');
+ const publicationManifest=read('_records/editorial-handoff/publication-manifest.json');
+ const manifest=read('_records/editorial-handoff/images-2026-10-06-publication.json');
+ const errors=lintPublicationCandidate({
+  root,edition,kernel,handoff,publicationManifest,
+  media:read('_records/editorial-handoff/media.json'),
+  imageManifest:manifest,
+  mediaReceipt:read('_records/editorial/media-preflight/2026-10-06.json'),
+  canonicalWatchlist:read('_data/watchlist.json'),
+  publicWatchlistData:read('data/watchlist.json'),
+  runtime:read('docs/operations/under80-runtime-contract.json'),
+  gitEvidence:{baselineSha:kernel.baseline_sha,handoffHeadSha:'f'.repeat(40),handoffParentSha:'e'.repeat(40),baselineIsAncestor:true,actualStagingRef:handoff.staging_ref}
+ });
+ assert.deepEqual(imageErrors(errors),[]);
+});
+
 
 function pointerFixture(t,briefDate){
  const fixtureRoot=fs.mkdtempSync(path.join(os.tmpdir(),'publication-pointer-'));

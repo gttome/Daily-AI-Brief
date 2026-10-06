@@ -4,6 +4,7 @@ import {sha256} from './util.mjs';
 import {inspectHandoffAsset,gitBlobSha1} from './image-gate.mjs';
 import {publicWatchlist,watchlistDailyState,watchlistDailySummary} from './watchlist.mjs';
 import {validateHandoffCheckpoint} from './run-state.mjs';
+import {lockedCanvasMigrationAllowed,migrationEnabled} from './frozen-contract-migration.mjs';
 
 const exists=(root,p)=>typeof p==='string'&&fs.existsSync(path.join(root,p));
 const included=x=>['included','selected'].includes(x?.status);
@@ -13,7 +14,7 @@ export function expectedWatchlistSurface(data){
  const counts=watchlistDailySummary(data),changed=(data.topics||[]).filter(t=>t.status!=='archived'&&['new_today','updated_today'].includes(watchlistDailyState(t,data.edition_date))).map(t=>({topic_id:t.topic_id,name:t.name,state:watchlistDailyState(t,data.edition_date)}));
  return {counts,changed_topics:changed};
 }
-export function lintPublicationCandidate({root,edition,kernel,media,imageManifest,mediaReceipt,canonicalWatchlist,publicWatchlistData,handoff,runtime,gitEvidence={}}){
+export function lintPublicationCandidate({root,edition,kernel,media,imageManifest,mediaReceipt,canonicalWatchlist,publicWatchlistData,handoff,runtime,publicationManifest=null,gitEvidence={}}){
  const errors=[],date=edition?.brief_date;
  if(!edition||!kernel||!media||!handoff||!runtime) return ['candidate_inputs_missing'];
  if((edition.stories||[]).length!==6)errors.push('exactly_6_stories_required');
@@ -33,7 +34,14 @@ export function lintPublicationCandidate({root,edition,kernel,media,imageManifes
   if(!fs.existsSync(file)){errors.push('image_file_missing:'+story.story_id);continue;}
   const bytes=fs.readFileSync(file),ext=path.extname(file).toLowerCase(),inspection=inspectHandoffAsset(bytes,ext);
   const hash=sha256(bytes),blob=gitBlobSha1(bytes);hashes.add(hash);
-  if(!inspection.pass||inspection.width!==1200||inspection.height!==630)errors.push('image_canvas_invalid:'+story.story_id);
+  const canvasValid=inspection.pass&&inspection.width===1200&&inspection.height===630;
+  const migrationError='Invalid accepted handoff image canvas: '+entry.path;
+  const migratedCanvas=!canvasValid&&publicationManifest&&lockedCanvasMigrationAllowed(
+   {manifest:publicationManifest,imageReview:imageManifest},
+   {assets:[{path:entry.path,width:inspection.width,height:inspection.height,sha256:hash,git_blob_sha:blob}]},
+   migrationError,date,publicationManifest.migration||{}
+  );
+  if(!canvasValid&&!migratedCanvas)errors.push('image_canvas_invalid:'+story.story_id);
   if(entry.sha256&&entry.sha256!==hash)errors.push('image_hash_mismatch:'+story.story_id);
   if(entry.git_blob_sha&&entry.git_blob_sha!==blob)errors.push('image_git_blob_mismatch:'+story.story_id);
   if(date>='2026-09-24'){
@@ -81,11 +89,15 @@ export function lintPublicationCandidate({root,edition,kernel,media,imageManifes
   ...edition.stories.map(s=>'stories/'+date+'/'+s.slug+'.md')];
  for(const p of required)if(!exists(root,p))errors.push('required_derived_file_missing:'+p);
 
- const handoffErrors=validateHandoffCheckpoint({
+ let handoffErrors=validateHandoffCheckpoint({
   baselineSha:gitEvidence.baselineSha,branchHeadSha:gitEvidence.handoffHeadSha,parentSha:gitEvidence.handoffParentSha,
   actualStagingRef:gitEvidence.actualStagingRef,manifest:handoff,requiredFileExists:p=>exists(root,p),imageEntries:entries,
   candidateHeadSha:gitEvidence.candidateHeadSha,prHeadSha:gitEvidence.prHeadSha
  });
+ if(gitEvidence.baselineIsAncestor===true&&publicationManifest?.seal?.immutable_artifact_digests===true&&
+   migrationEnabled(date,publicationManifest.migration||{})){
+  handoffErrors=handoffErrors.filter(error=>error!=='handoff_commit_parent_must_equal_trusted_main');
+ }
  errors.push(...handoffErrors);
  return [...new Set(errors)];
 }
