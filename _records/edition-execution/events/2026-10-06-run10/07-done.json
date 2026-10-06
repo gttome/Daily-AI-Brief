@@ -1,0 +1,19 @@
+{
+  "task_id": "07",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-06T01:12:25.240Z",
+  "reason": "Selected and verified exactly two source-diverse podcast episodes with sealed runtime evidence while avoiding the immediately prior edition pair.",
+  "proof": {
+    "request_key": "3e181066c2142e562080eade54b12e0ee2ead8b9612542f43f198231f929a4e5",
+    "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/07-3e181066c2142e562080eade54b12e0ee2ead8b9612542f43f198231f929a4e5.json",
+    "podcasts_artifact": "_records/editorial/2026-10-06-run10/podcasts.json",
+    "podcast_count": 2,
+    "runtimes_seconds": [
+      3182,
+      780
+    ],
+    "source_diverse": true,
+    "result": "PASS"
+  }
+}

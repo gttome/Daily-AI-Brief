@@ -14,7 +14,9 @@
   "created_at": "2026-10-06T01:09:20.847Z",
   "writer_generation_is_provenance": true,
   "authority_refresh_required_at_invocation": false,
-  "status": "claimed",
+  "status": "completed_pass",
   "claimed_at": "2026-10-06T01:10:01.733Z",
-  "claimed_by": "scheduled-chatgpt-watchdog-slot-f"
+  "claimed_by": "scheduled-chatgpt-watchdog-slot-f",
+  "completed_at": "2026-10-06T01:12:25.240Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/07-3e181066c2142e562080eade54b12e0ee2ead8b9612542f43f198231f929a4e5.json"
 }
