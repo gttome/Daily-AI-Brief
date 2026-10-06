@@ -14,7 +14,7 @@ function base(){
   completion:{edition_id:edition,production_sha:prod,deployed_sha:prod,phase:'live_verified',pages:{conclusion:'success'},live_verification:{final_result:'pass'},pr_number:7,ci_run_id:8,live_verified_at:'2099-01-01T01:00:00Z'},
   validation:{date,publication_sha:prod,final_result:'pass',checks:['publication_receipt','pages_deployment','live_changed_routes','live_homepage_edition','live_dated_edition','live_image_assets'].map(check_id=>({check_id,result:'pass'}))},
   runState:{stage:'CLOSED',current_sha:prod},cc:{edition_date:date,publication_sha:prod,canonical_publication_status:{terminal_outcome:'COMPLETED'}},
-  tasks,events,ledgerText:ledger,deltaText:'',readerSemanticGate:null,now:'2099-01-01T01:01:00Z'
+  tasks,events,ledgerText:ledger,deltaText:'',readerSemanticGate:{schema_version:'reader-semantic-close-gate-v1',edition_date:date,edition_id:edition,result:'PASS',errors:[]},now:'2099-01-01T01:01:00Z'
  };
 }
 function incident(){
