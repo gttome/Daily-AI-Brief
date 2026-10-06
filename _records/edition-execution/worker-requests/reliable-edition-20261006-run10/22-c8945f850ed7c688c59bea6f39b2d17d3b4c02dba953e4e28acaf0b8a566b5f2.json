@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "c8945f850ed7c688c59bea6f39b2d17d3b4c02dba953e4e28acaf0b8a566b5f2",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "22",
+  "capability": "repository",
+  "instruction": "Run exact-publication-preflight-v1 over the complete deterministic candidate before opening the production publication PR. If preflight fails, repair only the smallest deterministic defect, preserve valid content/images/semantic kernel, rerun preflight, and do not open the PR until PASS. Reuse an existing matching publication PR or create exactly one PR for the exact candidate SHA.",
+  "writer_generation": 73,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-06T09:54:03.043Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
