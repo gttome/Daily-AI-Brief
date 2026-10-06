@@ -1,14 +1,14 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "incident_id": "wd-reliable-edition-20261006-run10-task15-saved-git-review",
+  "incident_id": "wd-reliable-edition-20261006-run10-task16-image-execution",
   "owner_slot": "F",
-  "generation": 29,
-  "state": "RELEASED",
-  "acquired_at": "2026-10-06T08:20:01.786Z",
-  "last_heartbeat_at": "2026-10-06T08:22:13.338Z",
-  "expires_at": "2026-10-06T08:22:13.338Z",
-  "action_key": "wd-reliable-edition-20261006-run10-task15-saved-git-review:slot-f:g29:acceptance-lock",
-  "released_at": "2026-10-06T08:22:13.338Z",
-  "release_reason": "task15_accepted_locked_handoff_to_supervisor_for_task16"
+  "generation": 30,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-06T08:25:23.750Z",
+  "last_heartbeat_at": "2026-10-06T08:25:23.750Z",
+  "expires_at": "2026-10-06T08:40:23.750Z",
+  "action_key": "wd-reliable-edition-20261006-run10-task16-image-execution:slot-f:g30:admit-generate",
+  "released_at": null,
+  "release_reason": null
 }
