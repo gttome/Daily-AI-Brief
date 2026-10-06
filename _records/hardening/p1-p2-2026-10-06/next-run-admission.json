@@ -41,5 +41,6 @@
     "Measure Watchdog expanded-read rate and confirm <=10% in production.",
     "Compare actual production control-plane usage with the October 6 baseline; do not infer account usage from repository counters."
   ],
-  "no_go_rule": "If any gate regresses before allocation, decision becomes NO-GO and the exact failed deterministic gate must be repaired before production proceeds."
+  "no_go_rule": "If any gate regresses before allocation, decision becomes NO-GO and the exact failed deterministic gate must be repaired before production proceeds.",
+  "final_reconciliation_pr": 503
 }
