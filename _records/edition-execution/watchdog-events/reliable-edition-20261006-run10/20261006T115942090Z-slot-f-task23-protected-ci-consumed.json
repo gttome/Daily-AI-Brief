@@ -1,0 +1,20 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "incident_id": "wd-reliable-edition-20261006-run10-task23-green-ci-consumption",
+  "slot": "F",
+  "task_id": "23",
+  "at": "2026-10-06T11:59:42.090Z",
+  "event": "RECOVERY_VERIFIED",
+  "result": "TASK_23_DONE",
+  "substantive_progress": {
+    "kind": "task_transition",
+    "task_transition": "Backlog->Done",
+    "protected_ci_run_id": 37459939474,
+    "exact_candidate_sha": "de68c17a95eb871233dc0d92e4edc8241c10b54a"
+  },
+  "writer_generation": 80,
+  "recovery_generation": 38,
+  "next_task": "24",
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

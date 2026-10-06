@@ -1,0 +1,32 @@
+{
+  "schema_version": "task23-protected-ci-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "task_id": "23",
+  "writer_generation": 80,
+  "publication_pr": {
+    "number": 491,
+    "url": "https://github.com/gttome/Daily-AI-Brief/pull/491",
+    "base": "main",
+    "head_branch": "reliable-edition/dab-edition-2026-10-06-run10"
+  },
+  "protected_ci": {
+    "workflow": "Deterministic publication CI",
+    "workflow_id": 352448493,
+    "run_id": 37459939474,
+    "run_number": 1639,
+    "exact_candidate_sha": "de68c17a95eb871233dc0d92e4edc8241c10b54a",
+    "status": "completed",
+    "conclusion": "success",
+    "all_required_validation_steps_passed": true
+  },
+  "preserved": {
+    "completed_tasks": "00-22",
+    "accepted_locked_images": 6,
+    "image_mutations": 0,
+    "semantic_reselection": false
+  },
+  "result": "PASS",
+  "observed_at": "2026-10-06T11:59:42.090Z"
+}

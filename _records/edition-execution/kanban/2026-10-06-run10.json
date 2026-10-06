@@ -216,17 +216,17 @@
     "23": {
       "id": "23",
       "title": "Pass protected CI on exact candidate",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "column": "Done",
+      "entered_backlog_at": "2026-10-06T11:57:00.000Z",
+      "active_started_at": "2026-10-06T11:57:00.000Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "done_at": "2026-10-06T11:59:42.090Z",
+      "cycle_seconds": 162.09,
+      "active_seconds": 162.09,
+      "duration_seconds": 162.09,
+      "duration": "162.09s"
     },
     "24": {
       "id": "24",
