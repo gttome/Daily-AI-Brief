@@ -558,12 +558,13 @@ test('repository queue liveness faults after 60 seconds without substantive prog
   assert.equal(fault.supervisor_bookkeeping_is_progress,false);
 });
 
-test('Supervisor persists an unclaimed repository-worker fault without globally stopping the run',()=>{
+test('Supervisor releases an ordinary queued request without globally stopping the run',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
-  assert.match(y,/repository-liveness/);
-  assert.match(y,/--max-idle-seconds 60/);
-  assert.match(y,/edition-execution\/liveness-faults/);
-  assert.match(y,/route-specific fault is not a global stop/);
+  const requestBlock=y.slice(y.indexOf('request_kind='));
+  assert.match(requestBlock,/release-writer-lease/);
+  assert.match(requestBlock,/TASK_\$\{request_task\}_QUEUED_HANDOFF_TO_WATCHDOG/);
+  assert.match(requestBlock,/ordinary_handoff_boundary=true/);
+  assert.match(requestBlock,/writer authority released to the admitted A-F Watchdog consumer pool/);
 });
 
 
@@ -648,10 +649,12 @@ test('research-capable queue liveness is explicit for Tasks 03 and 08',()=>{
   assert.match(fault.next_action,/research-capable consumer/i);
 });
 
-test('Supervisor preserves queued research_chatgpt work for a capable ordinary ChatGPT consumer',()=>{
+test('Supervisor preserves and releases queued research_chatgpt work for a capable ordinary ChatGPT consumer',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
-  assert.match(y,/request_capability\" = \"research_chatgpt\"/);
-  assert.match(y,/research_consumer_unclaimed|repository-liveness/);
+  const requestBlock=y.slice(y.indexOf('request_kind='));
+  assert.match(requestBlock,/request_capability\" = \"research_chatgpt\"/);
+  assert.match(requestBlock,/release-writer-lease/);
+  assert.match(requestBlock,/TASK_\$\{request_task\}_QUEUED_HANDOFF_TO_WATCHDOG/);
 });
 
 
@@ -672,4 +675,17 @@ test('successful Supervisor completion still checks restart and publishes curren
   assert.match(job,/Supervisor already queued\/running/);
   assert.match(job,/Publish compact Watchdog health state/);
   assert.match(job,/source_digest===b.source_digest/);
+});
+
+
+test('Supervisor releases queued ordinary and research work to the A-F Watchdog pool',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  const requestBlock=y.slice(y.indexOf('request_kind='));
+  assert.match(requestBlock,/request_capability" = "repository"/);
+  assert.match(requestBlock,/request_capability" = "research_chatgpt"/);
+  assert.match(requestBlock,/release-writer-lease/);
+  assert.match(requestBlock,/TASK_\$\{request_task\}_QUEUED_HANDOFF_TO_WATCHDOG/);
+  assert.match(requestBlock,/ordinary_handoff_boundary=true/);
+  assert.match(requestBlock,/request_task" != "17"/);
+  assert.match(requestBlock,/writer authority released to the admitted A-F Watchdog consumer pool/);
 });
