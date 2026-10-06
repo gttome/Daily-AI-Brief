@@ -50,7 +50,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 330
     env:
-      SUPERVISOR_OWNER: github-actions-${{ github.run_id }}-${{ github.run_attempt }}\n      EVENT_DRIVEN_SUPERVISOR: "true"
+      SUPERVISOR_OWNER: github-actions-${{ github.run_id }}-${{ github.run_attempt }}
+      EVENT_DRIVEN_SUPERVISOR: "true"
     steps:
       - name: Check out protected control plane
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
