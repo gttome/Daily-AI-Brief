@@ -116,5 +116,13 @@
   },
   "final_reconciliation_branch": "hardening/p1p2-final-reconciliation-2026-10-06",
   "authoritative_when": "Merged to protected main and post-merge deterministic CI passes.",
-  "final_reconciliation_pr": 503
+  "final_reconciliation_pr": 503,
+  "post_reconciliation_repairs": [
+    {
+      "pr": 504,
+      "scope": "final GO receipt gate semantics",
+      "runtime_change": false,
+      "reason": "Two negative observation fields were incorrectly included in an all-true aggregate despite the GO decision."
+    }
+  ]
 }
