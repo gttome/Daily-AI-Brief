@@ -1,13 +1,12 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "owner_id": "scheduled-consumer:watchdog-E:reliable-edition-20261006-run10:task-15-repair:generation-46",
-  "generation": 46,
-  "acquired_at": "2026-10-06T06:57:06.477Z",
-  "last_heartbeat_at": "2026-10-06T06:58:14.899Z",
-  "expires_at": "2026-10-06T06:58:14.899Z",
-  "state": "ACTIVE",
+  "owner_id": "scheduled-consumer:watchdog-D:reliable-edition-20261006-run10:task-15-engineering-repair:generation-47",
+  "generation": 47,
+  "acquired_at": "2026-10-06T07:37:00.000Z",
+  "last_heartbeat_at": "2026-10-06T07:37:00.000Z",
+  "expires_at": "2026-10-06T07:45:00.000Z",
   "task_id": "15",
-  "consumer_id": "watchdog-E",
-  "continuation_from_generation": 45
+  "consumer_id": "watchdog-D",
+  "continuation_from_generation": 46
 }
