@@ -534,5 +534,38 @@
     "schema_version": "daily-brief-public-safe-budget-v1",
     "path_pattern": "_records/edition-execution/budget/<execution-id>.json",
     "private_account_metrics_in_public_git": false
+  },
+  "watchdog_ring_schedule_membership": {
+    "schema_version": "watchdog-ring-membership-v1",
+    "status": "required",
+    "source_of_truth": "live_chatgpt_automation_state",
+    "required_slots": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "required_minutes": {
+      "A": 3,
+      "B": 13,
+      "C": 23,
+      "D": 33,
+      "E": 43,
+      "F": 53
+    },
+    "all_six_enabled_required": true,
+    "all_slots_equivalent_required": true,
+    "recurring_exact_schedule_required": true,
+    "degraded_membership_is_actionable": true,
+    "degraded_fault_code": "WATCHDOG_RING_DEGRADED",
+    "next_legal_action": "RESTORE_WATCHDOG_RING_MEMBERSHIP",
+    "controller_pre_allocation_check_required": true,
+    "watchdog_cross_slot_self_heal_required": true,
+    "permanent_schedule_may_self_disable": false,
+    "explicit_owner_maintenance_override_required_for_disable": true,
+    "maintenance_override_must_expire": true,
+    "regression_verification_required": true
   }
 }
