@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:0ebc37debf39b494d5fe5c0e36e7d5d6f04786d9896fa28ef51a22d25663e8d4`
+Ledger digest: `sha256:b784f1e11e84479ce10f31bc6841b8114ad53ca7cd551196f975c6742101e2f1`
 
-Problems: 65 · Events: 120
+Problems: 66 · Events: 121
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -1175,4 +1175,22 @@ Problems: 65 · Events: 120
 - **Production invariants:** reduce_control_plane_model_work_not_reader_quality, compact_health_first, one_semantic_pass, pre_generation_image_admission, pre_pr_publication_preflight, private_usage_not_public_git, healthy_watchdog_compact_exit, unchanged_health_zero_commits, normal_semantic_pass_count_one, publication_preflight_zero_model_calls, private_account_usage_outside_public_git, owner_prompt_not_required_for_internal_stall
 - **Recurrences:** none recorded
 - **Future validation:** Measure Watchdog compact-exit versus expanded-read rate. | Editorial semantic passes equals 1 on a clean run. | Image infrastructure failure after generation starts equals 0. | Publication CI defect-discovery loops equals 0. | Task 23 protected repairs equals 0. | Owner liveness prompts required equals 0.
+
+## DAB-OPS-20261006-001 — Task 00 startup Supervisor produced observability but no semantic executor delta; same-execution recovery completed Task 00 without duplicate allocation or owner intervention.
+
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261006-run10
+- **Task(s):** 00
+- **Symptom:** The first Supervisor workflow completed after acquiring generation 1 and projecting Kanban but produced no Task 00 readiness receipt, worker request, task transition, or first-incomplete-task advance.
+- **Root cause:** The startup Supervisor reached a non-publication boundary without producing a semantic Task 00 executor delta; exact code-level cause remains pending Task 29 reconciliation.
+- **Operational impact:** Task 00 remained Active until the scheduled controller performed safe same-execution recovery.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Waited for the exact GitHub Actions owner to complete and its generation-1 fence to expire; did not steal a live writer.
+- **Actual fix:** Acquired generation 2 for the same execution, revalidated the readiness contract, and completed Task 00 with a bound PASS receipt before releasing to the same-execution Supervisor.
+- **Fix outcome:** Task 00 obtained substantive durable completion evidence without duplicate allocation, terminal-run mutation, or owner intervention.
+- **Permanent implementation:** none
+- **Regression tests:** none
+- **Production invariants:** same_execution_recovery, one_writer_fence, terminal_run_immutability, lease_or_kanban_is_not_progress, owner_prompt_not_required
+- **Recurrences:** none recorded
+- **Future validation:** Task 00 startup reaches a semantic executor within the protected liveness window. | Ordinary repository requests release writer authority to an admitted A-F Watchdog consumer.
 
