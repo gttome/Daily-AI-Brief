@@ -1,14 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "owner_id": "released-task16-transport-queued",
-  "generation": 52,
-  "acquired_at": "2026-10-06T08:25:32.021Z",
-  "last_heartbeat_at": "2026-10-06T08:31:20.149Z",
-  "expires_at": "2026-10-06T08:31:20.149Z",
-  "task_id": "16",
-  "consumer_id": "watchdog-F",
-  "continuation_from_generation": 51,
-  "released_at": "2026-10-06T08:31:20.149Z",
-  "release_reason": "EXACT_PNG_TRANSPORT_QUEUED_FOR_PROTECTED_SUPERVISOR"
+  "owner_id": "github-actions-37436952350-1",
+  "generation": 53,
+  "acquired_at": "2026-10-06T08:34:16.744Z",
+  "last_heartbeat_at": "2026-10-06T08:34:16.744Z",
+  "expires_at": "2026-10-06T08:39:16.744Z"
 }
