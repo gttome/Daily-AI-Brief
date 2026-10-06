@@ -1,16 +1,14 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "incident_id": "wd-reliable-edition-20261006-run10-task10-exact-request-consume",
-  "owner_slot": "F",
-  "generation": 7,
-  "state": "RELEASED",
-  "acquired_at": "2026-10-06T01:21:19.713Z",
-  "last_heartbeat_at": "2026-10-06T01:27:57.620Z",
-  "expires_at": "2026-10-06T01:27:57.620Z",
-  "action_key": "wd-reliable-edition-20261006-run10-task10-exact-request-consume:slot-f:g7",
-  "continuation_from_generation": 6,
-  "continuation_evidence": "Task 09 durable Done at 102a6bc448cb0cd977ca42686916b86a26971252",
-  "released_at": "2026-10-06T01:27:57.620Z",
-  "release_reason": "TASK_10_DONE_HANDOFF_TO_SUPERVISOR"
+  "incident_id": "wd-reliable-edition-20261006-run10-task11-scheduled-consumer-writer-block",
+  "owner_slot": "E",
+  "generation": 8,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-06T01:50:38.027Z",
+  "last_heartbeat_at": "2026-10-06T01:50:38.027Z",
+  "expires_at": "2026-10-06T02:05:38.027Z",
+  "action_key": "wd-reliable-edition-20261006-run10-task11-scheduled-consumer-writer-block:slot-e:g8",
+  "continuation_from_generation": 7,
+  "continuation_evidence": "Task 11 exact native_chatgpt request remains queued; Supervisor writer is live but only reconciliation/heartbeat commits are occurring."
 }
