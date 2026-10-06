@@ -4,11 +4,11 @@
   "incident_id": "wd-reliable-edition-20261006-run10-task15-saved-git-review",
   "owner_slot": "F",
   "generation": 29,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-06T08:20:01.786Z",
-  "last_heartbeat_at": "2026-10-06T08:20:01.786Z",
-  "expires_at": "2026-10-06T08:35:01.786Z",
+  "last_heartbeat_at": "2026-10-06T08:22:13.338Z",
+  "expires_at": "2026-10-06T08:22:13.338Z",
   "action_key": "wd-reliable-edition-20261006-run10-task15-saved-git-review:slot-f:g29:acceptance-lock",
-  "released_at": null,
-  "release_reason": null
+  "released_at": "2026-10-06T08:22:13.338Z",
+  "release_reason": "task15_accepted_locked_handoff_to_supervisor_for_task16"
 }
