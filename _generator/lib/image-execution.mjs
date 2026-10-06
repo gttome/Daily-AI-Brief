@@ -272,14 +272,15 @@ export async function executeImageRequest(execution, options={}) {
       next_transition_emitted:false
     };
     if(['accepted_locked','fixture_pass'].includes(result?.status)){
+      const admission=options.executionAdmission||{};
       const emitted=await emitAcceptedImageTaskTransition({
-        execution_id:options.executionId||options.execution_id,
-        edition_id:options.editionId||options.edition_id,
-        task_id:options.taskId||options.task_id,
-        request_key:options.requestKey||options.request_key,
+        execution_id:options.executionId||options.execution_id||admission.execution_id,
+        edition_id:options.editionId||options.edition_id||admission.edition_id,
+        task_id:options.taskId||options.task_id||admission.task_id,
+        request_key:options.requestKey||options.request_key||admission.request_key,
         candidate_id:execution.sealed_story_packet.candidate_id,
         result,
-        writer_generation:options.writerGeneration||options.writer_generation||1
+        writer_generation:options.writerGeneration||options.writer_generation||admission.writer_generation||1
       },{eventSink:options.eventSink,requireSink:false});
       pipeline.next_transition=emitted.event;
       pipeline.next_transition_emitted=emitted.emitted;
