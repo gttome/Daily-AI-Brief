@@ -15,9 +15,13 @@
   "writer_generation_is_provenance": true,
   "authority_refresh_required_at_invocation": true,
   "status": "claimed",
+  "claimed_at": "2026-10-06T04:51:22.130Z",
+  "consumer_id": "watchdog-F",
+  "consumer_writer_generation": 33,
+  "substantive_progress_at": "2026-10-06T04:56:12.958Z",
   "dispatch": {
     "schema_version": "scheduled-image-dispatch-v3",
-    "status": "CLAIMED",
+    "status": "IMAGE_TRANSPORT_STAGED",
     "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
     "consumer_kind": "chatgpt_watchdog_ring",
     "consumer_pool_ids": [
@@ -41,7 +45,7 @@
     "consumer_id": "watchdog-F",
     "execution_id": "reliable-edition-20261006-run10",
     "task_id": "13",
-    "generation_started": false,
+    "generation_started": true,
     "accepted_locked": false,
     "writer_generation_is_provenance": true,
     "authority_refresh_required_at_invocation": true,
@@ -58,15 +62,11 @@
       ],
       "runtime_generated_bytes_readable_required": true,
       "owner_intervention_required": false,
-      "receipt_path_pattern": "_records/image-admission/2026-10-06-run10/13-6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a.json",
       "receipt_path": "_records/image-admission/2026-10-06-run10/13-6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a.json",
       "admitted_at": "2026-10-06T04:51:22.130Z",
       "result": "PASS"
     },
-    "next_action": "Generate once from the exact sealed m10 story prompt, persist exact PNG bytes, verify Git read-back identity, review the saved asset, and accept_locked or record one exact rejection.",
-    "claimed_at": "2026-10-06T04:51:22.130Z"
-  },
-  "claimed_at": "2026-10-06T04:51:22.130Z",
-  "consumer_id": "watchdog-F",
-  "consumer_writer_generation": 33
+    "transport_request": "_records/edition-execution/image-transport-requests/reliable-edition-20261006-run10/6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a/manifest.json",
+    "next_action": "Protected Supervisor consumer reconstructs and verifies the exact staged PNG bytes, then the same Task 13 request resumes saved-Git review and acceptance."
+  }
 }

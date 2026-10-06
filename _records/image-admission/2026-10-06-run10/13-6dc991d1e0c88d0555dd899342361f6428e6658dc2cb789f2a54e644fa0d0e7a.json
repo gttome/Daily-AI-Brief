@@ -14,7 +14,7 @@
   "story_only_context_verified": true,
   "orchestration_context_visible": false,
   "exact_byte_persistence_verified": true,
-  "persistence_mode": "git_data_direct_blob",
+  "persistence_mode": "protected_base64_chunk_bridge",
   "owner_intervention_required": false,
   "generation_authorized": true,
   "preflight_failure_consumes_attempt": false,
@@ -31,11 +31,15 @@
     "owner_intervention_required": false
   },
   "persistence": {
-    "mode": "git_data_direct_blob",
+    "mode": "protected_base64_chunk_bridge",
     "approved": true,
     "runtime_generated_bytes_readable": true,
     "exact_byte_readback_verification_required": true,
-    "small_png_route_proven": true
+    "small_png_route_proven": true,
+    "direct_blob_attempt_attached_to_branch": false,
+    "direct_blob_connector_payload_limit_observed": true,
+    "same_generated_bytes_preserved": true,
+    "transport_request": "_records/edition-execution/image-transport-requests/reliable-edition-20261006-run10/6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a/manifest.json"
   },
   "result": "PASS"
 }

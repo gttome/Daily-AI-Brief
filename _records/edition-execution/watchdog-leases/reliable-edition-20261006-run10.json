@@ -4,14 +4,14 @@
   "incident_id": "wd-reliable-edition-20261006-run10-task13-queued-unclaimed",
   "owner_slot": "F",
   "generation": 16,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-06T04:51:22.130Z",
-  "last_heartbeat_at": "2026-10-06T04:51:22.130Z",
-  "expires_at": "2026-10-06T05:06:22.130Z",
-  "released_at": null,
-  "release_reason": null,
+  "last_heartbeat_at": "2026-10-06T04:56:12.958Z",
+  "expires_at": "2026-10-06T04:56:12.958Z",
+  "released_at": "2026-10-06T04:56:12.958Z",
+  "release_reason": "WAITING_ON_PROTECTED_EXTERNAL_EXECUTOR",
   "action_key": "wd-reliable-edition-20261006-run10-task13-queued-unclaimed:consume-exact-request:slot-f:g16",
   "continuation_from_generation": 15,
   "authoritative_request_key": "6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a",
-  "completion_evidence": null
+  "completion_evidence": "_records/edition-execution/watchdog-events/reliable-edition-20261006-run10/20261006T045612958Z-slot-f-task13-image-chunk-consumer-handoff.json"
 }
