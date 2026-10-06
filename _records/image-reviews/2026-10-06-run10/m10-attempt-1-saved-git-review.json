@@ -1,0 +1,60 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "13",
+  "candidate_id": "m10",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-06T05:03:56.145Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 35,
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "saved_git_commit": "779c2c4f4ea26db991f35d6cc4fe73c5bf10a1d7",
+  "image_execution_admission": "_records/image-admission/2026-10-06-run10/13-6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a.json",
+  "source_lineage": {
+    "base_generation_id": "exec-e5313aed-d93e-4278-97c7-4c5eff0008d9",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "78647d83c1703eac4beee4452b84a6a60c6f77792b3090fce16134e061a6d66c",
+    "native_bytes": 2059473,
+    "native_width": 1731,
+    "native_height": 909,
+    "transport_method": "protected Base64 chunk bridge with SHA-256, Git blob and saved-path read-back verification"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m10.png",
+    "git_blob_sha": "102fe9744d60b0c0f45b872bdb3e43f30562a9e3",
+    "sha256": "78647d83c1703eac4beee4452b84a6a60c6f77792b3090fce16134e061a6d66c",
+    "bytes": 2059473,
+    "width": 1731,
+    "height": 909,
+    "exact_readback": "PASS_PROTECTED_CHUNK_BRIDGE_SHA256_GIT_OBJECT_SHA_SIZE_AND_READBACK_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "A central shared-source data spine distributes blue, green and orange lineage paths into object-level image editing, an interactive spreadsheet canvas and bounded cross-app execution, then reconciles them through synchronized checkpoints into one review surface.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Shared source",
+      "Image edit",
+      "Sheets canvas",
+      "Cross-app task",
+      "Provenance",
+      "Synchronized",
+      "Review"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The saved Git PNG is byte-identical to the reviewed local file by SHA-256, Git blob identity, byte count and protected read-back receipt."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

@@ -14,14 +14,16 @@
   "created_at": "2026-10-06T03:50:30.567Z",
   "writer_generation_is_provenance": true,
   "authority_refresh_required_at_invocation": true,
-  "status": "claimed",
+  "status": "completed",
   "claimed_at": "2026-10-06T04:51:22.130Z",
   "consumer_id": "watchdog-F",
-  "consumer_writer_generation": 33,
-  "substantive_progress_at": "2026-10-06T04:56:12.958Z",
+  "consumer_writer_generation": 35,
+  "completed_at": "2026-10-06T05:03:56.145Z",
+  "result": "PASSED",
+  "substantive_progress_at": "2026-10-06T05:03:56.145Z",
   "dispatch": {
     "schema_version": "scheduled-image-dispatch-v3",
-    "status": "IMAGE_TRANSPORT_STAGED",
+    "status": "COMPLETED",
     "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
     "consumer_kind": "chatgpt_watchdog_ring",
     "consumer_pool_ids": [
@@ -46,7 +48,7 @@
     "execution_id": "reliable-edition-20261006-run10",
     "task_id": "13",
     "generation_started": true,
-    "accepted_locked": false,
+    "accepted_locked": true,
     "writer_generation_is_provenance": true,
     "authority_refresh_required_at_invocation": true,
     "image_execution_admission": {
@@ -66,7 +68,15 @@
       "admitted_at": "2026-10-06T04:51:22.130Z",
       "result": "PASS"
     },
-    "transport_request": "_records/edition-execution/image-transport-requests/reliable-edition-20261006-run10/6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a/manifest.json",
-    "next_action": "Protected Supervisor consumer reconstructs and verifies the exact staged PNG bytes, then the same Task 13 request resumes saved-Git review and acceptance."
+    "transport_receipt": "_records/edition-execution/image-transport-results/reliable-edition-20261006-run10/6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a.json",
+    "next_action": "Supervisor resumes the same execution and queues Task 14.",
+    "claimed_at": "2026-10-06T04:51:22.130Z",
+    "completed_at": "2026-10-06T05:03:56.145Z"
+  },
+  "evidence": {
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/13-6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-06-run10/m10.json",
+    "saved_git_review": "_records/image-reviews/2026-10-06-run10/m10-attempt-1-saved-git-review.json",
+    "image_execution_admission": "_records/image-admission/2026-10-06-run10/13-6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a.json"
   }
 }
