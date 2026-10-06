@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Meet the GitHub Copilot app: Your new AI desktop assistant"
-description: "An official tour of the Copilot desktop agent surface supporting the edition’s computer-use story."
+description: "GitHub demonstrates the Copilot desktop app and how users launch, monitor and interact with AI-assisted work from a native desktop surface."
 image: ""
 permalink: /videos/2026-10-06/general/
 brief_date: 2026-10-06
@@ -22,9 +22,9 @@ reader_release: true
 **Evidence:** Practitioner Analysis  
 **Availability:** Not Applicable
 
-**Summary:** An official tour of the Copilot desktop agent surface supporting the edition’s computer-use story.
+**Summary:** GitHub demonstrates the Copilot desktop app and how users launch, monitor and interact with AI-assisted work from a native desktop surface.
 
-**Why it matters:** An official tour of the Copilot desktop agent surface supporting the edition’s computer-use story.
+**Why it matters:** The walkthrough makes the shift from chat-only assistance to desktop agents concrete: once software can act across applications, visibility, scope and user control matter as much as model quality.
 
 
 
