@@ -1,12 +1,12 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "owner_id": "chatgpt-watchdog-b-task23-ci-repair",
-  "generation": 78,
-  "acquired_at": "2026-10-06T10:30:00.000Z",
-  "last_heartbeat_at": "2026-10-06T10:30:00.000Z",
-  "expires_at": "2026-10-06T10:38:00.000Z",
+  "owner_id": "chatgpt-watchdog-d-task23-green-ci",
+  "generation": 79,
+  "acquired_at": "2026-10-06T11:38:00.000Z",
+  "last_heartbeat_at": "2026-10-06T11:38:00.000Z",
+  "expires_at": "2026-10-06T11:46:00.000Z",
   "state": "ACTIVE",
   "task_id": "23",
-  "action_key": "wd-reliable-edition-20261006-run10-task23-protected-ci-failure:slot-b:g35:writer-g78"
+  "action_key": "wd-reliable-edition-20261006-run10-task23-green-ci-consumption:slot-d:g37:writer-g79"
 }
