@@ -33,7 +33,7 @@ function packet(candidate='m01'){
     visual_brief:'Professional white-background textbook mechanism diagram for a synthetic non-production rehearsal.',
     reference_policy:'Use only the synthetic verified mechanism and generic explanatory concepts.',
     acceptance_order:['subject','facts','structure','editorial'],
-    wrong_subject_action:'Reject only this synthetic candidate.',
+    wrong_subject_action:'Discard only this synthetic candidate and preserve every other accepted image.',
     low_quality_fallback:false,
     allowed_image_text:['Input','Verify','Result'],
     composition_mode:'annotated_system',
