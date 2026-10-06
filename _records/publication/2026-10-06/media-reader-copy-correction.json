@@ -86,5 +86,9 @@
     "original_task_06_07_evidence": true,
     "public_closed_state": true
   },
-  "result": "CORRECTED_PENDING_PROTECTED_CI"
+  "result": "CORRECTED",
+  "protected_delivery": {
+    "required": true,
+    "state": "PENDING_PR_CI_AND_MERGE"
+  }
 }
