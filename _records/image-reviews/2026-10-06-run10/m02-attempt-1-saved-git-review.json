@@ -1,0 +1,59 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "12",
+  "candidate_id": "m02",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-06T02:57:02.000Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 31,
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "saved_git_commit": "4429aa486beea8e7254f02337d3d2e24cc9af0d9",
+  "image_execution_admission": "_records/image-admission/2026-10-06-run10/12-5133046bced93056edbd295a35739c566d4824d9f3f4de8e72118b6859306dfb.json",
+  "source_lineage": {
+    "base_generation_id": "exec-df0bb0df-5cd5-491f-be0c-07dd166cfb80",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "5d491287145b3feac60e3cf3482a25b75d32bbbeddd7f503a07bbf3615eace29",
+    "native_bytes": 1396425,
+    "native_width": 1731,
+    "native_height": 909,
+    "transport_method": "exact returned PNG via Git Data create_blob Base64"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m02.png",
+    "git_blob_sha": "0f7578aac3fe9e8d8e0ff0ac8ad0015925a8e8d2",
+    "sha256": "5d491287145b3feac60e3cf3482a25b75d32bbbeddd7f503a07bbf3615eace29",
+    "bytes": 1396425,
+    "width": 1731,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "Four color-coded evidence channels—agent claim, durable database state, side effects and repeated runs—converge through a verification tribunal into an immutable evidence ledger.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Agent claim",
+      "Database state",
+      "Side effects",
+      "Repeated run",
+      "Verification gate",
+      "Evidence ledger"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The first admitted render passed; the inspected local PNG is content-addressed to both saved Git paths by the exact same Git blob SHA and size."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

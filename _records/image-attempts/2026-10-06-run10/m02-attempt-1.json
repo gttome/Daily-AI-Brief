@@ -1,0 +1,57 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "12",
+  "candidate_id": "m02",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "request_key": "5133046bced93056edbd295a35739c566d4824d9f3f4de8e72118b6859306dfb",
+  "writer_generation": 31,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-06T02:51:42.000Z",
+  "image_execution_admission": "_records/image-admission/2026-10-06-run10/12-5133046bced93056edbd295a35739c566d4824d9f3f4de8e72118b6859306dfb.json",
+  "generated_at": "2026-10-06T02:53:00.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-df0bb0df-5cd5-491f-be0c-07dd166cfb80",
+    "targeted_edit_generation_id": null,
+    "targeted_edit": null
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1731,
+    "height": 909,
+    "bytes": 1396425,
+    "sha256": "5d491287145b3feac60e3cf3482a25b75d32bbbeddd7f503a07bbf3615eace29",
+    "persisted": true,
+    "path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m02.png",
+    "git_blob_sha": "0f7578aac3fe9e8d8e0ff0ac8ad0015925a8e8d2",
+    "saved_git_commit": "4429aa486beea8e7254f02337d3d2e24cc9af0d9",
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES",
+    "same_visual_targeted_edit": false,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Agent claim",
+      "Database state",
+      "Side effects",
+      "Repeated run",
+      "Verification gate",
+      "Evidence ledger"
+    ],
+    "extra_visible_text": [],
+    "note": "A detailed split-plane forensic architecture contrasts the agent claim with database state, side-effect receipts and repeated-run evidence before an immutable verification ledger."
+  },
+  "disposition": "ACCEPTED_LOCKED"
+}
