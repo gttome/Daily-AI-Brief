@@ -1,0 +1,42 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "09c49ebfff742ef4b123f6a73a1d71004ef55d0925d905eb964e3ee3a4d8957d",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "10",
+  "request_writer_generation": 26,
+  "writer_generation": 27,
+  "status": "passed",
+  "consumed_at": "2026-10-06T01:21:19.713Z",
+  "completed_at": "2026-10-06T01:27:57.620Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "spec_artifact": "_records/image-specs/2026-10-06-run10.json",
+    "spec_git_blob": "0b282b77f3f533dd3c4edef604cd94b8dd22ad44",
+    "context_directory": "_records/image-context/2026-10-06",
+    "context_git_blobs": {
+      "m01": "cdda22531484c25349bde3af50852c4d6fee1982",
+      "m02": "c10e8e0589995ff29af6941d84d341230f874510",
+      "m10": "6952def8760ee222c6dcac4e7d65df4d340db4c2",
+      "m11": "467b111c0e57fd25f7b42793f504dbda0b8da8ce",
+      "m12": "8f68a1e840cb763741cbdd89be42b2a95cd9abad",
+      "m14": "5e70170780d386f25c1efae6d409635f46c0818c"
+    },
+    "readback_commit": "2a8f0c43efd4bbbc97e669f871b62a4e7eca4a93",
+    "exact_spec_count": 6,
+    "exact_context_count": 6,
+    "distinct_compositions": true,
+    "single_story_contexts": true,
+    "generator_visible_context_excludes_orchestration": true,
+    "visible_text_guard": true,
+    "no_people_or_humanoids": true,
+    "no_svg_fallback": true,
+    "basic_fallback_prohibited": true,
+    "semantic_pass_reused": true,
+    "git_readback_verified": true,
+    "exact_request_reused": true,
+    "completed_upstream_rework": false
+  },
+  "result": "PASS"
+}

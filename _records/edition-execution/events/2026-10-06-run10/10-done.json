@@ -1,0 +1,23 @@
+{
+  "task_id": "10",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-06T01:27:57.620Z",
+  "reason": "Sealed six distinct professional story-specific image specifications and isolated generator-visible prompts, then verified exact Git read-back before handoff.",
+  "proof": {
+    "request_key": "09c49ebfff742ef4b123f6a73a1d71004ef55d0925d905eb964e3ee3a4d8957d",
+    "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/10-09c49ebfff742ef4b123f6a73a1d71004ef55d0925d905eb964e3ee3a4d8957d.json",
+    "spec_artifact": "_records/image-specs/2026-10-06-run10.json",
+    "spec_git_blob": "0b282b77f3f533dd3c4edef604cd94b8dd22ad44",
+    "context_directory": "_records/image-context/2026-10-06",
+    "readback_commit": "2a8f0c43efd4bbbc97e669f871b62a4e7eca4a93",
+    "exact_spec_count": 6,
+    "exact_context_count": 6,
+    "distinct_compositions": true,
+    "single_story_contexts": true,
+    "generator_visible_context_excludes_orchestration": true,
+    "no_svg_fallback": true,
+    "basic_fallback_prohibited": true,
+    "result": "PASS"
+  }
+}

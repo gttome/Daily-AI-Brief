@@ -4,11 +4,13 @@
   "incident_id": "wd-reliable-edition-20261006-run10-task10-exact-request-consume",
   "owner_slot": "F",
   "generation": 7,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-06T01:21:19.713Z",
-  "last_heartbeat_at": "2026-10-06T01:21:19.713Z",
-  "expires_at": "2026-10-06T01:29:19.713Z",
+  "last_heartbeat_at": "2026-10-06T01:27:57.620Z",
+  "expires_at": "2026-10-06T01:27:57.620Z",
   "action_key": "wd-reliable-edition-20261006-run10-task10-exact-request-consume:slot-f:g7",
   "continuation_from_generation": 6,
-  "continuation_evidence": "Task 09 durable Done at 102a6bc448cb0cd977ca42686916b86a26971252"
+  "continuation_evidence": "Task 09 durable Done at 102a6bc448cb0cd977ca42686916b86a26971252",
+  "released_at": "2026-10-06T01:27:57.620Z",
+  "release_reason": "TASK_10_DONE_HANDOFF_TO_SUPERVISOR"
 }
