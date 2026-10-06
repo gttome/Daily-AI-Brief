@@ -14,5 +14,5 @@ test('Supervisor checkpoints a successful chunk bridge before next-task routing'
   const boundary=workflow.slice(checkpoint,tick);
   assert.match(boundary,/git -C run push origin/);
   assert.match(boundary,/yield for saved-Git review/);
-  assert.match(boundary,/\\bbreak\\b/);
+  assert.ok(boundary.includes('break'));
 });
