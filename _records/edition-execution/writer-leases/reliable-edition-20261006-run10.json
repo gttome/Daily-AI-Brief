@@ -1,13 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261006-run10:task-14:generation-43:12bf4396",
-  "generation": 43,
-  "acquired_at": "2026-10-06T06:21:10.000Z",
-  "last_heartbeat_at": "2026-10-06T06:22:00.000Z",
-  "expires_at": "2026-10-06T06:22:00.000Z",
-  "released": true,
-  "released_at": "2026-10-06T06:22:00.000Z",
-  "release_reason": "TASK_14_DONE_HANDOFF_TO_SUPERVISOR",
-  "completion_evidence": "_records/edition-execution/events/2026-10-06-run10/14-done.json"
+  "owner_id": "github-actions-37423499803-1",
+  "generation": 44,
+  "acquired_at": "2026-10-06T06:24:23.146Z",
+  "last_heartbeat_at": "2026-10-06T06:24:23.146Z",
+  "expires_at": "2026-10-06T06:29:23.146Z"
 }
