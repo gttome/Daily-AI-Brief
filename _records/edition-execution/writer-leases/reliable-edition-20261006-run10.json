@@ -1,12 +1,12 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "owner_id": "github-actions-37398410562-1",
-  "generation": 24,
-  "acquired_at": "2026-10-06T01:17:49.767Z",
-  "last_heartbeat_at": "2026-10-06T01:17:53.104Z",
-  "expires_at": "2026-10-06T01:17:53.104Z",
-  "state": "RELEASED",
-  "released_at": "2026-10-06T01:17:53.104Z",
-  "release_reason": "TASK_09_QUEUED_HANDOFF_TO_WATCHDOG"
+  "owner_id": "scheduled-chatgpt-watchdog-slot-f",
+  "generation": 25,
+  "acquired_at": "2026-10-06T01:18:48.936Z",
+  "last_heartbeat_at": "2026-10-06T01:18:48.936Z",
+  "expires_at": "2026-10-06T01:26:48.936Z",
+  "state": "ACTIVE",
+  "task_id": "09",
+  "request_key": "7cfeb251814dad2e76369b3dd9b41afece7aa27c705b9d32b2c38bc02c54f7f7"
 }
