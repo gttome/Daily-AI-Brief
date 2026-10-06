@@ -47,7 +47,8 @@
       "image_execution_admission_v1",
       "one_semantic_editorial_pass_v1",
       "exact_publication_preflight_v1",
-      "public_safe_budget_v1"
+      "public_safe_budget_v1",
+      "task17_persistence_compatibility_matrix"
     ],
     "deferred_route_gates": {
       "unattended_image_host": {
@@ -342,6 +343,20 @@
       "required_before_every_native_generation": true,
       "failed_admission_consumes_attempts": 0,
       "accepted_locked_regeneration": false
+    },
+    "task17_persistence_registry": {
+      "schema_version": "image-persistence-registry-v1",
+      "compatibility_matrix_schema": "image-persistence-compatibility-matrix-v1",
+      "effective_date": "2026-10-07",
+      "supported_modes": [
+        "native_capture",
+        "normalization",
+        "protected_exact_byte_transport",
+        "stable_exact_persistence"
+      ],
+      "required_before_image_tasks_authorized": true,
+      "task17_model_calls": 0,
+      "runtime_mode_discovery_prohibited": true
     }
   },
   "kanban": {
