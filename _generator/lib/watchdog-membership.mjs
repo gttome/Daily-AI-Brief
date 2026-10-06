@@ -33,6 +33,38 @@ export function validateWatchdogMembershipObservation(observation={}){
   return [...new Set(errors)];
 }
 
+export function watchdogScheduleMutationAllowed({slot,enabled,maintenance_override=null,now=new Date().toISOString()}={}){
+  const expected=WATCHDOG_MEMBERSHIP_SLOTS.find(x=>x.slot===slot);
+  if(!expected)return {allowed:false,reason:'unknown_watchdog_slot'};
+  if(enabled!==false)return {allowed:true,reason:'enabled_state_preserved'};
+  const validOverride=Boolean(
+    maintenance_override&&maintenance_override.requested_by_owner===true&&
+    typeof maintenance_override.reason==='string'&&maintenance_override.reason.trim()&&
+    stamp(maintenance_override.expires_at)&&stamp(now)&&
+    Date.parse(maintenance_override.expires_at)>Date.parse(now)
+  );
+  if(!validOverride)return {allowed:false,reason:'permanent_watchdog_disable_prohibited'};
+  return {allowed:true,reason:'bounded_owner_maintenance_override',expires_at:maintenance_override.expires_at};
+}
+
+export function watchdogMembershipRepairPlan(observation={}){
+  const members=Array.isArray(observation.members)?observation.members:[];
+  const reenable_slots=[];
+  const blocking_errors=[];
+  for(const expected of WATCHDOG_MEMBERSHIP_SLOTS){
+    const matches=members.filter(x=>x?.slot===expected.slot||x?.title===expected.title);
+    if(matches.length!==1){blocking_errors.push('watchdog_membership_exactly_one:'+expected.slot);continue;}
+    const member=matches[0];
+    if(member.enabled!==true)reenable_slots.push(expected.slot);
+    if(member.title!==expected.title||member.minute!==expected.minute||member.timing_mode!=='exact_schedule'||member.recurring_hourly!==true)
+      blocking_errors.push('watchdog_membership_definition_drift:'+expected.slot);
+  }
+  return {
+    action:reenable_slots.length?'REENABLE_DISABLED_WATCHDOGS':blocking_errors.length?'BLOCK_PRODUCTION_AND_REPAIR_MEMBERSHIP':'NO_ACTION',
+    reenable_slots,
+    blocking_errors:[...new Set(blocking_errors)]
+  };
+}
 export function watchdogMembershipHealthProjection(observation={}){
   const errors=validateWatchdogMembershipObservation(observation);
   return {
