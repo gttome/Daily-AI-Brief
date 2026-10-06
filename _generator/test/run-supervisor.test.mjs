@@ -479,11 +479,11 @@ test('watchdog runs every five minutes and can only restart the active pointer i
   assert.doesNotMatch(y,/create.*run/i);
 });
 
-test('watchdog immediately reacts to a failed Supervisor completion',()=>{
+test('watchdog immediately reacts to every Supervisor completion',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
   assert.match(y,/workflow_run:/);
   assert.match(y,/Daily AI Brief Run Supervisor/);
-  assert.match(y,/conclusion != 'success'/);
+  assert.doesNotMatch(y,/conclusion != 'success'/);
 });
 
 test('explicit worker release can hand the same run back to the Supervisor',()=>{
