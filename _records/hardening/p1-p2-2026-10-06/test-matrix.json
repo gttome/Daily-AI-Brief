@@ -1,0 +1,154 @@
+{
+  "schema_version": "p1-p2-test-matrix-v1",
+  "result": "PASS",
+  "final_code_main_sha": "6f5b1a439d4088af6c284e28c8201842ce3b8468",
+  "final_code_main_ci": {
+    "run_id": 37545132702,
+    "run_number": 1680,
+    "name": "Deterministic publication CI",
+    "conclusion": "success"
+  },
+  "rows": [
+    {
+      "gate": "Branch separation",
+      "tests": [
+        "_generator/test/branch-separation.test.mjs"
+      ],
+      "pr": 495,
+      "ci_run_id": 37537872636,
+      "result": "PASS"
+    },
+    {
+      "gate": "Event-driven Supervisor/idempotent dispatch",
+      "tests": [
+        "_generator/test/transition-dispatcher.test.mjs",
+        "_generator/test/run-supervisor.test.mjs"
+      ],
+      "pr": 496,
+      "repair_pr": 498,
+      "ci_run_ids": [
+        37538752673,
+        37540179070
+      ],
+      "result": "PASS"
+    },
+    {
+      "gate": "Stable no-wake image pipeline",
+      "tests": [
+        "_generator/test/stable-image-pipeline.test.mjs",
+        "_generator/test/reliable-execution.test.mjs"
+      ],
+      "pr": 497,
+      "ci_run_id": 37539879807,
+      "result": "PASS"
+    },
+    {
+      "gate": "Real non-production native generator-to-Git proof",
+      "tests": [
+        "historical development trial exact-byte evidence"
+      ],
+      "evidence": {
+        "result": "PASS",
+        "scope": "development_trial",
+        "summary_path": "_records/image-trials/2026-10-02-six-image/summary.json",
+        "sample_capture_path": "_records/image-trials/2026-10-02-six-image/m01/capture.json",
+        "sample_persistence_path": "_records/image-trials/2026-10-02-six-image/m01/persistence.json",
+        "recovery_check_path": "_records/image-trials/2026-10-02-six-image/recovery-check.json",
+        "native_tool": "built-in image_gen",
+        "generation_calls": 7,
+        "exact_git_tree_binding_verified": true,
+        "recovered_from_git_without_regeneration": true,
+        "development_work_or_codex_surface_used": true,
+        "production_dependency": false,
+        "interpretation": "This historical non-production development trial proves real native generation-to-Git byte persistence. Development Work/Codex use is not part of the production runtime dependency graph."
+      },
+      "result": "PASS"
+    },
+    {
+      "gate": "Task 17 mixed persistence registry",
+      "tests": [
+        "_generator/test/image-persistence-adapter.test.mjs",
+        "_generator/test/repository-task-consumer.test.mjs",
+        "_generator/test/run-readiness.test.mjs"
+      ],
+      "pr": 499,
+      "ci_run_id": 37541051339,
+      "result": "PASS"
+    },
+    {
+      "gate": "Task 23 pre-PR failure injection",
+      "tests": [
+        "_generator/test/publication-prerequisite-gate.test.mjs"
+      ],
+      "pr": 500,
+      "ci_run_id": 37541491861,
+      "result": "PASS"
+    },
+    {
+      "gate": "Atomic closeout crash/idempotency",
+      "tests": [
+        "_generator/test/atomic-closeout.test.mjs"
+      ],
+      "pr": 501,
+      "ci_run_id": 37542151088,
+      "result": "PASS"
+    },
+    {
+      "gate": "Integrated cross-component rehearsal",
+      "tests": [
+        "_generator/test/p1p2-integrated-rehearsal.test.mjs"
+      ],
+      "pr": 502,
+      "ci_run_id": 37544820314,
+      "rehearsal_run_id": 37545271745,
+      "result": "PASS"
+    }
+  ],
+  "mandatory_fault_injections": {
+    "duplicate_transition_delivery": {
+      "result": "PASS",
+      "recovery": "idempotent_noop_same_event"
+    },
+    "expired_writer": {
+      "result": "PASS",
+      "recovery": "same_execution_new_writer_generation"
+    },
+    "worker_dies_after_output_before_ack": {
+      "result": "PASS",
+      "recovery": "durable_result_reused_without_reexecution"
+    },
+    "image_bytes_persisted_review_delayed": {
+      "result": "PASS",
+      "recovery": "resume_review_on_same_persisted_bytes"
+    },
+    "stale_main_ancestry_before_pr": {
+      "result": "PASS",
+      "recovery": "fail_closed_before_pr"
+    },
+    "watchlist_projection_mismatch": {
+      "result": "PASS",
+      "recovery": "fail_closed_before_pr"
+    },
+    "learning_ledger_mismatch": {
+      "result": "PASS",
+      "recovery": "fail_closed_before_pr"
+    },
+    "closeout_crash_after_each_major_write": {
+      "result": "PASS",
+      "injected_boundaries": 15,
+      "recovery": "atomic_staging_no_partial_visibility"
+    },
+    "duplicate_closeout_invocation": {
+      "result": "PASS",
+      "recovery": "deterministic_already_closed_noop"
+    },
+    "task17_mixed_lock_modes": {
+      "result": "PASS",
+      "recovery": "canonical_persistence_adapter_registry"
+    }
+  },
+  "protected_main_confirmation": {
+    "run_id": 37545132702,
+    "conclusion": "success"
+  }
+}
