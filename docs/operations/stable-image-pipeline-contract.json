@@ -1,0 +1,51 @@
+{
+  "contract_id": "stable-image-pipeline-v1",
+  "scope": "Tasks 11-16",
+  "states": [
+    "QUEUED",
+    "ADMISSION_CHECK",
+    "ADMITTED",
+    "GENERATING",
+    "BYTES_RECEIVED",
+    "PERSISTED",
+    "READBACK_VERIFIED",
+    "REVIEWING",
+    "ACCEPTED_LOCKED",
+    "REJECTED_QUALITY",
+    "BLOCKED_INFRASTRUCTURE",
+    "DONE"
+  ],
+  "happy_path": [
+    "admission",
+    "generate",
+    "exact-byte persist",
+    "readback verification",
+    "saved-Git visual/editorial review",
+    "accepted_locked",
+    "durable task transition"
+  ],
+  "admission_before_generation": true,
+  "admission_failure_consumes_generation_attempt": false,
+  "persistence_same_operation": true,
+  "review_saved_git_bytes_only": true,
+  "infrastructure_failure_consumes_generation_attempt": false,
+  "quality_rejection_may_consume_new_attempt": true,
+  "max_generation_attempts": 4,
+  "accepted_locked_immutable": true,
+  "accepted_locked_emits_task_transition": true,
+  "happy_path_wake_prs": 0,
+  "owner_liveness_prompts": 0,
+  "production_cost_boundary": {
+    "work_invocations": 0,
+    "codex_invocations": 0,
+    "paid_model_api_calls": 0
+  },
+  "quality_invariants": {
+    "professional_textbook_style": true,
+    "preferred_dimensions": "1200x630",
+    "people_or_humanoids": false,
+    "corrupt_artifacts": false,
+    "six_image_differentiation": true,
+    "low_quality_fallback": false
+  }
+}

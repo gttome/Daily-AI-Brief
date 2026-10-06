@@ -1,6 +1,7 @@
 import {visualReviewErrors, visualReviewAccepted} from './image-review-evidence.mjs';
 import {createHash} from 'node:crypto';
 import {buildQualificationImageWorkerPayload,buildQualificationImageGenerationInstruction,validateQualificationImageWorkerPayload} from './image-story-packet.mjs';
+import {emitAcceptedImageTaskTransition,stableImageStateFromResult,STABLE_IMAGE_PIPELINE_VERSION} from './stable-image-pipeline.mjs';
 
 export const IMAGE_EXECUTION_POLICY='production-image-execution-v2';
 export const IMAGE_EXECUTION_ADMISSION_VERSION='image-execution-admission-v1';
@@ -258,21 +259,49 @@ export async function executeImageRequest(execution, options={}) {
     });
     if(!admission.authorized)return admission;
   }
+  async function bindStablePipeline(result,{reused=false}={}) {
+    const state=stableImageStateFromResult(result);
+    const pipeline={
+      schema_version:STABLE_IMAGE_PIPELINE_VERSION,
+      state,
+      generation_attempts:Number(result?.attempt||0),
+      infrastructure_failures:state==='BLOCKED_INFRASTRUCTURE'?1:0,
+      quality_rejections:state==='REJECTED_QUALITY'?1:0,
+      wake_pr_required:false,
+      owner_liveness_prompt_required:false,
+      next_transition_emitted:false
+    };
+    if(['accepted_locked','fixture_pass'].includes(result?.status)){
+      const admission=options.executionAdmission||{};
+      const emitted=await emitAcceptedImageTaskTransition({
+        execution_id:options.executionId||options.execution_id||admission.execution_id,
+        edition_id:options.editionId||options.edition_id||admission.edition_id,
+        task_id:options.taskId||options.task_id||admission.task_id,
+        request_key:options.requestKey||options.request_key||admission.request_key,
+        candidate_id:execution.sealed_story_packet.candidate_id,
+        result,
+        writer_generation:options.writerGeneration||options.writer_generation||admission.writer_generation||1
+      },{eventSink:options.eventSink,requireSink:false});
+      pipeline.next_transition=emitted.event;
+      pipeline.next_transition_emitted=emitted.emitted;
+    }
+    return {...result,reused,pipeline};
+  }
   if (options.resume) {
     fail(validateImageExecutionReceipt(options.resume,execution,{allowFixture:options.evidenceType==='fixture'}));
     if(options.resume.execution_mode!==options.executionMode||options.resume.evidence_type!==(options.evidenceType||'live'))throw Error('image_resume_mode_mismatch');
     const bytes=await options.transport.read(options.resume.persistence.path,options.resume.persistence.commit_sha);
     if(!Buffer.isBuffer(bytes)||digest(bytes)!==options.resume.persistence.sha256||blob(bytes)!==options.resume.persistence.git_blob_sha)throw Error('image_resume_bytes_changed');
-    return {...options.resume,reused:true};
+    return bindStablePipeline(options.resume,{reused:true});
   }
   const {executeRecoverableImage}=await import('./recoverable-image-job.mjs');
   const maximum=options.maxAttempts??4;
   if(!Number.isInteger(maximum)||maximum<1||maximum>4)throw Error('image_attempt_budget_invalid');
   for(let attempt=1;attempt<=maximum;attempt++) {
     const result=await executeRecoverableImage(execution,{...options,store:options.operationStore,attempt});
-    if(!result.quality_rejected)return result;
+    if(!result.quality_rejected)return bindStablePipeline(result);
   }
-  return {status:'ATTEMPT_LIMIT_EXHAUSTED',accepted_locked:false,manual_intervention_required:false};
+  return bindStablePipeline({status:'ATTEMPT_LIMIT_EXHAUSTED',accepted_locked:false,manual_intervention_required:false,attempt:maximum});
 }
 
 export async function executeImageBatch(executions,options={}){
