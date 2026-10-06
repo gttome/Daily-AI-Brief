@@ -6,9 +6,9 @@
   "generation": 9,
   "state": "ACTIVE",
   "acquired_at": "2026-10-06T02:06:17.222Z",
-  "last_heartbeat_at": "2026-10-06T02:06:17.222Z",
-  "expires_at": "2026-10-06T02:14:17.222Z",
+  "last_heartbeat_at": "2026-10-06T02:12:58.784Z",
+  "expires_at": "2026-10-06T02:32:58.784Z",
   "action_key": "wd-reliable-edition-20261006-run10-task11-scheduled-consumer-writer-block:slot-f:g9",
   "continuation_from_generation": 8,
-  "continuation_evidence": "Generation 8 expired at 2026-10-06T02:05:38.027Z without renewal, protected-repair record, or substantive Task 11 progress. Exact request 40e6b89d78aa3f65ea1ca4225dfa2a22f40c78265a55e03ae892af0df42a8605 remains queued and unclaimed; live Supervisor 37399328362 continues heartbeat-only writer renewals."
+  "continuation_evidence": "Protected repair PR #480 merged at f3a932d3b92d77d5fb3e6225a4d3e61b475a819a after exact-head validate run 37402594308 passed. Replacement Supervisor 37402718652 canceled stale writer run 37399328362 and revalidated the same queued Task 11 request. Dead-writer proof persists generation 28 to 29 takeover."
 }

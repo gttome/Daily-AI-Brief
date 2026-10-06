@@ -1,6 +1,6 @@
 {
   "schema_version": "protected-repair-required-v1",
-  "state": "PROTECTED_REPAIR_REQUIRED",
+  "state": "SAME_TASK_RESUMED",
   "repair_key": "repair-17601bc74708d83dcb66137c6bb0f1dfc96875b0",
   "execution_id": "reliable-edition-20261006-run10",
   "edition_id": "dab-edition-2026-10-06",
@@ -16,19 +16,12 @@
   ],
   "created_at": "2026-10-06T02:06:17.222Z",
   "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
-  "diagnosis": "The active Supervisor was dispatched from main e647ed03a549c24d0984c9c0ddc81a2cc361054c, which lacks the native scheduled-consumer handoff boundary. It has retained and renewed writer generation 28 after queuing the exact Task 11 native_chatgpt request, preventing an eligible Watchdog from acquiring the task writer.",
-  "repair_scope": {
-    "files": [
-      {
-        "path": ".github/workflows/run-supervisor.yml",
-        "blob_sha": "a47251cb90998e9d3da2616a943c22d58c1e591c"
-      },
-      {
-        "path": "_generator/test/run-supervisor.test.mjs",
-        "blob_sha": "abee65d30b7e45d023fc39a6b8abf8e2596960c9"
-      }
-    ],
-    "purpose": "release_supervisor_writer_after_native_request_queued"
-  },
-  "next_stage": "OPEN_OR_REUSE_EXACT_REPAIR_PR_THEN_REQUIRE_PULL_REQUEST_VALIDATE_PASS_MERGE_AND_RESUME_SAME_TASK"
+  "repair_pr_number": 480,
+  "validate_run_id": 37402594308,
+  "merge_sha": "f3a932d3b92d77d5fb3e6225a4d3e61b475a819a",
+  "resume_workflow_run_id": 37402718652,
+  "resumed_at": "2026-10-06T02:12:58.784Z",
+  "same_task_request_key": "40e6b89d78aa3f65ea1ca4225dfa2a22f40c78265a55e03ae892af0df42a8605",
+  "writer_generation": 29,
+  "next_stage": "CONSUME_EXACT_TASK11_NATIVE_REQUEST_AND_PROVE_ACCEPTED_LOCKED_PROGRESS"
 }

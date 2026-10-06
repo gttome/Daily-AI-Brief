@@ -1,0 +1,17 @@
+{
+  "schema_version": "dead-writer-recovery-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "dead_owner_id": "github-actions-37399328362-1",
+  "dead_generation": 28,
+  "workflow_run_id": 37399328362,
+  "workflow_conclusion": "cancelled",
+  "workflow_status": "completed",
+  "workflow_updated_at": "2026-10-06T02:10:00Z",
+  "proved_dead_at": "2026-10-06T02:12:58.784Z",
+  "child_workers_live": false,
+  "substantive_write_after_terminal": false,
+  "last_substantive_or_lease_write_sha": "39beeef0f2ecda8786cad359ab40f5f4ee042774",
+  "last_write_at": "2026-10-06T02:09:13Z",
+  "recovery_reason": "terminal_cancelled_writer",
+  "replacement_generation": 29
+}
