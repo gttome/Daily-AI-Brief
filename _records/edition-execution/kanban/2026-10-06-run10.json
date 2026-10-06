@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-edition-20261006-run10",
   "edition_id": "dab-edition-2026-10-06",
-  "observed_at": "2026-10-06T00:51:28.992Z",
+  "observed_at": "2026-10-06T01:00:50.647Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:758bc4014c144650cb5022f0f3d2efb9af24a239cb331e8019029a5c6b884cc4",
+  "source_event_digest": "sha256:910cbb6e109944dbcbacd3420dc0c84b17dac4f9f6a719f13cdf80c8ad866f5e",
   "run_started_at": "2026-10-06T00:02:39.000Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 2929.992,
-  "total_brief_elapsed": "2929.992s",
+  "total_brief_elapsed_seconds": 3491.647,
+  "total_brief_elapsed": "3491.647s",
   "tasks": {
     "10": {
       "id": "10",
@@ -366,17 +366,17 @@
     "03": {
       "id": "03",
       "title": "Discover fresh article candidates",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "column": "Done",
+      "entered_backlog_at": "2026-10-06T00:53:50.939Z",
+      "active_started_at": "2026-10-06T00:53:50.939Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "done_at": "2026-10-06T00:59:46.971Z",
+      "cycle_seconds": 356.032,
+      "active_seconds": 356.032,
+      "duration_seconds": 356.032,
+      "duration": "356.032s"
     },
     "04": {
       "id": "04",
