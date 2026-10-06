@@ -3,14 +3,14 @@
   "manifest_kind": "daily_ai_brief_publication",
   "edition_date": "2026-10-06",
   "edition_id": "dab-edition-2026-10-06",
-  "baseline_sha": "3656674748a067996e965ecd1b2334215437e5fe",
+  "baseline_sha": "90f24d679cd0745c605b35fe6555898d62a41870",
   "staging_ref": "reliable-edition/dab-edition-2026-10-06-run10",
   "policy_profile": "under80-v1",
   "artifacts": {
     "kernel": {
       "path": "_records/editorial-handoff/kernel-2026-10-06.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:6d4dad193966bf68610dedafe950b7dc05e2a3dc"
+      "digest": "git_blob_sha1:e938453a318b17ce8cade576af565aeaa1334449"
     },
     "facts": {
       "path": "_records/editorial-handoff/facts-2026-10-06.json",
@@ -37,7 +37,7 @@
     "media_receipt": {
       "path": "_records/editorial/media-preflight/2026-10-06.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:f0028c8dd45a5fee635a6d6f4b0b092194dff9cf"
+      "digest": "git_blob_sha1:b0ee40d159c45ffefc33a6a864e17f1d6ebb5c41"
     },
     "image_manifest": {
       "path": "_records/editorial-handoff/images-2026-10-06-publication.json",

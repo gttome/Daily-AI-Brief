@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "edition_id": "dab-edition-2026-10-06",
-  "baseline_sha": "3656674748a067996e965ecd1b2334215437e5fe",
-  "rollback_target_sha": "3656674748a067996e965ecd1b2334215437e5fe",
+  "baseline_sha": "90f24d679cd0745c605b35fe6555898d62a41870",
+  "rollback_target_sha": "90f24d679cd0745c605b35fe6555898d62a41870",
   "policy_profile": "under80",
   "image_review": "_records/editorial-handoff/images-2026-10-06-publication.json",
   "image_review_sha256": "1968ce13e892ac09ada9803d596e061cda8e5e218718c00ddeb77522fc9526e2",
@@ -82,5 +82,5 @@
     }
   ],
   "canonical_sha256": "0056249dd3b47e123cccec5e68673f05aed4ba2c4319ebb747b68012eb07cf20",
-  "candidate_digest": "sha256:59abeda377053cf8357c33d8c99933cc36a23d58606474e59347c3f1dda667a9"
+  "candidate_digest": "sha256:59fdc1c3eb78fd89c71b513fc48a532ca612a7b4767836b469dcdbc6a855da8a"
 }

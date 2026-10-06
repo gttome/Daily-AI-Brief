@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0.0",
-  "event_id": "dab-publication-event-20261006T100030Z-b1203578",
+  "event_id": "dab-publication-event-20261006T101330Z-a87430aa",
   "run_id": "2026-10-06-run10",
   "phase": "validated",
   "edition_id": "dab-edition-2026-10-06",
-  "observed_at": "2026-10-06T10:00:30.000Z",
-  "baseline_main_sha": "3656674748a067996e965ecd1b2334215437e5fe",
-  "staged_tree_digest": "sha256:49beac23d5b103d26151fa4292a56baf73c6861ef6b22c9af1822bc4318ff4cc",
+  "observed_at": "2026-10-06T10:13:30.000Z",
+  "baseline_main_sha": "90f24d679cd0745c605b35fe6555898d62a41870",
+  "staged_tree_digest": "sha256:6ddae9459981db97eb26352e985863ef43951bda2b7473bbf644a3f4912ebc4b",
   "generator_version": "1.0.0",
   "contract_version": "1.0.0",
   "checks": [
@@ -336,6 +336,6 @@
     "conclusion": "not_run",
     "verified_at": null
   },
-  "rollback_target_sha": "3656674748a067996e965ecd1b2334215437e5fe",
+  "rollback_target_sha": "90f24d679cd0745c605b35fe6555898d62a41870",
   "supersedes_event_id": null
 }

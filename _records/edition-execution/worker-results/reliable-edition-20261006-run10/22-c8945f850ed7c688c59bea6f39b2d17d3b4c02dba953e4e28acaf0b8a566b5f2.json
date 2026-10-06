@@ -23,7 +23,9 @@
   "preflight": {
     "result": "PASS",
     "receipt": "_records/edition-execution/publication-preflight/2026-10-06.json",
-    "candidate_content_digest": "sha256:b6a96b1b4e1d286757c89f060fbf2703e16b9b6c3e4f963cece6e27db0fabc2"
+    "candidate_content_digest": "sha256:0c09b6e4216ad258ca78c2a4c313648b15ce887a54d6b0ac73d26f7537fbced8",
+    "protected_main_sha": "90f24d679cd0745c605b35fe6555898d62a41870",
+    "history_join_commit": "faa3775b97d2a40674362ddea9a6355e180e5a2d"
   },
   "evidence": {
     "publication_receipt": "_records/publication/2026-10-06-run10/task22-publication-pr.json",

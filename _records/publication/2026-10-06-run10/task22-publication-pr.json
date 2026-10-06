@@ -10,8 +10,8 @@
     "schema_version": "exact-publication-preflight-v1",
     "result": "PASS",
     "path": "_records/edition-execution/publication-preflight/2026-10-06.json",
-    "sha256": "d30629b809009b70349a57ffe1f029d8fd39771771926171111c30f2c7263971",
-    "candidate_content_digest": "sha256:b6a96b1b4e1d286757c89f060fbf2703e16b9b6c3e4f963cece6e27db0fabc2",
+    "sha256": "36ff1956b3d89626731c39ef599fc9825f25827b66131959c9d42ad9275b1cbf",
+    "candidate_content_digest": "sha256:0c09b6e4216ad258ca78c2a4c313648b15ce887a54d6b0ac73d26f7537fbced8",
     "model_calls": 0
   },
   "publication_pr": {
@@ -24,6 +24,13 @@
     "reused_existing_matching_pr": false,
     "duplicate_pr_created": false,
     "protected_ci_required_next": true
+  },
+  "mergeability_repair": {
+    "strategy": "non_destructive_merge_parent_join",
+    "protected_main_sha": "90f24d679cd0745c605b35fe6555898d62a41870",
+    "history_join_commit": "faa3775b97d2a40674362ddea9a6355e180e5a2d",
+    "baseline_revalidated": true,
+    "candidate_content_reselected": false
   },
   "preserved": {
     "completed_tasks": "00-21",

@@ -50,7 +50,7 @@
       "verification_timestamp": "2026-10-06T01:13:18.297Z"
     }
   ],
-  "editorial_kernel_sha256": "162827026502981d0502da304c97cdb810a3a6ca0aebff1d044f32513588c6f1",
+  "editorial_kernel_sha256": "fc440bf967dbd8e4c291105b901b1487983ac350094d0d6d9f5d986bf6da19cf",
   "podcast_source_diversity": {
     "pass": true,
     "shows": [
