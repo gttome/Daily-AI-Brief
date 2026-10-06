@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-edition-20261006-run10",
   "edition_id": "dab-edition-2026-10-06",
-  "observed_at": "2026-10-06T00:18:06.354Z",
+  "observed_at": "2026-10-06T00:49:05.448Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:4790c96cc63cae689ce076968500c2a5ada2aad343a86d44535e392db89aa8bb",
+  "source_event_digest": "sha256:280c15da6f3c825fbc1e16df46b3bed82c45725d53468d38e4f4f4c02a68fd68",
   "run_started_at": "2026-10-06T00:02:39.000Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 927.354,
-  "total_brief_elapsed": "927.354s",
+  "total_brief_elapsed_seconds": 2786.448,
+  "total_brief_elapsed": "2786.448s",
   "tasks": {
     "10": {
       "id": "10",
@@ -336,17 +336,17 @@
     "01": {
       "id": "01",
       "title": "Bind edition, execution ID, cutoff and baseline",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "column": "Done",
+      "entered_backlog_at": "2026-10-06T00:45:00.000Z",
+      "active_started_at": "2026-10-06T00:45:00.000Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "done_at": "2026-10-06T00:46:00.000Z",
+      "cycle_seconds": 60,
+      "active_seconds": 60,
+      "duration_seconds": 60,
+      "duration": "60s"
     },
     "02": {
       "id": "02",
