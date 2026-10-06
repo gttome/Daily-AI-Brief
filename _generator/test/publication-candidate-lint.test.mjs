@@ -93,3 +93,17 @@ test('publication candidate lint rejects a current-edition pointer newer than th
  const errors=lintPublicationCandidate(candidate);
  assert.deepEqual(errors.filter(error=>error.startsWith('current_edition_pointer_')),['current_edition_pointer_invalid_for_candidate']);
 });
+
+
+test('publication candidate lint blocks duplicated media reader roles for new editions',()=>{
+ const manifest=read('_records/editorial-handoff/final-image-review-2026-09-25.json');
+ const candidate=inputs(manifest);
+ candidate.edition={...candidate.edition,brief_date:'2026-10-07',edition_id:'dab-edition-2026-10-07'};
+ candidate.media=structuredClone(candidate.media);
+ const general=candidate.media.worth_watching.general;
+ general.status='included';
+ general.why_useful='A sufficiently descriptive video summary about a bounded agent workflow.';
+ general.connection=general.why_useful;
+ const errors=lintPublicationCandidate(candidate);
+ assert.ok(errors.includes('media_semantic_duplicate:video:general:summary_vs_why_it_matters'));
+});
