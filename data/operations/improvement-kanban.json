@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-06T12:59:00.000Z",
+  "observed_at": "2026-10-06T13:59:33.000Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -982,6 +982,27 @@
       "sources": [
         "DAB-OPS-20261006-001",
         "reliable-edition-20261006-run10 Task 00 recovery evidence"
+      ]
+    },
+    {
+      "id": "DAB-KB-052",
+      "lane": "wip",
+      "priority": "P0",
+      "category": "Liveness",
+      "title": "Enforce permanent six-slot Watchdog schedule membership",
+      "summary": "Recurring Watchdog schedules drifted into disabled state across production windows. Make live A-F scheduler membership a production invariant and self-heal disabled peers.",
+      "acceptance": [
+        "Controller and Task 00 bind fresh live evidence proving exactly one A-F slot each, all enabled, equivalent, recurring hourly at 03/13/23/33/43/53.",
+        "Compact health projects WATCHDOG_RING_DEGRADED as actionable when membership is degraded.",
+        "Enabled peers or the independent integrity check restore disabled peers unless an explicit bounded owner maintenance override is active.",
+        "Permanent A-F schedules are not deactivated by task failure, connector failure, protected-repair failure, safe-boundary handoff, or terminal cleanup.",
+        "Regression tests cover degraded membership and protected PR validation passes."
+      ],
+      "sources": [
+        "DAB-OPS-20261006-002",
+        "PR #473",
+        "PR #493",
+        "live ChatGPT automation state"
       ]
     }
   ],
