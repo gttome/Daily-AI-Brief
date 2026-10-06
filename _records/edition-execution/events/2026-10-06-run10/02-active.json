@@ -1,0 +1,16 @@
+{
+  "task_id": "02",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-06T00:50:00.000Z",
+  "reason": "ChatGPT Watchdog Slot F repository consumer consumed the exact Task 02 request after the same-execution Supervisor restart queued it and released writer authority.",
+  "proof": {
+    "request_key": "9c6885eff9103b065f098d9ae9938cf158effdccb3f97106c4101b64c6a3cd57",
+    "prior_supervisor_run_id": 37394810389,
+    "active_supervisor_run_id": 37395923002,
+    "prior_writer_generation": 8,
+    "active_supervisor_writer_generation": 10,
+    "recovery_writer_generation": 11,
+    "same_execution_only": true
+  }
+}
