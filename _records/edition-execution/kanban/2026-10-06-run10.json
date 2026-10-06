@@ -2,7 +2,7 @@
   "schema_version": "production-kanban-projection-v3",
   "execution_id": "reliable-edition-20261006-run10",
   "edition_id": "dab-edition-2026-10-06",
-  "observed_at": "2026-10-06T01:03:41.955Z",
+  "observed_at": "2026-10-06T01:06:42.352Z",
   "columns": [
     "Backlog",
     "WIP",
@@ -12,11 +12,11 @@
   "active_task_maps_to": "WIP",
   "authoritative_source": "append_only_transition_events",
   "missing_timestamps_policy": "never_infer_use_unavailable",
-  "source_event_digest": "sha256:0b4de03f8084a8dcf0fdaca4bfc8a66be39a42c1e6ba9ab92df94e2e53168c4a",
+  "source_event_digest": "sha256:856c6fa97d6d6eef63b7852f589ffde5ce93c8df68bc4ee64708c64996c8024c",
   "run_started_at": "2026-10-06T00:02:39.000Z",
   "terminal_at": null,
-  "total_brief_elapsed_seconds": 3662.955,
-  "total_brief_elapsed": "3662.955s",
+  "total_brief_elapsed_seconds": 3843.352,
+  "total_brief_elapsed": "3843.352s",
   "tasks": {
     "10": {
       "id": "10",
@@ -396,17 +396,17 @@
     "05": {
       "id": "05",
       "title": "Lock six stories exact 2/2/2 plus one Agent Skills story",
-      "state": "Backlog",
-      "column": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "column": "Done",
+      "entered_backlog_at": "2026-10-06T01:04:46.163Z",
+      "active_started_at": "2026-10-06T01:04:46.163Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null,
-      "duration_seconds": null,
-      "duration": "unavailable"
+      "done_at": "2026-10-06T01:05:42.206Z",
+      "cycle_seconds": 56.043,
+      "active_seconds": 56.043,
+      "duration_seconds": 56.043,
+      "duration": "56.043s"
     },
     "06": {
       "id": "06",
