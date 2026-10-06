@@ -6,9 +6,9 @@
   "generation": 30,
   "state": "RELEASED",
   "acquired_at": "2026-10-06T08:25:23.750Z",
-  "last_heartbeat_at": "2026-10-06T08:31:20.149Z",
-  "expires_at": "2026-10-06T08:31:20.149Z",
+  "last_heartbeat_at": "2026-10-06T08:31:44.138Z",
+  "expires_at": "2026-10-06T08:31:44.138Z",
   "action_key": "wd-reliable-edition-20261006-run10-task16-image-execution:slot-f:g30:admit-generate",
-  "released_at": "2026-10-06T08:31:20.149Z",
+  "released_at": "2026-10-06T08:31:44.138Z",
   "release_reason": "TASK16_GENERATION_AND_EXACT_BYTE_STAGING_COMPLETE_TRANSPORT_CONSUMER_PENDING"
 }
