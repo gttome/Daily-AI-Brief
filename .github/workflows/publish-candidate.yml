@@ -52,6 +52,11 @@ jobs:
           STAGING_REF: ${{ inputs.staging_ref }}
           EXPECTED_SHA: ${{ inputs.expected_sha }}
         run: node _tools/frozen-publication-guard.mjs
+
+      - name: Bind all Task 23 prerequisites before publication PR
+        env:
+          STAGING_REF: ${{ inputs.staging_ref }}
+        run: node _tools/publication-prerequisite-gate.mjs _candidate_site
       - name: Build candidate site
         uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697
         with:
