@@ -1,0 +1,61 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "14",
+  "candidate_id": "m11",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-06T06:22:00.000Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 43,
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "saved_git_commit": "ffef44f36e37f5f5a29ef3d6c1c5b90b19f6d713",
+  "image_execution_admission": "_records/image-admission/2026-10-06-run10/14-12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663.json",
+  "source_lineage": {
+    "base_generation_id": "exec-5aeec85a-5aea-4eea-a1f4-db38fc8833ae",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "ac8c8d97bd9f8c03998948fe72954c32e26c9de0d6d430197cb5053164785f1c",
+    "native_bytes": 1301536,
+    "native_width": 1733,
+    "native_height": 907,
+    "transport_method": "protected Base64 chunk bridge with SHA-256, Git blob and saved-path read-back verification"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m11.png",
+    "git_blob_sha": "45ccbb585b86bb5dfd9db43ec67c758d84b60a2a",
+    "sha256": "ac8c8d97bd9f8c03998948fe72954c32e26c9de0d6d430197cb5053164785f1c",
+    "bytes": 1301536,
+    "width": 1733,
+    "height": 907,
+    "exact_readback": "PASS_PROTECTED_CHUNK_BRIDGE_SHA256_GIT_OBJECT_SHA_SIZE_AND_READBACK_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "A research question enters retrieval and evidence filtering, branches into source fragments and a citation map, then converges in a report composer whose claims are checked against a visible verification matrix.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Research question",
+      "Retrieval",
+      "Evidence filter",
+      "Source fragment",
+      "Citation map",
+      "Report composer",
+      "Claim",
+      "Verify"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The saved Git PNG is byte-identical to the reviewed local file by SHA-256, Git blob identity, byte count and protected read-back receipt."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

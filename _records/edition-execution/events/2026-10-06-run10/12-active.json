@@ -1,0 +1,18 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "execution_key": "2026-10-06-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "12",
+  "candidate_id": "m02",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-06T02:51:42.000Z",
+  "writer_generation": 31,
+  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261006-run10:task-12:generation-31:5133046b",
+  "reason": "Claimed the exact queued native_chatgpt Task 12 request after the prior writer was cleanly released; image-execution admission passed before generation.",
+  "proof": {
+    "request_key": "5133046bced93056edbd295a35739c566d4824d9f3f4de8e72118b6859306dfb",
+    "image_execution_admission": "_records/image-admission/2026-10-06-run10/12-5133046bced93056edbd295a35739c566d4824d9f3f4de8e72118b6859306dfb.json"
+  }
+}

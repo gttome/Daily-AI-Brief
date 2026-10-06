@@ -1,0 +1,28 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "416965fe1a64e3079e6179f6155093a004625590514d7fc2837dc8a720dc99d4",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "06",
+  "request_writer_generation": 18,
+  "writer_generation": 19,
+  "status": "passed",
+  "completed_at": "2026-10-06T01:08:30.518Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "videos_artifact": "_records/editorial/2026-10-06-run10/videos.json",
+    "video_count": 2,
+    "runtimes_seconds": [
+      462,
+      324
+    ],
+    "provider_ids": [
+      "LsA4vIX_3UY",
+      "h9g4umRfgn0"
+    ],
+    "semantic_pass_reused": true,
+    "immediately_prior_edition_exact_video_repeat": false
+  },
+  "result": "PASS"
+}

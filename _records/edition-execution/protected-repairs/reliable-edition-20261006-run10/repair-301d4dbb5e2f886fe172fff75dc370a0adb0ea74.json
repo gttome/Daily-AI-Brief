@@ -1,0 +1,53 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "RECOVERY_VERIFIED_PROGRESSING",
+  "repair_key": "repair-301d4dbb5e2f886fe172fff75dc370a0adb0ea74",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "production_branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "15",
+  "incident_id": "wd-reliable-edition-20261006-run10-task15-story-only-runtime-unavailable",
+  "exact_request_key": "31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc",
+  "candidate_id": "m12",
+  "engineering_repair_epoch": 1,
+  "repair_branch": "repair/run10-task15-context-receipt",
+  "repair_branch_head_sha": "1c6bbd1f36ef592ddda2df23f67812b0fd42f87e",
+  "repair_pr_number": 482,
+  "required_checks": [
+    "validate"
+  ],
+  "repair_attempts": [
+    {
+      "head_sha": "d7d91f6f0f1a6020382e09441bfb0c710b8c58b7",
+      "validate_run_id": 37433325959,
+      "result": "FAIL",
+      "reason": "dependent admission fixtures lacked new context receipt"
+    },
+    {
+      "head_sha": "1c6bbd1f36ef592ddda2df23f67812b0fd42f87e",
+      "validate_run_id": 37433588930,
+      "result": "PASS"
+    }
+  ],
+  "merge_sha": "301d4dbb5e2f886fe172fff75dc370a0adb0ea74",
+  "created_at": "2026-10-06T08:06:06.087Z",
+  "last_updated_at": "2026-10-06T08:21:57.625Z",
+  "verified_at": "2026-10-06T08:21:57.625Z",
+  "invariant": "native generation requires an invocation-bound fresh dedicated story-only context receipt before attempt allocation",
+  "same_task_resumed": true,
+  "executor_active": true,
+  "durable_progress": true,
+  "task_done": true,
+  "accepted_locked_changed": true,
+  "post_repair_attempts": 1,
+  "next_stage": "Task 15 is Done and m12 is accepted_locked; Supervisor may queue Task 16 without reopening Task 15.",
+  "progress_evidence": {
+    "transport_commit": "582c31f3b5d03da01b777af1462fb2e2287f9951",
+    "transport_receipt": "_records/edition-execution/image-transport-results/reliable-edition-20261006-run10/31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc.json",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/15-31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-06-run10/m12.json",
+    "task_done_event": "_records/edition-execution/events/2026-10-06-run10/15-done.json",
+    "first_incomplete_task": "16"
+  }
+}

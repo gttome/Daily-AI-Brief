@@ -1,0 +1,62 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "16",
+  "candidate_id": "m14",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "request_key": "50a461bad40e069d2d75b74d8803d50b9a4bc4b2922072d37435d7e6b97aa469",
+  "writer_generation": 54,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-06T08:39:32.575Z",
+  "image_execution_admission": "_records/image-admission/2026-10-06-run10/16-50a461bad40e069d2d75b74d8803d50b9a4bc4b2922072d37435d7e6b97aa469.json",
+  "generated_at": "2026-10-06T08:28:00.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-dc123b9b-2f8d-41ad-8f1d-738e6c930783",
+    "targeted_edit_generation_id": null,
+    "targeted_edit": null
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1731,
+    "height": 909,
+    "bytes": 1272756,
+    "sha256": "44803a638cbd25e5d388f0dafb07ce5a6df8da3ac9c1fca332e05081fafdb1d9",
+    "persisted": true,
+    "path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m14.png",
+    "git_blob_sha": "b154cd92a03abe77efe1b3783184d4400949315f",
+    "saved_git_commit": "68709a8214c72071519c9154a3f376947bf3417a",
+    "exact_readback": "PASS_PROTECTED_CHUNK_BRIDGE_SHA256_GIT_OBJECT_SHA_SIZE_AND_READBACK_MATCH_LOCAL_BYTES",
+    "same_visual_targeted_edit": false,
+    "low_quality_fallback": false,
+    "svg_fallback": false,
+    "transport_receipt": "_records/edition-execution/image-transport-results/reliable-edition-20261006-run10/50a461bad40e069d2d75b74d8803d50b9a4bc4b2922072d37435d7e6b97aa469.json"
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Event",
+      "Ambient agent",
+      "Isolated session",
+      "Job state",
+      "Policy gate",
+      "Bounded action",
+      "Ask human",
+      "Resume",
+      "Audit trail"
+    ],
+    "extra_visible_text": [],
+    "note": "An event enters an ambient agent and opens an isolated session around durable job state. A policy gate routes safe work to bounded action, uncertain work to human approval, and resumed state back into the controlled loop while a complete audit trail records every stage."
+  },
+  "disposition": "ACCEPTED_LOCKED",
+  "reviewed_at": "2026-10-06T08:40:15.483Z"
+}

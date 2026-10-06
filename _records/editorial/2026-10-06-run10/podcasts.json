@@ -1,0 +1,52 @@
+{
+  "schema_version": "run10-podcast-selection-v1",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_id": "reliable-edition-20261006-run10",
+  "research_cutoff": "2026-10-06T00:02:39.000Z",
+  "verified_at": "2026-10-06T01:12:25.240Z",
+  "semantic_pass_reused": true,
+  "semantic_selection_git_blob": "640af41c530d657612f08508061764e7e32c6c2f",
+  "result": "PASS",
+  "podcasts": [
+    {
+      "ordinal": 1,
+      "show": "Hard Fork",
+      "publisher": "The New York Times",
+      "episode_key": "hard-fork-2026-10-02-ai-agents",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 3182,
+      "connection": "Current discussion of personal assistants, agent incidents and privacy trade-offs complements the selected computer-use and ambient-agent stories.",
+      "verification": "Reused sealed authoritative repository evidence: the Apple Podcasts identity and independent episode metadata establish a 53:02 runtime."
+    },
+    {
+      "ordinal": 2,
+      "title": "Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026",
+      "show": "The Morning Brief",
+      "publisher": "The Morning Brief",
+      "host": "Jeff Bechtel",
+      "episode_key": "morning-brief-2026-09-30-confidence-drop-agent-payments",
+      "publication_date": "2026-09-30",
+      "runtime_seconds": 780,
+      "url": "https://podcasts.apple.com/us/podcast/the-morning-brief/id1889037952",
+      "connection": "Adds a separate daily-news publisher with agent-payment controls and AI workflow context relevant to governed agent deployment.",
+      "verification": "Reused sealed authoritative repository evidence: Apple Podcasts lists the September 30 episode at 13 minutes."
+    }
+  ],
+  "checks": {
+    "count": 2,
+    "source_diverse": true,
+    "publishers": [
+      "The New York Times",
+      "The Morning Brief"
+    ],
+    "publication_before_cutoff": true,
+    "runtime_verified": true,
+    "runtimes_seconds": [
+      3182,
+      780
+    ],
+    "immediately_prior_edition_exact_podcast_pair_repeat": false,
+    "prior_edition_exact_podcast_pair_repeat": false
+  },
+  "freshness_note": "No new web research was used for this repository-capability task. The selection combines sealed, runtime-verified evidence from two independent publishers and avoids repeating the immediately prior edition pair."
+}

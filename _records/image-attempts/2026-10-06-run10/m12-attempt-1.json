@@ -1,0 +1,61 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "15",
+  "candidate_id": "m12",
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "request_key": "31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc",
+  "writer_generation": 50,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-06T08:19:58.000Z",
+  "image_execution_admission": "_records/image-admission/2026-10-06-run10/15-31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc.json",
+  "generated_at": "2026-10-06T08:08:00.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-77867b80-65c1-4345-9a64-abab852257be",
+    "targeted_edit_generation_id": null,
+    "targeted_edit": null
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1734,
+    "height": 907,
+    "bytes": 1137207,
+    "sha256": "c5e3ea3a1a1e561fe305cc20af381ca6717ce5a8157a807441167d78cd437da2",
+    "persisted": true,
+    "path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m12.png",
+    "git_blob_sha": "412ad3633af2f1b5b10e1389ca9734cb64b9c724",
+    "saved_git_commit": "582c31f3b5d03da01b777af1462fb2e2287f9951",
+    "exact_readback": "PASS_PROTECTED_CHUNK_BRIDGE_SHA256_GIT_OBJECT_SHA_SIZE_AND_READBACK_MATCH_LOCAL_BYTES",
+    "same_visual_targeted_edit": false,
+    "low_quality_fallback": false,
+    "svg_fallback": false,
+    "transport_receipt": "_records/edition-execution/image-transport-results/reliable-edition-20261006-run10/31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc.json"
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "User intent",
+      "Command console",
+      "Observe",
+      "Plan",
+      "Act",
+      "Desktop apps",
+      "Confirm",
+      "Audit trail"
+    ],
+    "extra_visible_text": [],
+    "note": "A bounded desktop-use mechanism carries user intent through a command console into an observe-plan-act loop, pauses consequential branches at explicit confirmation gates, and writes every step to a chronological audit trail."
+  },
+  "disposition": "ACCEPTED_LOCKED",
+  "reviewed_at": "2026-10-06T08:20:30.431Z"
+}

@@ -1,0 +1,13 @@
+{
+  "task_id": "09",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-06T01:18:48.936Z",
+  "reason": "Claimed the exact queued Task 09 request to review all four Professional Series books from authoritative durable inputs.",
+  "proof": {
+    "request_key": "7cfeb251814dad2e76369b3dd9b41afece7aa27c705b9d32b2c38bc02c54f7f7",
+    "writer_generation": 25,
+    "watchdog_lease_generation": 6,
+    "capability": "repository"
+  }
+}

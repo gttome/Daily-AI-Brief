@@ -1,0 +1,28 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "14",
+  "request_key": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663",
+  "incident_id": "wd-reliable-edition-20261006-run10-task14-bridge-checkpoint",
+  "slot": "F",
+  "state": "RECOVERY_VERIFIED_PROGRESSING",
+  "created_at": "2026-10-06T06:22:00.000Z",
+  "action_key": "wd-reliable-edition-20261006-run10-task14-bridge-checkpoint:accept-verified-image:ac8c8d97",
+  "action": "CONSUME_REPAIRED_TRANSPORT_AND_ACCEPT_SAVED_GIT_IMAGE",
+  "durable_delta": {
+    "repair_pr": 481,
+    "repair_merge_sha": "c0526c8f11e085eb9c52776a796e4cbeefa1ebd2",
+    "resume_workflow_run_id": 37422632692,
+    "transport_commit": "ffef44f36e37f5f5a29ef3d6c1c5b90b19f6d713",
+    "task_done_event": "_records/edition-execution/events/2026-10-06-run10/14-done.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-06-run10/m11.json",
+    "first_incomplete_task": "15"
+  },
+  "validation_result": "PASS_EXACT_BYTES_READ_BACK_VISUAL_REVIEW_AND_ACCEPTED_LOCKED",
+  "same_request_preserved": true,
+  "image_regenerated": false,
+  "real_executor_active": true,
+  "substantive_durable_progress": true,
+  "next_stage": "Supervisor queues the exact Task 15 request under a new writer generation."
+}

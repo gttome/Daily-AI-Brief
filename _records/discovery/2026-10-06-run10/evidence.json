@@ -1,0 +1,174 @@
+{
+  "schema_version": "run10-evidence-review-v1",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_id": "reliable-edition-20261006-run10",
+  "verified_at": "2026-10-06T01:02:51.314Z",
+  "sealed_research_cutoff": "2026-10-06T00:02:39.000Z",
+  "article_policy": "article-24-72-168-v1",
+  "source_preflight_branch": "discovery-preflight/daily/2026-10-06",
+  "source_preflight_sha": "8fb94e45a6b32c1b8f8303194f0641dbc6a554f2",
+  "candidate_count_reviewed": 9,
+  "full_source_reviews": 9,
+  "evidence_source_ref": "_records/discovery-preflight/result/article-evidence.json@8fb94e45a6b32c1b8f8303194f0641dbc6a554f2",
+  "source_evidence_git_blob": "e9c3c65c0326879f9df0d68df56a97897b6c84d3",
+  "independent_web_spot_checks_completed": 9,
+  "eligibility_after_source_date_verification": {
+    "eligible_candidate_ids": [
+      "m01",
+      "m02",
+      "m05",
+      "m08",
+      "m10",
+      "m11",
+      "m12",
+      "m13",
+      "m14"
+    ],
+    "excluded_candidate_ids": [],
+    "category_coverage": {
+      "technical_ai_engineering": 3,
+      "applied_genai_knowledge_workers": 3,
+      "agents_non_technical_people": 3
+    },
+    "agent_skill_story_ready_candidate_id": "m01"
+  },
+  "freshness_review": {
+    "primary_24h": [],
+    "normal_fallback_72h": [
+      "m02",
+      "m05",
+      "m13"
+    ],
+    "extended_fallback_168h": [
+      "m01",
+      "m08",
+      "m10",
+      "m11",
+      "m12",
+      "m14"
+    ],
+    "source_date_conflict": []
+  },
+  "review_items": [
+    {
+      "candidate_id": "m01",
+      "focus": "technical_ai_engineering",
+      "status": "verified_agent_skills_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 1450,
+      "claims": [
+        "Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface."
+      ],
+      "limitations": [
+        "Publisher post; adoption outcomes are not independently measured."
+      ]
+    },
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "status": "verified_normal_fallback",
+      "full_source_read": true,
+      "source_word_count": 3391,
+      "claims": [
+        "ThinkingBox grades terminal backend state across 507 stateful workflows and repeated trials."
+      ],
+      "limitations": [
+        "Joint publisher-authored benchmark using synthetic workflows."
+      ]
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "technical_ai_engineering",
+      "status": "verified_normal_fallback",
+      "full_source_read": true,
+      "source_word_count": 280,
+      "claims": [
+        "GitHub adds API-triggered Copilot code review, effort control and Balanced as default."
+      ],
+      "limitations": [
+        "Short product changelog; outcomes are not independent."
+      ]
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "applied_genai_knowledge_workers",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 2100,
+      "claims": [
+        "AWS describes multi-agent cloud migration across discovery, IaC, governance and operations."
+      ],
+      "limitations": [
+        "Vendor-authored implementation report."
+      ]
+    },
+    {
+      "candidate_id": "m10",
+      "focus": "applied_genai_knowledge_workers",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 936,
+      "claims": [
+        "Workspace adds AI image editing, prompt-built Sheets canvases and cross-app execution."
+      ],
+      "limitations": [
+        "Product roundup."
+      ]
+    },
+    {
+      "candidate_id": "m11",
+      "focus": "applied_genai_knowledge_workers",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 1800,
+      "claims": [
+        "Ai2 releases an open 8B model and data for citation-grounded scientific reports."
+      ],
+      "limitations": [
+        "Publisher-authored release."
+      ]
+    },
+    {
+      "candidate_id": "m12",
+      "focus": "agents_non_technical_people",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 430,
+      "claims": [
+        "GitHub exposes computer use in Copilot CLI and desktop apps."
+      ],
+      "limitations": [
+        "Public preview."
+      ]
+    },
+    {
+      "candidate_id": "m13",
+      "focus": "agents_non_technical_people",
+      "status": "verified_normal_fallback",
+      "full_source_read": true,
+      "source_word_count": 2149,
+      "claims": [
+        "AWS demonstrates multi-turn RL over full search-agent trajectories with verifiable retrieval rewards."
+      ],
+      "limitations": [
+        "Vendor-authored benchmark."
+      ]
+    },
+    {
+      "candidate_id": "m14",
+      "focus": "agents_non_technical_people",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 6491,
+      "claims": [
+        "AWS details event-driven agents with isolated sessions, human approval and resumable interruptions."
+      ],
+      "limitations": [
+        "Reference architecture."
+      ]
+    }
+  ],
+  "novelty_check": "No locked October 5 headline was reintroduced by the nine freshness-eligible candidates.",
+  "unknowns_preserved": true,
+  "result": "PASS"
+}

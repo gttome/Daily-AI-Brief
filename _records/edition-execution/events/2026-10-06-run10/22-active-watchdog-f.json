@@ -1,0 +1,21 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "task_id": "22",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-06T09:56:27.000Z",
+  "writer_generation": 75,
+  "owner_id": "chatgpt-watchdog-f-20261006T0953Z",
+  "reason_code": "TASK22_EXACT_PUBLICATION_PREFLIGHT_ACQUIRED",
+  "operation": "exact_preflight_and_open_publication_pr",
+  "proof": {
+    "request_key": "c8945f850ed7c688c59bea6f39b2d17d3b4c02dba953e4e28acaf0b8a566b5f2",
+    "request_generation": 73,
+    "refreshed_authority_generation": 75,
+    "completed_tasks": "00-21",
+    "accepted_locked_images": 6
+  }
+}

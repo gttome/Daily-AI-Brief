@@ -1,0 +1,60 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "14",
+  "candidate_id": "m11",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "request_key": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663",
+  "writer_generation": 43,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-06T05:54:16.000Z",
+  "image_execution_admission": "_records/image-admission/2026-10-06-run10/14-12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663.json",
+  "generated_at": "2026-10-06T05:55:27.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-5aeec85a-5aea-4eea-a1f4-db38fc8833ae",
+    "targeted_edit_generation_id": null,
+    "targeted_edit": null
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1733,
+    "height": 907,
+    "bytes": 1301536,
+    "sha256": "ac8c8d97bd9f8c03998948fe72954c32e26c9de0d6d430197cb5053164785f1c",
+    "persisted": true,
+    "path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m11.png",
+    "git_blob_sha": "45ccbb585b86bb5dfd9db43ec67c758d84b60a2a",
+    "saved_git_commit": "ffef44f36e37f5f5a29ef3d6c1c5b90b19f6d713",
+    "exact_readback": "PASS_PROTECTED_CHUNK_BRIDGE_SHA256_GIT_OBJECT_SHA_SIZE_AND_READBACK_MATCH_LOCAL_BYTES",
+    "same_visual_targeted_edit": false,
+    "low_quality_fallback": false,
+    "svg_fallback": false,
+    "transport_receipt": "_records/edition-execution/image-transport-results/reliable-edition-20261006-run10/12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663.json"
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Research question",
+      "Retrieval",
+      "Evidence filter",
+      "Source fragment",
+      "Citation map",
+      "Report composer",
+      "Claim",
+      "Verify"
+    ],
+    "extra_visible_text": [],
+    "note": "A detailed scientific-report pipeline moves from a research question through retrieval, evidence filtering, source fragments and citation mapping into a report composer, with claim-level verification closing the loop."
+  },
+  "disposition": "ACCEPTED_LOCKED"
+}

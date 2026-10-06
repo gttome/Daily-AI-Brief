@@ -1,0 +1,62 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "16",
+  "candidate_id": "m14",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-06T08:40:15.483Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 54,
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "saved_git_commit": "68709a8214c72071519c9154a3f376947bf3417a",
+  "image_execution_admission": "_records/image-admission/2026-10-06-run10/16-50a461bad40e069d2d75b74d8803d50b9a4bc4b2922072d37435d7e6b97aa469.json",
+  "source_lineage": {
+    "base_generation_id": "exec-dc123b9b-2f8d-41ad-8f1d-738e6c930783",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "44803a638cbd25e5d388f0dafb07ce5a6df8da3ac9c1fca332e05081fafdb1d9",
+    "native_bytes": 1272756,
+    "native_width": 1731,
+    "native_height": 909,
+    "transport_method": "protected Base64 chunk bridge with SHA-256, Git blob and saved-path read-back verification"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m14.png",
+    "git_blob_sha": "b154cd92a03abe77efe1b3783184d4400949315f",
+    "sha256": "44803a638cbd25e5d388f0dafb07ce5a6df8da3ac9c1fca332e05081fafdb1d9",
+    "bytes": 1272756,
+    "width": 1731,
+    "height": 909,
+    "exact_readback": "PASS_PROTECTED_CHUNK_BRIDGE_SHA256_GIT_OBJECT_SHA_SIZE_AND_READBACK_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "A left-to-right event and ambient-agent intake enters a clearly bounded isolated session. Durable job state feeds a policy gate with distinct safe-action and human-approval branches; resume returns to the state loop while a full-width audit trail preserves the event sequence.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Event",
+      "Ambient agent",
+      "Isolated session",
+      "Job state",
+      "Policy gate",
+      "Bounded action",
+      "Ask human",
+      "Resume",
+      "Audit trail"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The saved Git PNG is byte-identical to the reviewed local file by SHA-256, Git blob identity, byte count and protected read-back receipt."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

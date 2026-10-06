@@ -1,0 +1,37 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "c8945f850ed7c688c59bea6f39b2d17d3b4c02dba953e4e28acaf0b8a566b5f2",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "22",
+  "request_writer_generation": 73,
+  "writer_generation": 75,
+  "status": "passed",
+  "completed_at": "2026-10-06T10:05:30.000Z",
+  "publication_pr": {
+    "number": 491,
+    "url": "https://github.com/gttome/Daily-AI-Brief/pull/491",
+    "base": "main",
+    "base_sha": "90f24d679cd0745c605b35fe6555898d62a41870",
+    "head_branch": "reliable-edition/dab-edition-2026-10-06-run10",
+    "observed_head_sha": "24eb88423635255ec8a534bdb8e826476dc5a74c",
+    "reused_existing_matching_pr": false,
+    "duplicate_pr_created": false,
+    "protected_ci_required_next": true
+  },
+  "preflight": {
+    "result": "PASS",
+    "receipt": "_records/edition-execution/publication-preflight/2026-10-06.json",
+    "candidate_content_digest": "sha256:0c09b6e4216ad258ca78c2a4c313648b15ce887a54d6b0ac73d26f7537fbced8",
+    "protected_main_sha": "90f24d679cd0745c605b35fe6555898d62a41870",
+    "history_join_commit": "faa3775b97d2a40674362ddea9a6355e180e5a2d"
+  },
+  "evidence": {
+    "publication_receipt": "_records/publication/2026-10-06-run10/task22-publication-pr.json",
+    "accepted_locked_images": 6,
+    "image_mutations": 0
+  },
+  "task_outcome": "Done",
+  "result": "PASS"
+}

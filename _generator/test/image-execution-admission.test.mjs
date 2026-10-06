@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  buildImageGenerationExecution,buildImageGeneratorContextReceipt,buildImageExecutionAdmission,executeImageRequest,
+  buildImageGenerationExecution,buildImageExecutionAdmission,executeImageRequest,
   imageExecutionAdmissionDecision,validateImageExecutionAdmission,
   IMAGE_EXECUTION_ADMISSION_VERSION
 } from '../lib/image-execution.mjs';
@@ -20,11 +20,8 @@ const packet=()=>({
 const ctx={execution_id:'reliable-edition-20990101-run1',task_id:'11',request_key:'req-11'};
 
 function admission(execution,overrides={}){
-  const generator_context_receipt=buildImageGeneratorContextReceipt(execution,{...ctx,
-    invocation_id:'fixture-admission-invocation',context_id:'fixture-story-only-context',
-    submitted_instruction:execution.generation_instruction,created_at:'2099-01-01T00:00:00Z'});
   return buildImageExecutionAdmission(execution,{
-    ...ctx,submitted_instruction:execution.generation_instruction,generator_context_receipt,
+    ...ctx,submitted_instruction:execution.generation_instruction,
     story_only_context_verified:true,orchestration_context_visible:false,
     exact_byte_persistence_verified:true,persistence_mode:'git_data_direct_blob',
     owner_intervention_required:false,

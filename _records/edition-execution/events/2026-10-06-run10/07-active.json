@@ -1,0 +1,13 @@
+{
+  "task_id": "07",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-06T01:10:01.733Z",
+  "reason": "Claimed the exact queued Task 07 request to select two source-diverse podcasts from authoritative sealed repository evidence.",
+  "proof": {
+    "request_key": "3e181066c2142e562080eade54b12e0ee2ead8b9612542f43f198231f929a4e5",
+    "writer_generation": 21,
+    "watchdog_lease_generation": 4,
+    "capability": "repository"
+  }
+}

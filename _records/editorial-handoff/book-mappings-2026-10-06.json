@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-06",
+  "reviewed_books": [
+    "Reliable Generative AI",
+    "Reliable Generative AI Context Engineering",
+    "Generative AI Professional Prompt Engineering Guide",
+    "Generative AI Prompt Engineering Learning Ecosystem"
+  ],
+  "editions": {
+    "2026-10-06": [
+      {
+        "item_id": "dab-story-2026-10-06-m01",
+        "reference_id": "ecosystem-template-export",
+        "label": "READ DEEPER",
+        "why": "A reusable device skill becomes more dependable when its inputs, permissions and outputs form a clear contract and the result can be reused as an editable template."
+      },
+      {
+        "item_id": "dab-story-2026-10-06-m02",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Durable-state grading helps distinguish a confident answer from a completed job and turns verification into a repeatable workflow."
+      },
+      {
+        "item_id": "dab-story-2026-10-06-m10",
+        "reference_id": "context-dynamic-facts",
+        "label": "READ DEEPER",
+        "why": "Cross-app work is easier to trust when current facts travel with the task and the generated artifact remains editable and reusable."
+      },
+      {
+        "item_id": "dab-story-2026-10-06-m11",
+        "reference_id": "reliable-rag",
+        "label": "READ DEEPER",
+        "why": "Citation-grounded reports improve when retrieval combines semantic and exact matching and readers check what each citation really supports."
+      },
+      {
+        "item_id": "dab-story-2026-10-06-m12",
+        "reference_id": "prompt-clarify",
+        "label": "READ DEEPER",
+        "why": "Desktop action is safer when the agent clarifies intent before consequential clicks and responsibility remains clearly divided between person and agent."
+      },
+      {
+        "item_id": "dab-story-2026-10-06-m14",
+        "reference_id": "reliable-agent-failures",
+        "label": "READ DEEPER",
+        "why": "Event-driven autonomy becomes safer when failure handling, escalation playbooks and human-versus-agent roles are decided before an agent acts."
+      }
+    ]
+  },
+  "source_review_path": "_records/editorial/2026-10-06-run10/book-review.json"
+}

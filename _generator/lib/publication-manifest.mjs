@@ -158,7 +158,8 @@ function watchlistErrors(root,ctx,date,freeze,migration={}){
   else errors.push(...strict.map(e=>'publication_manifest_watchlist_discovery:'+e));
  }
  for(const e of validateWatchlist(watch))errors.push('publication_manifest_watchlist_invalid:'+e);
- if(watch?.edition_date!==date||sweep?.edition_date!==date)errors.push('publication_manifest_watchlist_date_mismatch');
+ const sweepDate=sweep?.edition_date||(sweep?.edition_id===`dab-edition-${date}`?date:null);
+ if(watch?.edition_date!==date||sweepDate!==date)errors.push('publication_manifest_watchlist_date_mismatch');
  const counts=watchlistDailySummary(watch||{topics:[],edition_date:date});
  if(JSON.stringify(counts)!==JSON.stringify(freeze?.counts||{}))errors.push('publication_manifest_watchlist_counts_mismatch');
  const active=(watch?.topics||[]).filter(t=>t.status!=='archived');

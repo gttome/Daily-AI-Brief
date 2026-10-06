@@ -1,0 +1,33 @@
+{
+  "schema_version": "exact-publication-preflight-v1",
+  "edition_id": "dab-edition-2026-10-06",
+  "edition_date": "2026-10-06",
+  "candidate_sha": null,
+  "candidate_content_digest": "sha256:0c09b6e4216ad258ca78c2a4c313648b15ce887a54d6b0ac73d26f7537fbced8",
+  "checked_at": "2026-10-06T10:14:00.000Z",
+  "model_calls": 0,
+  "publication_pr_opened": false,
+  "result": "PASS",
+  "checks": {
+    "publication_manifest_compatibility": true,
+    "publication_candidate_contract": true,
+    "reader_semantic_close_prerequisites": true,
+    "exact_projection_routes": true
+  },
+  "expected_deployment_routes": [
+    "/",
+    "/latest/",
+    "/briefs/2026-10-06/",
+    "/archive/",
+    "/feed.json",
+    "/feed.xml",
+    "/stories/2026-10-06/android-cli-turns-device-access-into-reusable-agent-skills/",
+    "/stories/2026-10-06/when-an-agent-says-it-is-done-grade-the-database/",
+    "/stories/2026-10-06/workspace-turns-prompts-into-images-canvases-and-cross-app-work/",
+    "/stories/2026-10-06/astabrief-opens-a-faster-path-to-citation-grounded-reports/",
+    "/stories/2026-10-06/copilot-moves-from-chat-into-desktop-computer-use/",
+    "/stories/2026-10-06/ambient-agents-wake-on-events-and-know-when-to-ask-a-human/"
+  ],
+  "failure_classes": [],
+  "errors": []
+}

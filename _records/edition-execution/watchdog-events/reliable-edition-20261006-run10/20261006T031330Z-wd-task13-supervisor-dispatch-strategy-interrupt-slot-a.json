@@ -1,0 +1,54 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "13",
+  "incident_id": "wd-reliable-edition-20261006-run10-task13-supervisor-resume-gap",
+  "owner_slot": "A",
+  "event_type": "continuation_handoff",
+  "classification": "BLOCKED_ACTIONABLE",
+  "occurred_at": "2026-10-06T03:13:30.000Z",
+  "action_key": "wd-reliable-edition-20261006-run10-task13-supervisor-resume-gap:slot-a:g12",
+  "authoritative_state": {
+    "task_12_done": true,
+    "accepted_locked_images": 2,
+    "first_incomplete_task": "13",
+    "task_13_request_exists": false,
+    "writer_released": true,
+    "watchdog_compact_packet_stale": true
+  },
+  "recovery_actions": [
+    {
+      "action": "revalidate_task12_completion_and_writer_release",
+      "durable_delta": "Task 12 request is completed and accepted_locked; writer generation 31 is released.",
+      "validation_result": "PASS"
+    },
+    {
+      "action": "verify_task13_request",
+      "durable_delta": "No Task 13 worker request exists after Task 12 completion.",
+      "validation_result": "BLOCKED_ACTIONABLE"
+    },
+    {
+      "action": "verify_writer_handoff_dispatch",
+      "durable_delta": "Writer Handoff run 37406643531 completed success and executed gh workflow run for run-supervisor.yml, but no Run Supervisor workflow run materialized afterward.",
+      "validation_result": "NO_SUBSTANTIVE_PROGRESS"
+    },
+    {
+      "action": "retry_exact_existing_handoff_once",
+      "durable_delta": "Semantics-preserving writer-lease rewrite commit 894d5f9d97e725732c07f42ebb6eb7718fd431ef retriggered the same handoff. Writer Handoff run 37407895206 completed success.",
+      "validation_result": "NO_SUBSTANTIVE_PROGRESS"
+    }
+  ],
+  "strategy_interrupt": {
+    "applied": true,
+    "reason": "Two materially equivalent successful handoff dispatch attempts produced no Run Supervisor workflow run and no Task 13 request.",
+    "identical_retry_prohibited_without_new_evidence": true,
+    "failure_signature": "writer_handoff_reports_success_but_supervisor_dispatch_does_not_materialize",
+    "next_hypothesis": "GitHub workflow_dispatch delivery or Supervisor workflow activation is not materializing despite successful gh workflow run exit."
+  },
+  "next_authorized_action": "Re-read current Run Supervisor/inner-watchdog workflow state. If a Supervisor run appears, require Task 13 request creation and substantive Task 13 progress. If still absent, continue from this dispatch-delivery fault without blind-retrying the same handoff; repair or use the next protected repository-native Supervisor activation path.",
+  "owner_action_required": false,
+  "terminal": false
+}

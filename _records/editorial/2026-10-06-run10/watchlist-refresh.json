@@ -1,0 +1,67 @@
+{
+  "schema_version": "run10-watchlist-refresh-v1",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_id": "reliable-edition-20261006-run10",
+  "observed_at": "2026-10-06T01:17:05.017Z",
+  "research_cutoff": "2026-10-06T00:02:39.000Z",
+  "checks_completed": 14,
+  "discovery_domains_checked": 7,
+  "new_topics": [],
+  "updated_topic_ids": [
+    "dab-topic-source-aware-agent-verification",
+    "dab-topic-agent-skills-observability",
+    "dab-topic-system-one-decision-models",
+    "dab-topic-long-horizon-agents"
+  ],
+  "reactivated_topic_ids": [
+    "dab-topic-source-aware-agent-verification"
+  ],
+  "carried_forward_count": 17,
+  "dropped_topic_ids": [],
+  "dropped_topics": [],
+  "zero_new_certified": true,
+  "drop_review_completed": true,
+  "result": "PASS",
+  "updates": [
+    {
+      "topic_id": "dab-topic-source-aware-agent-verification",
+      "label": "Updated today • Reactivated",
+      "title": "Source-aware verification for tool-using agents",
+      "what_changed": "GitHub launched ReviewBench with representative pull requests, multi-source ground truth, calibrated evaluation and production-aligned metrics for code-review agents.",
+      "source_ref": "_records/editorial/2026-10-06-run10/watchlist-source-github-reviewbench.json"
+    },
+    {
+      "topic_id": "dab-topic-agent-skills-observability",
+      "label": "Updated today",
+      "title": "Reusable agent skills become observable",
+      "what_changed": "AWS released the aws-ai-ml skill, which lets MCP-compatible coding agents benchmark endpoints, compare performance runs, recommend deployment configurations and generate executable SageMaker code.",
+      "source_ref": "_records/editorial/2026-10-06-run10/watchlist-source-aws-sagemaker-agent-skill.json"
+    },
+    {
+      "topic_id": "dab-topic-system-one-decision-models",
+      "label": "Updated today",
+      "title": "Decision models emerge as a separate AI systems layer",
+      "what_changed": "Strands Decider 2B adds a small open-source decision model for fast local experimentation and executable decision work.",
+      "source_ref": "_records/editorial/2026-10-06-run10/watchlist-source-strands-decider-2b.json"
+    },
+    {
+      "topic_id": "dab-topic-long-horizon-agents",
+      "label": "Updated today",
+      "title": "Agents that persist across sessions",
+      "what_changed": "Amazon Bedrock Managed Agents packages a stateful harness, memory, skills, specialized-agent coordination and AWS-governed execution into a managed preview.",
+      "source_ref": "_records/editorial/2026-10-06-run10/watchlist-source-bedrock-managed-agents.json"
+    }
+  ],
+  "drops": [],
+  "no_drop_justification": "No active topic crossed the archival threshold in this bounded sweep. Every non-updated active topic retains prior evidence and an explicit next-action test; removing one without a contrary or superseding signal would be premature.",
+  "zero_new_justification": "The strongest fresh signals map cleanly onto four already tracked mechanisms. No distinct additional mechanism cleared the admission threshold after fourteen focused checks across seven discovery domains.",
+  "sweep_receipt": "_records/watchlist-sweeps/2026-10-06.json",
+  "source_evidence": [
+    "_records/editorial/2026-10-06-run10/watchlist-source-github-reviewbench.json",
+    "_records/editorial/2026-10-06-run10/watchlist-source-aws-sagemaker-agent-skill.json",
+    "_records/editorial/2026-10-06-run10/watchlist-source-strands-decider-2b.json",
+    "_records/editorial/2026-10-06-run10/watchlist-source-bedrock-managed-agents.json"
+  ],
+  "semantic_pass_reused": true,
+  "semantic_selection_git_blob": "640af41c530d657612f08508061764e7e32c6c2f"
+}

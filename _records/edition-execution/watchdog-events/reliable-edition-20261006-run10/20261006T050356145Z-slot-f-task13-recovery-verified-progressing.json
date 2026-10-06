@@ -1,0 +1,26 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "incident_id": "wd-reliable-edition-20261006-run10-task13-complete-saved-git-review",
+  "owner_slot": "F",
+  "task_id": "13",
+  "event_at": "2026-10-06T05:03:56.145Z",
+  "classification": "RECOVERY_VERIFIED_PROGRESSING",
+  "outcome": "TASK_DONE_FIRST_INCOMPLETE_ADVANCED",
+  "action_key": "wd-reliable-edition-20261006-run10-task13-complete-saved-git-review:slot-f:g17",
+  "authoritative_request_key": "6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a",
+  "durable_delta": {
+    "task_transition": "13 Done",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/13-6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-06-run10/m10.json",
+    "task_asset_commit": "779c2c4f4ea26db991f35d6cc4fe73c5bf10a1d7",
+    "first_incomplete_task": "14",
+    "accepted_locked_images": 3,
+    "duplicate_generation_rejected": true,
+    "protected_chunk_readback": true
+  },
+  "recovery_required": false,
+  "success": true,
+  "next_action": "Same-execution Supervisor sequences Task 14; Tasks 00-13 and all three accepted_locked images remain immutable."
+}

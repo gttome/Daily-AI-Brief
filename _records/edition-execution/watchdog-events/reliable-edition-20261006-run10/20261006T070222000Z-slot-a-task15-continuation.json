@@ -1,0 +1,19 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "15",
+  "request_key": "31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc",
+  "incident_id": "wd-reliable-edition-20261006-run10-task15-story-only-context-unavailable",
+  "slot": "A",
+  "state": "SAFE_BOUNDARY_REACHED",
+  "created_at": "2026-10-06T07:02:22.000Z",
+  "action": "STRATEGY_INTERRUPT_BEFORE_NATIVE_GENERATION",
+  "validation_result": "STORY_ONLY_CONTEXT_NOT_PROVEN",
+  "same_request_preserved": true,
+  "image_regenerated": false,
+  "image_attempt_consumed": false,
+  "accepted_locked_changed": false,
+  "reason": "Task 15 is already Blocked after a prior native-image context-contamination rejection. This invocation cannot prove the required story-only generator-visible context, so generation is prohibited and zero additional image attempts are consumed.",
+  "next_stage": "Continue the same Task 15 request only from an authorized execution context that can prove story-only generator visibility and acquire the normal task writer fence. Preserve all Done tasks and accepted_locked assets."
+}

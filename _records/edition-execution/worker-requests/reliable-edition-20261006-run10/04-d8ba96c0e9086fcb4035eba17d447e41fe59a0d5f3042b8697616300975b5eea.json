@@ -1,0 +1,22 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "d8ba96c0e9086fcb4035eba17d447e41fe59a0d5f3042b8697616300975b5eea",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "04",
+  "capability": "repository",
+  "instruction": "Execute Task 04 (Verify evidence and freshness fallback) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 15,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-06T01:00:50.555Z",
+  "writer_generation_is_provenance": true,
+  "authority_refresh_required_at_invocation": false,
+  "status": "completed_pass",
+  "claimed_at": "2026-10-06T01:01:57.730Z",
+  "claimed_by": "scheduled-chatgpt-watchdog-slot-f",
+  "completed_at": "2026-10-06T01:02:51.314Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/04-d8ba96c0e9086fcb4035eba17d447e41fe59a0d5f3042b8697616300975b5eea.json"
+}

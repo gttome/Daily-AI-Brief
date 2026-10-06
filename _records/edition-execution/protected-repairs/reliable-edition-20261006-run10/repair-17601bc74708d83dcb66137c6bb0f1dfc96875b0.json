@@ -1,0 +1,38 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "RECOVERY_VERIFIED_PROGRESSING",
+  "repair_key": "repair-17601bc74708d83dcb66137c6bb0f1dfc96875b0",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "production_branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "11",
+  "incident_id": "wd-reliable-edition-20261006-run10-task11-scheduled-consumer-writer-block",
+  "repair_branch": "repair/run10-task11-native-writer-release",
+  "repair_branch_head_sha": "ce306a2adea3f6615b63d41ef2e8e985a55503c4",
+  "repair_scope_digest": "sha256:f3ab89f6251a0ea895cfd694de7d75ac90b369ebc9f70483f07a48e7c45072a8",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-06T02:06:17.222Z",
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+  "repair_pr_number": 480,
+  "validate_run_id": 37402594308,
+  "merge_sha": "f3a932d3b92d77d5fb3e6225a4d3e61b475a819a",
+  "resume_workflow_run_id": 37402718652,
+  "resumed_at": "2026-10-06T02:12:58.784Z",
+  "verified_at": "2026-10-06T02:16:41.372Z",
+  "same_task_resumed": true,
+  "executor_active": true,
+  "durable_progress": true,
+  "task_done": true,
+  "accepted_locked_changed": false,
+  "post_repair_attempts": 0,
+  "progress_evidence": {
+    "request_key": "40e6b89d78aa3f65ea1ca4225dfa2a22f40c78265a55e03ae892af0df42a8605",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/11-40e6b89d78aa3f65ea1ca4225dfa2a22f40c78265a55e03ae892af0df42a8605.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-06-run10/m01.json",
+    "done_event": "_records/edition-execution/events/2026-10-06-run10/11-done.json",
+    "first_incomplete_task": "12"
+  }
+}

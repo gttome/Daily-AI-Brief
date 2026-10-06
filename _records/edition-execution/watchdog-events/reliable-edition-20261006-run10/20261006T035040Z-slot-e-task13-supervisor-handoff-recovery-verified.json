@@ -1,0 +1,51 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "13",
+  "incident_id": "wd-reliable-edition-20261006-run10-task13-supervisor-handoff-release-schema",
+  "owner_slot": "E",
+  "event_type": "recovery_verified_progressing",
+  "classification": "RECOVERY_VERIFIED_PROGRESSING",
+  "occurred_at": "2026-10-06T03:50:40.000Z",
+  "action_key": "wd-reliable-edition-20261006-run10-task13-supervisor-handoff-release-schema:slot-e:g15",
+  "diagnosis": {
+    "fault": "Writer Handoff required lease.released===true, while the completed Task 12 lease recorded state=RELEASED/released_at but omitted the released boolean; successful handoff workflow runs therefore exited before Supervisor dispatch.",
+    "strategy_interrupt_respected": true,
+    "duplicate_retry_avoided": true
+  },
+  "recovery_actions": [
+    {
+      "action": "repair_released_lease_compatibility_bit",
+      "durable_delta": "Added released=true to the already-released Task 12 writer lease without changing Task 12 completion, accepted_locked image evidence, writer generation, release time, or release reason.",
+      "validation_result": "PASS",
+      "commit_sha": "6a1cb00e3235fc865fc604dc1756648593ba37c9"
+    },
+    {
+      "action": "repository_native_writer_handoff",
+      "durable_delta": "Writer Handoff run 37410807676 completed success and materialized same-execution Run Supervisor 37410836698.",
+      "validation_result": "PASS"
+    },
+    {
+      "action": "verify_same_execution_task13_progress",
+      "durable_delta": "Supervisor acquired writer generation 32, created exact Task 13 native_chatgpt request 6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a, and released the writer at the scheduled-image-consumer boundary.",
+      "validation_result": "SUBSTANTIVE_DURABLE_PROGRESS"
+    }
+  ],
+  "progress_evidence": {
+    "supervisor_run_id": 37410836698,
+    "supervisor_conclusion": "success",
+    "supervisor_writer_generation": 32,
+    "task13_request": "_records/edition-execution/worker-requests/reliable-edition-20261006-run10/13-6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a.json",
+    "task13_request_status": "queued_for_scheduled_consumer",
+    "task13_generation_started": false,
+    "task13_accepted_locked": false,
+    "writer_release_reason": "TASK_13_QUEUED_FOR_SCHEDULED_CONSUMER_HANDOFF_TO_WATCHDOG",
+    "accepted_locked_images_preserved": 2
+  },
+  "next_authorized_action": "The next eligible admitted A-F scheduled consumer may claim the exact Task 13 request. Native generation remains prohibited unless that invocation persists PASS image-execution-admission-v1 with story-only generator context and an approved exact-byte persistence route.",
+  "owner_action_required": false,
+  "terminal": false
+}

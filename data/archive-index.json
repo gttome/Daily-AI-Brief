@@ -4,6 +4,235 @@
   "stories": [
     {
       "content_type": "Article",
+      "story_id": "dab-story-2026-10-06-m01",
+      "brief_date": "2026-10-06",
+      "event_date": "2026-10-03",
+      "headline": "Android CLI turns device access into reusable agent skills",
+      "url": "/stories/2026-10-06/android-cli-turns-device-access-into-reusable-agent-skills/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Agent Skills",
+        "Android CLI",
+        "device streaming"
+      ],
+      "companies": [
+        "Android Developers"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-06-m02",
+      "brief_date": "2026-10-06",
+      "event_date": "2026-10-03",
+      "headline": "When an agent says it is done, grade the database",
+      "url": "/stories/2026-10-06/when-an-agent-says-it-is-done-grade-the-database/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent verification",
+        "durable state",
+        "repeatability"
+      ],
+      "companies": [
+        "Hugging Face / Microsoft"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "ThinkingBox grades terminal backend state across 507 stateful workflows and repeated trials."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-06-m10",
+      "brief_date": "2026-10-06",
+      "event_date": "2026-10-01",
+      "headline": "Workspace turns prompts into images, canvases and cross-app work",
+      "url": "/stories/2026-10-06/workspace-turns-prompts-into-images-canvases-and-cross-app-work/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "knowledge work",
+        "cross-app workflows",
+        "source data"
+      ],
+      "companies": [
+        "Google Workspace"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Workspace adds AI image editing, prompt-built Sheets canvases and cross-app execution."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-06-m11",
+      "brief_date": "2026-10-06",
+      "event_date": "2026-10-02",
+      "headline": "AstaBrief opens a faster path to citation-grounded reports",
+      "url": "/stories/2026-10-06/astabrief-opens-a-faster-path-to-citation-grounded-reports/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "research workflows",
+        "citations",
+        "report generation"
+      ],
+      "companies": [
+        "Hugging Face / Ai2"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Ai2 releases an open 8B model and data for citation-grounded scientific reports."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-06-m12",
+      "brief_date": "2026-10-06",
+      "event_date": "2026-10-01",
+      "headline": "Copilot moves from chat into desktop computer use",
+      "url": "/stories/2026-10-06/copilot-moves-from-chat-into-desktop-computer-use/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "computer use",
+        "desktop agents",
+        "confirmation gates"
+      ],
+      "companies": [
+        "GitHub Changelog"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "GitHub exposes computer use in Copilot CLI and desktop apps."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-06-m14",
+      "brief_date": "2026-10-06",
+      "event_date": "2026-10-01",
+      "headline": "Ambient agents wake on events and know when to ask a human",
+      "url": "/stories/2026-10-06/ambient-agents-wake-on-events-and-know-when-to-ask-a-human/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "ambient agents",
+        "human approval",
+        "event-driven workflows"
+      ],
+      "companies": [
+        "AWS Machine Learning"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "AWS details event-driven agents with isolated sessions, human approval and resumable interruptions."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-10-06-general",
+      "brief_date": "2026-10-06",
+      "event_date": "2026-07-21",
+      "headline": "Meet the GitHub Copilot app: Your new AI desktop assistant",
+      "url": "/videos/2026-10-06/general/",
+      "focus": "general_video",
+      "topics": [],
+      "companies": [
+        "GitHub"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "An official tour of the Copilot desktop agent surface supporting the edition’s computer-use story."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-10-06-agent-skills",
+      "brief_date": "2026-10-06",
+      "event_date": "2026-10-06",
+      "headline": "The My work tab: your mission control in the GitHub Copilot app",
+      "url": "/videos/2026-10-06/agent-skills/",
+      "focus": "agents_non_technical_people",
+      "topics": [],
+      "companies": [
+        "GitHub"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Shows work items launching bounded agent sessions and complements governed reusable workflows."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-10-06-1",
+      "brief_date": "2026-10-06",
+      "event_date": "2026-10-02",
+      "headline": "Hard Fork — October 2, 2026 episode",
+      "url": "/podcasts/2026-10-06/hard-fork-2026-10-02-ai-agents/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "personal assistants",
+        "agent incidents",
+        "privacy"
+      ],
+      "companies": [
+        "Hard Fork"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Current discussion of personal assistants, agent incidents and privacy trade-offs."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-10-06-2",
+      "brief_date": "2026-10-06",
+      "event_date": "2026-09-30",
+      "headline": "Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026",
+      "url": "/podcasts/2026-10-06/morning-brief-2026-09-30-confidence-drop-agent-payments/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "agent payments",
+        "controls",
+        "AI workflows"
+      ],
+      "companies": [
+        "The Morning Brief"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "A separate daily-news publisher adds agent-payment controls and AI workflow context relevant to governed deployment."
+    },
+    {
+      "content_type": "Article",
       "story_id": "dab-story-2026-10-05-m02",
       "brief_date": "2026-10-05",
       "event_date": "2026-10-03",
@@ -5404,163 +5633,6 @@
         "Accessible agents for knowledge work"
       ],
       "summary": "Microsoft says Fabric Data Agents are generally available for use in Copilot Studio. A Copilot Studio agent can call a Fabric Data Agent as a tool, combine it with other tools and knowledge, and use permissions already applied to the underlying Fabric data."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-06-0b55fd52",
-      "brief_date": "2026-09-06",
-      "event_date": "2026-09-04",
-      "headline": "GPT-6 Astra is now generally available inside GitHub Copilot",
-      "url": "/stories/2026-09-06/gpt-6-astra-is-now-generally-available-inside-github-copilot/",
-      "focus": "technical_ai_engineering",
-      "topics": [
-        "GPT-6 Astra",
-        "GitHub Copilot",
-        "coding agents",
-        "computer use",
-        "model integration",
-        "agentic development"
-      ],
-      "companies": [],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent memory and context",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "GitHub made OpenAI’s GPT-6 Astra generally available in GitHub Copilot on September 4, extending the new model into Copilot’s coding and agentic workflows. OpenAI describes Astra as improved at coding, research, computer use, and complex multi-step work. Bringing it into Copilot matters because the model is no longer only a standalone capability: it can operate inside an engineering harness with repository context, tools, review flows, and existing developer controls."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-06-4426ca30",
-      "brief_date": "2026-09-06",
-      "event_date": "2026-09-03",
-      "headline": "Anthropic adds infrastructure-as-code discipline to agent deployment with `ant apply`",
-      "url": "/stories/2026-09-06/anthropic-adds-infrastructure-as-code-discipline-to-agent-deployment-with-ant-ap/",
-      "focus": "technical_ai_engineering",
-      "topics": [
-        "agent deployment",
-        "resources as code",
-        "reproducibility",
-        "skills",
-        "memory",
-        "environments",
-        "approval plans"
-      ],
-      "companies": [],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Anthropic’s September 3 platform release added `ant apply` to the `ant` CLI. Developers can describe agents, environments, skills, memory stores, and deployments in repository files, generate a proposed change plan, approve it, and commit a lockfile so later runs update the same resources instead of silently creating new ones. The pattern imports familiar infrastructure-as-code ideas into agent engineering."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-06-9839a69b",
-      "brief_date": "2026-09-06",
-      "event_date": "2026-09-03",
-      "headline": "ChatGPT adds first-party Zendesk and OneNote plugins for support and knowledge workflows",
-      "url": "/stories/2026-09-06/chatgpt-adds-first-party-zendesk-and-onenote-plugins-for-support-and-knowledge-w/",
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "ChatGPT plugins",
-        "Zendesk",
-        "OneNote",
-        "support operations",
-        "meeting notes",
-        "knowledge work",
-        "permissions"
-      ],
-      "companies": [],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "OpenAI added Zendesk and OneNote plugins in beta to supported ChatGPT and Codex experiences. Zendesk can help review permitted tickets, customer history, and knowledge and prepare replies. OneNote can find and summarize notes, collect decisions and action items, and perform supported create or update actions. Access remains bounded by the connected account’s permissions, workspace policy, and supported actions."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-06-3f824b7a",
-      "brief_date": "2026-09-06",
-      "event_date": "2026-09-01",
-      "headline": "Claude Fable 5.1 raises the bar for research and difficult professional knowledge work",
-      "url": "/stories/2026-09-06/claude-fable-5-1-raises-the-bar-for-research-and-difficult-professional-knowledg/",
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "Claude Fable 5.1",
-        "knowledge work",
-        "research",
-        "coding",
-        "professional reasoning",
-        "model evaluation"
-      ],
-      "companies": [],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Anthropic released Claude Fable 5.1 and Claude Mythos 5.1 on September 1, positioning Fable 5.1 as its most advanced generally usable model for coding and knowledge work. Anthropic emphasizes research capability alongside professional reasoning and coding. For knowledge workers, the important development is not simply a new model name but continuing improvement in tasks that combine reading, synthesis, analysis, and artifact creation."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-06-30dde95b",
-      "brief_date": "2026-09-06",
-      "event_date": "2026-09-04",
-      "headline": "OpenAI’s workspace-agent guidance emphasizes reusable workflows rather than one-off prompting",
-      "url": "/stories/2026-09-06/openai-s-workspace-agent-guidance-emphasizes-reusable-workflows-rather-than-one-/",
-      "focus": "agents_non_technical_people",
-      "topics": [
-        "workspace agents",
-        "repeatable workflows",
-        "scheduling",
-        "shared processes",
-        "tools",
-        "safeguards",
-        "delegation"
-      ],
-      "companies": [],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "OpenAI updated its Workspace Agents Academy material on September 4. The guidance frames workspace agents as a way to turn recurring work into repeatable, shared workflows instead of repeatedly explaining the same task in ordinary chat. Workspace agents can be configured around an outcome, instructions, tools, schedules, and safeguards, then reused across a team where available."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-06-fcc3f409",
-      "brief_date": "2026-09-06",
-      "event_date": "2026-09-05",
-      "headline": "Claude Cowork now formalizes a connector → browser → computer-use escalation path",
-      "url": "/stories/2026-09-06/claude-cowork-now-formalizes-a-connector-browser-computer-use-escalation-path/",
-      "focus": "agents_non_technical_people",
-      "topics": [
-        "Claude Cowork",
-        "computer use",
-        "connectors",
-        "browser agents",
-        "tool selection",
-        "human oversight",
-        "permissions"
-      ],
-      "companies": [],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Anthropic’s Cowork documentation, updated this week, describes a practical tool-selection hierarchy for delegated work. Cowork prefers direct connectors when available, falls back to browser interaction when needed, and can use direct computer interaction—clicking, typing, opening apps, and navigating the screen—when no more precise tool is available. Anthropic explicitly notes that screen interaction is slower and more error-prone than connectors and recommends monitoring computer-use tasks, especially early on."
     }
   ]
 }

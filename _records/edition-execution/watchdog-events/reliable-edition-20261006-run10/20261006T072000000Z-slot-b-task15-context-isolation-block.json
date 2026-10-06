@@ -1,0 +1,25 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "15",
+  "request_key": "31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc",
+  "incident_id": "wd-reliable-edition-20261006-run10-task15-story-only-runtime-unavailable",
+  "slot": "B",
+  "state": "SAFE_BOUNDARY_REACHED",
+  "created_at": "2026-10-06T07:20:00.000Z",
+  "action": "STRATEGY_INTERRUPT_CONTEXT_ISOLATION_CHECK",
+  "validation_result": "STORY_ONLY_CONTEXT_UNAVAILABLE",
+  "same_request_preserved": true,
+  "image_regenerated": false,
+  "image_attempt_consumed": false,
+  "accepted_locked_changed": false,
+  "reason": "Task 15 already has a documented context-contamination rejection. This invocation cannot prove a separate story-only native generation context, so native generation remains prohibited and zero additional image attempts are consumed.",
+  "evidence_refs": [
+    "_records/edition-execution/events/2026-10-06-run10/15-blocked.json",
+    "_records/image-recovery/2026-10-06-run10/m12-watchdog-E-context-contamination.json",
+    "_records/image-context/2026-10-06/m12.json",
+    "docs/operations/unattended-image-host.json"
+  ],
+  "next_stage": "Resume the same Task 15 request only from an execution surface that can prove story-only generator context before image-execution-admission-v1 PASS."
+}

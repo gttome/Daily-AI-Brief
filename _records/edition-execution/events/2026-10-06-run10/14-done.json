@@ -1,0 +1,42 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "execution_key": "2026-10-06-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "14",
+  "candidate_id": "m11",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-06T06:22:00.000Z",
+  "writer_generation": 43,
+  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261006-run10:task-14:generation-43:12bf4396",
+  "reason_code": "IMAGE_ACCEPTED_LOCKED",
+  "operation": "Generate one admitted story-only m11 visual, preserve exact PNG bytes through the protected chunk bridge, verify saved-Git identity, review the saved asset and lock acceptance.",
+  "proof": {
+    "request_key": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663",
+    "image_execution_admission": "_records/image-admission/2026-10-06-run10/14-12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663.json",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/14-12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-06-run10/m11.json",
+    "saved_git_review": "_records/image-reviews/2026-10-06-run10/m11-attempt-1-saved-git-review.json",
+    "final_sha256": "ac8c8d97bd9f8c03998948fe72954c32e26c9de0d6d430197cb5053164785f1c",
+    "final_git_blob_sha": "45ccbb585b86bb5dfd9db43ec67c758d84b60a2a",
+    "saved_git_commit": "ffef44f36e37f5f5a29ef3d6c1c5b90b19f6d713"
+  },
+  "completed_tasks_preserved": [
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13"
+  ],
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

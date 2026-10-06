@@ -1,0 +1,22 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "14",
+  "incident_id": "wd-reliable-edition-20261006-run10-task14-image-admission-context-preflight",
+  "owner_slot": "E",
+  "event_type": "continuation_handoff",
+  "classification": "BLOCKED_ACTIONABLE",
+  "occurred_at": "2026-10-06T05:47:53.000Z",
+  "authoritative_request_key": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663",
+  "generation_attempted": false,
+  "image_attempts_consumed": 0,
+  "normalized_fault_code": "IMAGE_ADMISSION_STORY_ONLY_CONTEXT_UNAVAILABLE_IN_MIXED_WATCHDOG_INVOCATION",
+  "strategy_interrupt_applied": true,
+  "next_authorized_action": "Resume the same queued Task 14 request only from a dedicated story-only generator context that can persist image-execution-admission-v1 PASS and exact-byte persistence preflight before attempt 1; if A-F cannot provide that isolation, continue engineering repair rather than generate in mixed recovery context.",
+  "owner_action_required": false,
+  "external_blocker": false,
+  "terminal": false
+}

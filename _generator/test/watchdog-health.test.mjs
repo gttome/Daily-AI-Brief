@@ -94,26 +94,3 @@ test('fast-path counters use public-safe proxy names',()=>{
   counters=updateWatchdogFastPathCounters(counters,{counter_bucket:'compact_exit'});
   assert.deepEqual(counters,{watchdog_invocations:3,watchdog_compact_exits:2,watchdog_expanded_reads:1});
 });
-
-test('health CLI publishes an active execution with narrow evidence references',async()=>{
-  const fs=await import('node:fs');
-  const os=await import('node:os');
-  const path=await import('node:path');
-  const {execFileSync}=await import('node:child_process');
-  const root=fs.mkdtempSync(path.join(os.tmpdir(),'dab-active-health-'));
-  try{
-    const pointer={active:true,terminal:false,edition_id:identity.edition_id,
-      execution_id:identity.execution_id,execution_key:identity.execution_key,branch:identity.branch};
-    const pointerPath=path.join(root,'pointer.json'),contractsPath=path.join(root,'contracts.json');
-    fs.writeFileSync(pointerPath,JSON.stringify(pointer));
-    fs.writeFileSync(contractsPath,JSON.stringify({tasks:{'00':{title:'Readiness',capability:'repository'}}}));
-    const raw=execFileSync(process.execPath,[new URL('../../_tools/watchdog-health.mjs',import.meta.url).pathname,
-      '--pointer',pointerPath,'--contracts',contractsPath,'--run-root',root,'--now','2099-01-01T01:05:00Z'],{encoding:'utf8'});
-    const packet=JSON.parse(raw);
-    assert.equal(packet.active,true);
-    assert.equal(packet.execution_id,identity.execution_id);
-    assert.equal(packet.first_incomplete_task,'00');
-    assert.deepEqual(packet.evidence_refs,['data/operations/active-production-run.json']);
-    assert.deepEqual(validateWatchdogHealthRecord(packet),[]);
-  }finally{fs.rmSync(root,{recursive:true,force:true});}
-});

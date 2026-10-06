@@ -1,0 +1,24 @@
+{
+  "schema_version": "sealed-story-image-context-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-06-m12"
+  ],
+  "candidate_id": "m12",
+  "task_id": "15",
+  "includes_edition_context": false,
+  "orchestration_context_visible": false,
+  "generator_visible_field": "prompt",
+  "sealed_at": "2026-10-06T01:26:56.279Z",
+  "allowed_text": [
+    "User intent",
+    "Command console",
+    "Observe",
+    "Plan",
+    "Act",
+    "Desktop apps",
+    "Confirm",
+    "Audit trail"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: bounded desktop computer use through an observe-plan-act loop. Show a user-intent capsule entering a neutral command console, then a tightly engineered observe-plan-act control loop operating across several abstract desktop application surfaces. Consequential branches must pause at explicit confirmation gates before execution, and every observation, plan revision, action, and result must write into a chronological audit trail. Use screen-state thumbnails, action cursors without hands, application boundary frames, permission tokens, confirmation seals, rollback markers, and step receipts; do not imitate a real product interface. No people, humanoids, photos, logos, decorative filler, unsupported autonomy claims, overlapping text, or sparse/basic box-and-arrow layout. Only these visible labels: User intent, Command console, Observe, Plan, Act, Desktop apps, Confirm, Audit trail."
+}

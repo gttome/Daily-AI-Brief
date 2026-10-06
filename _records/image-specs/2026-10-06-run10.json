@@ -1,0 +1,159 @@
+{
+  "schema_version": "run10-image-specs-v1",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_id": "reliable-edition-20261006-run10",
+  "research_cutoff": "2026-10-06T00:02:39.000Z",
+  "sealed_at": "2026-10-06T01:26:56.279Z",
+  "source_story_selection": "_records/editorial/2026-10-06-run10/story-selection.json",
+  "source_story_selection_git_blob": "640af41c530d657612f08508061764e7e32c6c2f",
+  "semantic_pass_ref": "_records/editorial/2026-10-06-run10/one-semantic-editorial-pass.json",
+  "semantic_input_evidence_git_blob": "6dd4f517530973840285877efeec072c2c5ac36a",
+  "context_directory": "_records/image-context/2026-10-06",
+  "common": {
+    "canvas": "1200x630 landscape",
+    "format": "PNG",
+    "quality": "professional high-detail textbook/editorial mechanism illustration",
+    "background": "clean white or near-white",
+    "no_people": true,
+    "no_humanoids": true,
+    "no_photos": true,
+    "no_logos": true,
+    "no_decorative_filler": true,
+    "no_basic_fallback": true,
+    "no_svg_fallback": true,
+    "visible_text_allowlist_only": true,
+    "no_overlapping_text": true,
+    "single_story_context_required": true,
+    "generator_visible_field": "prompt"
+  },
+  "specs": [
+    {
+      "task_id": "11",
+      "candidate_id": "m01",
+      "story_title": "Android CLI turns device access into reusable agent skills",
+      "subject": "Reusable Android CLI agent skills and device streaming",
+      "composition": "A layered mobile-automation workshop: a reusable skill capsule library feeds a single CLI command rail, which orchestrates a device-state cutaway, a live screen stream, bounded test actions, and signed result evidence returning to the skill library.",
+      "allowed_text": [
+        "Reusable skill",
+        "CLI command",
+        "Device stream",
+        "App state",
+        "Test action",
+        "Result evidence"
+      ],
+      "context_path": "_records/image-context/2026-10-06/m01.json",
+      "generator_visible_field": "prompt"
+    },
+    {
+      "task_id": "12",
+      "candidate_id": "m02",
+      "story_title": "When an agent says it is done, grade the database",
+      "subject": "Backend-state verification for agents",
+      "composition": "A forensic split-plane architecture contrasts an upper claim channel with a lower durable-state channel; database records, side-effect receipts, and repeated-run samples converge through a verification tribunal into an immutable evidence ledger.",
+      "allowed_text": [
+        "Agent claim",
+        "Database state",
+        "Side effects",
+        "Repeated run",
+        "Verification gate",
+        "Evidence ledger"
+      ],
+      "context_path": "_records/image-context/2026-10-06/m02.json",
+      "generator_visible_field": "prompt"
+    },
+    {
+      "task_id": "13",
+      "candidate_id": "m10",
+      "story_title": "Workspace turns prompts into images, canvases and cross-app work",
+      "subject": "Prompt-driven synchronized knowledge work across images, canvases, and applications",
+      "composition": "A shared-source data spine feeds three visually distinct workbenches—object-level image editing, a prompt-built spreadsheet canvas, and cross-application execution—while provenance and synchronization rails reconcile changes into a review surface.",
+      "allowed_text": [
+        "Shared source",
+        "Image edit",
+        "Sheets canvas",
+        "Cross-app task",
+        "Provenance",
+        "Synchronized",
+        "Review"
+      ],
+      "context_path": "_records/image-context/2026-10-06/m10.json",
+      "generator_visible_field": "prompt"
+    },
+    {
+      "task_id": "14",
+      "candidate_id": "m11",
+      "story_title": "AstaBrief opens a faster path to citation-grounded reports",
+      "subject": "Citation-grounded scientific report generation",
+      "composition": "A research question enters a retrieval observatory; source fragments pass through relevance and support filters into a citation lattice, then a report composer emits claim blocks whose trace lines terminate at the exact supporting fragments and an independent verification panel.",
+      "allowed_text": [
+        "Research question",
+        "Retrieval",
+        "Evidence filter",
+        "Source fragment",
+        "Citation map",
+        "Report composer",
+        "Claim",
+        "Verify"
+      ],
+      "context_path": "_records/image-context/2026-10-06/m11.json",
+      "generator_visible_field": "prompt"
+    },
+    {
+      "task_id": "15",
+      "candidate_id": "m12",
+      "story_title": "Copilot moves from chat into desktop computer use",
+      "subject": "Bounded desktop computer use through an observe-plan-act loop",
+      "composition": "A user-intent capsule enters a command console; an observe-plan-act control loop traverses multiple abstract desktop applications, pauses at confirmation gates for consequential actions, and writes each step into an audit trail.",
+      "allowed_text": [
+        "User intent",
+        "Command console",
+        "Observe",
+        "Plan",
+        "Act",
+        "Desktop apps",
+        "Confirm",
+        "Audit trail"
+      ],
+      "context_path": "_records/image-context/2026-10-06/m12.json",
+      "generator_visible_field": "prompt"
+    },
+    {
+      "task_id": "16",
+      "candidate_id": "m14",
+      "story_title": "Ambient agents wake on events and know when to ask a human",
+      "subject": "Event-driven ambient agents with human approval and resumable state",
+      "composition": "An event bus opens an isolated session containing a durable job-state core; policy and confidence gates route steps either to bounded tool execution or an approval interrupt, after which the exact state resumes and closes with a complete audit trail.",
+      "allowed_text": [
+        "Event",
+        "Ambient agent",
+        "Isolated session",
+        "Job state",
+        "Policy gate",
+        "Bounded action",
+        "Ask human",
+        "Resume",
+        "Audit trail"
+      ],
+      "context_path": "_records/image-context/2026-10-06/m14.json",
+      "generator_visible_field": "prompt"
+    }
+  ],
+  "checks": {
+    "exact_spec_count": 6,
+    "exact_context_count": 6,
+    "distinct_compositions": true,
+    "professional_detail_required": true,
+    "people_prohibited": true,
+    "humanoids_prohibited": true,
+    "photos_prohibited": true,
+    "decorative_filler_prohibited": true,
+    "basic_fallback_prohibited": true,
+    "svg_fallback_prohibited": true,
+    "visible_text_guard": true,
+    "single_story_contexts": true,
+    "generator_visible_context_excludes_orchestration": true,
+    "semantic_pass_reused": true,
+    "completed_upstream_rework": false,
+    "result": "PASS"
+  }
+}

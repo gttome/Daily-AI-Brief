@@ -6,12 +6,12 @@
   "execution_id": "reliable-edition-20261006-run10",
   "execution_key": "2026-10-06-run10",
   "branch": "reliable-edition/dab-edition-2026-10-06-run10",
-  "updated_at": "2026-10-06T09:05:48.525Z",
+  "updated_at": "2026-10-06T06:22:00.000Z",
   "start_scope": "full_production",
   "image_tasks_authorized": true,
-  "publication_authorized": false,
+  "publication_authorized": true,
   "deferred_blocker": null,
-  "current_task": "17",
-  "current_task_state": "Active",
-  "note": "Task 17 retains the same queued exact request and all six accepted_locked images. Protected repair PR #489 merged after exact-head CI so the dedicated deterministic consumer now accepts both valid first-pass native_capture and repair-epoch normalization locks. Resume the same request under dead-writer recovery."
+  "current_task": "15",
+  "current_task_state": "Backlog",
+  "note": "Task 14 accepted_locked the exact saved-Git m11 PNG after per-invocation admission, protected chunk reconstruction, exact-byte read-back and visual review. Task 15 is first incomplete; writer authority is released to the same-execution Supervisor."
 }

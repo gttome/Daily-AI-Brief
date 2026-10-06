@@ -1,0 +1,13 @@
+{
+  "task_id": "05",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-06T01:04:46.163Z",
+  "reason": "Claimed the exact queued Task 05 request to lock the six-story 2/2/2 set from unchanged verified evidence.",
+  "proof": {
+    "request_key": "eb9e0a269e7faf647957d75f1006c088fe5167a3c27819d89edc3127757ce3ea",
+    "writer_generation": 17,
+    "watchdog_lease_generation": 3,
+    "capability": "repository"
+  }
+}

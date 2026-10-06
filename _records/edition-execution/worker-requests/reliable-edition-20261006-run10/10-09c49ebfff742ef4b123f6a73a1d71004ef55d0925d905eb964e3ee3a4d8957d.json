@@ -1,0 +1,22 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "09c49ebfff742ef4b123f6a73a1d71004ef55d0925d905eb964e3ee3a4d8957d",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "10",
+  "capability": "repository",
+  "instruction": "Execute Task 10 (Seal six professional image specifications) from authoritative durable inputs, preserving all valid completed upstream evidence. Reuse the one-semantic-editorial-pass-v1 result whenever its input evidence digest is unchanged; deterministic downstream defects must not trigger a whole-edition semantic reread.",
+  "writer_generation": 27,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-06T01:20:46.543Z",
+  "writer_generation_is_provenance": true,
+  "authority_refresh_required_at_invocation": false,
+  "status": "completed_pass",
+  "claimed_at": "2026-10-06T01:21:19.713Z",
+  "claimed_by": "scheduled-chatgpt-watchdog-slot-f",
+  "completed_at": "2026-10-06T01:27:57.620Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/10-09c49ebfff742ef4b123f6a73a1d71004ef55d0925d905eb964e3ee3a4d8957d.json"
+}

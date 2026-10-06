@@ -1,0 +1,29 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "3e181066c2142e562080eade54b12e0ee2ead8b9612542f43f198231f929a4e5",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "07",
+  "request_writer_generation": 20,
+  "writer_generation": 21,
+  "status": "passed",
+  "completed_at": "2026-10-06T01:12:25.240Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "podcasts_artifact": "_records/editorial/2026-10-06-run10/podcasts.json",
+    "podcast_count": 2,
+    "runtimes_seconds": [
+      3182,
+      780
+    ],
+    "publishers": [
+      "The New York Times",
+      "The Morning Brief"
+    ],
+    "source_diverse": true,
+    "semantic_pass_reused": true,
+    "immediately_prior_edition_exact_podcast_pair_repeat": false
+  },
+  "result": "PASS"
+}

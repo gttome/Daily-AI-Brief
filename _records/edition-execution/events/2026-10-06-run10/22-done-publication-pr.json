@@ -1,0 +1,26 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "execution_key": "2026-10-06-run10",
+  "task_id": "22",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-06T10:05:30.000Z",
+  "writer_generation": 75,
+  "owner_id": "chatgpt-watchdog-f-20261006T0953Z",
+  "reason_code": "EXACT_PREFLIGHT_PASS_PUBLICATION_PR_CREATED",
+  "operation": "exact_preflight_and_open_publication_pr",
+  "proof": {
+    "publication_pr": 491,
+    "url": "https://github.com/gttome/Daily-AI-Brief/pull/491",
+    "head_branch": "reliable-edition/dab-edition-2026-10-06-run10",
+    "observed_head_sha_at_open": "24eb88423635255ec8a534bdb8e826476dc5a74c",
+    "preflight_result": "PASS",
+    "preflight_receipt": "_records/edition-execution/publication-preflight/2026-10-06.json",
+    "duplicate_pr_created": false,
+    "protected_ci_required_next": true,
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/22-c8945f850ed7c688c59bea6f39b2d17d3b4c02dba953e4e28acaf0b8a566b5f2.json"
+  },
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

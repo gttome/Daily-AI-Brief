@@ -1,0 +1,24 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "14",
+  "request_key": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663",
+  "incident_id": "wd-reliable-edition-20261006-run10-task14-bridge-checkpoint",
+  "slot": "F",
+  "state": "CONTINUATION_HANDOFF",
+  "created_at": "2026-10-06T06:10:57.916Z",
+  "action_key": "wd-reliable-edition-20261006-run10-task14-bridge-checkpoint:protected-repair:repair-ab96067c94626f1f2e0c9a3bc917a6528caefd68",
+  "action": "MINIMAL_PROTECTED_REPAIR",
+  "durable_delta": {
+    "repair_branch": "repair/run10-task14-bridge-checkpoint",
+    "repair_head": "8d623d68509388ace65754ee15c3df0d7f920d98",
+    "pull_request": 481,
+    "repair_record": "_records/edition-execution/protected-repairs/reliable-edition-20261006-run10/repair-ab96067c94626f1f2e0c9a3bc917a6528caefd68.json"
+  },
+  "validation_result": "PENDING_EXACT_HEAD_VALIDATE",
+  "same_request_preserved": true,
+  "image_regenerated": false,
+  "accepted_locked_changed": false,
+  "next_stage": "wait for exact-head pull_request validate PASS, merge exact head, resume Task 14 bridge checkpoint and saved-Git visual review"
+}

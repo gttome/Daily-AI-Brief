@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-10-05",
-  "updated_at": "2026-10-05T02:33:36.000Z",
+  "edition_date": "2026-10-06",
+  "updated_at": "2026-10-06T01:17:05.017Z",
   "verification_observed_at": "2026-10-05T02:33:36.000Z",
   "baseline_note": "Independent Run 9 seven-domain sweep completed 14 focused checks: 0 new topics, 6 existing topics updated (including 1 reactivated), 15 topics carried forward, and 0 topics dropped today.",
   "topics": [
@@ -791,13 +791,13 @@
       "name": "Reusable agent skills become observable",
       "audience": "AI leaders, admins, and agent builders",
       "summary": "Treat skills, custom agents, MCP servers, commands, and plugins as reusable components whose maintained domain knowledge and actual use can be governed and measured.",
-      "why_now": "NVIDIA DOCA Agent Skills add measured evidence that reusable skills can encode verified APIs, hardware capability requirements, build constraints, preflight checks and rollback discipline; NVIDIA reports 100% checklist satisfaction with skills versus 19% without across 65 prompts.",
+      "why_now": "AWS released the aws-ai-ml reusable agent skill for MCP-compatible coding agents, with endpoint benchmarking, deployment recommendations, comparison of performance runs, and executable SageMaker SDK code.",
       "practical_value": "Makes reusable agent know-how easier to govern while traces and spans make tool/model behavior easier to inspect.",
       "limitations": "The published evaluation is vendor-run on DOCA tasks; independent replication and cross-platform portability remain unverified.",
       "next_action": "Compare SKILL.md portability, versioning, evaluation, permission boundaries and independent performance across platforms.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-10-05T02:33:36.000Z",
-      "verification_observed_at": "2026-10-05T02:33:36.000Z",
+      "updated_at": "2026-10-06T01:17:05.017Z",
+      "verification_observed_at": "2026-10-06T01:17:05.017Z",
       "status": "gaining_evidence",
       "confidence": "strong",
       "evidence": [
@@ -910,6 +910,16 @@
           "checked_at": "2026-10-05T02:27:25.000Z",
           "development_id": "nvidia-doca-agent-skills-2026-10-01",
           "review_depth": "full first-party technical article and reported 65-prompt evaluation"
+        },
+        {
+          "title": "New agent skill: Amazon SageMaker optimized generative AI inference for your coding agent",
+          "url": "https://aws.amazon.com/blogs/machine-learning/new-agent-skill-amazon-sagemaker-optimized-generative-ai-inference-for-your-coding-agent/",
+          "publisher": "AWS",
+          "kind": "primary",
+          "publication_date": "2026-10-05",
+          "checked_at": "2026-10-06T01:17:05.017Z",
+          "development_id": "aws-sagemaker-agent-skill-2026-10-05",
+          "review_depth": "bounded first-party source verification recorded by Task 08"
         }
       ],
       "external_attention": [],
@@ -921,9 +931,19 @@
             "observed_at": "2026-10-05T02:33:36.000Z",
             "value": null,
             "source": "Current independent primary development reviewed in the October 5 Watchlist sweep."
+          },
+          {
+            "observed_at": "2026-10-06T01:17:05.017Z",
+            "value": null,
+            "source": "Current primary development reviewed in the October 6 Watchlist sweep."
+          },
+          {
+            "observed_at": "2026-10-06T01:17:05.017Z",
+            "value": null,
+            "source": "Current primary development reviewed in the October 6 Watchlist sweep."
           }
         ],
-        "reason": "A current independent primary development adds evidence to the tracked mechanism."
+        "reason": "A current primary development adds evidence to the tracked mechanism."
       },
       "rubric": {
         "novelty": {
@@ -959,13 +979,13 @@
       "name": "Agents that persist across sessions",
       "audience": "Knowledge workers, consultants, and agent designers",
       "summary": "Design agents around goals that continue over time instead of treating every interaction as a one-shot task.",
-      "why_now": "AWS Bedrock AgentCore adds an event-driven ambient-agent pattern in which external signals start work automatically and human approval gates consequential next steps, extending persistence beyond manually initiated sessions.",
+      "why_now": "Amazon Bedrock Managed Agents packages a stateful harness, memory, skills, specialized-agent coordination and AWS-governed execution into a managed preview.",
       "practical_value": "Provides a practical model for recurring work: persistent goals, checkpoints, saved context, adaptation, and human review.",
       "limitations": "The source is a first-party implementation pattern; independent reliability, cost and failure-recovery evidence across deployments remains limited.",
       "next_action": "Test event-trigger accuracy, duplicate suppression, approval boundaries, resumability and audit trails under real interruptions.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-10-05T02:33:36.000Z",
-      "verification_observed_at": "2026-10-05T02:33:36.000Z",
+      "updated_at": "2026-10-06T01:17:05.017Z",
+      "verification_observed_at": "2026-10-06T01:17:05.017Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -1008,6 +1028,16 @@
           "checked_at": "2026-10-05T02:27:25.000Z",
           "development_id": "aws-agentcore-ambient-agents-2026-10-01",
           "review_depth": "full first-party technical walkthrough"
+        },
+        {
+          "title": "Amazon Bedrock Managed Agents",
+          "url": "https://aws.amazon.com/bedrock/managed-agents-openai/",
+          "publisher": "AWS",
+          "kind": "primary",
+          "publication_date": "2026-09-29",
+          "checked_at": "2026-10-06T01:17:05.017Z",
+          "development_id": "aws-bedrock-managed-agents-2026-09-29",
+          "review_depth": "bounded first-party source verification recorded by Task 08"
         }
       ],
       "external_attention": [],
@@ -1024,9 +1054,19 @@
             "observed_at": "2026-10-05T02:33:36.000Z",
             "value": null,
             "source": "Current independent primary development reviewed in the October 5 Watchlist sweep."
+          },
+          {
+            "observed_at": "2026-10-06T01:17:05.017Z",
+            "value": null,
+            "source": "Current primary development reviewed in the October 6 Watchlist sweep."
+          },
+          {
+            "observed_at": "2026-10-06T01:17:05.017Z",
+            "value": null,
+            "source": "Current primary development reviewed in the October 6 Watchlist sweep."
           }
         ],
-        "reason": "A current independent primary development adds evidence to the tracked mechanism."
+        "reason": "A current primary development adds evidence to the tracked mechanism."
       },
       "rubric": {
         "novelty": {
@@ -1599,12 +1639,12 @@
       "name": "Decision models emerge as a separate AI systems layer",
       "audience": "AI engineers, agent builders, and technical leaders",
       "summary": "Specialized models return typed, probabilistic decisions for software workflows instead of generating free-form text.",
-      "why_now": "Independent reporting says TypeSafe AI's Jev is prompting copycat structured-decision products, reinforcing that calibrated classifiers may become a distinct automation layer beside generative models.",
+      "why_now": "Strands Decider 2B adds a small open-source decision model for fast local experimentation and executable decision work.",
       "practical_value": "Could move routing, classification, scoring, triage, and agent-control decisions out of general-purpose text generation and into a lower-latency typed decision layer.",
       "limitations": "The core performance and efficiency claims currently come from the vendor; the model is hosted, its low-level architecture and training data are not public, and teams still need task-specific calibration and independent evaluation.",
       "next_action": "Compare Jev with LLM-based classifiers and simpler baselines on representative routing and agent-control tasks, while tracking calibration, robustness, prompt-injection exposure, latency, and cost.",
       "first_detected": "2026-09-22T14:10:00Z",
-      "updated_at": "2026-10-03T06:29:22.781Z",
+      "updated_at": "2026-10-06T01:17:05.017Z",
       "status": "early_signal",
       "confidence": "limited",
       "evidence": [
@@ -1647,14 +1687,35 @@
           "checked_at": "2026-10-03T06:29:22.781Z",
           "development_id": "typesafe-jev-independent-copycat-reporting-2026-10-02",
           "review_depth": "independent original reporting reviewed in the Run 7 Watchlist sweep"
+        },
+        {
+          "title": "Strands Decider 2B",
+          "url": "https://aws.amazon.com/strands",
+          "publisher": "AWS / Strands Agents",
+          "kind": "primary",
+          "publication_date": "2026-10-05",
+          "checked_at": "2026-10-06T01:17:05.017Z",
+          "development_id": "strands-decider-2b-2026-10-05",
+          "review_depth": "bounded first-party source verification recorded by Task 08"
         }
       ],
       "external_attention": [],
       "momentum": {
         "classification": "baseline",
         "score": null,
-        "observations": [],
-        "reason": "First Watchlist observation. Rapid secondary and creator attention triggered inclusion, but comparable repeated measurements are not yet available."
+        "observations": [
+          {
+            "observed_at": "2026-10-06T01:17:05.017Z",
+            "value": null,
+            "source": "Current primary development reviewed in the October 6 Watchlist sweep."
+          },
+          {
+            "observed_at": "2026-10-06T01:17:05.017Z",
+            "value": null,
+            "source": "Current primary development reviewed in the October 6 Watchlist sweep."
+          }
+        ],
+        "reason": "A current primary development adds evidence to the tracked mechanism."
       },
       "rubric": {
         "novelty": {
@@ -1683,7 +1744,7 @@
         }
       },
       "trial_story_ids": [],
-      "verification_observed_at": "2026-10-03T06:29:22.781Z",
+      "verification_observed_at": "2026-10-06T01:17:05.017Z",
       "research_score": 76
     },
     {
@@ -1691,13 +1752,13 @@
       "name": "Source-aware verification for tool-using agents",
       "audience": "Agent builders, evaluators and governed knowledge-work teams",
       "summary": "Keep each claim tied to the specific tool output or record that supports it instead of pooling all retrieved evidence.",
-      "why_now": "Ai2 open-sourced AstaBrief 8B for cited scientific report generation, with citation-focused filtering and an explicit requirement to preserve what retrieved evidence actually supports rather than silently broadening claims.",
+      "why_now": "GitHub launched ReviewBench for code-review agents using representative pull requests, multi-source ground truth, calibrated evaluation, and production-aligned metrics.",
       "practical_value": "Could make tool-using agent answers easier to audit in healthcare, finance, customer support, and other source-sensitive workflows.",
       "limitations": "The evidence is focused on scientific report generation; transfer to general-purpose tool-using agents and independent evaluation remain open questions.",
       "next_action": "Compare citation correctness, claim support, abstention and source-conflict handling against general-purpose report and agent workflows.",
       "first_detected": "2026-09-30T23:12:21.330-05:00",
-      "updated_at": "2026-10-05T02:33:36.000Z",
-      "verification_observed_at": "2026-10-05T02:33:36.000Z",
+      "updated_at": "2026-10-06T01:17:05.017Z",
+      "verification_observed_at": "2026-10-06T01:17:05.017Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -1720,6 +1781,16 @@
           "checked_at": "2026-10-05T02:27:25.000Z",
           "development_id": "ai2-astabrief-2026-10-02",
           "review_depth": "full original release article"
+        },
+        {
+          "title": "GitHub launches ReviewBench for code review agents",
+          "url": "https://github.blog/latest/",
+          "publisher": "GitHub",
+          "kind": "primary",
+          "publication_date": "2026-10-05",
+          "checked_at": "2026-10-06T01:17:05.017Z",
+          "development_id": "github-reviewbench-2026-10-05",
+          "review_depth": "bounded first-party source verification recorded by Task 08"
         }
       ],
       "external_attention": [],
@@ -1731,9 +1802,19 @@
             "observed_at": "2026-10-05T02:33:36.000Z",
             "value": null,
             "source": "Current independent primary development reviewed in the October 5 Watchlist sweep."
+          },
+          {
+            "observed_at": "2026-10-06T01:17:05.017Z",
+            "value": null,
+            "source": "Current primary development reviewed in the October 6 Watchlist sweep."
+          },
+          {
+            "observed_at": "2026-10-06T01:17:05.017Z",
+            "value": null,
+            "source": "Current primary development reviewed in the October 6 Watchlist sweep."
           }
         ],
-        "reason": "A current independent primary development adds evidence to the tracked mechanism."
+        "reason": "A current primary development adds evidence to the tracked mechanism."
       },
       "rubric": {
         "novelty": {
@@ -1762,7 +1843,6 @@
         }
       },
       "trial_story_ids": [],
-      "archive_reason": "Not retained as a distinct active mechanism after the October 1 independent sweep.",
       "research_score": 77
     },
     {

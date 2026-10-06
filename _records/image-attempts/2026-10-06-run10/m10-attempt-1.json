@@ -1,0 +1,59 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "13",
+  "candidate_id": "m10",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "request_key": "6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a",
+  "writer_generation": 35,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-06T05:03:56.145Z",
+  "image_execution_admission": "_records/image-admission/2026-10-06-run10/13-6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a.json",
+  "generated_at": "2026-10-06T04:52:30.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-e5313aed-d93e-4278-97c7-4c5eff0008d9",
+    "targeted_edit_generation_id": null,
+    "targeted_edit": null
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1731,
+    "height": 909,
+    "bytes": 2059473,
+    "sha256": "78647d83c1703eac4beee4452b84a6a60c6f77792b3090fce16134e061a6d66c",
+    "persisted": true,
+    "path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m10.png",
+    "git_blob_sha": "102fe9744d60b0c0f45b872bdb3e43f30562a9e3",
+    "saved_git_commit": "779c2c4f4ea26db991f35d6cc4fe73c5bf10a1d7",
+    "exact_readback": "PASS_PROTECTED_CHUNK_BRIDGE_SHA256_GIT_OBJECT_SHA_SIZE_AND_READBACK_MATCH_LOCAL_BYTES",
+    "same_visual_targeted_edit": false,
+    "low_quality_fallback": false,
+    "svg_fallback": false,
+    "transport_receipt": "_records/edition-execution/image-transport-results/reliable-edition-20261006-run10/6dc991d1e0c88d0555dd899342361f6428e6658dc2cb789f2a54e644fa0d0e7a.json"
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Shared source",
+      "Image edit",
+      "Sheets canvas",
+      "Cross-app task",
+      "Provenance",
+      "Synchronized",
+      "Review"
+    ],
+    "extra_visible_text": [],
+    "note": "A detailed shared-source data spine feeds distinct image-editing, spreadsheet-canvas and cross-application workbenches with provenance rails, synchronization checkpoints and a reconciled review surface."
+  },
+  "disposition": "ACCEPTED_LOCKED"
+}

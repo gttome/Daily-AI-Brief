@@ -1,0 +1,55 @@
+{
+  "schema_version": "task19-bundle-digest-shard-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "task_id": "19",
+  "sealed_at": "2026-10-06T09:36:19.910Z",
+  "digest_scheme": "git_blob_sha1",
+  "result": "PASS",
+  "shard": "reader-pages",
+  "digests": [
+    [
+      "briefs/2026-10-06.md",
+      "c97df5c2e8483780d37f02644acc7cf16738cf23"
+    ],
+    [
+      "stories/2026-10-06/android-cli-turns-device-access-into-reusable-agent-skills.md",
+      "3a5967c24f4d97b7103bb24c06a948c74792697c"
+    ],
+    [
+      "stories/2026-10-06/when-an-agent-says-it-is-done-grade-the-database.md",
+      "e416eec358c85d40eb3f74b4e432c2283ed22abc"
+    ],
+    [
+      "stories/2026-10-06/workspace-turns-prompts-into-images-canvases-and-cross-app-work.md",
+      "648a919c25898dade8c7b6bf95662813b1c962ae"
+    ],
+    [
+      "stories/2026-10-06/astabrief-opens-a-faster-path-to-citation-grounded-reports.md",
+      "0cfb1d0e4ff45e33955aae8e921666fb44f5ba76"
+    ],
+    [
+      "stories/2026-10-06/copilot-moves-from-chat-into-desktop-computer-use.md",
+      "39b4a947a360445dc7d665aa2e2f17e858e7a124"
+    ],
+    [
+      "stories/2026-10-06/ambient-agents-wake-on-events-and-know-when-to-ask-a-human.md",
+      "88c9e67c66890bf3012a74e1e19c7bacb4e4862b"
+    ],
+    [
+      "videos/2026-10-06/general.md",
+      "fe6aff3a0b655e52b28762c8d9d43c261e22447c"
+    ],
+    [
+      "videos/2026-10-06/agent-skills.md",
+      "131bc03ba64afdc525f647cce502e3fd74b1cd11"
+    ],
+    [
+      "podcasts/2026-10-06/hard-fork-2026-10-02-ai-agents.md",
+      "3665cba5b9d452d90681773d05a5099b80c5c739"
+    ],
+    [
+      "podcasts/2026-10-06/morning-brief-2026-09-30-confidence-drop-agent-payments.md",
+      "3607bddf2d638a4cb87048ca0f9ca373ae32f6f8"
+    ]
+  ]
+}

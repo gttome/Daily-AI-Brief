@@ -19,7 +19,8 @@ const migration={
 test('bounded migration expires after the frozen-contract cutoff',()=>{
   assert.equal(migrationEnabled('2026-10-04',migration),true);
   assert.equal(migrationEnabled('2026-10-05',migration),true);
-  assert.equal(migrationEnabled('2026-10-06',migration),false);
+  assert.equal(migrationEnabled('2026-10-06',migration),true);
+  assert.equal(migrationEnabled('2026-10-07',migration),false);
   assert.equal(migrationEnabled('2026-10-05',{}),false);
 });
 

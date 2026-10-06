@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-06",
+  "checked_at": "2026-10-06T01:17:05.017Z",
+  "verification_timestamp": "2026-10-06T01:13:18.297Z",
+  "recovery_contract": "locked_same_edition_media_preflight_v1",
+  "items": [
+    {
+      "item_id": "dab-video-2026-10-06-general",
+      "kind": "video",
+      "url": "https://www.youtube.com/watch?v=LsA4vIX_3UY",
+      "observed_date": "2026-07-21",
+      "observed_runtime_seconds": 462,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-06-run10/videos.json",
+      "verification_timestamp": "2026-10-06T01:08:30.518Z"
+    },
+    {
+      "item_id": "dab-video-2026-10-06-agent-skills",
+      "kind": "video",
+      "url": "https://www.youtube.com/watch?v=h9g4umRfgn0",
+      "observed_date": "2026-10-06",
+      "observed_runtime_seconds": 324,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-06-run10/videos.json",
+      "verification_timestamp": "2026-10-06T01:08:30.518Z"
+    },
+    {
+      "item_id": "dab-podcast-2026-10-06-1",
+      "kind": "podcast",
+      "url": "https://podcasts.apple.com/us/search?term=Hard%20Fork%20hard-fork-2026-10-02-ai-agents",
+      "observed_date": "2026-10-02",
+      "observed_runtime_seconds": 3182,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-06-run10/podcasts.json",
+      "verification_timestamp": "2026-10-06T01:13:18.297Z"
+    },
+    {
+      "item_id": "dab-podcast-2026-10-06-2",
+      "kind": "podcast",
+      "url": "https://podcasts.apple.com/us/podcast/the-morning-brief/id1889037952",
+      "observed_date": "2026-09-30",
+      "observed_runtime_seconds": 780,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-06-run10/podcasts.json",
+      "verification_timestamp": "2026-10-06T01:13:18.297Z"
+    }
+  ],
+  "editorial_kernel_sha256": "fc440bf967dbd8e4c291105b901b1487983ac350094d0d6d9f5d986bf6da19cf",
+  "podcast_source_diversity": {
+    "pass": true,
+    "shows": [
+      "Hard Fork",
+      "The Morning Brief"
+    ]
+  },
+  "basis": "Locked Run 10 Task 06/07 verified selections; no media reselection performed by focused repair."
+}

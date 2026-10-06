@@ -1,0 +1,25 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "incident_id": "wd-reliable-edition-20261006-run10-task12-consume-exact-request",
+  "owner_slot": "F",
+  "task_id": "12",
+  "event_at": "2026-10-06T02:57:02.000Z",
+  "classification": "RECOVERY_VERIFIED_PROGRESSING",
+  "outcome": "TASK_DONE_FIRST_INCOMPLETE_ADVANCED",
+  "action_key": "wd-reliable-edition-20261006-run10-task12-consume-exact-request:slot-f:g11",
+  "authoritative_request_key": "5133046bced93056edbd295a35739c566d4824d9f3f4de8e72118b6859306dfb",
+  "durable_delta": {
+    "task_transition": "12 Done",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/12-5133046bced93056edbd295a35739c566d4824d9f3f4de8e72118b6859306dfb.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-06-run10/m02.json",
+    "task_asset_commit": "4429aa486beea8e7254f02337d3d2e24cc9af0d9",
+    "first_incomplete_task": "13",
+    "accepted_locked_images": 2,
+    "duplicate_generation_rejected": true
+  },
+  "recovery_required": false,
+  "success": true,
+  "next_action": "Same-execution Supervisor sequences Task 13; Tasks 00-12 and both accepted_locked images remain immutable."
+}

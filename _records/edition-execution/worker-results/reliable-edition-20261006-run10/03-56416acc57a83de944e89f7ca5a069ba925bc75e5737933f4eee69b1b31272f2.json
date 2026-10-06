@@ -1,0 +1,32 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "56416acc57a83de944e89f7ca5a069ba925bc75e5737933f4eee69b1b31272f2",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "03",
+  "request_writer_generation": 12,
+  "writer_generation": 13,
+  "status": "passed",
+  "completed_at": "2026-10-06T00:59:46.971Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "recovery_discovery_branch": "discovery-preflight/daily/2026-10-06",
+    "recovery_discovery_sha": "8fb94e45a6b32c1b8f8303194f0641dbc6a554f2",
+    "candidate_count": 20,
+    "coverage_counts": {
+      "technical_ai_engineering": 7,
+      "applied_genai_knowledge_workers": 4,
+      "agents_non_technical_people": 9
+    },
+    "article_evidence_count": 9,
+    "preferred_agent_skill_candidate_id": "m01",
+    "model_calls": 0,
+    "duplicate_execution_created": false,
+    "metadata_candidates_git_blob": "f0ef8a8880261554b542958eb20f49c829001460",
+    "article_evidence_git_blob": "e9c3c65c0326879f9df0d68df56a97897b6c84d3",
+    "identity_algorithm": "git_blob_sha1",
+    "sealed_research_cutoff": "2026-10-06T00:02:39.000Z"
+  },
+  "result": "PASS"
+}

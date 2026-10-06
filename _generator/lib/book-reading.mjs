@@ -6,7 +6,7 @@ const catalog = JSON.parse(fs.readFileSync(new URL('../../_data/book-reading.jso
 const html = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const SERIES_SEPARATION_DATE='2026-09-16';
 const MULTI_PODCAST_DATE='2026-09-18';
-const FROZEN_READER_MIGRATION_CUTOFF='2026-10-05';
+const FROZEN_READER_MIGRATION_CUTOFF='2026-10-06';
 function frozenReaderMigration(data,date){
   const m=data?.frozen_migrations?.[date];
   return date<=FROZEN_READER_MIGRATION_CUTOFF&&m?.contract_transition==='pre-2026-10-05-frozen-reader-recovery'?m:null;

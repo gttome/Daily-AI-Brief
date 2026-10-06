@@ -1,0 +1,22 @@
+{
+  "schema_version": "sealed-story-image-context-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-06-m02"
+  ],
+  "candidate_id": "m02",
+  "task_id": "12",
+  "includes_edition_context": false,
+  "orchestration_context_visible": false,
+  "generator_visible_field": "prompt",
+  "sealed_at": "2026-10-06T01:26:56.279Z",
+  "allowed_text": [
+    "Agent claim",
+    "Database state",
+    "Side effects",
+    "Repeated run",
+    "Verification gate",
+    "Evidence ledger"
+  ],
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white or near-white 1200x630 canvas. Subject: backend-state verification for agents. Create a forensic split-plane architecture: an upper claim channel carries the agent's completion statement while a lower durable-state channel exposes database records, side-effect receipts, and repeated-run samples. Converge both planes through a central verification tribunal, then into an immutable evidence ledger. Use layered state snapshots, transaction traces, hash receipts, before/after comparisons, repeated-run stacks, discrepancy markers, and a final evidence gate to show why terminal state and side effects outrank the agent's own claim. No people, humanoids, photos, logos, decorative filler, product UI imitation, unsupported metrics, overlapping text, or sparse/basic box-and-arrow layout. Only these visible labels: Agent claim, Database state, Side effects, Repeated run, Verification gate, Evidence ledger."
+}
