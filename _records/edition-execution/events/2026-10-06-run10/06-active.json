@@ -1,0 +1,13 @@
+{
+  "task_id": "06",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-06T01:07:52.362Z",
+  "reason": "Claimed the exact queued Task 06 request to select two videos from authoritative sealed repository evidence.",
+  "proof": {
+    "request_key": "416965fe1a64e3079e6179f6155093a004625590514d7fc2837dc8a720dc99d4",
+    "writer_generation": 19,
+    "watchdog_lease_generation": 3,
+    "capability": "repository"
+  }
+}
