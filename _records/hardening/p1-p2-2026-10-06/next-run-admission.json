@@ -1,0 +1,46 @@
+{
+  "schema_version": "p1-p2-next-run-admission-v1",
+  "decision": "GO",
+  "edition_scope": "next production edition after October 6",
+  "evaluated_at": "2026-10-06T23:16:00Z",
+  "authoritative_only_on_protected_main": true,
+  "requires_post_merge_deterministic_ci": true,
+  "final_code_main_sha": "6f5b1a439d4088af6c284e28c8201842ce3b8468",
+  "final_code_main_ci_run_id": 37545132702,
+  "integrated_rehearsal_run_id": 37545271745,
+  "gates": {
+    "all_six_changes_merged": true,
+    "final_main_ci_passed": true,
+    "integrated_rehearsal_passed": true,
+    "owner_prompt_required_by_rehearsal": false,
+    "happy_path_wake_pr_required": false,
+    "event_dispatcher_idempotent": true,
+    "image_pipeline_completes_automatically": true,
+    "real_nonproduction_native_image_persistence_proof": true,
+    "task17_mixed_mode_fixture_passed": true,
+    "task23_pre_pr_failure_injection_passed": true,
+    "deterministic_closeout_crash_idempotency_passed": true,
+    "production_work_dependency_zero": true,
+    "production_codex_dependency_zero": true,
+    "production_paid_model_api_dependency_zero": true,
+    "hardening_and_production_structurally_separated": true
+  },
+  "all_gates_pass": false,
+  "production_runtime_boundary": {
+    "work_invocations": 0,
+    "codex_invocations": 0,
+    "paid_model_api_calls": 0,
+    "owner_liveness_prompts": 0,
+    "happy_path_wake_prs": 0
+  },
+  "owner_liveness_prompt_dependency": false,
+  "remaining_nonblocking_measurements": [
+    "Measure actual next-run image-lane wall time against <=90 minute target.",
+    "Measure actual Task 17 wall time against <=5 minute target.",
+    "Measure live verification to PUBLIC_CLOSED against <=15 minute target.",
+    "Measure Watchdog expanded-read rate and confirm <=10% in production.",
+    "Compare actual production control-plane usage with the October 6 baseline; do not infer account usage from repository counters."
+  ],
+  "no_go_rule": "If any gate regresses before allocation, decision becomes NO-GO and the exact failed deterministic gate must be repaired before production proceeds.",
+  "final_reconciliation_pr": 503
+}

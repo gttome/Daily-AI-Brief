@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:b784f1e11e84479ce10f31bc6841b8114ad53ca7cd551196f975c6742101e2f1`
+Ledger digest: `sha256:4559c6a003a1fe95702f2027198d4940cf72486bc90e581a4ae4d09210e53ea3`
 
-Problems: 66 · Events: 121
+Problems: 71 · Events: 127
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -1178,19 +1178,109 @@ Problems: 66 · Events: 121
 
 ## DAB-OPS-20261006-001 — Task 00 startup Supervisor produced observability but no semantic executor delta; same-execution recovery completed Task 00 without duplicate allocation or owner intervention.
 
-- **Status:** mitigated
+- **Status:** permanently_fixed
 - **First observed run:** reliable-edition-20261006-run10
 - **Task(s):** 00
-- **Symptom:** The first Supervisor workflow completed after acquiring generation 1 and projecting Kanban but produced no Task 00 readiness receipt, worker request, task transition, or first-incomplete-task advance.
-- **Root cause:** The startup Supervisor reached a non-publication boundary without producing a semantic Task 00 executor delta; exact code-level cause remains pending Task 29 reconciliation.
-- **Operational impact:** Task 00 remained Active until the scheduled controller performed safe same-execution recovery.
+- **Symptom:** October 6 normal progression repeatedly depended on leases, reconciliation loops, wake actions and broad rereads; startup also produced observability without a semantic executor delta.
+- **Root cause:** Normal routing was coupled to periodic reconciliation and prose/state rereads instead of one durable substantive transition plus an idempotent deterministic dispatcher.
+- **Operational impact:** Control-plane churn increased wall time and usage and made owner questions an accidental recovery trigger.
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Waited for the exact GitHub Actions owner to complete and its generation-1 fence to expire; did not steal a live writer.
-- **Actual fix:** Acquired generation 2 for the same execution, revalidated the readiness contract, and completed Task 00 with a bound PASS receipt before releasing to the same-execution Supervisor.
-- **Fix outcome:** Task 00 obtained substantive durable completion evidence without duplicate allocation, terminal-run mutation, or owner intervention.
-- **Permanent implementation:** none
-- **Regression tests:** none
-- **Production invariants:** same_execution_recovery, one_writer_fence, terminal_run_immutability, lease_or_kanban_is_not_progress, owner_prompt_not_required
+- **Attempted fixes:** Waited for the exact GitHub Actions owner to complete and its generation-1 fence to expire; did not steal a live writer. | Introduce canonical transition events, deterministic idempotent dispatch, compact Watchdog fallback only, and one-boundary Supervisor yield; repair the discovered workflow YAML serialization defect without reopening production.
+- **Actual fix:** PR #496 merged event-driven transition dispatch and Supervisor yield; bounded repair PR #498 fixed the malformed workflow env serialization. Post-merge Supervisor and deterministic CI both passed.
+- **Fix outcome:** PASS; integrated rehearsal 37545271745 dispatched exact transitions once, made duplicate delivery a no-op, recovered an expired writer on the same execution, and required zero owner prompts.
+- **Permanent implementation:** _generator/lib/transition-dispatcher.mjs, .github/workflows/event-driven-supervisor.yml, .github/workflows/run-supervisor.yml, docs/operations/task-recovery-contracts.json
+- **Regression tests:** _generator/test/transition-dispatcher.test.mjs, _generator/test/run-supervisor.test.mjs, _generator/test/p1p2-integrated-rehearsal.test.mjs
+- **Production invariants:** same_execution_recovery, one_writer_fence, terminal_run_immutability, lease_or_kanban_is_not_progress, owner_prompt_not_required, substantive_transition_is_primary_progress_trigger, heartbeat_or_lease_is_not_progress, duplicate_transition_is_idempotent_noop, watchdog_is_fallback_recovery_only, owner_prompt_is_not_a_liveness_trigger
 - **Recurrences:** none recorded
-- **Future validation:** Task 00 startup reaches a semantic executor within the protected liveness window. | Ordinary repository requests release writer authority to an admitted A-F Watchdog consumer.
+- **Future validation:** Task 00 startup reaches a semantic executor within the protected liveness window. | Ordinary repository requests release writer authority to an admitted A-F Watchdog consumer. | Normal task progress advances from durable events without pointer-only wake PRs. | Healthy Watchdogs compact-exit; only actionable transition faults expand. | No owner liveness prompt is required.
+
+## DAB-OPS-20261006-002 — Tasks 11-16 now use one stable no-wake image operation from admission through accepted_locked handoff.
+
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261006-run10
+- **Task(s):** 11
+- **Symptom:** October 6 image work required repeated writer releases, transport checkpoints, pointer wakes and downstream wakes; Task 15 consumed about 93.5 minutes.
+- **Root cause:** Image generation, byte persistence, readback, review and downstream routing were split across multiple control-plane handoffs rather than one durable image operation.
+- **Operational impact:** Infrastructure recovery could delay image completion and consume orchestration effort even when exact generated bytes already existed.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Formalize a canonical image state machine, keep admission before generation, persist/read back before review, distinguish quality retry from infrastructure recovery, and emit the next task transition from accepted_locked.
+- **Actual fix:** PR #497 merged stable-image-pipeline-v1 and bound accepted saved-Git assets to deterministic next-task events with zero happy-path wake PRs.
+- **Fix outcome:** PASS; integrated rehearsal 37545271745 proved admission consumes zero attempts, exact-byte persistence/readback, delayed-review resume on the same bytes, automatic Task 11→12 handoff, and wake_prs=0.
+- **Permanent implementation:** _generator/lib/stable-image-pipeline.mjs, _generator/lib/image-execution.mjs, docs/operations/stable-image-pipeline-contract.json
+- **Regression tests:** _generator/test/stable-image-pipeline.test.mjs, _generator/test/reliable-execution.test.mjs, _generator/test/p1p2-integrated-rehearsal.test.mjs
+- **Production invariants:** admission_before_generation, infrastructure_failure_does_not_consume_generation_attempt, review_saved_git_bytes_only, accepted_locked_is_immutable, accepted_locked_emits_next_transition, happy_path_wake_prs_zero
+- **Recurrences:** none recorded
+- **Future validation:** All six production image operations complete without pointer-only wake PRs. | Accepted images are never regenerated. | Image infrastructure errors resume exact persisted bytes.
+
+## DAB-OPS-20261006-003 — Task 17 now validates every registered accepted-image persistence form through one canonical adapter before production admission.
+
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261006-run10
+- **Task(s):** 17
+- **Symptom:** October 6 Task 17 discovered at runtime that valid first-pass native_capture locks were incompatible with validator logic built around normalization fields.
+- **Root cause:** Task 17 dereferenced mode-specific nested persistence structures instead of validating a normalized registry contract for all supported accepted_locked forms.
+- **Operational impact:** All six images were already complete, but Task 17 still required a post-image repair and delayed publication.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Create one persistence registry/adapter and require a full pre-production compatibility matrix covering native_capture, normalization, protected exact-byte transport and stable exact persistence.
+- **Actual fix:** PR #499 merged image-persistence-registry-v1; Task 17 consumes normalized evidence and October 7+ readiness fails closed unless every registered persistence mode passes the matrix.
+- **Fix outcome:** PASS; integrated rehearsal 37545271745 mixed all four modes across six accepted locks, completed Task 17 in 0.005 seconds, and required zero Task 17 repairs/model calls.
+- **Permanent implementation:** _generator/lib/image-persistence-adapter.mjs, _generator/lib/repository-task-consumer.mjs, _generator/lib/run-readiness.mjs
+- **Regression tests:** _generator/test/image-persistence-adapter.test.mjs, _generator/test/repository-task-consumer.test.mjs, _generator/test/run-readiness.test.mjs, _generator/test/p1p2-integrated-rehearsal.test.mjs
+- **Production invariants:** task17_validates_normalized_evidence_not_mode_specific_fields, all_persistence_modes_registered_before_run, altered_sha_or_wrong_identity_fails_closed, saved_git_review_required, task17_model_calls_zero
+- **Recurrences:** none recorded
+- **Future validation:** Task 00 compatibility matrix is PASS before image tasks authorize. | Task 17 completes without repair PR or semantic call.
+
+## DAB-OPS-20261006-004 — Task 23 deterministic compatibility is now bound before publication PR creation.
+
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261006-run10
+- **Task(s):** 23
+- **Symptom:** October 6 spent about 1h54m from Task 22 completion to Task 23 completion while Watchlist, learning-ledger and protected publication compatibility defects were discovered late.
+- **Root cause:** The publication PR could open before the exact frozen candidate proved all deterministic manifest, projection, learning, ancestry, route and reader prerequisites against current protected main.
+- **Operational impact:** Protected publication CI became a late repair environment, multiplying CI/lease/recovery cycles.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Add one zero-model publication-prerequisite gate that runs before PR creation and freezes the exact candidate only after all deterministic prerequisites pass.
+- **Actual fix:** PR #500 merged publication-prerequisite-gate-v1 and ordered it before PR creation in publish-candidate.yml.
+- **Fix outcome:** PASS; integrated rehearsal 37545271745 opened the clean-path decision exactly once and proved stale-main ancestry, Watchlist mismatch and learning-ledger mismatch all fail closed before PR.
+- **Permanent implementation:** _generator/lib/publication-prerequisite-gate.mjs, .github/workflows/publish-candidate.yml
+- **Regression tests:** _generator/test/publication-prerequisite-gate.test.mjs, _generator/test/p1p2-integrated-rehearsal.test.mjs
+- **Production invariants:** publication_pr_requires_exact_prepr_pass, prepr_gate_model_calls_zero, stale_main_ancestry_fails_before_pr, watchlist_and_learning_contracts_bound_before_pr, candidate_frozen_after_pass
+- **Recurrences:** none recorded
+- **Future validation:** Clean Task 23 uses one protected publication CI run. | No Task 23 contract-repair commit is required.
+
+## DAB-OPS-20261006-005 — General hardening is structurally separated from production candidate history.
+
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261006-run10
+- **Task(s):** 23
+- **Symptom:** October 6 publication history accumulated system repairs alongside edition/run changes, enlarging publication diff and CI diagnosis surface.
+- **Root cause:** There was no machine-enforced branch-role contract preventing general hardening paths from entering a production candidate.
+- **Operational impact:** Publication risk, merge complexity and protected-CI surface grew with unrelated system corrections.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Define protected-main, hardening, bounded repair and production-candidate roles; reject hardening paths/stale main ancestry from production candidates; persist a centralized hardening queue.
+- **Actual fix:** PR #495 merged branch-separation-v1 and the durable hardening queue. Every subsequent P1/P2 system change used isolated hardening/repair PRs rather than the October 6 production branch.
+- **Fix outcome:** PASS; integrated rehearsal 37545271745 verified an edition/runtime-only production candidate delta against current protected main with zero separation errors.
+- **Permanent implementation:** _generator/lib/branch-separation.mjs, data/operations/hardening-queue.json
+- **Regression tests:** _generator/test/branch-separation.test.mjs, _generator/test/p1p2-integrated-rehearsal.test.mjs
+- **Production invariants:** production_candidate_excludes_general_hardening, bounded_repair_merges_to_main, same_execution_resumes_after_external_repair, accepted_assets_preserved_across_repair, candidate_ancestry_current_before_pr
+- **Recurrences:** none recorded
+- **Future validation:** Next publication candidate contains edition/runtime delta only and no unrelated hardening paths.
+
+## DAB-OPS-20261006-006 — Live-verified runs now close Tasks 27-29 through one deterministic idempotent atomic transaction with complete incident reconciliation.
+
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261006-run10
+- **Task(s):** 29
+- **Symptom:** October 6 reader publication was live before the run became PUBLIC_CLOSED; finalization required additional protected closeout work and incident learning could be incomplete.
+- **Root cause:** Completion, lifecycle, terminal task events, incident learning, pointer cleanup and PUBLIC_CLOSED were persisted as separable closeout effects rather than one commit-ready transaction.
+- **Operational impact:** Post-publication wall time and control-plane work remained significant, and partial closeout combinations were possible.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Build one exact-SHA live-verification-triggered closeout transaction, derive incident inventory from durable evidence, require learning coverage, stage all writes atomically and make duplicate closeout a no-op.
+- **Actual fix:** PR #501 merged atomic-closeout-v1 into the protected finalization path with zero AI/owner calls and crash-safe staged persistence.
+- **Fix outcome:** PASS; integrated rehearsal 37545271745 injected crashes after all 15 closeout writes with no partial visibility, rejected unreconciled learning, committed Tasks 27-29/PUBLIC_CLOSED/pointer cleanup atomically, and made duplicate closeout ALREADY_CLOSED_VERIFIED.
+- **Permanent implementation:** _generator/lib/atomic-closeout.mjs, .github/workflows/daily-delta-validation.yml, _tools/finalize-production-run.mjs
+- **Regression tests:** _generator/test/atomic-closeout.test.mjs, _generator/test/p1p2-integrated-rehearsal.test.mjs
+- **Production invariants:** exact_live_and_deployed_sha_required, tasks_00_26_done_before_atomic_closeout, incident_inventory_must_be_learning_reconciled, no_partial_public_closed_state, duplicate_closeout_is_noop, closeout_ai_calls_zero
+- **Recurrences:** none recorded
+- **Future validation:** PUBLIC_CLOSED follows live verification through deterministic closeout without owner/model intervention. | Active pointer cannot remain true after PUBLIC_CLOSED.
 

@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-06T12:59:00.000Z",
+  "observed_at": "2026-10-06T23:16:00Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -950,11 +950,11 @@
     },
     {
       "id": "DAB-KB-050",
-      "lane": "backlog",
+      "lane": "done",
       "priority": "P1",
       "category": "Architecture",
       "title": "Separate hardening queue from production execution",
-      "summary": "Keep permanent system development in bounded hardening branches/PRs and leave production run branches dominated by edition content/evidence plus execution evidence required for that run.",
+      "summary": "Completed by P1-E: production candidates reject general hardening paths and stale protected-main ancestry; system corrections use isolated hardening/repair PRs and the durable hardening queue.",
       "acceptance": [
         "Clean production run contains no unrelated hardening diffs.",
         "Publication PR is dominated by edition delta.",
@@ -962,17 +962,20 @@
         "Protected Repair Autonomy remains available only for blocking minimal production repair."
       ],
       "sources": [
-        "October 5 usage-efficiency assessment",
-        "Daily AI Brief October 6 pre-run hardening handoff"
+        "DAB-OPS-20261006-005",
+        "DAB-OPS-E-000126",
+        "PR #495",
+        "merge a78fd3248609da12ba17b9f089ad2d1725a41407",
+        "_records/hardening/p1-p2-2026-10-06/rehearsal-receipt.json"
       ]
     },
     {
       "id": "DAB-KB-051",
-      "lane": "backlog",
+      "lane": "done",
       "priority": "P1",
       "category": "Supervisor Liveness",
       "title": "Eliminate observability-only Task 00 startup stalls",
-      "summary": "Ensure the startup Supervisor reaches a semantic Task 00 executor within the protected liveness window instead of stopping after lease and Kanban observability updates.",
+      "summary": "Completed by P1-A: substantive durable transitions drive normal sequencing; the Supervisor yields after one boundary and Watchdogs are fallback recovery only.",
       "acceptance": [
         "Task 00 startup produces a readiness receipt or exact worker handoff within the protected liveness window.",
         "Lease, heartbeat and Kanban-only writes do not satisfy startup progress.",
@@ -981,7 +984,96 @@
       ],
       "sources": [
         "DAB-OPS-20261006-001",
-        "reliable-edition-20261006-run10 Task 00 recovery evidence"
+        "DAB-OPS-E-000122",
+        "PR #496",
+        "repair PR #498",
+        "merge 744b34deacb6215484e8e428b8f65e3b8bc4eef3",
+        "_records/hardening/p1-p2-2026-10-06/rehearsal-receipt.json"
+      ]
+    },
+    {
+      "id": "DAB-KB-052",
+      "lane": "done",
+      "priority": "P0",
+      "category": "Image Execution",
+      "title": "Run Tasks 11-16 through one stable no-wake image pipeline",
+      "summary": "P1-B is protected: admission, generation, exact-byte persistence/readback, saved-Git review, accepted_locked and next-task transition are one durable operation with zero happy-path wake PRs.",
+      "acceptance": [
+        "Admission failure consumes zero generation attempts.",
+        "Infrastructure recovery reuses exact persisted bytes.",
+        "accepted_locked emits the next task without a wake PR.",
+        "Accepted images remain immutable and quality gates unchanged."
+      ],
+      "sources": [
+        "DAB-OPS-20261006-002",
+        "DAB-OPS-E-000123",
+        "PR #497",
+        "merge e969d067b85dcae84b98ad62ed538207be2e1665",
+        "_records/hardening/p1-p2-2026-10-06/rehearsal-receipt.json"
+      ]
+    },
+    {
+      "id": "DAB-KB-053",
+      "lane": "done",
+      "priority": "P0",
+      "category": "Validation",
+      "title": "Normalize every accepted-image persistence mode before Task 17",
+      "summary": "P1-C is protected: Task 17 consumes image-persistence-registry-v1 and pre-run readiness requires every registered mode to pass the compatibility matrix.",
+      "acceptance": [
+        "native_capture PASS.",
+        "normalization PASS.",
+        "protected exact-byte transport PASS.",
+        "stable exact persistence PASS.",
+        "Task 17 zero model calls and no repair PR."
+      ],
+      "sources": [
+        "DAB-OPS-20261006-003",
+        "DAB-OPS-E-000124",
+        "PR #499",
+        "merge ec0208dd2fd964e506cf5512e346c5f0468a6f00",
+        "_records/hardening/p1-p2-2026-10-06/rehearsal-receipt.json"
+      ]
+    },
+    {
+      "id": "DAB-KB-054",
+      "lane": "done",
+      "priority": "P0",
+      "category": "Publication",
+      "title": "Fail Task 23 deterministic prerequisites before publication PR",
+      "summary": "P1-D is protected: one zero-model pre-PR gate binds exact candidate identity, ancestry, branch separation, manifest, images, Watchlist, learning, reader/accessibility and route projections before freeze/PR creation.",
+      "acceptance": [
+        "Injected Watchlist mismatch blocks PR.",
+        "Injected learning-ledger mismatch blocks PR.",
+        "Stale protected-main ancestry blocks PR.",
+        "Clean candidate freezes and permits exactly one protected publication PR."
+      ],
+      "sources": [
+        "DAB-OPS-20261006-004",
+        "DAB-OPS-E-000125",
+        "PR #500",
+        "merge a85bd5671fac02b677447766281e05384ba21843",
+        "_records/hardening/p1-p2-2026-10-06/rehearsal-receipt.json"
+      ]
+    },
+    {
+      "id": "DAB-KB-055",
+      "lane": "done",
+      "priority": "P0",
+      "category": "Closeout",
+      "title": "Close Tasks 27-29 atomically after exact live verification",
+      "summary": "P2-A is protected: exact-SHA live verification triggers one deterministic incident-reconciled transaction for completion, Tasks 27-29, PUBLIC_CLOSED and active-pointer cleanup with zero AI/owner prompts.",
+      "acceptance": [
+        "Crash after every staged closeout write exposes no partial state.",
+        "Missing incident learning fails closed.",
+        "Duplicate closeout is deterministic no-op.",
+        "Active pointer is false when PUBLIC_CLOSED is true."
+      ],
+      "sources": [
+        "DAB-OPS-20261006-006",
+        "DAB-OPS-E-000127",
+        "PR #501",
+        "merge 13cbf5449fe411fd199b81ceef3ef1e5bc0dbd0a",
+        "_records/hardening/p1-p2-2026-10-06/rehearsal-receipt.json"
       ]
     }
   ],
