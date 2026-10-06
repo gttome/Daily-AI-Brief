@@ -1,15 +1,15 @@
 {
   "schema_version": "chatgpt-watchdog-recovery-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "incident_id": "wd-reliable-edition-20261006-run10-task11-scheduled-consumer-writer-block",
+  "incident_id": "wd-reliable-edition-20261006-run10-task12-supervisor-dispatch-not-materialized",
   "owner_slot": "F",
-  "generation": 9,
-  "state": "RELEASED",
-  "acquired_at": "2026-10-06T02:06:17.222Z",
-  "last_heartbeat_at": "2026-10-06T02:16:41.372Z",
-  "expires_at": "2026-10-06T02:16:41.372Z",
-  "released_at": "2026-10-06T02:16:41.372Z",
-  "action_key": "wd-reliable-edition-20261006-run10-task11-scheduled-consumer-writer-block:slot-f:g9",
-  "continuation_from_generation": 8,
-  "completion_evidence": "Protected repair merged; stale Supervisor was canceled and conclusively proved dead; exact Task 11 request was consumed; m01 PNG was persisted with exact Git identity, reviewed and accepted_locked; first incomplete task advanced to 12."
+  "generation": 10,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-06T02:24:45.000Z",
+  "last_heartbeat_at": "2026-10-06T02:24:45.000Z",
+  "expires_at": "2026-10-06T02:36:45.000Z",
+  "released_at": null,
+  "action_key": "wd-reliable-edition-20261006-run10-task12-supervisor-dispatch-not-materialized:slot-f:g10",
+  "continuation_from_generation": 9,
+  "next_stage": "REDISPATCH_SAME_EXECUTOR_VIA_RELEASE_HANDOFF_PUSH"
 }
