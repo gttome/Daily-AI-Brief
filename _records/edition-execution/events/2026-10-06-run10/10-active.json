@@ -1,0 +1,13 @@
+{
+  "task_id": "10",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-06T01:21:19.713Z",
+  "reason": "Claimed the exact queued Task 10 request to seal six professional story-specific image specifications.",
+  "proof": {
+    "request_key": "09c49ebfff742ef4b123f6a73a1d71004ef55d0925d905eb964e3ee3a4d8957d",
+    "writer_generation": 27,
+    "watchdog_lease_generation": 7,
+    "capability": "repository"
+  }
+}
