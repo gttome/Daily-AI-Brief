@@ -1,0 +1,57 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "11",
+  "candidate_id": "m01",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "request_key": "40e6b89d78aa3f65ea1ca4225dfa2a22f40c78265a55e03ae892af0df42a8605",
+  "writer_generation": 29,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-06T02:12:58.784Z",
+  "image_execution_admission": "_records/image-admission/2026-10-06-run10/11-40e6b89d78aa3f65ea1ca4225dfa2a22f40c78265a55e03ae892af0df42a8605.json",
+  "generated_at": "2026-10-06T02:15:00.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-f0c9fa31-c8c5-4403-80c1-d2ed0bbcdbfb",
+    "targeted_edit_generation_id": null,
+    "targeted_edit": null
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1794113,
+    "sha256": "97bcd4e2e559573678725331ed7185014b19ffb7e119cc49a7e11b261646a90b",
+    "persisted": true,
+    "path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m01.png",
+    "git_blob_sha": "45d607197609eaf4527826dd1f90ff0c585bb860",
+    "saved_git_commit": "c0d1d91a002f87e95fa6171e5d93b78d088e67bd",
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES",
+    "same_visual_targeted_edit": false,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Reusable skill",
+      "CLI command",
+      "Device stream",
+      "App state",
+      "Test action",
+      "Result evidence"
+    ],
+    "extra_visible_text": [],
+    "note": "A detailed closed-loop mobile automation workshop connects reusable skill capsules, a CLI rail, device stream, layered app state, bounded test action and signed result evidence."
+  },
+  "disposition": "ACCEPTED_LOCKED"
+}

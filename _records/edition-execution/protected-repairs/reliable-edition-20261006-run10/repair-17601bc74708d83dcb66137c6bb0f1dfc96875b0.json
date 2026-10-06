@@ -1,6 +1,6 @@
 {
   "schema_version": "protected-repair-required-v1",
-  "state": "SAME_TASK_RESUMED",
+  "state": "RECOVERY_VERIFIED_PROGRESSING",
   "repair_key": "repair-17601bc74708d83dcb66137c6bb0f1dfc96875b0",
   "execution_id": "reliable-edition-20261006-run10",
   "edition_id": "dab-edition-2026-10-06",
@@ -21,7 +21,18 @@
   "merge_sha": "f3a932d3b92d77d5fb3e6225a4d3e61b475a819a",
   "resume_workflow_run_id": 37402718652,
   "resumed_at": "2026-10-06T02:12:58.784Z",
-  "same_task_request_key": "40e6b89d78aa3f65ea1ca4225dfa2a22f40c78265a55e03ae892af0df42a8605",
-  "writer_generation": 29,
-  "next_stage": "CONSUME_EXACT_TASK11_NATIVE_REQUEST_AND_PROVE_ACCEPTED_LOCKED_PROGRESS"
+  "verified_at": "2026-10-06T02:16:41.372Z",
+  "same_task_resumed": true,
+  "executor_active": true,
+  "durable_progress": true,
+  "task_done": true,
+  "accepted_locked_changed": false,
+  "post_repair_attempts": 0,
+  "progress_evidence": {
+    "request_key": "40e6b89d78aa3f65ea1ca4225dfa2a22f40c78265a55e03ae892af0df42a8605",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/11-40e6b89d78aa3f65ea1ca4225dfa2a22f40c78265a55e03ae892af0df42a8605.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-06-run10/m01.json",
+    "done_event": "_records/edition-execution/events/2026-10-06-run10/11-done.json",
+    "first_incomplete_task": "12"
+  }
 }

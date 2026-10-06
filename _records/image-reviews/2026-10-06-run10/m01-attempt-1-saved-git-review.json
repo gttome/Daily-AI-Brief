@@ -1,0 +1,59 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "task_id": "11",
+  "candidate_id": "m01",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "reviewed_at": "2026-10-06T02:16:41.372Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 29,
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "saved_git_commit": "c0d1d91a002f87e95fa6171e5d93b78d088e67bd",
+  "image_execution_admission": "_records/image-admission/2026-10-06-run10/11-40e6b89d78aa3f65ea1ca4225dfa2a22f40c78265a55e03ae892af0df42a8605.json",
+  "source_lineage": {
+    "base_generation_id": "exec-f0c9fa31-c8c5-4403-80c1-d2ed0bbcdbfb",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "97bcd4e2e559573678725331ed7185014b19ffb7e119cc49a7e11b261646a90b",
+    "native_bytes": 1794113,
+    "native_width": 1730,
+    "native_height": 909,
+    "transport_method": "exact returned PNG via Git Data create_blob Base64"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m01.png",
+    "git_blob_sha": "45d607197609eaf4527826dd1f90ff0c585bb860",
+    "sha256": "97bcd4e2e559573678725331ed7185014b19ffb7e119cc49a7e11b261646a90b",
+    "bytes": 1794113,
+    "width": 1730,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "A sealed skill capsule library feeds a CLI control rail that orchestrates device stream frames, layered application state, bounded test actions and signed result evidence through a visually closed feedback loop.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Reusable skill",
+      "CLI command",
+      "Device stream",
+      "App state",
+      "Test action",
+      "Result evidence"
+    ],
+    "extra_visible_text": [],
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The first admitted render passed; the inspected local PNG is byte-identical to both saved Git paths and satisfies the sealed story-only controls."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}
