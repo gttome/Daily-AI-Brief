@@ -1,0 +1,131 @@
+{
+  "schema_version": "image-base64-chunk-bridge-v1",
+  "execution_id": "reliable-edition-20261006-run10",
+  "execution_key": "2026-10-06-run10",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "request_id": "50a461bad40e069d2d75b74d8803d50b9a4bc4b2922072d37435d7e6b97aa469",
+  "task_id": "16",
+  "source_writer_generation": 52,
+  "target_path": "briefs/images/2026-10-06/dab-edition-2026-10-06-m14.png",
+  "bytes": 1272756,
+  "sha256": "44803a638cbd25e5d388f0dafb07ce5a6df8da3ac9c1fca332e05081fafdb1d9",
+  "git_blob_sha": "b154cd92a03abe77efe1b3783184d4400949315f",
+  "chunks": [
+    {
+      "file": "chunk-0000.b64",
+      "sha256": "ac307a7a5bc5dde381219e48f1d7121148dc293d160f7820815c2edf3a91e621"
+    },
+    {
+      "file": "chunk-0001.b64",
+      "sha256": "c01c9d77c8dc1d6d4f6b3398bdbe9532b2fd56e00b3eb9883ca055b359c780a4"
+    },
+    {
+      "file": "chunk-0002.b64",
+      "sha256": "415b675d2c9b2aec630feb1a2f910ec4bdfa0c57c08dd8e2f30e7736cbe508ce"
+    },
+    {
+      "file": "chunk-0003.b64",
+      "sha256": "3334959fdde18f8be77af572d9bd7f321681ef46e43ab86fd7a60faf2aac450d"
+    },
+    {
+      "file": "chunk-0004.b64",
+      "sha256": "58defdfc5732cbfe86c0621057c5957ce16507a069c2a765a8512d1ea1a15224"
+    },
+    {
+      "file": "chunk-0005.b64",
+      "sha256": "877cce2524aad2ec098672348dd55a802e8e65114a82924e5b4c7d81cc9a9bf5"
+    },
+    {
+      "file": "chunk-0006.b64",
+      "sha256": "41d6d0689e530c50608aabdd2f2e97373227d029c1fd4bda5c5e970e1a6f7490"
+    },
+    {
+      "file": "chunk-0007.b64",
+      "sha256": "5204f53ca4f39a2ed0e33cc27b916f8d36faaf63cd023b57bb088498d63314c9"
+    },
+    {
+      "file": "chunk-0008.b64",
+      "sha256": "4c500fa7d5e6d3375f4e40ba55bc2b70be134d6bbc84c9a53597a1397daf0b42"
+    },
+    {
+      "file": "chunk-0009.b64",
+      "sha256": "7cf79c406e7235aa9821409ae4275d10cdc73e947acc77629a60a37771f3b059"
+    },
+    {
+      "file": "chunk-0010.b64",
+      "sha256": "314c36391c50e2518c182eef6039ad053b20e5be35796c7a4725c3afea637148"
+    },
+    {
+      "file": "chunk-0011.b64",
+      "sha256": "132d5ad00326a2404a8de04b139524d55a293cd7bc7e014e1b511a5a7572dd8a"
+    },
+    {
+      "file": "chunk-0012.b64",
+      "sha256": "69c142767fcc8ce0f677a7b143ceab8332ad01aae2b8ad88ad6b7a4201306652"
+    },
+    {
+      "file": "chunk-0013.b64",
+      "sha256": "336046d72476fe6a349a13d9f57733b6642f3cb03df563d5a6ebd6cd74e98070"
+    },
+    {
+      "file": "chunk-0014.b64",
+      "sha256": "b6f71554c61092c943a977b13b995af92d2e54a3954b77d61f97512079b4c0ef"
+    },
+    {
+      "file": "chunk-0015.b64",
+      "sha256": "226a89f7cec4433c13604218716141af428e5b28b0a823d1ad38bfd4084f1fe2"
+    },
+    {
+      "file": "chunk-0016.b64",
+      "sha256": "a31e1aff9cd2b34166cf2162696a89ea145607ac6772e83f8b04432b2a55a1a3"
+    },
+    {
+      "file": "chunk-0017.b64",
+      "sha256": "1cbab88904b673278f774e11f4e9740b8bde58449f727b6745adbe3d3945b995"
+    },
+    {
+      "file": "chunk-0018.b64",
+      "sha256": "a3c9dfe6362ba73df28867dd62183a39327c6c64254d16631acfa63d26749474"
+    },
+    {
+      "file": "chunk-0019.b64",
+      "sha256": "0f25aef581b64a5ddcb21b216373f35659033d9e0bf8e45259ab0359bcf52cb3"
+    },
+    {
+      "file": "chunk-0020.b64",
+      "sha256": "3894670beef5c2b05550b84be385152f31d7b13ba43f6c6b052c08aa3bd3e6d8"
+    },
+    {
+      "file": "chunk-0021.b64",
+      "sha256": "e12351bf90e4d447929e290e15bbd99c89b2db4d7ae2763fda395767012b47dc"
+    },
+    {
+      "file": "chunk-0022.b64",
+      "sha256": "75190da9190e9935e48cc00e5c4a71064eeffcecac167bdaec8889e36f54d028"
+    },
+    {
+      "file": "chunk-0023.b64",
+      "sha256": "28996e24da00b7992d51b2b29ae923c89c1f45e5d7e68ff809d91011f245de9d"
+    },
+    {
+      "file": "chunk-0024.b64",
+      "sha256": "b3d0664cc922e4542a8d188c34a1f9ebb4e294d0e38ea0244fb9a2f0913918c1"
+    },
+    {
+      "file": "chunk-0025.b64",
+      "sha256": "72ff123adf34a05e4c9e9d4fe235b481467647478aa2bd2563496b8db953eb9a"
+    },
+    {
+      "file": "chunk-0026.b64",
+      "sha256": "ce810fba902373bd8d75738b4d604574cdb8bc5a879ef4c2c62f7a4bfefa724b"
+    },
+    {
+      "file": "chunk-0027.b64",
+      "sha256": "a857a564c270052dab40d25d8f14a8ca5ec1ce2856deedf27219a0eda3b52a6b"
+    },
+    {
+      "file": "chunk-0028.b64",
+      "sha256": "0bd7594c3457e1f7524fb50f7bddb39f6e3df6a303a0fb69f70c5fb1d020f69f"
+    }
+  ]
+}
