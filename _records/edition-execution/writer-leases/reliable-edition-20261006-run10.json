@@ -1,13 +1,13 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261006-run10",
-  "owner_id": "scheduled-consumer:watchdog-E:reliable-edition-20261006-run10:task-15:generation-45:31a21033",
-  "generation": 45,
-  "acquired_at": "2026-10-06T06:48:02.344Z",
-  "last_heartbeat_at": "2026-10-06T06:48:02.344Z",
-  "expires_at": "2026-10-06T06:56:02.344Z",
+  "owner_id": "scheduled-consumer:watchdog-E:reliable-edition-20261006-run10:task-15-repair:generation-46",
+  "generation": 46,
+  "acquired_at": "2026-10-06T06:57:06.477Z",
+  "last_heartbeat_at": "2026-10-06T06:57:06.477Z",
+  "expires_at": "2026-10-06T07:05:06.477Z",
   "state": "ACTIVE",
   "task_id": "15",
-  "request_key": "31a21033d6867d6dbc052b9e294b4137e560629265f354bf5210053e4e5c07dc",
-  "consumer_id": "watchdog-E"
+  "consumer_id": "watchdog-E",
+  "continuation_from_generation": 45
 }
