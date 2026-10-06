@@ -7,12 +7,14 @@
   "task_id": "03",
   "capability": "research_chatgpt",
   "instruction": "Perform fresh external article discovery and evidence collection with an ordinary research-capable ChatGPT execution, then persist the bounded authoritative result without redoing completed upstream work.",
-  "writer_generation": 12,
+  "writer_generation": 13,
   "recovery_attempt": 0,
   "repair_epoch": 0,
   "post_repair_attempt": 0,
   "created_at": "2026-10-06T00:51:28.900Z",
-  "writer_generation_is_provenance": false,
+  "writer_generation_is_provenance": true,
   "authority_refresh_required_at_invocation": false,
-  "status": "queued"
+  "status": "claimed",
+  "claimed_at": "2026-10-06T00:53:50.939Z",
+  "claimed_by": "scheduled-chatgpt-watchdog-slot-f"
 }
