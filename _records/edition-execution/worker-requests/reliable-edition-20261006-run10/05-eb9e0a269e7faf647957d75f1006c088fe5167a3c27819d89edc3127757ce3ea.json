@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "eb9e0a269e7faf647957d75f1006c088fe5167a3c27819d89edc3127757ce3ea",
+  "execution_id": "reliable-edition-20261006-run10",
+  "edition_id": "dab-edition-2026-10-06",
+  "branch": "reliable-edition/dab-edition-2026-10-06-run10",
+  "task_id": "05",
+  "capability": "repository",
+  "instruction": "Execute Task 05 (Lock six stories exact 2/2/2 plus one Agent Skills story) from authoritative durable inputs, preserving all valid completed upstream evidence. Reuse the one-semantic-editorial-pass-v1 result whenever its input evidence digest is unchanged; deterministic downstream defects must not trigger a whole-edition semantic reread.",
+  "writer_generation": 16,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-06T01:03:41.859Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
