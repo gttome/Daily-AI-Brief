@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Hard Fork — October 2, 2026 episode"
-description: "Current discussion of personal assistants, agent incidents and privacy trade-offs."
+description: "Hard Fork discusses personal AI assistants, recent agent incidents and the privacy trade-offs that arise as assistants gain more autonomy."
 image: ""
 permalink: /podcasts/2026-10-06/hard-fork-2026-10-02-ai-agents/
 brief_date: 2026-10-06
@@ -26,11 +26,11 @@ reader_release: true
 **Duration:** 53:02  
 **Topics:** personal assistants, agent incidents, privacy
 
-**Summary:** Current discussion of personal assistants, agent incidents and privacy trade-offs.
+**Summary:** Hard Fork discusses personal AI assistants, recent agent incidents and the privacy trade-offs that arise as assistants gain more autonomy.
 
-**Why it matters:** Current discussion of personal assistants, agent incidents and privacy trade-offs.
+**Why it matters:** It adds a user-centered risk perspective to product announcements by focusing on what can go wrong when agents act with access to personal data and services.
 
-**Connection to the brief:** Current discussion of personal assistants, agent incidents and privacy trade-offs.
+**Connection to the brief:** That risk lens complements today’s desktop-computer-use and ambient-agent stories, where permissions, escalation and auditability determine whether autonomy is trustworthy.
 
 
 
