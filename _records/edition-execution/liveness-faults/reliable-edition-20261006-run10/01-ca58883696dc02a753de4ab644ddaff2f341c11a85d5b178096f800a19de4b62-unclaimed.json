@@ -1,0 +1,15 @@
+{
+  "state": "fault",
+  "fault_code": "repository_consumer_unclaimed",
+  "task_id": "01",
+  "request_key": "ca58883696dc02a753de4ab644ddaff2f341c11a85d5b178096f800a19de4b62",
+  "execution_id": "reliable-edition-20261006-run10",
+  "request_status": "queued",
+  "queued_at": "2026-10-06T00:18:06.264Z",
+  "substantive_progress_at": null,
+  "observed_at": "2026-10-06T00:23:35.815Z",
+  "idle_seconds": 329.551,
+  "max_idle_seconds": 60,
+  "supervisor_bookkeeping_is_progress": false,
+  "next_action": "The bound ordinary-ChatGPT repository consumer must claim the same request; preserve completed work and do not skip ahead."
+}
