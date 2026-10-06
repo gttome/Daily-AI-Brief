@@ -51,6 +51,9 @@ function materialState(record={}){
     reason_code:record.reason_code||record.normalized_fault_code||null,
     next_legal_action:record.next_legal_action||null,
     accepted_locked_images:Number.isInteger(record.accepted_locked_images)?record.accepted_locked_images:0,
+    watchdog_ring_healthy:record.watchdog_ring_healthy!==false,
+    watchdog_ring_enabled_count:Number.isInteger(record.watchdog_ring_enabled_count)?record.watchdog_ring_enabled_count:null,
+    watchdog_ring_fault_code:record.watchdog_ring_fault_code||null,
     evidence_refs:Array.isArray(record.evidence_refs)?[...new Set(record.evidence_refs)].sort():[]
   };
 }
@@ -75,7 +78,7 @@ export function buildWatchdogHealthRecord({
   executor_active=null,executor_progressing=null,
   queued_authoritative_request_key=null,watchdog_recovery_owner_progressing=false,protected_repair_stage=null,
   classification=null,normalized_fault_code=null,reason_code=normalized_fault_code,next_legal_action=null,
-  actionable=null,accepted_locked_images=0,evidence_refs=[]
+  actionable=null,accepted_locked_images=0,watchdog_ring_healthy=true,watchdog_ring_enabled_count=6,watchdog_ring_fault_code=null,evidence_refs=[]
 }={}){
   if(!stamp(observed_at)||!stamp(updated_at))throw Error('valid_watchdog_health_clock_required');
   if(active===true&&terminal===true)throw Error('watchdog_health_active_terminal_contradiction');
@@ -89,15 +92,17 @@ export function buildWatchdogHealthRecord({
   if(!Number.isInteger(accepted_locked_images)||accepted_locked_images<0||accepted_locked_images>6)
     throw Error('watchdog_health_accepted_locked_images_invalid');
 
-  const state=terminal===true?'TERMINAL':
+  const ringDegraded=watchdog_ring_healthy===false;
+  const baseState=terminal===true?'TERMINAL':
     active!==true?'NO_ACTIVE_EXECUTION':
     watchdog_recovery_owner_progressing===true?'RECOVERY_OWNER_PROGRESSING':
     classification?.state||classification||'AMBIGUOUS';
-  const fault=normalizedFault(state,reason_code||normalized_fault_code);
+  const state=ringDegraded?'BLOCKED_ACTIONABLE':baseState;
+  const fault=ringDegraded?'WATCHDOG_RING_DEGRADED':normalizedFault(state,reason_code||normalized_fault_code);
   const hasRequest=Boolean(request_key||queued_authoritative_request_key);
-  const isActionable=actionable===null
+  const isActionable=ringDegraded?true:(actionable===null
     ? ['STALE_ACTIVE','BLOCKED_ACTIONABLE'].includes(state)||(state==='READY_IDLE'&&hasRequest)
-    : actionable===true;
+    : actionable===true);
   const refs=[...new Set(evidence_refs.filter(x=>typeof x==='string'&&x.trim()).map(x=>x.trim()))].sort();
   const executorState=text(live_executor_state)||'Unknown';
   const record={
@@ -128,8 +133,11 @@ export function buildWatchdogHealthRecord({
     actionable:isActionable,
     reason_code:fault,
     normalized_fault_code:fault,
-    next_legal_action:isActionable?(next_legal_action||'NARROW_RECOVERY_REQUIRED'):null,
+    next_legal_action:isActionable?(ringDegraded?'RESTORE_WATCHDOG_RING_MEMBERSHIP':(next_legal_action||'NARROW_RECOVERY_REQUIRED')):null,
     accepted_locked_images,
+    watchdog_ring_healthy:!ringDegraded,
+    watchdog_ring_enabled_count:Number.isInteger(watchdog_ring_enabled_count)?watchdog_ring_enabled_count:null,
+    watchdog_ring_fault_code:ringDegraded?'WATCHDOG_RING_DEGRADED':watchdog_ring_fault_code,
     evidence_refs:refs,
     evidence_digest:'sha256:'+digest(refs)
   };
@@ -154,8 +162,10 @@ export function validateWatchdogHealthRecord(record={}){
   if(typeof record.actionable!=='boolean')errors.push('watchdog_health_actionable_flag');
   if(!Number.isInteger(record.accepted_locked_images)||record.accepted_locked_images<0||record.accepted_locked_images>6)
     errors.push('watchdog_health_accepted_locked_images');
+  if(record.watchdog_ring_healthy===false&&record.watchdog_ring_enabled_count!==null&&record.watchdog_ring_enabled_count!==undefined&&(!Number.isInteger(record.watchdog_ring_enabled_count)||record.watchdog_ring_enabled_count<0||record.watchdog_ring_enabled_count>6))
+    errors.push('watchdog_health_ring_enabled_count');
   if(record.source_digest!==watchdogHealthSourceDigest(record))errors.push('watchdog_health_source_digest');
-  if(['HEALTHY_ACTIVE','TERMINAL','NO_ACTIVE_EXECUTION','RECOVERY_OWNER_PROGRESSING'].includes(record.health_state)&&record.actionable!==false)
+  if(['HEALTHY_ACTIVE','TERMINAL','NO_ACTIVE_EXECUTION','RECOVERY_OWNER_PROGRESSING'].includes(record.health_state)&&record.actionable!==false&&record.watchdog_ring_healthy!==false)
     errors.push('watchdog_health_nonactionable_contract');
   if(['STALE_ACTIVE','BLOCKED_ACTIONABLE'].includes(record.health_state)&&record.actionable!==true)
     errors.push('watchdog_health_actionable_must_escalate');
@@ -170,6 +180,8 @@ export function watchdogFastPathDecision(record,{now=new Date().toISOString(),ma
   const errors=validateWatchdogHealthRecord(record);
   if(errors.length)return {action:'EXPAND_RECOVERY',reason:'compact_health_invalid',errors,counter_bucket:'expanded_read',compact_only:false};
   const age_ms=Math.max(0,Date.parse(now)-Date.parse(record.updated_at||record.observed_at));
+  if(record.watchdog_ring_healthy===false)
+    return {action:'EXPAND_RECOVERY',reason:'degraded_watchdog_ring',age_ms,counter_bucket:'expanded_read',compact_only:false,next_legal_action:'RESTORE_WATCHDOG_RING_MEMBERSHIP'};
   if(expected_execution_id&&record.execution_id!==expected_execution_id)
     return {action:'EXPAND_RECOVERY',reason:'compact_health_execution_mismatch',age_ms,counter_bucket:'expanded_read',compact_only:false};
   if(record.terminal===true||record.health_state==='TERMINAL')
