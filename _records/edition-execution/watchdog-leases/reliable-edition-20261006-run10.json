@@ -4,15 +4,15 @@
   "incident_id": "wd-reliable-edition-20261006-run10-task14-bridge-checkpoint",
   "owner_slot": "F",
   "generation": 23,
-  "state": "ACTIVE",
-  "released": false,
+  "state": "RELEASED",
+  "released": true,
   "acquired_at": "2026-10-06T06:21:10.000Z",
-  "last_heartbeat_at": "2026-10-06T06:21:10.000Z",
-  "expires_at": "2026-10-06T06:29:10.000Z",
-  "released_at": null,
-  "release_reason": null,
+  "last_heartbeat_at": "2026-10-06T06:22:00.000Z",
+  "expires_at": "2026-10-06T06:22:00.000Z",
+  "released_at": "2026-10-06T06:22:00.000Z",
+  "release_reason": "RECOVERY_VERIFIED_PROGRESSING",
   "action_key": "wd-reliable-edition-20261006-run10-task14-bridge-checkpoint:slot-f:g23:accept-verified-image",
   "continuation_from_generation": 22,
   "authoritative_request_key": "12bf43963ff578435db66067fc0f5af0f1ddca02a73376cb3b8f8857e6947663",
-  "completion_evidence": null
+  "completion_evidence": "_records/edition-execution/watchdog-events/reliable-edition-20261006-run10/20261006T062200000Z-slot-f-task14-recovery-verified.json"
 }
