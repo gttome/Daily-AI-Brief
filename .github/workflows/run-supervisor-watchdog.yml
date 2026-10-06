@@ -1,6 +1,11 @@
 name: Daily AI Brief Run Supervisor Watchdog
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - data/operations/active-production-run.json
+      - .github/workflows/run-supervisor-watchdog.yml
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
