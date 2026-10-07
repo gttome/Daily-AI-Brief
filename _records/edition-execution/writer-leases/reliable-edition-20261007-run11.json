@@ -1,12 +1,12 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261007-run11",
-  "owner_id": "chatgpt-watchdog-a-20261007T171330Z",
-  "generation": 65,
-  "acquired_at": "2026-10-07T17:13:30.000Z",
-  "last_heartbeat_at": "2026-10-07T17:13:30.000Z",
-  "expires_at": "2026-10-07T17:21:30.000Z",
+  "owner_id": "chatgpt-watchdog-a-20261007T171530Z",
+  "generation": 66,
+  "acquired_at": "2026-10-07T17:15:30.000Z",
+  "last_heartbeat_at": "2026-10-07T17:15:30.000Z",
+  "expires_at": "2026-10-07T17:23:30.000Z",
   "state": "ACTIVE",
-  "task_id": "26",
-  "action_key": "run11-task26-reconcile-live-verification-slot-a-g65"
+  "task_id": "27",
+  "action_key": "run11-task27-persist-completion-lifecycle-slot-a-g66"
 }
