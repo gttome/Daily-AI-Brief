@@ -36,7 +36,7 @@ test('request allowlist strips orchestration without claiming hidden platform is
 test('bounded post-repair overlay is canonical, fail-closed, and admission-bound',()=>{
  const e=buildImageGenerationExecution(packet());
  const overlay=buildPostRepairImageGenerationInstruction(e.sealed_story_packet,{repair_epoch:1,directive_version:IMAGE_POST_REPAIR_DIRECTIVE_VERSION});
- assert.match(overlay,/TEXT FAIL-CLOSED/);assert.match(overlay,/BRAND FAIL-CLOSED/);assert.match(overlay,/timestamps/);assert.match(overlay,/logos/);
+ assert.match(overlay,/TEXT FAIL-CLOSED/);assert.match(overlay,/BRAND FAIL-CLOSED/);assert.match(overlay,/HUMAN FAIL-CLOSED/);assert.match(overlay,/profile portraits/);assert.match(overlay,/credentials, keys, documents, tokens/);assert.match(overlay,/timestamps/);assert.match(overlay,/logos/);
  const common={execution_id:'reliable-edition-20261007-run11',task_id:'11',request_key:'req-m01',story_only_context_verified:true,orchestration_context_visible:false,exact_byte_persistence_verified:true,persistence_mode:'git_data_direct_blob',owner_intervention_required:false,checked_at:'2026-10-07T03:10:00Z'};
  const normal=buildImageExecutionAdmission(e,{...common,submitted_instruction:e.generation_instruction});
  assert.equal(normal.generation_authorized,true);assert.equal(normal.engineering_repair_epoch,0);assert.equal(normal.repair_directive_version,null);assert.deepEqual(validateImageExecutionAdmission(normal,e,{execution_id:common.execution_id,task_id:'11',request_key:common.request_key}),[]);

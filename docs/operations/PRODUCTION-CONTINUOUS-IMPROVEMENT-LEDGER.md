@@ -1284,3 +1284,20 @@ Problems: 71 · Events: 127
 - **Recurrences:** none recorded
 - **Future validation:** PUBLIC_CLOSED follows live verification through deterministic closeout without owner/model intervention. | Active pointer cannot remain true after PUBLIC_CLOSED.
 
+## DAB-OPS-20261007-001 — Task 16 repeatedly rendered human/profile primitives for identity semantics despite the no-people contract.
+
+- **Status:** protected_repair_in_progress
+- **First observed run:** reliable-edition-20261007-run11
+- **Task(s):** 16
+- **Symptom:** Three exact saved-Git Task 16 attempts were professional and story-correct but repeatedly mapped Identity/MCP semantics to human-profile, avatar, person or group icons; attempts 2–3 also contained hash-like text outside the exact allowlist.
+- **Root cause:** The base no-people contract prohibited humanoids generically, while the canonical post-repair overlay hardened text and brand rendering but did not fail closed on identity/principal/user glyph substitutions. The generator therefore continued choosing familiar human iconography for identity semantics.
+- **Operational impact:** Three bounded image attempts were rejected and Task 16 entered Strategy Interrupt instead of advancing to set review.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Fresh generation after the first rejection, then a Strategy Interrupt targeted same-story edit after two equivalent failures; both preserved the same normalized NO_HUMANOIDS_VIOLATION.
+- **Actual fix:** Extend the canonical post-repair overlay with a HUMAN FAIL-CLOSED rule that explicitly bans silhouettes, avatars, profile portraits, person/group/user/account glyphs and human-shaped pictograms, and requires identity/access-control concepts to use neutral non-human credentials, keys, documents, tokens, policy artifacts, gates, faceless shields or abstract markers.
+- **Fix outcome:** Pending exact-head protected CI, protected merge and one fresh story-only Task 16 post-repair attempt.
+- **Permanent implementation:** _generator/lib/image-story-packet.mjs
+- **Regression tests:** _generator/test/image-execution.test.mjs, _generator/test/native-image-delivery.test.mjs
+- **Production invariants:** accepted_locked_assets_immutable, no_people_or_humanoid_visual_primitives, visible_text_exact_allowlist, story_only_generator_context, one_post_repair_attempt_per_epoch, owner_intervention_false, no_low_quality_fallback
+- **Recurrences:** Task 16 attempts 1–3 in reliable-edition-20261007-run11
+- **Future validation:** Exact-head CI must pass before same-task resume. The next Task 16 image admission must be PASS in a fresh story-only generator context using the canonical repaired overlay. The one post-repair saved-Git image must contain no person/humanoid primitive and no visible text outside the exact allowlist.

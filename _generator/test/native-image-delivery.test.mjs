@@ -14,7 +14,7 @@ test('both modes produce identical visual-only task text without mutating frozen
 test('protected repair delivery uses only the canonical hardened overlay',()=>{
  const e=execution(),options={engineering_repair_epoch:1,repair_directive_version:IMAGE_POST_REPAIR_DIRECTIVE_VERSION};
  const d=buildNativeImageDelivery(e,options);
- assert.notEqual(d.task_prompt,e.generation_instruction);assert.match(d.task_prompt,/TEXT FAIL-CLOSED/);assert.match(d.task_prompt,/BRAND FAIL-CLOSED/);
+ assert.notEqual(d.task_prompt,e.generation_instruction);assert.match(d.task_prompt,/TEXT FAIL-CLOSED/);assert.match(d.task_prompt,/BRAND FAIL-CLOSED/);assert.match(d.task_prompt,/HUMAN FAIL-CLOSED/);assert.match(d.task_prompt,/person icons/);
  assert.deepEqual(d.repair_overlay,{directive_version:IMAGE_POST_REPAIR_DIRECTIVE_VERSION,engineering_repair_epoch:1});
  assert.deepEqual(validateNativeImageDelivery(d,e,options),[]);
  assert.equal(assertNativeImageTaskPrompt(d.task_prompt,d,e,options).native_image_generation_started,false);
