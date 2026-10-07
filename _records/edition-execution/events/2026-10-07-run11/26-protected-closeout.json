@@ -1,0 +1,21 @@
+{
+  "task_id": "26",
+  "from": "Backlog",
+  "to": "Done",
+  "at": "2026-10-07T14:10:22.625Z",
+  "timestamp_scope": "independent_live_validation_observed",
+  "proof": {
+    "production_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+    "validation": "_records/publication/2026-10-07/delta-validation.json",
+    "validation_run_id": 37634428530,
+    "final_result": "pass",
+    "required_checks": [
+      "publication_receipt",
+      "pages_deployment",
+      "live_changed_routes",
+      "live_homepage_edition",
+      "live_dated_edition",
+      "live_image_assets"
+    ]
+  }
+}

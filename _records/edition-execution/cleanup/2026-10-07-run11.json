@@ -1,0 +1,26 @@
+{
+  "schema_version": "daily-brief-run-cleanup-v2",
+  "result": "PASS",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_id": "reliable-edition-20261007-run11",
+  "run_number": 11,
+  "terminal_state": "PUBLIC_CLOSED",
+  "cleanup_at": "2026-10-07T14:16:24.053Z",
+  "activation": "on_protected_main_merge",
+  "source_completion": "_records/publication/2026-10-07/completion.json",
+  "production_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+  "run_branch_write_frozen": true,
+  "active_pointer_cleared": true,
+  "learning_certification": {
+    "schema_version": "run-learning-task29-certification-v1",
+    "run_id": "reliable-edition-20261007-run11",
+    "result": "PASS",
+    "errors": [],
+    "problem_ids": [
+      "DAB-OPS-20261007-001",
+      "DAB-OPS-20261007-002"
+    ],
+    "reconciled_problem_count": 2
+  },
+  "next_run_start_authorized": false
+}

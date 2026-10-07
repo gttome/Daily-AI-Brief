@@ -1,9 +1,8 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261007-run11",
-  "owner_id": "chatgpt-watchdog-f-20261007T141417Z",
-  "generation": 59,
-  "acquired_at": "2026-10-07T14:14:17.000Z",
-  "last_heartbeat_at": "2026-10-07T14:14:17.000Z",
-  "expires_at": "2026-10-07T14:24:17.000Z"
+  "owner_id": "released-task29",
+  "released": true,
+  "expires_at": "2026-10-07T14:16:24.053Z",
+  "publication_candidate_frozen": true
 }
