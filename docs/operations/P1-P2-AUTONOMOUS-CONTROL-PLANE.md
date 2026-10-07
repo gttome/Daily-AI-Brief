@@ -2,16 +2,37 @@
 
 **Plan date:** October 6, 2026  
 **Source production execution:** `reliable-edition-20261006-run10`  
-**Result:** **PASS / NEXT PRODUCTION GO**  
-**Final integrated code main:** `6f5b1a439d4088af6c284e28c8201842ce3b8468`  
-**Final protected-main CI:** run `37545132702` — PASS  
-**Integrated rehearsal:** run `37545271745` — PASS
+**Result:** **PASS / NEXT PRODUCTION GO — AUTHORITATIVE**  
+**Final integrated runtime-code main:** `6f5b1a439d4088af6c284e28c8201842ce3b8468`  
+**Final authoritative protected main:** `5cafd7b3af7628c0543908ac1f56dd4248f751d3`  
+**Final protected-main CI:** run `37548346457` / #1688 — PASS  
+**Integrated rehearsal:** run `37545271745` — PASS  
+**Final reconciliation:** PR #503 → `ab29b24ff598c9636017ef16572de7452410c646`  
+**GO-receipt consistency repair:** PR #504 → `5cafd7b3af7628c0543908ac1f56dd4248f751d3`
 
 ## Outcome
 
 All six required P1/P2 changes are merged to protected `main`. The completed October 6 production run was never reopened, no accepted October 6 image was regenerated, and no historical production evidence was rewritten. The final non-production rehearsal exercised the merged cross-component control path and all ten required fault injections.
 
 The production runtime dependency boundary is unchanged: **0 Work, 0 Codex, 0 paid-model API, 0 owner liveness prompts**. Development evidence may use explicitly permitted development tooling, but no such capability is required by production.
+
+## Final protected activation
+
+The P1/P2 program is fully activated on protected `main`.
+
+- PR #503 persisted the final program state, hardening-queue reconciliation, operational-learning events, Improvement Kanban closures, implementation receipt, test matrix, rehearsal receipt, usage-control metrics, operations handoff and next-run admission.
+- Exact-head CI for PR #503 passed, and PR #503 merged as `ab29b24ff598c9636017ef16572de7452410c646`.
+- Post-merge deterministic CI #1684 passed on that protected-main SHA.
+- Final read-only verification found one evidence-layer inconsistency: the GO receipt mixed two negatively phrased observations into an all-true gate aggregate. Runtime behavior was unaffected.
+- PR #504 changed the admission map to positive GO assertions, preserved the negative observations separately, and added a regression test requiring `decision=GO`, `all_gates_pass=true`, every positive gate `true`, and zero production Work/Codex/paid-API/owner-liveness dependencies.
+- PR #504 exact-head CI #1687 passed and merged as `5cafd7b3af7628c0543908ac1f56dd4248f751d3`.
+- Final protected-main deterministic CI #1688, run `37548346457`, passed on that exact SHA.
+
+The authoritative machine-readable admission is:
+
+`_records/hardening/p1-p2-2026-10-06/next-run-admission.json`
+
+Its final state is `decision: GO`, `all_gates_pass: true`, and all positive GO gates are true. The corresponding program state is `COMPLETE`.
 
 ## Implemented architecture
 
@@ -90,6 +111,8 @@ These are measurements, not GO blockers: production image-lane <=90 minutes; Tas
 
 ## Admission
 
-**GO** for the next production edition once this final reconciliation is merged to protected `main` and its post-merge deterministic CI passes. Any deterministic gate regression before allocation converts this to NO-GO until repaired.
+**GO is now authoritative for the next production edition.** Final reconciliation PR #503 and bounded GO-receipt repair PR #504 are both merged to protected `main`, and final post-merge deterministic CI #1688 passed on exact main `5cafd7b3af7628c0543908ac1f56dd4248f751d3`.
+
+The authoritative admission receipt records `decision: GO`, `all_gates_pass: true`, zero production Work/Codex/paid-model-API dependencies, zero owner-liveness dependency, and zero happy-path wake-PR dependency. Any deterministic gate regression before a future allocation converts admission to NO-GO until that exact gate is repaired.
 
 The system no longer relies on an owner liveness prompt for normal progression or routine internal recovery.
