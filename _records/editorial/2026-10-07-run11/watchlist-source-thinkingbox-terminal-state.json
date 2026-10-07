@@ -1,0 +1,14 @@
+{
+  "schema_version": "watchlist-source-evidence-v1",
+  "candidate_id": "w11-thinkingbox-terminal-state",
+  "source_url": "https://huggingface.co/blog/microsoft/thinkingbox",
+  "publisher": "Microsoft / Hugging Face",
+  "publication_date": "2026-10-03",
+  "checked_at": "2026-10-07T02:22:00.000Z",
+  "research_cutoff": "2026-10-07T00:04:00.000Z",
+  "eligible_at_research_cutoff": true,
+  "disposition": "update_existing",
+  "topic_id": "dab-topic-agent-overclaiming",
+  "finding": "ThinkingBox evaluates stateful agents by executable checks over terminal backend state and side effects, repeats each task 20 times, and documents cases where agents terminate cleanly yet leave the wrong system state, adding concrete evidence for claim-versus-outcome verification.",
+  "limitations": "The released benchmark uses synthetic reconstructed enterprise workflows; transfer to every production tool stack and model requires local validation."
+}

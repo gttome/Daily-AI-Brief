@@ -1,0 +1,22 @@
+{
+  "task_id": "00",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-07T00:19:39.423Z",
+  "reason_code": "PRODUCTION_READINESS_PASS",
+  "operation": "production_readiness_validation",
+  "reason": "Run 11 current readiness gates passed against exact protected allocation CI/merge, protected-main CI, current P1/P2 GO admission, complete learning, live Watchdog membership, protected image admission/persistence routes and same-execution generation-2 recovery.",
+  "proof": {
+    "readiness_path": "_records/edition-execution/readiness/dab-edition-2026-10-07-run11.json",
+    "readiness_inputs_path": "_records/edition-execution/readiness-inputs/dab-edition-2026-10-07-run11.json",
+    "result": "PASS",
+    "start_scope": "full_production",
+    "image_tasks_authorized": true,
+    "publication_authorized": true,
+    "protected_main_sha": "912248e5add14b2ec08d7a5eefed43cbf3af485f",
+    "protected_start_ci_run_id": 37550462017,
+    "post_merge_main_ci_run_id": 37550588047,
+    "writer_generation": 2,
+    "incident_path": "_records/run-learning/incidents/reliable-edition-20261007-run11.jsonl"
+  }
+}

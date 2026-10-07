@@ -1,0 +1,42 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "execution_key": "2026-10-07-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "11",
+  "candidate_id": "m01",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-07T05:06:30.000Z",
+  "writer_generation": 25,
+  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261007-run11:task-11:generation-25:c14bb873",
+  "reason_code": "IMAGE_ACCEPTED_LOCKED",
+  "operation": "Consume the exact repair-epoch-1 request, prove image-execution admission, generate one isolated professional m01 visual, persist exact PNG bytes to raw and final Git paths, verify identity, review the saved asset and lock acceptance.",
+  "proof": {
+    "request_key": "c14bb873847c16a99787bf89f4c8105101f83131344df8e16cc2e2c76802e294",
+    "repair_epoch": 1,
+    "post_repair_attempt": 1,
+    "image_execution_admission": "_records/image-admission/2026-10-07-run11/11-c14bb873847c16a99787bf89f4c8105101f83131344df8e16cc2e2c76802e294.json",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/11-c14bb873847c16a99787bf89f4c8105101f83131344df8e16cc2e2c76802e294.json",
+    "attempt_receipt": "_records/image-attempts/2026-10-07-run11/m01-repair-epoch-1-attempt-1.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-07-run11/m01.json",
+    "saved_git_review": "_records/image-reviews/2026-10-07-run11/m01-repair-epoch-1-attempt-1-saved-git-review.json",
+    "final_sha256": "b38f73955e216366916b86bc91465608e3d6215b2703b69407dd00980046ee30",
+    "final_git_blob_sha": "2a7edd0cdc4d6c62c1b0d9b62b2d6d61a41d07f2",
+    "saved_git_commit": "4c91d8937b553c2f3519bc7fbb43ec22062f79b7"
+  },
+  "completed_tasks_preserved": [
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10"
+  ],
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "chatgpt-watchdog-recovery-lease-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "incident_id": "wd-reliable-edition-20261007-run11-task22-strategy-interrupt-targeted-pass",
+  "owner_slot": "F",
+  "generation": 47,
+  "state": "ACTIVE",
+  "acquired_at": "2026-10-07T13:59:30.000Z",
+  "last_heartbeat_at": "2026-10-07T13:59:30.000Z",
+  "expires_at": "2026-10-07T14:11:30.000Z",
+  "action_key": "run11-task22-materially-different-targeted-pass-slot-f-g47",
+  "exact_request_key": "c531067186ad9ad36a6dacf8d3611f0416659c35c0245c50843a217df6868745",
+  "recovery_stage": "MATERIALLY_DIFFERENT_CANDIDATE_TARGETED_TESTS_PASS",
+  "substantive_progress_after_claim": false
+}

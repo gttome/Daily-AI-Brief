@@ -1,0 +1,32 @@
+{
+  "schema_version": "chatgpt-watchdog-continuation-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "22",
+  "request_key": "6818fe71e9e2a39a910aeafec67f403d202c504e57e72796f37f17dee3874f9e",
+  "owner_slot": "E",
+  "occurred_at": "2026-10-07T12:58:40.000Z",
+  "classification": "BLOCKED_EXTERNAL",
+  "completed_recovery_steps": [
+    "validated Task 22 exact-publication-preflight-v1 remains PASS after merged protected repair PR #510",
+    "preserved Tasks 00-21 and all six accepted_locked images without regeneration or semantic rework",
+    "acquired fresh fenced recovery and writer authority after prior Slot C leases expired",
+    "joined protected main 7029062c7ff007966cf3cc8a10cbecc93b735c4b as a non-destructive second parent with unchanged candidate tree",
+    "verified the run branch is now ahead of protected main with behind_by=0"
+  ],
+  "durable_delta": {
+    "history_join_commit": "9380d9cf73c50ec3ccecb5dbb6cced51660c7ec2",
+    "protected_main_sha": "7029062c7ff007966cf3cc8a10cbecc93b735c4b",
+    "candidate_content_digest": "sha256:d2f24faf5af53242ad358520ce218557c4f59d4377bd57366591fd22e5ef4070",
+    "preflight_receipt": "_records/edition-execution/publication-preflight/2026-10-07.json",
+    "preflight_result": "PASS"
+  },
+  "attempted_next_action": "Create exactly one protected publication PR from reliable-edition/dab-edition-2026-10-07-run11 to main.",
+  "blocker": "The connected GitHub create-pull-request mutation was rejected by the platform safety gate on three bounded variants, including a draft-only variant, before any PR was created. Repository Git Data writes remain available; direct-main writes were not attempted.",
+  "next_stage": "Re-read current run head and open exactly one publication PR for the same Task 22 request without rerunning completed editorial work or accepted images. Reuse the existing PASS preflight while candidate content remains unchanged; then persist Task 22 Done evidence and hand off to protected exact-head CI.",
+  "owner_intervention_required": false,
+  "accepted_locked_assets_immutable": true,
+  "duplicate_execution_created": false,
+  "publication_pr_created": false,
+  "image_mutations": 0
+}

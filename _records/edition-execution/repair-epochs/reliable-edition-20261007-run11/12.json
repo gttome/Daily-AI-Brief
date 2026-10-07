@@ -1,0 +1,68 @@
+{
+  "schema_version": "run-engineering-repair-epoch-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "12",
+  "request_key": "df2067cf47a6918212edbf13dbf75fb9bdd7679c72d2d5f7a843903a69814ab1",
+  "repair_epoch": 1,
+  "epochs_completed": 1,
+  "status": "PASS",
+  "required_proofs": [
+    "fresh_single_story_worker_isolation",
+    "no_people_or_humanoid_visual_primitives",
+    "small_png_exact_byte_transport_preflight_pass",
+    "protected_ci_pass",
+    "operational_learning_updated"
+  ],
+  "required_proofs_passed": true,
+  "proofs": {
+    "fresh_single_story_worker_isolation": {
+      "result": "PASS",
+      "evidence": "Post-repair request was consumed in a fresh single-story invocation with an image-execution-admission-v1 receipt before generation."
+    },
+    "no_people_or_humanoid_visual_primitives": {
+      "result": "PASS",
+      "evidence": "Saved-Git visual review proves no people, avatars or humanoids."
+    },
+    "small_png_exact_byte_transport_preflight_pass": {
+      "result": "PASS",
+      "evidence_path": "_records/image-admission/2026-10-07-run11/preflight/task12-slot-f-g29-repair-epoch1-direct-blob.png",
+      "method": "git_data_direct_blob",
+      "preflight_git_blob_sha": "26a8c68efad2a094e8fe6d850426b651d353c568",
+      "readback_match": true,
+      "low_quality_fallback": false
+    },
+    "protected_ci_pass": {
+      "result": "PASS",
+      "reused_green_repair": true,
+      "pr_number": 507,
+      "run_id": 37570801489,
+      "head_sha": "72c1f84183c2128be9a62799542d85b21d506bb5",
+      "merge_sha": "081d9f635b361ac164aa46feb31dda58794a6480",
+      "event": "pull_request",
+      "conclusion": "success"
+    },
+    "operational_learning_updated": {
+      "result": "PASS",
+      "evidence_path": "_records/run-learning/incidents/reliable-edition-20261007-run11.jsonl",
+      "problem_id": "DAB-RUN11-IMAGE-QUALITY-001",
+      "note": "Task 12 reused the merged generic overlay and completed without duplicate repair code."
+    }
+  },
+  "repair_directive_version": "image-quality-post-repair-overlay-v1",
+  "consumer_version": "protected-image-quality-overlay-v1",
+  "reused_green_protected_repair": true,
+  "completed_at": "2026-10-07T06:01:30.000Z",
+  "post_repair_attempts": 1,
+  "repair_digest": "sha256:abaee04df70a5875031dbac4cbd24fe95822b65e03cc1145909a59a07f5a22b8",
+  "last_post_repair_request_key": "f0addd0d4352896727c76ee7d9e79e8b3147d097b360981163e2d65403995c6a",
+  "post_repair_dispatched_at": "2026-10-07T05:44:30.000Z",
+  "post_repair_outcome": "ACCEPTED_LOCKED",
+  "post_repair_evidence": {
+    "attempt_receipt": "_records/image-attempts/2026-10-07-run11/m02-repair-epoch-1-attempt-1.json",
+    "saved_git_review": "_records/image-reviews/2026-10-07-run11/m02-repair-epoch-1-attempt-1-saved-git-review.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-07-run11/m02.json",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/12-f0addd0d4352896727c76ee7d9e79e8b3147d097b360981163e2d65403995c6a.json"
+  }
+}

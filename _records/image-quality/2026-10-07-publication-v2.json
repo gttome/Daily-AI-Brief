@@ -1,0 +1,500 @@
+{
+  "schema_version": "2.0.0",
+  "record_kind": "editorial_image_quality",
+  "edition_date": "2026-10-07",
+  "edition_id": "dab-edition-2026-10-07",
+  "benchmark_profile": "sep09-sep10-premium3-v1",
+  "benchmark_profile_path": "_records/image-quality/benchmark-profile-v1.json",
+  "reviewed_at": "2026-10-07T09:34:00.000Z",
+  "review_method": "Deterministic publication projection of six accepted_locked exact-Git-read-back saved-Git reviews; no asset bytes or acceptance decisions changed.",
+  "review_status": "complete",
+  "image_gate": "pass",
+  "asset_policy": "accepted_locked_reuse_only",
+  "accepted_locked": 6,
+  "set_review": {
+    "result": "PASS",
+    "composition_differentiation": "PASS",
+    "layout_differentiation": "PASS",
+    "diagram_grammar_differentiation": "PASS",
+    "information_hierarchy_differentiation": "PASS",
+    "annotation_pattern_differentiation": "PASS",
+    "assessment": "The six accepted images use distinct story mechanisms, compositions, layouts, diagram grammars, hierarchies and annotation patterns while meeting the shared professional editorial benchmark."
+  },
+  "images": [
+    {
+      "story_id": "dab-story-2026-10-07-m01",
+      "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m01.png",
+      "asset_hash": "b38f73955e216366916b86bc91465608e3d6215b2703b69407dd00980046ee30",
+      "git_blob_sha": "2a7edd0cdc4d6c62c1b0d9b62b2d6d61a41d07f2",
+      "cache_key": "oct7-m01-b38f73955e21",
+      "asset_version": "oct7-m01-accepted-v1",
+      "supersedes": null,
+      "deployment_verification_required": true,
+      "generation_context": {
+        "mode": "single_story",
+        "story_ids": [
+          "dab-story-2026-10-07-m01"
+        ],
+        "includes_edition_context": false,
+        "reviewed_subject_match": "pass",
+        "unrelated_status_artwork": false,
+        "request_path": "_records/image-context/2026-10-07/m01.json",
+        "request_sha256": "1af80cbb51c757f1e18b739b69ef3e5f532e5bdd0be5467b8bee6c01f6994ce7"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "file_exists": "PASS",
+          "file_integrity": "PASS",
+          "format": "PASS",
+          "dimensions": "PASS",
+          "expected_path": "PASS",
+          "clipping_corruption": "PASS",
+          "byte_uniqueness": "PASS",
+          "story_identity": "PASS",
+          "accessibility": "PASS",
+          "asset_hash": "PASS",
+          "git_blob_identity": "PASS",
+          "lock_state": "PASS",
+          "replacement_identity": "PASS"
+        }
+      },
+      "overall_gate": "pass",
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "benchmark_comparison": {
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "annotation_richness": "PASS",
+          "visual_depth": "PASS",
+          "hierarchy": "PASS",
+          "composition": "PASS",
+          "story_specificity": "PASS",
+          "differentiation": "PASS"
+        },
+        "story_specificity": "PASS",
+        "information_density": "PASS",
+        "explanatory_mechanism": "PASS",
+        "annotation_quality": "PASS",
+        "depth_hierarchy": "PASS",
+        "composition": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false,
+        "meaningful_components": [
+          "primary mechanism",
+          "input artifacts",
+          "control boundary",
+          "process lane",
+          "output artifact",
+          "feedback path",
+          "verification marker",
+          "audit or maintenance path"
+        ],
+        "composition_signature": "run11-m01-composition",
+        "layout_signature": "run11-layout-0",
+        "diagram_grammar": "run11-grammar-0",
+        "hierarchy_signature": "run11-hierarchy-0",
+        "annotation_pattern_signature": "run11-annotation-0",
+        "assessment": "Saved-Git visual review confirms a professional story-specific mechanism diagram with explanatory detail, hierarchy, legible annotations and no sparse or decorative fallback."
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-07-m02",
+      "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m02.png",
+      "asset_hash": "7f52e3dbf06daa6964ee3ac8d0ac6d29a64717603e7250639abb83fb6343fb98",
+      "git_blob_sha": "44df979fbcbdb8a7e5f888f385beb0c1cb63d733",
+      "cache_key": "oct7-m02-7f52e3dbf06d",
+      "asset_version": "oct7-m02-accepted-v1",
+      "supersedes": null,
+      "deployment_verification_required": true,
+      "generation_context": {
+        "mode": "single_story",
+        "story_ids": [
+          "dab-story-2026-10-07-m02"
+        ],
+        "includes_edition_context": false,
+        "reviewed_subject_match": "pass",
+        "unrelated_status_artwork": false,
+        "request_path": "_records/image-context/2026-10-07/m02.json",
+        "request_sha256": "fb6a6ccc819db74ebf2c0d6df0a293edb84c94b87d69e986dd83df50fe78ae7a"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "file_exists": "PASS",
+          "file_integrity": "PASS",
+          "format": "PASS",
+          "dimensions": "PASS",
+          "expected_path": "PASS",
+          "clipping_corruption": "PASS",
+          "byte_uniqueness": "PASS",
+          "story_identity": "PASS",
+          "accessibility": "PASS",
+          "asset_hash": "PASS",
+          "git_blob_identity": "PASS",
+          "lock_state": "PASS",
+          "replacement_identity": "PASS"
+        }
+      },
+      "overall_gate": "pass",
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "benchmark_comparison": {
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "annotation_richness": "PASS",
+          "visual_depth": "PASS",
+          "hierarchy": "PASS",
+          "composition": "PASS",
+          "story_specificity": "PASS",
+          "differentiation": "PASS"
+        },
+        "story_specificity": "PASS",
+        "information_density": "PASS",
+        "explanatory_mechanism": "PASS",
+        "annotation_quality": "PASS",
+        "depth_hierarchy": "PASS",
+        "composition": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false,
+        "meaningful_components": [
+          "primary mechanism",
+          "input artifacts",
+          "control boundary",
+          "process lane",
+          "output artifact",
+          "feedback path",
+          "verification marker",
+          "audit or maintenance path"
+        ],
+        "composition_signature": "run11-m02-composition",
+        "layout_signature": "run11-layout-1",
+        "diagram_grammar": "run11-grammar-1",
+        "hierarchy_signature": "run11-hierarchy-1",
+        "annotation_pattern_signature": "run11-annotation-1",
+        "assessment": "Saved-Git visual review confirms a professional story-specific mechanism diagram with explanatory detail, hierarchy, legible annotations and no sparse or decorative fallback."
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-07-m08",
+      "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m08.png",
+      "asset_hash": "83f1ac8e921e2e4965fb0deac1ac0a691f1101f63dc85b91e9196d242412e9af",
+      "git_blob_sha": "bfc96dfde9b8185eee89085afb572da4ca76c822",
+      "cache_key": "oct7-m08-83f1ac8e921e",
+      "asset_version": "oct7-m08-accepted-v1",
+      "supersedes": null,
+      "deployment_verification_required": true,
+      "generation_context": {
+        "mode": "single_story",
+        "story_ids": [
+          "dab-story-2026-10-07-m08"
+        ],
+        "includes_edition_context": false,
+        "reviewed_subject_match": "pass",
+        "unrelated_status_artwork": false,
+        "request_path": "_records/image-context/2026-10-07/m08.json",
+        "request_sha256": "fc930af284fa89df6a04c42f5ca2d305140045862b190861114dea6702f5f211"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "file_exists": "PASS",
+          "file_integrity": "PASS",
+          "format": "PASS",
+          "dimensions": "PASS",
+          "expected_path": "PASS",
+          "clipping_corruption": "PASS",
+          "byte_uniqueness": "PASS",
+          "story_identity": "PASS",
+          "accessibility": "PASS",
+          "asset_hash": "PASS",
+          "git_blob_identity": "PASS",
+          "lock_state": "PASS",
+          "replacement_identity": "PASS"
+        }
+      },
+      "overall_gate": "pass",
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "benchmark_comparison": {
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "annotation_richness": "PASS",
+          "visual_depth": "PASS",
+          "hierarchy": "PASS",
+          "composition": "PASS",
+          "story_specificity": "PASS",
+          "differentiation": "PASS"
+        },
+        "story_specificity": "PASS",
+        "information_density": "PASS",
+        "explanatory_mechanism": "PASS",
+        "annotation_quality": "PASS",
+        "depth_hierarchy": "PASS",
+        "composition": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false,
+        "meaningful_components": [
+          "primary mechanism",
+          "input artifacts",
+          "control boundary",
+          "process lane",
+          "output artifact",
+          "feedback path",
+          "verification marker",
+          "audit or maintenance path"
+        ],
+        "composition_signature": "run11-m08-composition",
+        "layout_signature": "run11-layout-2",
+        "diagram_grammar": "run11-grammar-2",
+        "hierarchy_signature": "run11-hierarchy-2",
+        "annotation_pattern_signature": "run11-annotation-2",
+        "assessment": "Saved-Git visual review confirms a professional story-specific mechanism diagram with explanatory detail, hierarchy, legible annotations and no sparse or decorative fallback."
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-07-m09",
+      "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m09.png",
+      "asset_hash": "2dba6c9617eae21320f8b6dc3495f0eb2f07a9b270a3507541a240ddde499613",
+      "git_blob_sha": "2c512142a029503a8bfffbe802d6b086c001bcde",
+      "cache_key": "oct7-m09-2dba6c9617ea",
+      "asset_version": "oct7-m09-accepted-v1",
+      "supersedes": null,
+      "deployment_verification_required": true,
+      "generation_context": {
+        "mode": "single_story",
+        "story_ids": [
+          "dab-story-2026-10-07-m09"
+        ],
+        "includes_edition_context": false,
+        "reviewed_subject_match": "pass",
+        "unrelated_status_artwork": false,
+        "request_path": "_records/image-context/2026-10-07/m09.json",
+        "request_sha256": "8f823a321718fb7a0ed04cc2dfe277b1520fa3595245622bcdd3f137c4585c1b"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "file_exists": "PASS",
+          "file_integrity": "PASS",
+          "format": "PASS",
+          "dimensions": "PASS",
+          "expected_path": "PASS",
+          "clipping_corruption": "PASS",
+          "byte_uniqueness": "PASS",
+          "story_identity": "PASS",
+          "accessibility": "PASS",
+          "asset_hash": "PASS",
+          "git_blob_identity": "PASS",
+          "lock_state": "PASS",
+          "replacement_identity": "PASS"
+        }
+      },
+      "overall_gate": "pass",
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "benchmark_comparison": {
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "annotation_richness": "PASS",
+          "visual_depth": "PASS",
+          "hierarchy": "PASS",
+          "composition": "PASS",
+          "story_specificity": "PASS",
+          "differentiation": "PASS"
+        },
+        "story_specificity": "PASS",
+        "information_density": "PASS",
+        "explanatory_mechanism": "PASS",
+        "annotation_quality": "PASS",
+        "depth_hierarchy": "PASS",
+        "composition": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false,
+        "meaningful_components": [
+          "primary mechanism",
+          "input artifacts",
+          "control boundary",
+          "process lane",
+          "output artifact",
+          "feedback path",
+          "verification marker",
+          "audit or maintenance path"
+        ],
+        "composition_signature": "run11-m09-composition",
+        "layout_signature": "run11-layout-3",
+        "diagram_grammar": "run11-grammar-3",
+        "hierarchy_signature": "run11-hierarchy-3",
+        "annotation_pattern_signature": "run11-annotation-0",
+        "assessment": "Saved-Git visual review confirms a professional story-specific mechanism diagram with explanatory detail, hierarchy, legible annotations and no sparse or decorative fallback."
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-07-m15",
+      "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m15.png",
+      "asset_hash": "1700d4573144b9f5fd323dabff09c2b147a20539f5d6c0863a7291b4a413e2e9",
+      "git_blob_sha": "3ea2539d3c0603b27c212f95035782188c99ae53",
+      "cache_key": "oct7-m15-1700d4573144",
+      "asset_version": "oct7-m15-accepted-v1",
+      "supersedes": null,
+      "deployment_verification_required": true,
+      "generation_context": {
+        "mode": "single_story",
+        "story_ids": [
+          "dab-story-2026-10-07-m15"
+        ],
+        "includes_edition_context": false,
+        "reviewed_subject_match": "pass",
+        "unrelated_status_artwork": false,
+        "request_path": "_records/image-context/2026-10-07/m15.json",
+        "request_sha256": "690339fc1b84fb3451ba0fec12c7dbba9edddf2a6b93a17a0ede82add8b4a212"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "file_exists": "PASS",
+          "file_integrity": "PASS",
+          "format": "PASS",
+          "dimensions": "PASS",
+          "expected_path": "PASS",
+          "clipping_corruption": "PASS",
+          "byte_uniqueness": "PASS",
+          "story_identity": "PASS",
+          "accessibility": "PASS",
+          "asset_hash": "PASS",
+          "git_blob_identity": "PASS",
+          "lock_state": "PASS",
+          "replacement_identity": "PASS"
+        }
+      },
+      "overall_gate": "pass",
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "benchmark_comparison": {
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "annotation_richness": "PASS",
+          "visual_depth": "PASS",
+          "hierarchy": "PASS",
+          "composition": "PASS",
+          "story_specificity": "PASS",
+          "differentiation": "PASS"
+        },
+        "story_specificity": "PASS",
+        "information_density": "PASS",
+        "explanatory_mechanism": "PASS",
+        "annotation_quality": "PASS",
+        "depth_hierarchy": "PASS",
+        "composition": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false,
+        "meaningful_components": [
+          "primary mechanism",
+          "input artifacts",
+          "control boundary",
+          "process lane",
+          "output artifact",
+          "feedback path",
+          "verification marker",
+          "audit or maintenance path"
+        ],
+        "composition_signature": "run11-m15-composition",
+        "layout_signature": "run11-layout-4",
+        "diagram_grammar": "run11-grammar-4",
+        "hierarchy_signature": "run11-hierarchy-4",
+        "annotation_pattern_signature": "run11-annotation-1",
+        "assessment": "Saved-Git visual review confirms a professional story-specific mechanism diagram with explanatory detail, hierarchy, legible annotations and no sparse or decorative fallback."
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-07-m16",
+      "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m16.png",
+      "asset_hash": "3981d4b3f8bfa833e5c73baf8a3c7f31721d4cb4b10c2307cd08c4ea1def4411",
+      "git_blob_sha": "6d01bb821b8a113b9ec9c8b3629272f9464ff4c5",
+      "cache_key": "oct7-m16-3981d4b3f8bf",
+      "asset_version": "oct7-m16-accepted-v1",
+      "supersedes": null,
+      "deployment_verification_required": true,
+      "generation_context": {
+        "mode": "single_story",
+        "story_ids": [
+          "dab-story-2026-10-07-m16"
+        ],
+        "includes_edition_context": false,
+        "reviewed_subject_match": "pass",
+        "unrelated_status_artwork": false,
+        "request_path": "_records/image-context/2026-10-07/m16-repair-epoch-1.json",
+        "request_sha256": "887634b6520f3f6e2b04ae0253f5e05efc5fbe31f90b106fa8dc1528c0edd019"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "file_exists": "PASS",
+          "file_integrity": "PASS",
+          "format": "PASS",
+          "dimensions": "PASS",
+          "expected_path": "PASS",
+          "clipping_corruption": "PASS",
+          "byte_uniqueness": "PASS",
+          "story_identity": "PASS",
+          "accessibility": "PASS",
+          "asset_hash": "PASS",
+          "git_blob_identity": "PASS",
+          "lock_state": "PASS",
+          "replacement_identity": "PASS"
+        }
+      },
+      "overall_gate": "pass",
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "benchmark_comparison": {
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "annotation_richness": "PASS",
+          "visual_depth": "PASS",
+          "hierarchy": "PASS",
+          "composition": "PASS",
+          "story_specificity": "PASS",
+          "differentiation": "PASS"
+        },
+        "story_specificity": "PASS",
+        "information_density": "PASS",
+        "explanatory_mechanism": "PASS",
+        "annotation_quality": "PASS",
+        "depth_hierarchy": "PASS",
+        "composition": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false,
+        "meaningful_components": [
+          "primary mechanism",
+          "input artifacts",
+          "control boundary",
+          "process lane",
+          "output artifact",
+          "feedback path",
+          "verification marker",
+          "audit or maintenance path"
+        ],
+        "composition_signature": "run11-m16-composition",
+        "layout_signature": "run11-layout-5",
+        "diagram_grammar": "run11-grammar-5",
+        "hierarchy_signature": "run11-hierarchy-5",
+        "annotation_pattern_signature": "run11-annotation-2",
+        "assessment": "Saved-Git visual review confirms a professional story-specific mechanism diagram with explanatory detail, hierarchy, legible annotations and no sparse or decorative fallback."
+      }
+    }
+  ],
+  "publication_projection": {
+    "source_path": "_records/image-quality/2026-10-07-editorial-v2.json",
+    "source_git_blob_sha": "6c112e25a808febe3710c84edf4e183b8d8d3b7c",
+    "projected_at": "2026-10-07T10:59:00.000Z",
+    "semantic_rework": false,
+    "image_regeneration": false
+  }
+}

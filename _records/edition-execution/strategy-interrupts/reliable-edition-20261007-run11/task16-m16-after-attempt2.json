@@ -1,0 +1,30 @@
+{
+  "schema_version": "strategy-interrupt-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "task_id": "16",
+  "request_key": "f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13",
+  "candidate_id": "m16",
+  "at": "2026-10-07T08:10:00.000Z",
+  "writer_generation": 35,
+  "trigger": "TWO_EQUIVALENT_FAILURES_NO_SUBSTANTIVE_DELTA",
+  "normalized_failure_signature": "NO_HUMANOIDS_VIOLATION",
+  "attempts": [
+    {
+      "attempt": 1,
+      "git_blob_sha": "ca95c6d1221ac2312bb2b7629b767e004e1b544a",
+      "result": "FAIL"
+    },
+    {
+      "attempt": 2,
+      "git_blob_sha": "e1270775eb7ed1ee2fb271085b7934e4d97a8d34",
+      "result": "FAIL"
+    }
+  ],
+  "blind_retry_prohibited": true,
+  "new_hypothesis": "Fresh generation repeatedly maps Identity to a human/avatar symbol despite the sealed no-people constraint.",
+  "next_method": "TARGETED_SAME_STORY_EDIT_USING_ONLY_ATTEMPT_2_IMAGE_AND_THE_UNCHANGED_SEALED_INSTRUCTION",
+  "generator_visible_instruction_must_remain_exact_sealed_story_instruction": true,
+  "orchestration_context_visible": false,
+  "owner_intervention_required": false,
+  "accepted_locked_assets_preserved": true
+}

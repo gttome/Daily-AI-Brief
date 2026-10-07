@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-dead-writer-proof-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "task_id": "06",
+  "prior_owner_id": "github-actions-37558787425-1",
+  "prior_generation": 15,
+  "prior_acquired_at": "2026-10-07T01:47:19.953Z",
+  "prior_expires_at": "2026-10-07T01:52:19.953Z",
+  "observed_at": "2026-10-07T02:01:00.000Z",
+  "proof": {
+    "workflow_run_id": 37558787425,
+    "status": "completed",
+    "conclusion": "failure",
+    "completed_at": "2026-10-07T01:47:27Z",
+    "substantive_task_progress": false
+  },
+  "recovery_authorized": true
+}

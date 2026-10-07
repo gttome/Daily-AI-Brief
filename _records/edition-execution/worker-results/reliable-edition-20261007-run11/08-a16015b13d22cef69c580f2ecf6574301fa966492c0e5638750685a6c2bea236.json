@@ -1,0 +1,31 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "a16015b13d22cef69c580f2ecf6574301fa966492c0e5638750685a6c2bea236",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "08",
+  "request_writer_generation": 17,
+  "writer_generation": 18,
+  "status": "passed",
+  "completed_at": "2026-10-07T02:24:00.000Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "watchlist_refresh": "_records/editorial/2026-10-07-run11/watchlist-refresh.json",
+    "watchlist_refresh_git_blob": "f8bdb8755d301b57667f1c4e2027011d0f91e39c",
+    "watchlist_handoff": "_records/editorial-handoff/watchlist-2026-10-07.json",
+    "watchlist_handoff_git_blob": "7a782adedc6d152cf4a22e924da9c17efdf8c71e",
+    "sweep_receipt": "_records/watchlist-sweeps/2026-10-07.json",
+    "sweep_receipt_git_blob": "c970b5eea8a5a543a00023ea836ec4e3e2d0ee65",
+    "discovery_surfaces_complete": 7,
+    "focused_checks_executed": 14,
+    "candidates_reviewed": 4,
+    "new_topic_ids": ["dab-topic-agent-privacy-runtime-governance"],
+    "updated_topic_ids": ["dab-topic-system-one-decision-models","dab-topic-agent-overclaiming","dab-topic-adaptive-agent-safeguards"],
+    "dropped_topic_ids": [],
+    "semantic_pass_reused": true,
+    "semantic_input_evidence_git_blob": "6b5c2b0c3dddc568cc4d8304e98e1adc5fd16f52",
+    "duplicate_execution_created": false
+  },
+  "result": "PASS"
+}

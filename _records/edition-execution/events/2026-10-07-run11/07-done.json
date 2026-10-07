@@ -1,0 +1,16 @@
+{
+  "task_id": "07",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-07T02:16:00.000Z",
+  "reason": "Selected and verified exactly two source-diverse podcasts from sealed repository evidence, persisted pairwise-distinct reader-ready summary, why-it-matters and brief-connection copy, and avoided repeating the immediately prior edition's exact podcast pair.",
+  "proof": {
+    "request_key": "bceb90e0a96f8d84e987bdf6801633568f836694eb2498b7931e5078003a2444",
+    "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/07-bceb90e0a96f8d84e987bdf6801633568f836694eb2498b7931e5078003a2444.json",
+    "podcasts_artifact": "_records/editorial/2026-10-07-run11/podcasts.json",
+    "podcasts_artifact_git_blob": "f7264030e526c08c5dba5066f7046fc37cfb9080",
+    "podcast_count": 2,
+    "runtimes_seconds": [3182, 3588],
+    "result": "PASS"
+  }
+}

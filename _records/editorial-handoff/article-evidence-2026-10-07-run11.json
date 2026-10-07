@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_text_version": "article-body-v1",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "profile_id": "under80-v1",
+  "execution_owner": "chatgpt_research",
+  "model_calls": 0,
+  "research_chatgpt_queries": 12,
+  "review_plan_count": 9,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible": [
+    {
+      "candidate_id": "m01",
+      "focus": "technical_ai_engineering",
+      "headline": "Device Streaming and Android skills — available in Android CLI",
+      "canonical_url": "https://android-developers.googleblog.com/2026/10/android-cli-device-streaming-and-skills.html",
+      "publisher": "Android Developers",
+      "published_at": "2026-10-03T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "source_word_count": 1450,
+      "excerpt": "Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface.",
+      "limitations": [
+        "Publisher post; adoption outcomes are not independently measured."
+      ],
+      "retrieved_at": "2026-10-07T01:12:45.000Z"
+    },
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "Update your IDE to restore agent activity in Copilot usage metrics",
+      "canonical_url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-10-06T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 700,
+      "excerpt": "GitHub says an SDK migration caused unattributed Copilot agent activity and advises updating to VS Code 1.139 or later; historical activity will not be backfilled.",
+      "limitations": [
+        "Short publisher-authored incident update; no independent measurement."
+      ],
+      "retrieved_at": "2026-10-07T01:12:45.000Z"
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "Anthropic Cyber Verification Program",
+      "canonical_url": "https://www.anthropic.com/news/cyber-verification-program",
+      "publisher": "Anthropic",
+      "published_at": "2026-10-06T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1250,
+      "excerpt": "Anthropic describes three access tiers for authorized cyber workflows, with verification, safeguards, and evaluation controls.",
+      "limitations": [
+        "Vendor-authored program announcement; operational outcomes are not yet independently measured."
+      ],
+      "retrieved_at": "2026-10-07T01:12:45.000Z"
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Claude Frontier Academy",
+      "canonical_url": "https://www.anthropic.com/news/claude-frontier-academy",
+      "publisher": "Anthropic",
+      "published_at": "2026-10-02T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1150,
+      "excerpt": "Anthropic launches a training program intended to prepare 10,000 forward-deployed engineers by the end of 2027.",
+      "limitations": [
+        "Vendor-authored education initiative; participation and impact targets are prospective."
+      ],
+      "retrieved_at": "2026-10-07T01:12:45.000Z"
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Barclays scales Claude across the enterprise",
+      "canonical_url": "https://www.anthropic.com/news/barclays-scales-claude",
+      "publisher": "Anthropic",
+      "published_at": "2026-10-01T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 750,
+      "excerpt": "Anthropic and Barclays describe enterprise Claude use across 16,000 colleagues, one million searches, and 120,000 emails per day.",
+      "limitations": [
+        "Partnership announcement; usage figures are company-reported."
+      ],
+      "retrieved_at": "2026-10-07T01:12:45.000Z"
+    },
+    {
+      "candidate_id": "m11",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
+      "canonical_url": "https://huggingface.co/blog/allenai/astabrief",
+      "publisher": "Hugging Face / Ai2",
+      "published_at": "2026-10-02T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1800,
+      "excerpt": "Ai2 releases an open 8B model and data for citation-grounded scientific reports.",
+      "limitations": [
+        "Publisher-authored release."
+      ],
+      "retrieved_at": "2026-10-07T01:12:45.000Z"
+    },
+    {
+      "candidate_id": "m12",
+      "focus": "agents_non_technical_people",
+      "headline": "GitHub Copilot can now interact with desktop apps with computer use",
+      "canonical_url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-10-01T19:11:26.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 430,
+      "excerpt": "GitHub exposes computer use in Copilot CLI and desktop apps.",
+      "limitations": [
+        "Public preview."
+      ],
+      "retrieved_at": "2026-10-07T01:12:45.000Z"
+    },
+    {
+      "candidate_id": "m15",
+      "focus": "agents_non_technical_people",
+      "headline": "Building ambient agents with Amazon Bedrock AgentCore",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-10-01T16:40:24.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 6491,
+      "excerpt": "AWS details event-driven agents with isolated sessions, human approval, and resumable interruptions.",
+      "limitations": [
+        "Vendor reference architecture."
+      ],
+      "retrieved_at": "2026-10-07T01:12:45.000Z"
+    },
+    {
+      "candidate_id": "m16",
+      "focus": "agents_non_technical_people",
+      "headline": "Add secure Web Search to Claude Desktop with Amazon Bedrock AgentCore",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/add-secure-web-search-to-claude-desktop-with-amazon-bedrock-agentcore/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-10-02T15:46:05.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1800,
+      "excerpt": "AWS demonstrates secure web search for Claude Desktop through AgentCore using JWT and IAM controls.",
+      "limitations": [
+        "Vendor reference implementation."
+      ],
+      "retrieved_at": "2026-10-07T01:12:45.000Z"
+    }
+  ]
+}

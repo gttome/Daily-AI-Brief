@@ -1,0 +1,16 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "observed_at": "2026-10-07T08:58:00.000Z",
+  "slot": "F",
+  "incident_id": "wd-reliable-edition-20261007-run11-task16-engineering-repair",
+  "event": "RECOVERY_CLAIMED",
+  "task_id": "16",
+  "request_key": "f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13",
+  "writer_generation": 38,
+  "watchdog_generation": 27,
+  "reason_code": "EXPIRED_REPAIR_FENCE_NO_SUBSTANTIVE_PROGRESS",
+  "action_key": "run11-task16-engineering-repair-slot-f-g38",
+  "next_legal_action": "Prepare bounded protected repair epoch 1 that adds fail-closed non-human substitutions to the canonical post-repair overlay, validate, promote through one protected PR, then resume the same exact Task 16 request."
+}

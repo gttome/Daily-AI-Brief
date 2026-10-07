@@ -1,0 +1,16 @@
+{
+  "task_id": "10",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-07T02:36:00.000Z",
+  "reason": "Sealed and read back six single-story image specifications.",
+  "proof": {
+    "request_key": "9775db0d4c824e76d14ace45744731d3ba8137906097f69b005bb9599f02527f",
+    "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/10-9775db0d4c824e76d14ace45744731d3ba8137906097f69b005bb9599f02527f.json",
+    "spec_artifact": "_records/image-specs/2026-10-07-run11.json",
+    "spec_git_blob": "7b459b246fedb5ecd16379d6ba2033c0a28a35d6",
+    "exact_spec_count": 6,
+    "exact_context_count": 6,
+    "result": "PASS"
+  }
+}

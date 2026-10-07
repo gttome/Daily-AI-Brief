@@ -1,0 +1,35 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "d1ea12425e29cee6f9ee5f3d93232c1b7f60c1ca25325521b43836e54eab7140",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "04",
+  "request_writer_generation": 9,
+  "writer_generation": 11,
+  "status": "passed",
+  "completed_at": "2026-10-07T01:17:35.000Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "evidence_artifact": "_records/discovery/2026-10-07-run11/evidence.json",
+    "evidence_artifact_blob_sha": "6b5c2b0c3dddc568cc4d8304e98e1adc5fd16f52",
+    "source_preflight_sha": "d592936dbb4a01aba40e2c2763db07d0ee0065f7",
+    "full_source_reviews": 9,
+    "eligible_after_freshness_verification": 9,
+    "source_date_conflicts": 0,
+    "category_coverage": {
+      "technical_ai_engineering": 3,
+      "applied_genai_knowledge_workers": 3,
+      "agents_non_technical_people": 3
+    },
+    "freshness_bands": {
+      "primary_24h": 0,
+      "normal_fallback_72h": 2,
+      "extended_fallback_168h": 7
+    },
+    "agent_skill_candidate_id": "m01",
+    "repository_worker_generation": 11,
+    "duplicate_execution_created": false
+  },
+  "result": "PASS"
+}

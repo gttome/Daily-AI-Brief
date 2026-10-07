@@ -1,0 +1,92 @@
+{
+  "m01": {
+    "event_date": "2026-10-03",
+    "source": {
+      "title": "Device Streaming and Android skills — available in Android CLI",
+      "organization": "Android Developers",
+      "url": "https://android-developers.googleblog.com/2026/10/android-cli-device-streaming-and-skills.html",
+      "publication_date": "2026-10-03",
+      "evidence_type": "publisher_authored",
+      "availability_status": "available"
+    },
+    "source_word_count": 1450,
+    "source_fetched_at": "2026-10-07T01:12:45.000Z",
+    "selection_rationale": "The only evidence-qualified reusable Agent Skills candidate and a concrete maintained workflow for packaging device operations as agent skills.",
+    "focus": "technical_ai_engineering"
+  },
+  "m02": {
+    "event_date": "2026-10-06",
+    "source": {
+      "title": "Update your IDE to restore agent activity in Copilot usage metrics",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics",
+      "publication_date": "2026-10-06",
+      "evidence_type": "publisher_authored",
+      "availability_status": "available"
+    },
+    "source_word_count": 700,
+    "source_fetched_at": "2026-10-07T01:12:45.000Z",
+    "selection_rationale": "A current reliability issue with direct operational implications: agent activity can disappear from usage telemetry after an SDK migration.",
+    "focus": "technical_ai_engineering"
+  },
+  "m08": {
+    "event_date": "2026-10-02",
+    "source": {
+      "title": "Claude Frontier Academy",
+      "organization": "Anthropic",
+      "url": "https://www.anthropic.com/news/claude-frontier-academy",
+      "publication_date": "2026-10-02",
+      "evidence_type": "publisher_authored",
+      "availability_status": "available"
+    },
+    "source_word_count": 1150,
+    "source_fetched_at": "2026-10-07T01:12:45.000Z",
+    "selection_rationale": "A distinct knowledge-worker capability story focused on developing forward-deployed engineering skills rather than product usage alone.",
+    "focus": "applied_genai_knowledge_workers"
+  },
+  "m09": {
+    "event_date": "2026-10-01",
+    "source": {
+      "title": "Barclays scales Claude across the enterprise",
+      "organization": "Anthropic",
+      "url": "https://www.anthropic.com/news/barclays-scales-claude",
+      "publication_date": "2026-10-01",
+      "evidence_type": "publisher_authored",
+      "availability_status": "available"
+    },
+    "source_word_count": 750,
+    "source_fetched_at": "2026-10-07T01:12:45.000Z",
+    "selection_rationale": "Concrete enterprise adoption evidence at meaningful scale, with explicit company-reported usage figures and limitations preserved.",
+    "focus": "applied_genai_knowledge_workers"
+  },
+  "m15": {
+    "event_date": "2026-10-01",
+    "source": {
+      "title": "Building ambient agents with Amazon Bedrock AgentCore",
+      "organization": "AWS Machine Learning",
+      "url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+      "publication_date": "2026-10-01",
+      "evidence_type": "publisher_authored",
+      "availability_status": "available"
+    },
+    "source_word_count": 6491,
+    "source_fetched_at": "2026-10-07T01:12:45.000Z",
+    "selection_rationale": "A detailed event-driven agent architecture with isolated sessions, human approval and resumable interruption semantics.",
+    "focus": "agents_non_technical_people"
+  },
+  "m16": {
+    "event_date": "2026-10-02",
+    "source": {
+      "title": "Add secure Web Search to Claude Desktop with Amazon Bedrock AgentCore",
+      "organization": "AWS Machine Learning",
+      "url": "https://aws.amazon.com/blogs/machine-learning/add-secure-web-search-to-claude-desktop-with-amazon-bedrock-agentcore/",
+      "publication_date": "2026-10-02",
+      "evidence_type": "publisher_authored",
+      "availability_status": "available"
+    },
+    "source_word_count": 1800,
+    "source_fetched_at": "2026-10-07T01:12:45.000Z",
+    "selection_rationale": "A distinct governed-agent pattern for adding authenticated web search to Claude Desktop through JWT and IAM controls.",
+    "focus": "agents_non_technical_people"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "one-semantic-editorial-pass-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "task_id": "05",
+  "input_evidence_path": "_records/discovery/2026-10-07-run11/evidence.json",
+  "input_evidence_git_blob": "6b5c2b0c3dddc568cc4d8304e98e1adc5fd16f52",
+  "completed_at": "2026-10-07T01:25:57.000Z",
+  "result_ref": "_records/editorial/2026-10-07-run11/story-selection.json",
+  "reuse_condition": "Reuse while input_evidence_git_blob is unchanged; deterministic downstream defects do not authorize a whole-edition semantic reread.",
+  "result": "PASS"
+}

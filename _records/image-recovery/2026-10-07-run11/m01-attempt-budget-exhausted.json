@@ -1,0 +1,28 @@
+{
+  "schema_version": "image-recovery-blocker-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "11",
+  "candidate_id": "m01",
+  "request_key": "edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044",
+  "recorded_at": "2026-10-07T03:06:00.000Z",
+  "classification": "terminal_quality_attempt_budget_exhausted",
+  "internally_actionable": false,
+  "externally_blocked": false,
+  "max_generation_attempts": 4,
+  "attempts_consumed": 4,
+  "accepted_locked": false,
+  "required_next_authority": "supervisor_terminal_handling",
+  "prohibited_actions": [
+    "additional_native_generation",
+    "svg_fallback",
+    "basic_or_low_quality_fallback",
+    "owner_upload_workaround"
+  ],
+  "evidence_refs": [
+    "_records/image-attempts/2026-10-07-run11/m01-attempt-1.json",
+    "_records/image-attempts/2026-10-07-run11/m01-attempt-2.json",
+    "_records/image-attempts/2026-10-07-run11/m01-attempt-3.json",
+    "_records/image-attempts/2026-10-07-run11/m01-attempt-4.json"
+  ]
+}

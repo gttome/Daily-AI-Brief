@@ -1,0 +1,66 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "16",
+  "candidate_id": "m16",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "attempt": 2,
+  "reviewed_at": "2026-10-07T08:10:00.000Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 35,
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "saved_git_commit": "b309039f7ec3da90df0048666a7604d1507c4a75",
+  "image_execution_admission": "_records/image-admission/2026-10-07-run11/16-f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13.json",
+  "source_lineage": {
+    "base_generation_id": "exec-be5d85f6-2b67-4241-8acb-d9638ab4c9bf",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "6a8c56f4ed37750a4d83c7d362f07d3feebdc4f356cc73de7455f08ed02cc092",
+    "native_bytes": 1265491,
+    "native_width": 1730,
+    "native_height": 909,
+    "transport_method": "protected canonical Base64 chunk bridge with exact readback"
+  },
+  "final": {
+    "path": "_records/image-attempts/2026-10-07-run11/m16-attempt-2.png",
+    "git_blob_sha": "e1270775eb7ed1ee2fb271085b7934e4d97a8d34",
+    "sha256": "6a8c56f4ed37750a4d83c7d362f07d3feebdc4f356cc73de7455f08ed02cc092",
+    "bytes": 1265491,
+    "width": 1730,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES",
+    "transport_result": "_records/edition-execution/image-transport-results/reliable-edition-20261007-run11/task16-m16-g35-attempt2.json"
+  },
+  "visual_review": {
+    "result": "FAIL",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "A two-rail secure retrieval architecture flows from desktop assistant through MCP and identity/policy-gated AgentCore to web search, provenance filtering, and source evidence.",
+    "legibility": "PASS",
+    "visible_text_guard": "FAIL",
+    "allowed_visible_text": [
+      "Desktop assistant",
+      "MCP",
+      "AgentCore gateway",
+      "Identity",
+      "Policy",
+      "Web search",
+      "Source evidence"
+    ],
+    "extra_visible_text": [
+      "hash-like alphanumeric strings"
+    ],
+    "no_logos_or_brand_marks": true,
+    "no_people_or_humanoids": false,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "Rejected for repeated humanoid/person iconography; small hash-like strings also violate the exact visible-text allowlist."
+  },
+  "accepted_locked": false,
+  "result": "FAIL",
+  "rejection_reason_code": "NO_HUMANOIDS_VIOLATION"
+}

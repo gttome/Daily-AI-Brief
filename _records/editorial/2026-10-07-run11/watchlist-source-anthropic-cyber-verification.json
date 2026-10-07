@@ -1,0 +1,14 @@
+{
+  "schema_version": "watchlist-source-evidence-v1",
+  "candidate_id": "w11-anthropic-cyber-verification",
+  "source_url": "https://www.anthropic.com/news/cyber-verification-program",
+  "publisher": "Anthropic",
+  "publication_date": "2026-10-06",
+  "checked_at": "2026-10-07T02:22:00.000Z",
+  "research_cutoff": "2026-10-07T00:04:00.000Z",
+  "eligible_at_research_cutoff": true,
+  "disposition": "update_existing",
+  "topic_id": "dab-topic-adaptive-agent-safeguards",
+  "finding": "Anthropic expanded its Cyber Verification Program into three access tiers that pair stronger cyber capabilities with applicant verification and tier-specific safeguards, providing new deployment evidence for controls tailored to task, user and risk level.",
+  "limitations": "The published effectiveness data are first-party and cyber-specific; generalization to non-cyber agent deployments and independent validation remain open."
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "8c95e960f8b48f9093fe478b07bdc38749934faba0a23499e6fd6cfd68a3d4f8",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "17",
+  "capability": "repository",
+  "instruction": "Execute Task 17 (Review six-image set, differentiation and accessibility) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 39,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-07T09:13:00.000Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-07",
+  "reviewed_books": [
+    "Reliable Generative AI",
+    "Reliable Generative AI Context Engineering",
+    "Generative AI Professional Prompt Engineering Guide",
+    "Generative AI Prompt Engineering Learning Ecosystem"
+  ],
+  "editions": {
+    "2026-10-07": [
+      {
+        "item_id":"dab-story-2026-10-07-m01",
+        "reference_id":"ecosystem-template-export",
+        "label":"READ DEEPER",
+        "why":"A reusable device skill becomes more valuable when readers can turn the working pattern into an editable template instead of rebuilding the workflow from scratch."
+      },
+      {
+        "item_id":"dab-story-2026-10-07-m02",
+        "reference_id":"reliable-verification",
+        "label":"READ DEEPER",
+        "why":"Agent telemetry is only useful when the reported activity is checked against independent evidence, making verification a final gate rather than an assumption."
+      },
+      {
+        "item_id":"dab-story-2026-10-07-m08",
+        "reference_id":"prompt-expert-critic",
+        "label":"READ DEEPER",
+        "why":"Forward-deployed AI skills improve when learners practice critique and revision instead of treating the model's first answer as finished work."
+      },
+      {
+        "item_id":"dab-story-2026-10-07-m09",
+        "reference_id":"context-launch",
+        "label":"READ DEEPER",
+        "why":"Large enterprise rollouts benefit from launch readiness that joins technical context, governance and cross-functional operating responsibility."
+      },
+      {
+        "item_id":"dab-story-2026-10-07-m15",
+        "reference_id":"reliable-agent-failures",
+        "label":"READ DEEPER",
+        "why":"Ambient agents are safer when failure handling and conflict resolution are designed before the workflow wakes up and acts."
+      },
+      {
+        "item_id":"dab-story-2026-10-07-m16",
+        "reference_id":"context-privacy",
+        "label":"READ DEEPER",
+        "why":"Governed web search is easier to trust when only the context required for the task crosses the tool boundary and privacy constraints remain explicit."
+      }
+    ]
+  },
+  "source_review_path":"_records/editorial/2026-10-07-run11/book-review.json"
+}

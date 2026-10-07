@@ -1,0 +1,51 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "SAME_TASK_DONE",
+  "repair_key": "repair-122d4e98fc5a87c7bb9f21c29c486a03b316b11b29509a6d818b886b61cc8044",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_key": "2026-10-07-run11",
+  "production_branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "12",
+  "incident_id": "run11-task12-quality-budget-exhausted",
+  "repair_branch": "repair/run11-task11-quality-overlay-epoch1",
+  "repair_branch_head_sha": "72c1f84183c2128be9a62799542d85b21d506bb5",
+  "repair_scope_digest": "sha256:4cfd428df3af25a693e5a222e62f95f2a3a686c5e026cc9e71ac609c1ce1d3a8",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-07T05:44:30.000Z",
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+  "exact_request_key": "f0addd0d4352896727c76ee7d9e79e8b3147d097b360981163e2d65403995c6a",
+  "candidate_id": "m02",
+  "engineering_repair_epoch": 1,
+  "failure_class": "quality_attempt_budget_exhausted",
+  "failure_signature": "VISIBLE_TEXT_ALLOWLIST_VIOLATION",
+  "repair_intent": "Reuse the already-merged canonical fail-closed post-repair text/logo overlay for m02; no duplicate code repair or CI rerun.",
+  "reused_green_repair": true,
+  "source_repair_task_id": "11",
+  "repair_pr_number": 507,
+  "validate_run_id": 37570801489,
+  "repair_attempts": [
+    {
+      "head_sha": "72c1f84183c2128be9a62799542d85b21d506bb5",
+      "validate_run_id": 37570801489,
+      "result": "PASS"
+    }
+  ],
+  "merge_sha": "081d9f635b361ac164aa46feb31dda58794a6480",
+  "repair_epoch": 1,
+  "repair_epoch_receipt": "_records/edition-execution/repair-epochs/reliable-edition-20261007-run11/12.json",
+  "same_task_resumed": true,
+  "post_repair_attempts": 1,
+  "completed_at": "2026-10-07T06:01:30.000Z",
+  "real_executor_active": false,
+  "durable_progress": true,
+  "progress_evidence": [
+    "_records/edition-execution/worker-results/reliable-edition-20261007-run11/12-f0addd0d4352896727c76ee7d9e79e8b3147d097b360981163e2d65403995c6a.json",
+    "_records/image-acceptance/2026-10-07-run11/m02.json",
+    "_records/image-reviews/2026-10-07-run11/m02-repair-epoch-1-attempt-1-saved-git-review.json"
+  ],
+  "recovery_outcome": "TASK_DONE",
+  "next_action": "Supervisor sequences the next incomplete task; accepted_locked m02 is immutable."
+}

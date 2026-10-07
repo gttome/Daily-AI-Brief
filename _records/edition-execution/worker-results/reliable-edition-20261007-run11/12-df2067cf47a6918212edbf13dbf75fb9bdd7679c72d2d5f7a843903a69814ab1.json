@@ -1,0 +1,57 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "df2067cf47a6918212edbf13dbf75fb9bdd7679c72d2d5f7a843903a69814ab1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "12",
+  "request_writer_generation": 25,
+  "writer_generation": 26,
+  "status": "failed",
+  "completed_at": "2026-10-07T05:19:00.000Z",
+  "task_outcome": "Blocked",
+  "request_consumed": true,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "evidence": {
+    "image_execution_admission": "_records/image-admission/2026-10-07-run11/12-df2067cf47a6918212edbf13dbf75fb9bdd7679c72d2d5f7a843903a69814ab1.json",
+    "attempt_receipts": [
+      "_records/image-attempts/2026-10-07-run11/m02-attempt-1.json",
+      "_records/image-attempts/2026-10-07-run11/m02-attempt-2.json",
+      "_records/image-attempts/2026-10-07-run11/m02-attempt-3.json",
+      "_records/image-attempts/2026-10-07-run11/m02-attempt-4.json"
+    ],
+    "max_generation_attempts": 4,
+    "generation_attempts_consumed": 4,
+    "accepted_locked": false,
+    "exact_byte_persistence_verified_for_all_attempts": true,
+    "saved_git_visual_review_completed_for_all_attempts": true,
+    "quality_failures": [
+      {
+        "attempt": 1,
+        "code": "EXTRA_VISIBLE_TEXT",
+        "detail": "Readable version strings v1.0 and v2.0 outside the allowlist."
+      },
+      {
+        "attempt": 2,
+        "code": "EXTRA_VISIBLE_TEXT",
+        "detail": "Readable version strings v1.0 and v1.1 outside the allowlist."
+      },
+      {
+        "attempt": 3,
+        "code": "EXTRA_VISIBLE_TEXT",
+        "detail": "Readable version strings v1.0 and v2.0 outside the allowlist."
+      },
+      {
+        "attempt": 4,
+        "code": "EXTRA_VISIBLE_TEXT",
+        "detail": "Extensive readable event payload, schema-token, and version strings outside the allowlist."
+      }
+    ],
+    "low_quality_fallback_used": false,
+    "svg_fallback_used": false,
+    "owner_intervention_required": false,
+    "terminal_condition": "MAX_GENERATION_ATTEMPTS_EXHAUSTED_REPAIR_REQUIRED"
+  },
+  "result": "FAIL"
+}

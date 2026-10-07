@@ -1,0 +1,41 @@
+{
+  "schema_version": "run11-story-selection-v1",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_id": "reliable-edition-20261007-run11",
+  "research_cutoff": "2026-10-07T00:04:00.000Z",
+  "selected_at": "2026-10-07T01:25:57.000Z",
+  "allocation_policy": "exact-2-2-2",
+  "semantic_pass_contract": "one-semantic-editorial-pass-v1",
+  "semantic_input_evidence_git_blob": "6b5c2b0c3dddc568cc4d8304e98e1adc5fd16f52",
+  "agent_skills_candidate_id": "m01",
+  "selection_locked": true,
+  "selected": [
+    {"slot":1,"focus":"technical_ai_engineering","candidate_id":"m01","role":"agent_skills","working_title":"Android CLI packages device workflows as reusable agent skills"},
+    {"slot":2,"focus":"technical_ai_engineering","candidate_id":"m02","working_title":"Copilot metrics expose a hidden failure mode in agent telemetry"},
+    {"slot":3,"focus":"applied_genai_knowledge_workers","candidate_id":"m08","working_title":"Claude Frontier Academy targets the forward-deployed engineering skills gap"},
+    {"slot":4,"focus":"applied_genai_knowledge_workers","candidate_id":"m09","working_title":"Barclays scales Claude across 16,000 colleagues"},
+    {"slot":5,"focus":"agents_non_technical_people","candidate_id":"m15","working_title":"Ambient agents turn events into resumable human-approved workflows"},
+    {"slot":6,"focus":"agents_non_technical_people","candidate_id":"m16","working_title":"AgentCore gives Claude Desktop a governed web-search path"}
+  ],
+  "reserves": ["m04","m11","m12"],
+  "excluded": [],
+  "checks": {
+    "exact_story_count": 6,
+    "category_counts": {"technical_ai_engineering":2,"applied_genai_knowledge_workers":2,"agents_non_technical_people":2},
+    "exact_one_reusable_agent_skills_story": true,
+    "prior_edition_exact_repeat": false,
+    "all_selected_full_source_read": true,
+    "all_selected_within_active_freshness_ladder": true,
+    "extended_fallback_used": ["m01","m08","m09","m15","m16"],
+    "source_date_conflict_excluded": []
+  },
+  "rationale": {
+    "m01": "The only evidence-qualified reusable Agent Skills candidate and a concrete maintained workflow for packaging device operations as agent skills.",
+    "m02": "A current reliability issue with direct operational implications: agent activity can disappear from usage telemetry after an SDK migration.",
+    "m08": "A distinct knowledge-worker capability story focused on developing forward-deployed engineering skills rather than product usage alone.",
+    "m09": "Concrete enterprise adoption evidence at meaningful scale, with explicit company-reported usage figures and limitations preserved.",
+    "m15": "A detailed event-driven agent architecture with isolated sessions, human approval and resumable interruption semantics.",
+    "m16": "A distinct governed-agent pattern for adding authenticated web search to Claude Desktop through JWT and IAM controls."
+  },
+  "result": "PASS"
+}

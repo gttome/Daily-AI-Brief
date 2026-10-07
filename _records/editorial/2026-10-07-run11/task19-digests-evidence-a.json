@@ -1,0 +1,27 @@
+{
+  "schema_version": "task19-bundle-digest-shard-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "task_id": "19",
+  "sealed_at": "2026-10-07T10:18:00.000Z",
+  "digest_scheme": "git_blob_sha1",
+  "result": "PASS",
+  "shard": "editorial-evidence-a",
+  "digests": [
+    [
+      "_records/editorial/2026-10-07-run11/watchlist-refresh.json",
+      "f8bdb8755d301b57667f1c4e2027011d0f91e39c"
+    ],
+    [
+      "_records/editorial/2026-10-07-run11/book-review.json",
+      "ff73d143a240809c551ba27ec56241eaab2a18d2"
+    ],
+    [
+      "_records/editorial/2026-10-07-run11/videos.json",
+      "02918fe7801152146afeee0b8dbc3dbdcbebe5dd"
+    ],
+    [
+      "_records/editorial/2026-10-07-run11/podcasts.json",
+      "f7264030e526c08c5dba5066f7046fc37cfb9080"
+    ]
+  ]
+}

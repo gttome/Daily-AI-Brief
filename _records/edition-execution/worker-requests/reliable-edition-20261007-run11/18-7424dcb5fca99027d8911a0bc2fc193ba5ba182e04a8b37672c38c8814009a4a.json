@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "7424dcb5fca99027d8911a0bc2fc193ba5ba182e04a8b37672c38c8814009a4a",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "18",
+  "capability": "repository",
+  "instruction": "Execute Task 18 (Assemble canonical Brief and permanent pages) from authoritative durable inputs, preserving all valid completed upstream evidence. Assemble media without collapsing reader-copy roles: for videos, map the selected factual summary into legacy why_useful and the selected why_it_matters into legacy connection; for podcasts, map summary, why_it_matters and connection_to_brief into summary, why_useful and connection respectively. Never duplicate one reader-facing sentence across these roles. media-semantic-distinctness-v1 must PASS before Task 18 can be Done.",
+  "writer_generation": 41,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-07T09:34:12.000Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}

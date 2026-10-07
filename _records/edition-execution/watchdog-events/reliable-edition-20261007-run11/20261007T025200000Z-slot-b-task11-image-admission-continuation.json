@@ -1,0 +1,21 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_key": "2026-10-07-run11",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "11",
+  "incident_id": "wd-reliable-edition-20261007-run11-task11-image-admission-context-preflight",
+  "owner_slot": "B",
+  "event_type": "continuation_handoff",
+  "classification": "BLOCKED_ACTIONABLE",
+  "occurred_at": "2026-10-07T02:52:00.000Z",
+  "authoritative_request_key": "edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044",
+  "generation_attempted": false,
+  "image_attempts_consumed": 0,
+  "normalized_fault_code": "IMAGE_ADMISSION_STORY_ONLY_CONTEXT_UNAVAILABLE_IN_MIXED_WATCHDOG_INVOCATION",
+  "strategy_interrupt_applied": true,
+  "next_authorized_action": "Resume the same queued Task 11 request only from a dedicated story-only generator context that can persist image-execution-admission-v1 PASS and exact-byte persistence preflight before attempt 1; no generation occurred in this invocation.",
+  "owner_action_required": false,
+  "terminal": false
+}

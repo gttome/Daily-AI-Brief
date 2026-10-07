@@ -1,0 +1,12 @@
+{
+  "task_id": "05",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-07T01:24:02.869Z",
+  "reason": "Claimed the exact queued Task 05 repository request under same-execution Watchdog recovery and locked the six-story selection from already-verified semantic evidence.",
+  "proof": {
+    "request_key": "cc89434ee36af41d83efc8b2848fd281ac60396aa9f42de27102e466e4756828",
+    "recovery_writer_generation": 13,
+    "capability": "repository"
+  }
+}

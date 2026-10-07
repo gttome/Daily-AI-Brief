@@ -1,0 +1,14 @@
+{
+  "task_id": "03",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-07T01:09:47.872Z",
+  "reason": "ChatGPT Watchdog Slot F consumed the exact Task 03 research_chatgpt request after the prior same-execution Supervisor owner terminated and its generation-8 fence was proven dead.",
+  "proof": {
+    "request_key": "c8618a30fec5a0de074f5171f22748a74ae6ab28f72ae69daa780b6ab0c7bb91",
+    "prior_supervisor_run_id": 37555414343,
+    "prior_writer_generation": 8,
+    "recovery_writer_generation": 9,
+    "same_execution_only": true
+  }
+}

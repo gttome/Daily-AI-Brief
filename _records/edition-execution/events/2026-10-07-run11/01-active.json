@@ -1,0 +1,12 @@
+{
+  "task_id": "01",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-07T00:48:21.000Z",
+  "reason": "Same-execution recovery consumer acquired generation 4 and claimed the existing authoritative Task 01 request after the prior Supervisor failed before consumer handoff.",
+  "proof": {
+    "request_key": "83fad4bbaa5196768bcc5aee22d12346e462149b5f54f523a4f69eae03a28727",
+    "writer_generation": 4,
+    "recovery_reason": "repository_consumer_unclaimed"
+  }
+}

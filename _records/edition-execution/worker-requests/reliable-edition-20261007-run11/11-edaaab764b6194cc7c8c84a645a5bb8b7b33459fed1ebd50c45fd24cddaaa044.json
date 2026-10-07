@@ -1,0 +1,23 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "11",
+  "capability": "native_chatgpt",
+  "instruction": "Before any native generation, require PASS for image-execution-admission-v1 bound to this exact execution/task/request and sealed story instruction. Admission must prove story-only generator context, no orchestration context, and one approved exact-byte persistence route; admission failure consumes zero attempts and triggers Strategy Interrupt. Generate from the sealed story specification with the proven professional native-image path; capture exact PNG bytes immediately; persist via an approved small-PNG route; verify read-back identity; review the saved Git asset; accept_locked or reject only this image. On ACCEPTED_LOCKED, persist the deterministic Active-to-Done IMAGE_ACCEPTED_LOCKED transition in the same substantive boundary; do not create a pointer-only wake PR, do not wait for a Watchdog, and do not require an owner liveness prompt. The event-driven Supervisor consumes that transition to dispatch the next image or Task 17.",
+  "writer_generation": 23,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-07T02:36:00.000Z",
+  "writer_generation_is_provenance": true,
+  "authority_refresh_required_at_invocation": true,
+  "status": "completed_fail",
+  "claimed_at": "2026-10-07T02:53:10.000Z",
+  "claimed_by": "scheduled-chatgpt-watchdog-slot-f",
+  "completed_at": "2026-10-07T03:06:00.000Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/11-edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044.json",
+  "failure_code": "MAX_GENERATION_ATTEMPTS_EXHAUSTED"
+}

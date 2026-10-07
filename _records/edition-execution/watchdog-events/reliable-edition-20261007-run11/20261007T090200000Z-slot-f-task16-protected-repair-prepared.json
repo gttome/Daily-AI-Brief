@@ -1,0 +1,19 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "observed_at": "2026-10-07T09:02:00.000Z",
+  "slot": "F",
+  "incident_id": "wd-reliable-edition-20261007-run11-task16-engineering-repair",
+  "event": "SUBSTANTIVE_REPAIR_PREPARED",
+  "task_id": "16",
+  "request_key": "f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13",
+  "writer_generation": 38,
+  "watchdog_generation": 27,
+  "repair_key": "repair-2cf3bae24b4ddb53897f43ad7fc6dad60d4afb48d",
+  "repair_branch": "repair/run11-task16-human-fail-closed-epoch1",
+  "repair_head": "f09931870ffd99c2d0e1d5a4e58705ceb963994b",
+  "repair_scope_digest": "sha256:63d93a18af9d877debf35d14dd113f3a7c6e7c5acdf28275f712b41dc9fba7fd",
+  "local_validation": "PASS_70_TESTS",
+  "next_legal_action": "Open exactly one protected PR from repair/run11-task16-human-fail-closed-epoch1 to main, require exact-head validate PASS, merge only that approved head, then resume the same execution/Task 16 request through one fresh story-only post-repair attempt."
+}

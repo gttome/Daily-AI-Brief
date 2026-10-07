@@ -1,0 +1,49 @@
+{
+  "schema_version": "image-execution-admission-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "execution_key": "2026-10-07-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "11",
+  "candidate_id": "m01",
+  "request_key": "edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044",
+  "writer_generation": 23,
+  "consumer_id": "watchdog-F",
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "invocation_id": "watchdog-f-20261007T025310Z",
+  "admitted_at": "2026-10-07T02:54:30.000Z",
+  "story_only_context_verified": true,
+  "orchestration_context_visible": false,
+  "exact_byte_persistence_verified": true,
+  "persistence_mode": "git_data_direct_blob",
+  "owner_intervention_required": false,
+  "generation_authorized": true,
+  "preflight_failure_consumes_attempt": false,
+  "generator_context": {
+    "mode": "dedicated_story_only_native_tool_invocation",
+    "sealed_context": "_records/image-context/2026-10-07/m01.json",
+    "sealed_context_git_blob": "aa22aec88eb8dccf42bde65c5f9e1f16a528aea0",
+    "generator_visible_field": "prompt",
+    "submitted_instruction_equals_sealed_prompt": true,
+    "orchestration_context_visible_to_generator": false,
+    "includes_other_stories": false,
+    "tool_call_omits_referenced_images": true,
+    "tool_call_omits_conversation_images": true
+  },
+  "native_generation": {
+    "available": true,
+    "tool": "built_in_chatgpt_image_generation",
+    "owner_intervention_required": false
+  },
+  "persistence": {
+    "mode": "git_data_direct_blob",
+    "approved": true,
+    "runtime_generated_bytes_readable": true,
+    "exact_byte_readback_verification_required": true,
+    "small_png_route_proven": true,
+    "preflight_path": "_records/image-admission/2026-10-07-run11/preflight/task11-slot-f-g23-direct-blob.png",
+    "preflight_git_blob_sha": "e4bdab387e052b5eeaeb6bb7ca4808ab353aad70",
+    "preflight_base64_readback_match": true
+  },
+  "result": "PASS"
+}

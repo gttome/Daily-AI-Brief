@@ -1,0 +1,22 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "91a6d537f05a3ccfcca85d47cad54675a8d6736123b136931d631babe91881c5",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "20",
+  "capability": "repository",
+  "instruction": "Execute Task 20 (Run qualification) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 44,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-07T10:18:00.000Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "completed_pass",
+  "consumed_at": "2026-10-07T10:50:00.000Z",
+  "completed_at": "2026-10-07T10:50:20.000Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/20-91a6d537f05a3ccfcca85d47cad54675a8d6736123b136931d631babe91881c5.json",
+  "authority_generation": 46
+}

@@ -4,7 +4,77 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-10-06T09:32:30.092Z</updated>
+  <updated>2026-10-07T10:02:00.000Z</updated>
+  <entry>
+    <title>Android CLI packages device workflows as reusable agent skills</title>
+    <id>dab-story-2026-10-07-m01</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-07/android-cli-packages-device-workflows-as-reusable-agent-skills/" />
+    <updated>2026-10-07T18:00:00Z</updated>
+    <summary>Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface.</summary>
+  </entry>
+  <entry>
+    <title>Copilot metrics expose a hidden failure mode in agent telemetry</title>
+    <id>dab-story-2026-10-07-m02</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-07/copilot-metrics-expose-hidden-agent-telemetry-failure/" />
+    <updated>2026-10-07T18:00:00Z</updated>
+    <summary>GitHub says an SDK migration caused some Copilot agent activity to appear unattributed in usage metrics and advises updating to VS Code 1.139 or later.</summary>
+  </entry>
+  <entry>
+    <title>Claude Frontier Academy targets the forward-deployed engineering skills gap</title>
+    <id>dab-story-2026-10-07-m08</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-07/claude-frontier-academy-targets-forward-deployed-engineering-skills-gap/" />
+    <updated>2026-10-07T18:00:00Z</updated>
+    <summary>Anthropic introduced Claude Frontier Academy with a goal of preparing 10,000 forward-deployed engineers by the end of 2027.</summary>
+  </entry>
+  <entry>
+    <title>Barclays scales Claude across 16,000 colleagues</title>
+    <id>dab-story-2026-10-07-m09</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-07/barclays-scales-claude-across-16000-colleagues/" />
+    <updated>2026-10-07T18:00:00Z</updated>
+    <summary>Anthropic and Barclays describe Claude use across 16,000 colleagues, including company-reported volumes of one million searches and 120,000 emails per day.</summary>
+  </entry>
+  <entry>
+    <title>Ambient agents turn events into resumable human-approved workflows</title>
+    <id>dab-story-2026-10-07-m15</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-07/ambient-agents-turn-events-into-resumable-human-approved-workflows/" />
+    <updated>2026-10-07T18:00:00Z</updated>
+    <summary>AWS details event-driven agents with isolated sessions, human approval checkpoints and interruptions that can resume from durable state.</summary>
+  </entry>
+  <entry>
+    <title>AgentCore gives Claude Desktop a governed web-search path</title>
+    <id>dab-story-2026-10-07-m16</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-10-07/agentcore-gives-claude-desktop-a-governed-web-search-path/" />
+    <updated>2026-10-07T18:00:00Z</updated>
+    <summary>AWS demonstrates a web-search connection for Claude Desktop through AgentCore using MCP, JWT identity and IAM controls.</summary>
+  </entry>
+  <entry>
+    <title>Flight Intelligence: The Power of Work IQ</title>
+    <id>dab-video-2026-10-07-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-10-07/general/" />
+    <updated>2026-10-07T18:00:00Z</updated>
+    <summary>Microsoft developers explain how Work IQ grounds AI assistance in organizational context and reusable workflow knowledge, then connect that grounding to practical agent experiences.</summary>
+  </entry>
+  <entry>
+    <title>Microsoft Copilot Just Got a Massive Upgrade</title>
+    <id>dab-video-2026-10-07-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-10-07/agent-skills/" />
+    <updated>2026-10-07T18:00:00Z</updated>
+    <summary>Kevin Stratvert demonstrates upgraded Microsoft Copilot surfaces and shows how the assistant supports a range of everyday knowledge-work tasks.</summary>
+  </entry>
+  <entry>
+    <title>Hard Fork — October 2, 2026 episode</title>
+    <id>dab-podcast-2026-10-07-1</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-07/hard-fork-2026-10-02-ai-agents/" />
+    <updated>2026-10-07T18:00:00Z</updated>
+    <summary>The episode examines AI personal assistants alongside recent agent failures and the privacy trade-offs that follow when software can act across user data and services.</summary>
+  </entry>
+  <entry>
+    <title>The a16z Show — October 2, 2026 episode</title>
+    <id>dab-podcast-2026-10-07-2</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-07/a16z-2026-10-02-ai-agents-incumbents/" />
+    <updated>2026-10-07T18:00:00Z</updated>
+    <summary>The discussion explores multi-agent procurement workflows and the points where automated coordination should escalate decisions to people for trust and approval.</summary>
+  </entry>
   <entry>
     <title>Android CLI turns device access into reusable agent skills</title>
     <id>dab-story-2026-10-06-m01</id>
@@ -1663,47 +1733,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua/" />
     <updated>2026-09-08T18:00:00Z</updated>
     <summary>Microsoft’s September Copilot extensibility session introduces an Insights Agent pattern that lets makers ask how their agents are being used. The focus is operational visibility for Copilot Studio builders rather than another agent-creation surface.</summary>
-  </entry>
-  <entry>
-    <title>OpenAI says coding agents now deliver more agent-workdays than human workdays inside its research organization</title>
-    <id>dab-story-2026-09-07-3f4df523</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/" />
-    <updated>2026-09-07T18:00:00Z</updated>
-    <summary>OpenAI reports that by mid-August its research organization was using 3.1 agent-workdays of coding-agent runtime for every human workday. Researchers are delegating longer-horizon work while humans still set priorities, judge results, and make deployment decisions.</summary>
-  </entry>
-  <entry>
-    <title>Claude completes a computer-checked formalization of Fermat’s Last Theorem with dozens of collaborating agents</title>
-    <id>dab-story-2026-09-07-dab4bc85</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/claude-formalizes-fermats-last-theorem-with-computer-checking/" />
-    <updated>2026-09-07T18:00:00Z</updated>
-    <summary>Anthropic says Claude produced the first complete computer-checked formalization of Fermat&apos;s Last Theorem, working largely autonomously for 11 days with dozens of collaborating agents and the Lean proof assistant.</summary>
-  </entry>
-  <entry>
-    <title>GPT-6 Astra launches with stronger computer use and professional-work performance, initially through a limited rollout</title>
-    <id>dab-story-2026-09-07-8053a573</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/" />
-    <updated>2026-09-07T18:00:00Z</updated>
-    <summary>OpenAI introduced GPT-6 Astra on September 7, highlighting stronger computer use, browsing, software engineering, professional work, long context, and safety. Rollout begins with a limited set of organizations before broader ChatGPT and API access.</summary>
-  </entry>
-  <entry>
-    <title>NVIDIA demonstrates a memory-driven ‘chief of staff’ agent built around a human-readable self model</title>
-    <id>dab-story-2026-09-07-968c0cd8</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/" />
-    <updated>2026-09-07T18:00:00Z</updated>
-    <summary>NVIDIA published a memory-driven agent pattern built with NemoClaw for enterprise work spanning messages, decisions, projects, and obligations. The design maintains a human-readable self model so durable context can be inspected and corrected.</summary>
-  </entry>
-  <entry>
-    <title>Copilot in SharePoint adds reusable skills and evaluations, turning natural-language work into an improvable agent asset</title>
-    <id>dab-story-2026-09-07-379d301c</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/" />
-    <updated>2026-09-07T18:00:00Z</updated>
-    <summary>Microsoft&apos;s September Copilot in SharePoint update says reusable skills can follow users across SharePoint and OneDrive, and Copilot can evaluate and improve those skills alongside natural-language workflows and content creation.</summary>
-  </entry>
-  <entry>
-    <title>Microsoft makes Fabric Data Agents generally available as tools inside Copilot Studio agents</title>
-    <id>dab-story-2026-09-07-fdefded2</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/" />
-    <updated>2026-09-07T18:00:00Z</updated>
-    <summary>Microsoft says Fabric Data Agents are generally available for use in Copilot Studio. A Copilot Studio agent can call a Fabric Data Agent as a tool, combine it with other tools and knowledge, and use permissions already applied to the underlying Fabric data.</summary>
   </entry>
 </feed>

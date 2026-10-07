@@ -1,0 +1,47 @@
+{
+  "schema_version": "task20-run-qualification-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "20",
+  "request_key": "91a6d537f05a3ccfcca85d47cad54675a8d6736123b136931d631babe91881c5",
+  "qualified_at": "2026-10-07T10:50:20.000Z",
+  "authority_generation": 46,
+  "source_bundle": {
+    "path": "_records/editorial/2026-10-07-run11/task19-bundle-seal.json",
+    "git_blob_sha1": "0e728712c83dcab4fe7d809d6e77d3c6fb55feed",
+    "result": "PASS",
+    "accepted_locked_images": 6
+  },
+  "qualification": {
+    "result": "FAIL",
+    "final_stage": "FOCUSED_REPAIR_REQUIRED",
+    "blocking_defect_id": "RUN11_INCOMPLETE_SAME_EDITION_PUBLICATION_HANDOFF",
+    "defect_class": "DETERMINISTIC_PUBLICATION_HANDOFF_PROJECTION",
+    "missing_paths": [
+      "_records/editorial-handoff/kernel-2026-10-07.json",
+      "_records/editorial-handoff/facts-2026-10-07.json",
+      "_records/editorial-handoff/media-2026-10-07.json",
+      "_records/editorial/media-preflight/2026-10-07.json",
+      "_records/editorial-handoff/images-2026-10-07-publication.json",
+      "_records/image-quality/2026-10-07-publication-v2.json"
+    ],
+    "stale_manifest": {
+      "path": "_records/editorial-handoff/publication-manifest.json",
+      "observed_edition_date": "2026-10-06",
+      "required_edition_date": "2026-10-07"
+    }
+  },
+  "repair_scope": {
+    "task_id": "21",
+    "action": "Build only the missing same-edition publication handoff projections and refresh the publication manifest from already sealed Run 11 evidence.",
+    "upstream_semantic_rework_required": false,
+    "image_regeneration_required": false
+  },
+  "preserved": {
+    "completed_tasks": "00-19",
+    "accepted_locked_images": 6,
+    "immutable_bundle": true
+  },
+  "owner_intervention_required": false,
+  "result": "PASS_WITH_FOCUSED_REPAIR_REQUIRED"
+}

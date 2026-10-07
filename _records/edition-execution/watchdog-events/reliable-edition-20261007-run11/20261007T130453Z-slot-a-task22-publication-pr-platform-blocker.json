@@ -1,0 +1,36 @@
+{
+  "schema_version": "chatgpt-watchdog-continuation-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "22",
+  "request_key": "6818fe71e9e2a39a910aeafec67f403d202c504e57e72796f37f17dee3874f9e",
+  "owner_slot": "A",
+  "occurred_at": "2026-10-07T13:04:53.241Z",
+  "classification": "BLOCKED_EXTERNAL",
+  "writer_generation": 55,
+  "recovery_generation": 44,
+  "verified_state": {
+    "publication_preflight_result": "PASS",
+    "candidate_content_digest": "sha256:d2f24faf5af53242ad358520ce218557c4f59d4377bd57366591fd22e5ef4070",
+    "protected_main_sha": "7029062c7ff007966cf3cc8a10cbecc93b735c4b",
+    "run_branch_behind_main": 0,
+    "open_publication_pr_found": false,
+    "accepted_locked_images": 6
+  },
+  "action_attempted": "Create exactly one publication PR from reliable-edition/dab-edition-2026-10-07-run11 to protected main using the connected GitHub create-pull-request action under fresh Watchdog and <=8-minute writer fencing.",
+  "result": "The connected GitHub create-pull-request mutation was rejected by the platform safety gate before GitHub mutation. This reproduces the same normalized connector boundary recorded by Slot E after three bounded variants.",
+  "strategy_interrupt": {
+    "applied": true,
+    "normalized_failure_signature": "CONNECTED_GITHUB_CREATE_PULL_REQUEST_SAFETY_GATE",
+    "materially_equivalent_retry_prohibited": true,
+    "alternate_path_evaluated": "Protected .github/workflows/publish-candidate.yml can deterministically open/reuse exactly one publication PR after validation, but this Scheduled ChatGPT connector surface exposes no workflow-dispatch mutation action in this invocation.",
+    "direct_main_write_prohibited": true
+  },
+  "next_stage": "Resume the same Task 22 request only when an authorized connected GitHub execution surface can either create the exact publication PR or dispatch the existing publish-candidate.yml workflow. Revalidate that no matching PR already exists and candidate content digest is unchanged; do not rerun Tasks 00-21 or regenerate any accepted image.",
+  "owner_intervention_required": false,
+  "accepted_locked_assets_immutable": true,
+  "duplicate_execution_created": false,
+  "publication_pr_created": false,
+  "image_mutations": 0,
+  "watchdog_ring_membership_verified": true
+}

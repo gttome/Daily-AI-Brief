@@ -1,0 +1,20 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "18",
+  "owner_slot": "F",
+  "event_type": "recovery_claim",
+  "classification": "BLOCKED_ACTIONABLE",
+  "occurred_at": "2026-10-07T09:57:00.000Z",
+  "authoritative_request_key": "7424dcb5fca99027d8911a0bc2fc193ba5ba182e04a8b37672c38c8814009a4a",
+  "writer_generation": 43,
+  "watchdog_generation": 32,
+  "prior_owner_slot": "D",
+  "prior_release_reason": "SAFE_BOUNDARY_REACHED",
+  "strategy_interrupt": "replace rejected bulk mutation with bounded deterministic assembly and connected Git data commits",
+  "preserved_done_tasks": "00-17",
+  "accepted_locked_assets_preserved": 6,
+  "owner_action_required": false,
+  "terminal": false
+}

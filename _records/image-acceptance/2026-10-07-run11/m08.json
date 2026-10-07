@@ -1,0 +1,40 @@
+{
+  "schema_version": "image-acceptance-lock-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "13",
+  "candidate_id": "m08",
+  "accepted_locked": true,
+  "accepted_at": "2026-10-07T06:14:00.000Z",
+  "writer_generation": 30,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "attempt": 1,
+  "image_execution_admission": "_records/image-admission/2026-10-07-run11/13-3ea7ea565ff37ddcdc1aaebac9523d9d2ddf0a5cc0f43a64b55461b29c4e4362.json",
+  "attempt_receipt": "_records/image-attempts/2026-10-07-run11/m08-attempt-1.json",
+  "saved_git_review": "_records/image-reviews/2026-10-07-run11/m08-attempt-1-saved-git-review.json",
+  "source_lineage": {
+    "base_generation_id": "exec-41449317-6500-4470-a42c-19741c8276ba",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "83f1ac8e921e2e4965fb0deac1ac0a691f1101f63dc85b91e9196d242412e9af",
+    "native_bytes": 1586801,
+    "native_dimensions": "1730x909",
+    "native_persisted": true,
+    "transport_representation_authorized": true,
+    "transport_result": "_records/edition-execution/image-transport-results/reliable-edition-20261007-run11/task13-m08-g30-final.json"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m08.png",
+    "raw_path": "_records/image-attempts/2026-10-07-run11/m08-attempt-1.png",
+    "git_blob_sha": "bfc96dfde9b8185eee89085afb572da4ca76c822",
+    "sha256": "83f1ac8e921e2e4965fb0deac1ac0a691f1101f63dc85b91e9196d242412e9af",
+    "bytes": 1586801,
+    "width": 1730,
+    "height": 909
+  },
+  "visible_text_guard": "PASS",
+  "logo_brand_guard": "PASS",
+  "quality_gate": "PASS",
+  "immutable": true
+}

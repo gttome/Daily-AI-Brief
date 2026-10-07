@@ -1,0 +1,76 @@
+{
+  "schema_version": "task18-canonical-assembly-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "assembled_at": "2026-10-07T10:02:00.000Z",
+  "protected_main_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+  "writer_generation": 43,
+  "source_task_range": "00-17",
+  "canonical_brief": "briefs/2026-10-07.md",
+  "edition_data": "_data/editions/2026-10-07.json",
+  "story_pages": [
+    "stories/2026-10-07/android-cli-packages-device-workflows-as-reusable-agent-skills.md",
+    "stories/2026-10-07/copilot-metrics-expose-hidden-agent-telemetry-failure.md",
+    "stories/2026-10-07/claude-frontier-academy-targets-forward-deployed-engineering-skills-gap.md",
+    "stories/2026-10-07/barclays-scales-claude-across-16000-colleagues.md",
+    "stories/2026-10-07/ambient-agents-turn-events-into-resumable-human-approved-workflows.md",
+    "stories/2026-10-07/agentcore-gives-claude-desktop-a-governed-web-search-path.md"
+  ],
+  "media_pages": [
+    "videos/2026-10-07/general.md",
+    "videos/2026-10-07/agent-skills.md",
+    "podcasts/2026-10-07/hard-fork-2026-10-02-ai-agents.md",
+    "podcasts/2026-10-07/a16z-2026-10-02-ai-agents-incumbents.md"
+  ],
+  "image_manifest": "_records/editorial-handoff/images-2026-10-07.json",
+  "image_assets": [
+    "briefs/images/2026-10-07/dab-edition-2026-10-07-m01.png",
+    "briefs/images/2026-10-07/dab-edition-2026-10-07-m02.png",
+    "briefs/images/2026-10-07/dab-edition-2026-10-07-m08.png",
+    "briefs/images/2026-10-07/dab-edition-2026-10-07-m09.png",
+    "briefs/images/2026-10-07/dab-edition-2026-10-07-m15.png",
+    "briefs/images/2026-10-07/dab-edition-2026-10-07-m16.png"
+  ],
+  "counts": {
+    "stories": 6,
+    "videos": 2,
+    "podcasts": 2,
+    "images": 6
+  },
+  "allocation": "2/2/2",
+  "agent_skills_story_count": 1,
+  "watchlist_counts": {
+    "new_today": 1,
+    "updated_today": 3,
+    "carried_forward": 21,
+    "dropped_today": 0
+  },
+  "all_four_books_reviewed": true,
+  "reader_guards": {
+    "internal_candidate_ids_in_visible_topics": false,
+    "source_reading_time_verified": true,
+    "story_specific_alt_text": true,
+    "single_duration_field_per_media_page": true
+  },
+  "media_semantic_distinctness": {
+    "schema_version": "media-semantic-distinctness-v1",
+    "result": "PASS",
+    "videos_checked": 2,
+    "podcasts_checked": 2,
+    "video_mapping": {
+      "why_useful": "summary",
+      "connection": "why_it_matters"
+    },
+    "podcast_mapping": {
+      "summary": "summary",
+      "why_useful": "why_it_matters",
+      "connection": "connection_to_brief"
+    }
+  },
+  "upstream_preservation": {
+    "completed_tasks": "00-17",
+    "accepted_locked_images": 6
+  },
+  "saved_git_readback": "pending",
+  "result": "PASS"
+}

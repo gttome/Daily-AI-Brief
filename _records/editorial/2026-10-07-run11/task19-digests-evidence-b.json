@@ -1,0 +1,28 @@
+{
+  "schema_version": "task19-bundle-digest-shard-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "task_id": "19",
+  "sealed_at": "2026-10-07T10:18:00.000Z",
+  "digest_scheme": "git_blob_sha1",
+  "result": "PASS",
+  "shard": "editorial-evidence-b",
+  "digests": [
+    [
+      "_records/editorial/2026-10-07-run11/story-selection.json",
+      "48cf6d7fabe34091a5bc325f483c2f9e442414fd"
+    ],
+    [
+      "_records/discovery/2026-10-07-run11/evidence.json",
+      "6b5c2b0c3dddc568cc4d8304e98e1adc5fd16f52"
+    ],
+    [
+      "_records/editorial/2026-10-07-run11/task18-assembly.json",
+      "40b59781cf88df230da22a3f73db4545ff85ca0d"
+    ]
+  ],
+  "checks": {
+    "story_allocation": "2/2/2",
+    "selected_stories": 6,
+    "accepted_locked_images": 6
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "slot": "D",
+  "incident_id": "wd-reliable-edition-20261007-run11-task20-ready-idle",
+  "task_id": "20",
+  "request_key": "91a6d537f05a3ccfcca85d47cad54675a8d6736123b136931d631babe91881c5",
+  "occurred_at": "2026-10-07T10:32:00.000Z",
+  "outcome": "SAFE_BOUNDARY_REACHED",
+  "blocker_type": "PLATFORM_SAFETY_BOUNDARY",
+  "detail": "Task 20 qualification was reconstructed from the sealed Task 19 bundle. Qualification found a focused same-edition publication-handoff defect, but the atomic completion write was blocked before repository mutation.",
+  "substantive_progress": false,
+  "preserved": {
+    "completed_tasks": "00-19",
+    "accepted_locked_images": 6,
+    "exact_request": true
+  },
+  "continuation": {
+    "next_action": "Resume the same Task 20 request under fresh fenced authority. Persist the qualification receipt and Task 20 worker/result transition; then hand the focused publication-handoff repair to Task 21 without upstream rework.",
+    "qualification_result": "fail",
+    "final_stage": "FOCUSED_REPAIR_REQUIRED",
+    "blocking_defect_id": "RUN11_INCOMPLETE_SAME_EDITION_PUBLICATION_HANDOFF",
+    "missing_paths": [
+      "_records/editorial-handoff/kernel-2026-10-07.json",
+      "_records/editorial-handoff/facts-2026-10-07.json",
+      "_records/editorial-handoff/media-2026-10-07.json",
+      "_records/editorial/media-preflight/2026-10-07.json",
+      "_records/editorial-handoff/images-2026-10-07-publication.json",
+      "_records/image-quality/2026-10-07-publication-v2.json"
+    ],
+    "stale_manifest": "_records/editorial-handoff/publication-manifest.json"
+  },
+  "owner_intervention_required": false
+}

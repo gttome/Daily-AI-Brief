@@ -1,0 +1,12 @@
+{
+  "task_id": "08",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-07T02:18:00.000Z",
+  "reason": "Claimed the exact queued Task 08 request after Task 07 completed.",
+  "proof": {
+    "request_key": "a16015b13d22cef69c580f2ecf6574301fa966492c0e5638750685a6c2bea236",
+    "writer_generation": 18,
+    "watchdog_lease_generation": 5
+  }
+}

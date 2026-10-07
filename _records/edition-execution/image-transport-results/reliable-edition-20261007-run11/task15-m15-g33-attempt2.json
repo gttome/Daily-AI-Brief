@@ -1,0 +1,29 @@
+{
+  "schema_version": "image-base64-chunk-bridge-result-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "task_id": "15",
+  "request_key": "74bbf157c7c4035c0aa2e905a9236313a1b7a75de101e77c26cb830b5ef6c8b2",
+  "candidate_id": "m15",
+  "bridge_request_id": "task15-m15-g33-attempt2",
+  "status": "PASS",
+  "source_writer": {
+    "owner": "chatgpt-watchdog-f-20261007T065200Z",
+    "generation": 33
+  },
+  "consumer_writer": {
+    "owner": "chatgpt-watchdog-f-20261007T065200Z",
+    "generation": 33
+  },
+  "persistence_mode": "protected_base64_chunk_bridge",
+  "target_path": "_records/image-attempts/2026-10-07-run11/m15-attempt-2.png",
+  "byte_length": 1400051,
+  "sha256": "d3b76f596c88c210c0176625588adcb874a0bcda5c3569186a28fae4131bddaf",
+  "git_blob_sha": "9e8821d8b0e83285b9bd74668c13ab835425be7a",
+  "width": 1730,
+  "height": 909,
+  "content_address_verified": true,
+  "saved_git_read_back_verified": true,
+  "temporary_chunks_removed": true,
+  "owner_intervention_required": false,
+  "consumed_at": "2026-10-07T07:00:05Z"
+}

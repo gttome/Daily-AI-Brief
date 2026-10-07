@@ -5,7 +5,7 @@ permalink: /trend-radar/
 description: Evidence-linked Generative AI trend signals from the Daily AI Brief.
 ---
 
-# Trend Radar — October 6, 2026
+# Trend Radar — October 7, 2026
 
 Classifications use the stated 30-day evidence window. They describe coverage signals, not market forecasts.
 
@@ -13,10 +13,13 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-18 supporting stories appeared in the latest 7 days and 74 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+17 supporting stories appeared in the latest 7 days and 74 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [October 7, 2026]({{ '/stories/2026-10-07/barclays-scales-claude-across-16000-colleagues/' | relative_url }})
+- [October 7, 2026]({{ '/stories/2026-10-07/ambient-agents-turn-events-into-resumable-human-approved-workflows/' | relative_url }})
+- [October 7, 2026]({{ '/podcasts/2026-10-07/a16z-2026-10-02-ai-agents-incumbents/' | relative_url }})
 - [October 6, 2026]({{ '/stories/2026-10-06/when-an-agent-says-it-is-done-grade-the-database/' | relative_url }})
 - [October 6, 2026]({{ '/stories/2026-10-06/ambient-agents-wake-on-events-and-know-when-to-ask-a-human/' | relative_url }})
 - [October 5, 2026]({{ '/stories/2026-10-05/when-an-agent-says-it-is-done-grade-the-database/' | relative_url }})
@@ -105,19 +108,16 @@ Supporting stories:
 - [September 9, 2026]({{ '/podcasts/2026-09-09/agentic-loops-for-knowledge-workers/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workflows/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/claude-formalizes-fermats-last-theorem-with-computer-checking/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/' | relative_url }})
 
 ## Agent memory and context
 
 **STABLE · high confidence**
 
-10 supporting stories appeared in the latest 7 days and 38 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+9 supporting stories appeared in the latest 7 days and 38 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [October 7, 2026]({{ '/videos/2026-10-07/general/' | relative_url }})
 - [October 5, 2026]({{ '/videos/2026-10-05/general/' | relative_url }})
 - [October 5, 2026]({{ '/videos/2026-10-05/agent-skills/' | relative_url }})
 - [October 4, 2026]({{ '/stories/2026-10-04/copilot-steps-beyond-apis-into-desktop-apps/' | relative_url }})
@@ -164,17 +164,20 @@ Supporting stories:
 - [September 9, 2026]({{ '/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/' | relative_url }})
 - [September 9, 2026]({{ '/videos/2026-09-09/agent-skills/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-platform-le/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/' | relative_url }})
 
 ## AI-assisted development
 
 **STABLE · high confidence**
 
-19 supporting stories appeared in the latest 7 days and 78 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+22 supporting stories appeared in the latest 7 days and 76 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [October 7, 2026]({{ '/stories/2026-10-07/android-cli-packages-device-workflows-as-reusable-agent-skills/' | relative_url }})
+- [October 7, 2026]({{ '/stories/2026-10-07/copilot-metrics-expose-hidden-agent-telemetry-failure/' | relative_url }})
+- [October 7, 2026]({{ '/videos/2026-10-07/general/' | relative_url }})
+- [October 7, 2026]({{ '/videos/2026-10-07/agent-skills/' | relative_url }})
+- [October 7, 2026]({{ '/podcasts/2026-10-07/hard-fork-2026-10-02-ai-agents/' | relative_url }})
 - [October 6, 2026]({{ '/stories/2026-10-06/android-cli-turns-device-access-into-reusable-agent-skills/' | relative_url }})
 - [October 6, 2026]({{ '/stories/2026-10-06/copilot-moves-from-chat-into-desktop-computer-use/' | relative_url }})
 - [October 6, 2026]({{ '/videos/2026-10-06/general/' | relative_url }})
@@ -268,19 +271,22 @@ Supporting stories:
 - [September 8, 2026]({{ '/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workflows/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-into-one-o/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/' | relative_url }})
 
 ## Accessible agents for knowledge work
 
-**ACCELERATING · high confidence**
+**STABLE · high confidence**
 
-60 supporting stories appeared in the latest 7 days and 131 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+58 supporting stories appeared in the latest 7 days and 134 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [October 7, 2026]({{ '/stories/2026-10-07/android-cli-packages-device-workflows-as-reusable-agent-skills/' | relative_url }})
+- [October 7, 2026]({{ '/stories/2026-10-07/copilot-metrics-expose-hidden-agent-telemetry-failure/' | relative_url }})
+- [October 7, 2026]({{ '/stories/2026-10-07/ambient-agents-turn-events-into-resumable-human-approved-workflows/' | relative_url }})
+- [October 7, 2026]({{ '/stories/2026-10-07/agentcore-gives-claude-desktop-a-governed-web-search-path/' | relative_url }})
+- [October 7, 2026]({{ '/videos/2026-10-07/general/' | relative_url }})
+- [October 7, 2026]({{ '/podcasts/2026-10-07/hard-fork-2026-10-02-ai-agents/' | relative_url }})
+- [October 7, 2026]({{ '/podcasts/2026-10-07/a16z-2026-10-02-ai-agents-incumbents/' | relative_url }})
 - [October 6, 2026]({{ '/stories/2026-10-06/android-cli-turns-device-access-into-reusable-agent-skills/' | relative_url }})
 - [October 6, 2026]({{ '/stories/2026-10-06/when-an-agent-says-it-is-done-grade-the-database/' | relative_url }})
 - [October 6, 2026]({{ '/stories/2026-10-06/workspace-turns-prompts-into-images-canvases-and-cross-app-work/' | relative_url }})
@@ -466,11 +472,5 @@ Supporting stories:
 - [September 8, 2026]({{ '/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-platform-le/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keeping-human/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/claude-formalizes-fermats-last-theorem-with-computer-checking/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/' | relative_url }})
-- [September 7, 2026]({{ '/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/' | relative_url }})
 
 [← Home]({{ '/' | relative_url }})

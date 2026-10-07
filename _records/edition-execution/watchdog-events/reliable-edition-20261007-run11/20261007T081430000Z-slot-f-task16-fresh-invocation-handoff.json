@@ -1,0 +1,17 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "incident_id": "wd-reliable-edition-20261007-run11-task16-generation",
+  "slot": "F",
+  "observed_at": "2026-10-07T08:14:30.000Z",
+  "task_id": "16",
+  "request_key": "f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13",
+  "fault_code": "STRATEGY_INTERRUPT_FRESH_STORY_ONLY_INVOCATION_REQUIRED",
+  "action": "SAFE_BOUNDARY_HANDOFF",
+  "release_reason": "SAFE_BOUNDARY_REACHED",
+  "attempts_consumed": 3,
+  "attempts_remaining": 1,
+  "continuation": "Claim the same authoritative Task 16 request in a fresh A-F invocation. Reuse the sealed m16 instruction unchanged, persist a fresh image-execution-admission-v1 PASS, and do not reuse the three rejected visuals. The remaining attempt must avoid all people/avatar/humanoid primitives and all text beyond the seven-label allowlist. If it fails, exhaust the bounded attempt budget and persist the exact internal blocker without owner intervention.",
+  "owner_intervention_required": false,
+  "accepted_locked_assets_preserved": true
+}

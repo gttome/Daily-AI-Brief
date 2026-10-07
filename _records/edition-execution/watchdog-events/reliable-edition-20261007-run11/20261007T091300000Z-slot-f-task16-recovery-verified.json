@@ -1,0 +1,20 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "observed_at": "2026-10-07T09:13:00.000Z",
+  "slot": "F",
+  "incident_id": "wd-reliable-edition-20261007-run11-task16-engineering-repair",
+  "event": "RECOVERY_VERIFIED_PROGRESSING",
+  "task_id": "16",
+  "request_key": "f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13",
+  "writer_generation": 39,
+  "watchdog_generation": 28,
+  "repair_key": "repair-2cf3bae24b4ddb53897f43ad7fc6dad60d4afb48d",
+  "real_executor": "scheduled-consumer:watchdog-F",
+  "substantive_progress": "Task 16 Active-to-Done IMAGE_ACCEPTED_LOCKED",
+  "acceptance_lock": "_records/image-acceptance/2026-10-07-run11/m16.json",
+  "final_sha256": "3981d4b3f8bfa833e5c73baf8a3c7f31721d4cb4b10c2307cd08c4ea1def4411",
+  "final_git_blob_sha": "6d01bb821b8a113b9ec9c8b3629272f9464ff4c5",
+  "next_legal_action": "Event Supervisor consumes Task 16 Done and dispatches Task 17 set review."
+}

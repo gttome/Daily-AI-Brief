@@ -1,0 +1,33 @@
+{
+  "schema_version": "exact-publication-preflight-v1",
+  "edition_id": "dab-edition-2026-10-07",
+  "edition_date": "2026-10-07",
+  "candidate_sha": null,
+  "candidate_content_digest": "sha256:3e53b0a9a71652385e742f16ad75965bfb599ac928f8cbae9962cd53cc8498d6",
+  "checked_at": "2026-10-07T12:37:40.000Z",
+  "model_calls": 0,
+  "publication_pr_opened": false,
+  "result": "PASS",
+  "checks": {
+    "publication_manifest_compatibility": true,
+    "publication_candidate_contract": true,
+    "reader_semantic_close_prerequisites": true,
+    "exact_projection_routes": true
+  },
+  "expected_deployment_routes": [
+    "/",
+    "/latest/",
+    "/briefs/2026-10-07/",
+    "/archive/",
+    "/feed.json",
+    "/feed.xml",
+    "/stories/2026-10-07/android-cli-packages-device-workflows-as-reusable-agent-skills/",
+    "/stories/2026-10-07/copilot-metrics-expose-hidden-agent-telemetry-failure/",
+    "/stories/2026-10-07/claude-frontier-academy-targets-forward-deployed-engineering-skills-gap/",
+    "/stories/2026-10-07/barclays-scales-claude-across-16000-colleagues/",
+    "/stories/2026-10-07/ambient-agents-turn-events-into-resumable-human-approved-workflows/",
+    "/stories/2026-10-07/agentcore-gives-claude-desktop-a-governed-web-search-path/"
+  ],
+  "failure_classes": [],
+  "errors": []
+}

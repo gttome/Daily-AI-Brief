@@ -1,0 +1,19 @@
+{
+  "task_id": "06",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-07T02:05:00.000Z",
+  "reason": "Selected and verified exactly two directly playable videos from sealed repository evidence, added distinct reader-ready summary/why-it-matters/brief-connection copy, and avoided the immediately prior edition pair.",
+  "proof": {
+    "request_key": "47214551c187406b2d12688590cd6e58653d66a880376392a640cf19f58600fb",
+    "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/06-47214551c187406b2d12688590cd6e58653d66a880376392a640cf19f58600fb.json",
+    "videos_artifact": "_records/editorial/2026-10-07-run11/videos.json",
+    "videos_artifact_git_blob": "02918fe7801152146afeee0b8dbc3dbdcbebe5dd",
+    "video_count": 2,
+    "runtimes_seconds": [
+      874,
+      564
+    ],
+    "result": "PASS"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "worth_watching": {
+    "general": {
+      "status": "included",
+      "title": "Flight Intelligence: The Power of Work IQ",
+      "channel": "Microsoft Developer",
+      "upload_date": "2026-09-18",
+      "runtime_seconds": 874,
+      "why_useful": "Microsoft developers explain how Work IQ grounds AI assistance in organizational context and reusable workflow knowledge, then connect that grounding to practical agent experiences.",
+      "connection": "Agent usefulness depends on relevant business context as much as model capability; this walkthrough gives readers concrete criteria for judging whether a workplace agent can act with the right knowledge and boundaries.",
+      "url": "https://www.youtube.com/watch?v=VpSCu7s4wD4",
+      "verification_note": "First-party Microsoft Developer video; sealed repository evidence verifies direct YouTube playback and a 14:34 runtime.",
+      "official_source_verified": true,
+      "freshness_exception_reason": "The sealed repository evidence verifies the identity, playback and runtime; this older selection remains directly useful to the current edition and avoids an unverified substitute.",
+      "duration_tier": "fallback",
+      "short_search_evidence": [
+        "The sealed repository media review found no stronger verified current selection at ten minutes or less for this slot."
+      ],
+      "fallback_reason": "No suitable verified video of ten minutes or less covered this edition connection with comparable practical value.",
+      "legacy_mapping": {
+        "summary_source": "summary",
+        "why_it_matters_source": "why_it_matters",
+        "connection_to_brief": "It complements the brief’s forward-deployed engineering, enterprise adoption, and governed-agent stories by showing the context layer those deployments need beyond a chat interface.",
+        "slot": "general"
+      }
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Microsoft Copilot Just Got a Massive Upgrade",
+      "channel": "Kevin Stratvert",
+      "upload_date": "2026-09-29",
+      "runtime_seconds": 564,
+      "why_useful": "Kevin Stratvert demonstrates upgraded Microsoft Copilot surfaces and shows how the assistant supports a range of everyday knowledge-work tasks.",
+      "connection": "A hands-on tour helps readers separate broadly usable workflow improvements from headline feature claims and decide which changes are worth testing in their own work.",
+      "url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
+      "verification_note": "Sealed repository evidence verifies direct YouTube playback and a 9:24 runtime for this established creator walkthrough.",
+      "official_source_verified": true,
+      "freshness_exception_reason": "The sealed repository evidence verifies the identity, playback and runtime; this older selection remains directly useful to the current edition and avoids an unverified substitute.",
+      "duration_tier": "short",
+      "legacy_mapping": {
+        "summary_source": "summary",
+        "why_it_matters_source": "why_it_matters",
+        "connection_to_brief": "The practical examples give a user-level counterpoint to the brief’s stories about enterprise Claude rollout and agent infrastructure, linking organizational adoption to the experience individual workers actually see.",
+        "slot": "agents_non_technical_people"
+      }
+    }
+  },
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-10-07-1",
+      "title": "Hard Fork — October 2, 2026 episode",
+      "show": "Hard Fork",
+      "host": "Kevin Roose and Casey Newton",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 3182,
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "agent privacy",
+        "agent failures"
+      ],
+      "url": "https://podcasts.apple.com/us/search?term=Hard%20Fork%20hard-fork-2026-10-02-ai-agents",
+      "summary": "The episode examines AI personal assistants alongside recent agent failures and the privacy trade-offs that follow when software can act across user data and services.",
+      "why_useful": "It gives readers a concrete way to judge agent convenience against operational risk, especially when autonomy, sensitive context and user trust collide.",
+      "connection": "It directly complements the brief’s ambient-agent and governed web-search stories by supplying the user-facing failure and privacy perspective behind those architecture choices.",
+      "selection_rationale": "Selected from the sealed source-diverse Run 11 media evidence.",
+      "freshness_tier": "fallback_7d",
+      "freshness_exception_reason": "This independently verified episode remains inside the approved seven-day fallback window and adds a source-diverse perspective directly tied to the current brief.",
+      "permanent_url": "/podcasts/2026-10-07/hard-fork-2026-10-02-ai-agents/",
+      "verification_note": "Reused sealed authoritative repository evidence: Apple Podcasts identity plus independent episode metadata establish the New York Times show identity and a 53:02 runtime.",
+      "platforms": [
+        {
+          "name": "Hard Fork",
+          "url": "https://podcasts.apple.com/us/search?term=Hard%20Fork%20hard-fork-2026-10-02-ai-agents"
+        }
+      ],
+      "coverage_note": "Sealed Run 11 podcast selection with independently verified identity and runtime."
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-10-07-2",
+      "title": "The a16z Show — October 2, 2026 episode",
+      "show": "The a16z Show",
+      "host": "a16z",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 3588,
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "multi-agent workflows",
+        "human escalation"
+      ],
+      "url": "https://podcasts.apple.com/us/search?term=The%20a16z%20Show%20a16z-2026-10-02-ai-agents-incumbents",
+      "summary": "The discussion explores multi-agent procurement workflows and the points where automated coordination should escalate decisions to people for trust and approval.",
+      "why_useful": "Readers get a practical governance pattern for deciding which multi-agent decisions can remain automated and which need explicit human review.",
+      "connection": "That trust-escalation pattern maps to the brief’s ambient-agent architecture, Copilot telemetry reliability, and governed-agent deployment themes from system design through oversight.",
+      "selection_rationale": "Selected from the sealed source-diverse Run 11 media evidence.",
+      "freshness_tier": "fallback_7d",
+      "freshness_exception_reason": "This independently verified episode remains inside the approved seven-day fallback window and adds a source-diverse perspective directly tied to the current brief.",
+      "permanent_url": "/podcasts/2026-10-07/a16z-2026-10-02-ai-agents-incumbents/",
+      "verification_note": "Reused sealed authoritative repository evidence: the Apple Podcasts listing confirms the episode identity and independent episode metadata reports a 59:48 runtime.",
+      "platforms": [
+        {
+          "name": "The a16z Show",
+          "url": "https://podcasts.apple.com/us/search?term=The%20a16z%20Show%20a16z-2026-10-02-ai-agents-incumbents"
+        }
+      ],
+      "coverage_note": "Sealed Run 11 podcast selection with independently verified identity and runtime."
+    }
+  ]
+}

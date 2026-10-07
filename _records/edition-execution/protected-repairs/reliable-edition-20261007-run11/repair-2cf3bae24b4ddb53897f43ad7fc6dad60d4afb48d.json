@@ -1,0 +1,43 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "RECOVERY_VERIFIED_PROGRESSING",
+  "repair_key": "repair-2cf3bae24b4ddb53897f43ad7fc6dad60d4afb48d",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_key": "2026-10-07-run11",
+  "production_branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "16",
+  "request_key": "f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13",
+  "incident_id": "wd-reliable-edition-20261007-run11-task16-engineering-repair",
+  "repair_branch": "repair/run11-task16-human-fail-closed-epoch1",
+  "repair_branch_head_sha": "f09931870ffd99c2d0e1d5a4e58705ceb963994b",
+  "repair_scope_digest": "sha256:63d93a18af9d877debf35d14dd113f3a7c6e7c5acdf28275f712b41dc9fba7fd",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-07T09:02:00.000Z",
+  "updated_at": "2026-10-07T09:13:00.000Z",
+  "pr": {
+    "number": 508,
+    "url": "https://github.com/gttome/Daily-AI-Brief/pull/508",
+    "head_sha": "f09931870ffd99c2d0e1d5a4e58705ceb963994b",
+    "state": "merged",
+    "merge_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f"
+  },
+  "last_recovery_stage": {
+    "state": "RECOVERY_VERIFIED_PROGRESSING",
+    "ci_run_id": 37597836162,
+    "ci_conclusion": "success",
+    "merge_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+    "same_execution_revalidated": true,
+    "same_task_revalidated": "16",
+    "real_executor": "scheduled-consumer:watchdog-F",
+    "substantive_progress": "Task 16 transitioned Active-to-Done with accepted_locked m16 at exact saved-Git identity.",
+    "acceptance_lock": "_records/image-acceptance/2026-10-07-run11/m16.json"
+  },
+  "resolved_at": "2026-10-07T09:13:00.000Z",
+  "resolution_reason": "PROTECTED_REPAIR_MERGED_SAME_TASK_RESUMED_IMAGE_ACCEPTED_LOCKED",
+  "next_stage": "Event Supervisor consumes Task 16 Done and dispatches deterministic Task 17 set review.",
+  "owner_intervention_required": false,
+  "accepted_locked_assets_immutable": true
+}

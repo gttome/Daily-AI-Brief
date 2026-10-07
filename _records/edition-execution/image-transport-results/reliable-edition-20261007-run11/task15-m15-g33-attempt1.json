@@ -1,0 +1,19 @@
+{
+  "schema_version": "image-base64-chunk-bridge-result-v1",
+  "status": "PASS",
+  "request_id": "task15-m15-g33-attempt1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "task_id": "15",
+  "target_path": "_records/image-attempts/2026-10-07-run11/m15-attempt-1.png",
+  "source_writer_generation": 33,
+  "consumer_writer_generation": 33,
+  "bytes": 1350982,
+  "sha256": "27aff6a4278c8ac5063e98ef6b94a96f37894534df9751e1dd0a28747ef729b8",
+  "git_blob_sha": "b0159e6e082356ea2a9465a96985eecbbaa3a7dc",
+  "width": 1731,
+  "height": 909,
+  "content_address_verified": true,
+  "read_back_verified": true,
+  "temporary_chunks_removed": true,
+  "consumed_at": "2026-10-07T06:56:00.000Z"
+}

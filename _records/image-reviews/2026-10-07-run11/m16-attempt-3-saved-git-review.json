@@ -1,0 +1,66 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "16",
+  "candidate_id": "m16",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "attempt": 3,
+  "reviewed_at": "2026-10-07T08:14:30.000Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 35,
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "saved_git_commit": "43b347acbc42d4dc81a498ad6e89e6fe4622a81d",
+  "image_execution_admission": "_records/image-admission/2026-10-07-run11/16-f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13.json",
+  "source_lineage": {
+    "base_generation_id": "exec-be5d85f6-2b67-4241-8acb-d9638ab4c9bf",
+    "targeted_edit_generation_id": "exec-710084ce-4388-486b-b5c3-dffff4d65b53",
+    "native_sha256": "892b7a615b304c4ae4a873d985d4d32b370252e92df8e0de151e75cd5a9962a3",
+    "native_bytes": 1298003,
+    "native_width": 1731,
+    "native_height": 909,
+    "transport_method": "protected canonical Base64 chunk bridge with exact readback"
+  },
+  "final": {
+    "path": "_records/image-attempts/2026-10-07-run11/m16-attempt-3.png",
+    "git_blob_sha": "ca456369f8331d623a1dda4a1354eeb4f193a700",
+    "sha256": "892b7a615b304c4ae4a873d985d4d32b370252e92df8e0de151e75cd5a9962a3",
+    "bytes": 1298003,
+    "width": 1731,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES",
+    "transport_result": "_records/edition-execution/image-transport-results/reliable-edition-20261007-run11/task16-m16-g35-attempt3.json"
+  },
+  "visual_review": {
+    "result": "FAIL",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "The prior secure retrieval diagram is preserved through a targeted edit, including desktop, MCP, AgentCore identity/policy gating, web search, filtering, and source evidence.",
+    "legibility": "PASS",
+    "visible_text_guard": "FAIL",
+    "allowed_visible_text": [
+      "Desktop assistant",
+      "MCP",
+      "AgentCore gateway",
+      "Identity",
+      "Policy",
+      "Web search",
+      "Source evidence"
+    ],
+    "extra_visible_text": [
+      "hash-like alphanumeric strings"
+    ],
+    "no_logos_or_brand_marks": true,
+    "no_people_or_humanoids": false,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "Rejected because the Git-saved image still includes human-profile/person/group icons; hash-like text remains outside the exact allowlist."
+  },
+  "accepted_locked": false,
+  "result": "FAIL",
+  "rejection_reason_code": "NO_HUMANOIDS_VIOLATION"
+}

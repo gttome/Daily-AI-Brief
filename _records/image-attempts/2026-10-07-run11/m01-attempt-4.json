@@ -1,0 +1,71 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "11",
+  "candidate_id": "m01",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "request_key": "edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044",
+  "writer_generation": 23,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-07T02:53:10.000Z",
+  "image_execution_admission": "_records/image-admission/2026-10-07-run11/11-edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044.json",
+  "generated_at": "2026-10-07T03:04:00.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-18826fba-ee30-41eb-9c82-839729aa5b31",
+    "targeted_edit_generation_id": null,
+    "targeted_edit": null
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1846683,
+    "sha256": "d97de9487b366e49f7b630c20f5b0f9d602f562b43e818fa3a5855f30e10587f",
+    "persisted": true,
+    "path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m01.png",
+    "git_blob_sha": "f8d9618156c503b9749f25ff4f2b998f4993043f",
+    "saved_git_commit": "c992faca84683b5ca1c080e34db131d8b96c5739",
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES",
+    "same_visual_targeted_edit": false,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": false,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Reusable skill",
+      "CLI command",
+      "Device stream",
+      "App state",
+      "Test action",
+      "Result evidence"
+    ],
+    "extra_visible_text": [],
+    "no_logos": false,
+    "logo_defects": [
+      "recognizable Google G marks",
+      "recognizable branded app icons"
+    ],
+    "rejection_code": "LOGO_PRESENT",
+    "note": "Saved Git asset uses only the six allowed text labels, but recognizable Google branding and app logos violate the sealed no-logo instruction."
+  },
+  "disposition": "REJECTED_QUALITY",
+  "rejection_recorded_at": "2026-10-07T03:05:30.000Z",
+  "retry_authority": {
+    "contract_path": "docs/operations/stable-image-pipeline-contract.json",
+    "max_generation_attempts": 4,
+    "next_attempt_authorized": false,
+    "rejection_class": "non_context_quality_rejection",
+    "terminal_reason": "MAX_GENERATION_ATTEMPTS_EXHAUSTED"
+  }
+}

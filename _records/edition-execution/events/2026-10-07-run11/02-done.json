@@ -1,0 +1,29 @@
+{
+  "task_id": "02",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-07T01:04:25.694Z",
+  "reason": "Verified the persistent event-driven Run Supervisor attachment, one-writer fencing, and same-execution-only restart behavior; completed the exact queued request without allocating or reopening an execution.",
+  "proof": {
+    "request_key": "88f679c006a2d648c6b73431c5c9d4256b7596a7b0a4e75f5949fcbab60ade9b",
+    "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/02-88f679c006a2d648c6b73431c5c9d4256b7596a7b0a4e75f5949fcbab60ade9b.json",
+    "initial_supervisor_run_id": 37551349747,
+    "prior_supervisor_run_id": 37551577618,
+    "restarted_supervisor_run_id": 37554082895,
+    "same_execution_restart_proven": true,
+    "supervisor_writer_generations_observed": [
+      3,
+      5
+    ],
+    "repository_worker_generation": 6,
+    "watchdog_ring_slots_verified": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "no_duplicate_execution": true
+  }
+}

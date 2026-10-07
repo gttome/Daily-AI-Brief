@@ -1,0 +1,59 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "SAME_TASK_DONE",
+  "repair_key": "repair-362f7c34f63a3e8a5fe49b5bbcedc14835b875fa",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_key": "2026-10-07-run11",
+  "production_branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "11",
+  "incident_id": "run11-task11-quality-budget-exhausted",
+  "repair_branch": "repair/run11-task11-quality-overlay-epoch1",
+  "repair_branch_head_sha": "72c1f84183c2128be9a62799542d85b21d506bb5",
+  "repair_scope_digest": "sha256:30a4a5b87f358729db7cd23aef661431719cd9d2d00ed81c661ae69d629b4968",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-07T03:42:37.000Z",
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary",
+  "exact_request_key": "edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044",
+  "candidate_id": "m01",
+  "engineering_repair_epoch": 1,
+  "failure_class": "quality_attempt_budget_exhausted",
+  "repair_intent": "Add canonical fail-closed post-repair text/logo overlay and bind admission/native delivery to it without altering sealed story semantics.",
+  "post_repair_attempt_limit": 1,
+  "repair_pr_number": 507,
+  "repair_pr_url": "https://github.com/gttome/Daily-AI-Brief/pull/507",
+  "validate_run_id": 37570801489,
+  "last_updated_at": "2026-10-07T05:06:30.000Z",
+  "repair_attempts": [
+    {
+      "head_sha": "72c1f84183c2128be9a62799542d85b21d506bb5",
+      "validate_run_id": 37570801489,
+      "result": "PASS"
+    }
+  ],
+  "merge_sha": "081d9f635b361ac164aa46feb31dda58794a6480",
+  "repair_epoch": 1,
+  "repair_epoch_receipt": "_records/edition-execution/repair-epochs/reliable-edition-20261007-run11/11.json",
+  "same_task_resumed": true,
+  "post_repair_attempts": 1,
+  "resumed_at": "2026-10-07T04:27:36.000Z",
+  "post_repair_request_key": "c14bb873847c16a99787bf89f4c8105101f83131344df8e16cc2e2c76802e294",
+  "executor_active": false,
+  "durable_progress": true,
+  "completed_at": "2026-10-07T05:06:30.000Z",
+  "progress_evidence": {
+    "post_repair_request": "_records/edition-execution/worker-requests/reliable-edition-20261007-run11/11-c14bb873847c16a99787bf89f4c8105101f83131344df8e16cc2e2c76802e294.json",
+    "repair_epoch_receipt": "_records/edition-execution/repair-epochs/reliable-edition-20261007-run11/11.json",
+    "repair_directive": "_records/image-recovery/2026-10-07-run11/m01-repair-epoch-1-directive.json",
+    "attempt_receipt": "_records/image-attempts/2026-10-07-run11/m01-repair-epoch-1-attempt-1.json",
+    "saved_git_review": "_records/image-reviews/2026-10-07-run11/m01-repair-epoch-1-attempt-1-saved-git-review.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-07-run11/m01.json",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/11-c14bb873847c16a99787bf89f4c8105101f83131344df8e16cc2e2c76802e294.json",
+    "state": "ACCEPTED_LOCKED",
+    "substantive_progress": true
+  },
+  "recovery_verified_progressing": false,
+  "recovery_outcome": "TASK_DONE"
+}

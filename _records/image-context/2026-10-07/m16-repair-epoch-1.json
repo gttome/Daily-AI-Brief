@@ -1,0 +1,30 @@
+{
+  "schema_version": "story-only-generator-context-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-07-m16"
+  ],
+  "candidate_id": "m16",
+  "task_id": "16",
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "includes_edition_context": false,
+  "orchestration_context_visible": false,
+  "generator_visible_field": "prompt",
+  "sealed_at": "2026-10-07T09:06:00.000Z",
+  "base_story_instruction_ref": "_records/image-context/2026-10-07/m16.json",
+  "base_story_instruction_immutable": true,
+  "repair_directive_version": "image-quality-post-repair-overlay-v1",
+  "repair_merged_main_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+  "allowed_text": [
+    "Desktop assistant",
+    "MCP",
+    "AgentCore gateway",
+    "Identity",
+    "Policy",
+    "Web search",
+    "Source evidence"
+  ],
+  "prompt": "Professional high-detail secure retrieval architecture diagram on a clean white 1200x630 canvas. Show a desktop assistant sending a bounded search request through MCP into an AgentCore gateway. Identity and policy checks gate a web-search tool. Retrieved source packets pass through provenance filtering and return as cited source evidence. Include request envelopes, credential scopes, policy rules, search packets, source hashes, and citation traces. No people, photos, logos, decorative filler, unsupported claims, overlapping text, or sparse basic layout. Only these visible labels: Desktop assistant, MCP, AgentCore gateway, Identity, Policy, Web search, Source evidence.\nPOST-REPAIR QUALITY OVERLAY: Preserve the sealed story mechanism and exact visible-text allowlist. This overlay changes only rendering constraints, not story content, labels, evidence, or composition intent.\nTEXT FAIL-CLOSED: Render only the exact allowlisted labels. Render no other readable characters of any kind. Do not render timestamps, digits, clock text, code, CLI syntax, command fragments, filenames, hashes, receipts, badges, UI chrome, status text, metadata, or pseudo-text. Any artifact that would normally contain text must use blank non-text geometric strokes or unlabeled abstract texture instead.\nBRAND FAIL-CLOSED: Render no logos, wordmarks, trademarks, provider badges, platform marks, app icons, letterform icons, recognizable branded symbols, or branded color-lockups. Replace every brand-like or app-like visual with neutral generic geometry that cannot be mistaken for a real logo or product icon.\nABSTRACT SUBSTITUTE CONTRACT: Device, command, application, stream, receipt, and evidence concepts must be represented with neutral unbranded shapes, connectors, layers, tokens, packets, or document-like forms that contain no additional text.\nHUMAN FAIL-CLOSED: Render no people or human-like visual primitives of any kind, including faces, heads, busts, profile portraits, silhouettes, avatars, person icons, group icons, user/account glyphs, identity head-and-shoulders symbols, human-shaped pictograms, or stylized humanoid figures, even when tiny or abstract. For Identity, user, principal, actor, group, approval, ownership, authentication, authorization, or access-control concepts, use only clearly non-human artifacts such as credentials, keys, documents, tokens, policy cards, gates, shields without faces, or abstract geometric markers.\nFINAL SELF-CHECK: Before returning the illustration, remove every visible character not in the exact allowlist, every recognizable logo or branded icon, and every person/humanoid primitive. If removal is required, replace that local object with a neutral non-human artifact while preserving the mechanism. Return only the corrected illustration.",
+  "prompt_sha256": "6ab53d1ce963582004482d6dea6dc56c5f04e31f54e96972eff1bb337cae33e6"
+}

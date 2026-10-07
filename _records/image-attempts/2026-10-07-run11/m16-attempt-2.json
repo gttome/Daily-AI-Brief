@@ -1,0 +1,66 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "16",
+  "candidate_id": "m16",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "attempt": 2,
+  "request_key": "f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13",
+  "writer_generation": 35,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-07T08:00:00.000Z",
+  "image_execution_admission": "_records/image-admission/2026-10-07-run11/16-f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13.json",
+  "generated_at": "2026-10-07T08:07:00.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-be5d85f6-2b67-4241-8acb-d9638ab4c9bf",
+    "targeted_edit_generation_id": null,
+    "targeted_edit": null
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1265491,
+    "sha256": "6a8c56f4ed37750a4d83c7d362f07d3feebdc4f356cc73de7455f08ed02cc092",
+    "persisted": true,
+    "path": "_records/image-attempts/2026-10-07-run11/m16-attempt-2.png",
+    "git_blob_sha": "e1270775eb7ed1ee2fb271085b7934e4d97a8d34",
+    "saved_git_commit": "b309039f7ec3da90df0048666a7604d1507c4a75",
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES",
+    "persistence_mode": "protected_base64_chunk_bridge",
+    "transport_result": "_records/edition-execution/image-transport-results/reliable-edition-20261007-run11/task16-m16-g35-attempt2.json",
+    "same_visual_targeted_edit": false,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": false,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": false,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "no_logos_or_brand_marks": true,
+    "visible_text_guard": "FAIL",
+    "allowed_visible_text": [
+      "Desktop assistant",
+      "MCP",
+      "AgentCore gateway",
+      "Identity",
+      "Policy",
+      "Web search",
+      "Source evidence"
+    ],
+    "extra_visible_text": [
+      "hash-like alphanumeric strings"
+    ],
+    "note": "The architecture is detailed and story-specific, but it repeats the humanoid/profile icon defect in Identity and adds another person-shaped icon in the MCP panel. Small hash-like strings are also visible outside the seven-label allowlist."
+  },
+  "disposition": "REJECTED_QUALITY",
+  "rejection_reason_code": "NO_HUMANOIDS_VIOLATION",
+  "rejection_detail": "Exact saved-Git review found repeated human-profile/person icons after attempt 1 had the same normalized defect; a blind third fresh-generation retry is prohibited."
+}
