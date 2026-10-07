@@ -1,0 +1,25 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_key": "2026-10-07-run11",
+  "task_id": "23",
+  "from": "Backlog",
+  "to": "Done",
+  "at": "2026-10-07T14:07:00.000Z",
+  "writer_generation": 58,
+  "owner_id": "chatgpt-watchdog-f-20261007T135930Z",
+  "reason_code": "EXACT_CANDIDATE_PROTECTED_CI_PASS",
+  "operation": "consume_exact_head_protected_ci_result",
+  "proof": {
+    "publication_pr": 511,
+    "exact_candidate_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+    "workflow": "Deterministic publication CI",
+    "ci_run_id": 37633863433,
+    "ci_run_number": 1715,
+    "event": "pull_request",
+    "conclusion": "success",
+    "accepted_locked_images": 6
+  },
+  "handoff": "HANDOFF_TO_PROTECTED_MERGE"
+}

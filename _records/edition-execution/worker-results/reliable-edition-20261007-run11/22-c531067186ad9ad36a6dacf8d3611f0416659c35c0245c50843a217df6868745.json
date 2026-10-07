@@ -1,0 +1,35 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "c531067186ad9ad36a6dacf8d3611f0416659c35c0245c50843a217df6868745",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "22",
+  "request_writer_generation": 56,
+  "authority_generation": 58,
+  "status": "passed",
+  "completed_at": "2026-10-07T14:05:51.000Z",
+  "strategy_interrupt": {
+    "prior_tactic": "Repeated full protected CI without changing the deterministic failure surface",
+    "materially_different_recovery": "Restore the protected video validator binding, bind the complete v2 Watchlist sweep, normalize the existing evidence, and run the exact targeted test selection before publishing the replacement candidate",
+    "targeted_tests": {
+      "result": "PASS",
+      "passed": 52,
+      "failed": 0
+    }
+  },
+  "publication": {
+    "preflight": "_records/edition-execution/publication-preflight/2026-10-07.json",
+    "preflight_result": "PASS",
+    "pr_number": 511,
+    "pr_url": "https://github.com/gttome/Daily-AI-Brief/pull/511",
+    "candidate_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+    "duplicate_pr_created": false
+  },
+  "preserved": {
+    "completed_tasks": "00-21",
+    "accepted_locked_images": 6,
+    "editorial_kernel": true
+  },
+  "task_outcome": "Done"
+}

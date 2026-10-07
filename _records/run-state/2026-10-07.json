@@ -1,0 +1,676 @@
+{
+  "schema_version": "1.1.0",
+  "checkpoint_digest_version": "checkpoint-digests-v1",
+  "edition_date": "2026-10-07",
+  "baseline_main_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+  "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+  "contract_runtime_version": "sep24-reliability-v1",
+  "stage": "CLOSED",
+  "status": "pass",
+  "retry_count": 0,
+  "pr_number": 511,
+  "workflow_run_ids": [],
+  "artifact_paths": [
+    "_data/editions/2026-10-07.json",
+    "_records/command-center/2026-10-07-public-safe-delta.json",
+    "_records/editorial-handoff/article-evidence.json",
+    "_records/editorial-handoff/facts.json",
+    "_records/editorial-handoff/handoff.json",
+    "_records/editorial-handoff/images-2026-10-07-publication.json",
+    "_records/editorial-handoff/kernel.json",
+    "_records/editorial-handoff/media.json",
+    "_records/editorial-handoff/metadata-candidates.json",
+    "_records/editorial-handoff/publication-manifest.json",
+    "_records/editorial/media-preflight/2026-10-07.json",
+    "_records/image-quality/2026-10-07-publication-v2.json",
+    "_records/publication/2026-10-07/completion.json",
+    "_records/publication/2026-10-07/delta-validation.json"
+  ],
+  "invalidated_downstream_stages": [],
+  "consequential_actions": [
+    {
+      "type": "publication_pr",
+      "key": "pr:511",
+      "scope": "edition",
+      "status": "completed",
+      "evidence": {
+        "pr_number": 511
+      },
+      "timestamp": "2026-10-07T14:16:23.837Z"
+    },
+    {
+      "type": "merge",
+      "key": "sha:848c8a3d323ccea177a193825352e7819e444ec3",
+      "scope": "edition",
+      "status": "completed",
+      "evidence": {
+        "production_sha": "848c8a3d323ccea177a193825352e7819e444ec3"
+      },
+      "timestamp": "2026-10-07T14:16:23.838Z"
+    },
+    {
+      "type": "completion",
+      "key": "sha:848c8a3d323ccea177a193825352e7819e444ec3",
+      "scope": "edition",
+      "status": "completed",
+      "evidence": {
+        "completion_path": "_records/publication/2026-10-07/completion.json"
+      },
+      "timestamp": "2026-10-07T14:16:23.840Z"
+    },
+    {
+      "type": "command_center_sync",
+      "key": "sha:848c8a3d323ccea177a193825352e7819e444ec3",
+      "scope": "edition",
+      "status": "completed",
+      "evidence": {
+        "command_center_delta": "_records/command-center/2026-10-07-public-safe-delta.json"
+      },
+      "timestamp": "2026-10-07T14:16:23.841Z"
+    }
+  ],
+  "publication_lifecycle": "closed",
+  "operational_status": "COMPLETE",
+  "stages": {
+    "PREFLIGHT_METADATA_READY": {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-10-07T14:16:23.510Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "artifact_paths": [
+        "_records/editorial-handoff/metadata-candidates.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [],
+      "input_digest": "sha256:61e01fdb03010d9045a3693f54782eaf56ef33da942afb1e86667e8616645f02",
+      "dependency_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "output_digest": "sha256:68b712df12ac5a33afe7f137ad546ac2589e242eaf04dc3304c23a2c5611af49",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "PREFLIGHT_DISCOVERY_READY": {
+      "stage": "PREFLIGHT_DISCOVERY_READY",
+      "timestamp": "2026-10-07T14:16:23.513Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "artifact_paths": [
+        "_records/editorial-handoff/article-evidence.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [
+        "_records/editorial-handoff/metadata-candidates.json"
+      ],
+      "input_digest": "sha256:054b3e30ec0fd00fbfb9d65faecbed2383176fb5319c7f5a3be00e3d4ccfa2a2",
+      "dependency_digest": "sha256:68b712df12ac5a33afe7f137ad546ac2589e242eaf04dc3304c23a2c5611af49",
+      "output_digest": "sha256:83be734b2d3037b87af017f42115c1fb211f3168adc9d0d8ddc5a7acc87620ef",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "READINESS_PRELIMINARY": {
+      "stage": "READINESS_PRELIMINARY",
+      "timestamp": "2026-10-07T14:16:23.513Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "artifact_paths": [
+        "_records/editorial-handoff/metadata-candidates.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [
+        "_records/editorial-handoff/article-evidence.json"
+      ],
+      "input_digest": "sha256:df67509f61b885f38d667a6fed4e864a68c1646ae3a4da262f2a535abdb6fafb",
+      "dependency_digest": "sha256:83be734b2d3037b87af017f42115c1fb211f3168adc9d0d8ddc5a7acc87620ef",
+      "output_digest": "sha256:68b712df12ac5a33afe7f137ad546ac2589e242eaf04dc3304c23a2c5611af49",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "READINESS_FINAL": {
+      "stage": "READINESS_FINAL",
+      "timestamp": "2026-10-07T14:16:23.513Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "artifact_paths": [
+        "_records/editorial-handoff/kernel.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [
+        "_records/editorial-handoff/metadata-candidates.json"
+      ],
+      "input_digest": "sha256:a90e6aa77013147bc2dcd4b90bb26f2f470e24a0eef0cc3c88f5ab21e88f8408",
+      "dependency_digest": "sha256:68b712df12ac5a33afe7f137ad546ac2589e242eaf04dc3304c23a2c5611af49",
+      "output_digest": "sha256:3b626d336587707b96e69e462230381da6a300c054999227bff7ab579020dd3c",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "EDITORIAL_KERNEL_READY": {
+      "stage": "EDITORIAL_KERNEL_READY",
+      "timestamp": "2026-10-07T14:16:23.514Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "artifact_paths": [
+        "_records/editorial-handoff/facts.json",
+        "_records/editorial-handoff/kernel.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [
+        "_records/editorial-handoff/kernel.json"
+      ],
+      "input_digest": "sha256:0b6bfe6ab4da4e5d19ff3c1918f4ea3c29b698d5dd583b00710f339580e999ca",
+      "dependency_digest": "sha256:3b626d336587707b96e69e462230381da6a300c054999227bff7ab579020dd3c",
+      "output_digest": "sha256:3f2effd2f319b03da64417de452f7399447c4a4b0b8f14a1f2079ce11bc5393f",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "MEDIA_READY": {
+      "stage": "MEDIA_READY",
+      "timestamp": "2026-10-07T14:16:23.514Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "artifact_paths": [
+        "_records/editorial-handoff/media.json",
+        "_records/editorial/media-preflight/2026-10-07.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [
+        "_records/editorial-handoff/facts.json",
+        "_records/editorial-handoff/kernel.json"
+      ],
+      "input_digest": "sha256:ad33fc8c33f8de27fc2a85c3450249d70d638bd5d7d213c27658c5bb3c078036",
+      "dependency_digest": "sha256:3f2effd2f319b03da64417de452f7399447c4a4b0b8f14a1f2079ce11bc5393f",
+      "output_digest": "sha256:c4403e3cf742c17d05e3e8bc89a259fa7da69f8321c653fee7cd7820f852c863",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "IMAGES_READY": {
+      "stage": "IMAGES_READY",
+      "timestamp": "2026-10-07T14:16:23.515Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "artifact_paths": [
+        "_records/editorial-handoff/images-2026-10-07-publication.json",
+        "_records/image-quality/2026-10-07-publication-v2.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [
+        "_records/editorial-handoff/media.json",
+        "_records/editorial/media-preflight/2026-10-07.json"
+      ],
+      "input_digest": "sha256:acd255fe06e58d1f7431c32e2a04f3df9254ee814419d7520ecd4be20aa67669",
+      "dependency_digest": "sha256:c4403e3cf742c17d05e3e8bc89a259fa7da69f8321c653fee7cd7820f852c863",
+      "output_digest": "sha256:04ed78776b5a0298d600d8c04c67a6db5c4bf32b25bcf09230cc3df768a9f3be",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "HANDOFF_COMMITTED": {
+      "stage": "HANDOFF_COMMITTED",
+      "timestamp": "2026-10-07T14:16:23.516Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "artifact_paths": [
+        "_records/editorial-handoff/handoff.json",
+        "_records/editorial-handoff/publication-manifest.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [
+        "_data/watchlist.json",
+        "_records/editorial-handoff/article-evidence-2026-10-07-run11.json",
+        "_records/editorial-handoff/book-mappings-2026-10-07.json",
+        "_records/editorial-handoff/facts-2026-10-07.json",
+        "_records/editorial-handoff/images-2026-10-07-publication.json",
+        "_records/editorial-handoff/kernel-2026-10-07.json",
+        "_records/editorial-handoff/media-2026-10-07.json",
+        "_records/editorial-handoff/metadata-candidates-2026-10-07-run11.json",
+        "_records/editorial/media-preflight/2026-10-07.json",
+        "_records/image-quality/2026-10-07-publication-v2.json",
+        "_records/watchlist-sweeps/2026-10-07.json"
+      ],
+      "input_digest": "sha256:04ae1e92a6ce893e8dd8b6cbe2bf27ca8b6d13bd1c7eab6f1d55c4cb041096b4",
+      "dependency_digest": "sha256:bfe8ccbfe598de8afa295266ec85605474db0939617fd1335d29ca008a7e0894",
+      "output_digest": "sha256:d6eef471f2a9fa5a89ab2a877947ed6c4968e6270be745ee1d67c832b72030da",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "DETERMINISTIC_EXPANSION_READY": {
+      "stage": "DETERMINISTIC_EXPANSION_READY",
+      "timestamp": "2026-10-07T14:16:23.518Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "artifact_paths": [
+        "_data/editions/2026-10-07.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [
+        "_records/editorial-handoff/handoff.json",
+        "_records/editorial-handoff/publication-manifest.json"
+      ],
+      "input_digest": "sha256:f35809ba0c8434edc60d40657d8304f9f630d5ca91e9b047204e8e24ec415b76",
+      "dependency_digest": "sha256:d6eef471f2a9fa5a89ab2a877947ed6c4968e6270be745ee1d67c832b72030da",
+      "output_digest": "sha256:3be4bb1eeb80ae89de92c7ceed96299a78e0b551001748d8431bbf7079914884",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "PR_CREATED": {
+      "stage": "PR_CREATED",
+      "timestamp": "2026-10-07T14:16:23.834Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "artifact_paths": [],
+      "input_paths": [],
+      "dependency_paths": [
+        "_data/editions/2026-10-07.json"
+      ],
+      "input_digest": "sha256:b1231914c602dcdada10a7f7ad90edfa503b03003fe0d543da3676639362471d",
+      "dependency_digest": "sha256:3be4bb1eeb80ae89de92c7ceed96299a78e0b551001748d8431bbf7079914884",
+      "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": 511,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "PROTECTED_CI_PASS": {
+      "stage": "PROTECTED_CI_PASS",
+      "timestamp": "2026-10-07T14:16:23.837Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "artifact_paths": [],
+      "input_paths": [],
+      "dependency_paths": [],
+      "input_digest": "sha256:f26f1bb258e404cb5fe963fa92589a5b56e9c946524304d3534f7f1e4f5ac4c2",
+      "dependency_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": 511,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "MERGED": {
+      "stage": "MERGED",
+      "timestamp": "2026-10-07T14:16:23.838Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "artifact_paths": [],
+      "input_paths": [],
+      "dependency_paths": [],
+      "input_digest": "sha256:f0cc32cfcb3aa2189c581b035e202275ee662e2a985a66fd96c82fac3d7efb1b",
+      "dependency_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": 511,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "PAGES_VERIFIED": {
+      "stage": "PAGES_VERIFIED",
+      "timestamp": "2026-10-07T14:16:23.838Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "artifact_paths": [
+        "_records/publication/2026-10-07/completion.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [],
+      "input_digest": "sha256:99b67408430e7b201142a5262f897b59bf215773e087347e332cb532ea22382a",
+      "dependency_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "output_digest": "sha256:911f1b27dc802fd6cacf65843210ab0a7ab04ede2e3d8103e26c99d5b99aa8d0",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": 511,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "COMPLETION_PERSISTED": {
+      "stage": "COMPLETION_PERSISTED",
+      "timestamp": "2026-10-07T14:16:23.839Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "artifact_paths": [
+        "_records/publication/2026-10-07/completion.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [
+        "_records/publication/2026-10-07/completion.json"
+      ],
+      "input_digest": "sha256:613d17c22335df7ddb5b2c15e0c72bf88bc120f28d598d61c9a099a3f6a8c1bd",
+      "dependency_digest": "sha256:911f1b27dc802fd6cacf65843210ab0a7ab04ede2e3d8103e26c99d5b99aa8d0",
+      "output_digest": "sha256:911f1b27dc802fd6cacf65843210ab0a7ab04ede2e3d8103e26c99d5b99aa8d0",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": 511,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "DELTA_VALIDATED": {
+      "stage": "DELTA_VALIDATED",
+      "timestamp": "2026-10-07T14:16:23.840Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "artifact_paths": [
+        "_records/publication/2026-10-07/delta-validation.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [
+        "_records/publication/2026-10-07/completion.json"
+      ],
+      "input_digest": "sha256:c2f5755f536f760157642872bf3f5888caa4380ffa0700ea2bf2bc12ac0a0ab4",
+      "dependency_digest": "sha256:911f1b27dc802fd6cacf65843210ab0a7ab04ede2e3d8103e26c99d5b99aa8d0",
+      "output_digest": "sha256:a9c61b773bc8c2326915b8390cd0d6859c2dfc99793f02c42f2599c009e6ff52",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": 511,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "COMMAND_CENTER_RECONCILED": {
+      "stage": "COMMAND_CENTER_RECONCILED",
+      "timestamp": "2026-10-07T14:16:23.840Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "artifact_paths": [
+        "_records/command-center/2026-10-07-public-safe-delta.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [
+        "_records/publication/2026-10-07/delta-validation.json"
+      ],
+      "input_digest": "sha256:0784a62b95eac50494ddaba8c8d908586091ccf36d5fa974d36c376b5cbe4234",
+      "dependency_digest": "sha256:a9c61b773bc8c2326915b8390cd0d6859c2dfc99793f02c42f2599c009e6ff52",
+      "output_digest": "sha256:4764c35efdfb8bcfaebb7d1e41b0abfed3fa075951312e1eeecfa514d70f78ad",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": 511,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    },
+    "CLOSED": {
+      "stage": "CLOSED",
+      "timestamp": "2026-10-07T14:16:23.841Z",
+      "status": "pass",
+      "input_baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "artifact_paths": [
+        "_records/command-center/2026-10-07-public-safe-delta.json",
+        "_records/publication/2026-10-07/completion.json",
+        "_records/publication/2026-10-07/delta-validation.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [
+        "_records/command-center/2026-10-07-public-safe-delta.json"
+      ],
+      "input_digest": "sha256:a1597dd5145fd05c204c05d9d50f928e83ecb167285a268caa36c979030ce351",
+      "dependency_digest": "sha256:4764c35efdfb8bcfaebb7d1e41b0abfed3fa075951312e1eeecfa514d70f78ad",
+      "output_digest": "sha256:02aba958dc221ef0725e2a9c0b73337c7b4b237e238dc958f9d448df748f3b1b",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [],
+      "pr_number": 511,
+      "contract_runtime_version": "sep24-reliability-v1",
+      "note": null
+    }
+  },
+  "history": [
+    {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-10-07T14:16:23.510Z",
+      "status": "pass",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "pr_number": null,
+      "note": null,
+      "input_digest": "sha256:61e01fdb03010d9045a3693f54782eaf56ef33da942afb1e86667e8616645f02",
+      "dependency_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "output_digest": "sha256:68b712df12ac5a33afe7f137ad546ac2589e242eaf04dc3304c23a2c5611af49"
+    },
+    {
+      "stage": "PREFLIGHT_DISCOVERY_READY",
+      "timestamp": "2026-10-07T14:16:23.513Z",
+      "status": "pass",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "pr_number": null,
+      "note": null,
+      "input_digest": "sha256:054b3e30ec0fd00fbfb9d65faecbed2383176fb5319c7f5a3be00e3d4ccfa2a2",
+      "dependency_digest": "sha256:68b712df12ac5a33afe7f137ad546ac2589e242eaf04dc3304c23a2c5611af49",
+      "output_digest": "sha256:83be734b2d3037b87af017f42115c1fb211f3168adc9d0d8ddc5a7acc87620ef"
+    },
+    {
+      "stage": "READINESS_PRELIMINARY",
+      "timestamp": "2026-10-07T14:16:23.513Z",
+      "status": "pass",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "pr_number": null,
+      "note": null,
+      "input_digest": "sha256:df67509f61b885f38d667a6fed4e864a68c1646ae3a4da262f2a535abdb6fafb",
+      "dependency_digest": "sha256:83be734b2d3037b87af017f42115c1fb211f3168adc9d0d8ddc5a7acc87620ef",
+      "output_digest": "sha256:68b712df12ac5a33afe7f137ad546ac2589e242eaf04dc3304c23a2c5611af49"
+    },
+    {
+      "stage": "READINESS_FINAL",
+      "timestamp": "2026-10-07T14:16:23.513Z",
+      "status": "pass",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "pr_number": null,
+      "note": null,
+      "input_digest": "sha256:a90e6aa77013147bc2dcd4b90bb26f2f470e24a0eef0cc3c88f5ab21e88f8408",
+      "dependency_digest": "sha256:68b712df12ac5a33afe7f137ad546ac2589e242eaf04dc3304c23a2c5611af49",
+      "output_digest": "sha256:3b626d336587707b96e69e462230381da6a300c054999227bff7ab579020dd3c"
+    },
+    {
+      "stage": "EDITORIAL_KERNEL_READY",
+      "timestamp": "2026-10-07T14:16:23.514Z",
+      "status": "pass",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "pr_number": null,
+      "note": null,
+      "input_digest": "sha256:0b6bfe6ab4da4e5d19ff3c1918f4ea3c29b698d5dd583b00710f339580e999ca",
+      "dependency_digest": "sha256:3b626d336587707b96e69e462230381da6a300c054999227bff7ab579020dd3c",
+      "output_digest": "sha256:3f2effd2f319b03da64417de452f7399447c4a4b0b8f14a1f2079ce11bc5393f"
+    },
+    {
+      "stage": "MEDIA_READY",
+      "timestamp": "2026-10-07T14:16:23.514Z",
+      "status": "pass",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "pr_number": null,
+      "note": null,
+      "input_digest": "sha256:ad33fc8c33f8de27fc2a85c3450249d70d638bd5d7d213c27658c5bb3c078036",
+      "dependency_digest": "sha256:3f2effd2f319b03da64417de452f7399447c4a4b0b8f14a1f2079ce11bc5393f",
+      "output_digest": "sha256:c4403e3cf742c17d05e3e8bc89a259fa7da69f8321c653fee7cd7820f852c863"
+    },
+    {
+      "stage": "IMAGES_READY",
+      "timestamp": "2026-10-07T14:16:23.515Z",
+      "status": "pass",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "pr_number": null,
+      "note": null,
+      "input_digest": "sha256:acd255fe06e58d1f7431c32e2a04f3df9254ee814419d7520ecd4be20aa67669",
+      "dependency_digest": "sha256:c4403e3cf742c17d05e3e8bc89a259fa7da69f8321c653fee7cd7820f852c863",
+      "output_digest": "sha256:04ed78776b5a0298d600d8c04c67a6db5c4bf32b25bcf09230cc3df768a9f3be"
+    },
+    {
+      "stage": "HANDOFF_COMMITTED",
+      "timestamp": "2026-10-07T14:16:23.516Z",
+      "status": "pass",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "pr_number": null,
+      "note": null,
+      "input_digest": "sha256:04ae1e92a6ce893e8dd8b6cbe2bf27ca8b6d13bd1c7eab6f1d55c4cb041096b4",
+      "dependency_digest": "sha256:bfe8ccbfe598de8afa295266ec85605474db0939617fd1335d29ca008a7e0894",
+      "output_digest": "sha256:d6eef471f2a9fa5a89ab2a877947ed6c4968e6270be745ee1d67c832b72030da"
+    },
+    {
+      "stage": "DETERMINISTIC_EXPANSION_READY",
+      "timestamp": "2026-10-07T14:16:23.518Z",
+      "status": "pass",
+      "current_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+      "pr_number": null,
+      "note": null,
+      "input_digest": "sha256:f35809ba0c8434edc60d40657d8304f9f630d5ca91e9b047204e8e24ec415b76",
+      "dependency_digest": "sha256:d6eef471f2a9fa5a89ab2a877947ed6c4968e6270be745ee1d67c832b72030da",
+      "output_digest": "sha256:3be4bb1eeb80ae89de92c7ceed96299a78e0b551001748d8431bbf7079914884"
+    },
+    {
+      "stage": "PR_CREATED",
+      "timestamp": "2026-10-07T14:16:23.834Z",
+      "status": "pass",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "pr_number": 511,
+      "note": null,
+      "input_digest": "sha256:b1231914c602dcdada10a7f7ad90edfa503b03003fe0d543da3676639362471d",
+      "dependency_digest": "sha256:3be4bb1eeb80ae89de92c7ceed96299a78e0b551001748d8431bbf7079914884",
+      "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "stage": "ACTION_RECORDED",
+      "timestamp": "2026-10-07T14:16:23.837Z",
+      "status": "pass",
+      "action_type": "publication_pr",
+      "action_key": "pr:511",
+      "scope": "edition"
+    },
+    {
+      "stage": "PROTECTED_CI_PASS",
+      "timestamp": "2026-10-07T14:16:23.837Z",
+      "status": "pass",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "pr_number": 511,
+      "note": null,
+      "input_digest": "sha256:f26f1bb258e404cb5fe963fa92589a5b56e9c946524304d3534f7f1e4f5ac4c2",
+      "dependency_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "stage": "MERGED",
+      "timestamp": "2026-10-07T14:16:23.838Z",
+      "status": "pass",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "pr_number": 511,
+      "note": null,
+      "input_digest": "sha256:f0cc32cfcb3aa2189c581b035e202275ee662e2a985a66fd96c82fac3d7efb1b",
+      "dependency_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "stage": "ACTION_RECORDED",
+      "timestamp": "2026-10-07T14:16:23.838Z",
+      "status": "pass",
+      "action_type": "merge",
+      "action_key": "sha:848c8a3d323ccea177a193825352e7819e444ec3",
+      "scope": "edition"
+    },
+    {
+      "stage": "PAGES_VERIFIED",
+      "timestamp": "2026-10-07T14:16:23.838Z",
+      "status": "pass",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "pr_number": 511,
+      "note": null,
+      "input_digest": "sha256:99b67408430e7b201142a5262f897b59bf215773e087347e332cb532ea22382a",
+      "dependency_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "output_digest": "sha256:911f1b27dc802fd6cacf65843210ab0a7ab04ede2e3d8103e26c99d5b99aa8d0"
+    },
+    {
+      "stage": "COMPLETION_PERSISTED",
+      "timestamp": "2026-10-07T14:16:23.839Z",
+      "status": "pass",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "pr_number": 511,
+      "note": null,
+      "input_digest": "sha256:613d17c22335df7ddb5b2c15e0c72bf88bc120f28d598d61c9a099a3f6a8c1bd",
+      "dependency_digest": "sha256:911f1b27dc802fd6cacf65843210ab0a7ab04ede2e3d8103e26c99d5b99aa8d0",
+      "output_digest": "sha256:911f1b27dc802fd6cacf65843210ab0a7ab04ede2e3d8103e26c99d5b99aa8d0"
+    },
+    {
+      "stage": "ACTION_RECORDED",
+      "timestamp": "2026-10-07T14:16:23.840Z",
+      "status": "pass",
+      "action_type": "completion",
+      "action_key": "sha:848c8a3d323ccea177a193825352e7819e444ec3",
+      "scope": "edition"
+    },
+    {
+      "stage": "DELTA_VALIDATED",
+      "timestamp": "2026-10-07T14:16:23.840Z",
+      "status": "pass",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "pr_number": 511,
+      "note": null,
+      "input_digest": "sha256:c2f5755f536f760157642872bf3f5888caa4380ffa0700ea2bf2bc12ac0a0ab4",
+      "dependency_digest": "sha256:911f1b27dc802fd6cacf65843210ab0a7ab04ede2e3d8103e26c99d5b99aa8d0",
+      "output_digest": "sha256:a9c61b773bc8c2326915b8390cd0d6859c2dfc99793f02c42f2599c009e6ff52"
+    },
+    {
+      "stage": "COMMAND_CENTER_RECONCILED",
+      "timestamp": "2026-10-07T14:16:23.840Z",
+      "status": "pass",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "pr_number": 511,
+      "note": null,
+      "input_digest": "sha256:0784a62b95eac50494ddaba8c8d908586091ccf36d5fa974d36c376b5cbe4234",
+      "dependency_digest": "sha256:a9c61b773bc8c2326915b8390cd0d6859c2dfc99793f02c42f2599c009e6ff52",
+      "output_digest": "sha256:4764c35efdfb8bcfaebb7d1e41b0abfed3fa075951312e1eeecfa514d70f78ad"
+    },
+    {
+      "stage": "ACTION_RECORDED",
+      "timestamp": "2026-10-07T14:16:23.841Z",
+      "status": "pass",
+      "action_type": "command_center_sync",
+      "action_key": "sha:848c8a3d323ccea177a193825352e7819e444ec3",
+      "scope": "edition"
+    },
+    {
+      "stage": "CLOSED",
+      "timestamp": "2026-10-07T14:16:23.841Z",
+      "status": "pass",
+      "current_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+      "pr_number": 511,
+      "note": null,
+      "input_digest": "sha256:a1597dd5145fd05c204c05d9d50f928e83ecb167285a268caa36c979030ce351",
+      "dependency_digest": "sha256:4764c35efdfb8bcfaebb7d1e41b0abfed3fa075951312e1eeecfa514d70f78ad",
+      "output_digest": "sha256:02aba958dc221ef0725e2a9c0b73337c7b4b237e238dc958f9d448df748f3b1b"
+    }
+  ]
+}

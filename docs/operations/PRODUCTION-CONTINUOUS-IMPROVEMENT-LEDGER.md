@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:4559c6a003a1fe95702f2027198d4940cf72486bc90e581a4ae4d09210e53ea3`
+Ledger digest: `sha256:d611a212bd158dc6cf9d9a071922fd760772a5511ab354fbc94914541b290fbc`
 
-Problems: 71 · Events: 127
+Problems: 73 · Events: 131
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -1284,20 +1284,39 @@ Problems: 71 · Events: 127
 - **Recurrences:** none recorded
 - **Future validation:** PUBLIC_CLOSED follows live verification through deterministic closeout without owner/model intervention. | Active pointer cannot remain true after PUBLIC_CLOSED.
 
-## DAB-OPS-20261007-001 — Task 16 repeatedly rendered human/profile primitives for identity semantics despite the no-people contract.
+## DAB-OPS-20261007-001 — Event-driven Supervisor consumed the Run 11 allocation transition but Task 00 produced no worker request and only a Kanban projection before yielding.
 
-- **Status:** protected_repair_in_progress
+- **Status:** mitigated
 - **First observed run:** reliable-edition-20261007-run11
-- **Task(s):** 16
-- **Symptom:** Three exact saved-Git Task 16 attempts were professional and story-correct but repeatedly mapped Identity/MCP semantics to human-profile, avatar, person or group icons; attempts 2–3 also contained hash-like text outside the exact allowlist.
-- **Root cause:** The base no-people contract prohibited humanoids generically, while the canonical post-repair overlay hardened text and brand rendering but did not fail closed on identity/principal/user glyph substitutions. The generator therefore continued choosing familiar human iconography for identity semantics.
-- **Operational impact:** Three bounded image attempts were rejected and Task 16 entered Strategy Interrupt instead of advancing to set review.
+- **Task(s):** 00
+- **Symptom:** not recorded
+- **Root cause:** Task 00 Active is modeled as an observe-only transition in the new event dispatcher; the Supervisor tick returned worker_request=null and event-driven mode yielded after one boundary.
+- **Operational impact:** Run-only immediate stall with permanent control-plane implication; without same-execution recovery Task 00 would remain Active.
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Fresh generation after the first rejection, then a Strategy Interrupt targeted same-story edit after two equivalent failures; both preserved the same normalized NO_HUMANOIDS_VIOLATION.
-- **Actual fix:** Extend the canonical post-repair overlay with a HUMAN FAIL-CLOSED rule that explicitly bans silhouettes, avatars, profile portraits, person/group/user/account glyphs and human-shaped pictograms, and requires identity/access-control concepts to use neutral non-human credentials, keys, documents, tokens, policy artifacts, gates, faceless shields or abstract markers.
-- **Fix outcome:** Pending exact-head protected CI, protected merge and one fresh story-only Task 16 post-repair attempt.
-- **Permanent implementation:** _generator/lib/image-story-packet.mjs
-- **Regression tests:** _generator/test/image-execution.test.mjs, _generator/test/native-image-delivery.test.mjs
-- **Production invariants:** accepted_locked_assets_immutable, no_people_or_humanoid_visual_primitives, visible_text_exact_allowlist, story_only_generator_context, one_post_repair_attempt_per_epoch, owner_intervention_false, no_low_quality_fallback
-- **Recurrences:** Task 16 attempts 1–3 in reliable-edition-20261007-run11
-- **Future validation:** Exact-head CI must pass before same-task resume. The next Task 16 image admission must be PASS in a fresh story-only generator context using the canonical repaired overlay. The one post-repair saved-Git image must contain no person/humanoid primitive and no visible text outside the exact allowlist.
+- **Attempted fixes:** Allowed the completed generation-1 GitHub owner to reach terminal state and its fence to expire; acquired generation 2 for the same execution and reconstructed readiness from protected evidence.
+- **Actual fix:** Recovered Task 00 under a new fenced writer, persisted its Done transition before dispatch, and preserved the exact execution identity through publication.
+- **Fix outcome:** recovered_and_run_completed
+- **Permanent implementation:** none
+- **Regression tests:** none
+- **Production invariants:** none
+- **Recurrences:** none recorded
+- **Future validation:** Add a regression so Task 00 cannot yield from event-driven mode with worker_request=null unless Task 00 is already Done or a verified external blocker exists. | Verify a future event-driven allocation cannot leave Task 00 Active with no worker request unless an exact verified blocker exists.
+
+## DAB-OPS-20261007-002 — Task 11 exhausted four native image attempts: three introduced non-allowlisted text and the fourth introduced recognizable logos despite a sealed no-extra-text/no-logo specification.
+
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261007-run11
+- **Task(s):** 11
+- **Symptom:** not recorded
+- **Root cause:** The normal admission contract required byte-identical submission of the sealed prompt and provided no legal post-repair rendering overlay, while the generator repeatedly invented text-like or branded primitives.
+- **Operational impact:** Run-blocking image quality failure with permanent generator-delivery implication; Tasks 12-29 remain dependency-blocked until Task 11 is accepted_locked.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Used all four normal bounded attempts with exact-byte persistence and saved-Git review; no fallback or owner workaround was used.
+- **Actual fix:** Applied the protected canonical post-repair overlay under a fresh story-only admission, persisted the exact PNG bytes, completed saved-Git review, and retained six accepted_locked images through exact-SHA publication.
+- **Fix outcome:** accepted_locked_and_live_verified
+- **Permanent implementation:** none
+- **Regression tests:** none
+- **Production invariants:** none
+- **Recurrences:** none recorded
+- **Future validation:** Merge repair through exact-head CI, run one fresh-context post-repair attempt for only m01, and retain regression tests so arbitrary repair prompt edits remain inadmissible. | Verify the protected overlay remains machine-verifiable and cannot authorize arbitrary prompt edits or non-allowlisted text and logos.
+

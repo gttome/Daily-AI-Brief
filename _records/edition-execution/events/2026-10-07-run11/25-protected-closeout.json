@@ -1,0 +1,13 @@
+{
+  "task_id": "25",
+  "from": "Backlog",
+  "to": "Done",
+  "at": "2026-10-07T14:10:04.000Z",
+  "timestamp_scope": "exact_pages_deployment_observed",
+  "proof": {
+    "production_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+    "pages_run_id": 37634270150,
+    "conclusion": "success",
+    "deployment_url": "https://gttome.github.io/Daily-AI-Brief/"
+  }
+}

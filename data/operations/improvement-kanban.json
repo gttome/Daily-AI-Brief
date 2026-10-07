@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-06T23:16:00Z",
+  "observed_at": "2026-10-07T14:22:00Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -1074,6 +1074,42 @@
         "PR #501",
         "merge 13cbf5449fe411fd199b81ceef3ef1e5bc0dbd0a",
         "_records/hardening/p1-p2-2026-10-06/rehearsal-receipt.json"
+      ]
+    },
+    {
+      "id": "DAB-KB-056",
+      "lane": "backlog",
+      "priority": "P1",
+      "category": "Supervisor Liveness",
+      "title": "Prevent Task 00 from yielding without an executor",
+      "summary": "Harden event-driven startup so Task 00 cannot remain Active without a real executor, a durable worker request, or an exact verified external blocker.",
+      "acceptance": [
+        "Task 00 produces a readiness result, completes, or persists an exact executable request before yielding.",
+        "Lease, heartbeat, Kanban and queue updates alone never satisfy substantive progress.",
+        "Internally actionable startup stalls require no owner prompt.",
+        "Regression coverage proves future allocations cannot leave Task 00 Active without an executor or verified blocker."
+      ],
+      "sources": [
+        "DAB-OPS-20261007-001",
+        "reliable-edition-20261007-run11 Task 00 recovery evidence"
+      ]
+    },
+    {
+      "id": "DAB-KB-057",
+      "lane": "backlog",
+      "priority": "P1",
+      "category": "Image Quality",
+      "title": "Validate protected image overlay invariants",
+      "summary": "Make every protected image overlay machine-verifiable without authorizing arbitrary prompt edits, non-allowlisted text or logos, or mutation of accepted_locked exact bytes.",
+      "acceptance": [
+        "Protected overlay provenance and visible-text allowlists are machine-verifiable.",
+        "Overlay handling cannot authorize arbitrary prompt edits or non-allowlisted text or logos.",
+        "Accepted_locked image identity and exact bytes remain immutable.",
+        "A future live production execution verifies the protected overlay path end to end."
+      ],
+      "sources": [
+        "DAB-OPS-20261007-002",
+        "reliable-edition-20261007-run11 Task 11 image-quality evidence"
       ]
     }
   ],
