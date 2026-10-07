@@ -1,0 +1,16 @@
+{
+  "task_id": "00",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-07T00:04:00.000Z",
+  "reason_code": "MISSED_START_RECOVERY_ALLOCATION",
+  "operation": "production_readiness_validation",
+  "reason": "October 7 Run 11 allocated by guarded missed-start recovery after the scheduled controller failed to cross the durable allocation boundary; Task 00 must complete current readiness validation before content production.",
+  "proof": {
+    "protected_main_sha": "525a3f63f959d74df518d067e283c166ead2292b",
+    "bootstrap_receipt": "_records/edition-execution/bootstrap/2026-10-07-run11.json",
+    "prior_terminal_execution": "reliable-edition-20261006-run10",
+    "target_unallocated_proof": "No reliable-edition/dab-edition-2026-10-07-run11 ref, no October 7 publication directory, and no October 7 PUBLIC_CLOSED record existed immediately before allocation.",
+    "start_scope": "pending_task00_readiness"
+  }
+}
