@@ -4,6 +4,8 @@
 
 **Cost and liveness boundary:** production uses the existing scheduled ChatGPT + GitHub path only. ChatGPT Work, Codex, paid model APIs/services, billable overage, alternate accounts and new credentials are prohibited. A route-specific blocker never pauses unrelated dependency-safe work. Images and publication still require the protected unattended-image-host admission contract.
 
+**P1/P2 autonomous control-plane status:** **GO / COMPLETE.** The October 6 P1/P2 hardening program is fully activated on protected main `5cafd7b3af7628c0543908ac1f56dd4248f751d3`; final deterministic CI #1688 passed. See [P1 + P2 Autonomous Control Plane — Final Implementation Record](P1-P2-AUTONOMOUS-CONTROL-PLANE.md). The authoritative machine admission is `_records/hardening/p1-p2-2026-10-06/next-run-admission.json` with `decision=GO` and `all_gates_pass=true`. Production runtime remains 0 Work, 0 Codex, 0 paid-model API and 0 owner-liveness prompts.
+
 > [!IMPORTANT]
 > **Run learning/readiness is now a production gate.** Before every new production run,
 > complete Task 00 using [the Living Run Learning, Cleanup and Readiness Plan](RUN-LEARNING-READINESS-PLAN.md)
