@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
-import {buildImageGenerationExecution,buildProductionImageGenerationExecution,validateImageGenerationExecution,validateImageExecutionReceipt,executeImageRequest,executeImageBatch} from '../lib/image-execution.mjs';
+import {buildImageGenerationExecution,buildProductionImageGenerationExecution,buildImageExecutionAdmission,validateImageExecutionAdmission,validateImageGenerationExecution,validateImageExecutionReceipt,executeImageRequest,executeImageBatch} from '../lib/image-execution.mjs';
 import {buildQualificationImageGenerationExecution} from '../lib/qualification-image-harness.mjs';
-import {compileImageRenderSpec,validateImageRenderSpec} from '../lib/image-story-packet.mjs';
+import {compileImageRenderSpec,validateImageRenderSpec,buildPostRepairImageGenerationInstruction,IMAGE_POST_REPAIR_DIRECTIVE_VERSION} from '../lib/image-story-packet.mjs';
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const usage=()=>({work_invocations:0,codex_invocations:0,paid_model_api_calls:0});
 const packet=(id='m04')=>({story_id:'story-'+id,candidate_id:id,headline:'A supported single-story mechanism',source_url:'https://example.com/'+id,
@@ -32,6 +32,18 @@ test('production and qualification share the exact function and request bytes',(
 test('request allowlist strips orchestration without claiming hidden platform isolation',()=>{
  const e=buildImageGenerationExecution({...packet(),q_id:'Q24',parent_conversation:'unrelated status',other_story_context:'wrong story'});
  assert.doesNotMatch(e.prompt,/Q24|unrelated status|wrong story/);assert.equal(e.includes_edition_context,false);assert.equal(e.request_scope,'sealed_story_payload_only');
+});
+test('bounded post-repair overlay is canonical, fail-closed, and admission-bound',()=>{
+ const e=buildImageGenerationExecution(packet());
+ const overlay=buildPostRepairImageGenerationInstruction(e.sealed_story_packet,{repair_epoch:1,directive_version:IMAGE_POST_REPAIR_DIRECTIVE_VERSION});
+ assert.match(overlay,/TEXT FAIL-CLOSED/);assert.match(overlay,/BRAND FAIL-CLOSED/);assert.match(overlay,/timestamps/);assert.match(overlay,/logos/);
+ const common={execution_id:'reliable-edition-20261007-run11',task_id:'11',request_key:'req-m01',story_only_context_verified:true,orchestration_context_visible:false,exact_byte_persistence_verified:true,persistence_mode:'git_data_direct_blob',owner_intervention_required:false,checked_at:'2026-10-07T03:10:00Z'};
+ const normal=buildImageExecutionAdmission(e,{...common,submitted_instruction:e.generation_instruction});
+ assert.equal(normal.generation_authorized,true);assert.equal(normal.engineering_repair_epoch,0);assert.equal(normal.repair_directive_version,null);assert.deepEqual(validateImageExecutionAdmission(normal,e,{execution_id:common.execution_id,task_id:'11',request_key:common.request_key}),[]);
+ const repaired=buildImageExecutionAdmission(e,{...common,submitted_instruction:overlay,engineering_repair_epoch:1,repair_directive_version:IMAGE_POST_REPAIR_DIRECTIVE_VERSION});
+ assert.equal(repaired.generation_authorized,true);assert.equal(repaired.engineering_repair_epoch,1);assert.equal(repaired.repair_directive_version,IMAGE_POST_REPAIR_DIRECTIVE_VERSION);assert.deepEqual(validateImageExecutionAdmission(repaired,e,{execution_id:common.execution_id,task_id:'11',request_key:common.request_key}),[]);
+ const tampered=buildImageExecutionAdmission(e,{...common,submitted_instruction:overlay+'\\nARBITRARY EXTRA',engineering_repair_epoch:1,repair_directive_version:IMAGE_POST_REPAIR_DIRECTIVE_VERSION});
+ assert.equal(tampered.generation_authorized,false);assert.ok(tampered.failure_reasons.includes('submitted_instruction_not_canonical_post_repair'));
 });
 test('request is a deep copy of the frozen source packet',()=>{const p=packet(),e=buildImageGenerationExecution(p);p.allowed_image_text.push('changed');assert.deepEqual(e.sealed_story_packet.allowed_image_text,['Input','Review']);});
 test('strict render spec excludes headline source and orchestration text from generation prompt',()=>{
