@@ -1,6 +1,6 @@
 import {createHash} from 'node:crypto';
 import {imageExecutionHash, validateImageGenerationExecution} from './image-execution.mjs';
-import {compileImageRenderSpec} from './image-story-packet.mjs';
+import {compileImageRenderSpec,buildPostRepairImageGenerationInstruction,IMAGE_POST_REPAIR_DIRECTIVE_VERSION} from './image-story-packet.mjs';
 
 export const NATIVE_IMAGE_DELIVERY_POLICY = 'visual-only-task-delivery-v1';
 export const NATIVE_IMAGE_RESULT_HANDOFF_CAPABILITY_VERSION = '1.0.0';
@@ -49,10 +49,14 @@ function assertExecution(execution) {
  * user instruction. No claim is made about hidden platform context or execution.
  * The original frozen request is never rewritten by this delivery projection.
  */
-export function buildNativeImageDelivery(execution) {
+export function buildNativeImageDelivery(execution,{engineering_repair_epoch=0,repair_directive_version=null}={}) {
   assertExecution(execution);
   const p = execution.sealed_story_packet;
-  const taskPrompt = execution.generation_instruction;
+  const epoch=Number(engineering_repair_epoch||0);
+  const repairMode=Number.isInteger(epoch)&&epoch>0;
+  const taskPrompt = repairMode
+    ?buildPostRepairImageGenerationInstruction(p,{repair_epoch:epoch,directive_version:repair_directive_version})
+    :execution.generation_instruction;
   const renderSpec = compileImageRenderSpec(p);
   const {acceptance_order:_acceptanceOrder,wrong_subject_action:_wrongSubjectAction,...generatorRenderSpec}=renderSpec;
   return {
@@ -68,6 +72,7 @@ export function buildNativeImageDelivery(execution) {
       render_spec:generatorRenderSpec,
       submitted_instruction_sha256:sha(taskPrompt)
     },
+    ...(repairMode?{repair_overlay:{directive_version:repair_directive_version,engineering_repair_epoch:epoch}}:{}),
     manual_intervention_allowed: false,
     native_tool_arguments: {prompt: null, size: '1536x1024', n: 1,
       transparent_background: false, is_style_transfer: false,
@@ -75,9 +80,9 @@ export function buildNativeImageDelivery(execution) {
   };
 }
 
-export function validateNativeImageDelivery(delivery, execution) {
+export function validateNativeImageDelivery(delivery, execution, options={}) {
   let expected;
-  try { expected = buildNativeImageDelivery(execution); }
+  try { expected = buildNativeImageDelivery(execution,options); }
   catch (error) { return ['invalid_frozen_execution:' + error.message]; }
   if (!delivery || typeof delivery !== 'object' || Array.isArray(delivery))
     return ['native_image_delivery_required'];
@@ -93,8 +98,8 @@ export function validateNativeImageDelivery(delivery, execution) {
 /** Validate the actual task instruction, not just an earlier saved JSON file.
  * This is necessary but not sufficient evidence of correct native generation.
  */
-export function assertNativeImageTaskPrompt(submittedPrompt, delivery, execution) {
-  const errors = validateNativeImageDelivery(delivery, execution);
+export function assertNativeImageTaskPrompt(submittedPrompt, delivery, execution, options={}) {
+  const errors = validateNativeImageDelivery(delivery, execution, options);
   if (errors.length) throw Error(errors.join('; '));
   if (submittedPrompt !== delivery.task_prompt)
     throw Error('image_task_prompt_must_equal_visual_only_projection');
