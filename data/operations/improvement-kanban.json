@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-07T14:18:00Z",
+  "observed_at": "2026-10-07T14:22:00Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -1110,47 +1110,6 @@
       "sources": [
         "DAB-OPS-20261007-002",
         "reliable-edition-20261007-run11 Task 11 image-quality evidence"
-      ]
-    },
-    {
-      "id": "DAB-KB-056",
-      "lane": "backlog",
-      "priority": "P0",
-      "category": "Supervisor Liveness",
-      "title": "Prevent event-driven Task 00 allocation from yielding without executable work",
-      "summary": "Run 11 recovered the Task 00 startup stall under the next fenced writer, but the event-driven allocation path can still leave Task 00 Active with no worker request when the initial transition is observe-only.",
-      "acceptance": [
-        "A production allocation cannot leave Task 00 Active without a readiness receipt, executable worker request, or verified external blocker.",
-        "Event-driven Supervisor emits substantive durable progress before yielding from Task 00.",
-        "Regression coverage reproduces the Run 11 startup condition and passes without owner intervention.",
-        "Same-execution recovery remains fenced and duplicate allocation remains prohibited."
-      ],
-      "sources": [
-        "DAB-OPS-20261007-001",
-        "DAB-OPS-E-000128",
-        "DAB-OPS-E-000130",
-        "_records/run-learning/incidents/reliable-edition-20261007-run11.jsonl"
-      ]
-    },
-    {
-      "id": "DAB-KB-057",
-      "lane": "backlog",
-      "priority": "P1",
-      "category": "Image Quality",
-      "title": "Prove canonical post-repair image overlay across future production",
-      "summary": "Run 11 proved the protected post-repair overlay can recover an accepted image without arbitrary prompt edits, but the mechanism remains mitigated until a future production run revalidates it under the normal image pipeline.",
-      "acceptance": [
-        "A future production image repair uses only the canonical machine-verifiable overlay.",
-        "Arbitrary prompt edits, non-allowlisted visible text, logos, and branded icons remain inadmissible.",
-        "Story-only context and exact-byte persistence remain proven before post-repair generation.",
-        "Accepted_locked images remain immutable and no owner upload or low-quality fallback is introduced."
-      ],
-      "sources": [
-        "DAB-OPS-20261007-002",
-        "DAB-OPS-E-000129",
-        "DAB-OPS-E-000131",
-        "PR #507",
-        "merge 081d9f635b361ac164aa46feb31dda58794a6480"
       ]
     }
   ],
