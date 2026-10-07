@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "014f75649e38881a4be3f5d73ce2c21811f463de99825c13646324fcb59170a9",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "26",
+  "capability": "verification",
+  "instruction": "Independently verify the live edition, permanent pages, required media/assets and exact deployed SHA.",
+  "writer_generation": 64,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-07T17:10:30.000Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
