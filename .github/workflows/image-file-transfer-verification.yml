@@ -48,6 +48,62 @@ jobs:
           set -euo pipefail
           node --test _generator/test/*.test.mjs | tee /tmp/image-transfer-test-logs/full.log
           node _tools/validate-contracts.mjs | tee /tmp/image-transfer-test-logs/contracts.log
+      - name: Persist October 7 owner-selected replacement PNG assets
+        if: github.ref_name == 'repair/image-file-transfer-2026-10-07-owner-replacement-v2'
+        env:
+          OWNER_ZIP_URL: https://at.adobe.com/FrLvw26chADKRQ2F
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/image-transfer-test-logs /tmp/oct7-replacements
+          curl --fail --location --retry 3 --retry-delay 2 "$OWNER_ZIP_URL" --output /tmp/oct7-replacements.zip
+          unzip -q /tmp/oct7-replacements.zip -d /tmp/oct7-replacements
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          import crypto from 'node:crypto';
+
+          const expected = ['m01','m02','m08','m09','m15','m16'];
+          const root = '/tmp/oct7-replacements';
+          const outDir = 'briefs/images/2026-10-07';
+          const walk = dir => fs.readdirSync(dir,{withFileTypes:true}).flatMap(entry => {
+            const p=path.join(dir,entry.name);
+            return entry.isDirectory()?walk(p):[p];
+          });
+          const all=walk(root);
+          fs.mkdirSync(outDir,{recursive:true});
+          const report=[];
+          const hashes=new Set();
+          for (const id of expected) {
+            const name=`dab-edition-2026-10-07-${id}-replacement-v2.png`;
+            const src=all.find(p=>path.basename(p)===name);
+            if(!src) throw new Error(`missing_expected_asset:${name}`);
+            const bytes=fs.readFileSync(src);
+            const magic=bytes.subarray(0,8).toString('hex');
+            if(magic!=='89504e470d0a1a0a') throw new Error(`invalid_png:${name}`);
+            const width=bytes.readUInt32BE(16), height=bytes.readUInt32BE(20);
+            if(width!==1200||height!==630) throw new Error(`wrong_dimensions:${name}:${width}x${height}`);
+            const sha256=crypto.createHash('sha256').update(bytes).digest('hex');
+            if(hashes.has(sha256)) throw new Error(`duplicate_sha256:${name}`);
+            hashes.add(sha256);
+            const dest=path.join(outDir,name);
+            fs.copyFileSync(src,dest);
+            report.push({candidate_id:id,path:dest,bytes:bytes.length,width,height,format:'PNG',sha256});
+          }
+          const expectedNames=new Set(expected.map(id=>`dab-edition-2026-10-07-${id}-replacement-v2.png`));
+          const pngNames=all.filter(p=>p.toLowerCase().endsWith('.png')).map(p=>path.basename(p));
+          const extras=pngNames.filter(n=>!expectedNames.has(n));
+          if(pngNames.length!==6||extras.length) throw new Error(`unexpected_png_set:${JSON.stringify(pngNames)}`);
+          fs.writeFileSync('/tmp/image-transfer-test-logs/oct7-owner-replacements.json',JSON.stringify({result:'PASS',source:'owner_uploaded_zip',images:report},null,2)+'\n');
+          console.log(JSON.stringify({result:'PASS',images:report},null,2));
+          NODE
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add briefs/images/2026-10-07/dab-edition-2026-10-07-*-replacement-v2.png
+          git diff --cached --check
+          test "$(git diff --cached --name-only | wc -l | tr -d ' ')" = "6"
+          git commit -m 'Stage owner-selected Oct 7 replacement PNG assets'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
       - name: Persist only coordinated living documents and test routing
         if: github.ref_name == 'repair/image-file-transfer-2026-09-28'
         env:
@@ -63,6 +119,7 @@ jobs:
           fi
           git rev-parse HEAD > /tmp/image-transfer-test-logs/implementation-commit.txt
       - name: Live exact-byte transfer and no-write repeat on independent proof branch
+        if: github.ref_name == 'repair/image-file-transfer-2026-09-28'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
