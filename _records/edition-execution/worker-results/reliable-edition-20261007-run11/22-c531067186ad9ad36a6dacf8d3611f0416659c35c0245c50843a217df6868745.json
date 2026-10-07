@@ -1,0 +1,30 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "c531067186ad9ad36a6dacf8d3611f0416659c35c0245c50843a217df6868745",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "22",
+  "request_writer_generation": 56,
+  "authority_generation": 60,
+  "status": "passed",
+  "completed_at": "2026-10-07T14:28:00.000Z",
+  "strategy_interrupt": {
+    "result": "PASS",
+    "selected_materially_different_recovery": "consume_already_completed_publication_pr",
+    "original_request_key": "6818fe71e9e2a39a910aeafec67f403d202c504e57e72796f37f17dee3874f9e"
+  },
+  "publication": {
+    "preflight_receipt": "_records/edition-execution/publication-preflight/2026-10-07.json",
+    "preflight_result": "PASS",
+    "pr_number": 511,
+    "pr_head_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+    "pr_state": "merged",
+    "merge_sha": "848c8a3d323ccea177a193825352e7819e444ec3"
+  },
+  "preserved": {
+    "completed_tasks": "00-21",
+    "accepted_locked_images": 6
+  },
+  "task_outcome": "Done"
+}
