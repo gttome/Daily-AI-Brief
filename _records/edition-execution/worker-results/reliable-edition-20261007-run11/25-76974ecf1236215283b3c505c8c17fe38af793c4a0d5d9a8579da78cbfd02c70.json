@@ -1,0 +1,28 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "76974ecf1236215283b3c505c8c17fe38af793c4a0d5d9a8579da78cbfd02c70",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "25",
+  "request_writer_generation": 63,
+  "authority_generation": 64,
+  "status": "passed",
+  "completed_at": "2026-10-07T17:10:30.000Z",
+  "deployment": {
+    "result": "PASS",
+    "operation": "consume_existing_exact_sha_pages_deployment",
+    "production_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+    "workflow_run_id": 37634270150,
+    "workflow_name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "reused_existing_exact_sha_deployment": true,
+    "duplicate_deployment_performed": false
+  },
+  "preserved": {
+    "completed_tasks": "00-24",
+    "accepted_locked_images": 6
+  },
+  "task_outcome": "Done"
+}
