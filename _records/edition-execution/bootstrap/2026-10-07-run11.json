@@ -1,0 +1,39 @@
+{
+  "schema_version": "daily-run-bootstrap-receipt-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_key": "2026-10-07-run11",
+  "run_number": 11,
+  "brief_date": "2026-10-07",
+  "observed_at": "2026-10-07T00:04:00.000Z",
+  "timezone": "America/Chicago",
+  "protected_main_sha": "525a3f63f959d74df518d067e283c166ead2292b",
+  "startup_mode": "MISSED_START_RECOVERY",
+  "mandatory_bootstrap_complete": false,
+  "task_00_status": "ACTIVE",
+  "reason": "The 19:00 America/Chicago controller did not durably allocate the October 7 execution. Guarded recovery allocated exactly one new execution from current protected main after proving October 6 terminal and October 7 unallocated and not PUBLIC_CLOSED.",
+  "prior_execution": {
+    "execution_id": "reliable-edition-20261006-run10",
+    "terminal": true,
+    "active": false,
+    "current_task": "29",
+    "current_task_state": "Done"
+  },
+  "cost_boundary": {
+    "chatgpt_work": false,
+    "codex": false,
+    "paid_apis": false,
+    "billable_overage": false,
+    "alternate_accounts": false,
+    "new_credentials": false,
+    "browser_automation": false,
+    "owner_upload": false
+  },
+  "event_supervisor_transition_dispatched": true,
+  "transition_dispatch_commit": "0a6ab4c5e3bad1b69edf8f4e673d8be5ed7f5ba6",
+  "transition_dispatch_receipt": "_records/edition-execution/transition-dispatch/reliable-edition-20261007-run11/d4375107d21927ed6179df77c1769f0fe02acd0b1bf6a83b072825c55721e0d1.json",
+  "protected_ci_retrigger": {
+    "required": true,
+    "reason": "GitHub did not execute pull_request CI for the GitHub-Actions-authored transition-dispatch head; a bounded user-authored startup receipt update retriggers exact-head protected CI without changing production semantics."
+  }
+}
