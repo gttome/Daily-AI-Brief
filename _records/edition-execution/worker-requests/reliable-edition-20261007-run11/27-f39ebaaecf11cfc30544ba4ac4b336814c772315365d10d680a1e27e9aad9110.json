@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "f39ebaaecf11cfc30544ba4ac4b336814c772315365d10d680a1e27e9aad9110",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "27",
+  "capability": "repository",
+  "instruction": "Execute Task 27 (Persist completion and publication lifecycle evidence) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 65,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-07T17:14:30.000Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
