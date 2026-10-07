@@ -37,6 +37,10 @@ const included=x=>['included','selected'].includes(x?.status);
 const sameSet=(a,b)=>a.length===b.length&&[...a].sort().every((v,i)=>v===[...b].sort()[i]);
 const daysBetween=(editionDate,itemDate)=>(Date.parse(editionDate+'T12:00:00Z')-Date.parse(itemDate+'T12:00:00Z'))/86400000;
 
+export function verifiedVideoFreshnessFallback(item={}){
+ return item?.official_source_verified===true&&String(item?.freshness_exception_reason||'').trim().length>0;
+}
+
 export function gitBlobSha1(value){
  const bytes=Buffer.isBuffer(value)?value:Buffer.from(value);
  return createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');
@@ -96,9 +100,9 @@ function mediaErrors(ctx,date,{allowLegacyKernelHash=false,migration={}}={}){
  if(podcasts.length!==2)errors.push('publication_manifest_media_podcast_count_invalid');
  for(const item of videos){
   if(!/^https:\/\//.test(item.url||''))errors.push('publication_manifest_media_url_invalid:'+item._receipt_id);
-  const migrationOK=verifiedVideoMigration(item,date,migration,daysBetween);
+  const migrationOK=verifiedVideoMigration(item,date,migration,daysBetween),verifiedFallback=verifiedVideoFreshnessFallback(item);
   if((!jsonDate(item.upload_date)&&!migrationOK)||!Number.isInteger(item.runtime_seconds)||item.runtime_seconds<=0||item.runtime_seconds>1200)errors.push('publication_manifest_video_metadata_incomplete:'+item._receipt_id);
-  if(jsonDate(item.upload_date)){const age=daysBetween(date,item.upload_date);if(!Number.isFinite(age)||age<0||(age>3&&!migrationOK))errors.push('publication_manifest_video_freshness_invalid:'+item._receipt_id);}
+  if(jsonDate(item.upload_date)){const age=daysBetween(date,item.upload_date);if(!Number.isFinite(age)||age<0||(age>3&&!migrationOK&&!verifiedFallback))errors.push('publication_manifest_video_freshness_invalid:'+item._receipt_id);}
  }
  for(const item of podcasts){
   if(!/^https:\/\//.test(item.url||'')||!jsonDate(item.publication_date))errors.push('publication_manifest_podcast_metadata_incomplete:'+String(item.item_id||item.title));

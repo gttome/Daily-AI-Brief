@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {
- PUBLICATION_MANIFEST_PATH,publicationManifestErrors,validatePublicationManifest
+ PUBLICATION_MANIFEST_PATH,publicationManifestErrors,validatePublicationManifest,verifiedVideoFreshnessFallback
 } from '../lib/publication-manifest.mjs';
 
 const root=process.cwd();
@@ -91,3 +91,9 @@ test('frozen editions require versioned image-quality evidence without throwing'
  assert.ok(publicationManifestErrors(root,manifest).includes('publication_manifest_schema_version_unsupported:image_quality_evidence'));
 });
 
+
+test('verified video freshness fallback requires explicit verified evidence',()=>{
+ assert.equal(verifiedVideoFreshnessFallback({official_source_verified:true,freshness_exception_reason:'Verified retained fallback.'}),true);
+ assert.equal(verifiedVideoFreshnessFallback({official_source_verified:false,freshness_exception_reason:'Verified retained fallback.'}),false);
+ assert.equal(verifiedVideoFreshnessFallback({official_source_verified:true,freshness_exception_reason:'   '}),false);
+});
