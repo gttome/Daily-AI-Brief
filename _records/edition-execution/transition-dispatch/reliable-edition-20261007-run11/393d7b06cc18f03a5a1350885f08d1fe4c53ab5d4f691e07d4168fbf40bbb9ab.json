@@ -1,0 +1,13 @@
+{
+  "schema_version": "run-transition-dispatch-v1",
+  "idempotency_key": "sha256:393d7b06cc18f03a5a1350885f08d1fe4c53ab5d4f691e07d4168fbf40bbb9ab",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "source_task_id": "22",
+  "target_task_id": "23",
+  "request_key": "082ba169077da577525ad9c3731d9f56826a119a3f6e5d761d42289d05fa2f68",
+  "capability": "protected_ci",
+  "dispatch_target": "durable_worker_request_queue",
+  "status": "DISPATCHED",
+  "created_at": "2026-10-07T14:49:00.000Z"
+}
