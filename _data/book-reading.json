@@ -14138,7 +14138,7 @@
       "schema_version": "1.0.0",
       "edition_date": "2026-10-07",
       "catalog_digest": "95cac16503b72b8a06c6dce9f6dbd484d74a30c6f82a0d592f3c87ea4767b320",
-      "items_digest": "8561b6f023e0a07a9b240d0af69c450a91ef63d3d84fd85bafd47d2b1bbc8acc",
+      "items_digest": "ab47176267b99ecfa0706f5424cb9b1f2ea25637c446dcc40d48e87fba258257",
       "items": [
         {
           "item_id": "dab-story-2026-10-07-m01",
@@ -17392,9 +17392,14 @@
         }
       ],
       "canonical_packaging_rebind": {
-        "previous_items_digest": "1c06d7c677863c23460a8cad8e170b1dff109a80257e8b4bcd60ae97c7a9d8b2",
-        "reason": "Rebind the existing semantic book review after six owner-selected post-publication image replacements. Only story image metadata changed; item identities, editorial content, catalog, review scores, rationales and book selections remain unchanged. No production task or semantic review was rerun.",
-        "evidence_path": "_records/image-quality/2026-10-07-owner-replacement-v2-book-binding.json"
+        "previous_items_digest": "8561b6f023e0a07a9b240d0af69c450a91ef63d3d84fd85bafd47d2b1bbc8acc",
+        "reason": "Rebind the existing book review after the owner-requested post-publication m08 image alignment correction. Only m08 image metadata changed; all editorial content, review scores, rationales, book selections and catalog remain unchanged. No production task or semantic review was rerun.",
+        "evidence_path": "_records/image-quality/2026-10-07-m08-alignment-v3-book-binding.json",
+        "prior_packaging_rebind": {
+          "previous_items_digest": "1c06d7c677863c23460a8cad8e170b1dff109a80257e8b4bcd60ae97c7a9d8b2",
+          "reason": "Rebind the existing semantic book review after six owner-selected post-publication image replacements. Only story image metadata changed; item identities, editorial content, catalog, review scores, rationales and book selections remain unchanged. No production task or semantic review was rerun.",
+          "evidence_path": "_records/image-quality/2026-10-07-owner-replacement-v2-book-binding.json"
+        }
       }
     }
   },
