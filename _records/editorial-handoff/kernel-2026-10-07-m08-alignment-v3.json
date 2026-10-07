@@ -1,0 +1,292 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-07",
+  "brief_date": "2026-10-07",
+  "baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+  "policy_profile": "under80-v1",
+  "normal_model_passes": 1,
+  "normal_post_editorial_model_passes": 0,
+  "stories": [
+    {
+      "canonical_ordinal": 1,
+      "story_id": "dab-story-2026-10-07-m01",
+      "candidate_id": "m01",
+      "focus": "technical_ai_engineering",
+      "headline": "Android CLI packages device workflows as reusable agent skills",
+      "summary": "Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface.",
+      "why_it_matters": "A maintained skill can package commands, device context, checks and result evidence into a repeatable mobile workflow instead of rebuilding the procedure for every task.",
+      "editorial_limitation": "Publisher post; adoption outcomes are not independently measured.",
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Apply one bounded next step",
+        "rationale": "Use the permanent story page to test this mechanism in a controlled workflow."
+      },
+      "topic_labels": [
+        "Agent Skills",
+        "Android CLI",
+        "device automation"
+      ],
+      "source_url": "https://android-developers.googleblog.com/2026/10/android-cli-device-streaming-and-skills.html",
+      "agent_skill": true,
+      "fallback_reason": "Selected from the bounded verified fallback window because it supplies distinct mechanism-level value while preserving the exact 2/2/2 slate.",
+      "visual": {
+        "alt_text": "Textbook mechanism diagram for Reusable Android CLI agent skills and device automation: Layered mobile-automation workshop: reusable skill capsules feed a command rail that orchestrates device-state inspection, a live screen stream, bounded test actions and signed result evidence.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
+      }
+    },
+    {
+      "canonical_ordinal": 2,
+      "story_id": "dab-story-2026-10-07-m02",
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "Copilot metrics expose a hidden failure mode in agent telemetry",
+      "summary": "GitHub says an SDK migration caused some Copilot agent activity to appear unattributed in usage metrics and advises updating to VS Code 1.139 or later.",
+      "why_it_matters": "Operational decisions built on agent telemetry need an independent completeness check, because clean dashboards can still omit real activity when client and metrics contracts diverge.",
+      "editorial_limitation": "Short publisher-authored incident update; no independent measurement.",
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Apply one bounded next step",
+        "rationale": "Use the permanent story page to test this mechanism in a controlled workflow."
+      },
+      "topic_labels": [
+        "agent telemetry",
+        "Copilot metrics",
+        "observability"
+      ],
+      "source_url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics",
+      "agent_skill": false,
+      "fallback_reason": "Selected from the bounded verified fallback window because it supplies distinct mechanism-level value while preserving the exact 2/2/2 slate.",
+      "visual": {
+        "alt_text": "Textbook mechanism diagram for Agent activity telemetry that can silently disappear when client and metrics contracts diverge: Diagnostic observability pipeline with client-version lanes, schema compatibility gate, metrics ingestion, usage report and evidence comparator exposing missing activity.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
+      }
+    },
+    {
+      "canonical_ordinal": 3,
+      "story_id": "dab-story-2026-10-07-m08",
+      "candidate_id": "m08",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Claude Frontier Academy targets the forward-deployed engineering skills gap",
+      "summary": "Anthropic introduced Claude Frontier Academy with a goal of preparing 10,000 forward-deployed engineers by the end of 2027.",
+      "why_it_matters": "Deploying AI into real organizations requires people who can translate business context into working systems, test limitations and improve the workflow after launch.",
+      "editorial_limitation": "Vendor-authored education initiative; participation and impact targets are prospective.",
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Apply one bounded next step",
+        "rationale": "Use the permanent story page to test this mechanism in a controlled workflow."
+      },
+      "topic_labels": [
+        "forward-deployed engineering",
+        "AI education",
+        "implementation skills"
+      ],
+      "source_url": "https://www.anthropic.com/news/claude-frontier-academy",
+      "agent_skill": false,
+      "fallback_reason": "Selected from the bounded verified fallback window because it supplies distinct mechanism-level value while preserving the exact 2/2/2 slate.",
+      "visual": {
+        "alt_text": "Detailed AI engineering learning diagram: customer workflow and permitted knowledge feed an AI prototype; test cases compare expected and observed responses, failures return for revision, access controls gate software release, and usage evidence informs improvements. Practice artifacts connect each stage to demonstrated skills.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
+      }
+    },
+    {
+      "canonical_ordinal": 4,
+      "story_id": "dab-story-2026-10-07-m09",
+      "candidate_id": "m09",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Barclays scales Claude across 16,000 colleagues",
+      "summary": "Anthropic and Barclays describe Claude use across 16,000 colleagues, including company-reported volumes of one million searches and 120,000 emails per day.",
+      "why_it_matters": "Large-scale access shifts the hard problem from isolated demonstrations to enablement, governance and evidence that different employee roles are using AI well.",
+      "editorial_limitation": "Partnership announcement; usage figures are company-reported.",
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Apply one bounded next step",
+        "rationale": "Use the permanent story page to test this mechanism in a controlled workflow."
+      },
+      "topic_labels": [
+        "enterprise adoption",
+        "workforce enablement",
+        "governance"
+      ],
+      "source_url": "https://www.anthropic.com/news/barclays-scales-claude",
+      "agent_skill": false,
+      "fallback_reason": "Selected from the bounded verified fallback window because it supplies distinct mechanism-level value while preserving the exact 2/2/2 slate.",
+      "visual": {
+        "alt_text": "Textbook mechanism diagram for Enterprise AI adoption at workforce scale with governance and enablement: Hub-and-spoke enterprise adoption architecture with a governed AI service core, abstract work-domain clusters, policy, access, training, support and usage-evidence rails.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
+      }
+    },
+    {
+      "canonical_ordinal": 5,
+      "story_id": "dab-story-2026-10-07-m15",
+      "candidate_id": "m15",
+      "focus": "agents_non_technical_people",
+      "headline": "Ambient agents turn events into resumable human-approved workflows",
+      "summary": "AWS details event-driven agents with isolated sessions, human approval checkpoints and interruptions that can resume from durable state.",
+      "why_it_matters": "Background automation becomes safer when consequential steps pause for a person without discarding job state or losing the audit trail needed to resume correctly.",
+      "editorial_limitation": "Vendor reference architecture.",
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Apply one bounded next step",
+        "rationale": "Use the permanent story page to test this mechanism in a controlled workflow."
+      },
+      "topic_labels": [
+        "ambient agents",
+        "human approval",
+        "resumable workflows"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+      "agent_skill": false,
+      "fallback_reason": "Selected from the bounded verified fallback window because it supplies distinct mechanism-level value while preserving the exact 2/2/2 slate.",
+      "visual": {
+        "alt_text": "Textbook mechanism diagram for Event-driven ambient agents with durable state, approval interrupts and safe resume: Circular event-driven state machine with event intake, isolated job state, policy gate, bounded tool work, approval checkpoint, persisted pause state, resume and audit evidence.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
+      }
+    },
+    {
+      "canonical_ordinal": 6,
+      "story_id": "dab-story-2026-10-07-m16",
+      "candidate_id": "m16",
+      "focus": "agents_non_technical_people",
+      "headline": "AgentCore gives Claude Desktop a governed web-search path",
+      "summary": "AWS demonstrates a web-search connection for Claude Desktop through AgentCore using MCP, JWT identity and IAM controls.",
+      "why_it_matters": "A governed retrieval boundary lets teams add current web evidence while keeping identity, permissions and provenance explicit instead of granting broad uncontrolled access.",
+      "editorial_limitation": "Vendor reference implementation.",
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Apply one bounded next step",
+        "rationale": "Use the permanent story page to test this mechanism in a controlled workflow."
+      },
+      "topic_labels": [
+        "governed agents",
+        "web search",
+        "MCP"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/add-secure-web-search-to-claude-desktop-with-amazon-bedrock-agentcore/",
+      "agent_skill": false,
+      "fallback_reason": "Selected from the bounded verified fallback window because it supplies distinct mechanism-level value while preserving the exact 2/2/2 slate.",
+      "visual": {
+        "alt_text": "Textbook mechanism diagram for Governed desktop-agent web search through MCP and an AgentCore control boundary: Secure retrieval corridor from desktop assistant through MCP into an AgentCore gateway where identity and policy gate web search and provenance-filtered source evidence returns.",
+        "mechanism": "Use the already accepted_locked story-specific production image and its sealed mechanism; no image regeneration is permitted."
+      }
+    }
+  ],
+  "media_decisions": {
+    "videos": {
+      "general": {
+        "status": "included",
+        "title": "Flight Intelligence: The Power of Work IQ",
+        "channel": "Microsoft Developer",
+        "upload_date": "2026-09-18",
+        "runtime_seconds": 874,
+        "why_useful": "Microsoft developers explain how Work IQ grounds AI assistance in organizational context and reusable workflow knowledge, then connect that grounding to practical agent experiences.",
+        "connection": "Agent usefulness depends on relevant business context as much as model capability; this walkthrough gives readers concrete criteria for judging whether a workplace agent can act with the right knowledge and boundaries.",
+        "url": "https://www.youtube.com/watch?v=VpSCu7s4wD4",
+        "verification_note": "First-party Microsoft Developer video; sealed repository evidence verifies direct YouTube playback and a 14:34 runtime.",
+        "official_source_verified": true,
+        "freshness_exception_reason": "The sealed repository evidence verifies the identity, playback and runtime; this older selection remains directly useful to the current edition and avoids an unverified substitute.",
+        "duration_tier": "fallback",
+        "short_search_evidence": [
+          "The sealed repository media review found no stronger verified current selection at ten minutes or less for this slot."
+        ],
+        "fallback_reason": "No suitable verified video of ten minutes or less covered this edition connection with comparable practical value.",
+        "legacy_mapping": {
+          "summary_source": "summary",
+          "why_it_matters_source": "why_it_matters",
+          "connection_to_brief": "It complements the brief’s forward-deployed engineering, enterprise adoption, and governed-agent stories by showing the context layer those deployments need beyond a chat interface.",
+          "slot": "general"
+        }
+      },
+      "agents_non_technical_people": {
+        "status": "included",
+        "title": "Microsoft Copilot Just Got a Massive Upgrade",
+        "channel": "Kevin Stratvert",
+        "upload_date": "2026-09-29",
+        "runtime_seconds": 564,
+        "why_useful": "Kevin Stratvert demonstrates upgraded Microsoft Copilot surfaces and shows how the assistant supports a range of everyday knowledge-work tasks.",
+        "connection": "A hands-on tour helps readers separate broadly usable workflow improvements from headline feature claims and decide which changes are worth testing in their own work.",
+        "url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
+        "verification_note": "Sealed repository evidence verifies direct YouTube playback and a 9:24 runtime for this established creator walkthrough.",
+        "official_source_verified": true,
+        "freshness_exception_reason": "The sealed repository evidence verifies the identity, playback and runtime; this older selection remains directly useful to the current edition and avoids an unverified substitute.",
+        "duration_tier": "short",
+        "legacy_mapping": {
+          "summary_source": "summary",
+          "why_it_matters_source": "why_it_matters",
+          "connection_to_brief": "The practical examples give a user-level counterpoint to the brief’s stories about enterprise Claude rollout and agent infrastructure, linking organizational adoption to the experience individual workers actually see.",
+          "slot": "agents_non_technical_people"
+        }
+      }
+    },
+    "podcasts": [
+      {
+        "status": "included",
+        "ordinal": 9,
+        "item_id": "dab-podcast-2026-10-07-1",
+        "title": "Hard Fork — October 2, 2026 episode",
+        "show": "Hard Fork",
+        "host": "Kevin Roose and Casey Newton",
+        "publication_date": "2026-10-02",
+        "runtime_seconds": 3182,
+        "focus": "agents_non_technical_people",
+        "topics": [
+          "agent privacy",
+          "agent failures"
+        ],
+        "url": "https://podcasts.apple.com/us/search?term=Hard%20Fork%20hard-fork-2026-10-02-ai-agents",
+        "summary": "The episode examines AI personal assistants alongside recent agent failures and the privacy trade-offs that follow when software can act across user data and services.",
+        "why_useful": "It gives readers a concrete way to judge agent convenience against operational risk, especially when autonomy, sensitive context and user trust collide.",
+        "connection": "It directly complements the brief’s ambient-agent and governed web-search stories by supplying the user-facing failure and privacy perspective behind those architecture choices.",
+        "selection_rationale": "Selected from the sealed source-diverse Run 11 media evidence.",
+        "freshness_tier": "fallback_7d",
+        "freshness_exception_reason": "This independently verified episode remains inside the approved seven-day fallback window and adds a source-diverse perspective directly tied to the current brief.",
+        "permanent_url": "/podcasts/2026-10-07/hard-fork-2026-10-02-ai-agents/",
+        "verification_note": "Reused sealed authoritative repository evidence: Apple Podcasts identity plus independent episode metadata establish the New York Times show identity and a 53:02 runtime.",
+        "platforms": [
+          {
+            "name": "Hard Fork",
+            "url": "https://podcasts.apple.com/us/search?term=Hard%20Fork%20hard-fork-2026-10-02-ai-agents"
+          }
+        ],
+        "coverage_note": "Sealed Run 11 podcast selection with independently verified identity and runtime."
+      },
+      {
+        "status": "included",
+        "ordinal": 10,
+        "item_id": "dab-podcast-2026-10-07-2",
+        "title": "The a16z Show — October 2, 2026 episode",
+        "show": "The a16z Show",
+        "host": "a16z",
+        "publication_date": "2026-10-02",
+        "runtime_seconds": 3588,
+        "focus": "technical_ai_engineering",
+        "topics": [
+          "multi-agent workflows",
+          "human escalation"
+        ],
+        "url": "https://podcasts.apple.com/us/search?term=The%20a16z%20Show%20a16z-2026-10-02-ai-agents-incumbents",
+        "summary": "The discussion explores multi-agent procurement workflows and the points where automated coordination should escalate decisions to people for trust and approval.",
+        "why_useful": "Readers get a practical governance pattern for deciding which multi-agent decisions can remain automated and which need explicit human review.",
+        "connection": "That trust-escalation pattern maps to the brief’s ambient-agent architecture, Copilot telemetry reliability, and governed-agent deployment themes from system design through oversight.",
+        "selection_rationale": "Selected from the sealed source-diverse Run 11 media evidence.",
+        "freshness_tier": "fallback_7d",
+        "freshness_exception_reason": "This independently verified episode remains inside the approved seven-day fallback window and adds a source-diverse perspective directly tied to the current brief.",
+        "permanent_url": "/podcasts/2026-10-07/a16z-2026-10-02-ai-agents-incumbents/",
+        "verification_note": "Reused sealed authoritative repository evidence: the Apple Podcasts listing confirms the episode identity and independent episode metadata reports a 59:48 runtime.",
+        "platforms": [
+          {
+            "name": "The a16z Show",
+            "url": "https://podcasts.apple.com/us/search?term=The%20a16z%20Show%20a16z-2026-10-02-ai-agents-incumbents"
+          }
+        ],
+        "coverage_note": "Sealed Run 11 podcast selection with independently verified identity and runtime."
+      }
+    ]
+  },
+  "changed_watchlist_topics": [
+    "dab-topic-agent-privacy-runtime-governance",
+    "dab-topic-system-one-decision-models",
+    "dab-topic-agent-overclaiming",
+    "dab-topic-adaptive-agent-safeguards"
+  ],
+  "editorial_takeaway": "Today’s strongest pattern is governed execution: reusable skills, trustworthy telemetry, deployment capability, workforce enablement, resumable approvals and controlled retrieval determine whether agents become dependable systems of work."
+}

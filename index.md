@@ -119,7 +119,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook mechanism diagram for Practical learning pipeline for forward-deployed AI engineering: Technical academy blueprint moving from capability modules through sandbox exercises, customer-context simulations, deployment patterns and evidence review into a competency matrix.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m08-replacement-v2.png?v=373e15a6b761)
+![Detailed AI engineering learning diagram: customer workflow and permitted knowledge feed an AI prototype; test cases compare expected and observed responses, failures return for revision, access controls gate software release, and usage evidence informs improvements. Practice artifacts connect each stage to demonstrated skills.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m08-replacement-v3.png?v=60714d42b95a)
 
 **Summary:** Anthropic introduced Claude Frontier Academy with a goal of preparing 10,000 forward-deployed engineers by the end of 2027.
 

@@ -137,13 +137,13 @@
       "headline": "Claude Frontier Academy targets the forward-deployed engineering skills gap",
       "event_date": "2026-10-02",
       "image": {
-        "path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m08-replacement-v2.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m08-replacement-v2.png?v=373e15a6b761",
-        "alt": "Textbook mechanism diagram for Practical learning pipeline for forward-deployed AI engineering: Technical academy blueprint moving from capability modules through sandbox exercises, customer-context simulations, deployment patterns and evidence review into a competency matrix.",
-        "width": 1200,
-        "height": 630,
+        "path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m08-replacement-v3.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m08-replacement-v3.png?v=60714d42b95a",
+        "alt": "Detailed AI engineering learning diagram: customer workflow and permitted knowledge feed an AI prototype; test cases compare expected and observed responses, failures return for revision, access controls gate software release, and usage evidence informs improvements. Practice artifacts connect each stage to demonstrated skills.",
+        "width": 1730,
+        "height": 909,
         "kind": "editorial_explainer",
-        "cache_key": "oct7-m08-373e15a6b761"
+        "cache_key": "oct7-m08-60714d42b95a"
       },
       "summary": "Anthropic introduced Claude Frontier Academy with a goal of preparing 10,000 forward-deployed engineers by the end of 2027.",
       "why_it_matters": "Deploying AI into real organizations requires people who can translate business context into working systems, test limitations and improve the workflow after launch.",
