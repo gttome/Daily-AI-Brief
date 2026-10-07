@@ -17,6 +17,8 @@ export const gitBlobSha1=bytes=>createHash('sha1').update(Buffer.from('blob '+by
 const candidateEntries=manifest=>Object.entries(manifest||{}).filter(([key,value])=>!key.startsWith('_')&&value&&typeof value==='object');
 const pass=v=>String(v||'').toLowerCase()==='pass';
 const text=(v,min=1)=>typeof v==='string'&&v.trim().length>=min;
+const TARGET_CANVAS_RATIO=1200/630;
+export const acceptedImageCanvas=({pass:inspectionPass,width=0,height=0}={})=>inspectionPass===true&&width>=1200&&height>=630&&Math.abs(width/height-TARGET_CANVAS_RATIO)<=0.01;
 
 export function reviewedImages(edition, root) {
   if (edition.brief_date < '2026-09-10') return {legacy:true, assets:[], errors:[]};
@@ -42,7 +44,7 @@ export function reviewedImages(edition, root) {
       const bytes=fs.readFileSync(filename),hash=sha256(bytes),ext=path.extname(i.asset).toLowerCase();
       const inspection=ext==='.webp'?inspectWebp(bytes,{minimumWidth:1200,minimumHeight:630}):inspectPng(bytes,{minimumWidth:1200,minimumHeight:630});
       const width=inspection.width||0,height=inspection.height||0;
-      if(!['.png','.webp'].includes(ext)||!inspection.pass||width!==1200||height!==630)errors.push(`Invalid final image canvas: ${i.asset}`);
+      if(!['.png','.webp'].includes(ext)||!acceptedImageCanvas(inspection))errors.push(`Invalid final image canvas: ${i.asset}`);
       if(hash!==i.replacement_sha256)errors.push(`Reviewed image bytes changed: ${i.asset}`);
       hashes.add(hash);assets.push({path:i.asset,sha256:hash,bytes:bytes.length,width,height,format:ext.slice(1)});
     }catch{errors.push(`Missing or unreadable image: ${i.asset}`);}
@@ -213,8 +215,8 @@ export function reviewedHandoffImages(edition, root, manifestPath, {mode='combin
     if(!filename.startsWith(base+path.sep)||!String(i.path||'').startsWith('briefs/images/'+edition.brief_date+'/')){errors.push('Unsafe or cross-edition handoff asset path');continue;}
     try{
       const bytes=fs.readFileSync(filename),hash=sha256(bytes),blob=gitBlobSha1(bytes),ext=path.extname(i.path).toLowerCase(),inspection=inspectHandoffAsset(bytes,ext);
-      const width=inspection.width||0,height=inspection.height||0,ratio=height?width/height:0,target=1200/630;
-      if(!['.png','.webp','.svg'].includes(ext)||!inspection.pass||width!==1200||height!==630||Math.abs(ratio-target)>0.001)errors.push('Invalid accepted handoff image canvas: '+i.path);
+      const width=inspection.width||0,height=inspection.height||0;
+      if(!['.png','.webp','.svg'].includes(ext)||!acceptedImageCanvas(inspection))errors.push('Invalid accepted handoff image canvas: '+i.path);
       if(i.sha256&&i.sha256!==hash)errors.push('Accepted handoff image bytes changed: '+i.path);
       if(edition.brief_date>=EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE){
         if(i.git_blob_sha!==blob)errors.push('Accepted handoff image Git blob identity changed: '+i.path);
