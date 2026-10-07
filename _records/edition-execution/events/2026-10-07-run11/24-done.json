@@ -1,0 +1,26 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_key": "2026-10-07-run11",
+  "task_id": "24",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-07T17:02:00.000Z",
+  "writer_generation": 63,
+  "owner_id": "chatgpt-watchdog-a-20261007T165930Z",
+  "reason_code": "EXISTING_EXACT_MERGE_RECONCILED",
+  "operation": "consume_existing_exact_merge",
+  "proof": {
+    "request_key": "abf7dbaed3203fc0af72ea20606dfe6d669a79e61c826c249e89ab69472e483f",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/24-abf7dbaed3203fc0af72ea20606dfe6d669a79e61c826c249e89ab69472e483f.json",
+    "publication_pr": 511,
+    "publication_pr_head_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+    "exact_head_ci_run_id": 37633863433,
+    "exact_head_ci_conclusion": "success",
+    "publication_merge_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+    "merged_at": "2026-10-07T14:08:49Z",
+    "accepted_locked_images": 6
+  },
+  "handoff": "HANDOFF_TO_SUPERVISOR_FOR_TASK_25"
+}
