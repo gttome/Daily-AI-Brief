@@ -2,7 +2,7 @@
 layout: default
 title: "Android CLI packages device workflows as reusable agent skills"
 description: "Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface."
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m01.png?v=b38f73955e21"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m01-replacement-v2.png?v=4342657696cc"
 permalink: /stories/2026-10-07/android-cli-packages-device-workflows-as-reusable-agent-skills/
 brief_date: 2026-10-07
 story_id: dab-story-2026-10-07-m01
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook mechanism diagram for Reusable Android CLI agent skills and device automation: Layered mobile-automation workshop: reusable skill capsules feed a command rail that orchestrates device-state inspection, a live screen stream, bounded test actions and signed result evidence.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m01.png?v=b38f73955e21)
+![Textbook mechanism diagram for Reusable Android CLI agent skills and device automation: Layered mobile-automation workshop: reusable skill capsules feed a command rail that orchestrates device-state inspection, a live screen stream, bounded test actions and signed result evidence.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m01-replacement-v2.png?v=4342657696cc)
 
 **Summary:** Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface.
 

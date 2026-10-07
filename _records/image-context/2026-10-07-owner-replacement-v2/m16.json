@@ -1,0 +1,12 @@
+{
+  "schema_version": "post-publication-image-context-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-07-m16"
+  ],
+  "includes_edition_context": false,
+  "prompt": "Owner-selected post-publication replacement for dab-story-2026-10-07-m16; generated in a clean ChatGPT native-image session under the October 7 premium textbook mechanism-illustration requirements.",
+  "generation_source": "ChatGPT native image generation",
+  "correction_scope": "post_publication_image_quality",
+  "run11_generation_attempt": false
+}

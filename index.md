@@ -35,7 +35,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook mechanism diagram for Event-driven ambient agents with durable state, approval interrupts and safe resume: Circular event-driven state machine with event intake, isolated job state, policy gate, bounded tool work, approval checkpoint, persisted pause state, resume and audit evidence.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m15.png?v=1700d4573144)
+![Textbook mechanism diagram for Event-driven ambient agents with durable state, approval interrupts and safe resume: Circular event-driven state machine with event intake, isolated job state, policy gate, bounded tool work, approval checkpoint, persisted pause state, resume and audit evidence.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m15-replacement-v2.png?v=61d914c7c05e)
 
 **Summary:** AWS details event-driven agents with isolated sessions, human approval checkpoints and interruptions that can resume from durable state.
 
@@ -77,7 +77,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook mechanism diagram for Governed desktop-agent web search through MCP and an AgentCore control boundary: Secure retrieval corridor from desktop assistant through MCP into an AgentCore gateway where identity and policy gate web search and provenance-filtered source evidence returns.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m16.png?v=3981d4b3f8bf)
+![Textbook mechanism diagram for Governed desktop-agent web search through MCP and an AgentCore control boundary: Secure retrieval corridor from desktop assistant through MCP into an AgentCore gateway where identity and policy gate web search and provenance-filtered source evidence returns.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m16-replacement-v2.png?v=270308bb4611)
 
 **Summary:** AWS demonstrates a web-search connection for Claude Desktop through AgentCore using MCP, JWT identity and IAM controls.
 
@@ -119,7 +119,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook mechanism diagram for Practical learning pipeline for forward-deployed AI engineering: Technical academy blueprint moving from capability modules through sandbox exercises, customer-context simulations, deployment patterns and evidence review into a competency matrix.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m08.png?v=83f1ac8e921e)
+![Textbook mechanism diagram for Practical learning pipeline for forward-deployed AI engineering: Technical academy blueprint moving from capability modules through sandbox exercises, customer-context simulations, deployment patterns and evidence review into a competency matrix.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m08-replacement-v2.png?v=373e15a6b761)
 
 **Summary:** Anthropic introduced Claude Frontier Academy with a goal of preparing 10,000 forward-deployed engineers by the end of 2027.
 
@@ -161,7 +161,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook mechanism diagram for Enterprise AI adoption at workforce scale with governance and enablement: Hub-and-spoke enterprise adoption architecture with a governed AI service core, abstract work-domain clusters, policy, access, training, support and usage-evidence rails.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m09.png?v=2dba6c9617ea)
+![Textbook mechanism diagram for Enterprise AI adoption at workforce scale with governance and enablement: Hub-and-spoke enterprise adoption architecture with a governed AI service core, abstract work-domain clusters, policy, access, training, support and usage-evidence rails.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m09-replacement-v2.png?v=f55eb2351745)
 
 **Summary:** Anthropic and Barclays describe Claude use across 16,000 colleagues, including company-reported volumes of one million searches and 120,000 emails per day.
 
@@ -203,7 +203,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook mechanism diagram for Reusable Android CLI agent skills and device automation: Layered mobile-automation workshop: reusable skill capsules feed a command rail that orchestrates device-state inspection, a live screen stream, bounded test actions and signed result evidence.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m01.png?v=b38f73955e21)
+![Textbook mechanism diagram for Reusable Android CLI agent skills and device automation: Layered mobile-automation workshop: reusable skill capsules feed a command rail that orchestrates device-state inspection, a live screen stream, bounded test actions and signed result evidence.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m01-replacement-v2.png?v=4342657696cc)
 
 **Summary:** Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface.
 
@@ -245,7 +245,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook mechanism diagram for Agent activity telemetry that can silently disappear when client and metrics contracts diverge: Diagnostic observability pipeline with client-version lanes, schema compatibility gate, metrics ingestion, usage report and evidence comparator exposing missing activity.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m02.png?v=7f52e3dbf06d)
+![Textbook mechanism diagram for Agent activity telemetry that can silently disappear when client and metrics contracts diverge: Diagnostic observability pipeline with client-version lanes, schema compatibility gate, metrics ingestion, usage report and evidence comparator exposing missing activity.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m02-replacement-v2.png?v=3b869aa8621a)
 
 **Summary:** GitHub says an SDK migration caused some Copilot agent activity to appear unattributed in usage metrics and advises updating to VS Code 1.139 or later.
 

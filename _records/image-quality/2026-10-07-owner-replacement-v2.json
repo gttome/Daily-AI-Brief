@@ -1,0 +1,569 @@
+{
+  "schema_version": "2.0.0",
+  "record_kind": "editorial_image_quality",
+  "scope": "Owner-requested post-publication six-image visual-quality correction",
+  "edition_date": "2026-10-07",
+  "edition_id": "dab-edition-2026-10-07",
+  "original_production_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+  "original_finalization_sha": "6e52d6d8a3e2ebba47b3dc4e3d02c28dda190713",
+  "run11_closure_preserved": true,
+  "correction_type": "post-publication image replacement",
+  "generation_source": "ChatGPT native image generation",
+  "normalization": "Owner-selected 1200x630 PNG inputs; no regeneration or byte transformation during repository upload",
+  "reviewed_at": "2026-10-07T16:40:00.000Z",
+  "review_method": "Owner-selected replacements visually inspected against the October 7 premium textbook mechanism-illustration standard; exact PNG structure, dimensions, unique byte identity, story specificity, information density and explanatory mechanism were confirmed before protected publication.",
+  "review_status": "complete",
+  "image_gate": "pass",
+  "asset_policy": "owner_selected_post_publication_replacement",
+  "accepted_locked": 6,
+  "benchmark_profile": "sep09-sep10-premium3-v1",
+  "benchmark_profile_path": "_records/image-quality/benchmark-profile-v1.json",
+  "set_review": {
+    "result": "PASS",
+    "composition_differentiation": "PASS",
+    "layout_differentiation": "PASS",
+    "diagram_grammar_differentiation": "PASS",
+    "information_hierarchy_differentiation": "PASS",
+    "annotation_pattern_differentiation": "PASS",
+    "assessment": "The six owner-selected replacements use distinct mechanism-rich compositions, explanatory grammars and information hierarchies while restoring the premium high-density textbook benchmark rejected in the original published set."
+  },
+  "images": [
+    {
+      "story_id": "dab-story-2026-10-07-m01",
+      "candidate_id": "m01",
+      "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m01-replacement-v2.png",
+      "asset_hash": "4342657696cccaa90c67084506797e65682d07975279d439b27c623a3f86920f",
+      "git_blob_sha": "b50a134644ab5ea89bf7fad411e361bedd3045e2",
+      "bytes": 965953,
+      "width": 1200,
+      "height": 630,
+      "format": "png",
+      "cache_key": "oct7-m01-4342657696cc",
+      "asset_version": "oct7-m01-replacement-v2",
+      "supersedes": {
+        "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m01.png",
+        "asset_hash": "b38f73955e216366916b86bc91465608e3d6215b2703b69407dd00980046ee30",
+        "cache_key": "oct7-m01-b38f73955e21",
+        "asset_version": "oct7-m01-accepted-v1"
+      },
+      "deployment_verification_required": true,
+      "owner_selected": true,
+      "generation_context": {
+        "mode": "single_story",
+        "story_ids": [
+          "dab-story-2026-10-07-m01"
+        ],
+        "includes_edition_context": false,
+        "reviewed_subject_match": "pass",
+        "unrelated_status_artwork": false,
+        "request_path": "_records/image-context/2026-10-07-owner-replacement-v2/m01.json",
+        "request_sha256": "123c31a2b3b65add7095c4401c2660ca3981ba932b6f963bb08b77286fb405f4"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "file_exists": "PASS",
+          "file_integrity": "PASS",
+          "format": "PASS",
+          "dimensions": "PASS",
+          "expected_path": "PASS",
+          "clipping_corruption": "PASS",
+          "byte_uniqueness": "PASS",
+          "story_identity": "PASS",
+          "accessibility": "PASS",
+          "asset_hash": "PASS",
+          "git_blob_identity": "PASS",
+          "lock_state": "PASS",
+          "replacement_identity": "PASS"
+        }
+      },
+      "overall_gate": "pass",
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "benchmark_comparison": {
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "annotation_richness": "PASS",
+          "visual_depth": "PASS",
+          "hierarchy": "PASS",
+          "composition": "PASS",
+          "story_specificity": "PASS",
+          "differentiation": "PASS"
+        },
+        "story_specificity": "PASS",
+        "information_density": "PASS",
+        "explanatory_mechanism": "PASS",
+        "annotation_quality": "PASS",
+        "depth_hierarchy": "PASS",
+        "composition": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false,
+        "meaningful_components": [
+          "reusable skill library",
+          "CLI command surface",
+          "device stream",
+          "app state",
+          "bounded test action",
+          "result evidence",
+          "device execution rig",
+          "feedback loop"
+        ],
+        "composition_signature": "owner-m01-composition-v2",
+        "layout_signature": "linear-workshop-corridor",
+        "diagram_grammar": "toolchain-mechanism",
+        "hierarchy_signature": "skill-to-evidence",
+        "annotation_pattern_signature": "stage-labels-and-control-arrows",
+        "assessment": "Owner-selected m01 replacement is a high-density, story-specific mechanism illustration with layered explanatory structure, strong visual hierarchy, multiple meaningful components and no sparse/basic fallback treatment."
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-07-m02",
+      "candidate_id": "m02",
+      "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m02-replacement-v2.png",
+      "asset_hash": "3b869aa8621a5ee03d26eb69b512616da43e394dd555720d2651a4964173762a",
+      "git_blob_sha": "b8f3b3c637573f2bbad664e6064b8dcb7f1937e8",
+      "bytes": 773489,
+      "width": 1200,
+      "height": 630,
+      "format": "png",
+      "cache_key": "oct7-m02-3b869aa8621a",
+      "asset_version": "oct7-m02-replacement-v2",
+      "supersedes": {
+        "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m02.png",
+        "asset_hash": "7f52e3dbf06daa6964ee3ac8d0ac6d29a64717603e7250639abb83fb6343fb98",
+        "cache_key": "oct7-m02-7f52e3dbf06d",
+        "asset_version": "oct7-m02-accepted-v1"
+      },
+      "deployment_verification_required": true,
+      "owner_selected": true,
+      "generation_context": {
+        "mode": "single_story",
+        "story_ids": [
+          "dab-story-2026-10-07-m02"
+        ],
+        "includes_edition_context": false,
+        "reviewed_subject_match": "pass",
+        "unrelated_status_artwork": false,
+        "request_path": "_records/image-context/2026-10-07-owner-replacement-v2/m02.json",
+        "request_sha256": "f23be8bf843d1af9b1b463d5a7431982d2b38e0940d15711f24ec49d4d2543d5"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "file_exists": "PASS",
+          "file_integrity": "PASS",
+          "format": "PASS",
+          "dimensions": "PASS",
+          "expected_path": "PASS",
+          "clipping_corruption": "PASS",
+          "byte_uniqueness": "PASS",
+          "story_identity": "PASS",
+          "accessibility": "PASS",
+          "asset_hash": "PASS",
+          "git_blob_identity": "PASS",
+          "lock_state": "PASS",
+          "replacement_identity": "PASS"
+        }
+      },
+      "overall_gate": "pass",
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "benchmark_comparison": {
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "annotation_richness": "PASS",
+          "visual_depth": "PASS",
+          "hierarchy": "PASS",
+          "composition": "PASS",
+          "story_specificity": "PASS",
+          "differentiation": "PASS"
+        },
+        "story_specificity": "PASS",
+        "information_density": "PASS",
+        "explanatory_mechanism": "PASS",
+        "annotation_quality": "PASS",
+        "depth_hierarchy": "PASS",
+        "composition": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false,
+        "meaningful_components": [
+          "agent activity source",
+          "client version lanes",
+          "schema compatibility gate",
+          "metrics ingest",
+          "usage report",
+          "missing-signal branch",
+          "evidence comparator",
+          "recovery path"
+        ],
+        "composition_signature": "owner-m02-composition-v2",
+        "layout_signature": "dual-lane-diagnostic",
+        "diagram_grammar": "observability-pipeline",
+        "hierarchy_signature": "client-to-metrics-evidence",
+        "annotation_pattern_signature": "diagnostic-labels-and-branch-markers",
+        "assessment": "Owner-selected m02 replacement is a high-density, story-specific mechanism illustration with layered explanatory structure, strong visual hierarchy, multiple meaningful components and no sparse/basic fallback treatment."
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-07-m08",
+      "candidate_id": "m08",
+      "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m08-replacement-v2.png",
+      "asset_hash": "373e15a6b761b3849a6cdac79702b548ce54f7106a9f4af398aa803f999c2f45",
+      "git_blob_sha": "be9c48f5cd2b309e6dd860be4d667f99769050c5",
+      "bytes": 938982,
+      "width": 1200,
+      "height": 630,
+      "format": "png",
+      "cache_key": "oct7-m08-373e15a6b761",
+      "asset_version": "oct7-m08-replacement-v2",
+      "supersedes": {
+        "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m08.png",
+        "asset_hash": "83f1ac8e921e2e4965fb0deac1ac0a691f1101f63dc85b91e9196d242412e9af",
+        "cache_key": "oct7-m08-83f1ac8e921e",
+        "asset_version": "oct7-m08-accepted-v1"
+      },
+      "deployment_verification_required": true,
+      "owner_selected": true,
+      "generation_context": {
+        "mode": "single_story",
+        "story_ids": [
+          "dab-story-2026-10-07-m08"
+        ],
+        "includes_edition_context": false,
+        "reviewed_subject_match": "pass",
+        "unrelated_status_artwork": false,
+        "request_path": "_records/image-context/2026-10-07-owner-replacement-v2/m08.json",
+        "request_sha256": "ce032c1a7612a917199207b11630dacc76e011075cf74981a2e6a44b0c3661eb"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "file_exists": "PASS",
+          "file_integrity": "PASS",
+          "format": "PASS",
+          "dimensions": "PASS",
+          "expected_path": "PASS",
+          "clipping_corruption": "PASS",
+          "byte_uniqueness": "PASS",
+          "story_identity": "PASS",
+          "accessibility": "PASS",
+          "asset_hash": "PASS",
+          "git_blob_identity": "PASS",
+          "lock_state": "PASS",
+          "replacement_identity": "PASS"
+        }
+      },
+      "overall_gate": "pass",
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "benchmark_comparison": {
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "annotation_richness": "PASS",
+          "visual_depth": "PASS",
+          "hierarchy": "PASS",
+          "composition": "PASS",
+          "story_specificity": "PASS",
+          "differentiation": "PASS"
+        },
+        "story_specificity": "PASS",
+        "information_density": "PASS",
+        "explanatory_mechanism": "PASS",
+        "annotation_quality": "PASS",
+        "depth_hierarchy": "PASS",
+        "composition": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false,
+        "meaningful_components": [
+          "core capability modules",
+          "sandbox exercises",
+          "customer context",
+          "deployment patterns",
+          "field exercise",
+          "evidence review",
+          "competency matrix",
+          "learning feedback"
+        ],
+        "composition_signature": "owner-m08-composition-v2",
+        "layout_signature": "curriculum-pipeline",
+        "diagram_grammar": "learning-progression-map",
+        "hierarchy_signature": "skills-to-field-competency",
+        "annotation_pattern_signature": "module-labels-and-progress-connectors",
+        "assessment": "Owner-selected m08 replacement is a high-density, story-specific mechanism illustration with layered explanatory structure, strong visual hierarchy, multiple meaningful components and no sparse/basic fallback treatment."
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-07-m09",
+      "candidate_id": "m09",
+      "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m09-replacement-v2.png",
+      "asset_hash": "f55eb23517451a03c75d47cbee6f39f56ab8677fb86a34d9d73fe2704a5366bd",
+      "git_blob_sha": "889f76a9b5ebe8174c2db88316ea69cec3e462b4",
+      "bytes": 976108,
+      "width": 1200,
+      "height": 630,
+      "format": "png",
+      "cache_key": "oct7-m09-f55eb2351745",
+      "asset_version": "oct7-m09-replacement-v2",
+      "supersedes": {
+        "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m09.png",
+        "asset_hash": "2dba6c9617eae21320f8b6dc3495f0eb2f07a9b270a3507541a240ddde499613",
+        "cache_key": "oct7-m09-2dba6c9617ea",
+        "asset_version": "oct7-m09-accepted-v1"
+      },
+      "deployment_verification_required": true,
+      "owner_selected": true,
+      "generation_context": {
+        "mode": "single_story",
+        "story_ids": [
+          "dab-story-2026-10-07-m09"
+        ],
+        "includes_edition_context": false,
+        "reviewed_subject_match": "pass",
+        "unrelated_status_artwork": false,
+        "request_path": "_records/image-context/2026-10-07-owner-replacement-v2/m09.json",
+        "request_sha256": "26614b2a4a42bed4214b8f9b6d9402f6bfe1f35450805fa19e7c7cd76e358691"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "file_exists": "PASS",
+          "file_integrity": "PASS",
+          "format": "PASS",
+          "dimensions": "PASS",
+          "expected_path": "PASS",
+          "clipping_corruption": "PASS",
+          "byte_uniqueness": "PASS",
+          "story_identity": "PASS",
+          "accessibility": "PASS",
+          "asset_hash": "PASS",
+          "git_blob_identity": "PASS",
+          "lock_state": "PASS",
+          "replacement_identity": "PASS"
+        }
+      },
+      "overall_gate": "pass",
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "benchmark_comparison": {
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "annotation_richness": "PASS",
+          "visual_depth": "PASS",
+          "hierarchy": "PASS",
+          "composition": "PASS",
+          "story_specificity": "PASS",
+          "differentiation": "PASS"
+        },
+        "story_specificity": "PASS",
+        "information_density": "PASS",
+        "explanatory_mechanism": "PASS",
+        "annotation_quality": "PASS",
+        "depth_hierarchy": "PASS",
+        "composition": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false,
+        "meaningful_components": [
+          "work-domain clusters",
+          "access policy",
+          "governed AI service core",
+          "training rail",
+          "support rail",
+          "usage evidence",
+          "enablement loop",
+          "governance feedback"
+        ],
+        "composition_signature": "owner-m09-composition-v2",
+        "layout_signature": "hub-spoke-governance",
+        "diagram_grammar": "enterprise-adoption-architecture",
+        "hierarchy_signature": "governed-core-to-workforce",
+        "annotation_pattern_signature": "domain-labels-and-governance-rails",
+        "assessment": "Owner-selected m09 replacement is a high-density, story-specific mechanism illustration with layered explanatory structure, strong visual hierarchy, multiple meaningful components and no sparse/basic fallback treatment."
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-07-m15",
+      "candidate_id": "m15",
+      "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m15-replacement-v2.png",
+      "asset_hash": "61d914c7c05eb1503f4092cccc01f21a6174c78696c294d830f9c98d412034d7",
+      "git_blob_sha": "b98180b8311c25f11765ba4ccf0938d267125f96",
+      "bytes": 751375,
+      "width": 1200,
+      "height": 630,
+      "format": "png",
+      "cache_key": "oct7-m15-61d914c7c05e",
+      "asset_version": "oct7-m15-replacement-v2",
+      "supersedes": {
+        "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m15.png",
+        "asset_hash": "1700d4573144b9f5fd323dabff09c2b147a20539f5d6c0863a7291b4a413e2e9",
+        "cache_key": "oct7-m15-1700d4573144",
+        "asset_version": "oct7-m15-accepted-v1"
+      },
+      "deployment_verification_required": true,
+      "owner_selected": true,
+      "generation_context": {
+        "mode": "single_story",
+        "story_ids": [
+          "dab-story-2026-10-07-m15"
+        ],
+        "includes_edition_context": false,
+        "reviewed_subject_match": "pass",
+        "unrelated_status_artwork": false,
+        "request_path": "_records/image-context/2026-10-07-owner-replacement-v2/m15.json",
+        "request_sha256": "fd92bdd7fb8b2925beeb0c6235eeed175304d422738235c5aab488796fde575b"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "file_exists": "PASS",
+          "file_integrity": "PASS",
+          "format": "PASS",
+          "dimensions": "PASS",
+          "expected_path": "PASS",
+          "clipping_corruption": "PASS",
+          "byte_uniqueness": "PASS",
+          "story_identity": "PASS",
+          "accessibility": "PASS",
+          "asset_hash": "PASS",
+          "git_blob_identity": "PASS",
+          "lock_state": "PASS",
+          "replacement_identity": "PASS"
+        }
+      },
+      "overall_gate": "pass",
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "benchmark_comparison": {
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "annotation_richness": "PASS",
+          "visual_depth": "PASS",
+          "hierarchy": "PASS",
+          "composition": "PASS",
+          "story_specificity": "PASS",
+          "differentiation": "PASS"
+        },
+        "story_specificity": "PASS",
+        "information_density": "PASS",
+        "explanatory_mechanism": "PASS",
+        "annotation_quality": "PASS",
+        "depth_hierarchy": "PASS",
+        "composition": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false,
+        "meaningful_components": [
+          "event intake",
+          "durable job state",
+          "policy gate",
+          "bounded tool work",
+          "approval checkpoint",
+          "persisted pause",
+          "safe resume",
+          "audit evidence"
+        ],
+        "composition_signature": "owner-m15-composition-v2",
+        "layout_signature": "circular-state-machine",
+        "diagram_grammar": "resumable-agent-lifecycle",
+        "hierarchy_signature": "event-to-approved-completion",
+        "annotation_pattern_signature": "state-labels-and-loop-arrows",
+        "assessment": "Owner-selected m15 replacement is a high-density, story-specific mechanism illustration with layered explanatory structure, strong visual hierarchy, multiple meaningful components and no sparse/basic fallback treatment."
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-07-m16",
+      "candidate_id": "m16",
+      "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m16-replacement-v2.png",
+      "asset_hash": "270308bb4611a7b27e35397f89f581ef43437970404a3a13b40aa99c86f2ebad",
+      "git_blob_sha": "abf032cd96f8a6444df53052b04e3418265042c6",
+      "bytes": 872524,
+      "width": 1200,
+      "height": 630,
+      "format": "png",
+      "cache_key": "oct7-m16-270308bb4611",
+      "asset_version": "oct7-m16-replacement-v2",
+      "supersedes": {
+        "asset_path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m16.png",
+        "asset_hash": "3981d4b3f8bfa833e5c73baf8a3c7f31721d4cb4b10c2307cd08c4ea1def4411",
+        "cache_key": "oct7-m16-3981d4b3f8bf",
+        "asset_version": "oct7-m16-accepted-v1"
+      },
+      "deployment_verification_required": true,
+      "owner_selected": true,
+      "generation_context": {
+        "mode": "single_story",
+        "story_ids": [
+          "dab-story-2026-10-07-m16"
+        ],
+        "includes_edition_context": false,
+        "reviewed_subject_match": "pass",
+        "unrelated_status_artwork": false,
+        "request_path": "_records/image-context/2026-10-07-owner-replacement-v2/m16.json",
+        "request_sha256": "014fd9d377b55bb0cbdbfab5fb2f7db0baa84814c912e934a9ef1fa6547525cc"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "file_exists": "PASS",
+          "file_integrity": "PASS",
+          "format": "PASS",
+          "dimensions": "PASS",
+          "expected_path": "PASS",
+          "clipping_corruption": "PASS",
+          "byte_uniqueness": "PASS",
+          "story_identity": "PASS",
+          "accessibility": "PASS",
+          "asset_hash": "PASS",
+          "git_blob_identity": "PASS",
+          "lock_state": "PASS",
+          "replacement_identity": "PASS"
+        }
+      },
+      "overall_gate": "pass",
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "benchmark_comparison": {
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "annotation_richness": "PASS",
+          "visual_depth": "PASS",
+          "hierarchy": "PASS",
+          "composition": "PASS",
+          "story_specificity": "PASS",
+          "differentiation": "PASS"
+        },
+        "story_specificity": "PASS",
+        "information_density": "PASS",
+        "explanatory_mechanism": "PASS",
+        "annotation_quality": "PASS",
+        "depth_hierarchy": "PASS",
+        "composition": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false,
+        "meaningful_components": [
+          "desktop assistant",
+          "MCP boundary",
+          "AgentCore gateway",
+          "identity gate",
+          "policy gate",
+          "web search",
+          "provenance-filtered evidence",
+          "return path"
+        ],
+        "composition_signature": "owner-m16-composition-v2",
+        "layout_signature": "secure-retrieval-corridor",
+        "diagram_grammar": "governed-request-response",
+        "hierarchy_signature": "assistant-to-trusted-evidence",
+        "annotation_pattern_signature": "boundary-labels-and-evidence-arrows",
+        "assessment": "Owner-selected m16 replacement is a high-density, story-specific mechanism illustration with layered explanatory structure, strong visual hierarchy, multiple meaningful components and no sparse/basic fallback treatment."
+      }
+    }
+  ],
+  "historical_evidence_preserved": true,
+  "original_image_generation_and_acceptance_receipts_preserved": true,
+  "live_deployment_verification_required": true
+}

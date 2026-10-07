@@ -2,7 +2,7 @@
 layout: default
 title: "Claude Frontier Academy targets the forward-deployed engineering skills gap"
 description: "Anthropic introduced Claude Frontier Academy with a goal of preparing 10,000 forward-deployed engineers by the end of 2027."
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m08.png?v=83f1ac8e921e"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m08-replacement-v2.png?v=373e15a6b761"
 permalink: /stories/2026-10-07/claude-frontier-academy-targets-forward-deployed-engineering-skills-gap/
 brief_date: 2026-10-07
 story_id: dab-story-2026-10-07-m08
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook mechanism diagram for Practical learning pipeline for forward-deployed AI engineering: Technical academy blueprint moving from capability modules through sandbox exercises, customer-context simulations, deployment patterns and evidence review into a competency matrix.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m08.png?v=83f1ac8e921e)
+![Textbook mechanism diagram for Practical learning pipeline for forward-deployed AI engineering: Technical academy blueprint moving from capability modules through sandbox exercises, customer-context simulations, deployment patterns and evidence review into a competency matrix.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m08-replacement-v2.png?v=373e15a6b761)
 
 **Summary:** Anthropic introduced Claude Frontier Academy with a goal of preparing 10,000 forward-deployed engineers by the end of 2027.
 
