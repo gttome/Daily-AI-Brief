@@ -1,0 +1,26 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_key": "2026-10-07-run11",
+  "task_id": "22",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-07T14:49:00.000Z",
+  "writer_generation": 61,
+  "owner_id": "chatgpt-watchdog-e-20261007T144700Z",
+  "reason_code": "EXISTING_PUBLICATION_PR_CONSUMED_EXACT_HEAD_CI_PASS",
+  "operation": "consume_already_completed_publication_pr",
+  "proof": {
+    "request_key": "c531067186ad9ad36a6dacf8d3611f0416659c35c0245c50843a217df6868745",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/22-c531067186ad9ad36a6dacf8d3611f0416659c35c0245c50843a217df6868745.json",
+    "preflight_receipt": "_records/edition-execution/publication-preflight/2026-10-07.json",
+    "publication_pr": 511,
+    "publication_pr_head_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+    "publication_merge_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+    "exact_head_ci_run_id": 37633863433,
+    "exact_head_ci_conclusion": "success",
+    "accepted_locked_images": 6
+  },
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}
