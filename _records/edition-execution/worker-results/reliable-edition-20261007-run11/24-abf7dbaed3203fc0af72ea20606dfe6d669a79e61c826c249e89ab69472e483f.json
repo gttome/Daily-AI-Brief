@@ -1,0 +1,29 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "abf7dbaed3203fc0af72ea20606dfe6d669a79e61c826c249e89ab69472e483f",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "24",
+  "request_writer_generation": 61,
+  "authority_generation": 63,
+  "status": "passed",
+  "completed_at": "2026-10-07T17:02:00.000Z",
+  "reconciliation": {
+    "result": "PASS",
+    "operation": "consume_existing_exact_merge",
+    "publication_pr": 511,
+    "candidate_head_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+    "protected_ci_run_id": 37633863433,
+    "protected_ci_conclusion": "success",
+    "merged": true,
+    "merge_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+    "merged_at": "2026-10-07T14:08:49Z",
+    "duplicate_merge_performed": false
+  },
+  "preserved": {
+    "completed_tasks": "00-23",
+    "accepted_locked_images": 6
+  },
+  "task_outcome": "Done"
+}
