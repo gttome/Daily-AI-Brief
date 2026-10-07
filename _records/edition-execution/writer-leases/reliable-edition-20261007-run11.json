@@ -1,9 +1,12 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261007-run11",
-  "owner_id": "chatgpt-watchdog-a-20261007T165930Z",
-  "generation": 63,
-  "acquired_at": "2026-10-07T16:59:30.000Z",
-  "last_heartbeat_at": "2026-10-07T16:59:30.000Z",
-  "expires_at": "2026-10-07T17:07:30.000Z"
+  "owner_id": "chatgpt-watchdog-a-20261007T170800Z",
+  "generation": 64,
+  "acquired_at": "2026-10-07T17:08:00.000Z",
+  "last_heartbeat_at": "2026-10-07T17:08:00.000Z",
+  "expires_at": "2026-10-07T17:16:00.000Z",
+  "state": "ACTIVE",
+  "task_id": "25",
+  "action_key": "run11-task25-reconcile-deployment-slot-a-g51-w64"
 }
