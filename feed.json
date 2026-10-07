@@ -10,7 +10,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-07/android-cli-packages-device-workflows-as-reusable-agent-skills/",
       "title": "Android CLI packages device workflows as reusable agent skills",
       "summary": "Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m01.png?v=b38f73955e21",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m01-replacement-v2.png?v=4342657696cc",
       "date_published": "2026-10-07T13:00:00-05:00",
       "tags": [
         "Agent Skills",
@@ -24,7 +24,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-07/copilot-metrics-expose-hidden-agent-telemetry-failure/",
       "title": "Copilot metrics expose a hidden failure mode in agent telemetry",
       "summary": "GitHub says an SDK migration caused some Copilot agent activity to appear unattributed in usage metrics and advises updating to VS Code 1.139 or later.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m02.png?v=7f52e3dbf06d",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m02-replacement-v2.png?v=3b869aa8621a",
       "date_published": "2026-10-07T13:00:00-05:00",
       "tags": [
         "agent telemetry",
@@ -38,7 +38,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-07/claude-frontier-academy-targets-forward-deployed-engineering-skills-gap/",
       "title": "Claude Frontier Academy targets the forward-deployed engineering skills gap",
       "summary": "Anthropic introduced Claude Frontier Academy with a goal of preparing 10,000 forward-deployed engineers by the end of 2027.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m08.png?v=83f1ac8e921e",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m08-replacement-v2.png?v=373e15a6b761",
       "date_published": "2026-10-07T13:00:00-05:00",
       "tags": [
         "forward-deployed engineering",
@@ -52,7 +52,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-07/barclays-scales-claude-across-16000-colleagues/",
       "title": "Barclays scales Claude across 16,000 colleagues",
       "summary": "Anthropic and Barclays describe Claude use across 16,000 colleagues, including company-reported volumes of one million searches and 120,000 emails per day.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m09.png?v=2dba6c9617ea",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m09-replacement-v2.png?v=f55eb2351745",
       "date_published": "2026-10-07T13:00:00-05:00",
       "tags": [
         "enterprise adoption",
@@ -66,7 +66,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-07/ambient-agents-turn-events-into-resumable-human-approved-workflows/",
       "title": "Ambient agents turn events into resumable human-approved workflows",
       "summary": "AWS details event-driven agents with isolated sessions, human approval checkpoints and interruptions that can resume from durable state.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m15.png?v=1700d4573144",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m15-replacement-v2.png?v=61d914c7c05e",
       "date_published": "2026-10-07T13:00:00-05:00",
       "tags": [
         "ambient agents",
@@ -80,7 +80,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-07/agentcore-gives-claude-desktop-a-governed-web-search-path/",
       "title": "AgentCore gives Claude Desktop a governed web-search path",
       "summary": "AWS demonstrates a web-search connection for Claude Desktop through AgentCore using MCP, JWT identity and IAM controls.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m16.png?v=3981d4b3f8bf",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m16-replacement-v2.png?v=270308bb4611",
       "date_published": "2026-10-07T13:00:00-05:00",
       "tags": [
         "governed agents",

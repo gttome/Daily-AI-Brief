@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "record_kind": "post_publication_image_correction_book_binding",
+  "edition_id": "dab-edition-2026-10-07",
+  "recorded_at": "2026-10-07T16:46:09.221Z",
+  "correction_evidence": "_records/image-quality/2026-10-07-owner-replacement-v2.json",
+  "original_finalization_sha": "6e52d6d8a3e2ebba47b3dc4e3d02c28dda190713",
+  "original_catalog_path": "_data/book-reading.json",
+  "original_review_key": "selection_reviews.2026-10-07",
+  "previous_items_digest": "1c06d7c677863c23460a8cad8e170b1dff109a80257e8b4bcd60ae97c7a9d8b2",
+  "current_items_digest": "8561b6f023e0a07a9b240d0af69c450a91ef63d3d84fd85bafd47d2b1bbc8acc",
+  "catalog_digest": "95cac16503b72b8a06c6dce9f6dbd484d74a30c6f82a0d592f3c87ea4767b320",
+  "non_image_items_digest_before": "0fcd943fa4901a753bf3bf50f9675e3ab8246c045a95cdcda15f7f3b6818c3b4",
+  "non_image_items_digest_after": "0fcd943fa4901a753bf3bf50f9675e3ab8246c045a95cdcda15f7f3b6818c3b4",
+  "semantic_content_unchanged": true,
+  "book_selections_unchanged": true,
+  "original_historical_review_path": "_records/editorial/2026-10-07-run11/book-review.json",
+  "run11_closure_preserved": true,
+  "reason": "Rebind the existing semantic book review after six owner-selected post-publication image replacements. Only story image metadata changed; item identities, editorial content, catalog, review scores, rationales and book selections remain unchanged. No production task or semantic review was rerun."
+}

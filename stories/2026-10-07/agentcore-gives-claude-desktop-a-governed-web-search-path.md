@@ -2,7 +2,7 @@
 layout: default
 title: "AgentCore gives Claude Desktop a governed web-search path"
 description: "AWS demonstrates a web-search connection for Claude Desktop through AgentCore using MCP, JWT identity and IAM controls."
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m16.png?v=3981d4b3f8bf"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m16-replacement-v2.png?v=270308bb4611"
 permalink: /stories/2026-10-07/agentcore-gives-claude-desktop-a-governed-web-search-path/
 brief_date: 2026-10-07
 story_id: dab-story-2026-10-07-m16
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook mechanism diagram for Governed desktop-agent web search through MCP and an AgentCore control boundary: Secure retrieval corridor from desktop assistant through MCP into an AgentCore gateway where identity and policy gate web search and provenance-filtered source evidence returns.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m16.png?v=3981d4b3f8bf)
+![Textbook mechanism diagram for Governed desktop-agent web search through MCP and an AgentCore control boundary: Secure retrieval corridor from desktop assistant through MCP into an AgentCore gateway where identity and policy gate web search and provenance-filtered source evidence returns.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m16-replacement-v2.png?v=270308bb4611)
 
 **Summary:** AWS demonstrates a web-search connection for Claude Desktop through AgentCore using MCP, JWT identity and IAM controls.
 

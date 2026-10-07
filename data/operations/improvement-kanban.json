@@ -2,7 +2,7 @@
   "schema_version": "daily-ai-brief-improvement-kanban-v1",
   "board_id": "daily-ai-brief-improvement-kanban",
   "title": "Daily AI Brief — Improvement Kanban",
-  "observed_at": "2026-10-07T14:22:00Z",
+  "observed_at": "2026-10-07T16:40:00.000Z",
   "purpose": "Persistent system-improvement, technical-debt, validation and UX backlog. Separate from per-edition Tasks 00–29 execution Kanban.",
   "lane_order": [
     "backlog",
@@ -1110,6 +1110,25 @@
       "sources": [
         "DAB-OPS-20261007-002",
         "reliable-edition-20261007-run11 Task 11 image-quality evidence"
+      ]
+    },
+    {
+      "id": "DAB-KB-058",
+      "lane": "backlog",
+      "priority": "P0",
+      "category": "Image Quality",
+      "title": "Image density / owner-quality acceptance false positive",
+      "summary": "October 7 required a six-image post-publication owner correction after the saved-Git editorial quality gate accepted visually basic images. The correction is edition-scoped; permanent hardening still requires observable density, explanatory-depth and premium-benchmark validation.",
+      "acceptance": [
+        "Quality evidence is grounded in observable visual density and explanatory mechanism rather than self-asserted PASS fields.",
+        "Premium benchmark comparison is mechanically tied to the saved Git asset.",
+        "A sparse/basic mechanism fixture fails even when dimensions, prompt identity and byte integrity pass.",
+        "A benchmark-grade mechanism-rich fixture passes without weakening no-fallback or accepted_locked invariants."
+      ],
+      "sources": [
+        "DAB-OPS-20261007-003",
+        "_records/image-quality/2026-10-07-owner-replacement-v2.json",
+        "October 7 post-publication owner visual-quality review"
       ]
     }
   ],

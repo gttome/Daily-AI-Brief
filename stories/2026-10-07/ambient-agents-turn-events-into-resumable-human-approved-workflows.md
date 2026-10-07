@@ -2,7 +2,7 @@
 layout: default
 title: "Ambient agents turn events into resumable human-approved workflows"
 description: "AWS details event-driven agents with isolated sessions, human approval checkpoints and interruptions that can resume from durable state."
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m15.png?v=1700d4573144"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m15-replacement-v2.png?v=61d914c7c05e"
 permalink: /stories/2026-10-07/ambient-agents-turn-events-into-resumable-human-approved-workflows/
 brief_date: 2026-10-07
 story_id: dab-story-2026-10-07-m15
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook mechanism diagram for Event-driven ambient agents with durable state, approval interrupts and safe resume: Circular event-driven state machine with event intake, isolated job state, policy gate, bounded tool work, approval checkpoint, persisted pause state, resume and audit evidence.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m15.png?v=1700d4573144)
+![Textbook mechanism diagram for Event-driven ambient agents with durable state, approval interrupts and safe resume: Circular event-driven state machine with event intake, isolated job state, policy gate, bounded tool work, approval checkpoint, persisted pause state, resume and audit evidence.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m15-replacement-v2.png?v=61d914c7c05e)
 
 **Summary:** AWS details event-driven agents with isolated sessions, human approval checkpoints and interruptions that can resume from durable state.
 

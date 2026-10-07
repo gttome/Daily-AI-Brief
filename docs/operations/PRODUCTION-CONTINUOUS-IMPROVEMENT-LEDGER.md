@@ -1320,3 +1320,14 @@ Problems: 73 · Events: 131
 - **Recurrences:** none recorded
 - **Future validation:** Merge repair through exact-head CI, run one fresh-context post-repair attempt for only m01, and retain regression tests so arbitrary repair prompt edits remain inadmissible. | Verify the protected overlay remains machine-verifiable and cannot authorize arbitrary prompt edits or non-allowlisted text and logos.
 
+## DAB-OPS-20261007-003 — Image density / owner-quality acceptance false positive
+
+- **Status:** open
+- **First observed:** post-publication owner review of the October 7 edition
+- **Task(s):** none; Run 11 remains terminal
+- **Symptom:** Six published story images passed saved-Git quality evidence but were rejected by the owner as too basic for the required premium textbook benchmark.
+- **Root cause:** The native image path did not declare a fallback, but the saved-Git editorial quality gate accepted visually basic images because the quality evidence was too self-assertive and insufficiently tied to observable image density, explanatory depth, and premium benchmark comparison. This allowed a false-positive accepted state despite the fixed professional textbook-style, high-detail, no sparse/basic diagrams, no-fallback requirement.
+- **Operational impact:** A protected post-publication six-image correction was required; the completed production execution was not reopened.
+- **Actual correction:** Publish the six owner-selected replacement PNGs through additive replacement evidence and new reader-facing asset identities while preserving original production receipts.
+- **Permanent hardening still required:** Make observable visual density, explanatory depth and benchmark comparison machine-verifiable enough to reject sparse/basic false positives rather than trusting self-asserted PASS fields.
+- **Future validation:** A deliberately sparse/basic fixture must fail the quality gate while a benchmark-grade mechanism-rich fixture passes.

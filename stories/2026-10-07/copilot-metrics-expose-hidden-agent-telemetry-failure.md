@@ -2,7 +2,7 @@
 layout: default
 title: "Copilot metrics expose a hidden failure mode in agent telemetry"
 description: "GitHub says an SDK migration caused some Copilot agent activity to appear unattributed in usage metrics and advises updating to VS Code 1.139 or later."
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m02.png?v=7f52e3dbf06d"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m02-replacement-v2.png?v=3b869aa8621a"
 permalink: /stories/2026-10-07/copilot-metrics-expose-hidden-agent-telemetry-failure/
 brief_date: 2026-10-07
 story_id: dab-story-2026-10-07-m02
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook mechanism diagram for Agent activity telemetry that can silently disappear when client and metrics contracts diverge: Diagnostic observability pipeline with client-version lanes, schema compatibility gate, metrics ingestion, usage report and evidence comparator exposing missing activity.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m02.png?v=7f52e3dbf06d)
+![Textbook mechanism diagram for Agent activity telemetry that can silently disappear when client and metrics contracts diverge: Diagnostic observability pipeline with client-version lanes, schema compatibility gate, metrics ingestion, usage report and evidence comparator exposing missing activity.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m02-replacement-v2.png?v=3b869aa8621a)
 
 **Summary:** GitHub says an SDK migration caused some Copilot agent activity to appear unattributed in usage metrics and advises updating to VS Code 1.139 or later.
 

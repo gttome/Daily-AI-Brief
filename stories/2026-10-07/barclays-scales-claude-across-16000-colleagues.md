@@ -2,7 +2,7 @@
 layout: default
 title: "Barclays scales Claude across 16,000 colleagues"
 description: "Anthropic and Barclays describe Claude use across 16,000 colleagues, including company-reported volumes of one million searches and 120,000 emails per day."
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m09.png?v=2dba6c9617ea"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m09-replacement-v2.png?v=f55eb2351745"
 permalink: /stories/2026-10-07/barclays-scales-claude-across-16000-colleagues/
 brief_date: 2026-10-07
 story_id: dab-story-2026-10-07-m09
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook mechanism diagram for Enterprise AI adoption at workforce scale with governance and enablement: Hub-and-spoke enterprise adoption architecture with a governed AI service core, abstract work-domain clusters, policy, access, training, support and usage-evidence rails.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m09.png?v=2dba6c9617ea)
+![Textbook mechanism diagram for Enterprise AI adoption at workforce scale with governance and enablement: Hub-and-spoke enterprise adoption architecture with a governed AI service core, abstract work-domain clusters, policy, access, training, support and usage-evidence rails.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-07/dab-edition-2026-10-07-m09-replacement-v2.png?v=f55eb2351745)
 
 **Summary:** Anthropic and Barclays describe Claude use across 16,000 colleagues, including company-reported volumes of one million searches and 120,000 emails per day.
 

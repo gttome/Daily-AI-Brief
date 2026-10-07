@@ -42,13 +42,13 @@
     "image_manifest": {
       "path": "_records/editorial-handoff/images-2026-10-07-publication.json",
       "schema_version": "legacy-unversioned",
-      "digest": "git_blob_sha1:890444350bda37256130a9c29616b3713de4f18f",
+      "digest": "git_blob_sha1:a23cdc5744af4fcc68cab80fd88cc0894aff9588",
       "adapter": "accepted-images-map-v1"
     },
     "image_review": {
       "path": "_records/editorial-handoff/images-2026-10-07-publication.json",
       "schema_version": "legacy-unversioned",
-      "digest": "git_blob_sha1:890444350bda37256130a9c29616b3713de4f18f",
+      "digest": "git_blob_sha1:a23cdc5744af4fcc68cab80fd88cc0894aff9588",
       "adapter": "accepted-images-map-v1"
     },
     "watchlist": {
@@ -67,9 +67,9 @@
       "digest": "git_blob_sha1:41aca51136651449af758a7ed1a73b5ce3bbb7f4"
     },
     "image_quality_evidence": {
-      "path": "_records/image-quality/2026-10-07-publication-v2.json",
+      "path": "_records/image-quality/2026-10-07-owner-replacement-v2.json",
       "schema_version": "2.0.0",
-      "digest": "git_blob_sha1:58e42f32b0a1128102acfd0473a97c5d8637ad73"
+      "digest": "git_blob_sha1:9909d917414cf1815c3980dbcaa1284c600aa363"
     }
   },
   "freeze": {
@@ -144,6 +144,13 @@
     "contract_transition": "same-edition-publication-projection-repair",
     "preserve_accepted_locked_assets": true,
     "repair_key": "RUN11_INCOMPLETE_SAME_EDITION_PUBLICATION_HANDOFF",
-    "source_qualification": "_records/editorial/2026-10-07-run11/task20-qualification.json"
+    "source_qualification": "_records/editorial/2026-10-07-run11/task20-qualification.json",
+    "post_publication_correction": true,
+    "post_publication_correction_type": "owner_requested_six_image_visual_quality_replacement",
+    "correction_evidence": "_records/image-quality/2026-10-07-owner-replacement-v2.json",
+    "original_run_closure_preserved": true,
+    "original_publication_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+    "original_finalization_sha": "6e52d6d8a3e2ebba47b3dc4e3d02c28dda190713",
+    "original_seal_history_preserved": true
   }
 }
