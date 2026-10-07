@@ -4,12 +4,14 @@
   "incident_id": "wd-reliable-edition-20261007-run11-task28-public-close",
   "owner_slot": "C",
   "generation": 52,
-  "state": "ACTIVE",
+  "state": "RELEASED",
   "acquired_at": "2026-10-07T17:18:46.000Z",
   "last_heartbeat_at": "2026-10-07T17:18:46.000Z",
   "expires_at": "2026-10-07T17:28:46.000Z",
   "action_key": "run11-task28-public-close-slot-c-g52",
   "exact_request_key": "e6d84e1d0d3ef16316f3bc27f1334425651d957f9bd3dc7733f7010ed7262bb5",
-  "recovery_stage": "RECORD_PUBLIC_CLOSED_AND_RECONCILE_COMMAND_CENTER",
-  "substantive_progress_after_claim": false
+  "recovery_stage": "TERMINAL_EXECUTION",
+  "substantive_progress_after_claim": false,
+  "released_at": "2026-10-07T17:19:00.000Z",
+  "release_reason": "TERMINAL_EXECUTION"
 }
