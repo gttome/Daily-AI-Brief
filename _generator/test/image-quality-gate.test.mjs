@@ -6,11 +6,20 @@ import os from 'node:os';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {
+  acceptedImageCanvas,
   deployedImageByteErrors,
   reviewedHandoffImages,
   reviewedImages,
   validateBenchmarkProfile
 } from '../lib/image-gate.mjs';
+
+test('accepted image canvas permits larger near-target renders without lowering minimum resolution',()=>{
+  assert.equal(acceptedImageCanvas({pass:true,width:1730,height:909}),true);
+  assert.equal(acceptedImageCanvas({pass:true,width:1200,height:630}),true);
+  assert.equal(acceptedImageCanvas({pass:true,width:1199,height:630}),false);
+  assert.equal(acceptedImageCanvas({pass:true,width:1600,height:900}),false);
+  assert.equal(acceptedImageCanvas({pass:false,width:1730,height:909}),false);
+});
 
 const sha256=bytes=>createHash('sha256').update(bytes).digest('hex');
 const gitBlobSha1=bytes=>createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');

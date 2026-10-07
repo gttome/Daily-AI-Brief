@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {sha256} from './util.mjs';
-import {inspectHandoffAsset,gitBlobSha1} from './image-gate.mjs';
+import {acceptedImageCanvas,inspectHandoffAsset,gitBlobSha1} from './image-gate.mjs';
 import {publicWatchlist,watchlistDailyState,watchlistDailySummary} from './watchlist.mjs';
 import {validateHandoffCheckpoint} from './run-state.mjs';
 import {lockedCanvasMigrationAllowed,migrationEnabled} from './frozen-contract-migration.mjs';
@@ -35,7 +35,7 @@ export function lintPublicationCandidate({root,edition,kernel,media,imageManifes
   if(!fs.existsSync(file)){errors.push('image_file_missing:'+story.story_id);continue;}
   const bytes=fs.readFileSync(file),ext=path.extname(file).toLowerCase(),inspection=inspectHandoffAsset(bytes,ext);
   const hash=sha256(bytes),blob=gitBlobSha1(bytes);hashes.add(hash);
-  const canvasValid=inspection.pass&&inspection.width===1200&&inspection.height===630;
+  const canvasValid=acceptedImageCanvas(inspection);
   const migrationError='Invalid accepted handoff image canvas: '+entry.path;
   const migratedCanvas=!canvasValid&&publicationManifest&&lockedCanvasMigrationAllowed(
    {manifest:publicationManifest,imageReview:imageManifest},
