@@ -1,0 +1,13 @@
+{
+  "schema_version": "sealed-story-image-context-v1",
+  "mode": "single_story",
+  "story_ids": ["dab-story-2026-10-07-m08"],
+  "candidate_id": "m08",
+  "task_id": "13",
+  "includes_edition_context": false,
+  "orchestration_context_visible": false,
+  "generator_visible_field": "prompt",
+  "sealed_at": "2026-10-07T02:34:00.000Z",
+  "allowed_text": ["Core skills","Sandbox","Customer context","Deployment pattern","Field exercise","Evidence review","Competency map"],
+  "prompt": "Professional high-detail educational mechanism diagram on a clean white 1200x630 canvas. Show a skills-development pipeline. Core skill modules lead to sandbox exercises, then customer-context simulations, deployment-pattern practice, field exercises, evidence review, and a competency map. Include code cards, architecture diagrams, test receipts, context cards, and competency markers. No people, photos, logos, decorative filler, overlapping text, or sparse basic layout. Only these visible labels: Core skills, Sandbox, Customer context, Deployment pattern, Field exercise, Evidence review, Competency map."
+}

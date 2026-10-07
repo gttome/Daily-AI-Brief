@@ -1,0 +1,46 @@
+{
+  "schema_version": "protected-repair-required-v1",
+  "state": "PROTECTED_REPAIR_REQUIRED",
+  "repair_key": "repair-1f7b6ecdeecddc0cdcfecfb32579d717ccd29ba2",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_key": "2026-10-07-run11",
+  "production_branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "22",
+  "request_key": "6818fe71e9e2a39a910aeafec67f403d202c504e57e72796f37f17dee3874f9e",
+  "incident_id": "wd-reliable-edition-20261007-run11-task22-video-freshness-contract",
+  "repair_branch": "repair/run11-task22-media-freshness-contract",
+  "repair_branch_head_sha": "e14668279287bee8fabbaa20c6ddabc160585e63",
+  "repair_scope_digest": "sha256:3ac27f9cc414573a20ef04b959cadcc740bdaf746aeab3d17594b5df1b5f9555",
+  "required_checks": [
+    "validate"
+  ],
+  "created_at": "2026-10-07T11:12:42.000Z",
+  "updated_at": "2026-10-07T11:57:47.223Z",
+  "pr": {
+    "number": 510,
+    "url": "https://github.com/gttome/Daily-AI-Brief/pull/510",
+    "head_sha": "e14668279287bee8fabbaa20c6ddabc160585e63",
+    "validate_check_run_id": 112766825764,
+    "validate_conclusion": "success",
+    "validate_completed_at": "2026-10-07T11:23:45Z"
+  },
+  "last_recovery_stage": {
+    "state": "REPAIR_CI_PASS",
+    "prior_executor_run_id": 37578656246,
+    "prior_executor_attempt": 2,
+    "prior_executor_conclusion": "failure",
+    "prior_failure": "protected_repair_record_key_mismatch",
+    "corrected_repair_key": "repair-1f7b6ecdeecddc0cdcfecfb32579d717ccd29ba2",
+    "exact_preflight_path": "_records/edition-execution/publication-preflight/2026-10-07.json",
+    "exact_preflight_result": "FAIL",
+    "preserved_completed_tasks": "00-21",
+    "accepted_locked_images": 6,
+    "exact_repair_head_sha": "e14668279287bee8fabbaa20c6ddabc160585e63",
+    "exact_head_validate": "PASS"
+  },
+  "next_stage": "Merge the unique protected repair PR #510 without bypass, then resume the SAME Task 22 exact request and rerun exact-publication-preflight-v1.",
+  "owner_intervention_required": false,
+  "accepted_locked_assets_immutable": true,
+  "invariant": "actionable_recovery_must_not_terminate_at_owner_prompt_boundary"
+}

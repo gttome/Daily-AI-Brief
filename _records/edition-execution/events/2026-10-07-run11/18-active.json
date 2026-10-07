@@ -1,0 +1,12 @@
+{
+  "task_id": "18",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-07T09:57:00.000Z",
+  "proof": {
+    "request_key": "7424dcb5fca99027d8911a0bc2fc193ba5ba182e04a8b37672c38c8814009a4a",
+    "writer_generation": 43,
+    "task17_done": true,
+    "accepted_locked_images": 6
+  }
+}

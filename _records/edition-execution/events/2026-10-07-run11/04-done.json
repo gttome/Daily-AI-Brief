@@ -1,0 +1,23 @@
+{
+  "task_id": "04",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-07T01:17:35.000Z",
+  "reason": "Verified full-source evidence and 24/72/168-hour freshness fallback for all nine deep-review candidates; all remain eligible with balanced 3/3/3 category coverage.",
+  "proof": {
+    "request_key": "d1ea12425e29cee6f9ee5f3d93232c1b7f60c1ca25325521b43836e54eab7140",
+    "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/04-d1ea12425e29cee6f9ee5f3d93232c1b7f60c1ca25325521b43836e54eab7140.json",
+    "evidence_artifact": "_records/discovery/2026-10-07-run11/evidence.json",
+    "evidence_artifact_blob_sha": "6b5c2b0c3dddc568cc4d8304e98e1adc5fd16f52",
+    "full_source_reviews": 9,
+    "eligible_after_freshness_verification": 9,
+    "source_date_conflicts": 0,
+    "category_coverage": {
+      "technical_ai_engineering": 3,
+      "applied_genai_knowledge_workers": 3,
+      "agents_non_technical_people": 3
+    },
+    "agent_skill_candidate_id": "m01",
+    "result": "PASS"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "task21-focused-repair-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "21",
+  "request_key": "4f6186944fbaf95725c445e827f5fd7ba00726b2951a235de7c6c7187bd6e228",
+  "completed_at": "2026-10-07T10:59:00.000Z",
+  "authority_generation": 47,
+  "source_qualification": "_records/editorial/2026-10-07-run11/task20-qualification.json",
+  "blocking_defect_id": "RUN11_INCOMPLETE_SAME_EDITION_PUBLICATION_HANDOFF",
+  "repair_scope": "deterministic_same_edition_publication_handoff_projection_only",
+  "created_projections": [
+    {
+      "path": "_records/editorial-handoff/kernel-2026-10-07.json",
+      "git_blob_sha": "395873ff89a17382cf6f4fa0dfb1df1c7cb8d69e"
+    },
+    {
+      "path": "_records/editorial-handoff/facts-2026-10-07.json",
+      "git_blob_sha": "7a05d8660376dbd78355a92b71cb41d331dd7d72"
+    },
+    {
+      "path": "_records/editorial-handoff/media-2026-10-07.json",
+      "git_blob_sha": "e4621a6a922572b8934bcd21443073b7de1067af"
+    },
+    {
+      "path": "_records/editorial/media-preflight/2026-10-07.json",
+      "git_blob_sha": "bfdfeaa2e9b1b84bc05bd5a717f873df08a6db97"
+    },
+    {
+      "path": "_records/editorial-handoff/images-2026-10-07-publication.json",
+      "git_blob_sha": "890444350bda37256130a9c29616b3713de4f18f"
+    },
+    {
+      "path": "_records/image-quality/2026-10-07-publication-v2.json",
+      "git_blob_sha": "58e42f32b0a1128102acfd0473a97c5d8637ad73"
+    }
+  ],
+  "publication_manifest": {
+    "path": "_records/editorial-handoff/publication-manifest.json",
+    "edition_date": "2026-10-07"
+  },
+  "source_reuse": {
+    "immutable_bundle": "_records/editorial/2026-10-07-run11/task19-bundle-seal.json",
+    "metadata_candidates_git_blob": "767cb428338d39c829dd6930e9b2d093f1ecd3e7",
+    "article_evidence_git_blob": "d592936dbb4a01aba40e2c2763db07d0ee0065f7",
+    "base_image_manifest_git_blob": "33450d7ed5d6ba33009fcef9c21f915d859cc59c",
+    "editorial_image_quality_git_blob": "6c112e25a808febe3710c84edf4e183b8d8d3b7c",
+    "watchlist_evidence_git_blob": "7a782adedc6d152cf4a22e924da9c17efdf8c71e",
+    "book_mappings_git_blob": "41aca51136651449af758a7ed1a73b5ce3bbb7f4"
+  },
+  "checks": {
+    "semantic_rework": false,
+    "research_rerun": false,
+    "image_regeneration": false,
+    "accepted_locked_images_preserved": 6,
+    "publication_manifest_points_to_current_edition": true,
+    "missing_projection_paths_repaired": 6
+  },
+  "owner_intervention_required": false,
+  "result": "PASS"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "sealed-story-image-context-v1",
+  "mode": "single_story",
+  "story_ids": ["dab-story-2026-10-07-m09"],
+  "candidate_id": "m09",
+  "task_id": "14",
+  "includes_edition_context": false,
+  "orchestration_context_visible": false,
+  "generator_visible_field": "prompt",
+  "sealed_at": "2026-10-07T02:34:00.000Z",
+  "allowed_text": ["AI service","Access policy","Work domains","Training","Support","Usage evidence","Enablement loop"],
+  "prompt": "Professional high-detail enterprise architecture diagram on a clean white 1200x630 canvas. Show a hub-and-spoke AI adoption system. A governed AI service core connects to several abstract work-domain clusters. Surrounding control rails show access policy, training, support, usage evidence, and a continuous enablement loop. Include identity tokens, policy gates, domain connectors, learning modules, support queues, and measurement packets. No people, photos, logos, decorative filler, unsupported claims, overlapping text, or sparse basic layout. Only these visible labels: AI service, Access policy, Work domains, Training, Support, Usage evidence, Enablement loop."
+}

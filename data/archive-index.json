@@ -4,6 +4,231 @@
   "stories": [
     {
       "content_type": "Article",
+      "story_id": "dab-story-2026-10-07-m01",
+      "brief_date": "2026-10-07",
+      "event_date": "2026-10-03",
+      "headline": "Android CLI packages device workflows as reusable agent skills",
+      "url": "/stories/2026-10-07/android-cli-packages-device-workflows-as-reusable-agent-skills/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Agent Skills",
+        "Android CLI",
+        "device automation"
+      ],
+      "companies": [
+        "Android Developers"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-07-m02",
+      "brief_date": "2026-10-07",
+      "event_date": "2026-10-06",
+      "headline": "Copilot metrics expose a hidden failure mode in agent telemetry",
+      "url": "/stories/2026-10-07/copilot-metrics-expose-hidden-agent-telemetry-failure/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent telemetry",
+        "Copilot metrics",
+        "observability"
+      ],
+      "companies": [
+        "GitHub Changelog"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "GitHub says an SDK migration caused some Copilot agent activity to appear unattributed in usage metrics and advises updating to VS Code 1.139 or later."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-07-m08",
+      "brief_date": "2026-10-07",
+      "event_date": "2026-10-02",
+      "headline": "Claude Frontier Academy targets the forward-deployed engineering skills gap",
+      "url": "/stories/2026-10-07/claude-frontier-academy-targets-forward-deployed-engineering-skills-gap/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "forward-deployed engineering",
+        "AI education",
+        "implementation skills"
+      ],
+      "companies": [
+        "Anthropic"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [],
+      "summary": "Anthropic introduced Claude Frontier Academy with a goal of preparing 10,000 forward-deployed engineers by the end of 2027."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-07-m09",
+      "brief_date": "2026-10-07",
+      "event_date": "2026-10-01",
+      "headline": "Barclays scales Claude across 16,000 colleagues",
+      "url": "/stories/2026-10-07/barclays-scales-claude-across-16000-colleagues/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "enterprise adoption",
+        "workforce enablement",
+        "governance"
+      ],
+      "companies": [
+        "Anthropic"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Agent reliability and governance"
+      ],
+      "summary": "Anthropic and Barclays describe Claude use across 16,000 colleagues, including company-reported volumes of one million searches and 120,000 emails per day."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-07-m15",
+      "brief_date": "2026-10-07",
+      "event_date": "2026-10-01",
+      "headline": "Ambient agents turn events into resumable human-approved workflows",
+      "url": "/stories/2026-10-07/ambient-agents-turn-events-into-resumable-human-approved-workflows/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "ambient agents",
+        "human approval",
+        "resumable workflows"
+      ],
+      "companies": [
+        "AWS Machine Learning"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "AWS details event-driven agents with isolated sessions, human approval checkpoints and interruptions that can resume from durable state."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-07-m16",
+      "brief_date": "2026-10-07",
+      "event_date": "2026-10-02",
+      "headline": "AgentCore gives Claude Desktop a governed web-search path",
+      "url": "/stories/2026-10-07/agentcore-gives-claude-desktop-a-governed-web-search-path/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "governed agents",
+        "web search",
+        "MCP"
+      ],
+      "companies": [
+        "AWS Machine Learning"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "AWS demonstrates a web-search connection for Claude Desktop through AgentCore using MCP, JWT identity and IAM controls."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-10-07-general",
+      "brief_date": "2026-10-07",
+      "event_date": "2026-09-18",
+      "headline": "Flight Intelligence: The Power of Work IQ",
+      "url": "/videos/2026-10-07/general/",
+      "focus": "general_video",
+      "topics": [],
+      "companies": [
+        "Microsoft Developer"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent memory and context",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Microsoft developers explain how Work IQ grounds AI assistance in organizational context and reusable workflow knowledge, then connect that grounding to practical agent experiences."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-10-07-agent-skills",
+      "brief_date": "2026-10-07",
+      "event_date": "2026-09-29",
+      "headline": "Microsoft Copilot Just Got a Massive Upgrade",
+      "url": "/videos/2026-10-07/agent-skills/",
+      "focus": "agents_non_technical_people",
+      "topics": [],
+      "companies": [
+        "Kevin Stratvert"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "AI-assisted development"
+      ],
+      "summary": "Kevin Stratvert demonstrates upgraded Microsoft Copilot surfaces and shows how the assistant supports a range of everyday knowledge-work tasks."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-10-07-1",
+      "brief_date": "2026-10-07",
+      "event_date": "2026-10-02",
+      "headline": "Hard Fork — October 2, 2026 episode",
+      "url": "/podcasts/2026-10-07/hard-fork-2026-10-02-ai-agents/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "agent privacy",
+        "agent failures"
+      ],
+      "companies": [
+        "Hard Fork"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "The episode examines AI personal assistants alongside recent agent failures and the privacy trade-offs that follow when software can act across user data and services."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-10-07-2",
+      "brief_date": "2026-10-07",
+      "event_date": "2026-10-02",
+      "headline": "The a16z Show — October 2, 2026 episode",
+      "url": "/podcasts/2026-10-07/a16z-2026-10-02-ai-agents-incumbents/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "multi-agent workflows",
+        "human escalation"
+      ],
+      "companies": [
+        "The a16z Show"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "The discussion explores multi-agent procurement workflows and the points where automated coordination should escalate decisions to people for trust and approval."
+    },
+    {
+      "content_type": "Article",
       "story_id": "dab-story-2026-10-06-m01",
       "brief_date": "2026-10-06",
       "event_date": "2026-10-03",
@@ -5473,164 +5698,6 @@
         "Accessible agents for knowledge work"
       ],
       "summary": "Microsoft’s September Copilot extensibility session introduces an Insights Agent pattern that lets makers ask how their agents are being used. The focus is operational visibility for Copilot Studio builders rather than another agent-creation surface."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-07-3f4df523",
-      "brief_date": "2026-09-07",
-      "event_date": "2026-09-06",
-      "headline": "OpenAI says coding agents now deliver more agent-workdays than human workdays inside its research organization",
-      "url": "/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/",
-      "focus": "technical_ai_engineering",
-      "topics": [
-        "coding agents",
-        "AI research automation",
-        "human supervision",
-        "agent evaluation",
-        "harness engineering"
-      ],
-      "companies": [
-        "OpenAI"
-      ],
-      "evidence_type": "official_announcement",
-      "availability_status": "research",
-      "trends": [
-        "Agent reliability and governance",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "OpenAI reports that by mid-August its research organization was using 3.1 agent-workdays of coding-agent runtime for every human workday. Researchers are delegating longer-horizon work while humans still set priorities, judge results, and make deployment decisions."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-07-dab4bc85",
-      "brief_date": "2026-09-07",
-      "event_date": "2026-09-04",
-      "headline": "Claude completes a computer-checked formalization of Fermat’s Last Theorem with dozens of collaborating agents",
-      "url": "/stories/2026-09-07/claude-formalizes-fermats-last-theorem-with-computer-checking/",
-      "focus": "technical_ai_engineering",
-      "topics": [
-        "formal verification",
-        "multi-agent systems",
-        "Lean",
-        "research agents",
-        "verifiable reasoning"
-      ],
-      "companies": [
-        "Anthropic"
-      ],
-      "evidence_type": "official_announcement",
-      "availability_status": "research",
-      "trends": [
-        "Agent reliability and governance",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Anthropic says Claude produced the first complete computer-checked formalization of Fermat's Last Theorem, working largely autonomously for 11 days with dozens of collaborating agents and the Lean proof assistant."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-07-8053a573",
-      "brief_date": "2026-09-07",
-      "event_date": "2026-09-07",
-      "headline": "GPT-6 Astra launches with stronger computer use and professional-work performance, initially through a limited rollout",
-      "url": "/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/",
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "GPT-6 Astra",
-        "computer use",
-        "professional work",
-        "ChatGPT",
-        "agentic workflows"
-      ],
-      "companies": [
-        "OpenAI"
-      ],
-      "evidence_type": "official_announcement",
-      "availability_status": "limited_preview",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "OpenAI introduced GPT-6 Astra on September 7, highlighting stronger computer use, browsing, software engineering, professional work, long context, and safety. Rollout begins with a limited set of organizations before broader ChatGPT and API access."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-07-968c0cd8",
-      "brief_date": "2026-09-07",
-      "event_date": "2026-09-04",
-      "headline": "NVIDIA demonstrates a memory-driven ‘chief of staff’ agent built around a human-readable self model",
-      "url": "/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/",
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "agent memory",
-        "NemoClaw",
-        "knowledge continuity",
-        "human-readable memory"
-      ],
-      "companies": [
-        "NVIDIA"
-      ],
-      "evidence_type": "official_documentation",
-      "availability_status": "general_availability",
-      "trends": [
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "NVIDIA published a memory-driven agent pattern built with NemoClaw for enterprise work spanning messages, decisions, projects, and obligations. The design maintains a human-readable self model so durable context can be inspected and corrected."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-07-379d301c",
-      "brief_date": "2026-09-07",
-      "event_date": "2026-09-02",
-      "headline": "Copilot in SharePoint adds reusable skills and evaluations, turning natural-language work into an improvable agent asset",
-      "url": "/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/",
-      "focus": "agents_non_technical_people",
-      "topics": [
-        "SharePoint Copilot",
-        "reusable skills",
-        "evaluations",
-        "natural-language workflows"
-      ],
-      "companies": [
-        "Microsoft"
-      ],
-      "evidence_type": "official_announcement",
-      "availability_status": "general_availability",
-      "trends": [
-        "Agent reliability and governance",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Microsoft's September Copilot in SharePoint update says reusable skills can follow users across SharePoint and OneDrive, and Copilot can evaluate and improve those skills alongside natural-language workflows and content creation."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-07-fdefded2",
-      "brief_date": "2026-09-07",
-      "event_date": "2026-09-02",
-      "headline": "Microsoft makes Fabric Data Agents generally available as tools inside Copilot Studio agents",
-      "url": "/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/",
-      "focus": "agents_non_technical_people",
-      "topics": [
-        "Copilot Studio",
-        "Fabric Data Agents",
-        "governed enterprise data",
-        "low-code agents",
-        "tool use"
-      ],
-      "companies": [
-        "Microsoft"
-      ],
-      "evidence_type": "official_announcement",
-      "availability_status": "general_availability",
-      "trends": [
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Microsoft says Fabric Data Agents are generally available for use in Copilot Studio. A Copilot Studio agent can call a Fabric Data Agent as a tool, combine it with other tools and knowledge, and use permissions already applied to the underlying Fabric data."
     }
   ]
 }

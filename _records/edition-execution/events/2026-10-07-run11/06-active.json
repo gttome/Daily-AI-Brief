@@ -1,0 +1,14 @@
+{
+  "task_id": "06",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-07T02:01:00.000Z",
+  "reason": "Claimed the exact queued Task 06 repository request after the prior generation-15 writer was proven dead.",
+  "proof": {
+    "request_key": "47214551c187406b2d12688590cd6e58653d66a880376392a640cf19f58600fb",
+    "writer_generation": 16,
+    "watchdog_lease_generation": 3,
+    "capability": "repository",
+    "dead_writer_proof": "_records/edition-execution/dead-writer-proofs/reliable-edition-20261007-run11/20261007T020100Z-generation-15.json"
+  }
+}

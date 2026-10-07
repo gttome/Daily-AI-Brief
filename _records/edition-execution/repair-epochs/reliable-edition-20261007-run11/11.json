@@ -1,0 +1,65 @@
+{
+  "schema_version": "run-engineering-repair-epoch-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "11",
+  "request_key": "edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044",
+  "repair_epoch": 1,
+  "epochs_completed": 1,
+  "status": "PASS",
+  "required_proofs": [
+    "fresh_single_story_worker_isolation",
+    "no_people_or_humanoid_visual_primitives",
+    "small_png_exact_byte_transport_preflight_pass",
+    "protected_ci_pass",
+    "operational_learning_updated"
+  ],
+  "required_proofs_passed": true,
+  "proofs": {
+    "fresh_single_story_worker_isolation": {
+      "result": "PASS",
+      "evidence": "Merged repair 081d9f635b361ac164aa46feb31dda58794a6480 adds canonical post-repair admission/delivery binding. The executed post-repair operation used a fresh single-story generator-visible invocation with orchestration context excluded."
+    },
+    "no_people_or_humanoid_visual_primitives": {
+      "result": "PASS",
+      "evidence": "The accepted Git-saved image contains no people, avatars, or humanoid primitives."
+    },
+    "small_png_exact_byte_transport_preflight_pass": {
+      "result": "PASS",
+      "evidence_path": "_records/image-admission/2026-10-07-run11/preflight/task11-slot-f-g25-repair-epoch1-direct-blob.png",
+      "method": "git_data_direct_blob",
+      "preflight_git_blob_sha": "26a8c68efad2a094e8fe6d850426b651d353c568",
+      "readback_match": true,
+      "low_quality_fallback": false
+    },
+    "protected_ci_pass": {
+      "result": "PASS",
+      "run_id": 37570801489,
+      "head_sha": "72c1f84183c2128be9a62799542d85b21d506bb5",
+      "merge_sha": "081d9f635b361ac164aa46feb31dda58794a6480",
+      "event": "pull_request",
+      "conclusion": "success"
+    },
+    "operational_learning_updated": {
+      "result": "PASS",
+      "evidence_path": "_records/run-learning/incidents/reliable-edition-20261007-run11.jsonl",
+      "problem_id": "DAB-RUN11-IMAGE-QUALITY-001"
+    }
+  },
+  "repair_directive_version": "image-quality-post-repair-overlay-v1",
+  "consumer_version": "protected-image-quality-overlay-v1",
+  "completed_at": "2026-10-07T04:21:00.000Z",
+  "post_repair_attempts": 1,
+  "repair_digest": "sha256:30a4a5b87f358729db7cd23aef661431719cd9d2d00ed81c661ae69d629b4968",
+  "last_post_repair_request_key": "c14bb873847c16a99787bf89f4c8105101f83131344df8e16cc2e2c76802e294",
+  "post_repair_dispatched_at": "2026-10-07T04:27:36.000Z",
+  "post_repair_outcome": "ACCEPTED_LOCKED",
+  "post_repair_completed_at": "2026-10-07T05:06:30.000Z",
+  "post_repair_evidence": {
+    "attempt_receipt": "_records/image-attempts/2026-10-07-run11/m01-repair-epoch-1-attempt-1.json",
+    "saved_git_review": "_records/image-reviews/2026-10-07-run11/m01-repair-epoch-1-attempt-1-saved-git-review.json",
+    "acceptance_lock": "_records/image-acceptance/2026-10-07-run11/m01.json",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/11-c14bb873847c16a99787bf89f4c8105101f83131344df8e16cc2e2c76802e294.json"
+  }
+}

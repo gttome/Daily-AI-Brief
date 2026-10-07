@@ -1,75 +1,75 @@
 {
   "schema_version": "1.0.0",
   "manifest_kind": "daily_ai_brief_publication",
-  "edition_date": "2026-10-06",
-  "edition_id": "dab-edition-2026-10-06",
-  "baseline_sha": "90f24d679cd0745c605b35fe6555898d62a41870",
-  "staging_ref": "reliable-edition/dab-edition-2026-10-06-run10",
+  "edition_date": "2026-10-07",
+  "edition_id": "dab-edition-2026-10-07",
+  "baseline_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+  "staging_ref": "reliable-edition/dab-edition-2026-10-07-run11",
   "policy_profile": "under80-v1",
   "artifacts": {
     "kernel": {
-      "path": "_records/editorial-handoff/kernel-2026-10-06.json",
+      "path": "_records/editorial-handoff/kernel-2026-10-07.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:e938453a318b17ce8cade576af565aeaa1334449"
+      "digest": "git_blob_sha1:395873ff89a17382cf6f4fa0dfb1df1c7cb8d69e"
     },
     "facts": {
-      "path": "_records/editorial-handoff/facts-2026-10-06.json",
+      "path": "_records/editorial-handoff/facts-2026-10-07.json",
       "schema_version": "legacy-unversioned",
-      "digest": "git_blob_sha1:a41794c9656a18e18786b36144f64ae4cdc15990",
+      "digest": "git_blob_sha1:7a05d8660376dbd78355a92b71cb41d331dd7d72",
       "adapter": "candidate-facts-map-v1"
     },
     "metadata_candidates": {
-      "path": "_records/editorial-handoff/metadata-candidates-2026-10-06-run10.json",
+      "path": "_records/editorial-handoff/metadata-candidates-2026-10-07-run11.json",
       "schema_version": "1.1.0",
-      "digest": "git_blob_sha1:52d4b327bba04178e650a460b14ac1137ced5b1d"
+      "digest": "git_blob_sha1:767cb428338d39c829dd6930e9b2d093f1ecd3e7"
     },
     "article_evidence": {
-      "path": "_records/editorial-handoff/article-evidence-2026-10-06-run10.json",
+      "path": "_records/editorial-handoff/article-evidence-2026-10-07-run11.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:601ce14f167a7e0692b8c2ff1ccd72e4f10922ae"
+      "digest": "git_blob_sha1:d592936dbb4a01aba40e2c2763db07d0ee0065f7"
     },
     "media": {
-      "path": "_records/editorial-handoff/media-2026-10-06.json",
+      "path": "_records/editorial-handoff/media-2026-10-07.json",
       "schema_version": "legacy-unversioned",
-      "digest": "git_blob_sha1:519a4151d72ff8e50402768bc748c83ad6bd8f2c",
+      "digest": "git_blob_sha1:e4621a6a922572b8934bcd21443073b7de1067af",
       "adapter": "selected-media-v1"
     },
     "media_receipt": {
-      "path": "_records/editorial/media-preflight/2026-10-06.json",
+      "path": "_records/editorial/media-preflight/2026-10-07.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:b0ee40d159c45ffefc33a6a864e17f1d6ebb5c41"
+      "digest": "git_blob_sha1:bfdfeaa2e9b1b84bc05bd5a717f873df08a6db97"
     },
     "image_manifest": {
-      "path": "_records/editorial-handoff/images-2026-10-06-publication.json",
+      "path": "_records/editorial-handoff/images-2026-10-07-publication.json",
       "schema_version": "legacy-unversioned",
-      "digest": "git_blob_sha1:720f54b5413f0d2ff33f580d787377c8a3aac306",
+      "digest": "git_blob_sha1:890444350bda37256130a9c29616b3713de4f18f",
       "adapter": "accepted-images-map-v1"
     },
     "image_review": {
-      "path": "_records/editorial-handoff/images-2026-10-06-publication.json",
+      "path": "_records/editorial-handoff/images-2026-10-07-publication.json",
       "schema_version": "legacy-unversioned",
-      "digest": "git_blob_sha1:720f54b5413f0d2ff33f580d787377c8a3aac306",
+      "digest": "git_blob_sha1:890444350bda37256130a9c29616b3713de4f18f",
       "adapter": "accepted-images-map-v1"
     },
     "watchlist": {
       "path": "_data/watchlist.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:4b5dfe2e3d29d1cba21a9e62d328bce9e4ee7b8b"
+      "digest": "git_blob_sha1:37d1cb5b1b843e1c1ffe34c024e5202f64fd9500"
     },
     "watchlist_evidence": {
-      "path": "_records/editorial-handoff/watchlist-2026-10-06.json",
+      "path": "_records/watchlist-sweeps/2026-10-07.json",
       "schema_version": "2.0.0",
-      "digest": "git_blob_sha1:af8f7b2e869584c4c4a7ba18ca5aec6adc8c90a5"
+      "digest": "git_blob_sha1:e45345129af038ca6a003d809460aab9394336a0"
     },
     "book_mappings": {
-      "path": "_records/editorial-handoff/book-mappings-2026-10-06.json",
+      "path": "_records/editorial-handoff/book-mappings-2026-10-07.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:df684986bfafa8ce57579badc4d7d8dfe162c4a1"
+      "digest": "git_blob_sha1:41aca51136651449af758a7ed1a73b5ce3bbb7f4"
     },
     "image_quality_evidence": {
-      "path": "_records/image-quality/2026-10-06-publication-v2.json",
+      "path": "_records/image-quality/2026-10-07-publication-v2.json",
       "schema_version": "2.0.0",
-      "digest": "git_blob_sha1:f44b50bffc49ae5e8657ba63abad3d0e392d1804"
+      "digest": "git_blob_sha1:58e42f32b0a1128102acfd0473a97c5d8637ad73"
     }
   },
   "freeze": {
@@ -90,12 +90,12 @@
       "artifact": "watchlist",
       "evidence_artifact": "watchlist_evidence",
       "counts": {
-        "new_today": 0,
-        "updated_today": 4,
-        "carried_forward": 17
+        "new_today": 1,
+        "updated_today": 3,
+        "carried_forward": 18
       },
       "public_projection_path": "data/watchlist.json",
-      "public_projection_digest": "git_blob_sha1:db32bf9887fc987e1d7863d581e826547e1a8513",
+      "public_projection_digest": "git_blob_sha1:b5e5af787db5350c3408a16088bc19412918989b",
       "repair_allowed_downstream": false
     }
   },
@@ -131,25 +131,19 @@
     ]
   },
   "seal": {
-    "sealed_at": "2026-10-06T09:49:00.000Z",
-    "parent_commit": "6818401773079d9df16cb18c9e616865dfe5d314",
+    "sealed_at": "2026-10-07T10:59:00.000Z",
+    "parent_commit": "2e16541c4ac62a156661c50d82cff7e806a98c74",
     "artifact_count": 12,
     "immutable_artifact_digests": true,
     "selection_changed": false,
     "repaired_contracts": [
-      "run10_incomplete_deterministic_publication_projection",
-      "run10_locked_evidence_publication_contract_projection"
+      "run11_incomplete_same_edition_publication_handoff"
     ]
   },
   "migration": {
-    "contract_transition": "pre-2026-10-05-frozen-contract-recovery",
-    "allow_verified_video_exception": true,
+    "contract_transition": "same-edition-publication-projection-repair",
     "preserve_accepted_locked_assets": true,
-    "aggregate_watchlist_task08": {
-      "enabled": true,
-      "worker_result_path": "_records/edition-execution/worker-results/reliable-edition-20261006-run10/08-b10f45784d2e55345853976830d8c4d737124a4bbfebf8f5ce350cfc39ae204c.json",
-      "watchlist_refresh_path": "_records/editorial/2026-10-06-run10/watchlist-refresh.json"
-    },
-    "repair_key": "RUN10_INCOMPLETE_DETERMINISTIC_PUBLICATION_PROJECTION"
+    "repair_key": "RUN11_INCOMPLETE_SAME_EDITION_PUBLICATION_HANDOFF",
+    "source_qualification": "_records/editorial/2026-10-07-run11/task20-qualification.json"
   }
 }

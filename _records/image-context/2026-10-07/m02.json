@@ -1,0 +1,23 @@
+{
+  "schema_version": "sealed-story-image-context-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-07-m02"
+  ],
+  "candidate_id": "m02",
+  "task_id": "12",
+  "includes_edition_context": false,
+  "orchestration_context_visible": false,
+  "generator_visible_field": "prompt",
+  "sealed_at": "2026-10-07T02:34:00.000Z",
+  "allowed_text": [
+    "Agent activity",
+    "Client version",
+    "Schema gate",
+    "Metrics ingest",
+    "Missing signal",
+    "Usage report",
+    "Evidence check"
+  ],
+  "prompt": "Professional high-detail textbook mechanism diagram on a clean white 1200x630 canvas. Show an agent activity telemetry pipeline with two client-version lanes entering a schema gate, then metrics ingestion, usage reporting, and an evidence check. One lane visibly loses a signal at the compatibility boundary while the corrected lane preserves it. Include detailed event packets, version markers, schema tokens, ingestion stages, report cells, and verification traces. No people, humanoids, photos, logos, decorative filler, unsupported performance claims, overlapping text, or sparse basic layout. Only these visible labels: Agent activity, Client version, Schema gate, Metrics ingest, Missing signal, Usage report, Evidence check."
+}

@@ -1,0 +1,15 @@
+{
+  "task_id": "18",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-07T10:02:00.000Z",
+  "proof": {
+    "request_key": "7424dcb5fca99027d8911a0bc2fc193ba5ba182e04a8b37672c38c8814009a4a",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/18-7424dcb5fca99027d8911a0bc2fc193ba5ba182e04a8b37672c38c8814009a4a.json",
+    "canonical_edition": "_data/editions/2026-10-07.json",
+    "permanent_pages": "PASS",
+    "integrated_repository_validation": "PASS",
+    "media_semantic_distinctness_v1": "PASS",
+    "accepted_locked_images_reused": 6
+  }
+}

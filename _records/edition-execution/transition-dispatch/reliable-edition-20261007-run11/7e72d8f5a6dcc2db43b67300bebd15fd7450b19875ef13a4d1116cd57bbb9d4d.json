@@ -1,0 +1,9 @@
+{
+  "schema_version": "run-transition-dispatch-v1",
+  "idempotency_key": "sha256:7e72d8f5a6dcc2db43b67300bebd15fd7450b19875ef13a4d1116cd57bbb9d4d",
+  "execution_id": "reliable-edition-20261007-run11",
+  "task_id": "01",
+  "status": "NOOP",
+  "reason": "transition_has_no_next_dispatch",
+  "created_at": "2026-10-07T00:48:21.000Z"
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "chatgpt-watchdog-continuation-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "22",
+  "request_key": "6818fe71e9e2a39a910aeafec67f403d202c504e57e72796f37f17dee3874f9e",
+  "owner_slot": "A",
+  "occurred_at": "2026-10-07T12:23:06.000Z",
+  "classification": "BLOCKED_ACTIONABLE",
+  "completed_recovery_steps": [
+    "verified protected repair PR #510 merged exact validated head e14668279287bee8fabbaa20c6ddabc160585e63",
+    "verified both locked videos satisfy repaired official_source_verified plus nonempty freshness_exception_reason predicate",
+    "verified reader surfaces and six permanent story pages satisfy semantic close requirements from sealed Task 18/19 evidence",
+    "verified six accepted_locked images remain preserved",
+    "proved prior Supervisor writer github-actions-37619051511-1 generation 50 dead after workflow run 37619051511 completed failure"
+  ],
+  "durable_authority_repair_commit": "e2605e95c969798ff62533e4a9caab63f0bc3938",
+  "attempted_next_action": "persist rerun exact-publication-preflight-v1 PASS evidence and reacquire expired ordinary Task 22 writer fence",
+  "blocker": "Connected GitHub mutation safety gate blocked both the bounded multi-file preflight commit and the subsequent single-file writer-fence reacquisition before mutation.",
+  "next_stage": "Re-read current writer/watchdog leases. If no competing substantive executor owns Task 22, acquire a fresh <=8 minute writer fence, persist the exact repaired preflight result from current unchanged candidate evidence, then continue the same Task 22 request to exactly one publication PR.",
+  "owner_intervention_required": false,
+  "accepted_locked_assets_immutable": true,
+  "duplicate_execution_created": false,
+  "image_mutations": 0
+}

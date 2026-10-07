@@ -1,0 +1,64 @@
+{
+  "schema_version": "run11-podcast-selection-v1",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_id": "reliable-edition-20261007-run11",
+  "research_cutoff": "2026-10-07T00:04:00.000Z",
+  "verified_at": "2026-10-07T02:16:00.000Z",
+  "semantic_pass_reused": true,
+  "semantic_selection_git_blob": "48cf6d7fabe34091a5bc325f483c2f9e442414fd",
+  "semantic_input_evidence_git_blob": "6b5c2b0c3dddc568cc4d8304e98e1adc5fd16f52",
+  "result": "PASS",
+  "podcasts": [
+    {
+      "ordinal": 1,
+      "title": "Hard Fork — October 2, 2026 episode",
+      "show": "Hard Fork",
+      "publisher": "The New York Times",
+      "host": "Kevin Roose and Casey Newton",
+      "episode_key": "hard-fork-2026-10-02-ai-agents",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 3182,
+      "url": "https://podcasts.apple.com/us/search?term=Hard%20Fork%20hard-fork-2026-10-02-ai-agents",
+      "summary": "The episode examines AI personal assistants alongside recent agent failures and the privacy trade-offs that follow when software can act across user data and services.",
+      "why_it_matters": "It gives readers a concrete way to judge agent convenience against operational risk, especially when autonomy, sensitive context and user trust collide.",
+      "connection_to_brief": "It directly complements the brief’s ambient-agent and governed web-search stories by supplying the user-facing failure and privacy perspective behind those architecture choices.",
+      "connection": "It directly complements the brief’s ambient-agent and governed web-search stories by supplying the user-facing failure and privacy perspective behind those architecture choices.",
+      "verification": "Reused sealed authoritative repository evidence: Apple Podcasts identity plus independent episode metadata establish the New York Times show identity and a 53:02 runtime."
+    },
+    {
+      "ordinal": 2,
+      "title": "The a16z Show — October 2, 2026 episode",
+      "show": "The a16z Show",
+      "publisher": "a16z",
+      "host": "a16z",
+      "episode_key": "a16z-2026-10-02-ai-agents-incumbents",
+      "publication_date": "2026-10-02",
+      "runtime_seconds": 3588,
+      "url": "https://podcasts.apple.com/us/search?term=The%20a16z%20Show%20a16z-2026-10-02-ai-agents-incumbents",
+      "summary": "The discussion explores multi-agent procurement workflows and the points where automated coordination should escalate decisions to people for trust and approval.",
+      "why_it_matters": "Readers get a practical governance pattern for deciding which multi-agent decisions can remain automated and which need explicit human review.",
+      "connection_to_brief": "That trust-escalation pattern maps to the brief’s ambient-agent architecture, Copilot telemetry reliability, and governed-agent deployment themes from system design through oversight.",
+      "connection": "That trust-escalation pattern maps to the brief’s ambient-agent architecture, Copilot telemetry reliability, and governed-agent deployment themes from system design through oversight.",
+      "verification": "Reused sealed authoritative repository evidence: the Apple Podcasts listing confirms the episode identity and independent episode metadata reports a 59:48 runtime."
+    }
+  ],
+  "checks": {
+    "count": 2,
+    "source_diverse": true,
+    "publishers": [
+      "The New York Times",
+      "a16z"
+    ],
+    "publication_before_cutoff": true,
+    "runtime_verified": true,
+    "runtimes_seconds": [
+      3182,
+      3588
+    ],
+    "verified_from_sealed_repository_evidence": true,
+    "immediately_prior_edition_exact_podcast_pair_repeat": false,
+    "reader_ready_copy_present": true,
+    "summary_why_it_matters_connection_distinct": true
+  },
+  "freshness_note": "No web research was used for this repository-capability task; the pair was selected from authoritative sealed podcast evidence and does not repeat the immediately prior edition’s exact two-podcast pair."
+}

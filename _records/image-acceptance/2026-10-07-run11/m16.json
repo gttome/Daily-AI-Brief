@@ -1,0 +1,42 @@
+{
+  "schema_version": "image-acceptance-lock-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "16",
+  "candidate_id": "m16",
+  "accepted_locked": true,
+  "accepted_at": "2026-10-07T09:13:00.000Z",
+  "writer_generation": 39,
+  "consumer_automation_id": "Daily Brief Watchdog F",
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "attempt": 4,
+  "image_execution_admission": "_records/image-admission/2026-10-07-run11/16-f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13-invocation-20261007T090600Z.json",
+  "attempt_receipt": "_records/image-attempts/2026-10-07-run11/m16-attempt-4.json",
+  "saved_git_review": "_records/image-reviews/2026-10-07-run11/m16-attempt-4-saved-git-review.json",
+  "source_lineage": {
+    "base_generation_id": "exec-9bbebabe-47c8-4e60-afb4-9a0c4b9b2d88",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "3981d4b3f8bfa833e5c73baf8a3c7f31721d4cb4b10c2307cd08c4ea1def4411",
+    "native_bytes": 1253393,
+    "native_dimensions": "1730x909",
+    "native_persisted": true,
+    "transport_representation_authorized": false,
+    "transport_result": "_records/edition-execution/image-transport-results/reliable-edition-20261007-run11/task16-m16-g39-attempt4.json",
+    "producer_writer_generation": 39,
+    "acceptance_writer_generation": 39
+  },
+  "final": {
+    "path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m16.png",
+    "raw_path": "_records/image-attempts/2026-10-07-run11/m16-attempt-4.png",
+    "git_blob_sha": "6d01bb821b8a113b9ec9c8b3629272f9464ff4c5",
+    "sha256": "3981d4b3f8bfa833e5c73baf8a3c7f31721d4cb4b10c2307cd08c4ea1def4411",
+    "bytes": 1253393,
+    "width": 1730,
+    "height": 909
+  },
+  "visible_text_guard": "PASS",
+  "logo_brand_guard": "PASS",
+  "quality_gate": "PASS",
+  "immutable": true
+}

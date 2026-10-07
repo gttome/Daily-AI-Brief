@@ -1,0 +1,17 @@
+{
+  "state": "fault",
+  "fault_code": "research_consumer_unclaimed",
+  "task_id": "03",
+  "request_key": "c8618a30fec5a0de074f5171f22748a74ae6ab28f72ae69daa780b6ab0c7bb91",
+  "execution_id": "reliable-edition-20261007-run11",
+  "request_status": "queued",
+  "queued_at": "2026-10-07T01:04:25.694Z",
+  "substantive_progress_at": null,
+  "observed_at": "2026-10-07T01:09:27.000Z",
+  "idle_seconds": 301.306,
+  "max_idle_seconds": 60,
+  "supervisor_bookkeeping_is_progress": false,
+  "supervisor_run_id": 37555414343,
+  "supervisor_failure": "local_rebase_blocked_by_unstaged_changes",
+  "next_action": "The bound ordinary research-capable ChatGPT consumer must claim the same request; preserve completed work and do not skip ahead."
+}

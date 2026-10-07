@@ -1,0 +1,38 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "incident_id": "wd-reliable-edition-20261007-run11-task16-generation",
+  "slot": "F",
+  "observed_at": "2026-10-07T08:00:00.000Z",
+  "task_id": "16",
+  "request_key": "f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13",
+  "fault_code": "EXPIRED_RECOVERY_OWNER_NO_SUBSTANTIVE_PROGRESS",
+  "prior_owner": {
+    "slot": "D",
+    "generation": 23,
+    "expires_at": "2026-10-07T07:54:00.000Z"
+  },
+  "action": "CLAIM_EXACT_REQUEST_AND_CONTINUE_IMAGE_ADMISSION",
+  "writer_generation": 35,
+  "watchdog_generation": 24,
+  "owner_intervention_required": false,
+  "preserved_done_tasks": [
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15"
+  ],
+  "accepted_locked_assets_preserved": true
+}

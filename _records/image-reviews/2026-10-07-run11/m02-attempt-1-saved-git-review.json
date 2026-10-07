@@ -1,0 +1,66 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "12",
+  "candidate_id": "m02",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "attempt": 1,
+  "reviewed_at": "2026-10-07T05:11:30.000Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 26,
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "saved_git_commit": "e5133f3cbca736350086850f5205c74941330ca6",
+  "image_execution_admission": "_records/image-admission/2026-10-07-run11/12-df2067cf47a6918212edbf13dbf75fb9bdd7679c72d2d5f7a843903a69814ab1.json",
+  "source_lineage": {
+    "base_generation_id": "exec-11926933-d341-4781-b152-9216aad5fd2b",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "fa6846314aa5f68c3ab83ecb4e9ca9223039707743476a21e83de0449135dbaf",
+    "native_bytes": 1324476,
+    "native_width": 1733,
+    "native_height": 908,
+    "transport_method": "exact returned PNG via Git Data create_blob Base64"
+  },
+  "final": {
+    "path": "_records/image-attempts/2026-10-07-run11/m02-attempt-1.png",
+    "git_blob_sha": "4af7d2e4fe7d7adc40598f746e849cf28ad4b546",
+    "sha256": "fa6846314aa5f68c3ab83ecb4e9ca9223039707743476a21e83de0449135dbaf",
+    "bytes": 1324476,
+    "width": 1733,
+    "height": 908,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "FAIL",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "Two client-version lanes traverse schema gating, metrics ingestion, usage reporting and evidence checking; the upper lane visibly drops a signal while the lower lane preserves it.",
+    "legibility": "PASS",
+    "visible_text_guard": "FAIL",
+    "allowed_visible_text": [
+      "Agent activity",
+      "Client version",
+      "Schema gate",
+      "Metrics ingest",
+      "Missing signal",
+      "Usage report",
+      "Evidence check"
+    ],
+    "extra_visible_text": [
+      "v1.0",
+      "v2.0"
+    ],
+    "no_logos_or_brand_marks": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "Rejected only because the Git-saved image contains two readable version strings outside the exact allowlist."
+  },
+  "accepted_locked": false,
+  "result": "FAIL",
+  "rejection_reason_code": "VISIBLE_TEXT_ALLOWLIST_VIOLATION"
+}

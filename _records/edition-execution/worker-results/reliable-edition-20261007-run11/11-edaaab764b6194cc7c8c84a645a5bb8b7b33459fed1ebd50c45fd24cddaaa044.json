@@ -1,0 +1,54 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "11",
+  "request_writer_generation": 20,
+  "writer_generation": 23,
+  "status": "failed",
+  "completed_at": "2026-10-07T03:06:00.000Z",
+  "task_outcome": "Blocked",
+  "evidence": {
+    "image_execution_admission": "_records/image-admission/2026-10-07-run11/11-edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044.json",
+    "attempt_receipts": [
+      "_records/image-attempts/2026-10-07-run11/m01-attempt-1.json",
+      "_records/image-attempts/2026-10-07-run11/m01-attempt-2.json",
+      "_records/image-attempts/2026-10-07-run11/m01-attempt-3.json",
+      "_records/image-attempts/2026-10-07-run11/m01-attempt-4.json"
+    ],
+    "max_generation_attempts": 4,
+    "generation_attempts_consumed": 4,
+    "accepted_locked": false,
+    "exact_byte_persistence_verified_for_all_attempts": true,
+    "saved_git_visual_review_completed_for_all_attempts": true,
+    "quality_failures": [
+      {
+        "attempt": 1,
+        "code": "EXTRA_VISIBLE_TEXT",
+        "detail": "Readable device-clock timestamps outside the allowlist."
+      },
+      {
+        "attempt": 2,
+        "code": "EXTRA_VISIBLE_TEXT",
+        "detail": "Readable CLI tokens outside the allowlist."
+      },
+      {
+        "attempt": 3,
+        "code": "EXTRA_VISIBLE_TEXT",
+        "detail": "Readable command, input, and receipt strings outside the allowlist."
+      },
+      {
+        "attempt": 4,
+        "code": "LOGO_PRESENT",
+        "detail": "Recognizable Google and app branding violated the no-logo instruction."
+      }
+    ],
+    "low_quality_fallback_used": false,
+    "svg_fallback_used": false,
+    "owner_intervention_required": false,
+    "terminal_condition": "MAX_GENERATION_ATTEMPTS_EXHAUSTED"
+  },
+  "result": "FAIL"
+}

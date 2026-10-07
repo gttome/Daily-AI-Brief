@@ -1,0 +1,15 @@
+{
+  "task_id": "11",
+  "from": "Active",
+  "to": "Blocked",
+  "at": "2026-10-07T03:06:00.000Z",
+  "reason": "MAX_GENERATION_ATTEMPTS_EXHAUSTED",
+  "proof": {
+    "request_key": "edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044",
+    "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/11-edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044.json",
+    "attempt_count": 4,
+    "max_generation_attempts": 4,
+    "accepted_locked": false,
+    "no_fallback": true
+  }
+}

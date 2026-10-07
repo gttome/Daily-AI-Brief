@@ -1055,6 +1055,44 @@
         "label": "READ DEEPER",
         "why": "Event-driven autonomy becomes safer when failure handling, escalation playbooks and human-versus-agent roles are decided before an agent acts."
       }
+    ],
+    "2026-10-07": [
+      {
+        "item_id": "dab-story-2026-10-07-m01",
+        "reference_id": "ecosystem-template-export",
+        "label": "READ DEEPER",
+        "why": "A reusable device skill becomes more valuable when readers can turn the working pattern into an editable template instead of rebuilding the workflow from scratch."
+      },
+      {
+        "item_id": "dab-story-2026-10-07-m02",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Agent telemetry is only useful when the reported activity is checked against independent evidence, making verification a final gate rather than an assumption."
+      },
+      {
+        "item_id": "dab-story-2026-10-07-m08",
+        "reference_id": "prompt-expert-critic",
+        "label": "READ DEEPER",
+        "why": "Forward-deployed AI skills improve when learners practice critique and revision instead of treating the model's first answer as finished work."
+      },
+      {
+        "item_id": "dab-story-2026-10-07-m09",
+        "reference_id": "context-launch",
+        "label": "READ DEEPER",
+        "why": "Large enterprise rollouts benefit from launch readiness that joins technical context, governance and cross-functional operating responsibility."
+      },
+      {
+        "item_id": "dab-story-2026-10-07-m15",
+        "reference_id": "reliable-agent-failures",
+        "label": "READ DEEPER",
+        "why": "Ambient agents are safer when failure handling and conflict resolution are designed before the workflow wakes up and acts."
+      },
+      {
+        "item_id": "dab-story-2026-10-07-m16",
+        "reference_id": "context-privacy",
+        "label": "READ DEEPER",
+        "why": "Governed web search is easier to trust when only the context required for the task crosses the tool boundary and privacy constraints remain explicit."
+      }
     ]
   },
   "selection_reviews": {
@@ -14085,6 +14123,3264 @@
             {
               "reference_id": "ecosystem-template-export",
               "rationale": "No direct reader-facing connection is strong enough for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        }
+      ]
+    },
+    "2026-10-07": {
+      "schema_version": "1.0.0",
+      "edition_date": "2026-10-07",
+      "catalog_digest": "95cac16503b72b8a06c6dce9f6dbd484d74a30c6f82a0d592f3c87ea4767b320",
+      "items_digest": "1c06d7c677863c23460a8cad8e170b1dff109a80257e8b4bcd60ae97c7a9d8b2",
+      "items": [
+        {
+          "item_id": "dab-story-2026-10-07-m01",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "A reusable device skill becomes more valuable when readers can turn the working pattern into an editable template instead of rebuilding the workflow from scratch.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-07-m02",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "Agent telemetry is only useful when the reported activity is checked against independent evidence, making verification a final gate rather than an assumption.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-07-m08",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "Forward-deployed AI skills improve when learners practice critique and revision instead of treating the model's first answer as finished work.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-07-m09",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "Large enterprise rollouts benefit from launch readiness that joins technical context, governance and cross-functional operating responsibility.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-07-m15",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "Ambient agents are safer when failure handling and conflict resolution are designed before the workflow wakes up and acts.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-07-m16",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "Governed web search is easier to trust when only the context required for the task crosses the tool boundary and privacy constraints remain explicit.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-video-2026-10-07-general",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-video-2026-10-07-agent-skills",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-podcast-2026-10-07-1",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-podcast-2026-10-07-2",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This section was considered but was not the strongest direct match for this item.",
               "mechanism": 0,
               "topic": 0,
               "practical_lesson": 0,

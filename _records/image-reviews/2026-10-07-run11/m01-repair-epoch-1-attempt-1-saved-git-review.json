@@ -1,0 +1,61 @@
+{
+  "schema_version": "saved-git-image-review-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "11",
+  "candidate_id": "m01",
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "reviewed_at": "2026-10-07T05:06:30.000Z",
+  "reviewer": "scheduled-consumer:watchdog-F",
+  "writer_generation": 25,
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "saved_git_commit": "4c91d8937b553c2f3519bc7fbb43ec22062f79b7",
+  "image_execution_admission": "_records/image-admission/2026-10-07-run11/11-c14bb873847c16a99787bf89f4c8105101f83131344df8e16cc2e2c76802e294.json",
+  "source_lineage": {
+    "base_generation_id": "exec-b7046e9f-94f6-4784-88a4-299cd1f6322e",
+    "targeted_edit_generation_id": null,
+    "native_sha256": "b38f73955e216366916b86bc91465608e3d6215b2703b69407dd00980046ee30",
+    "native_bytes": 1571721,
+    "native_width": 1730,
+    "native_height": 909,
+    "transport_method": "exact returned PNG via Git Data create_blob Base64"
+  },
+  "final": {
+    "path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m01.png",
+    "raw_path": "_records/image-attempts/2026-10-07-run11/m01-repair-epoch-1-attempt-1.png",
+    "git_blob_sha": "2a7edd0cdc4d6c62c1b0d9b62b2d6d61a41d07f2",
+    "sha256": "b38f73955e216366916b86bc91465608e3d6215b2703b69407dd00980046ee30",
+    "bytes": 1571721,
+    "width": 1730,
+    "height": 909,
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES"
+  },
+  "visual_review": {
+    "result": "PASS",
+    "professional_quality": true,
+    "story_specific": true,
+    "detailed": true,
+    "composition": "A reusable-skill capsule flows through a CLI command into device-stream and layered app-state instrumentation, then into a bounded test action, result evidence, and a clear feedback loop.",
+    "legibility": "PASS",
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Reusable skill",
+      "CLI command",
+      "Device stream",
+      "App state",
+      "Test action",
+      "Result evidence"
+    ],
+    "extra_visible_text": [],
+    "no_logos_or_brand_marks": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "artifacts_or_corruption": false,
+    "context_contamination": false,
+    "note": "The Git-saved PNG is byte-identical to the generated source and passes the repair directive: exactly six allowed labels, neutral technical geometry, no logos or branding, strong story-specific mechanism, and no clipping or corruption."
+  },
+  "accepted_locked": true,
+  "result": "PASS"
+}

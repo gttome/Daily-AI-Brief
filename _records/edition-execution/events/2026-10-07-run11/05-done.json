@@ -1,0 +1,21 @@
+{
+  "task_id": "05",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-07T01:25:57.000Z",
+  "reason": "Locked exactly six selected stories with verified 2/2/2 category allocation and exactly one Agent Skills story from the unchanged semantic evidence digest.",
+  "proof": {
+    "request_key": "cc89434ee36af41d83efc8b2848fd281ac60396aa9f42de27102e466e4756828",
+    "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/05-cc89434ee36af41d83efc8b2848fd281ac60396aa9f42de27102e466e4756828.json",
+    "selection_artifact": "_records/editorial/2026-10-07-run11/story-selection.json",
+    "semantic_pass_receipt": "_records/editorial/2026-10-07-run11/one-semantic-editorial-pass.json",
+    "selected_candidate_ids": ["m01","m02","m08","m09","m15","m16"],
+    "category_counts": {
+      "technical_ai_engineering": 2,
+      "applied_genai_knowledge_workers": 2,
+      "agents_non_technical_people": 2
+    },
+    "agent_skills_candidate_id": "m01",
+    "result": "PASS"
+  }
+}

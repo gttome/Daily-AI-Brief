@@ -1,0 +1,21 @@
+{
+  "schema_version": "image-recovery-reconciliation-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "11",
+  "candidate_id": "m01",
+  "request_key": "edaaab764b6194cc7c8c84a645a5bb8b7b33459fed1ebd50c45fd24cddaaa044",
+  "attempt": 4,
+  "status": "rejected",
+  "rejected_at": "2026-10-07T04:22:00.000Z",
+  "rejection_code": "BASE_ATTEMPT_BUDGET_EXHAUSTED_REPAIR_READY",
+  "rejection_reason": "Four normal quality attempts are immutable and exhausted; protected repair epoch 1 has passed and merged.",
+  "repair_epoch": 1,
+  "repair_epoch_receipt": "_records/edition-execution/repair-epochs/reliable-edition-20261007-run11/11.json",
+  "protected_repair_record": "_records/edition-execution/protected-repairs/reliable-edition-20261007-run11/11-repair-362f7c34f63a3e8a5fe49b5bbcedc14835b875fa.json",
+  "recovery_action": "Execute exactly one fresh isolated single-story post-repair Task 11 image attempt under engineering repair epoch 1. Use the sealed story specification plus the canonical image-quality-post-repair-overlay-v1 directive from protected main. Do not treat this as normal attempt 5. Preserve Tasks 00-10 and all four prior attempt receipts. Require fresh story-only generator-visible context, no orchestration/dashboard context, exact-byte persistence/readback, saved-Git review, no people/humanoids, only allowlisted visible labels, no logos/wordmarks/branded icons, and no low-quality/SVG/owner-upload fallback.",
+  "targeted_next_action": "fresh isolated single-story post-repair attempt",
+  "same_context_retry_allowed": false,
+  "base_attempt_budget_reopened": false,
+  "post_repair_attempt_limit": 1
+}

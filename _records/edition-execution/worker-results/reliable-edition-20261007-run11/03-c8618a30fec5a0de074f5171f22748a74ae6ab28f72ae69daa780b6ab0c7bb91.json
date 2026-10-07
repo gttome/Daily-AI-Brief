@@ -1,0 +1,36 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "c8618a30fec5a0de074f5171f22748a74ae6ab28f72ae69daa780b6ab0c7bb91",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "03",
+  "request_writer_generation": 6,
+  "writer_generation": 9,
+  "status": "passed",
+  "completed_at": "2026-10-07T01:13:35.000Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "sealed_cutoff": "2026-10-07T00:04:00.000Z",
+    "candidate_count": 20,
+    "coverage_counts": {
+      "technical_ai_engineering": 7,
+      "applied_genai_knowledge_workers": 4,
+      "agents_non_technical_people": 9
+    },
+    "article_evidence_count": 9,
+    "preferred_agent_skill_candidate_id": "m01",
+    "agent_skill_story_ready_signals": 1,
+    "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates-2026-10-07-run11.json",
+    "metadata_candidates_blob_sha": "767cb428338d39c829dd6930e9b2d093f1ecd3e7",
+    "article_evidence_path": "_records/editorial-handoff/article-evidence-2026-10-07-run11.json",
+    "article_evidence_blob_sha": "d592936dbb4a01aba40e2c2763db07d0ee0065f7",
+    "discovery_method": "fresh_primary_source_web_research",
+    "research_chatgpt_queries": 12,
+    "model_calls": 0,
+    "repository_worker_generation": 9,
+    "duplicate_execution_created": false,
+    "note": "Fresh bounded discovery was completed against live primary or publisher sources under the exact queued request. Upstream Done work and the same execution identity were preserved."
+  },
+  "result": "PASS"
+}

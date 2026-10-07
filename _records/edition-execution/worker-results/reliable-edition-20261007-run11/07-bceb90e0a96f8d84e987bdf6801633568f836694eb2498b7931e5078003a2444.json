@@ -1,0 +1,33 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "bceb90e0a96f8d84e987bdf6801633568f836694eb2498b7931e5078003a2444",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "07",
+  "request_writer_generation": 16,
+  "writer_generation": 17,
+  "status": "passed",
+  "completed_at": "2026-10-07T02:16:00.000Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "podcasts_artifact": "_records/editorial/2026-10-07-run11/podcasts.json",
+    "podcasts_artifact_git_blob": "f7264030e526c08c5dba5066f7046fc37cfb9080",
+    "podcast_count": 2,
+    "source_diverse": true,
+    "publishers": [
+      "The New York Times",
+      "a16z"
+    ],
+    "runtimes_seconds": [
+      3182,
+      3588
+    ],
+    "semantic_pass_reused": true,
+    "semantic_input_evidence_git_blob": "6b5c2b0c3dddc568cc4d8304e98e1adc5fd16f52",
+    "immediately_prior_edition_exact_podcast_pair_repeat": false,
+    "reader_ready_copy_present": true,
+    "copy_field_distinctness": true
+  },
+  "result": "PASS"
+}

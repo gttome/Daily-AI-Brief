@@ -1,0 +1,29 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "f0addd0d4352896727c76ee7d9e79e8b3147d097b360981163e2d65403995c6a",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "12",
+  "capability": "native_chatgpt",
+  "instruction": "Execute exactly one fresh-context post-repair image attempt for only this blocked candidate. Use the sealed single-story specification plus the repair directive, no orchestration/dashboard context, and no people/avatar/humanoid primitives. Capture the generated professional visual and full source lineage; persist either the exact native PNG or a bounded same-visual professional PNG transport representation; verify the final persisted Git bytes and independent read-back identity; review the saved Git asset; and accept_locked or record one exact post-repair failure. Do not use SVG/basic/low-quality fallback and do not alter any previously accepted image or completed upstream task. Pass native generation only the sealed prompt plus explicit people and visible-text restrictions; never include Watchdog, Supervisor, recovery, dashboard, Kanban, or unrelated edition context.",
+  "writer_generation": 28,
+  "recovery_attempt": 1,
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "created_at": "2026-10-07T05:44:30.000Z",
+  "writer_generation_is_provenance": true,
+  "authority_refresh_required_at_invocation": true,
+  "status": "completed_pass",
+  "repair_directive_ref": "_records/image-recovery/2026-10-07-run11/m02-repair-epoch-1-directive.json",
+  "source_request_key": "df2067cf47a6918212edbf13dbf75fb9bdd7679c72d2d5f7a843903a69814ab1",
+  "accepted_locked": true,
+  "claimed_by": {
+    "automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+    "slot": "F",
+    "writer_generation": 29,
+    "claimed_at": "2026-10-07T05:58:00.000Z"
+  },
+  "completed_at": "2026-10-07T06:01:30.000Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/12-f0addd0d4352896727c76ee7d9e79e8b3147d097b360981163e2d65403995c6a.json"
+}

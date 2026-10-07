@@ -1,0 +1,66 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "16",
+  "candidate_id": "m16",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "attempt": 3,
+  "request_key": "f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13",
+  "writer_generation": 35,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-07T08:00:00.000Z",
+  "image_execution_admission": "_records/image-admission/2026-10-07-run11/16-f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13.json",
+  "generated_at": "2026-10-07T08:11:30.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-be5d85f6-2b67-4241-8acb-d9638ab4c9bf",
+    "targeted_edit_generation_id": "exec-710084ce-4388-486b-b5c3-dffff4d65b53",
+    "targeted_edit": "strategy-interrupt method change: same-story reference edit using the unchanged sealed instruction"
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1731,
+    "height": 909,
+    "bytes": 1298003,
+    "sha256": "892b7a615b304c4ae4a873d985d4d32b370252e92df8e0de151e75cd5a9962a3",
+    "persisted": true,
+    "path": "_records/image-attempts/2026-10-07-run11/m16-attempt-3.png",
+    "git_blob_sha": "ca456369f8331d623a1dda4a1354eeb4f193a700",
+    "saved_git_commit": "43b347acbc42d4dc81a498ad6e89e6fe4622a81d",
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES",
+    "persistence_mode": "protected_base64_chunk_bridge",
+    "transport_result": "_records/edition-execution/image-transport-results/reliable-edition-20261007-run11/task16-m16-g35-attempt3.json",
+    "same_visual_targeted_edit": true,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": false,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": false,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "no_logos_or_brand_marks": true,
+    "visible_text_guard": "FAIL",
+    "allowed_visible_text": [
+      "Desktop assistant",
+      "MCP",
+      "AgentCore gateway",
+      "Identity",
+      "Policy",
+      "Web search",
+      "Source evidence"
+    ],
+    "extra_visible_text": [
+      "hash-like alphanumeric strings"
+    ],
+    "note": "The targeted same-story edit preserved the secure retrieval architecture but also preserved the human-profile and person/group icons, and retained hash-like visible strings outside the exact allowlist."
+  },
+  "disposition": "REJECTED_QUALITY",
+  "rejection_reason_code": "NO_HUMANOIDS_VIOLATION",
+  "rejection_detail": "Exact saved-Git review found the same humanoid/person visual primitives after the Strategy Interrupt method change; do not use another attempt in this invocation."
+}

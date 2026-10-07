@@ -1,0 +1,24 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "slot": "E",
+  "incident_id": "wd-reliable-edition-20261007-run11-task21-focused-repair",
+  "task_id": "21",
+  "request_key": "4f6186944fbaf95725c445e827f5fd7ba00726b2951a235de7c6c7187bd6e228",
+  "occurred_at": "2026-10-07T10:59:00.000Z",
+  "outcome": "RECOVERY_VERIFIED_PROGRESSING",
+  "detail": "Consumed the exact Task 21 repository request and repaired only the deterministic same-edition publication-handoff projections identified by Task 20. Six projection paths and the publication manifest now bind the October 7 edition while Tasks 00-20 and all six accepted_locked images remain unchanged.",
+  "substantive_progress": true,
+  "progress_ref": "_records/edition-execution/events/2026-10-07-run11/21-done.json",
+  "preserved": {
+    "completed_tasks": "00-20",
+    "accepted_locked_images": 6,
+    "exact_request": true
+  },
+  "continuation": {
+    "next_action": "Event Supervisor should consume Task 21 Done and dispatch the next dependency-safe production task.",
+    "repair_receipt": "_records/editorial/2026-10-07-run11/task21-focused-repair.json"
+  },
+  "owner_intervention_required": false
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "task19-bundle-digest-shard-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "task_id": "19",
+  "sealed_at": "2026-10-07T10:18:00.000Z",
+  "digest_scheme": "git_blob_sha1",
+  "result": "PASS",
+  "shard": "accepted-images",
+  "digests": [
+    [
+      "briefs/images/2026-10-07/dab-edition-2026-10-07-m01.png",
+      "2a7edd0cdc4d6c62c1b0d9b62b2d6d61a41d07f2"
+    ],
+    [
+      "briefs/images/2026-10-07/dab-edition-2026-10-07-m02.png",
+      "44df979fbcbdb8a7e5f888f385beb0c1cb63d733"
+    ],
+    [
+      "briefs/images/2026-10-07/dab-edition-2026-10-07-m08.png",
+      "bfc96dfde9b8185eee89085afb572da4ca76c822"
+    ],
+    [
+      "briefs/images/2026-10-07/dab-edition-2026-10-07-m09.png",
+      "2c512142a029503a8bfffbe802d6b086c001bcde"
+    ],
+    [
+      "briefs/images/2026-10-07/dab-edition-2026-10-07-m15.png",
+      "3ea2539d3c0603b27c212f95035782188c99ae53"
+    ],
+    [
+      "briefs/images/2026-10-07/dab-edition-2026-10-07-m16.png",
+      "6d01bb821b8a113b9ec9c8b3629272f9464ff4c5"
+    ],
+    [
+      "_records/editorial-handoff/images-2026-10-07.json",
+      "33450d7ed5d6ba33009fcef9c21f915d859cc59c"
+    ],
+    [
+      "_records/image-quality/2026-10-07-editorial-v2.json",
+      "6c112e25a808febe3710c84edf4e183b8d8d3b7c"
+    ]
+  ],
+  "accepted_locked_images": 6
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "image-transport-result-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "16",
+  "request_key": "f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13",
+  "candidate_id": "m16",
+  "attempt": 4,
+  "writer_generation": 39,
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "generated_bytes": 1253393,
+  "generated_sha256": "3981d4b3f8bfa833e5c73baf8a3c7f31721d4cb4b10c2307cd08c4ea1def4411",
+  "persisted_path": "_records/image-attempts/2026-10-07-run11/m16-attempt-4.png",
+  "persisted_git_blob_sha": "6d01bb821b8a113b9ec9c8b3629272f9464ff4c5",
+  "persistence_mode": "git_data_direct_blob",
+  "persisted_at": "2026-10-07T09:10:30.000Z",
+  "read_back_verified_at": "2026-10-07T09:13:00.000Z",
+  "read_back_bytes": 1253393,
+  "read_back_sha256": "3981d4b3f8bfa833e5c73baf8a3c7f31721d4cb4b10c2307cd08c4ea1def4411",
+  "exact_byte_identity": "PASS_GIT_OBJECT_SHA_SIZE_AND_SHA256_MATCH_LOCAL_BYTES",
+  "owner_intervention_required": false
+}

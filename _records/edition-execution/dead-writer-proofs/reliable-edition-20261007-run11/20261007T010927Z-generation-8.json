@@ -1,0 +1,24 @@
+{
+  "schema_version": "dead-writer-proof-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "03",
+  "proved_at": "2026-10-07T01:09:38.713Z",
+  "workflow_run_id": 37555414343,
+  "workflow_job_id": 112580391432,
+  "owner_id": "github-actions-37555414343-1",
+  "conclusion": "failure",
+  "completed_at": "2026-10-07T01:06:46Z",
+  "old_generation": 8,
+  "replacement_generation": 9,
+  "child_or_subworker_live": false,
+  "repository_consumer_started": false,
+  "last_substantive_write": {
+    "commit": "9e05ebb19a8edf3ba19cdda96ed3df4dc6d8c823",
+    "at": "2026-10-07T01:04:55Z",
+    "kind": "task03_exact_request_queue_and_transition_dispatch",
+    "substantive_progress": true
+  },
+  "substantive_write_after_terminal": false,
+  "reason": "The exact owning Supervisor job completed with failure after observing the queued Task 03 request. No Task 03 worker result or transition exists, no child/subworker is live, and no substantive write occurred after the terminal workflow time."
+}

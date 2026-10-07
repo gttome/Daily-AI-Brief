@@ -1,0 +1,22 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "e8081a4f673e2ab2846cd390314344ec8dec2eed125a77093daf64bc24c9d755",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "09",
+  "capability": "repository",
+  "instruction": "Execute Task 09 (Review all four Professional Series books) from authoritative durable inputs, preserving all valid completed upstream evidence. Reuse the one-semantic-editorial-pass-v1 result whenever its input evidence digest is unchanged; deterministic downstream defects must not trigger a whole-edition semantic reread.",
+  "writer_generation": 19,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-07T02:24:00.000Z",
+  "writer_generation_is_provenance": true,
+  "authority_refresh_required_at_invocation": false,
+  "status": "completed_pass",
+  "claimed_at": "2026-10-07T02:26:00.000Z",
+  "claimed_by": "scheduled-chatgpt-watchdog-slot-b",
+  "completed_at": "2026-10-07T02:30:00.000Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/09-e8081a4f673e2ab2846cd390314344ec8dec2eed125a77093daf64bc24c9d755.json"
+}

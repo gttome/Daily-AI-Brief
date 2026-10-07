@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-10-06",
-  "updated_at": "2026-10-06T01:17:05.017Z",
-  "verification_observed_at": "2026-10-05T02:33:36.000Z",
+  "edition_date": "2026-10-07",
+  "updated_at": "2026-10-07T10:02:00.000Z",
+  "verification_observed_at": "2026-10-07T10:02:00.000Z",
   "baseline_note": "Independent Run 9 seven-domain sweep completed 14 focused checks: 0 new topics, 6 existing topics updated (including 1 reactivated), 15 topics carried forward, and 0 topics dropped today.",
   "topics": [
     {
@@ -251,13 +251,13 @@
       "name": "Agent safeguards tailored to the task",
       "audience": "Agent builders and consultants",
       "summary": "Generate and evaluate protective rules and executable checks for a particular agent deployment.",
-      "why_now": "NVIDIA Open Agent Safety Platform adds a layered software-and-hardware enforcement pattern: sandboxed OpenShell execution, verifiable policy, out-of-band enforcement and contextual monitoring on BlueField.",
+      "why_now": "Anthropic's three-tier Cyber Verification Program adds deployed evidence for capability and safeguard levels matched to verified users and risk context.",
       "practical_value": "Could improve how training materials explain agent permissions, checks and deployment-specific evaluation.",
       "limitations": "First-party architecture evidence does not establish complete containment or independent assurance across every agent, runtime and hardware platform.",
       "next_action": "Compare software-only and hardware-assisted enforcement, policy verification, audit coverage and independent bypass testing.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-10-05T02:33:36.000Z",
-      "verification_observed_at": "2026-10-05T02:33:36.000Z",
+      "updated_at": "2026-10-07T10:02:00.000Z",
+      "verification_observed_at": "2026-10-07T10:02:00.000Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -1564,12 +1564,12 @@
       "name": "Agents that overclaim task completion",
       "audience": "Agent builders, evaluators, and reviewers",
       "summary": "Measure whether an agent's final report accurately reflects what it actually completed.",
-      "why_now": "A September 17 preprint proposes measuring overclaiming when frontier agents report completion that conflicts with execution evidence.",
+      "why_now": "ThinkingBox adds executable terminal-state and side-effect checks across repeated trials, directly testing when an agent's completion claim diverges from the system outcome.",
       "practical_value": "Adds a concrete evaluation target for long-running agents: verify claims against artifacts, tests, logs, or environment state.",
       "limitations": "Preprint evidence is early and does not establish prevalence across every model, agent harness, or task.",
       "next_action": "Add a completion-verification check that compares an agent’s final claim with machine-checkable evidence.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-19T17:09:07.447Z",
+      "updated_at": "2026-10-07T10:02:00.000Z",
       "status": "early_signal",
       "confidence": "limited",
       "evidence": [
@@ -1617,19 +1617,20 @@
           "reason": "Claim-versus-evidence verification is a durable reliability practice."
         }
       },
-      "trial_story_ids": []
+      "trial_story_ids": [],
+      "verification_observed_at": "2026-10-07T10:02:00.000Z"
     },
     {
       "topic_id": "dab-topic-system-one-decision-models",
       "name": "Decision models emerge as a separate AI systems layer",
       "audience": "AI engineers, agent builders, and technical leaders",
       "summary": "Specialized models return typed, probabilistic decisions for software workflows instead of generating free-form text.",
-      "why_now": "Strands Decider 2B adds a small open-source decision model for fast local experimentation and executable decision work.",
+      "why_now": "Cloudflare Clef and Clef-flash add an independent open-weight, Jev-compatible implementation of typed probabilistic decision models.",
       "practical_value": "Could move routing, classification, scoring, triage, and agent-control decisions out of general-purpose text generation and into a lower-latency typed decision layer.",
       "limitations": "The core performance and efficiency claims currently come from the vendor; the model is hosted, its low-level architecture and training data are not public, and teams still need task-specific calibration and independent evaluation.",
       "next_action": "Compare Jev with LLM-based classifiers and simpler baselines on representative routing and agent-control tasks, while tracking calibration, robustness, prompt-injection exposure, latency, and cost.",
       "first_detected": "2026-09-22T14:10:00Z",
-      "updated_at": "2026-10-06T01:17:05.017Z",
+      "updated_at": "2026-10-07T10:02:00.000Z",
       "status": "early_signal",
       "confidence": "limited",
       "evidence": [
@@ -1729,7 +1730,7 @@
         }
       },
       "trial_story_ids": [],
-      "verification_observed_at": "2026-10-06T01:17:05.017Z"
+      "verification_observed_at": "2026-10-07T10:02:00.000Z"
     },
     {
       "topic_id": "dab-topic-source-aware-agent-verification",
@@ -2068,6 +2069,67 @@
         "durability": {
           "score": 4,
           "reason": "The mechanism could remain useful beyond the initial implementation."
+        }
+      },
+      "trial_story_ids": []
+    },
+    {
+      "topic_id": "dab-topic-agent-privacy-runtime-governance",
+      "name": "Agent privacy becomes a runtime governance problem",
+      "audience": "technical and governance leaders",
+      "summary": "Treat privacy for autonomous agents as a runtime systems problem spanning memory, logs, tool access, cross-agent handoffs, consent and deletion propagation.",
+      "why_now": "MLCommons released v0.1 of its Agent Privacy Risk Taxonomy, defining five agent-specific data-protection areas and a path toward benchmark development.",
+      "practical_value": "Gives deployers a concrete checklist for data minimization, context sharing, deletion propagation and accountability before agent workflows reach sensitive systems.",
+      "limitations": "The taxonomy is an early draft and does not yet provide validated benchmark scores or deployment-specific risk rankings.",
+      "next_action": "Track MLCommons benchmark work and test whether representative agent workflows minimize data, propagate deletion requests and preserve policy across handoffs.",
+      "first_detected": "2026-10-07T10:02:00.000Z",
+      "updated_at": "2026-10-07T10:02:00.000Z",
+      "verification_observed_at": "2026-10-07T10:02:00.000Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "url": "https://mlcommons.org/working-groups/ai-risk-reliability/ai-safety/",
+          "title": "MLCommons Agent Privacy Risk Taxonomy v0.1",
+          "publisher": "MLCommons",
+          "kind": "primary",
+          "publication_date": "2026-10-06",
+          "checked_at": "2026-10-07T10:02:00.000Z",
+          "development_id": "mlcommons-agent-privacy-risk-taxonomy-v0-1",
+          "review_depth": "first-party taxonomy announcement"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First Watchlist observation; comparable repeated measurements are not yet available."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 5,
+          "reason": "New runtime privacy governance mechanism."
+        },
+        "evidence": {
+          "score": 3,
+          "reason": "First-party taxonomy evidence."
+        },
+        "independence": {
+          "score": 2,
+          "reason": "Independent corroboration remains limited."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "First observation."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Direct relevance to agent deployment."
+        },
+        "durability": {
+          "score": 4,
+          "reason": "Persistent runtime governance need."
         }
       },
       "trial_story_ids": []

@@ -1,0 +1,65 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "12",
+  "candidate_id": "m02",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "attempt": 2,
+  "request_key": "df2067cf47a6918212edbf13dbf75fb9bdd7679c72d2d5f7a843903a69814ab1",
+  "writer_generation": 26,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-07T05:09:30.000Z",
+  "image_execution_admission": "_records/image-admission/2026-10-07-run11/12-df2067cf47a6918212edbf13dbf75fb9bdd7679c72d2d5f7a843903a69814ab1.json",
+  "generated_at": "2026-10-07T05:13:00.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-150f7c8d-07c9-4a47-9a29-4530b977180d",
+    "targeted_edit_generation_id": null,
+    "targeted_edit": null
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1439811,
+    "sha256": "608ebe77d9966e80041ef803717ef3ad48aea1ceb1167441c9b60ff3a2b9ecc0",
+    "persisted": true,
+    "path": "_records/image-attempts/2026-10-07-run11/m02-attempt-2.png",
+    "git_blob_sha": "c11e76dac4abf9cc2c1909c48f140141f003019a",
+    "saved_git_commit": "03f5f5df9f263c6607df680305d54122e2d37385",
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES",
+    "same_visual_targeted_edit": false,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": false,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "no_logos_or_brand_marks": true,
+    "visible_text_guard": "FAIL",
+    "allowed_visible_text": [
+      "Agent activity",
+      "Client version",
+      "Schema gate",
+      "Metrics ingest",
+      "Missing signal",
+      "Usage report",
+      "Evidence check"
+    ],
+    "extra_visible_text": [
+      "v1.0",
+      "v1.1"
+    ],
+    "note": "The professional two-lane telemetry mechanism is structurally correct, but the render added two disallowed version strings."
+  },
+  "disposition": "REJECTED_QUALITY",
+  "rejection_reason_code": "VISIBLE_TEXT_ALLOWLIST_VIOLATION",
+  "rejection_detail": "Exact saved-Git review found disallowed visible text “v1.0” and “v1.1”; only the seven sealed labels are permitted."
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "sealed-story-image-context-v1",
+  "mode": "single_story",
+  "story_ids": ["dab-story-2026-10-07-m15"],
+  "candidate_id": "m15",
+  "task_id": "15",
+  "includes_edition_context": false,
+  "orchestration_context_visible": false,
+  "generator_visible_field": "prompt",
+  "sealed_at": "2026-10-07T02:34:00.000Z",
+  "allowed_text": ["Event","Job state","Policy gate","Bounded action","Approval","Pause state","Resume","Audit evidence"],
+  "prompt": "Professional high-detail state-machine diagram on a clean white 1200x630 canvas. Show an event-driven agent workflow with durable state, approval interrupts, and safe resume. An event enters a job-state core; a policy gate routes the next step to a bounded action or approval checkpoint; a pause state is saved; approval resumes the same job state; every transition creates audit evidence. Include state snapshots, event envelopes, policy predicates, action receipts, pause markers, and resume continuity. No people, photos, logos, decorative filler, unsupported claims, overlapping text, or sparse basic layout. Only these visible labels: Event, Job state, Policy gate, Bounded action, Approval, Pause state, Resume, Audit evidence."
+}

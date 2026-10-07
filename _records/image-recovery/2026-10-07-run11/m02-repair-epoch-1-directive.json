@@ -1,0 +1,38 @@
+{
+  "schema_version": "image-quality-post-repair-directive-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "12",
+  "candidate_id": "m02",
+  "repair_epoch": 1,
+  "directive_version": "image-quality-post-repair-overlay-v1",
+  "protected_control_merge_sha": "081d9f635b361ac164aa46feb31dda58794a6480",
+  "reused_green_repair": true,
+  "source_protected_repair": "_records/edition-execution/protected-repairs/reliable-edition-20261007-run11/11-repair-362f7c34f63a3e8a5fe49b5bbcedc14835b875fa.json",
+  "base_context_path": "_records/image-context/2026-10-07/m02.json",
+  "base_context_git_blob": "27e0eab393121a405c9fb4c1daa64d65419f53de",
+  "base_context_immutable": true,
+  "visible_text_allowlist": [
+    "Agent activity",
+    "Client version",
+    "Schema gate",
+    "Metrics ingest",
+    "Missing signal",
+    "Usage report",
+    "Evidence check"
+  ],
+  "overlay": [
+    "Preserve the sealed story mechanism and exact visible-text allowlist. Do not alter story content, labels, evidence, or composition intent.",
+    "Render only the exact allowlisted labels. Render no other readable characters of any kind. Do not render timestamps, digits, version strings, clock text, code, CLI syntax, command fragments, filenames, hashes, receipts, badges, UI chrome, status text, metadata, schema tokens, event payload text, or pseudo-text.",
+    "Any artifact that would normally contain text must use blank non-text geometric strokes or unlabeled abstract texture instead.",
+    "Render no logos, wordmarks, trademarks, provider badges, platform marks, app icons, letterform icons, recognizable branded symbols, or branded color-lockups.",
+    "Replace every brand-like, app-like, device, command, stream, receipt, packet, schema, version, and evidence primitive with neutral generic geometry, connectors, layers, tokens, packets, or document-like forms containing no additional text.",
+    "Before returning the illustration, remove every visible character not in the exact allowlist and every recognizable logo or branded icon."
+  ],
+  "people_humanoids_prohibited": true,
+  "orchestration_context_prohibited": true,
+  "owner_intervention": false,
+  "normal_attempt_5_authorized": false,
+  "post_repair_attempt_limit": 1,
+  "created_at": "2026-10-07T05:44:30.000Z"
+}

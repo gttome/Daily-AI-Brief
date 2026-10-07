@@ -1,0 +1,35 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "execution_key": "2026-10-07-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "12",
+  "candidate_id": "m02",
+  "from": "Blocked",
+  "to": "Active",
+  "at": "2026-10-07T05:58:00.000Z",
+  "writer_generation": 29,
+  "owner_id": "scheduled-consumer:watchdog-F:reliable-edition-20261007-run11:task-12:generation-29:f0addd0d",
+  "reason_code": "PROTECTED_REPAIR_POST_REPAIR_ATTEMPT",
+  "operation": "Resume the same blocked Task 12 under repair epoch 1 and consume the exact authoritative post-repair request.",
+  "proof": {
+    "request_key": "f0addd0d4352896727c76ee7d9e79e8b3147d097b360981163e2d65403995c6a",
+    "repair_epoch_receipt": "_records/edition-execution/repair-epochs/reliable-edition-20261007-run11/12.json",
+    "repair_directive": "_records/image-recovery/2026-10-07-run11/m02-repair-epoch-1-directive.json",
+    "image_execution_admission": "_records/image-admission/2026-10-07-run11/12-f0addd0d4352896727c76ee7d9e79e8b3147d097b360981163e2d65403995c6a.json"
+  },
+  "completed_tasks_preserved": [
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "image-execution-admission-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "task_id": "11",
+  "request_key": "c14bb873847c16a99787bf89f4c8105101f83131344df8e16cc2e2c76802e294",
+  "candidate_id": "m01",
+  "sealed_instruction_sha256": "152b69d1bbae947d799d2ca7e9c4ad9b27e10426e716b6d7548f19f8020fcce6",
+  "submitted_instruction_sha256": "75270d27b92f45056aeb65a62471e5eed69c8c1d11c2f0b5df9ec5b1fe847ddb",
+  "engineering_repair_epoch": 1,
+  "repair_directive_version": "image-quality-post-repair-overlay-v1",
+  "story_only_context_verified": true,
+  "orchestration_context_visible": false,
+  "exact_byte_persistence_verified": true,
+  "persistence_mode": "git_data_direct_blob",
+  "owner_intervention_required": false,
+  "generation_authorized": true,
+  "preflight_failure_consumes_attempt": false,
+  "strategy_interrupt_required": false,
+  "checked_at": "2026-10-07T05:02:30.000Z",
+  "persistence_proof": {
+    "path": "_records/image-admission/2026-10-07-run11/preflight/task11-slot-f-g25-repair-epoch1-direct-blob.png",
+    "git_blob_sha": "26a8c68efad2a094e8fe6d850426b651d353c568",
+    "commit_sha": "c3acb8e6c4fe3786507a6663fe018a04ed36a7da",
+    "readback_match": true
+  },
+  "failure_reasons": []
+}

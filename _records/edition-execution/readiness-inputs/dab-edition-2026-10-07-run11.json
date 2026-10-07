@@ -1,0 +1,74 @@
+{
+  "schema_version": "run11-task00-live-inputs-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "observed_at": "2026-10-07T00:19:39.423Z",
+  "protected_main_sha": "912248e5add14b2ec08d7a5eefed43cbf3af485f",
+  "exact_allocation_pr": 506,
+  "exact_allocation_head": "d49f481e061338fff81adaf6e424c31030907779",
+  "exact_allocation_ci_run_id": 37550462017,
+  "post_merge_main_ci_run_id": 37550588047,
+  "p1_p2_admission": {
+    "decision": "GO",
+    "all_gates_pass": true,
+    "path": "_records/hardening/p1-p2-2026-10-06/next-run-admission.json"
+  },
+  "watchdog_ring": {
+    "live_observation": true,
+    "all_enabled": true,
+    "all_exact_schedule": true,
+    "semantically_equivalent_except_slot_identity": true,
+    "slots": [
+      {
+        "slot": "A",
+        "automation_id": "6ac15929a81c8191956080955da7eaad",
+        "minute": 3,
+        "enabled": true
+      },
+      {
+        "slot": "B",
+        "automation_id": "6ac15934c8c88191a33c94b91941d60d",
+        "minute": 13,
+        "enabled": true
+      },
+      {
+        "slot": "C",
+        "automation_id": "6ac1594249d081918df3145cca65dd91",
+        "minute": 23,
+        "enabled": true
+      },
+      {
+        "slot": "D",
+        "automation_id": "6ac1594e974881919639e0c40a2d9da8",
+        "minute": 33,
+        "enabled": true
+      },
+      {
+        "slot": "E",
+        "automation_id": "6ac1595c12fc8191b9a25b42d465692d",
+        "minute": 43,
+        "enabled": true
+      },
+      {
+        "slot": "F",
+        "automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+        "minute": 53,
+        "enabled": true
+      }
+    ]
+  },
+  "independent_live_validator": {
+    "automation_id": "6aadf3587b1c8191846a078f49102633",
+    "enabled": true,
+    "restored_at": "2026-10-07T00:19:39.423Z",
+    "schedule": "08:30 America/Chicago daily"
+  },
+  "writer_recovery": {
+    "prior_supervisor_run_id": 37550587997,
+    "prior_supervisor_conclusion": "success",
+    "prior_generation": 1,
+    "prior_generation_expired_at": "2026-10-07T00:16:08.205Z",
+    "generation_2_owner": "chatgpt-controller-task00-20261007T001609000Z",
+    "generation_2_acquired_at": "2026-10-07T00:16:09.000Z"
+  }
+}

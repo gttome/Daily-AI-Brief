@@ -1,0 +1,173 @@
+{
+  "schema_version": "run11-evidence-review-v1",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_id": "reliable-edition-20261007-run11",
+  "verified_at": "2026-10-07T01:17:05.000Z",
+  "sealed_research_cutoff": "2026-10-07T00:04:00.000Z",
+  "article_policy": "article-24-72-168-v1",
+  "source_preflight_sha": "d592936dbb4a01aba40e2c2763db07d0ee0065f7",
+  "candidate_count_reviewed": 9,
+  "full_source_reviews": 9,
+  "evidence_source_ref": "_records/editorial-handoff/article-evidence-2026-10-07-run11.json@d592936dbb4a01aba40e2c2763db07d0ee0065f7",
+  "source_evidence_git_blob": "d592936dbb4a01aba40e2c2763db07d0ee0065f7",
+  "independent_web_spot_checks_completed": 9,
+  "eligibility_after_source_date_verification": {
+    "eligible_candidate_ids": [
+      "m01",
+      "m02",
+      "m04",
+      "m08",
+      "m09",
+      "m11",
+      "m12",
+      "m15",
+      "m16"
+    ],
+    "excluded_candidate_ids": [],
+    "category_coverage": {
+      "technical_ai_engineering": 3,
+      "applied_genai_knowledge_workers": 3,
+      "agents_non_technical_people": 3
+    },
+    "agent_skill_story_ready_candidate_id": "m01"
+  },
+  "freshness_review": {
+    "primary_24h": [],
+    "normal_fallback_72h": [
+      "m02",
+      "m04"
+    ],
+    "extended_fallback_168h": [
+      "m01",
+      "m08",
+      "m09",
+      "m11",
+      "m12",
+      "m15",
+      "m16"
+    ],
+    "source_date_conflict": []
+  },
+  "review_items": [
+    {
+      "candidate_id": "m01",
+      "focus": "technical_ai_engineering",
+      "status": "verified_agent_skills_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 1450,
+      "claims": [
+        "Android CLI exposes reusable skills and device streaming so coding agents can execute Android workflows from one command surface."
+      ],
+      "limitations": [
+        "Publisher post; adoption outcomes are not independently measured."
+      ]
+    },
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "status": "verified_normal_fallback",
+      "full_source_read": true,
+      "source_word_count": 700,
+      "claims": [
+        "GitHub says an SDK migration caused unattributed Copilot agent activity and advises updating to VS Code 1.139 or later; historical activity will not be backfilled."
+      ],
+      "limitations": [
+        "Short publisher-authored incident update; no independent measurement."
+      ]
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "status": "verified_normal_fallback",
+      "full_source_read": true,
+      "source_word_count": 1250,
+      "claims": [
+        "Anthropic describes three access tiers for authorized cyber workflows, with verification, safeguards, and evaluation controls."
+      ],
+      "limitations": [
+        "Vendor-authored program announcement; operational outcomes are not yet independently measured."
+      ]
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "applied_genai_knowledge_workers",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 1150,
+      "claims": [
+        "Anthropic launches a training program intended to prepare 10,000 forward-deployed engineers by the end of 2027."
+      ],
+      "limitations": [
+        "Vendor-authored education initiative; participation and impact targets are prospective."
+      ]
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "applied_genai_knowledge_workers",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 750,
+      "claims": [
+        "Anthropic and Barclays describe enterprise Claude use across 16,000 colleagues, one million searches, and 120,000 emails per day."
+      ],
+      "limitations": [
+        "Partnership announcement; usage figures are company-reported."
+      ]
+    },
+    {
+      "candidate_id": "m11",
+      "focus": "applied_genai_knowledge_workers",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 1800,
+      "claims": [
+        "Ai2 releases an open 8B model and data for citation-grounded scientific reports."
+      ],
+      "limitations": [
+        "Publisher-authored release."
+      ]
+    },
+    {
+      "candidate_id": "m12",
+      "focus": "agents_non_technical_people",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 430,
+      "claims": [
+        "GitHub exposes computer use in Copilot CLI and desktop apps."
+      ],
+      "limitations": [
+        "Public preview."
+      ]
+    },
+    {
+      "candidate_id": "m15",
+      "focus": "agents_non_technical_people",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 6491,
+      "claims": [
+        "AWS details event-driven agents with isolated sessions, human approval, and resumable interruptions."
+      ],
+      "limitations": [
+        "Vendor reference architecture."
+      ]
+    },
+    {
+      "candidate_id": "m16",
+      "focus": "agents_non_technical_people",
+      "status": "verified_extended_fallback",
+      "full_source_read": true,
+      "source_word_count": 1800,
+      "claims": [
+        "AWS demonstrates secure web search for Claude Desktop through AgentCore using JWT and IAM controls."
+      ],
+      "limitations": [
+        "Vendor reference implementation."
+      ]
+    }
+  ],
+  "novelty_check": "No prior locked edition headline was reintroduced by the nine freshness-eligible candidates.",
+  "unknowns_preserved": true,
+  "result": "PASS"
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": "run-engineering-repair-epoch-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "16",
+  "request_key": "f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13",
+  "repair_epoch": 1,
+  "epochs_completed": 1,
+  "status": "PASS",
+  "required_proofs": [
+    "fresh_single_story_worker_isolation",
+    "no_people_or_humanoid_visual_primitives",
+    "small_png_exact_byte_transport_preflight_pass",
+    "protected_ci_pass",
+    "operational_learning_updated"
+  ],
+  "required_proofs_passed": true,
+  "proofs": {
+    "fresh_single_story_worker_isolation": {
+      "result": "PASS",
+      "evidence": "_records/image-context/2026-10-07/m16-repair-epoch-1.json"
+    },
+    "no_people_or_humanoid_visual_primitives": {
+      "result": "PASS",
+      "evidence": "Protected HUMAN FAIL-CLOSED overlay merged at main 7d19b76a69288bd8aba8093d1ed398c3d312812f and bound into the sealed post-repair context."
+    },
+    "small_png_exact_byte_transport_preflight_pass": {
+      "result": "PASS",
+      "evidence_path": "_records/image-attempts/2026-10-07-run11/m16-attempt-3.png",
+      "method": "git_data_direct_blob",
+      "final_git_blob_sha": "ca456369f8331d623a1dda4a1354eeb4f193a700",
+      "final_content_address_verified": true,
+      "final_read_back_verified": true,
+      "low_quality_fallback": false
+    },
+    "protected_ci_pass": {
+      "result": "PASS",
+      "run_id": 37597836162,
+      "control_sha": "f09931870ffd99c2d0e1d5a4e58705ceb963994b",
+      "merged_main_sha": "7d19b76a69288bd8aba8093d1ed398c3d312812f",
+      "conclusion": "success"
+    },
+    "operational_learning_updated": {
+      "result": "PASS",
+      "evidence": "docs/operations/PRODUCTION-CONTINUOUS-IMPROVEMENT-LEDGER.md#DAB-OPS-20261007-001"
+    }
+  },
+  "consumer_version": "watchdog-protected-repair-v1",
+  "consumer_writer_generation": 39,
+  "completed_at": "2026-10-07T09:06:00.000Z",
+  "post_repair_attempts": 1,
+  "repair_digest": "sha256:63d93a18af9d877debf35d14dd113f3a7c6e7c5acdf28275f712b41dc9fba7fd",
+  "post_repair_context_ref": "_records/image-context/2026-10-07/m16-repair-epoch-1.json",
+  "post_repair_admission_ref": "_records/image-admission/2026-10-07-run11/16-f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13-invocation-20261007T090600Z.json",
+  "post_repair_dispatched_at": "2026-10-07T09:06:00.000Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "14",
+  "candidate_id": "m09",
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "attempt": 1,
+  "request_key": "535769ed35dc5deb5d691aa560c11c4b56e3ece495265386f4b9fa9921467a91",
+  "writer_generation": 31,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-07T06:15:00.000Z",
+  "image_execution_admission": "_records/image-admission/2026-10-07-run11/14-535769ed35dc5deb5d691aa560c11c4b56e3ece495265386f4b9fa9921467a91.json",
+  "generated_at": "2026-10-07T06:16:30.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-beec5caf-7b42-4f64-b1ad-f3515a345047",
+    "targeted_edit_generation_id": null,
+    "targeted_edit": null
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1460614,
+    "sha256": "2dba6c9617eae21320f8b6dc3495f0eb2f07a9b270a3507541a240ddde499613",
+    "persisted": true,
+    "raw_path": "_records/image-attempts/2026-10-07-run11/m09-attempt-1.png",
+    "path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m09.png",
+    "git_blob_sha": "2c512142a029503a8bfffbe802d6b086c001bcde",
+    "saved_git_commit": "b7c5e5220f014cb23764a76f7264633ede0bb79b",
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES",
+    "persistence_mode": "protected_base64_chunk_bridge",
+    "transport_result": "_records/edition-execution/image-transport-results/reliable-edition-20261007-run11/task14-m09-g31-final.json",
+    "same_visual_targeted_edit": false,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "no_logos_or_brand_marks": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "AI service",
+      "Access policy",
+      "Work domains",
+      "Training",
+      "Support",
+      "Usage evidence",
+      "Enablement loop"
+    ],
+    "extra_visible_text": [],
+    "note": "The admitted render is a professional story-specific governed hub-and-spoke AI adoption architecture with a central service, domain clusters, policy controls, training, support, evidence, and a continuous enablement loop. It contains exactly the seven allowed labels and no logos, brands, people, photos, unsupported text, clipping, or corruption."
+  },
+  "disposition": "ACCEPTED_LOCKED"
+}

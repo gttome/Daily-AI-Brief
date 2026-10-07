@@ -1,0 +1,69 @@
+{
+  "schema_version": "run11-four-book-review-v1",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_id": "reliable-edition-20261007-run11",
+  "reviewed_at": "2026-10-07T02:29:00.000Z",
+  "catalog_path": "_data/book-reading.json",
+  "catalog_git_blob": "31d8c6b8c8707cd429f993bbd506c60936e0e5c1",
+  "books_reviewed": [
+    {"book":"Reliable Generative AI","anchor_count":8},
+    {"book":"Reliable Generative AI Context Engineering","anchor_count":8},
+    {"book":"Generative AI Professional Prompt Engineering Guide","anchor_count":8},
+    {"book":"Generative AI Prompt Engineering Learning Ecosystem","anchor_count":8}
+  ],
+  "total_anchors_reviewed": 32,
+  "reading_evidence": {
+    "full_text_claimed": false,
+    "note": "Review uses verified public anchors recorded in the repository catalog; no unsupported full-text claim is made."
+  },
+  "item_reviews": [
+    {
+      "candidate_id":"m01",
+      "title":"Android CLI packages device workflows as reusable agent skills",
+      "best_connections":["reliable-handoffs","context-quality-checklist","prompt-pattern-selection","ecosystem-template-export"],
+      "reader_value":"Reusable device skills are easier to trust when the handoff contract is explicit, the context is checked before execution, the prompt pattern fits the task and the finished workflow can be saved as a reusable template."
+    },
+    {
+      "candidate_id":"m02",
+      "title":"Copilot metrics expose a hidden failure mode in agent telemetry",
+      "best_connections":["reliable-verification","context-regression","prompt-evaluation","ecosystem-workflow"],
+      "reader_value":"Telemetry failures matter because adoption data can look authoritative while silently omitting activity; verification, regression checks and explicit evaluation criteria help readers distinguish measurement from assumption."
+    },
+    {
+      "candidate_id":"m08",
+      "title":"Claude Frontier Academy targets the forward-deployed engineering skills gap",
+      "best_connections":["reliable-trust","context-discovery","prompt-expert-critic","ecosystem-practice"],
+      "reader_value":"Capability-building improves when learners calibrate trust, define the real work before prompting, practice critical review instead of accepting first answers and turn concepts into repeated hands-on exercises."
+    },
+    {
+      "candidate_id":"m09",
+      "title":"Barclays scales Claude across 16,000 colleagues",
+      "best_connections":["reliable-trust","context-launch","prompt-structure","ecosystem-role-selection"],
+      "reader_value":"Enterprise adoption becomes more useful when expectations are calibrated, launch governance is cross-functional, prompts follow a repeatable structure and different employee roles get guidance suited to the work they actually perform."
+    },
+    {
+      "candidate_id":"m15",
+      "title":"Ambient agents turn events into resumable human-approved workflows",
+      "best_connections":["reliable-agent-failures","context-failure-playbooks","prompt-clarify","ecosystem-role-selection"],
+      "reader_value":"Event-driven autonomy is safer when failure paths are planned, interruptions can be resumed, ambiguous intent triggers clarification and responsibility between the agent and the human approver stays explicit."
+    },
+    {
+      "candidate_id":"m16",
+      "title":"AgentCore gives Claude Desktop a governed web-search path",
+      "best_connections":["reliable-injection","context-privacy","prompt-core-components","ecosystem-problem-strategies"],
+      "reader_value":"Governed web search works best when instruction integrity is protected, sensitive context is minimized, the request is structured around clear constraints and readers match the tool-enabled workflow to the problem rather than enabling broad access by default."
+    }
+  ],
+  "distribution_check": {
+    "books_with_at_least_one_selected_connection": 4,
+    "all_six_stories_reviewed": true
+  },
+  "upstream_preservation": {
+    "story_selection_locked": true,
+    "watchlist_task_preserved": true,
+    "semantic_pass_reused": true,
+    "semantic_input_evidence_git_blob": "6b5c2b0c3dddc568cc4d8304e98e1adc5fd16f52",
+    "completed_upstream_rework": false
+  },
+  "result": "PASS"
+}

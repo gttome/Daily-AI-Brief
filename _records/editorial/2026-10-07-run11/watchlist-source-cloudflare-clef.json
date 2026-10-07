@@ -1,0 +1,14 @@
+{
+  "schema_version": "watchlist-source-evidence-v1",
+  "candidate_id": "w11-cloudflare-clef",
+  "source_url": "https://developers.cloudflare.com/changelog/post/2026-10-01-clef-workers-ai/",
+  "publisher": "Cloudflare",
+  "publication_date": "2026-10-01",
+  "checked_at": "2026-10-07T02:22:00.000Z",
+  "research_cutoff": "2026-10-07T00:04:00.000Z",
+  "eligible_at_research_cutoff": true,
+  "disposition": "update_existing",
+  "topic_id": "dab-topic-system-one-decision-models",
+  "finding": "Cloudflare released Clef and Clef-flash as open-source decision models that return probabilities over typed answers, are API-compatible with Jev, support local/open-weight use, and add a second independent implementation of the decision-model systems layer.",
+  "limitations": "Benchmark and latency claims are vendor-reported; independent task-specific calibration and robustness evaluation remain necessary."
+}

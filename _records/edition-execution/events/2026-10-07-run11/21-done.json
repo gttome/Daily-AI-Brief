@@ -1,0 +1,21 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_key": "2026-10-07-run11",
+  "task_id": "21",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-07T10:59:00.000Z",
+  "writer_generation": 47,
+  "owner_id": "chatgpt-watchdog-e-20261007T105200Z",
+  "reason_code": "FOCUSED_PUBLICATION_HANDOFF_REPAIR_COMPLETE",
+  "operation": "focused_publication_handoff_repair",
+  "proof": {
+    "repair_receipt": "_records/editorial/2026-10-07-run11/task21-focused-repair.json",
+    "worker_result": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/21-4f6186944fbaf95725c445e827f5fd7ba00726b2951a235de7c6c7187bd6e228.json",
+    "publication_manifest": "_records/editorial-handoff/publication-manifest.json",
+    "accepted_locked_images": 6
+  },
+  "handoff": "HANDOFF_TO_SUPERVISOR"
+}

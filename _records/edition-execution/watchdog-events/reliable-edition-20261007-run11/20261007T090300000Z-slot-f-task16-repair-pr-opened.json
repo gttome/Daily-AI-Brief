@@ -1,0 +1,20 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "observed_at": "2026-10-07T09:03:00.000Z",
+  "slot": "F",
+  "incident_id": "wd-reliable-edition-20261007-run11-task16-engineering-repair",
+  "event": "PROTECTED_REPAIR_PR_OPENED",
+  "task_id": "16",
+  "request_key": "f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13",
+  "writer_generation": 38,
+  "watchdog_generation": 27,
+  "repair_key": "repair-2cf3bae24b4ddb53897f43ad7fc6dad60d4afb48d",
+  "pr_number": 508,
+  "pr_url": "https://github.com/gttome/Daily-AI-Brief/pull/508",
+  "repair_head": "f09931870ffd99c2d0e1d5a4e58705ceb963994b",
+  "repair_scope_digest": "sha256:63d93a18af9d877debf35d14dd113f3a7c6e7c5acdf28275f712b41dc9fba7fd",
+  "release_reason": "WAITING_ON_PROTECTED_EXTERNAL_EXECUTOR",
+  "next_legal_action": "Wait for exact-head pull_request validate PASS on PR 508. Then reacquire the same Task 16 recovery fence, merge exactly head f09931870ffd99c2d0e1d5a4e58705ceb963994b, and resume the same request through one fresh story-only post-repair attempt."
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "image-attempt-receipt-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "12",
+  "candidate_id": "m02",
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "request_key": "f0addd0d4352896727c76ee7d9e79e8b3147d097b360981163e2d65403995c6a",
+  "writer_generation": 29,
+  "consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "consumer_slot": "F",
+  "authority_acquired_at": "2026-10-07T05:58:00.000Z",
+  "image_execution_admission": "_records/image-admission/2026-10-07-run11/12-f0addd0d4352896727c76ee7d9e79e8b3147d097b360981163e2d65403995c6a.json",
+  "generated_at": "2026-10-07T05:59:00.000Z",
+  "generation_lineage": {
+    "base_generation_id": "exec-6cc7198a-0d6c-43db-9b32-4d31ef7a206e",
+    "targeted_edit_generation_id": null,
+    "targeted_edit": null
+  },
+  "native_capture": {
+    "format": "PNG",
+    "width": 1730,
+    "height": 909,
+    "bytes": 1382219,
+    "sha256": "7f52e3dbf06daa6964ee3ac8d0ac6d29a64717603e7250639abb83fb6343fb98",
+    "persisted": true,
+    "raw_path": "_records/image-attempts/2026-10-07-run11/m02-repair-epoch-1-attempt-1.png",
+    "path": "briefs/images/2026-10-07/dab-edition-2026-10-07-m02.png",
+    "git_blob_sha": "44df979fbcbdb8a7e5f888f385beb0c1cb63d733",
+    "saved_git_commit": "7a164d5ae63c6cffcf27f828cdd9a86fb9fed400",
+    "exact_readback": "PASS_GIT_OBJECT_SHA_AND_SIZE_MATCH_LOCAL_BYTES",
+    "same_visual_targeted_edit": false,
+    "low_quality_fallback": false,
+    "svg_fallback": false
+  },
+  "pretransport_review": {
+    "passed": true,
+    "subject_correct": true,
+    "context_contamination": false,
+    "professional_detailed_story_specific": true,
+    "no_people_or_humanoids": true,
+    "no_photos": true,
+    "no_repository_or_dashboard_ui": true,
+    "no_logos_or_brand_marks": true,
+    "visible_text_guard": "PASS",
+    "allowed_visible_text": [
+      "Agent activity",
+      "Client version",
+      "Schema gate",
+      "Metrics ingest",
+      "Missing signal",
+      "Usage report",
+      "Evidence check"
+    ],
+    "extra_visible_text": [],
+    "note": "The admitted post-repair render is a professional story-specific two-lane telemetry mechanism. The upper lane makes the missing-signal failure explicit while the lower lane preserves the usable activity-to-report evidence path. It contains exactly the seven allowed labels, with no logos, brand marks, people, photos, repository UI, clipping, or corruption."
+  },
+  "disposition": "ACCEPTED_LOCKED"
+}

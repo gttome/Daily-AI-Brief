@@ -1,0 +1,65 @@
+{
+  "schema_version": "run11-watchlist-refresh-v1",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_id": "reliable-edition-20261007-run11",
+  "observed_at": "2026-10-07T02:22:00.000Z",
+  "research_cutoff": "2026-10-07T00:04:00.000Z",
+  "checks_completed": 14,
+  "discovery_domains_checked": 7,
+  "new_topics": [
+    {
+      "topic_id": "dab-topic-agent-privacy-runtime-governance",
+      "label": "New",
+      "title": "Agent privacy becomes a runtime governance problem",
+      "what_changed": "MLCommons released v0.1 of an Agent Privacy Risk Taxonomy covering data ingestion, aggregation and sharing, cross-agent policy inconsistency, runtime consent, and accountability, with benchmark development planned next.",
+      "why_it_matters": "Agent privacy can fail through memory, logs, tool calls and handoffs even when a model's direct response is safe, so deployers need runtime data-minimization and deletion-propagation checks.",
+      "source_ref": "_records/editorial/2026-10-07-run11/watchlist-source-mlcommons-agent-privacy.json"
+    }
+  ],
+  "updated_topic_ids": [
+    "dab-topic-system-one-decision-models",
+    "dab-topic-agent-overclaiming",
+    "dab-topic-adaptive-agent-safeguards"
+  ],
+  "reactivated_topic_ids": [],
+  "carried_forward_count": 18,
+  "dropped_topic_ids": [],
+  "dropped_topics": [],
+  "zero_new_certified": false,
+  "drop_review_completed": true,
+  "result": "PASS",
+  "updates": [
+    {
+      "topic_id": "dab-topic-system-one-decision-models",
+      "label": "Updated today",
+      "title": "Decision models emerge as a separate AI systems layer",
+      "what_changed": "Cloudflare released Clef and Clef-flash as open-source typed decision models compatible with the Jev API, adding a second independent vendor implementation and open weights.",
+      "source_ref": "_records/editorial/2026-10-07-run11/watchlist-source-cloudflare-clef.json"
+    },
+    {
+      "topic_id": "dab-topic-agent-overclaiming",
+      "label": "Updated today",
+      "title": "Agents that overclaim task completion",
+      "what_changed": "Microsoft and Hugging Face released ThinkingBox, which grades terminal backend state and side effects across repeated trials and documents agents that terminate cleanly while leaving incorrect state.",
+      "source_ref": "_records/editorial/2026-10-07-run11/watchlist-source-thinkingbox-terminal-state.json"
+    },
+    {
+      "topic_id": "dab-topic-adaptive-agent-safeguards",
+      "label": "Updated today",
+      "title": "Agent safeguards tailored to the task",
+      "what_changed": "Anthropic expanded its Cyber Verification Program into three verified-access tiers with different safeguard levels, adding real deployment evidence for capability controls matched to user and risk context.",
+      "source_ref": "_records/editorial/2026-10-07-run11/watchlist-source-anthropic-cyber-verification.json"
+    }
+  ],
+  "drops": [],
+  "no_drop_justification": "No active topic crossed the archival threshold in this bounded sweep. The prior active set retains unresolved next-action tests or fresh evidence; no contrary or superseding signal justified removal.",
+  "source_evidence": [
+    "_records/editorial/2026-10-07-run11/watchlist-source-mlcommons-agent-privacy.json",
+    "_records/editorial/2026-10-07-run11/watchlist-source-cloudflare-clef.json",
+    "_records/editorial/2026-10-07-run11/watchlist-source-thinkingbox-terminal-state.json",
+    "_records/editorial/2026-10-07-run11/watchlist-source-anthropic-cyber-verification.json"
+  ],
+  "semantic_pass_reused": true,
+  "semantic_selection_git_blob": "48cf6d7fabe34091a5bc325f483c2f9e442414fd",
+  "semantic_input_evidence_git_blob": "6b5c2b0c3dddc568cc4d8304e98e1adc5fd16f52"
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "bceb90e0a96f8d84e987bdf6801633568f836694eb2498b7931e5078003a2444",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "07",
+  "capability": "repository",
+  "instruction": "Execute Task 07 (Select and verify two source-diverse podcasts) from authoritative durable inputs, preserving all valid completed upstream evidence. For each selected podcast, persist reader-ready summary, why_it_matters and connection_to_brief statements that are pairwise meaningfully distinct; summary says what the episode covers, why_it_matters explains reader value/consequence, and connection_to_brief ties it to the edition. Never copy one sentence into another field. Reuse the one-semantic-editorial-pass-v1 result whenever its input evidence digest is unchanged; deterministic downstream defects must not trigger a whole-edition semantic reread.",
+  "writer_generation": 17,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-07T02:05:00.000Z",
+  "writer_generation_is_provenance": true,
+  "authority_refresh_required_at_invocation": false,
+  "status": "completed_pass",
+  "claimed_at": "2026-10-07T02:13:00.000Z",
+  "claimed_by": "scheduled-chatgpt-watchdog-slot-b",
+  "completed_at": "2026-10-07T02:16:00.000Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261007-run11/07-bceb90e0a96f8d84e987bdf6801633568f836694eb2498b7931e5078003a2444.json"
+}

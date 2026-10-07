@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-07",
+  "checked_at": "2026-10-07T10:59:00.000Z",
+  "verification_timestamp": "2026-10-07T10:59:00.000Z",
+  "recovery_contract": "locked_same_edition_media_preflight_v1",
+  "items": [
+    {
+      "item_id": "dab-video-2026-10-07-general",
+      "kind": "video",
+      "url": "https://www.youtube.com/watch?v=VpSCu7s4wD4",
+      "observed_date": "2026-09-18",
+      "observed_runtime_seconds": 874,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-07-run11/videos.json",
+      "verification_timestamp": "2026-10-07T02:03:00.000Z"
+    },
+    {
+      "item_id": "dab-video-2026-10-07-agent-skills",
+      "kind": "video",
+      "url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
+      "observed_date": "2026-09-29",
+      "observed_runtime_seconds": 564,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-07-run11/videos.json",
+      "verification_timestamp": "2026-10-07T02:03:00.000Z"
+    },
+    {
+      "item_id": "dab-podcast-2026-10-07-1",
+      "kind": "podcast",
+      "url": "https://podcasts.apple.com/us/search?term=Hard%20Fork%20hard-fork-2026-10-02-ai-agents",
+      "observed_date": "2026-10-02",
+      "observed_runtime_seconds": 3182,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-07-run11/podcasts.json",
+      "verification_timestamp": "2026-10-07T02:16:00.000Z"
+    },
+    {
+      "item_id": "dab-podcast-2026-10-07-2",
+      "kind": "podcast",
+      "url": "https://podcasts.apple.com/us/search?term=The%20a16z%20Show%20a16z-2026-10-02-ai-agents-incumbents",
+      "observed_date": "2026-10-02",
+      "observed_runtime_seconds": 3588,
+      "reachable": true,
+      "http_status": 200,
+      "verification_evidence": "_records/editorial/2026-10-07-run11/podcasts.json",
+      "verification_timestamp": "2026-10-07T02:16:00.000Z"
+    }
+  ],
+  "editorial_kernel_sha256": "43b5f0333b1f0b3dab7cfcd265b061cde7efda295499eba64d159fc67c15c7ae",
+  "podcast_source_diversity": {
+    "pass": true,
+    "shows": [
+      "Hard Fork",
+      "The a16z Show"
+    ]
+  },
+  "basis": "Locked Run 11 Task 06/07 verified selections; no media reselection performed by focused Task 21 publication-handoff repair."
+}

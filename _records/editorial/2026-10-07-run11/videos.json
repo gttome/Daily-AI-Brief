@@ -1,0 +1,55 @@
+{
+  "schema_version": "run11-video-selection-v1",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_id": "reliable-edition-20261007-run11",
+  "verified_at": "2026-10-07T02:03:00.000Z",
+  "semantic_pass_reused": true,
+  "semantic_selection_git_blob": "48cf6d7fabe34091a5bc325f483c2f9e442414fd",
+  "semantic_input_evidence_git_blob": "6b5c2b0c3dddc568cc4d8304e98e1adc5fd16f52",
+  "result": "PASS",
+  "videos": [
+    {
+      "ordinal": 1,
+      "title": "Flight Intelligence: The Power of Work IQ",
+      "channel": "Microsoft Developer",
+      "publication_date": "2026-09-18",
+      "runtime_seconds": 874,
+      "playback_provider": "youtube",
+      "video_id": "VpSCu7s4wD4",
+      "summary": "Microsoft developers explain how Work IQ grounds AI assistance in organizational context and reusable workflow knowledge, then connect that grounding to practical agent experiences.",
+      "why_it_matters": "Agent usefulness depends on relevant business context as much as model capability; this walkthrough gives readers concrete criteria for judging whether a workplace agent can act with the right knowledge and boundaries.",
+      "connection_to_brief": "It complements the brief’s forward-deployed engineering, enterprise adoption, and governed-agent stories by showing the context layer those deployments need beyond a chat interface.",
+      "connection": "It complements the brief’s forward-deployed engineering, enterprise adoption, and governed-agent stories by showing the context layer those deployments need beyond a chat interface.",
+      "verification": "First-party Microsoft Developer video; sealed repository evidence verifies direct YouTube playback and a 14:34 runtime."
+    },
+    {
+      "ordinal": 2,
+      "title": "Microsoft Copilot Just Got a Massive Upgrade",
+      "channel": "Kevin Stratvert",
+      "publication_date": "2026-09-29",
+      "runtime_seconds": 564,
+      "playback_provider": "youtube",
+      "video_id": "KJ8Y2Nb9y9o",
+      "summary": "Kevin Stratvert demonstrates upgraded Microsoft Copilot surfaces and shows how the assistant supports a range of everyday knowledge-work tasks.",
+      "why_it_matters": "A hands-on tour helps readers separate broadly usable workflow improvements from headline feature claims and decide which changes are worth testing in their own work.",
+      "connection_to_brief": "The practical examples give a user-level counterpoint to the brief’s stories about enterprise Claude rollout and agent infrastructure, linking organizational adoption to the experience individual workers actually see.",
+      "connection": "The practical examples give a user-level counterpoint to the brief’s stories about enterprise Claude rollout and agent infrastructure, linking organizational adoption to the experience individual workers actually see.",
+      "verification": "Sealed repository evidence verifies direct YouTube playback and a 9:24 runtime for this established creator walkthrough."
+    }
+  ],
+  "checks": {
+    "count": 2,
+    "runtime_ladder_seconds": [
+      600,
+      900,
+      1200
+    ],
+    "within_bounded_runtime": true,
+    "direct_playability_by_provider_id": true,
+    "verified_from_sealed_repository_evidence": true,
+    "immediately_prior_edition_exact_video_repeat": false,
+    "reader_ready_copy_present": true,
+    "summary_why_it_matters_connection_distinct": true
+  },
+  "freshness_note": "No web research was used for this repository-capability task; the pair was selected from authoritative sealed media evidence and does not repeat the immediately prior edition’s two videos."
+}

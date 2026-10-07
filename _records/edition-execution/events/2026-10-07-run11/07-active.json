@@ -1,0 +1,13 @@
+{
+  "task_id": "07",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-07T02:13:00.000Z",
+  "reason": "Claimed the exact queued Task 07 repository request after prior Task 06 writer and recovery authority were cleanly released.",
+  "proof": {
+    "request_key": "bceb90e0a96f8d84e987bdf6801633568f836694eb2498b7931e5078003a2444",
+    "writer_generation": 17,
+    "watchdog_lease_generation": 4,
+    "capability": "repository"
+  }
+}

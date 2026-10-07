@@ -1,0 +1,17 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "execution_key": "2026-10-07-run11",
+  "task_id": "19",
+  "from": "Queued",
+  "to": "Active",
+  "at": "2026-10-07T10:16:00.000Z",
+  "writer_generation": 44,
+  "owner_id": "chatgpt-watchdog-f-20261007T101600Z",
+  "reason_code": "STALE_QUEUED_REPOSITORY_RECOVERY",
+  "operation": "refresh_digests_and_seal_immutable_bundle",
+  "proof": {
+    "request_key": "d8dcaccbb7f98a84ac755ba0bcff9d9d59ba5b22e979a53e8f9ca086cd83fe8a"
+  }
+}

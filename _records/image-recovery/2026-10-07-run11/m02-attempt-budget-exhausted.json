@@ -1,0 +1,29 @@
+{
+  "schema_version": "image-recovery-blocker-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "12",
+  "candidate_id": "m02",
+  "request_key": "df2067cf47a6918212edbf13dbf75fb9bdd7679c72d2d5f7a843903a69814ab1",
+  "recorded_at": "2026-10-07T05:19:00.000Z",
+  "classification": "quality_attempt_budget_exhausted_repair_required",
+  "internally_actionable": true,
+  "externally_blocked": false,
+  "max_generation_attempts": 4,
+  "attempts_consumed": 4,
+  "accepted_locked": false,
+  "owner_intervention_required": false,
+  "required_next_authority": "supervisor_protected_repair_epoch",
+  "prohibited_actions": [
+    "additional_native_generation_before_protected_repair",
+    "svg_fallback",
+    "basic_or_low_quality_fallback",
+    "owner_upload_workaround"
+  ],
+  "evidence_refs": [
+    "_records/image-attempts/2026-10-07-run11/m02-attempt-1.json",
+    "_records/image-attempts/2026-10-07-run11/m02-attempt-2.json",
+    "_records/image-attempts/2026-10-07-run11/m02-attempt-3.json",
+    "_records/image-attempts/2026-10-07-run11/m02-attempt-4.json"
+  ]
+}

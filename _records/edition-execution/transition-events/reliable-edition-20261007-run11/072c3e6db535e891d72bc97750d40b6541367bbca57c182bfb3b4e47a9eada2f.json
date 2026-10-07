@@ -1,0 +1,17 @@
+{
+  "schema_version": "run-transition-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "task_id": "17",
+  "request_key": null,
+  "prior_state": "Active",
+  "new_state": "Done",
+  "event_type": "ACTIVE_TO_DONE",
+  "content_state_digest": "sha256:6c431a0b6a9c6c64f3c81fc2e5d54e1d30a69fd21723e8dedfe43c6a0318f6e1",
+  "writer_generation": 53,
+  "timestamp": "2026-10-07T09:34:12.000Z",
+  "next_legal_action": "dispatch_task_18",
+  "dispatch_required": true,
+  "idempotency_key": "sha256:072c3e6db535e891d72bc97750d40b6541367bbca57c182bfb3b4e47a9eada2f",
+  "next_task_id": "18"
+}

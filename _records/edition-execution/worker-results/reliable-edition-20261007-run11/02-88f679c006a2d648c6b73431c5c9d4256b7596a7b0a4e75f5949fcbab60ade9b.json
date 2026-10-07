@@ -1,0 +1,40 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "88f679c006a2d648c6b73431c5c9d4256b7596a7b0a4e75f5949fcbab60ade9b",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "02",
+  "request_writer_generation": 4,
+  "writer_generation": 6,
+  "status": "passed",
+  "completed_at": "2026-10-07T01:04:25.694Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "initial_supervisor_run_id": 37551349747,
+    "initial_supervisor_conclusion": "success",
+    "prior_supervisor_run_id": 37551577618,
+    "prior_supervisor_conclusion": "failure",
+    "restarted_supervisor_run_id": 37554082895,
+    "restarted_supervisor_conclusion": "failure",
+    "same_execution_restart_proven": true,
+    "supervisor_writer_generations_observed": [
+      3,
+      5
+    ],
+    "watchdog_ring_slots_verified": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "watchdog_same_execution_only": true,
+    "repository_worker_generation": 6,
+    "duplicate_execution_created": false,
+    "persistent_supervisor_path": ".github/workflows/event-driven-supervisor.yml",
+    "note": "Protected transition dispatch restarted the Run Supervisor on the identical bound execution after Task 01 recovery. The restarted owner acquired generation 5 and queued this exact Task 02 request before its local rebase guard failed; Watchdog Slot F consumed the same request under generation 6 without allocating or reopening any execution."
+  },
+  "result": "PASS"
+}

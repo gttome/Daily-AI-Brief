@@ -1,0 +1,21 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "slot": "F",
+  "event": "RECOVERY_CLAIMED",
+  "task_id": "22",
+  "request_key": "c531067186ad9ad36a6dacf8d3611f0416659c35c0245c50843a217df6868745",
+  "observed_at": "2026-10-07T13:59:30.000Z",
+  "prior_branch_head": "4ae3b838410b31750c3aff5fb42c1e6872dcd786",
+  "strategy": "Use the already verified materially different tree that restores protected-main video fallback, binds the full v2 Watchlist sweep, normalizes retained Task 08 evidence, and passes the exact protected targeted-test selection.",
+  "local_validation": {
+    "exact_publication_preflight": "PASS",
+    "protected_targeted_tests": {
+      "result": "PASS",
+      "passed": 52,
+      "failed": 0
+    }
+  },
+  "accepted_locked_images": 6,
+  "owner_intervention_required": false
+}

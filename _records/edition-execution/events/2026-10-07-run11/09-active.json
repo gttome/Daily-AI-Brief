@@ -1,0 +1,13 @@
+{
+  "task_id": "09",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-07T02:26:00.000Z",
+  "reason": "Claimed the exact queued Task 09 repository request immediately after Task 08 durable completion.",
+  "proof": {
+    "request_key": "e8081a4f673e2ab2846cd390314344ec8dec2eed125a77093daf64bc24c9d755",
+    "writer_generation": 19,
+    "watchdog_lease_generation": 6,
+    "capability": "repository"
+  }
+}

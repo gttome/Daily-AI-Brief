@@ -1,0 +1,20 @@
+{
+  "schema_version": "chatgpt-watchdog-event-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "observed_at": "2026-10-07T09:06:00.000Z",
+  "slot": "F",
+  "incident_id": "wd-reliable-edition-20261007-run11-task16-engineering-repair",
+  "event": "SAME_TASK_RESUMED_IMAGE_ADMISSION_PASS",
+  "task_id": "16",
+  "request_key": "f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13",
+  "writer_generation": 39,
+  "watchdog_generation": 28,
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "admission_ref": "_records/image-admission/2026-10-07-run11/16-f15d10a0248307515b1e2cca5a680ebf787fc6c8ceada32568eed10c4371fa13-invocation-20261007T090600Z.json",
+  "sealed_context_ref": "_records/image-context/2026-10-07/m16-repair-epoch-1.json",
+  "submitted_instruction_sha256": "6ab53d1ce963582004482d6dea6dc56c5f04e31f54e96972eff1bb337cae33e6",
+  "attempts_remaining": 1,
+  "next_legal_action": "Execute exactly one fresh Task 16 post-repair native image attempt using only the sealed context at _records/image-context/2026-10-07/m16-repair-epoch-1.json, persist exact returned bytes, read back, visually review, then accept_locked or record exact exhausted-budget blocker."
+}

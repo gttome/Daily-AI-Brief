@@ -1,0 +1,55 @@
+{
+  "schema_version": "task19-bundle-digest-shard-v1",
+  "execution_id": "reliable-edition-20261007-run11",
+  "task_id": "19",
+  "sealed_at": "2026-10-07T10:18:00.000Z",
+  "digest_scheme": "git_blob_sha1",
+  "result": "PASS",
+  "shard": "reader-pages",
+  "digests": [
+    [
+      "briefs/2026-10-07.md",
+      "9cfc95cadb08be554dcdace4047c478d42dc0678"
+    ],
+    [
+      "stories/2026-10-07/android-cli-packages-device-workflows-as-reusable-agent-skills.md",
+      "6e7cf92572a55e51b1971ad57a9ebda5f515d5f6"
+    ],
+    [
+      "stories/2026-10-07/copilot-metrics-expose-hidden-agent-telemetry-failure.md",
+      "b300ff07061e1c8df3151f33c99fd471e7aa0b75"
+    ],
+    [
+      "stories/2026-10-07/claude-frontier-academy-targets-forward-deployed-engineering-skills-gap.md",
+      "f6a8807695663d73847a61e393c2ff157977a9d9"
+    ],
+    [
+      "stories/2026-10-07/barclays-scales-claude-across-16000-colleagues.md",
+      "8292cddb339e53ce36c5452a889dd857d87ed25a"
+    ],
+    [
+      "stories/2026-10-07/ambient-agents-turn-events-into-resumable-human-approved-workflows.md",
+      "728c19d6885e7c1de1a96d99cd96443de65c1eb8"
+    ],
+    [
+      "stories/2026-10-07/agentcore-gives-claude-desktop-a-governed-web-search-path.md",
+      "c444ef758b2a9c9412f339d79838decef600f6af"
+    ],
+    [
+      "videos/2026-10-07/general.md",
+      "9cd06ea27cf7702ccc4f621911a940a2eb536191"
+    ],
+    [
+      "videos/2026-10-07/agent-skills.md",
+      "416b5804858f21ece39a4a325de11b7a948b8db3"
+    ],
+    [
+      "podcasts/2026-10-07/hard-fork-2026-10-02-ai-agents.md",
+      "b44f921677572a406424a7ad9622410198eefb30"
+    ],
+    [
+      "podcasts/2026-10-07/a16z-2026-10-02-ai-agents-incumbents.md",
+      "27c60609788160e8b7e7f1fcfd20718bd1795c55"
+    ]
+  ]
+}

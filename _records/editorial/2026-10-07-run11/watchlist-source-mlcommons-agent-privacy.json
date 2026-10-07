@@ -1,0 +1,14 @@
+{
+  "schema_version": "watchlist-source-evidence-v1",
+  "candidate_id": "w11-mlcommons-agent-privacy",
+  "source_url": "https://mlcommons.org/2026/10/agent-privacy-risk-taxonomy-v0-1/",
+  "publisher": "MLCommons",
+  "publication_date": "2026-10-01",
+  "checked_at": "2026-10-07T02:22:00.000Z",
+  "research_cutoff": "2026-10-07T00:04:00.000Z",
+  "eligible_at_research_cutoff": true,
+  "disposition": "new_topic",
+  "topic_id": "dab-topic-agent-privacy-runtime-governance",
+  "finding": "MLCommons released v0.1 of an Agent Privacy Risk Taxonomy organized around five agent-specific data-protection areas, including cross-agent handoffs, runtime consent, memory/log retention, third-party tools and accountability, with benchmark work planned next.",
+  "limitations": "The taxonomy is an early v0.1 framework and does not yet provide validated benchmark scores or rank risks across deployment contexts."
+}
