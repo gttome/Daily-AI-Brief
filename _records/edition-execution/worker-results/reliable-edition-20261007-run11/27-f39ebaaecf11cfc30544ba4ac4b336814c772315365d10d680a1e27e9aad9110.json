@@ -1,0 +1,31 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "f39ebaaecf11cfc30544ba4ac4b336814c772315365d10d680a1e27e9aad9110",
+  "execution_id": "reliable-edition-20261007-run11",
+  "edition_id": "dab-edition-2026-10-07",
+  "branch": "reliable-edition/dab-edition-2026-10-07-run11",
+  "task_id": "27",
+  "request_writer_generation": 65,
+  "authority_generation": 66,
+  "status": "passed",
+  "completed_at": "2026-10-07T17:17:00.000Z",
+  "completion_persistence": {
+    "result": "PASS",
+    "completion_record": "_records/publication/2026-10-07/completion.json",
+    "lifecycle_record": "_records/publication/2026-10-07/lifecycle.json",
+    "validation_record": "_records/publication/2026-10-07/delta-validation.json",
+    "semantic_gate_record": "_records/publication/2026-10-07/reader-semantic-close-gate.json",
+    "publication_pr": 511,
+    "candidate_sha": "f8542460d532bd33cd1cd885f4f3e244d301a325",
+    "ci_run_id": 37633863433,
+    "production_sha": "848c8a3d323ccea177a193825352e7819e444ec3",
+    "pages_run_id": 37634270150,
+    "live_verified": true,
+    "republish_performed": false
+  },
+  "preserved": {
+    "completed_tasks": "00-26",
+    "accepted_locked_images": 6
+  },
+  "task_outcome": "Done"
+}
