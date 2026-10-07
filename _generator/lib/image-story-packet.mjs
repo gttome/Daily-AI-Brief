@@ -11,6 +11,8 @@ export const APPROVED_COMPOSITION_MODES=[
 ];
 
 export const STRICT_IMAGE_RENDER_SPEC_POLICY='strict-image-render-spec-v1';
+export const IMAGE_POST_REPAIR_DIRECTIVE_VERSION='image-quality-post-repair-overlay-v1';
+export const IMAGE_POST_REPAIR_MAX_EPOCHS=2;
 
 const nonempty=value=>typeof value==='string'&&value.trim().length>0;
 const clean=value=>String(value).trim().replace(/\s+/g,' ');
@@ -143,5 +145,25 @@ export function buildQualificationImageGenerationInstruction(payload){
     'COMPOSITION CONTRACT: Create one professional, high-detail, mechanism-first textbook/editorial illustration on a clean white background. Use the story-fit composition mode above. The mechanism and relationships must dominate the composition; decorative imagery is prohibited.',
     'QUALITY CONTRACT: Reject sparse, generic, decorative, repetitive, cross-story, stock-photo-like, cinematic, dashboard-like, or low-information layouts. No low-quality fallback is permitted.',
     'Generate exactly one illustration. Return only the generated illustration.'
+  ].join('\n');
+}
+
+/**
+ * Canonical post-repair overlay for a bounded engineering-repair epoch.
+ * It does not alter story semantics or the visible-text allowlist. It only
+ * hardens fail-closed rendering behavior proven weak by saved-Git review.
+ */
+export function buildPostRepairImageGenerationInstruction(payload,{repair_epoch=1,directive_version=IMAGE_POST_REPAIR_DIRECTIVE_VERSION}={}){
+  const epoch=Number(repair_epoch);
+  if(directive_version!==IMAGE_POST_REPAIR_DIRECTIVE_VERSION)throw new Error('image_post_repair_directive_version_invalid');
+  if(!Number.isInteger(epoch)||epoch<1||epoch>IMAGE_POST_REPAIR_MAX_EPOCHS)throw new Error('image_post_repair_epoch_invalid');
+  const base=buildQualificationImageGenerationInstruction(payload);
+  return [
+    base,
+    'POST-REPAIR QUALITY OVERLAY: Preserve the sealed story mechanism and exact visible-text allowlist. This overlay changes only rendering constraints, not story content, labels, evidence, or composition intent.',
+    'TEXT FAIL-CLOSED: Render only the exact allowlisted labels. Render no other readable characters of any kind. Do not render timestamps, digits, clock text, code, CLI syntax, command fragments, filenames, hashes, receipts, badges, UI chrome, status text, metadata, or pseudo-text. Any artifact that would normally contain text must use blank non-text geometric strokes or unlabeled abstract texture instead.',
+    'BRAND FAIL-CLOSED: Render no logos, wordmarks, trademarks, provider badges, platform marks, app icons, letterform icons, recognizable branded symbols, or branded color-lockups. Replace every brand-like or app-like visual with neutral generic geometry that cannot be mistaken for a real logo or product icon.',
+    'ABSTRACT SUBSTITUTE CONTRACT: Device, command, application, stream, receipt, and evidence concepts must be represented with neutral unbranded shapes, connectors, layers, tokens, packets, or document-like forms that contain no additional text.',
+    'FINAL SELF-CHECK: Before returning the illustration, remove every visible character not in the exact allowlist and every recognizable logo or branded icon. If removal is required, simplify that local object while preserving the mechanism. Return only the corrected illustration.'
   ].join('\n');
 }

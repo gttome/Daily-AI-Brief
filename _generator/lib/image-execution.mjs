@@ -1,6 +1,6 @@
 import {visualReviewErrors, visualReviewAccepted} from './image-review-evidence.mjs';
 import {createHash} from 'node:crypto';
-import {buildQualificationImageWorkerPayload,buildQualificationImageGenerationInstruction,validateQualificationImageWorkerPayload} from './image-story-packet.mjs';
+import {buildQualificationImageWorkerPayload,buildQualificationImageGenerationInstruction,buildPostRepairImageGenerationInstruction,IMAGE_POST_REPAIR_DIRECTIVE_VERSION,IMAGE_POST_REPAIR_MAX_EPOCHS,validateQualificationImageWorkerPayload} from './image-story-packet.mjs';
 import {emitAcceptedImageTaskTransition,stableImageStateFromResult,STABLE_IMAGE_PIPELINE_VERSION} from './stable-image-pipeline.mjs';
 
 export const IMAGE_EXECUTION_POLICY='production-image-execution-v2';
@@ -27,6 +27,7 @@ export function buildImageExecutionAdmission(execution,{
   story_only_context_verified=false,orchestration_context_visible=true,
   exact_byte_persistence_verified=false,persistence_mode=null,
   owner_intervention_required=false,persistence_proof=null,
+  engineering_repair_epoch=0,repair_directive_version=null,
   checked_at=new Date().toISOString()
 }={}){
   const executionErrors=validateImageGenerationExecution(execution);
@@ -35,10 +36,22 @@ export function buildImageExecutionAdmission(execution,{
   const submitted=nonempty(submitted_instruction)?submitted_instruction:null;
   const sealedSha=nonempty(sealed)?digest(sealed):null;
   const submittedSha=nonempty(submitted)?digest(submitted):null;
+  const epoch=Number(engineering_repair_epoch||0);
+  const repairEpochOK=Number.isInteger(epoch)&&epoch>=0&&epoch<=IMAGE_POST_REPAIR_MAX_EPOCHS;
+  const repairMode=repairEpochOK&&epoch>0;
+  const repairVersionOK=repairMode
+    ?repair_directive_version===IMAGE_POST_REPAIR_DIRECTIVE_VERSION
+    :repair_directive_version===null||repair_directive_version===undefined;
+  let expectedInstruction=sealed;
+  if(repairMode&&repairVersionOK){
+    try{expectedInstruction=buildPostRepairImageGenerationInstruction(execution.sealed_story_packet,{repair_epoch:epoch,directive_version:repair_directive_version});}
+    catch{expectedInstruction=null;}
+  }
+  const expectedSubmittedSha=nonempty(expectedInstruction)?digest(expectedInstruction):null;
   const identityOK=nonempty(execution_id)&&/^1[1-6]$/.test(task)&&nonempty(request_key)&&execution?.sealed_story_packet?.candidate_id;
   const persistenceOK=exact_byte_persistence_verified===true&&IMAGE_EXECUTION_PERSISTENCE_MODES.includes(persistence_mode);
   const contextOK=story_only_context_verified===true&&orchestration_context_visible===false;
-  const instructionOK=Boolean(sealedSha&&submittedSha&&sealedSha===submittedSha);
+  const instructionOK=Boolean(sealedSha&&submittedSha&&expectedSubmittedSha&&submittedSha===expectedSubmittedSha);
   const ownerOK=owner_intervention_required===false;
   const clockOK=stamp(checked_at);
   const authorized=executionErrors.length===0&&Boolean(identityOK)&&persistenceOK&&contextOK&&instructionOK&&ownerOK&&clockOK;
@@ -46,7 +59,9 @@ export function buildImageExecutionAdmission(execution,{
   if(executionErrors.length)failures.push(...executionErrors.map(x=>'execution:'+x));
   if(!identityOK)failures.push('admission_identity_invalid');
   if(!contextOK)failures.push('story_only_context_not_proven');
-  if(!instructionOK)failures.push('submitted_instruction_not_exactly_sealed');
+  if(!repairEpochOK)failures.push('engineering_repair_epoch_invalid');
+  if(!repairVersionOK)failures.push('repair_directive_version_invalid');
+  if(!instructionOK)failures.push(repairMode?'submitted_instruction_not_canonical_post_repair':'submitted_instruction_not_exactly_sealed');
   if(!persistenceOK)failures.push('exact_byte_persistence_not_proven');
   if(!ownerOK)failures.push('owner_intervention_prohibited');
   if(!clockOK)failures.push('admission_checked_at_invalid');
@@ -55,6 +70,8 @@ export function buildImageExecutionAdmission(execution,{
     execution_id:execution_id||null,task_id:task,request_key:request_key||null,
     candidate_id:execution?.sealed_story_packet?.candidate_id||null,
     sealed_instruction_sha256:sealedSha,submitted_instruction_sha256:submittedSha,
+    engineering_repair_epoch:repairMode?epoch:0,
+    repair_directive_version:repairMode?repair_directive_version:null,
     story_only_context_verified:story_only_context_verified===true,
     orchestration_context_visible:orchestration_context_visible===true,
     exact_byte_persistence_verified:exact_byte_persistence_verified===true,
@@ -80,7 +97,20 @@ export function validateImageExecutionAdmission(admission,execution,{execution_i
   if(request_key&&admission.request_key!==request_key)errors.push('image_execution_admission_request_mismatch');
   if(admission.candidate_id!==execution?.sealed_story_packet?.candidate_id)errors.push('image_execution_admission_candidate_mismatch');
   const sealedSha=nonempty(execution?.generation_instruction)?digest(execution.generation_instruction):null;
-  if(!sealedSha||admission.sealed_instruction_sha256!==sealedSha||admission.submitted_instruction_sha256!==sealedSha)
+  const epoch=Number(admission.engineering_repair_epoch||0);
+  const repairEpochOK=Number.isInteger(epoch)&&epoch>=0&&epoch<=IMAGE_POST_REPAIR_MAX_EPOCHS;
+  if(!repairEpochOK)errors.push('image_execution_admission_repair_epoch');
+  const repairMode=repairEpochOK&&epoch>0;
+  const repairVersion=repairMode?admission.repair_directive_version:null;
+  if(repairMode&&repairVersion!==IMAGE_POST_REPAIR_DIRECTIVE_VERSION)errors.push('image_execution_admission_repair_directive_version');
+  if(!repairMode&&admission.repair_directive_version!==undefined&&admission.repair_directive_version!==null)errors.push('image_execution_admission_unexpected_repair_directive');
+  let expectedInstruction=execution?.generation_instruction;
+  if(repairMode&&repairVersion===IMAGE_POST_REPAIR_DIRECTIVE_VERSION){
+    try{expectedInstruction=buildPostRepairImageGenerationInstruction(execution.sealed_story_packet,{repair_epoch:epoch,directive_version:repairVersion});}
+    catch{expectedInstruction=null;}
+  }
+  const expectedSubmittedSha=nonempty(expectedInstruction)?digest(expectedInstruction):null;
+  if(!sealedSha||admission.sealed_instruction_sha256!==sealedSha||!expectedSubmittedSha||admission.submitted_instruction_sha256!==expectedSubmittedSha)
     errors.push('image_execution_admission_instruction_mismatch');
   if(admission.story_only_context_verified!==true)errors.push('image_execution_admission_story_only_context');
   if(admission.orchestration_context_visible!==false)errors.push('image_execution_admission_orchestration_context_visible');
