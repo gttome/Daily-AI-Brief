@@ -1,10 +1,5 @@
 name: Finalize active Run 4 candidate
 on:
-  push:
-    branches: [main]
-    paths:
-      - _tools/run4-finalizer.mjs
-      - .github/workflows/run4-finalizer.yml
   workflow_dispatch:
 permissions:
   contents: write
