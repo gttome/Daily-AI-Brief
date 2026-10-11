@@ -1,16 +1,6 @@
 name: Daily AI Brief Repository Task Consumer
 
 on:
-  push:
-    branches:
-      - main
-      - 'reliable-edition/**'
-      - 'rehearsal/**'
-    paths:
-      - '.github/workflows/repository-task-consumer.yml'
-      - '_generator/lib/repository-task-consumer.mjs'
-      - '_tools/repository-task-consumer.mjs'
-      - '_records/edition-execution/worker-requests/**/17-*.json'
   workflow_dispatch:
 
 permissions:
