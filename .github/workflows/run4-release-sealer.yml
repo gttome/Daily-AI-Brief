@@ -1,10 +1,5 @@
 name: Seal and qualify active Run 4
 on:
-  push:
-    branches: [main]
-    paths:
-      - _tools/run4-release-sealer.mjs
-      - .github/workflows/run4-release-sealer.yml
   workflow_dispatch:
 permissions:
   contents: write
