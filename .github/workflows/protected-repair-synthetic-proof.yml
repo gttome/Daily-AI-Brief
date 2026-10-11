@@ -1,12 +1,7 @@
 name: Protected Repair Autonomy Synthetic Proof
 
 on:
-  push:
-    branches:
-      - 'synthetic/protected-repair-proof-*'
-  schedule:
-    - cron: '*/5 * * * *'
-
+  workflow_dispatch:
 permissions:
   contents: write
   pull-requests: write
