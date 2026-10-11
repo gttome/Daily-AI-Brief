@@ -1,11 +1,7 @@
 name: Qualification semantic evidence gate
 
 on:
-  push:
-    branches: ['editorial-handoff/qualification/**']
-    paths:
-      - '_records/qualification/**/semantic-receipt.json'
-
+  workflow_dispatch:
 permissions:
   contents: read
 
