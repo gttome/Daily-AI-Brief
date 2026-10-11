@@ -8,9 +8,17 @@ test('full public rehearsal routes remain isolated from canonical production pub
   const handoff=read('.github/workflows/run-supervisor-handoff.yml');
   const supervisor=read('.github/workflows/run-supervisor.yml');
   const repositoryConsumer=read('.github/workflows/repository-task-consumer.yml');
+  const pointer=JSON.parse(read('data/operations/active-production-run.json'));
+  const retired=pointer.active===false && pointer.terminal===true;
+  if(retired){
+    for(const y of [handoff,supervisor,repositoryConsumer]){
+      assert.match(y,/^on:\n  workflow_dispatch:/m);
+      assert.doesNotMatch(y,/^  (?:schedule|push|workflow_run):/m);
+    }
+  }
 
   for (const required of [
-    "'rehearsal/**'",
+    ...(retired?[]:["'rehearsal/**'"]),
     '_records/rehearsal/active-public-rehearsal.json',
     "x.mode==='FULL_PUBLIC_REHEARSAL'",
     'x.production_allocation===false',
@@ -24,7 +32,7 @@ test('full public rehearsal routes remain isolated from canonical production pub
   assert.ok(handoff.includes('synthetic-active-run.json'), 'existing synthetic rehearsal route must remain');
 
   for (const required of [
-    "'rehearsal/**'",
+    ...(retired?[]:["'rehearsal/**'"]),
     '_records/rehearsal/active-public-rehearsal.json',
     'GITHUB_REF_NAME',
     "x.mode==='FULL_PUBLIC_REHEARSAL'",
@@ -47,7 +55,7 @@ test('full public rehearsal routes remain isolated from canonical production pub
   );
 
   for (const required of [
-    "'rehearsal/**'",
+    ...(retired?[]:["'rehearsal/**'"]),
     '_records/rehearsal/active-public-rehearsal.json',
     "x.mode==='FULL_PUBLIC_REHEARSAL'",
     'x.production_allocation===false',
