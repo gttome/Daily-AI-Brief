@@ -1,7 +1,5 @@
 name: Verify publication freshness
 on:
-  schedule:
-    - cron: '15 14 * * *'
   workflow_dispatch:
 permissions:
   contents: read

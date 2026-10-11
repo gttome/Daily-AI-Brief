@@ -1,17 +1,6 @@
 name: Daily AI Brief Run Supervisor
 
 on:
-  push:
-    branches:
-      - main
-      - 'rehearsal/**'
-    paths:
-      - data/operations/active-production-run.json
-      - _records/rehearsal/active-public-rehearsal.json
-      - _generator/lib/run-supervisor.mjs
-      - _tools/run-supervisor.mjs
-      - docs/operations/task-recovery-contracts.json
-      - .github/workflows/run-supervisor.yml
   workflow_dispatch:
     inputs:
       run_branch:

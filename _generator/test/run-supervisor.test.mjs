@@ -24,6 +24,11 @@ import {
   classifyRepositoryQueueLiveness
 } from '../lib/run-supervisor.mjs';
 
+function retiredOriginalBrief(){
+  const pointer=JSON.parse(fs.readFileSync('data/operations/active-production-run.json','utf8'));
+  return pointer.active===false && pointer.terminal===true;
+}
+
 function contract(){
   const tasks={};
   for(let i=0;i<=29;i++){
@@ -423,6 +428,11 @@ test('terminal classification always goes to Task 29 before supervisor stop',()=
 
 test('Supervisor workflow contains the one-minute loop, single concurrency lane and fenced writer',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  if (retiredOriginalBrief()) {
+    assert.match(y,/^on:\n  workflow_dispatch:/m);
+    assert.doesNotMatch(y,/^  (?:push|schedule|workflow_run):/m);
+    return;
+  }
   assert.match(y,/group: daily-ai-brief-run-supervisor/);
   assert.match(y,/cancel-in-progress: true/);
   assert.match(y,/_generator\/lib\/run-supervisor\.mjs/);
@@ -472,6 +482,11 @@ test('Supervisor delegates only when the newest unfinished Tasks 11-16 request i
 
 test('watchdog runs every five minutes and can only restart the active pointer identity',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
+  if (retiredOriginalBrief()) {
+    assert.match(y,/^on:\n  workflow_dispatch:/m);
+    assert.doesNotMatch(y,/^  (?:push|schedule|workflow_run):/m);
+    return;
+  }
   assert.match(y,/cron: '\*\/5 \* \* \* \*'/);
   assert.match(y,/data\/operations\/active-production-run\.json/);
   assert.match(y,/gh workflow run run-supervisor\.yml/);
@@ -481,6 +496,11 @@ test('watchdog runs every five minutes and can only restart the active pointer i
 
 test('watchdog immediately reacts to a failed Supervisor completion',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
+  if (retiredOriginalBrief()) {
+    assert.match(y,/^on:\n  workflow_dispatch:/m);
+    assert.doesNotMatch(y,/^  (?:push|schedule|workflow_run):/m);
+    return;
+  }
   assert.match(y,/workflow_run:/);
   assert.match(y,/Daily AI Brief Run Supervisor/);
   assert.match(y,/conclusion != 'success'/);
@@ -667,4 +687,21 @@ test('Supervisor workflow encodes event-driven mode as valid YAML environment fi
   assert.equal(y.includes('SUPERVISOR_OWNER: github-actions-${{ github.run_id }}-${{ github.run_attempt }}\\n'),false);
   assert.match(y,/^\s{6}SUPERVISOR_OWNER: github-actions-\$\{\{ github\.run_id \}\}-\$\{\{ github\.run_attempt \}\}$/m);
   assert.match(y,/^\s{6}EVENT_DRIVEN_SUPERVISOR: "true"$/m);
+});
+
+
+test('retired original repository workflows are manual-only except required PR validation',()=>{
+  assert.equal(retiredOriginalBrief(),true,'retirement requires a closed, terminal production pointer');
+  const dir='.github/workflows';
+  const names=fs.readdirSync(dir).filter(name=>/\.ya?ml$/.test(name)).sort();
+  assert.equal(names.length,28,'audit the complete original workflow inventory');
+  for(const name of names){
+    const lines=fs.readFileSync(dir+'/'+name,'utf8').split(/\r?\n/);
+    const start=lines.findIndex(line=>line==='on:');
+    const end=lines.findIndex((line,i)=>i>start&&/^[A-Za-z_][A-Za-z0-9_-]*:/.test(line));
+    assert.ok(start>=0&&end>start,name+': parse on block');
+    const events=lines.slice(start+1,end).map(line=>/^  ([a-z_][a-z0-9_-]*):/.exec(line)?.[1]).filter(Boolean);
+    const expected=name==='ci.yml'?['pull_request','workflow_dispatch']:['workflow_dispatch'];
+    assert.deepEqual(events,expected,name+': no unattended event triggers');
+  }
 });

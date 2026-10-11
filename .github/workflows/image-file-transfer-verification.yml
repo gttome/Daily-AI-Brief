@@ -1,9 +1,6 @@
 name: Image file transfer verification
 on:
   workflow_dispatch:
-  push:
-    branches: ['repair/image-file-transfer-*']
-    paths: ['.github/workflows/image-file-transfer-verification.yml']
 permissions:
   contents: write
 concurrency:

@@ -1,13 +1,7 @@
 name: Daily AI Brief Run Supervisor Watchdog
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Daily AI Brief Run Supervisor"]
-    types: [completed]
-
 permissions:
   contents: write
   actions: write

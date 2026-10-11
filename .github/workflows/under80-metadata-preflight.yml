@@ -1,15 +1,6 @@
 name: Under-80 metadata preflight
 
 on:
-  push:
-    branches:
-      - 'preflight-request/**'
-    paths:
-      - '_records/preflight-request/request.json'
-  schedule:
-    # 03:00 America/Chicago across DST/CST; local-time gate ensures exactly one trigger runs.
-    - cron: '0 8 * * *'
-    - cron: '0 9 * * *'
   workflow_dispatch:
     inputs:
       edition_date:

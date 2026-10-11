@@ -1,13 +1,6 @@
 name: Close published Run 4 from exact evidence
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - _tools/run4-closeout.mjs
-      - _tools/daily-validation.mjs
-      - _generator/test/run4-closeout.test.mjs
-      - .github/workflows/run4-closeout.yml
   workflow_dispatch:
 
 permissions:

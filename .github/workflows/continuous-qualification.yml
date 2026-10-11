@@ -1,9 +1,6 @@
 name: Continuous qualification validation
 
 on:
-  workflow_run:
-    workflows: ["Post-editorial deterministic publication"]
-    types: [completed]
   workflow_dispatch:
     inputs:
       staging_ref:

@@ -1,13 +1,6 @@
 name: Daily AI Brief deterministic delta validation
 
 on:
-  workflow_run:
-    workflows: ["Deterministic publication CI"]
-    types: [completed]
-    branches: [main]
-  schedule:
-    # GitHub cron is UTC. Trigger both DST possibilities; the Chicago-hour gate runs exactly one.
-    - cron: '0 15,16 * * *'
   workflow_dispatch:
     inputs:
       date:

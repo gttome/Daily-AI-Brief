@@ -15,6 +15,16 @@ import {
   buildRehearsalReceipt
 } from '../lib/pre-next-run-rehearsal.mjs';
 
+// Validate historical handoff semantics without re-enabling retired triggers.
+function historicalHandoffWorkflow(){
+  const current=fs.readFileSync('.github/workflows/run-supervisor-handoff.yml','utf8');
+  const pointer=JSON.parse(fs.readFileSync('data/operations/active-production-run.json','utf8'));
+  if(pointer.active!==false || pointer.terminal!==true)return current;
+  assert.match(current,/^on:\n  workflow_dispatch:/m);
+  assert.doesNotMatch(current,/^  (?:push|schedule|workflow_run):/m);
+  return execFileSync('git',['show','123f29b1d03748feb8eecb54316e1dc14e60790f:.github/workflows/run-supervisor-handoff.yml'],{encoding:'utf8'});
+}
+
 function prestate(){
   const tasks={};
   for(let n=0;n<=29;n++){
@@ -197,7 +207,7 @@ test('scheduled consumer proof fails if request generation becomes mutation auth
 });
 
 test('explicit worker release satisfies event-driven Supervisor handoff and resumes same execution without rework',()=>{
-  const workflow=fs.readFileSync('.github/workflows/run-supervisor-handoff.yml','utf8');
+  const workflow=historicalHandoffWorkflow();
   const proof=verifyAutomaticSupervisorResume({
     prestate:prestate(),writerRelease:release(),workflowText:workflow,
     resumedAt:'2026-10-02T21:44:07Z'
@@ -233,7 +243,7 @@ test('final receipt cannot authorize production until protected CI itself is PAS
   });
   const automatic=verifyAutomaticSupervisorResume({
     prestate:prestate(),writerRelease:release(),
-    workflowText:fs.readFileSync('.github/workflows/run-supervisor-handoff.yml','utf8'),
+    workflowText:historicalHandoffWorkflow(),
     resumedAt:'2026-10-02T21:44:07Z'
   });
   const kanban=buildAndVerifySyntheticKanban({
@@ -269,7 +279,7 @@ test('actual scheduled rehearsal evidence proves consumption, stale-generation r
   assert.equal(scheduled.publication_mutations,0);
   assert.equal(scheduled.run5_mutations,0);
 
-  const workflow=fs.readFileSync('.github/workflows/run-supervisor-handoff.yml','utf8');
+  const workflow=historicalHandoffWorkflow();
   const releaseMs=Date.parse(actualRelease.released_at);
   const automatic=verifyAutomaticSupervisorResume({
     prestate:actualPrestate,writerRelease:actualRelease,workflowText:workflow,

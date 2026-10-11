@@ -1,12 +1,7 @@
 name: P1 P2 Integrated Non-Production Rehearsal
 
 on:
-  push:
-    branches:
-      - 'rehearsal/p1p2-integrated-*'
-    paths:
-      - '_records/hardening/p1-p2-2026-10-06/rehearsal-trigger.json'
-
+  workflow_dispatch:
 permissions:
   contents: write
   actions: read

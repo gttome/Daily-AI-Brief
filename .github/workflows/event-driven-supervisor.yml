@@ -1,12 +1,6 @@
 name: Daily AI Brief Event-Driven Supervisor
 
 on:
-  push:
-    branches:
-      - 'reliable-edition/**'
-      - 'rehearsal/**'
-    paths:
-      - '_records/edition-execution/events/**'
   workflow_dispatch:
     inputs:
       run_branch:
