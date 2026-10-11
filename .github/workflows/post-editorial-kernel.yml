@@ -33,16 +33,6 @@ on:
         required: false
         type: string
 
-  push:
-    branches: ['editorial-handoff/**']
-    paths:
-      - '_records/editorial-handoff/handoff.json'
-      - 'briefs/images/**'
-
-  workflow_run:
-    workflows: ["Deterministic publication CI"]
-    types: [completed]
-
 permissions:
   contents: write
   actions: write
