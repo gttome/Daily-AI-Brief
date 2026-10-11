@@ -203,7 +203,7 @@ test('GitHub inner watchdog is scheduled only while the original system is opera
     assert.match(y,/^on:\n  workflow_dispatch:/m);
     assert.doesNotMatch(y,/^  (?:schedule|push|workflow_run):/m);
   }else{
-    assert.match(y,/cron: '\\*\\/5 \\* \\* \\* \\*'/);
+    assert.ok(y.includes("cron: '*/5 * * * *'"));
   }
 });
 
