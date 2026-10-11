@@ -1,12 +1,6 @@
 name: Finalize active Run 5 candidate
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '_tools/run5-post-image-finalizer.mjs'
-      - '_tools/run5-release-sealer.mjs'
-      - '.github/workflows/run5-finalizer.yml'
   workflow_dispatch:
 
 permissions:
