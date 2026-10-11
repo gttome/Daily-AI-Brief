@@ -196,8 +196,15 @@ test('startup and host bind equivalent six-slot image-consumer ring and remove s
   assert.equal(h.watchdog_ring.nominal_check_minutes,10);
   assert.equal(h.watchdog_ring.bound_reusable_consumer_slot,null);
 });
-test('GitHub inner watchdog remains every five minutes',()=>{
-  const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8'); assert.match(y,/cron: '\*\/5 \* \* \* \*'/);
+test('GitHub inner watchdog is scheduled only while the original system is operational',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
+  const pointer=JSON.parse(fs.readFileSync('data/operations/active-production-run.json','utf8'));
+  if(pointer.active===false && pointer.terminal===true){
+    assert.match(y,/^on:\n  workflow_dispatch:/m);
+    assert.doesNotMatch(y,/^  (?:schedule|push|workflow_run):/m);
+  }else{
+    assert.match(y,/cron: '\\*\\/5 \\* \\* \\* \\*'/);
+  }
 });
 
 test('GitHub inner watchdog publishes compact health to a bounded runtime ref',()=>{
