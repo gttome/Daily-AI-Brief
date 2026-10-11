@@ -1,13 +1,7 @@
 name: Daily AI Brief Writer Handoff
 
 on:
-  push:
-    branches:
-      - 'reliable-edition/**'
-      - 'rehearsal/**'
-    paths:
-      - '_records/edition-execution/writer-leases/**'
-
+  workflow_dispatch:
 permissions:
   contents: read
   actions: write
