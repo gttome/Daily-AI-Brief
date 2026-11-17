@@ -2,6 +2,12 @@
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset="UTF-8">
+    {% if page.path == 'index.md' %}
+    <!-- Retired legacy homepage: send readers to the date-independent active publication. -->
+    <meta http-equiv="refresh" content="0;url=https://gttome.github.io/Daily-AI-Brief-Compiler/">
+    <link rel="canonical" href="https://gttome.github.io/Daily-AI-Brief-Compiler/">
+    <script>window.location.replace("https://gttome.github.io/Daily-AI-Brief-Compiler/");</script>
+    {% endif %}
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
 
 {% seo %}
